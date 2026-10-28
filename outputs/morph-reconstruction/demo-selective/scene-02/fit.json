@@ -1,0 +1,51 @@
+{
+  "target_engine": "morph",
+  "preset": null,
+  "known_recipe": {
+    "exposure": 0.08,
+    "temperature": 0.04,
+    "tint": 0.0,
+    "contrast": 0.08,
+    "shadows": 0.1,
+    "highlights": -0.1,
+    "saturation": 0.03,
+    "cool_saturation": -0.15,
+    "warm_saturation": 0.12
+  },
+  "fitted_recipe": {
+    "exposure": 0.08,
+    "temperature": 0.04,
+    "tint": 0.0,
+    "contrast": 0.08,
+    "shadows": 0.1,
+    "highlights": -0.1,
+    "saturation": 0.029996,
+    "cool_saturation": -0.149983,
+    "warm_saturation": 0.120004
+  },
+  "applied_recipe": {
+    "exposure": 0.08,
+    "temperature": 0.04,
+    "tint": 0.0,
+    "contrast": 0.08,
+    "shadows": 0.1,
+    "highlights": -0.1,
+    "saturation": 0.029996,
+    "cool_saturation": -0.149983,
+    "warm_saturation": 0.120004
+  },
+  "renderer": "selective",
+  "regularization": 0,
+  "solver": "gauss-newton",
+  "strength": 1.0,
+  "iterations": 45,
+  "metrics": {
+    "initial_mse": 0.0009936919758223206,
+    "fit_mse": 6.087561440938276e-15,
+    "rmse": 7.802282640957245e-08,
+    "objective": 6.087561440938276e-15,
+    "evaluations": 101,
+    "solver": "damped_gauss_newton"
+  },
+  "representative": "/Users/abhijitnambiar/Documents/Codex/2026-10-27/i/work/morph-demo/DSC_0904-2.jpg"
+}

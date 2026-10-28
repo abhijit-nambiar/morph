@@ -1,0 +1,50 @@
+{
+  "target_engine": "pillow-soft",
+  "preset": null,
+  "target_settings": {
+    "tone_exposure": 0.15,
+    "tone_contrast": 0.1,
+    "tone_shadows": 0.18,
+    "tone_highlights": -0.18,
+    "tone_temperature": 0.06,
+    "cool_saturation": -0.2,
+    "warm_saturation": 0.12
+  },
+  "known_recipe": null,
+  "fitted_recipe": {
+    "exposure": 0.345164,
+    "temperature": 0.050373,
+    "tint": 0.004126,
+    "contrast": -0.083949,
+    "shadows": -0.108935,
+    "highlights": -0.001335,
+    "saturation": 0.020129,
+    "cool_saturation": -0.113214,
+    "warm_saturation": 0.096497
+  },
+  "applied_recipe": {
+    "exposure": 0.345164,
+    "temperature": 0.050373,
+    "tint": 0.004126,
+    "contrast": -0.083949,
+    "shadows": -0.108935,
+    "highlights": -0.001335,
+    "saturation": 0.020129,
+    "cool_saturation": -0.113214,
+    "warm_saturation": 0.096497
+  },
+  "renderer": "gamut",
+  "regularization": 0,
+  "solver": "gauss-newton",
+  "strength": 1.0,
+  "iterations": 45,
+  "metrics": {
+    "initial_mse": 0.0015793404399535404,
+    "fit_mse": 8.21013777644885e-05,
+    "rmse": 0.009060981059713594,
+    "objective": 8.21013777644885e-05,
+    "evaluations": 91,
+    "solver": "damped_gauss_newton"
+  },
+  "representative": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1037-31.jpg"
+}

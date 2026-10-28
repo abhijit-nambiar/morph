@@ -1,0 +1,49 @@
+{
+  "target_engine": "pillow-soft",
+  "prompt": "warm, slightly soft contrast and lift shadows",
+  "interpreted_prompt": [
+    {
+      "phrase": "warm",
+      "intensity": 1.0
+    },
+    {
+      "phrase": "soft contrast",
+      "intensity": 0.5
+    },
+    {
+      "phrase": "lift shadows",
+      "intensity": 1.0
+    }
+  ],
+  "renderer": "polynomial",
+  "regularization": 0.001,
+  "strength": 1.0,
+  "scenes": [
+    {
+      "scene": "scene-01",
+      "representative": "/Users/abhijitnambiar/Documents/Codex/2026-10-27/i/work/morph-demo/DSC_0906-4.jpg",
+      "photos": 4,
+      "metrics": {
+        "sampled_pixels": 30000,
+        "initial_mse": 0.0008209605002775788,
+        "fit_mse": 2.0447162446414487e-05,
+        "rmse": 0.004521853872740083,
+        "regularization": 0.001
+      }
+    },
+    {
+      "scene": "scene-02",
+      "representative": "/Users/abhijitnambiar/Documents/Codex/2026-10-27/i/work/morph-demo/DSC_0904-2.jpg",
+      "photos": 2,
+      "metrics": {
+        "sampled_pixels": 30000,
+        "initial_mse": 0.000797601998783648,
+        "fit_mse": 3.0485352568965004e-05,
+        "rmse": 0.005521354233244323,
+        "regularization": 0.001
+      }
+    }
+  ],
+  "export_count": 6,
+  "clipping_flags": 0
+}

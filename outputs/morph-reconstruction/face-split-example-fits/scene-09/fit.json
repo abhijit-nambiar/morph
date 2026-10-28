@@ -1,0 +1,220 @@
+{
+  "version": 1,
+  "scope": "Experimental face-relative lighting. Boxes are not validated by this tool; masks extend outside faces.",
+  "scene": "scene-09",
+  "representative": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1363-85.jpg",
+  "prompt": "warm and slightly soft contrast and lift shadows and slightly brighten faces",
+  "target_engine": "synthetic-face",
+  "target_path": null,
+  "target_sha256": null,
+  "global_interpretation": [
+    {
+      "phrase": "warm",
+      "intensity": 1.0
+    },
+    {
+      "phrase": "soft contrast",
+      "intensity": 0.5
+    },
+    {
+      "phrase": "lift shadows",
+      "intensity": 1.0
+    }
+  ],
+  "target_settings": {
+    "tone_exposure": 0.0,
+    "tone_contrast": -0.1,
+    "tone_shadows": 0.2,
+    "tone_highlights": 0.0,
+    "tone_temperature": 0.12,
+    "cool_saturation": 0.0,
+    "warm_saturation": 0.0
+  },
+  "target_face_light": 0.15,
+  "local_status": "fitted",
+  "fit_size": 320,
+  "regularization": 0.0001,
+  "weights": [
+    [
+      0.12577765607383956,
+      0.005298105583495787,
+      0.0027908338487410995
+    ],
+    [
+      0.09749790835930142,
+      0.07637713897795273,
+      0.0034040700590659656
+    ],
+    [
+      -0.015662984349884123,
+      -0.00397664797584774,
+      -0.04458004530016524
+    ],
+    [
+      -0.14067346196489183,
+      -0.031315931155980095,
+      -0.020514856612030702
+    ],
+    [
+      -0.05265211562170985,
+      -0.06726318212175983,
+      0.007992728969381383
+    ],
+    [
+      -0.04511644771665601,
+      -0.05844230324517919,
+      -0.029705105160296712
+    ],
+    [
+      -0.08831333991272354,
+      -0.040039693540329845,
+      0.005215284339999329
+    ],
+    [
+      0.07124483169298572,
+      0.09938742264196108,
+      0.04956859321667401
+    ],
+    [
+      0.025952890354924405,
+      -0.00020399064274159246,
+      0.00954675256195231
+    ],
+    [
+      0.010777755195940387,
+      0.012418355042565004,
+      0.012487690473485656
+    ],
+    [
+      0.08378691264210462,
+      0.061128523220149875,
+      0.047509689834981245
+    ],
+    [
+      0.041436844718683155,
+      0.04140525719492459,
+      0.036076014818406686
+    ],
+    [
+      0.026105556116018808,
+      0.034373327878355155,
+      0.039669786035510676
+    ]
+  ],
+  "manifest": [
+    {
+      "path": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1360-83.jpg",
+      "sha256": "69bd7a9aee2cfe80903bc2c479f27570536379b6bda2c65d565edb625aee223f",
+      "faces": [
+        {
+          "x": 0.552241325378418,
+          "y": 0.46993985027074814,
+          "width": 0.08102292567491531,
+          "height": 0.05401528626680374
+        },
+        {
+          "x": 0.3919042646884918,
+          "y": 0.4481681287288666,
+          "width": 0.08729271590709686,
+          "height": 0.058195143938064575
+        }
+      ],
+      "detection_validation": "verified"
+    },
+    {
+      "path": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1362-84.jpg",
+      "sha256": "46f926ea9d97dcc778d1335d2c95dfe6b8de7853112d89be00ba532526b1561d",
+      "faces": [
+        {
+          "x": 0.4115203619003296,
+          "y": 0.4436693862080574,
+          "width": 0.08935148268938065,
+          "height": 0.0595676526427269
+        },
+        {
+          "x": 0.5763128399848938,
+          "y": 0.4596550762653351,
+          "width": 0.08136923611164093,
+          "height": 0.05424615740776062
+        }
+      ],
+      "detection_validation": "verified"
+    },
+    {
+      "path": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1363-85.jpg",
+      "sha256": "b6a7b0bd4c7c631bdd6938b1cce14d3265789dfa8f8e951bdac737059b69a4a8",
+      "faces": [
+        {
+          "x": 0.41663533449172974,
+          "y": 0.43675266951322556,
+          "width": 0.08934465795755386,
+          "height": 0.059563107788562775
+        },
+        {
+          "x": 0.605772852897644,
+          "y": 0.4494822137057781,
+          "width": 0.081223264336586,
+          "height": 0.0541488416492939
+        }
+      ],
+      "detection_validation": "verified"
+    },
+    {
+      "path": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1365-86.jpg",
+      "sha256": "134574c80d2fc58a292ddb230ba87967e77b3f36e34c23a71c6da952d6121e66",
+      "faces": [
+        {
+          "x": 0.3790823817253113,
+          "y": 0.38629360124468803,
+          "width": 0.08861427009105682,
+          "height": 0.059076178818941116
+        },
+        {
+          "x": 0.5636518001556396,
+          "y": 0.40168775990605354,
+          "width": 0.0811392068862915,
+          "height": 0.054092805832624435
+        }
+      ],
+      "detection_validation": "verified"
+    },
+    {
+      "path": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1367-87.jpg",
+      "sha256": "7bae2b62ebf4cd663b6fe367d4aeb8f0c78bf204821c072aab0cfbd64b094eda",
+      "faces": [
+        {
+          "x": 0.3887087404727936,
+          "y": 0.38444889336824417,
+          "width": 0.09021241962909698,
+          "height": 0.06014161556959152
+        },
+        {
+          "x": 0.5741079449653625,
+          "y": 0.39920279011130333,
+          "width": 0.08041947335004807,
+          "height": 0.053612980991601944
+        }
+      ],
+      "detection_validation": "verified"
+    },
+    {
+      "path": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1378-88.jpg",
+      "sha256": "a172226864626aec6dbbcd2e3865cc734eb43414bbbaf69d6fc7907aed7bb0ce",
+      "faces": [
+        {
+          "x": 0.4040566682815552,
+          "y": 0.4663172513246536,
+          "width": 0.08973752707242966,
+          "height": 0.05982501804828644
+        },
+        {
+          "x": 0.6048595905303955,
+          "y": 0.48766861110925674,
+          "width": 0.08237236738204956,
+          "height": 0.054914914071559906
+        }
+      ],
+      "detection_validation": "verified"
+    }
+  ]
+}

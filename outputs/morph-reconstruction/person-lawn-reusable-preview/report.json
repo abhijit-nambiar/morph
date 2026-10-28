@@ -1,0 +1,14 @@
+{
+  "scene": "scene-02-lawn",
+  "source_fit": "/Users/abhijitnambiar/Documents/Codex/2026-10-27/i/outputs/morph-reconstruction/person-lawn-reusable-fit/fit.json",
+  "mode": "preview",
+  "scope": "Inspect mask edges and full-resolution outputs. Empty masks receive global components only; this is not automatic normalization.",
+  "photos": [
+    {
+      "source": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_0974-18.jpg",
+      "output": "/Users/abhijitnambiar/Documents/Codex/2026-10-27/i/outputs/morph-reconstruction/person-lawn-reusable-preview/exports/DSC_0974-18.jpg",
+      "mask_mean": 0.11385536193847656,
+      "review_flag": false
+    }
+  ]
+}

@@ -1,0 +1,119 @@
+{
+  "method": "Regular spatial sampling before export encoding. High = any channel >= 254/255; low = all channels <= 1/255. Flag = either fraction increased more than 1 percentage point; heuristic, not a quality verdict.",
+  "photos": [
+    {
+      "scene": "scene-01",
+      "original": "/Users/abhijitnambiar/Documents/Codex/2026-10-27/i/work/morph-demo/DSC_0901-1.jpg",
+      "export": "outputs/morph-reconstruction/demo-gauss-newton/scene-01/exports/DSC_0901-1.jpg",
+      "clipping": {
+        "sampled_pixels": 240000,
+        "before": {
+          "high": 0.009541666666666667,
+          "low": 0.0005125
+        },
+        "after": {
+          "high": 0.08615416666666667,
+          "low": 0.037608333333333334
+        },
+        "high_increase": 0.0766125,
+        "low_increase": 0.037095833333333335,
+        "flag": true
+      }
+    },
+    {
+      "scene": "scene-01",
+      "original": "/Users/abhijitnambiar/Documents/Codex/2026-10-27/i/work/morph-demo/DSC_0906-4.jpg",
+      "export": "outputs/morph-reconstruction/demo-gauss-newton/scene-01/exports/DSC_0906-4.jpg",
+      "clipping": {
+        "sampled_pixels": 240000,
+        "before": {
+          "high": 0.0032291666666666666,
+          "low": 0.00044583333333333335
+        },
+        "after": {
+          "high": 0.11727083333333334,
+          "low": 0.08001666666666667
+        },
+        "high_increase": 0.11404166666666667,
+        "low_increase": 0.07957083333333333,
+        "flag": true
+      }
+    },
+    {
+      "scene": "scene-01",
+      "original": "/Users/abhijitnambiar/Documents/Codex/2026-10-27/i/work/morph-demo/DSC_0914-5.jpg",
+      "export": "outputs/morph-reconstruction/demo-gauss-newton/scene-01/exports/DSC_0914-5.jpg",
+      "clipping": {
+        "sampled_pixels": 240000,
+        "before": {
+          "high": 0.0029,
+          "low": 0.0023541666666666667
+        },
+        "after": {
+          "high": 0.17777083333333332,
+          "low": 0.094825
+        },
+        "high_increase": 0.1748708333333333,
+        "low_increase": 0.09247083333333334,
+        "flag": true
+      }
+    },
+    {
+      "scene": "scene-01",
+      "original": "/Users/abhijitnambiar/Documents/Codex/2026-10-27/i/work/morph-demo/DSC_0916-6.jpg",
+      "export": "outputs/morph-reconstruction/demo-gauss-newton/scene-01/exports/DSC_0916-6.jpg",
+      "clipping": {
+        "sampled_pixels": 240000,
+        "before": {
+          "high": 0.004520833333333333,
+          "low": 0.0014708333333333333
+        },
+        "after": {
+          "high": 0.149325,
+          "low": 0.09320416666666667
+        },
+        "high_increase": 0.14480416666666668,
+        "low_increase": 0.09173333333333333,
+        "flag": true
+      }
+    },
+    {
+      "scene": "scene-02",
+      "original": "/Users/abhijitnambiar/Documents/Codex/2026-10-27/i/work/morph-demo/DSC_0904-2.jpg",
+      "export": "outputs/morph-reconstruction/demo-gauss-newton/scene-02/exports/DSC_0904-2.jpg",
+      "clipping": {
+        "sampled_pixels": 240000,
+        "before": {
+          "high": 0.017679166666666666,
+          "low": 0.0002625
+        },
+        "after": {
+          "high": 0.16170833333333334,
+          "low": 0.024983333333333333
+        },
+        "high_increase": 0.14402916666666668,
+        "low_increase": 0.024720833333333334,
+        "flag": true
+      }
+    },
+    {
+      "scene": "scene-02",
+      "original": "/Users/abhijitnambiar/Documents/Codex/2026-10-27/i/work/morph-demo/DSC_0905-3.jpg",
+      "export": "outputs/morph-reconstruction/demo-gauss-newton/scene-02/exports/DSC_0905-3.jpg",
+      "clipping": {
+        "sampled_pixels": 240000,
+        "before": {
+          "high": 0.012491666666666667,
+          "low": 0.0003333333333333333
+        },
+        "after": {
+          "high": 0.15654166666666666,
+          "low": 0.038004166666666665
+        },
+        "high_increase": 0.14404999999999998,
+        "low_increase": 0.037670833333333334,
+        "flag": true
+      }
+    }
+  ]
+}

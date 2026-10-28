@@ -1,0 +1,9 @@
+{
+  "scope": "Experimental face-relative album reconstruction; inspect detections and output.",
+  "mode": "preview",
+  "scenes": [
+    "scene-01",
+    "scene-02"
+  ],
+  "source_fits": "outputs/morph-reconstruction/face-real-album-fits"
+}

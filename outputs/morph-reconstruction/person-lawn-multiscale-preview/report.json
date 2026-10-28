@@ -1,0 +1,20 @@
+{
+  "scene": "scene-02-lawn",
+  "source_fit": "/Users/abhijitnambiar/Documents/Codex/2026-10-27/i/outputs/morph-reconstruction/person-lawn-multiscale-fit/fit.json",
+  "mode": "preview",
+  "scope": "Inspect mask edges and full-resolution outputs. Empty masks receive global components only; this is not automatic normalization.",
+  "photos": [
+    {
+      "source": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_0947-13.jpg",
+      "output": "/Users/abhijitnambiar/Documents/Codex/2026-10-27/i/outputs/morph-reconstruction/person-lawn-multiscale-preview/exports/DSC_0947-13.jpg",
+      "mask_mean": 0.061172306537628174,
+      "review_flag": false
+    },
+    {
+      "source": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_0948-14.jpg",
+      "output": "/Users/abhijitnambiar/Documents/Codex/2026-10-27/i/outputs/morph-reconstruction/person-lawn-multiscale-preview/exports/DSC_0948-14.jpg",
+      "mask_mean": 0.07753696292638779,
+      "review_flag": false
+    }
+  ]
+}

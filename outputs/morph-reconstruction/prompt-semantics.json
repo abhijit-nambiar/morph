@@ -1,0 +1,1564 @@
+{
+  "scope": "Numerical directional sanity checks on resized representatives and one different photo per group. Saturation uses simple hue masks. No semantic understanding, visual-quality assessment, or unseen-album validation.",
+  "renderer": "polynomial",
+  "summary": {
+    "warm": {
+      "expected direction": 9,
+      "opposite direction": 0,
+      "negligible": 0,
+      "not measurable": 0
+    },
+    "cool": {
+      "expected direction": 9,
+      "opposite direction": 0,
+      "negligible": 0,
+      "not measurable": 0
+    },
+    "brighter": {
+      "expected direction": 9,
+      "opposite direction": 0,
+      "negligible": 0,
+      "not measurable": 0
+    },
+    "darker": {
+      "expected direction": 9,
+      "opposite direction": 0,
+      "negligible": 0,
+      "not measurable": 0
+    },
+    "soft contrast": {
+      "expected direction": 9,
+      "opposite direction": 0,
+      "negligible": 0,
+      "not measurable": 0
+    },
+    "strong contrast": {
+      "expected direction": 9,
+      "opposite direction": 0,
+      "negligible": 0,
+      "not measurable": 0
+    },
+    "lift shadows": {
+      "expected direction": 9,
+      "opposite direction": 0,
+      "negligible": 0,
+      "not measurable": 0
+    },
+    "deepen shadows": {
+      "expected direction": 9,
+      "opposite direction": 0,
+      "negligible": 0,
+      "not measurable": 0
+    },
+    "protect highlights": {
+      "expected direction": 9,
+      "opposite direction": 0,
+      "negligible": 0,
+      "not measurable": 0
+    },
+    "brighter highlights": {
+      "expected direction": 9,
+      "opposite direction": 0,
+      "negligible": 0,
+      "not measurable": 0
+    },
+    "muted blues": {
+      "expected direction": 9,
+      "opposite direction": 0,
+      "negligible": 0,
+      "not measurable": 0
+    },
+    "vivid blues": {
+      "expected direction": 9,
+      "opposite direction": 0,
+      "negligible": 0,
+      "not measurable": 0
+    },
+    "muted warm colors": {
+      "expected direction": 9,
+      "opposite direction": 0,
+      "negligible": 0,
+      "not measurable": 0
+    },
+    "vivid warm colors": {
+      "expected direction": 9,
+      "opposite direction": 0,
+      "negligible": 0,
+      "not measurable": 0
+    }
+  },
+  "transfer_summary": {
+    "warm": {
+      "expected direction": 9,
+      "opposite direction": 0,
+      "negligible": 0,
+      "not measurable": 0
+    },
+    "cool": {
+      "expected direction": 9,
+      "opposite direction": 0,
+      "negligible": 0,
+      "not measurable": 0
+    },
+    "brighter": {
+      "expected direction": 9,
+      "opposite direction": 0,
+      "negligible": 0,
+      "not measurable": 0
+    },
+    "darker": {
+      "expected direction": 9,
+      "opposite direction": 0,
+      "negligible": 0,
+      "not measurable": 0
+    },
+    "soft contrast": {
+      "expected direction": 9,
+      "opposite direction": 0,
+      "negligible": 0,
+      "not measurable": 0
+    },
+    "strong contrast": {
+      "expected direction": 9,
+      "opposite direction": 0,
+      "negligible": 0,
+      "not measurable": 0
+    },
+    "lift shadows": {
+      "expected direction": 9,
+      "opposite direction": 0,
+      "negligible": 0,
+      "not measurable": 0
+    },
+    "deepen shadows": {
+      "expected direction": 9,
+      "opposite direction": 0,
+      "negligible": 0,
+      "not measurable": 0
+    },
+    "protect highlights": {
+      "expected direction": 9,
+      "opposite direction": 0,
+      "negligible": 0,
+      "not measurable": 0
+    },
+    "brighter highlights": {
+      "expected direction": 9,
+      "opposite direction": 0,
+      "negligible": 0,
+      "not measurable": 0
+    },
+    "muted blues": {
+      "expected direction": 9,
+      "opposite direction": 0,
+      "negligible": 0,
+      "not measurable": 0
+    },
+    "vivid blues": {
+      "expected direction": 9,
+      "opposite direction": 0,
+      "negligible": 0,
+      "not measurable": 0
+    },
+    "muted warm colors": {
+      "expected direction": 9,
+      "opposite direction": 0,
+      "negligible": 0,
+      "not measurable": 0
+    },
+    "vivid warm colors": {
+      "expected direction": 9,
+      "opposite direction": 0,
+      "negligible": 0,
+      "not measurable": 0
+    }
+  },
+  "cases": [
+    {
+      "scene": "scene-01",
+      "representative": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_0906-4.jpg",
+      "heldout_photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_0901-1.jpg",
+      "phrase": "warm",
+      "metric": "red_minus_blue",
+      "delta": 0.03657265566289425,
+      "status": "expected direction",
+      "transfer_delta": 0.03721335199635642,
+      "transfer_status": "expected direction"
+    },
+    {
+      "scene": "scene-01",
+      "representative": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_0906-4.jpg",
+      "heldout_photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_0901-1.jpg",
+      "phrase": "cool",
+      "metric": "red_minus_blue",
+      "delta": -0.03650585748255253,
+      "status": "expected direction",
+      "transfer_delta": -0.03747440909378855,
+      "transfer_status": "expected direction"
+    },
+    {
+      "scene": "scene-01",
+      "representative": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_0906-4.jpg",
+      "heldout_photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_0901-1.jpg",
+      "phrase": "brighter",
+      "metric": "mean_luma",
+      "delta": 0.03074824810028076,
+      "status": "expected direction",
+      "transfer_delta": 0.03130695824525648,
+      "transfer_status": "expected direction"
+    },
+    {
+      "scene": "scene-01",
+      "representative": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_0906-4.jpg",
+      "heldout_photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_0901-1.jpg",
+      "phrase": "darker",
+      "metric": "mean_luma",
+      "delta": -0.030743658542633057,
+      "status": "expected direction",
+      "transfer_delta": -0.03157067871110192,
+      "transfer_status": "expected direction"
+    },
+    {
+      "scene": "scene-01",
+      "representative": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_0906-4.jpg",
+      "heldout_photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_0901-1.jpg",
+      "phrase": "soft contrast",
+      "metric": "contrast_luma",
+      "delta": -0.003593534231185913,
+      "status": "expected direction",
+      "transfer_delta": -0.003421163247231962,
+      "transfer_status": "expected direction"
+    },
+    {
+      "scene": "scene-01",
+      "representative": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_0906-4.jpg",
+      "heldout_photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_0901-1.jpg",
+      "phrase": "strong contrast",
+      "metric": "contrast_luma",
+      "delta": 0.0036211609840393066,
+      "status": "expected direction",
+      "transfer_delta": 0.0031740178481343695,
+      "transfer_status": "expected direction"
+    },
+    {
+      "scene": "scene-01",
+      "representative": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_0906-4.jpg",
+      "heldout_photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_0901-1.jpg",
+      "phrase": "lift shadows",
+      "metric": "shadows_luma",
+      "delta": 0.00793168693780899,
+      "status": "expected direction",
+      "transfer_delta": 0.012219162985094456,
+      "transfer_status": "expected direction"
+    },
+    {
+      "scene": "scene-01",
+      "representative": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_0906-4.jpg",
+      "heldout_photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_0901-1.jpg",
+      "phrase": "deepen shadows",
+      "metric": "shadows_luma",
+      "delta": -0.00792696326971054,
+      "status": "expected direction",
+      "transfer_delta": -0.012205304930249045,
+      "transfer_status": "expected direction"
+    },
+    {
+      "scene": "scene-01",
+      "representative": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_0906-4.jpg",
+      "heldout_photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_0901-1.jpg",
+      "phrase": "protect highlights",
+      "metric": "highlights_luma",
+      "delta": -0.019134581089019775,
+      "status": "expected direction",
+      "transfer_delta": -0.019837270733842338,
+      "transfer_status": "expected direction"
+    },
+    {
+      "scene": "scene-01",
+      "representative": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_0906-4.jpg",
+      "heldout_photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_0901-1.jpg",
+      "phrase": "brighter highlights",
+      "metric": "highlights_luma",
+      "delta": 0.019115209579467773,
+      "status": "expected direction",
+      "transfer_delta": 0.019032181003979076,
+      "transfer_status": "expected direction"
+    },
+    {
+      "scene": "scene-01",
+      "representative": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_0906-4.jpg",
+      "heldout_photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_0901-1.jpg",
+      "phrase": "muted blues",
+      "metric": "blue_saturation",
+      "delta": -0.048772528767585754,
+      "status": "expected direction",
+      "transfer_delta": -0.03878282010555267,
+      "transfer_status": "expected direction"
+    },
+    {
+      "scene": "scene-01",
+      "representative": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_0906-4.jpg",
+      "heldout_photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_0901-1.jpg",
+      "phrase": "vivid blues",
+      "metric": "blue_saturation",
+      "delta": 0.04403160512447357,
+      "status": "expected direction",
+      "transfer_delta": 0.035027116537094116,
+      "transfer_status": "expected direction"
+    },
+    {
+      "scene": "scene-01",
+      "representative": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_0906-4.jpg",
+      "heldout_photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_0901-1.jpg",
+      "phrase": "muted warm colors",
+      "metric": "warm_saturation",
+      "delta": -0.057918667793273926,
+      "status": "expected direction",
+      "transfer_delta": -0.041885048151016235,
+      "transfer_status": "expected direction"
+    },
+    {
+      "scene": "scene-01",
+      "representative": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_0906-4.jpg",
+      "heldout_photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_0901-1.jpg",
+      "phrase": "vivid warm colors",
+      "metric": "warm_saturation",
+      "delta": 0.05414837598800659,
+      "status": "expected direction",
+      "transfer_delta": 0.039099037647247314,
+      "transfer_status": "expected direction"
+    },
+    {
+      "scene": "scene-02",
+      "representative": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_0995-22.jpg",
+      "heldout_photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_0947-13.jpg",
+      "phrase": "warm",
+      "metric": "red_minus_blue",
+      "delta": 0.0399976409971714,
+      "status": "expected direction",
+      "transfer_delta": 0.04676013541519855,
+      "transfer_status": "expected direction"
+    },
+    {
+      "scene": "scene-02",
+      "representative": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_0995-22.jpg",
+      "heldout_photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_0947-13.jpg",
+      "phrase": "cool",
+      "metric": "red_minus_blue",
+      "delta": -0.04012716002762318,
+      "status": "expected direction",
+      "transfer_delta": -0.04731333292644757,
+      "transfer_status": "expected direction"
+    },
+    {
+      "scene": "scene-02",
+      "representative": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_0995-22.jpg",
+      "heldout_photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_0947-13.jpg",
+      "phrase": "brighter",
+      "metric": "mean_luma",
+      "delta": 0.03393396735191345,
+      "status": "expected direction",
+      "transfer_delta": 0.03951034732606873,
+      "transfer_status": "expected direction"
+    },
+    {
+      "scene": "scene-02",
+      "representative": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_0995-22.jpg",
+      "heldout_photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_0947-13.jpg",
+      "phrase": "darker",
+      "metric": "mean_luma",
+      "delta": -0.033932656049728394,
+      "status": "expected direction",
+      "transfer_delta": -0.040701736833354485,
+      "transfer_status": "expected direction"
+    },
+    {
+      "scene": "scene-02",
+      "representative": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_0995-22.jpg",
+      "heldout_photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_0947-13.jpg",
+      "phrase": "soft contrast",
+      "metric": "contrast_luma",
+      "delta": -0.0034340620040893555,
+      "status": "expected direction",
+      "transfer_delta": -0.0037455750066565374,
+      "transfer_status": "expected direction"
+    },
+    {
+      "scene": "scene-02",
+      "representative": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_0995-22.jpg",
+      "heldout_photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_0947-13.jpg",
+      "phrase": "strong contrast",
+      "metric": "contrast_luma",
+      "delta": 0.0034887492656707764,
+      "status": "expected direction",
+      "transfer_delta": 0.0029976385670958117,
+      "transfer_status": "expected direction"
+    },
+    {
+      "scene": "scene-02",
+      "representative": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_0995-22.jpg",
+      "heldout_photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_0947-13.jpg",
+      "phrase": "lift shadows",
+      "metric": "shadows_luma",
+      "delta": 0.01594334840774536,
+      "status": "expected direction",
+      "transfer_delta": 0.017887505772860773,
+      "transfer_status": "expected direction"
+    },
+    {
+      "scene": "scene-02",
+      "representative": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_0995-22.jpg",
+      "heldout_photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_0947-13.jpg",
+      "phrase": "deepen shadows",
+      "metric": "shadows_luma",
+      "delta": -0.015938125550746918,
+      "status": "expected direction",
+      "transfer_delta": -0.017150211569252657,
+      "transfer_status": "expected direction"
+    },
+    {
+      "scene": "scene-02",
+      "representative": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_0995-22.jpg",
+      "heldout_photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_0947-13.jpg",
+      "phrase": "protect highlights",
+      "metric": "highlights_luma",
+      "delta": -0.008251547813415527,
+      "status": "expected direction",
+      "transfer_delta": -0.02440962018356363,
+      "transfer_status": "expected direction"
+    },
+    {
+      "scene": "scene-02",
+      "representative": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_0995-22.jpg",
+      "heldout_photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_0947-13.jpg",
+      "phrase": "brighter highlights",
+      "metric": "highlights_luma",
+      "delta": 0.008224964141845703,
+      "status": "expected direction",
+      "transfer_delta": 0.022921066673741053,
+      "transfer_status": "expected direction"
+    },
+    {
+      "scene": "scene-02",
+      "representative": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_0995-22.jpg",
+      "heldout_photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_0947-13.jpg",
+      "phrase": "muted blues",
+      "metric": "blue_saturation",
+      "delta": -0.0871080756187439,
+      "status": "expected direction",
+      "transfer_delta": -0.08693671226501465,
+      "transfer_status": "expected direction"
+    },
+    {
+      "scene": "scene-02",
+      "representative": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_0995-22.jpg",
+      "heldout_photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_0947-13.jpg",
+      "phrase": "vivid blues",
+      "metric": "blue_saturation",
+      "delta": 0.06446683406829834,
+      "status": "expected direction",
+      "transfer_delta": 0.06796765327453613,
+      "transfer_status": "expected direction"
+    },
+    {
+      "scene": "scene-02",
+      "representative": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_0995-22.jpg",
+      "heldout_photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_0947-13.jpg",
+      "phrase": "muted warm colors",
+      "metric": "warm_saturation",
+      "delta": -0.060349613428115845,
+      "status": "expected direction",
+      "transfer_delta": -0.03193080425262451,
+      "transfer_status": "expected direction"
+    },
+    {
+      "scene": "scene-02",
+      "representative": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_0995-22.jpg",
+      "heldout_photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_0947-13.jpg",
+      "phrase": "vivid warm colors",
+      "metric": "warm_saturation",
+      "delta": 0.05383121967315674,
+      "status": "expected direction",
+      "transfer_delta": 0.025452792644500732,
+      "transfer_status": "expected direction"
+    },
+    {
+      "scene": "scene-03",
+      "representative": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1037-31.jpg",
+      "heldout_photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1021-26.jpg",
+      "phrase": "warm",
+      "metric": "red_minus_blue",
+      "delta": 0.03712947713211179,
+      "status": "expected direction",
+      "transfer_delta": 0.04141746488969346,
+      "transfer_status": "expected direction"
+    },
+    {
+      "scene": "scene-03",
+      "representative": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1037-31.jpg",
+      "heldout_photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1021-26.jpg",
+      "phrase": "cool",
+      "metric": "red_minus_blue",
+      "delta": -0.03716820664703846,
+      "status": "expected direction",
+      "transfer_delta": -0.04157087487352404,
+      "transfer_status": "expected direction"
+    },
+    {
+      "scene": "scene-03",
+      "representative": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1037-31.jpg",
+      "heldout_photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1021-26.jpg",
+      "phrase": "brighter",
+      "metric": "mean_luma",
+      "delta": 0.033119797706604004,
+      "status": "expected direction",
+      "transfer_delta": 0.037381502480619944,
+      "transfer_status": "expected direction"
+    },
+    {
+      "scene": "scene-03",
+      "representative": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1037-31.jpg",
+      "heldout_photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1021-26.jpg",
+      "phrase": "darker",
+      "metric": "mean_luma",
+      "delta": -0.03317755460739136,
+      "status": "expected direction",
+      "transfer_delta": -0.037346070106632434,
+      "transfer_status": "expected direction"
+    },
+    {
+      "scene": "scene-03",
+      "representative": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1037-31.jpg",
+      "heldout_photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1021-26.jpg",
+      "phrase": "soft contrast",
+      "metric": "contrast_luma",
+      "delta": -0.0033886879682540894,
+      "status": "expected direction",
+      "transfer_delta": -0.003600057756800168,
+      "transfer_status": "expected direction"
+    },
+    {
+      "scene": "scene-03",
+      "representative": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1037-31.jpg",
+      "heldout_photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1021-26.jpg",
+      "phrase": "strong contrast",
+      "metric": "contrast_luma",
+      "delta": 0.0034443438053131104,
+      "status": "expected direction",
+      "transfer_delta": 0.0035344974662978312,
+      "transfer_status": "expected direction"
+    },
+    {
+      "scene": "scene-03",
+      "representative": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1037-31.jpg",
+      "heldout_photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1021-26.jpg",
+      "phrase": "lift shadows",
+      "metric": "shadows_luma",
+      "delta": 0.008809614926576614,
+      "status": "expected direction",
+      "transfer_delta": 0.016001289263378737,
+      "transfer_status": "expected direction"
+    },
+    {
+      "scene": "scene-03",
+      "representative": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1037-31.jpg",
+      "heldout_photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1021-26.jpg",
+      "phrase": "deepen shadows",
+      "metric": "shadows_luma",
+      "delta": -0.008805565536022186,
+      "status": "expected direction",
+      "transfer_delta": -0.015925520693048728,
+      "transfer_status": "expected direction"
+    },
+    {
+      "scene": "scene-03",
+      "representative": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1037-31.jpg",
+      "heldout_photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1021-26.jpg",
+      "phrase": "protect highlights",
+      "metric": "highlights_luma",
+      "delta": -0.0221097469329834,
+      "status": "expected direction",
+      "transfer_delta": -0.020483079637634072,
+      "transfer_status": "expected direction"
+    },
+    {
+      "scene": "scene-03",
+      "representative": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1037-31.jpg",
+      "heldout_photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1021-26.jpg",
+      "phrase": "brighter highlights",
+      "metric": "highlights_luma",
+      "delta": 0.022107362747192383,
+      "status": "expected direction",
+      "transfer_delta": 0.019920342117319856,
+      "transfer_status": "expected direction"
+    },
+    {
+      "scene": "scene-03",
+      "representative": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1037-31.jpg",
+      "heldout_photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1021-26.jpg",
+      "phrase": "muted blues",
+      "metric": "blue_saturation",
+      "delta": -0.0644378662109375,
+      "status": "expected direction",
+      "transfer_delta": -0.05598944425582886,
+      "transfer_status": "expected direction"
+    },
+    {
+      "scene": "scene-03",
+      "representative": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1037-31.jpg",
+      "heldout_photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1021-26.jpg",
+      "phrase": "vivid blues",
+      "metric": "blue_saturation",
+      "delta": 0.05834120512008667,
+      "status": "expected direction",
+      "transfer_delta": 0.0516243577003479,
+      "transfer_status": "expected direction"
+    },
+    {
+      "scene": "scene-03",
+      "representative": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1037-31.jpg",
+      "heldout_photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1021-26.jpg",
+      "phrase": "muted warm colors",
+      "metric": "warm_saturation",
+      "delta": -0.06698992848396301,
+      "status": "expected direction",
+      "transfer_delta": -0.03683534264564514,
+      "transfer_status": "expected direction"
+    },
+    {
+      "scene": "scene-03",
+      "representative": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1037-31.jpg",
+      "heldout_photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1021-26.jpg",
+      "phrase": "vivid warm colors",
+      "metric": "warm_saturation",
+      "delta": 0.062212973833084106,
+      "status": "expected direction",
+      "transfer_delta": 0.034039974212646484,
+      "transfer_status": "expected direction"
+    },
+    {
+      "scene": "scene-04",
+      "representative": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1054-33.jpg",
+      "heldout_photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1059-34.jpg",
+      "phrase": "warm",
+      "metric": "red_minus_blue",
+      "delta": 0.044342379085719585,
+      "status": "expected direction",
+      "transfer_delta": 0.04439409794832382,
+      "transfer_status": "expected direction"
+    },
+    {
+      "scene": "scene-04",
+      "representative": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1054-33.jpg",
+      "heldout_photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1059-34.jpg",
+      "phrase": "cool",
+      "metric": "red_minus_blue",
+      "delta": -0.0443824864923954,
+      "status": "expected direction",
+      "transfer_delta": -0.04468662966584443,
+      "transfer_status": "expected direction"
+    },
+    {
+      "scene": "scene-04",
+      "representative": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1054-33.jpg",
+      "heldout_photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1059-34.jpg",
+      "phrase": "brighter",
+      "metric": "mean_luma",
+      "delta": 0.03793889284133911,
+      "status": "expected direction",
+      "transfer_delta": 0.03846788126132761,
+      "transfer_status": "expected direction"
+    },
+    {
+      "scene": "scene-04",
+      "representative": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1054-33.jpg",
+      "heldout_photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1059-34.jpg",
+      "phrase": "darker",
+      "metric": "mean_luma",
+      "delta": -0.037853360176086426,
+      "status": "expected direction",
+      "transfer_delta": -0.03853664599269252,
+      "transfer_status": "expected direction"
+    },
+    {
+      "scene": "scene-04",
+      "representative": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1054-33.jpg",
+      "heldout_photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1059-34.jpg",
+      "phrase": "soft contrast",
+      "metric": "contrast_luma",
+      "delta": -0.0029655247926712036,
+      "status": "expected direction",
+      "transfer_delta": -0.003192182230445817,
+      "transfer_status": "expected direction"
+    },
+    {
+      "scene": "scene-04",
+      "representative": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1054-33.jpg",
+      "heldout_photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1059-34.jpg",
+      "phrase": "strong contrast",
+      "metric": "contrast_luma",
+      "delta": 0.0030200928449630737,
+      "status": "expected direction",
+      "transfer_delta": 0.0029140514957556596,
+      "transfer_status": "expected direction"
+    },
+    {
+      "scene": "scene-04",
+      "representative": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1054-33.jpg",
+      "heldout_photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1059-34.jpg",
+      "phrase": "lift shadows",
+      "metric": "shadows_luma",
+      "delta": 0.013836823403835297,
+      "status": "expected direction",
+      "transfer_delta": 0.016722064761490837,
+      "transfer_status": "expected direction"
+    },
+    {
+      "scene": "scene-04",
+      "representative": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1054-33.jpg",
+      "heldout_photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1059-34.jpg",
+      "phrase": "deepen shadows",
+      "metric": "shadows_luma",
+      "delta": -0.013721965253353119,
+      "status": "expected direction",
+      "transfer_delta": -0.01629449185608685,
+      "transfer_status": "expected direction"
+    },
+    {
+      "scene": "scene-04",
+      "representative": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1054-33.jpg",
+      "heldout_photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1059-34.jpg",
+      "phrase": "protect highlights",
+      "metric": "highlights_luma",
+      "delta": -0.025391340255737305,
+      "status": "expected direction",
+      "transfer_delta": -0.024491160743558393,
+      "transfer_status": "expected direction"
+    },
+    {
+      "scene": "scene-04",
+      "representative": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1054-33.jpg",
+      "heldout_photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1059-34.jpg",
+      "phrase": "brighter highlights",
+      "metric": "highlights_luma",
+      "delta": 0.025412917137145996,
+      "status": "expected direction",
+      "transfer_delta": 0.0237528751547883,
+      "transfer_status": "expected direction"
+    },
+    {
+      "scene": "scene-04",
+      "representative": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1054-33.jpg",
+      "heldout_photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1059-34.jpg",
+      "phrase": "muted blues",
+      "metric": "blue_saturation",
+      "delta": -0.05503048002719879,
+      "status": "expected direction",
+      "transfer_delta": -0.04915247857570648,
+      "transfer_status": "expected direction"
+    },
+    {
+      "scene": "scene-04",
+      "representative": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1054-33.jpg",
+      "heldout_photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1059-34.jpg",
+      "phrase": "vivid blues",
+      "metric": "blue_saturation",
+      "delta": 0.04857942461967468,
+      "status": "expected direction",
+      "transfer_delta": 0.040851444005966187,
+      "transfer_status": "expected direction"
+    },
+    {
+      "scene": "scene-04",
+      "representative": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1054-33.jpg",
+      "heldout_photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1059-34.jpg",
+      "phrase": "muted warm colors",
+      "metric": "warm_saturation",
+      "delta": -0.05529828369617462,
+      "status": "expected direction",
+      "transfer_delta": -0.02809619903564453,
+      "transfer_status": "expected direction"
+    },
+    {
+      "scene": "scene-04",
+      "representative": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1054-33.jpg",
+      "heldout_photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1059-34.jpg",
+      "phrase": "vivid warm colors",
+      "metric": "warm_saturation",
+      "delta": 0.051632463932037354,
+      "status": "expected direction",
+      "transfer_delta": 0.025183439254760742,
+      "transfer_status": "expected direction"
+    },
+    {
+      "scene": "scene-05",
+      "representative": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1111-45.jpg",
+      "heldout_photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1070-35.jpg",
+      "phrase": "warm",
+      "metric": "red_minus_blue",
+      "delta": 0.04767956770956516,
+      "status": "expected direction",
+      "transfer_delta": 0.04358377642291313,
+      "transfer_status": "expected direction"
+    },
+    {
+      "scene": "scene-05",
+      "representative": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1111-45.jpg",
+      "heldout_photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1070-35.jpg",
+      "phrase": "cool",
+      "metric": "red_minus_blue",
+      "delta": -0.047823984175920486,
+      "status": "expected direction",
+      "transfer_delta": -0.04369863186703519,
+      "transfer_status": "expected direction"
+    },
+    {
+      "scene": "scene-05",
+      "representative": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1111-45.jpg",
+      "heldout_photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1070-35.jpg",
+      "phrase": "brighter",
+      "metric": "mean_luma",
+      "delta": 0.040307313203811646,
+      "status": "expected direction",
+      "transfer_delta": 0.03685537711436765,
+      "transfer_status": "expected direction"
+    },
+    {
+      "scene": "scene-05",
+      "representative": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1111-45.jpg",
+      "heldout_photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1070-35.jpg",
+      "phrase": "darker",
+      "metric": "mean_luma",
+      "delta": -0.040273696184158325,
+      "status": "expected direction",
+      "transfer_delta": -0.036742304061935516,
+      "transfer_status": "expected direction"
+    },
+    {
+      "scene": "scene-05",
+      "representative": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1111-45.jpg",
+      "heldout_photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1070-35.jpg",
+      "phrase": "soft contrast",
+      "metric": "contrast_luma",
+      "delta": -0.004826352000236511,
+      "status": "expected direction",
+      "transfer_delta": -0.004643461213212907,
+      "transfer_status": "expected direction"
+    },
+    {
+      "scene": "scene-05",
+      "representative": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1111-45.jpg",
+      "heldout_photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1070-35.jpg",
+      "phrase": "strong contrast",
+      "metric": "contrast_luma",
+      "delta": 0.004873484373092651,
+      "status": "expected direction",
+      "transfer_delta": 0.004257673773550158,
+      "transfer_status": "expected direction"
+    },
+    {
+      "scene": "scene-05",
+      "representative": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1111-45.jpg",
+      "heldout_photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1070-35.jpg",
+      "phrase": "lift shadows",
+      "metric": "shadows_luma",
+      "delta": 0.018077775835990906,
+      "status": "expected direction",
+      "transfer_delta": 0.01704285802864132,
+      "transfer_status": "expected direction"
+    },
+    {
+      "scene": "scene-05",
+      "representative": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1111-45.jpg",
+      "heldout_photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1070-35.jpg",
+      "phrase": "deepen shadows",
+      "metric": "shadows_luma",
+      "delta": -0.018008895218372345,
+      "status": "expected direction",
+      "transfer_delta": -0.016288380155621035,
+      "transfer_status": "expected direction"
+    },
+    {
+      "scene": "scene-05",
+      "representative": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1111-45.jpg",
+      "heldout_photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1070-35.jpg",
+      "phrase": "protect highlights",
+      "metric": "highlights_luma",
+      "delta": -0.027472853660583496,
+      "status": "expected direction",
+      "transfer_delta": -0.026450843183766004,
+      "transfer_status": "expected direction"
+    },
+    {
+      "scene": "scene-05",
+      "representative": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1111-45.jpg",
+      "heldout_photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1070-35.jpg",
+      "phrase": "brighter highlights",
+      "metric": "highlights_luma",
+      "delta": 0.02750372886657715,
+      "status": "expected direction",
+      "transfer_delta": 0.025686855200522163,
+      "transfer_status": "expected direction"
+    },
+    {
+      "scene": "scene-05",
+      "representative": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1111-45.jpg",
+      "heldout_photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1070-35.jpg",
+      "phrase": "muted blues",
+      "metric": "blue_saturation",
+      "delta": -0.06275774538516998,
+      "status": "expected direction",
+      "transfer_delta": -0.06974253058433533,
+      "transfer_status": "expected direction"
+    },
+    {
+      "scene": "scene-05",
+      "representative": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1111-45.jpg",
+      "heldout_photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1070-35.jpg",
+      "phrase": "vivid blues",
+      "metric": "blue_saturation",
+      "delta": 0.05544880032539368,
+      "status": "expected direction",
+      "transfer_delta": 0.0681605339050293,
+      "transfer_status": "expected direction"
+    },
+    {
+      "scene": "scene-05",
+      "representative": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1111-45.jpg",
+      "heldout_photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1070-35.jpg",
+      "phrase": "muted warm colors",
+      "metric": "warm_saturation",
+      "delta": -0.055488795042037964,
+      "status": "expected direction",
+      "transfer_delta": -0.04898649454116821,
+      "transfer_status": "expected direction"
+    },
+    {
+      "scene": "scene-05",
+      "representative": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1111-45.jpg",
+      "heldout_photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1070-35.jpg",
+      "phrase": "vivid warm colors",
+      "metric": "warm_saturation",
+      "delta": 0.05247512459754944,
+      "status": "expected direction",
+      "transfer_delta": 0.046160727739334106,
+      "transfer_status": "expected direction"
+    },
+    {
+      "scene": "scene-06",
+      "representative": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1286-58.jpg",
+      "heldout_photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1259-49.jpg",
+      "phrase": "warm",
+      "metric": "red_minus_blue",
+      "delta": 0.03345035761594772,
+      "status": "expected direction",
+      "transfer_delta": 0.04185158516636174,
+      "transfer_status": "expected direction"
+    },
+    {
+      "scene": "scene-06",
+      "representative": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1286-58.jpg",
+      "heldout_photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1259-49.jpg",
+      "phrase": "cool",
+      "metric": "red_minus_blue",
+      "delta": -0.03359862230718136,
+      "status": "expected direction",
+      "transfer_delta": -0.04186088381718721,
+      "transfer_status": "expected direction"
+    },
+    {
+      "scene": "scene-06",
+      "representative": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1286-58.jpg",
+      "heldout_photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1259-49.jpg",
+      "phrase": "brighter",
+      "metric": "mean_luma",
+      "delta": 0.029745519161224365,
+      "status": "expected direction",
+      "transfer_delta": 0.036785377708710654,
+      "transfer_status": "expected direction"
+    },
+    {
+      "scene": "scene-06",
+      "representative": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1286-58.jpg",
+      "heldout_photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1259-49.jpg",
+      "phrase": "darker",
+      "metric": "mean_luma",
+      "delta": -0.0297640860080719,
+      "status": "expected direction",
+      "transfer_delta": -0.03688104408007847,
+      "transfer_status": "expected direction"
+    },
+    {
+      "scene": "scene-06",
+      "representative": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1286-58.jpg",
+      "heldout_photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1259-49.jpg",
+      "phrase": "soft contrast",
+      "metric": "contrast_luma",
+      "delta": -0.0053778886795043945,
+      "status": "expected direction",
+      "transfer_delta": -0.004547581545951446,
+      "transfer_status": "expected direction"
+    },
+    {
+      "scene": "scene-06",
+      "representative": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1286-58.jpg",
+      "heldout_photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1259-49.jpg",
+      "phrase": "strong contrast",
+      "metric": "contrast_luma",
+      "delta": 0.005412966012954712,
+      "status": "expected direction",
+      "transfer_delta": 0.004060035730495071,
+      "transfer_status": "expected direction"
+    },
+    {
+      "scene": "scene-06",
+      "representative": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1286-58.jpg",
+      "heldout_photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1259-49.jpg",
+      "phrase": "lift shadows",
+      "metric": "shadows_luma",
+      "delta": 0.013697177171707153,
+      "status": "expected direction",
+      "transfer_delta": 0.016298718877849575,
+      "transfer_status": "expected direction"
+    },
+    {
+      "scene": "scene-06",
+      "representative": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1286-58.jpg",
+      "heldout_photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1259-49.jpg",
+      "phrase": "deepen shadows",
+      "metric": "shadows_luma",
+      "delta": -0.013688743114471436,
+      "status": "expected direction",
+      "transfer_delta": -0.01512645145553896,
+      "transfer_status": "expected direction"
+    },
+    {
+      "scene": "scene-06",
+      "representative": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1286-58.jpg",
+      "heldout_photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1259-49.jpg",
+      "phrase": "protect highlights",
+      "metric": "highlights_luma",
+      "delta": -0.01346367597579956,
+      "status": "expected direction",
+      "transfer_delta": -0.025010903063038437,
+      "transfer_status": "expected direction"
+    },
+    {
+      "scene": "scene-06",
+      "representative": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1286-58.jpg",
+      "heldout_photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1259-49.jpg",
+      "phrase": "brighter highlights",
+      "metric": "highlights_luma",
+      "delta": 0.013368070125579834,
+      "status": "expected direction",
+      "transfer_delta": 0.023982940423407095,
+      "transfer_status": "expected direction"
+    },
+    {
+      "scene": "scene-06",
+      "representative": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1286-58.jpg",
+      "heldout_photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1259-49.jpg",
+      "phrase": "muted blues",
+      "metric": "blue_saturation",
+      "delta": -0.09802943468093872,
+      "status": "expected direction",
+      "transfer_delta": -0.08561331033706665,
+      "transfer_status": "expected direction"
+    },
+    {
+      "scene": "scene-06",
+      "representative": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1286-58.jpg",
+      "heldout_photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1259-49.jpg",
+      "phrase": "vivid blues",
+      "metric": "blue_saturation",
+      "delta": 0.09051382541656494,
+      "status": "expected direction",
+      "transfer_delta": 0.06846615672111511,
+      "transfer_status": "expected direction"
+    },
+    {
+      "scene": "scene-06",
+      "representative": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1286-58.jpg",
+      "heldout_photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1259-49.jpg",
+      "phrase": "muted warm colors",
+      "metric": "warm_saturation",
+      "delta": -0.0886065661907196,
+      "status": "expected direction",
+      "transfer_delta": -0.05752179026603699,
+      "transfer_status": "expected direction"
+    },
+    {
+      "scene": "scene-06",
+      "representative": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1286-58.jpg",
+      "heldout_photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1259-49.jpg",
+      "phrase": "vivid warm colors",
+      "metric": "warm_saturation",
+      "delta": 0.0834701657295227,
+      "status": "expected direction",
+      "transfer_delta": 0.05589979887008667,
+      "transfer_status": "expected direction"
+    },
+    {
+      "scene": "scene-07",
+      "representative": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1320-70.jpg",
+      "heldout_photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1308-66.jpg",
+      "phrase": "warm",
+      "metric": "red_minus_blue",
+      "delta": 0.03733677230775356,
+      "status": "expected direction",
+      "transfer_delta": 0.03753149404078316,
+      "transfer_status": "expected direction"
+    },
+    {
+      "scene": "scene-07",
+      "representative": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1320-70.jpg",
+      "heldout_photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1308-66.jpg",
+      "phrase": "cool",
+      "metric": "red_minus_blue",
+      "delta": -0.03740593045949936,
+      "status": "expected direction",
+      "transfer_delta": -0.03756377720694407,
+      "transfer_status": "expected direction"
+    },
+    {
+      "scene": "scene-07",
+      "representative": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1320-70.jpg",
+      "heldout_photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1308-66.jpg",
+      "phrase": "brighter",
+      "metric": "mean_luma",
+      "delta": 0.031601905822753906,
+      "status": "expected direction",
+      "transfer_delta": 0.03188811751505061,
+      "transfer_status": "expected direction"
+    },
+    {
+      "scene": "scene-07",
+      "representative": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1320-70.jpg",
+      "heldout_photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1308-66.jpg",
+      "phrase": "darker",
+      "metric": "mean_luma",
+      "delta": -0.031597018241882324,
+      "status": "expected direction",
+      "transfer_delta": -0.03196492188522382,
+      "transfer_status": "expected direction"
+    },
+    {
+      "scene": "scene-07",
+      "representative": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1320-70.jpg",
+      "heldout_photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1308-66.jpg",
+      "phrase": "soft contrast",
+      "metric": "contrast_luma",
+      "delta": -0.0030974745750427246,
+      "status": "expected direction",
+      "transfer_delta": -0.0028551593571451983,
+      "transfer_status": "expected direction"
+    },
+    {
+      "scene": "scene-07",
+      "representative": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1320-70.jpg",
+      "heldout_photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1308-66.jpg",
+      "phrase": "strong contrast",
+      "metric": "contrast_luma",
+      "delta": 0.0031371712684631348,
+      "status": "expected direction",
+      "transfer_delta": 0.002865145085200138,
+      "transfer_status": "expected direction"
+    },
+    {
+      "scene": "scene-07",
+      "representative": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1320-70.jpg",
+      "heldout_photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1308-66.jpg",
+      "phrase": "lift shadows",
+      "metric": "shadows_luma",
+      "delta": 0.017383649945259094,
+      "status": "expected direction",
+      "transfer_delta": 0.018703143822935503,
+      "transfer_status": "expected direction"
+    },
+    {
+      "scene": "scene-07",
+      "representative": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1320-70.jpg",
+      "heldout_photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1308-66.jpg",
+      "phrase": "deepen shadows",
+      "metric": "shadows_luma",
+      "delta": -0.01736680418252945,
+      "status": "expected direction",
+      "transfer_delta": -0.01868850531940014,
+      "transfer_status": "expected direction"
+    },
+    {
+      "scene": "scene-07",
+      "representative": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1320-70.jpg",
+      "heldout_photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1308-66.jpg",
+      "phrase": "protect highlights",
+      "metric": "highlights_luma",
+      "delta": -0.0013390779495239258,
+      "status": "expected direction",
+      "transfer_delta": -0.004021571529954637,
+      "transfer_status": "expected direction"
+    },
+    {
+      "scene": "scene-07",
+      "representative": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1320-70.jpg",
+      "heldout_photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1308-66.jpg",
+      "phrase": "brighter highlights",
+      "metric": "highlights_luma",
+      "delta": 0.0013422966003417969,
+      "status": "expected direction",
+      "transfer_delta": 0.004077580251291346,
+      "transfer_status": "expected direction"
+    },
+    {
+      "scene": "scene-07",
+      "representative": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1320-70.jpg",
+      "heldout_photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1308-66.jpg",
+      "phrase": "muted blues",
+      "metric": "blue_saturation",
+      "delta": -0.08253088593482971,
+      "status": "expected direction",
+      "transfer_delta": -0.08383825421333313,
+      "transfer_status": "expected direction"
+    },
+    {
+      "scene": "scene-07",
+      "representative": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1320-70.jpg",
+      "heldout_photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1308-66.jpg",
+      "phrase": "vivid blues",
+      "metric": "blue_saturation",
+      "delta": 0.05519908666610718,
+      "status": "expected direction",
+      "transfer_delta": 0.03396034240722656,
+      "transfer_status": "expected direction"
+    },
+    {
+      "scene": "scene-07",
+      "representative": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1320-70.jpg",
+      "heldout_photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1308-66.jpg",
+      "phrase": "muted warm colors",
+      "metric": "warm_saturation",
+      "delta": -0.06441304087638855,
+      "status": "expected direction",
+      "transfer_delta": -0.05056092143058777,
+      "transfer_status": "expected direction"
+    },
+    {
+      "scene": "scene-07",
+      "representative": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1320-70.jpg",
+      "heldout_photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1308-66.jpg",
+      "phrase": "vivid warm colors",
+      "metric": "warm_saturation",
+      "delta": 0.061141252517700195,
+      "status": "expected direction",
+      "transfer_delta": 0.048707544803619385,
+      "transfer_status": "expected direction"
+    },
+    {
+      "scene": "scene-08",
+      "representative": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1334-76.jpg",
+      "heldout_photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1326-73.jpg",
+      "phrase": "warm",
+      "metric": "red_minus_blue",
+      "delta": 0.043543970212340355,
+      "status": "expected direction",
+      "transfer_delta": 0.04325981406313094,
+      "transfer_status": "expected direction"
+    },
+    {
+      "scene": "scene-08",
+      "representative": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1334-76.jpg",
+      "heldout_photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1326-73.jpg",
+      "phrase": "cool",
+      "metric": "red_minus_blue",
+      "delta": -0.043612146750092506,
+      "status": "expected direction",
+      "transfer_delta": -0.04339806202709289,
+      "transfer_status": "expected direction"
+    },
+    {
+      "scene": "scene-08",
+      "representative": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1334-76.jpg",
+      "heldout_photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1326-73.jpg",
+      "phrase": "brighter",
+      "metric": "mean_luma",
+      "delta": 0.03672504425048828,
+      "status": "expected direction",
+      "transfer_delta": 0.03653090319113722,
+      "transfer_status": "expected direction"
+    },
+    {
+      "scene": "scene-08",
+      "representative": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1334-76.jpg",
+      "heldout_photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1326-73.jpg",
+      "phrase": "darker",
+      "metric": "mean_luma",
+      "delta": -0.03672268986701965,
+      "status": "expected direction",
+      "transfer_delta": -0.036592770974473166,
+      "transfer_status": "expected direction"
+    },
+    {
+      "scene": "scene-08",
+      "representative": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1334-76.jpg",
+      "heldout_photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1326-73.jpg",
+      "phrase": "soft contrast",
+      "metric": "contrast_luma",
+      "delta": -0.003062605857849121,
+      "status": "expected direction",
+      "transfer_delta": -0.004011309212429814,
+      "transfer_status": "expected direction"
+    },
+    {
+      "scene": "scene-08",
+      "representative": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1334-76.jpg",
+      "heldout_photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1326-73.jpg",
+      "phrase": "strong contrast",
+      "metric": "contrast_luma",
+      "delta": 0.003116920590400696,
+      "status": "expected direction",
+      "transfer_delta": 0.0037429665591134365,
+      "transfer_status": "expected direction"
+    },
+    {
+      "scene": "scene-08",
+      "representative": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1334-76.jpg",
+      "heldout_photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1326-73.jpg",
+      "phrase": "lift shadows",
+      "metric": "shadows_luma",
+      "delta": 0.01205471158027649,
+      "status": "expected direction",
+      "transfer_delta": 0.015201622779017016,
+      "transfer_status": "expected direction"
+    },
+    {
+      "scene": "scene-08",
+      "representative": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1334-76.jpg",
+      "heldout_photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1326-73.jpg",
+      "phrase": "deepen shadows",
+      "metric": "shadows_luma",
+      "delta": -0.012040253728628159,
+      "status": "expected direction",
+      "transfer_delta": -0.01510993854362222,
+      "transfer_status": "expected direction"
+    },
+    {
+      "scene": "scene-08",
+      "representative": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1334-76.jpg",
+      "heldout_photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1326-73.jpg",
+      "phrase": "protect highlights",
+      "metric": "highlights_luma",
+      "delta": -0.025547325611114502,
+      "status": "expected direction",
+      "transfer_delta": -0.025376452556630014,
+      "transfer_status": "expected direction"
+    },
+    {
+      "scene": "scene-08",
+      "representative": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1334-76.jpg",
+      "heldout_photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1326-73.jpg",
+      "phrase": "brighter highlights",
+      "metric": "highlights_luma",
+      "delta": 0.02555149793624878,
+      "status": "expected direction",
+      "transfer_delta": 0.024492682568928892,
+      "transfer_status": "expected direction"
+    },
+    {
+      "scene": "scene-08",
+      "representative": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1334-76.jpg",
+      "heldout_photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1326-73.jpg",
+      "phrase": "muted blues",
+      "metric": "blue_saturation",
+      "delta": -0.05375628173351288,
+      "status": "expected direction",
+      "transfer_delta": -0.04494333267211914,
+      "transfer_status": "expected direction"
+    },
+    {
+      "scene": "scene-08",
+      "representative": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1334-76.jpg",
+      "heldout_photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1326-73.jpg",
+      "phrase": "vivid blues",
+      "metric": "blue_saturation",
+      "delta": 0.04811912775039673,
+      "status": "expected direction",
+      "transfer_delta": 0.0408267080783844,
+      "transfer_status": "expected direction"
+    },
+    {
+      "scene": "scene-08",
+      "representative": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1334-76.jpg",
+      "heldout_photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1326-73.jpg",
+      "phrase": "muted warm colors",
+      "metric": "warm_saturation",
+      "delta": -0.055532306432724,
+      "status": "expected direction",
+      "transfer_delta": -0.037431299686431885,
+      "transfer_status": "expected direction"
+    },
+    {
+      "scene": "scene-08",
+      "representative": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1334-76.jpg",
+      "heldout_photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1326-73.jpg",
+      "phrase": "vivid warm colors",
+      "metric": "warm_saturation",
+      "delta": 0.05134996771812439,
+      "status": "expected direction",
+      "transfer_delta": 0.033734411001205444,
+      "transfer_status": "expected direction"
+    },
+    {
+      "scene": "scene-09",
+      "representative": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1363-85.jpg",
+      "heldout_photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1360-83.jpg",
+      "phrase": "warm",
+      "metric": "red_minus_blue",
+      "delta": 0.032080454751849174,
+      "status": "expected direction",
+      "transfer_delta": 0.03227116451891884,
+      "transfer_status": "expected direction"
+    },
+    {
+      "scene": "scene-09",
+      "representative": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1363-85.jpg",
+      "heldout_photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1360-83.jpg",
+      "phrase": "cool",
+      "metric": "red_minus_blue",
+      "delta": -0.03201042860746384,
+      "status": "expected direction",
+      "transfer_delta": -0.0321768177586125,
+      "transfer_status": "expected direction"
+    },
+    {
+      "scene": "scene-09",
+      "representative": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1363-85.jpg",
+      "heldout_photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1360-83.jpg",
+      "phrase": "brighter",
+      "metric": "mean_luma",
+      "delta": 0.02831423282623291,
+      "status": "expected direction",
+      "transfer_delta": 0.02852631672315098,
+      "transfer_status": "expected direction"
+    },
+    {
+      "scene": "scene-09",
+      "representative": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1363-85.jpg",
+      "heldout_photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1360-83.jpg",
+      "phrase": "darker",
+      "metric": "mean_luma",
+      "delta": -0.02828913927078247,
+      "status": "expected direction",
+      "transfer_delta": -0.02844609294304401,
+      "transfer_status": "expected direction"
+    },
+    {
+      "scene": "scene-09",
+      "representative": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1363-85.jpg",
+      "heldout_photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1360-83.jpg",
+      "phrase": "soft contrast",
+      "metric": "contrast_luma",
+      "delta": -0.005177199840545654,
+      "status": "expected direction",
+      "transfer_delta": -0.005146372387614062,
+      "transfer_status": "expected direction"
+    },
+    {
+      "scene": "scene-09",
+      "representative": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1363-85.jpg",
+      "heldout_photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1360-83.jpg",
+      "phrase": "strong contrast",
+      "metric": "contrast_luma",
+      "delta": 0.0051908791065216064,
+      "status": "expected direction",
+      "transfer_delta": 0.005104162578296767,
+      "transfer_status": "expected direction"
+    },
+    {
+      "scene": "scene-09",
+      "representative": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1363-85.jpg",
+      "heldout_photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1360-83.jpg",
+      "phrase": "lift shadows",
+      "metric": "shadows_luma",
+      "delta": 0.013370394706726074,
+      "status": "expected direction",
+      "transfer_delta": 0.015381360267579136,
+      "transfer_status": "expected direction"
+    },
+    {
+      "scene": "scene-09",
+      "representative": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1363-85.jpg",
+      "heldout_photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1360-83.jpg",
+      "phrase": "deepen shadows",
+      "metric": "shadows_luma",
+      "delta": -0.01336369663476944,
+      "status": "expected direction",
+      "transfer_delta": -0.01522182473835533,
+      "transfer_status": "expected direction"
+    },
+    {
+      "scene": "scene-09",
+      "representative": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1363-85.jpg",
+      "heldout_photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1360-83.jpg",
+      "phrase": "protect highlights",
+      "metric": "highlights_luma",
+      "delta": -0.010027468204498291,
+      "status": "expected direction",
+      "transfer_delta": -0.013003093495293161,
+      "transfer_status": "expected direction"
+    },
+    {
+      "scene": "scene-09",
+      "representative": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1363-85.jpg",
+      "heldout_photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1360-83.jpg",
+      "phrase": "brighter highlights",
+      "metric": "highlights_luma",
+      "delta": 0.010103881359100342,
+      "status": "expected direction",
+      "transfer_delta": 0.013391742432506293,
+      "transfer_status": "expected direction"
+    },
+    {
+      "scene": "scene-09",
+      "representative": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1363-85.jpg",
+      "heldout_photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1360-83.jpg",
+      "phrase": "muted blues",
+      "metric": "blue_saturation",
+      "delta": -0.046384021639823914,
+      "status": "expected direction",
+      "transfer_delta": -0.030857905745506287,
+      "transfer_status": "expected direction"
+    },
+    {
+      "scene": "scene-09",
+      "representative": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1363-85.jpg",
+      "heldout_photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1360-83.jpg",
+      "phrase": "vivid blues",
+      "metric": "blue_saturation",
+      "delta": 0.042171984910964966,
+      "status": "expected direction",
+      "transfer_delta": 0.028904765844345093,
+      "transfer_status": "expected direction"
+    },
+    {
+      "scene": "scene-09",
+      "representative": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1363-85.jpg",
+      "heldout_photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1360-83.jpg",
+      "phrase": "muted warm colors",
+      "metric": "warm_saturation",
+      "delta": -0.06772750616073608,
+      "status": "expected direction",
+      "transfer_delta": -0.05634000897407532,
+      "transfer_status": "expected direction"
+    },
+    {
+      "scene": "scene-09",
+      "representative": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1363-85.jpg",
+      "heldout_photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1360-83.jpg",
+      "phrase": "vivid warm colors",
+      "metric": "warm_saturation",
+      "delta": 0.06312090158462524,
+      "status": "expected direction",
+      "transfer_delta": 0.051382988691329956,
+      "transfer_status": "expected direction"
+    }
+  ]
+}

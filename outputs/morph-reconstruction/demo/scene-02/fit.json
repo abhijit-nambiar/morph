@@ -1,0 +1,27 @@
+{
+  "known_recipe": {
+    "exposure": 0.16,
+    "temperature": 0.13,
+    "tint": 0.0,
+    "contrast": 0.15,
+    "shadows": 0.12,
+    "highlights": -0.13,
+    "saturation": 0.1
+  },
+  "fitted_recipe": {
+    "exposure": 0.165938,
+    "temperature": 0.129609,
+    "tint": 0.0,
+    "contrast": 0.142188,
+    "shadows": 0.108984,
+    "highlights": -0.129375,
+    "saturation": 0.107812
+  },
+  "metrics": {
+    "initial_mse": 0.005608765242034064,
+    "fit_mse": 6.984800837187473e-07,
+    "rmse": 0.0008357512092236225,
+    "evaluations": 631
+  },
+  "representative": "/Users/abhijitnambiar/Documents/Codex/2026-10-27/i/work/morph-demo/DSC_0904-2.jpg"
+}

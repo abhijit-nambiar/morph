@@ -1,0 +1,21 @@
+{
+  "scope": "Thumbnail overview only. Use the paths listed for full-resolution files. No-face detection warning is not a claim that a photo contains no faces.",
+  "mode": "preview",
+  "photos": [
+    {
+      "scene": "scene-01",
+      "source": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_0906-4.jpg",
+      "export": "/Users/abhijitnambiar/Documents/Codex/2026-10-27/i/outputs/morph-reconstruction/face-workflow-two-scene/album/scene-01/exports/DSC_0906-4.jpg",
+      "faces": 4
+    },
+    {
+      "scene": "scene-02",
+      "source": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_0958-15.jpg",
+      "export": "/Users/abhijitnambiar/Documents/Codex/2026-10-27/i/outputs/morph-reconstruction/face-workflow-two-scene/album/scene-02/exports/DSC_0958-15.jpg",
+      "faces": 5
+    }
+  ],
+  "comparison_sheets": [
+    "comparison-01.jpg"
+  ]
+}

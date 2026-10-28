@@ -1,0 +1,63 @@
+{
+  "scope": "Thumbnail overview only. Use the paths listed for full-resolution files. No-face detection warning is not a claim that a photo contains no faces.",
+  "mode": "preview",
+  "photos": [
+    {
+      "scene": "scene-01",
+      "source": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_0906-4.jpg",
+      "export": "/Users/abhijitnambiar/Documents/Codex/2026-10-27/i/outputs/morph-reconstruction/face-workflow-originals-preview/album/scene-01/exports/DSC_0906-4.jpg",
+      "faces": 4
+    },
+    {
+      "scene": "scene-02",
+      "source": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_0995-22.jpg",
+      "export": "/Users/abhijitnambiar/Documents/Codex/2026-10-27/i/outputs/morph-reconstruction/face-workflow-originals-preview/album/scene-02/exports/DSC_0995-22.jpg",
+      "faces": 4
+    },
+    {
+      "scene": "scene-03",
+      "source": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1037-31.jpg",
+      "export": "/Users/abhijitnambiar/Documents/Codex/2026-10-27/i/outputs/morph-reconstruction/face-workflow-originals-preview/album/scene-03/exports/DSC_1037-31.jpg",
+      "faces": 4
+    },
+    {
+      "scene": "scene-04",
+      "source": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1054-33.jpg",
+      "export": "/Users/abhijitnambiar/Documents/Codex/2026-10-27/i/outputs/morph-reconstruction/face-workflow-originals-preview/album/scene-04/exports/DSC_1054-33.jpg",
+      "faces": 15
+    },
+    {
+      "scene": "scene-05",
+      "source": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1111-45.jpg",
+      "export": "/Users/abhijitnambiar/Documents/Codex/2026-10-27/i/outputs/morph-reconstruction/face-workflow-originals-preview/album/scene-05/exports/DSC_1111-45.jpg",
+      "faces": 2
+    },
+    {
+      "scene": "scene-06",
+      "source": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1286-58.jpg",
+      "export": "/Users/abhijitnambiar/Documents/Codex/2026-10-27/i/outputs/morph-reconstruction/face-workflow-originals-preview/album/scene-06/exports/DSC_1286-58.jpg",
+      "faces": 2
+    },
+    {
+      "scene": "scene-07",
+      "source": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1320-70.jpg",
+      "export": "/Users/abhijitnambiar/Documents/Codex/2026-10-27/i/outputs/morph-reconstruction/face-workflow-originals-preview/album/scene-07/exports/DSC_1320-70.jpg",
+      "faces": 2
+    },
+    {
+      "scene": "scene-08",
+      "source": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1334-76.jpg",
+      "export": "/Users/abhijitnambiar/Documents/Codex/2026-10-27/i/outputs/morph-reconstruction/face-workflow-originals-preview/album/scene-08/exports/DSC_1334-76.jpg",
+      "faces": 2
+    },
+    {
+      "scene": "scene-09",
+      "source": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1363-85.jpg",
+      "export": "/Users/abhijitnambiar/Documents/Codex/2026-10-27/i/outputs/morph-reconstruction/face-workflow-originals-preview/album/scene-09/exports/DSC_1363-85.jpg",
+      "faces": 2
+    }
+  ],
+  "comparison_sheets": [
+    "comparison-01.jpg"
+  ]
+}

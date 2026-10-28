@@ -1,0 +1,733 @@
+{
+  "warning": "Review suggestions before applying. Camera exposure settings alone do not measure scene lighting, intent, or JPEG processing. This method was tested on one album with mixed results.",
+  "method": {
+    "scale": 0.25,
+    "max_correction": 0.25,
+    "min_difference_stops": 0.3,
+    "max_difference_stops": 2,
+    "max_minutes": 15
+  },
+  "suggestions": 52,
+  "photos": [
+    {
+      "scene": "scene-01",
+      "photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_0901-1.jpg",
+      "eligible": true,
+      "reason": "review candidate, not an automatic correction",
+      "metadata_stops": 0.6730025354342413,
+      "elapsed_seconds": 180.0,
+      "proposed_exposure": -0.16825063385856032
+    },
+    {
+      "scene": "scene-01",
+      "photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_0904-2.jpg",
+      "eligible": true,
+      "reason": "review candidate, not an automatic correction",
+      "metadata_stops": 0.6780719051126375,
+      "elapsed_seconds": 114.0,
+      "proposed_exposure": -0.16951797627815937
+    },
+    {
+      "scene": "scene-01",
+      "photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_0905-3.jpg",
+      "eligible": true,
+      "reason": "review candidate, not an automatic correction",
+      "metadata_stops": 0.6780719051126375,
+      "elapsed_seconds": 56.0,
+      "proposed_exposure": -0.16951797627815937
+    },
+    {
+      "scene": "scene-01",
+      "photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_0906-4.jpg",
+      "eligible": false,
+      "reason": "camera exposure difference below threshold",
+      "metadata_stops": 0.0
+    },
+    {
+      "scene": "scene-01",
+      "photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_0914-5.jpg",
+      "eligible": false,
+      "reason": "camera exposure difference below threshold",
+      "metadata_stops": 0.0
+    },
+    {
+      "scene": "scene-01",
+      "photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_0916-6.jpg",
+      "eligible": false,
+      "reason": "camera exposure difference below threshold",
+      "metadata_stops": 0.0
+    },
+    {
+      "scene": "scene-01",
+      "photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_0919-7.jpg",
+      "eligible": false,
+      "reason": "camera exposure difference below threshold",
+      "metadata_stops": 0.0
+    },
+    {
+      "scene": "scene-01",
+      "photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_0921-8.jpg",
+      "eligible": false,
+      "reason": "camera exposure difference below threshold",
+      "metadata_stops": 0.0
+    },
+    {
+      "scene": "scene-01",
+      "photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_0925-9.jpg",
+      "eligible": false,
+      "reason": "camera exposure difference below threshold",
+      "metadata_stops": 0.02914634565951651
+    },
+    {
+      "scene": "scene-01",
+      "photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_0928-10.jpg",
+      "eligible": false,
+      "reason": "camera exposure difference below threshold",
+      "metadata_stops": -0.29278174922784583
+    },
+    {
+      "scene": "scene-01",
+      "photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_0930-11.jpg",
+      "eligible": true,
+      "reason": "review candidate, not an automatic correction",
+      "metadata_stops": -0.6438561897747247,
+      "elapsed_seconds": 639.0,
+      "proposed_exposure": 0.16096404744368117
+    },
+    {
+      "scene": "scene-01",
+      "photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_0935-12.jpg",
+      "eligible": false,
+      "reason": "camera exposure difference below threshold",
+      "metadata_stops": -0.29278174922784583
+    },
+    {
+      "scene": "scene-02",
+      "photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_0947-13.jpg",
+      "eligible": true,
+      "reason": "review candidate, not an automatic correction",
+      "metadata_stops": -1.339850002884625,
+      "elapsed_seconds": 715.0,
+      "proposed_exposure": 0.25
+    },
+    {
+      "scene": "scene-02",
+      "photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_0948-14.jpg",
+      "eligible": true,
+      "reason": "review candidate, not an automatic correction",
+      "metadata_stops": -1.339850002884625,
+      "elapsed_seconds": 665.0,
+      "proposed_exposure": 0.25
+    },
+    {
+      "scene": "scene-02",
+      "photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_0958-15.jpg",
+      "eligible": true,
+      "reason": "review candidate, not an automatic correction",
+      "metadata_stops": -1.0179219079972628,
+      "elapsed_seconds": 517.0,
+      "proposed_exposure": 0.25
+    },
+    {
+      "scene": "scene-02",
+      "photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_0965-16.jpg",
+      "eligible": true,
+      "reason": "review candidate, not an automatic correction",
+      "metadata_stops": 0.3382219022280129,
+      "elapsed_seconds": 432.0,
+      "proposed_exposure": -0.08455547555700323
+    },
+    {
+      "scene": "scene-02",
+      "photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_0970-17.jpg",
+      "eligible": true,
+      "reason": "review candidate, not an automatic correction",
+      "metadata_stops": -1.0179219079972628,
+      "elapsed_seconds": 310.0,
+      "proposed_exposure": 0.25
+    },
+    {
+      "scene": "scene-02",
+      "photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_0974-18.jpg",
+      "eligible": true,
+      "reason": "review candidate, not an automatic correction",
+      "metadata_stops": -1.339850002884625,
+      "elapsed_seconds": 280.0,
+      "proposed_exposure": 0.25
+    },
+    {
+      "scene": "scene-02",
+      "photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_0987-19.jpg",
+      "eligible": true,
+      "reason": "review candidate, not an automatic correction",
+      "metadata_stops": -1.3219280948873624,
+      "elapsed_seconds": 139.0,
+      "proposed_exposure": 0.25
+    },
+    {
+      "scene": "scene-02",
+      "photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_0990-20.jpg",
+      "eligible": false,
+      "reason": "camera exposure difference below threshold",
+      "metadata_stops": 0.0
+    },
+    {
+      "scene": "scene-02",
+      "photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_0993-21.jpg",
+      "eligible": true,
+      "reason": "review candidate, not an automatic correction",
+      "metadata_stops": 0.6780719051126375,
+      "elapsed_seconds": 6.0,
+      "proposed_exposure": -0.16951797627815937
+    },
+    {
+      "scene": "scene-02",
+      "photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_0995-22.jpg",
+      "eligible": false,
+      "reason": "camera exposure difference below threshold",
+      "metadata_stops": 0.0
+    },
+    {
+      "scene": "scene-02",
+      "photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_0997-23.jpg",
+      "eligible": true,
+      "reason": "review candidate, not an automatic correction",
+      "metadata_stops": 0.32192809488736235,
+      "elapsed_seconds": 6.0,
+      "proposed_exposure": -0.08048202372184059
+    },
+    {
+      "scene": "scene-02",
+      "photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_0998-24.jpg",
+      "eligible": true,
+      "reason": "review candidate, not an automatic correction",
+      "metadata_stops": -0.32192809488736246,
+      "elapsed_seconds": 170.0,
+      "proposed_exposure": 0.08048202372184061
+    },
+    {
+      "scene": "scene-02",
+      "photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1012-25.jpg",
+      "eligible": false,
+      "reason": "camera exposure difference below threshold",
+      "metadata_stops": 0.0
+    },
+    {
+      "scene": "scene-03",
+      "photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1021-26.jpg",
+      "eligible": true,
+      "reason": "review candidate, not an automatic correction",
+      "metadata_stops": 0.32192809488736235,
+      "elapsed_seconds": 260.0,
+      "proposed_exposure": -0.08048202372184059
+    },
+    {
+      "scene": "scene-03",
+      "photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1026-27.jpg",
+      "eligible": true,
+      "reason": "review candidate, not an automatic correction",
+      "metadata_stops": -0.6780719051126377,
+      "elapsed_seconds": 197.0,
+      "proposed_exposure": 0.16951797627815943
+    },
+    {
+      "scene": "scene-03",
+      "photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1028-28.jpg",
+      "eligible": true,
+      "reason": "review candidate, not an automatic correction",
+      "metadata_stops": -1.0,
+      "elapsed_seconds": 193.0,
+      "proposed_exposure": 0.25
+    },
+    {
+      "scene": "scene-03",
+      "photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1030-29.jpg",
+      "eligible": false,
+      "reason": "camera exposure difference below threshold",
+      "metadata_stops": 0.0
+    },
+    {
+      "scene": "scene-03",
+      "photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1033-30.jpg",
+      "eligible": false,
+      "reason": "camera exposure difference below threshold",
+      "metadata_stops": 0.0
+    },
+    {
+      "scene": "scene-03",
+      "photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1037-31.jpg",
+      "eligible": false,
+      "reason": "camera exposure difference below threshold",
+      "metadata_stops": 0.0
+    },
+    {
+      "scene": "scene-03",
+      "photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1038-32.jpg",
+      "eligible": false,
+      "reason": "camera exposure difference below threshold",
+      "metadata_stops": 0.0
+    },
+    {
+      "scene": "scene-04",
+      "photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1054-33.jpg",
+      "eligible": false,
+      "reason": "camera exposure difference below threshold",
+      "metadata_stops": 0.0
+    },
+    {
+      "scene": "scene-04",
+      "photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1059-34.jpg",
+      "eligible": false,
+      "reason": "camera exposure difference below threshold",
+      "metadata_stops": 0.0
+    },
+    {
+      "scene": "scene-05",
+      "photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1070-35.jpg",
+      "eligible": true,
+      "reason": "review candidate, not an automatic correction",
+      "metadata_stops": -0.32192809488736246,
+      "elapsed_seconds": 368.0,
+      "proposed_exposure": 0.08048202372184061
+    },
+    {
+      "scene": "scene-05",
+      "photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1074-36.jpg",
+      "eligible": false,
+      "reason": "camera exposure difference below threshold",
+      "metadata_stops": 0.0
+    },
+    {
+      "scene": "scene-05",
+      "photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1083-37.jpg",
+      "eligible": false,
+      "reason": "camera exposure difference below threshold",
+      "metadata_stops": 0.0
+    },
+    {
+      "scene": "scene-05",
+      "photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1088-38.jpg",
+      "eligible": true,
+      "reason": "review candidate, not an automatic correction",
+      "metadata_stops": -1.0,
+      "elapsed_seconds": 212.0,
+      "proposed_exposure": 0.25
+    },
+    {
+      "scene": "scene-05",
+      "photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1090-39.jpg",
+      "eligible": true,
+      "reason": "review candidate, not an automatic correction",
+      "metadata_stops": -1.0,
+      "elapsed_seconds": 201.0,
+      "proposed_exposure": 0.25
+    },
+    {
+      "scene": "scene-05",
+      "photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1096-40.jpg",
+      "eligible": true,
+      "reason": "review candidate, not an automatic correction",
+      "metadata_stops": -0.32192809488736246,
+      "elapsed_seconds": 180.0,
+      "proposed_exposure": 0.08048202372184061
+    },
+    {
+      "scene": "scene-05",
+      "photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1100-41.jpg",
+      "eligible": false,
+      "reason": "camera exposure difference below threshold",
+      "metadata_stops": 0.0
+    },
+    {
+      "scene": "scene-05",
+      "photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1105-42.jpg",
+      "eligible": true,
+      "reason": "review candidate, not an automatic correction",
+      "metadata_stops": -1.0,
+      "elapsed_seconds": 123.0,
+      "proposed_exposure": 0.25
+    },
+    {
+      "scene": "scene-05",
+      "photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1106-43.jpg",
+      "eligible": true,
+      "reason": "review candidate, not an automatic correction",
+      "metadata_stops": -0.6438561897747249,
+      "elapsed_seconds": 86.0,
+      "proposed_exposure": 0.16096404744368123
+    },
+    {
+      "scene": "scene-05",
+      "photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1109-44.jpg",
+      "eligible": true,
+      "reason": "review candidate, not an automatic correction",
+      "metadata_stops": -0.32192809488736246,
+      "elapsed_seconds": 10.0,
+      "proposed_exposure": 0.08048202372184061
+    },
+    {
+      "scene": "scene-05",
+      "photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1111-45.jpg",
+      "eligible": false,
+      "reason": "camera exposure difference below threshold",
+      "metadata_stops": 0.0
+    },
+    {
+      "scene": "scene-05",
+      "photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1114-46.jpg",
+      "eligible": true,
+      "reason": "review candidate, not an automatic correction",
+      "metadata_stops": -1.0,
+      "elapsed_seconds": 15.0,
+      "proposed_exposure": 0.25
+    },
+    {
+      "scene": "scene-05",
+      "photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1116-47.jpg",
+      "eligible": true,
+      "reason": "review candidate, not an automatic correction",
+      "metadata_stops": -1.0,
+      "elapsed_seconds": 23.0,
+      "proposed_exposure": 0.25
+    },
+    {
+      "scene": "scene-05",
+      "photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1118-48.jpg",
+      "eligible": true,
+      "reason": "review candidate, not an automatic correction",
+      "metadata_stops": -0.6438561897747249,
+      "elapsed_seconds": 79.0,
+      "proposed_exposure": 0.16096404744368123
+    },
+    {
+      "scene": "scene-06",
+      "photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1259-49.jpg",
+      "eligible": true,
+      "reason": "review candidate, not an automatic correction",
+      "metadata_stops": -1.3219280948873624,
+      "elapsed_seconds": 236.0,
+      "proposed_exposure": 0.25
+    },
+    {
+      "scene": "scene-06",
+      "photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1261-50.jpg",
+      "eligible": true,
+      "reason": "review candidate, not an automatic correction",
+      "metadata_stops": -1.3219280948873624,
+      "elapsed_seconds": 198.0,
+      "proposed_exposure": 0.25
+    },
+    {
+      "scene": "scene-06",
+      "photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1264-51.jpg",
+      "eligible": true,
+      "reason": "review candidate, not an automatic correction",
+      "metadata_stops": -1.3219280948873624,
+      "elapsed_seconds": 194.0,
+      "proposed_exposure": 0.25
+    },
+    {
+      "scene": "scene-06",
+      "photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1265-52.jpg",
+      "eligible": true,
+      "reason": "review candidate, not an automatic correction",
+      "metadata_stops": -0.6780719051126377,
+      "elapsed_seconds": 183.0,
+      "proposed_exposure": 0.16951797627815943
+    },
+    {
+      "scene": "scene-06",
+      "photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1268-53.jpg",
+      "eligible": true,
+      "reason": "review candidate, not an automatic correction",
+      "metadata_stops": -1.0,
+      "elapsed_seconds": 175.0,
+      "proposed_exposure": 0.25
+    },
+    {
+      "scene": "scene-06",
+      "photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1273-54.jpg",
+      "eligible": true,
+      "reason": "review candidate, not an automatic correction",
+      "metadata_stops": -0.3561438102252753,
+      "elapsed_seconds": 95.0,
+      "proposed_exposure": 0.08903595255631883
+    },
+    {
+      "scene": "scene-06",
+      "photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1280-55.jpg",
+      "eligible": false,
+      "reason": "camera exposure difference below threshold",
+      "metadata_stops": 0.0
+    },
+    {
+      "scene": "scene-06",
+      "photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1282-56.jpg",
+      "eligible": true,
+      "reason": "review candidate, not an automatic correction",
+      "metadata_stops": 0.32192809488736235,
+      "elapsed_seconds": 6.0,
+      "proposed_exposure": -0.08048202372184059
+    },
+    {
+      "scene": "scene-06",
+      "photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1284-57.jpg",
+      "eligible": true,
+      "reason": "review candidate, not an automatic correction",
+      "metadata_stops": 0.32192809488736235,
+      "elapsed_seconds": 2.0,
+      "proposed_exposure": -0.08048202372184059
+    },
+    {
+      "scene": "scene-06",
+      "photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1286-58.jpg",
+      "eligible": false,
+      "reason": "camera exposure difference below threshold",
+      "metadata_stops": 0.0
+    },
+    {
+      "scene": "scene-06",
+      "photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1288-59.jpg",
+      "eligible": true,
+      "reason": "review candidate, not an automatic correction",
+      "metadata_stops": -0.3561438102252753,
+      "elapsed_seconds": 10.0,
+      "proposed_exposure": 0.08903595255631883
+    },
+    {
+      "scene": "scene-06",
+      "photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1291-60.jpg",
+      "eligible": true,
+      "reason": "review candidate, not an automatic correction",
+      "metadata_stops": -0.3561438102252753,
+      "elapsed_seconds": 14.0,
+      "proposed_exposure": 0.08903595255631883
+    },
+    {
+      "scene": "scene-06",
+      "photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1292-61.jpg",
+      "eligible": true,
+      "reason": "review candidate, not an automatic correction",
+      "metadata_stops": -0.3561438102252753,
+      "elapsed_seconds": 15.0,
+      "proposed_exposure": 0.08903595255631883
+    },
+    {
+      "scene": "scene-06",
+      "photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1293-62.jpg",
+      "eligible": false,
+      "reason": "camera exposure difference below threshold",
+      "metadata_stops": 0.0
+    },
+    {
+      "scene": "scene-06",
+      "photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1300-63.jpg",
+      "eligible": true,
+      "reason": "review candidate, not an automatic correction",
+      "metadata_stops": 0.32192809488736235,
+      "elapsed_seconds": 68.0,
+      "proposed_exposure": -0.08048202372184059
+    },
+    {
+      "scene": "scene-06",
+      "photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1302-64.jpg",
+      "eligible": true,
+      "reason": "review candidate, not an automatic correction",
+      "metadata_stops": 0.32192809488736235,
+      "elapsed_seconds": 70.0,
+      "proposed_exposure": -0.08048202372184059
+    },
+    {
+      "scene": "scene-06",
+      "photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1304-65.jpg",
+      "eligible": false,
+      "reason": "camera exposure difference below threshold",
+      "metadata_stops": 0.0
+    },
+    {
+      "scene": "scene-07",
+      "photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1308-66.jpg",
+      "eligible": true,
+      "reason": "review candidate, not an automatic correction",
+      "metadata_stops": 0.32192809488736235,
+      "elapsed_seconds": 35.0,
+      "proposed_exposure": -0.08048202372184059
+    },
+    {
+      "scene": "scene-07",
+      "photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1310-67.jpg",
+      "eligible": true,
+      "reason": "review candidate, not an automatic correction",
+      "metadata_stops": 0.32192809488736235,
+      "elapsed_seconds": 32.0,
+      "proposed_exposure": -0.08048202372184059
+    },
+    {
+      "scene": "scene-07",
+      "photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1312-68.jpg",
+      "eligible": true,
+      "reason": "review candidate, not an automatic correction",
+      "metadata_stops": 0.32192809488736235,
+      "elapsed_seconds": 30.0,
+      "proposed_exposure": -0.08048202372184059
+    },
+    {
+      "scene": "scene-07",
+      "photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1315-69.jpg",
+      "eligible": true,
+      "reason": "review candidate, not an automatic correction",
+      "metadata_stops": 0.32192809488736235,
+      "elapsed_seconds": 21.0,
+      "proposed_exposure": -0.08048202372184059
+    },
+    {
+      "scene": "scene-07",
+      "photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1320-70.jpg",
+      "eligible": false,
+      "reason": "camera exposure difference below threshold",
+      "metadata_stops": 0.0
+    },
+    {
+      "scene": "scene-07",
+      "photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1322-71.jpg",
+      "eligible": false,
+      "reason": "camera exposure difference below threshold",
+      "metadata_stops": 0.0
+    },
+    {
+      "scene": "scene-07",
+      "photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1324-72.jpg",
+      "eligible": true,
+      "reason": "review candidate, not an automatic correction",
+      "metadata_stops": 0.6438561897747247,
+      "elapsed_seconds": 66.0,
+      "proposed_exposure": -0.16096404744368117
+    },
+    {
+      "scene": "scene-08",
+      "photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1326-73.jpg",
+      "eligible": true,
+      "reason": "review candidate, not an automatic correction",
+      "metadata_stops": 0.6780719051126375,
+      "elapsed_seconds": 54.0,
+      "proposed_exposure": -0.16951797627815937
+    },
+    {
+      "scene": "scene-08",
+      "photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1329-74.jpg",
+      "eligible": true,
+      "reason": "review candidate, not an automatic correction",
+      "metadata_stops": 0.6780719051126375,
+      "elapsed_seconds": 29.0,
+      "proposed_exposure": -0.16951797627815937
+    },
+    {
+      "scene": "scene-08",
+      "photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1330-75.jpg",
+      "eligible": true,
+      "reason": "review candidate, not an automatic correction",
+      "metadata_stops": 0.6780719051126375,
+      "elapsed_seconds": 20.0,
+      "proposed_exposure": -0.16951797627815937
+    },
+    {
+      "scene": "scene-08",
+      "photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1334-76.jpg",
+      "eligible": false,
+      "reason": "camera exposure difference below threshold",
+      "metadata_stops": 0.0
+    },
+    {
+      "scene": "scene-08",
+      "photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1335-77.jpg",
+      "eligible": false,
+      "reason": "camera exposure difference below threshold",
+      "metadata_stops": 0.0
+    },
+    {
+      "scene": "scene-08",
+      "photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1337-78.jpg",
+      "eligible": false,
+      "reason": "camera exposure difference below threshold",
+      "metadata_stops": 0.0
+    },
+    {
+      "scene": "scene-08",
+      "photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1339-79.jpg",
+      "eligible": true,
+      "reason": "review candidate, not an automatic correction",
+      "metadata_stops": -0.6780719051126377,
+      "elapsed_seconds": 25.0,
+      "proposed_exposure": 0.16951797627815943
+    },
+    {
+      "scene": "scene-08",
+      "photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1340-80.jpg",
+      "eligible": true,
+      "reason": "review candidate, not an automatic correction",
+      "metadata_stops": -0.6780719051126377,
+      "elapsed_seconds": 38.0,
+      "proposed_exposure": 0.16951797627815943
+    },
+    {
+      "scene": "scene-08",
+      "photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1342-81.jpg",
+      "eligible": true,
+      "reason": "review candidate, not an automatic correction",
+      "metadata_stops": -0.6780719051126377,
+      "elapsed_seconds": 39.0,
+      "proposed_exposure": 0.16951797627815943
+    },
+    {
+      "scene": "scene-08",
+      "photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1344-82.jpg",
+      "eligible": true,
+      "reason": "review candidate, not an automatic correction",
+      "metadata_stops": -0.6780719051126377,
+      "elapsed_seconds": 55.0,
+      "proposed_exposure": 0.16951797627815943
+    },
+    {
+      "scene": "scene-09",
+      "photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1360-83.jpg",
+      "eligible": false,
+      "reason": "camera exposure difference below threshold",
+      "metadata_stops": 0.0
+    },
+    {
+      "scene": "scene-09",
+      "photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1362-84.jpg",
+      "eligible": false,
+      "reason": "camera exposure difference below threshold",
+      "metadata_stops": 0.0
+    },
+    {
+      "scene": "scene-09",
+      "photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1363-85.jpg",
+      "eligible": false,
+      "reason": "camera exposure difference below threshold",
+      "metadata_stops": 0.0
+    },
+    {
+      "scene": "scene-09",
+      "photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1365-86.jpg",
+      "eligible": false,
+      "reason": "camera exposure difference below threshold",
+      "metadata_stops": 0.0
+    },
+    {
+      "scene": "scene-09",
+      "photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1367-87.jpg",
+      "eligible": false,
+      "reason": "camera exposure difference below threshold",
+      "metadata_stops": 0.0
+    },
+    {
+      "scene": "scene-09",
+      "photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1378-88.jpg",
+      "eligible": false,
+      "reason": "camera exposure difference below threshold",
+      "metadata_stops": 0.0
+    }
+  ]
+}

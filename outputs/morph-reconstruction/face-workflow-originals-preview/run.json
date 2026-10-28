@@ -1,0 +1,22 @@
+{
+  "status": "complete",
+  "mode": "preview",
+  "prompt": "warm and slightly soft contrast and lift shadows and slightly brighten faces",
+  "groups": "/Users/abhijitnambiar/Documents/Codex/2026-10-27/i/outputs/morph-reconstruction/face-workflow-originals-preview/groups.json",
+  "groups_origin": "proposed chronological",
+  "completed_stages": [
+    "review-groups",
+    "review-detections",
+    "fit",
+    "render",
+    "review",
+    "clipping-audit"
+  ],
+  "outputs": {
+    "review": "review/index.html",
+    "groups_review": "groups-review/index.json",
+    "detections_review": "detections-review/index.json",
+    "clipping_audit": "clipping-audit.json",
+    "verification": null
+  }
+}

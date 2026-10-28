@@ -1,0 +1,319 @@
+{
+  "scope": "Exploratory real-pair pixel RMSE in one album with unverified groups and pair alignment; edits may have different intent. Same representative, sampled pixels and regularization. Does not assess visual quality or subject-aware edits.",
+  "summary": {
+    "heldout": 38,
+    "grid_lower_than_global": 34,
+    "grid_lower_than_centered": 34,
+    "global_mean_rmse": 0.06896793238223492,
+    "centered_mean_rmse": 0.0684599867468873,
+    "grid_mean_rmse": 0.06666807892035481,
+    "grid_median_rmse": 0.04759019463222987,
+    "grid_mean_out_of_gamut_fraction": 0.00035587873191751304
+  },
+  "cases": [
+    {
+      "scene": "scene-01",
+      "photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_0904-2.jpg",
+      "global_rmse": 0.12798923204994675,
+      "centered_rmse": 0.12760150469551326,
+      "grid_rmse": 0.1272810239306962,
+      "grid_out_of_gamut_fraction": 0.0
+    },
+    {
+      "scene": "scene-01",
+      "photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_0905-3.jpg",
+      "global_rmse": 0.12526668268188862,
+      "centered_rmse": 0.12492395731094519,
+      "grid_rmse": 0.12390617076043922,
+      "grid_out_of_gamut_fraction": 0.0
+    },
+    {
+      "scene": "scene-01",
+      "photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_0914-5.jpg",
+      "global_rmse": 0.10622076798298849,
+      "centered_rmse": 0.10593024674345768,
+      "grid_rmse": 0.10547812755681138,
+      "grid_out_of_gamut_fraction": 0.0
+    },
+    {
+      "scene": "scene-01",
+      "photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_0935-12.jpg",
+      "global_rmse": 0.08425007514825607,
+      "centered_rmse": 0.08379779081262775,
+      "grid_rmse": 0.0833160911768968,
+      "grid_out_of_gamut_fraction": 0.0
+    },
+    {
+      "scene": "scene-02",
+      "photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_0987-19.jpg",
+      "global_rmse": 0.04665386216891621,
+      "centered_rmse": 0.04624878159774036,
+      "grid_rmse": 0.048840795094368394,
+      "grid_out_of_gamut_fraction": 6.853070175438596e-05
+    },
+    {
+      "scene": "scene-02",
+      "photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_0990-20.jpg",
+      "global_rmse": 0.09255273803132233,
+      "centered_rmse": 0.0913029005564581,
+      "grid_rmse": 0.08966479896432945,
+      "grid_out_of_gamut_fraction": 0.008749086257309942
+    },
+    {
+      "scene": "scene-03",
+      "photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1021-26.jpg",
+      "global_rmse": 0.04604981413108267,
+      "centered_rmse": 0.04564833409123385,
+      "grid_rmse": 0.044590106872818946,
+      "grid_out_of_gamut_fraction": 0.0
+    },
+    {
+      "scene": "scene-03",
+      "photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1026-27.jpg",
+      "global_rmse": 0.15716216389650842,
+      "centered_rmse": 0.15726728117157504,
+      "grid_rmse": 0.15684644551192747,
+      "grid_out_of_gamut_fraction": 0.0
+    },
+    {
+      "scene": "scene-03",
+      "photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1028-28.jpg",
+      "global_rmse": 0.16766983914270547,
+      "centered_rmse": 0.16825717050898598,
+      "grid_rmse": 0.1712323374717278,
+      "grid_out_of_gamut_fraction": 0.0
+    },
+    {
+      "scene": "scene-03",
+      "photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1033-30.jpg",
+      "global_rmse": 0.03611083945259672,
+      "centered_rmse": 0.0360745499401767,
+      "grid_rmse": 0.034442933328951056,
+      "grid_out_of_gamut_fraction": 0.0
+    },
+    {
+      "scene": "scene-03",
+      "photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1038-32.jpg",
+      "global_rmse": 0.030359636250893947,
+      "centered_rmse": 0.030323704813268047,
+      "grid_rmse": 0.02951456524571834,
+      "grid_out_of_gamut_fraction": 0.0
+    },
+    {
+      "scene": "scene-05",
+      "photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1100-41.jpg",
+      "global_rmse": 0.04016104959946525,
+      "centered_rmse": 0.039974890551885606,
+      "grid_rmse": 0.04402848510541753,
+      "grid_out_of_gamut_fraction": 0.0
+    },
+    {
+      "scene": "scene-05",
+      "photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1114-46.jpg",
+      "global_rmse": 0.032648141220925124,
+      "centered_rmse": 0.032378035365117436,
+      "grid_rmse": 0.030744026273762864,
+      "grid_out_of_gamut_fraction": 0.0
+    },
+    {
+      "scene": "scene-05",
+      "photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1116-47.jpg",
+      "global_rmse": 0.02835969780687995,
+      "centered_rmse": 0.02832288268273938,
+      "grid_rmse": 0.025879487973447027,
+      "grid_out_of_gamut_fraction": 0.0
+    },
+    {
+      "scene": "scene-06",
+      "photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1261-50.jpg",
+      "global_rmse": 0.1116643786067597,
+      "centered_rmse": 0.11216098446386226,
+      "grid_rmse": 0.11269948058809501,
+      "grid_out_of_gamut_fraction": 0.0
+    },
+    {
+      "scene": "scene-06",
+      "photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1268-53.jpg",
+      "global_rmse": 0.07160028795984986,
+      "centered_rmse": 0.07250004945944447,
+      "grid_rmse": 0.07078629500034038,
+      "grid_out_of_gamut_fraction": 0.0
+    },
+    {
+      "scene": "scene-06",
+      "photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1273-54.jpg",
+      "global_rmse": 0.07777050317632093,
+      "centered_rmse": 0.07678820104117243,
+      "grid_rmse": 0.07284779203586854,
+      "grid_out_of_gamut_fraction": 0.0
+    },
+    {
+      "scene": "scene-06",
+      "photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1280-55.jpg",
+      "global_rmse": 0.04602528325604868,
+      "centered_rmse": 0.04569271210974005,
+      "grid_rmse": 0.04223803742774158,
+      "grid_out_of_gamut_fraction": 0.0
+    },
+    {
+      "scene": "scene-06",
+      "photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1282-56.jpg",
+      "global_rmse": 0.03968532200415306,
+      "centered_rmse": 0.03934215162397122,
+      "grid_rmse": 0.036388970528633935,
+      "grid_out_of_gamut_fraction": 0.0
+    },
+    {
+      "scene": "scene-06",
+      "photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1284-57.jpg",
+      "global_rmse": 0.03880740788613396,
+      "centered_rmse": 0.038236217411453055,
+      "grid_rmse": 0.035396854433202965,
+      "grid_out_of_gamut_fraction": 0.0
+    },
+    {
+      "scene": "scene-06",
+      "photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1288-59.jpg",
+      "global_rmse": 0.05826860497623576,
+      "centered_rmse": 0.05773986899224302,
+      "grid_rmse": 0.05539281077591814,
+      "grid_out_of_gamut_fraction": 0.0
+    },
+    {
+      "scene": "scene-06",
+      "photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1292-61.jpg",
+      "global_rmse": 0.05946363016927593,
+      "centered_rmse": 0.05885175857780069,
+      "grid_rmse": 0.05652093660366246,
+      "grid_out_of_gamut_fraction": 0.0
+    },
+    {
+      "scene": "scene-06",
+      "photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1293-62.jpg",
+      "global_rmse": 0.06209380177893987,
+      "centered_rmse": 0.0611115031002898,
+      "grid_rmse": 0.05776261469277464,
+      "grid_out_of_gamut_fraction": 0.0
+    },
+    {
+      "scene": "scene-06",
+      "photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1300-63.jpg",
+      "global_rmse": 0.05069330260354753,
+      "centered_rmse": 0.05021998790256942,
+      "grid_rmse": 0.04699885886262814,
+      "grid_out_of_gamut_fraction": 0.0
+    },
+    {
+      "scene": "scene-06",
+      "photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1302-64.jpg",
+      "global_rmse": 0.05201781224873264,
+      "centered_rmse": 0.05162415991859655,
+      "grid_rmse": 0.048181530401831596,
+      "grid_out_of_gamut_fraction": 0.0
+    },
+    {
+      "scene": "scene-06",
+      "photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1304-65.jpg",
+      "global_rmse": 0.048601784478053155,
+      "centered_rmse": 0.048518702235220174,
+      "grid_rmse": 0.04440848706914632,
+      "grid_out_of_gamut_fraction": 0.0
+    },
+    {
+      "scene": "scene-07",
+      "photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1312-68.jpg",
+      "global_rmse": 0.03526783385197664,
+      "centered_rmse": 0.03506472736663171,
+      "grid_rmse": 0.03335045387872992,
+      "grid_out_of_gamut_fraction": 0.0
+    },
+    {
+      "scene": "scene-07",
+      "photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1315-69.jpg",
+      "global_rmse": 0.06620537037760563,
+      "centered_rmse": 0.06625912116764915,
+      "grid_rmse": 0.06571611167095912,
+      "grid_out_of_gamut_fraction": 0.0
+    },
+    {
+      "scene": "scene-07",
+      "photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1324-72.jpg",
+      "global_rmse": 0.035228608872554856,
+      "centered_rmse": 0.03526804147018172,
+      "grid_rmse": 0.03291867734883681,
+      "grid_out_of_gamut_fraction": 0.0
+    },
+    {
+      "scene": "scene-08",
+      "photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1329-74.jpg",
+      "global_rmse": 0.024365236492577973,
+      "centered_rmse": 0.0233963687067992,
+      "grid_rmse": 0.023114401152457498,
+      "grid_out_of_gamut_fraction": 0.0
+    },
+    {
+      "scene": "scene-08",
+      "photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1335-77.jpg",
+      "global_rmse": 0.07131119799586609,
+      "centered_rmse": 0.07135828301692737,
+      "grid_rmse": 0.07119010186399194,
+      "grid_out_of_gamut_fraction": 0.0
+    },
+    {
+      "scene": "scene-08",
+      "photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1339-79.jpg",
+      "global_rmse": 0.16508675867725425,
+      "centered_rmse": 0.1648846819317407,
+      "grid_rmse": 0.16442209364594815,
+      "grid_out_of_gamut_fraction": 0.0
+    },
+    {
+      "scene": "scene-08",
+      "photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1344-82.jpg",
+      "global_rmse": 0.1848276865186281,
+      "centered_rmse": 0.18488967403218085,
+      "grid_rmse": 0.18398571196174246,
+      "grid_out_of_gamut_fraction": 0.0
+    },
+    {
+      "scene": "scene-09",
+      "photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1360-83.jpg",
+      "global_rmse": 0.034965310641831886,
+      "centered_rmse": 0.03281590678549097,
+      "grid_rmse": 0.026833802759767985,
+      "grid_out_of_gamut_fraction": 0.0007766812865497076
+    },
+    {
+      "scene": "scene-09",
+      "photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1362-84.jpg",
+      "global_rmse": 0.035323386714905855,
+      "centered_rmse": 0.03328048142889188,
+      "grid_rmse": 0.027533761463416524,
+      "grid_out_of_gamut_fraction": 0.0007309941520467836
+    },
+    {
+      "scene": "scene-09",
+      "photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1365-86.jpg",
+      "global_rmse": 0.040830196157838235,
+      "centered_rmse": 0.037934876826407886,
+      "grid_rmse": 0.034038051062009536,
+      "grid_out_of_gamut_fraction": 0.00013706140350877192
+    },
+    {
+      "scene": "scene-09",
+      "photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1367-87.jpg",
+      "global_rmse": 0.0424473970673514,
+      "centered_rmse": 0.03971960344194705,
+      "grid_rmse": 0.035779093622030585,
+      "grid_out_of_gamut_fraction": 4.5687134502923974e-05
+    },
+    {
+      "scene": "scene-09",
+      "photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1378-88.jpg",
+      "global_rmse": 0.04677578844810883,
+      "centered_rmse": 0.04576940252878183,
+      "grid_rmse": 0.03911667485643647,
+      "grid_out_of_gamut_fraction": 0.0030153508771929823
+    }
+  ]
+}

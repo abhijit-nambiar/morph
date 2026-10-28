@@ -1,0 +1,9 @@
+{
+  "scope": "Thumbnail comparison only. Variants are examples, not recommendations; choose values manually and inspect full-resolution previews. This tool only supports runs without existing corrections.",
+  "step": 0.2,
+  "candidates": 1,
+  "sheets": [
+    "comparison-01.jpg"
+  ],
+  "decisions": "decisions.csv"
+}

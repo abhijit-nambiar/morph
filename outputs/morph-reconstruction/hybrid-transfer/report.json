@@ -1,0 +1,771 @@
+{
+  "solver": "gauss-newton",
+  "iterations": 45,
+  "caveats": [
+    "Groups are unvalidated; same dimensions do not imply pixel alignment; per-photo human edits may differ intentionally.",
+    "Identity is a useful baseline but RMSE is not a measure of professional quality."
+  ],
+  "summary": {
+    "heldout_pairs": 33,
+    "improved_vs_original": 30,
+    "median_identity_rmse": 0.10000383108854294,
+    "median_transfer_rmse": 0.05381518948289622
+  },
+  "scenes": [
+    {
+      "id": "scene-01",
+      "configured_representative": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_0914-5.jpg",
+      "fitting_representative": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_0914-5.jpg",
+      "fitted_recipe": {
+        "exposure": -0.03902518271245106,
+        "temperature": 0.11282079046879566,
+        "tint": -0.00597500413322045,
+        "contrast": -0.1533553574464485,
+        "shadows": 0.38586066349875053,
+        "highlights": 0.07821908956405758,
+        "saturation": -0.36365577712549196
+      },
+      "fit_metrics": {
+        "initial_mse": 0.02252076064266435,
+        "fit_mse": 0.01153653465781393,
+        "rmse": 0.10740826159013063,
+        "objective": 0.01153653465781393,
+        "evaluations": 57,
+        "solver": "damped_gauss_newton"
+      },
+      "heldout_results": [
+        {
+          "photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_0904-2.jpg",
+          "edit": "/Users/abhijitnambiar/Downloads/Morph/edits/DSC_0904-2.jpg",
+          "identity_rmse": 0.10661900043487549,
+          "transfer_rmse": 0.11038756391430751
+        },
+        {
+          "photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_0905-3.jpg",
+          "edit": "/Users/abhijitnambiar/Downloads/Morph/edits/DSC_0905-3.jpg",
+          "identity_rmse": 0.10823393613100052,
+          "transfer_rmse": 0.10243326874000097
+        },
+        {
+          "photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_0906-4.jpg",
+          "edit": "/Users/abhijitnambiar/Downloads/Morph/edits/DSC_0906-4.jpg",
+          "identity_rmse": 0.12857675552368164,
+          "transfer_rmse": 0.04777488579183153
+        },
+        {
+          "photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_0935-12.jpg",
+          "edit": "/Users/abhijitnambiar/Downloads/Morph/edits/DSC_0935-12.jpg",
+          "identity_rmse": 0.09782178699970245,
+          "transfer_rmse": 0.0688901545213255
+        }
+      ],
+      "skipped": [
+        {
+          "photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_0901-1.jpg",
+          "reason": "dimensions differ; alignment required"
+        },
+        {
+          "photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_0916-6.jpg",
+          "reason": "dimensions differ; alignment required"
+        },
+        {
+          "photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_0921-8.jpg",
+          "reason": "dimensions differ; alignment required"
+        },
+        {
+          "photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_0925-9.jpg",
+          "reason": "dimensions differ; alignment required"
+        },
+        {
+          "photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_0930-11.jpg",
+          "reason": "dimensions differ; alignment required"
+        }
+      ],
+      "comparison_sheets": [
+        "comparison-01.jpg"
+      ]
+    },
+    {
+      "id": "scene-02",
+      "status": "no same-size pairs",
+      "skipped": [
+        {
+          "photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_0919-7.jpg",
+          "reason": "dimensions differ; alignment required"
+        },
+        {
+          "photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_0928-10.jpg",
+          "reason": "dimensions differ; alignment required"
+        }
+      ]
+    },
+    {
+      "id": "scene-03",
+      "configured_representative": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1012-25.jpg",
+      "fitting_representative": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_0990-20.jpg",
+      "fitted_recipe": {
+        "exposure": 0.14478504377573426,
+        "temperature": 0.047018189449888,
+        "tint": -0.027647934838317918,
+        "contrast": -0.12705745009371455,
+        "shadows": 0.039959146810274064,
+        "highlights": 0.027460237758771065,
+        "saturation": -0.05893202400166062
+      },
+      "fit_metrics": {
+        "initial_mse": 0.004975420116132036,
+        "fit_mse": 0.0019055985853004304,
+        "rmse": 0.04365316237456836,
+        "objective": 0.0019055985853004304,
+        "evaluations": 61,
+        "solver": "damped_gauss_newton"
+      },
+      "heldout_results": [],
+      "skipped": [
+        {
+          "photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_0965-16.jpg",
+          "reason": "dimensions differ; alignment required"
+        },
+        {
+          "photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_0993-21.jpg",
+          "reason": "dimensions differ; alignment required"
+        },
+        {
+          "photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_0995-22.jpg",
+          "reason": "dimensions differ; alignment required"
+        },
+        {
+          "photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_0997-23.jpg",
+          "reason": "dimensions differ; alignment required"
+        },
+        {
+          "photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_0998-24.jpg",
+          "reason": "dimensions differ; alignment required"
+        },
+        {
+          "photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1012-25.jpg",
+          "reason": "dimensions differ; alignment required"
+        }
+      ],
+      "comparison_sheets": []
+    },
+    {
+      "id": "scene-04",
+      "configured_representative": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_0987-19.jpg",
+      "fitting_representative": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_0987-19.jpg",
+      "fitted_recipe": {
+        "exposure": -0.4593268443368211,
+        "temperature": 0.07349753280320072,
+        "tint": 0.08312360501784903,
+        "contrast": -0.05236753695187718,
+        "shadows": 0.33927819005907006,
+        "highlights": 0.49919120998252714,
+        "saturation": 0.35063156769942927
+      },
+      "fit_metrics": {
+        "initial_mse": 0.006803031441035669,
+        "fit_mse": 0.002508733237746453,
+        "rmse": 0.05008725624094869,
+        "objective": 0.002508733237746453,
+        "evaluations": 109,
+        "solver": "damped_gauss_newton"
+      },
+      "heldout_results": [
+        {
+          "photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_0958-15.jpg",
+          "edit": "/Users/abhijitnambiar/Downloads/Morph/edits/DSC_0958-15.jpg",
+          "identity_rmse": 0.06884577125310898,
+          "transfer_rmse": 0.0846368659781889
+        }
+      ],
+      "skipped": [
+        {
+          "photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_0947-13.jpg",
+          "reason": "dimensions differ; alignment required"
+        },
+        {
+          "photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_0948-14.jpg",
+          "reason": "dimensions differ; alignment required"
+        },
+        {
+          "photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_0970-17.jpg",
+          "reason": "dimensions differ; alignment required"
+        },
+        {
+          "photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_0974-18.jpg",
+          "reason": "dimensions differ; alignment required"
+        }
+      ],
+      "comparison_sheets": [
+        "comparison-01.jpg"
+      ]
+    },
+    {
+      "id": "scene-05",
+      "configured_representative": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1037-31.jpg",
+      "fitting_representative": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1037-31.jpg",
+      "fitted_recipe": {
+        "exposure": -0.10825862298888192,
+        "temperature": 0.04696120719471108,
+        "tint": 0.010927368625880302,
+        "contrast": -0.040402378931254056,
+        "shadows": 0.3215758733796112,
+        "highlights": -0.12076193510620359,
+        "saturation": 0.07602040627013086
+      },
+      "fit_metrics": {
+        "initial_mse": 0.004849791967394283,
+        "fit_mse": 0.0014443625633477552,
+        "rmse": 0.03800477027095092,
+        "objective": 0.0014443625633477552,
+        "evaluations": 57,
+        "solver": "damped_gauss_newton"
+      },
+      "heldout_results": [
+        {
+          "photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1021-26.jpg",
+          "edit": "/Users/abhijitnambiar/Downloads/Morph/edits/DSC_1021-26.jpg",
+          "identity_rmse": 0.08695819228887558,
+          "transfer_rmse": 0.060135694908590505
+        },
+        {
+          "photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1026-27.jpg",
+          "edit": "/Users/abhijitnambiar/Downloads/Morph/edits/DSC_1026-27.jpg",
+          "identity_rmse": 0.21027740836143494,
+          "transfer_rmse": 0.15849171955294022
+        },
+        {
+          "photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1028-28.jpg",
+          "edit": "/Users/abhijitnambiar/Downloads/Morph/edits/DSC_1028-28.jpg",
+          "identity_rmse": 0.22920238971710205,
+          "transfer_rmse": 0.18403975530423256
+        },
+        {
+          "photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1033-30.jpg",
+          "edit": "/Users/abhijitnambiar/Downloads/Morph/edits/DSC_1033-30.jpg",
+          "identity_rmse": 0.07785604894161224,
+          "transfer_rmse": 0.05810256087762078
+        },
+        {
+          "photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1038-32.jpg",
+          "edit": "/Users/abhijitnambiar/Downloads/Morph/edits/DSC_1038-32.jpg",
+          "identity_rmse": 0.07887118309736252,
+          "transfer_rmse": 0.052350105254925214
+        }
+      ],
+      "skipped": [
+        {
+          "photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1030-29.jpg",
+          "reason": "dimensions differ; alignment required"
+        }
+      ],
+      "comparison_sheets": [
+        "comparison-01.jpg"
+      ]
+    },
+    {
+      "id": "scene-06",
+      "configured_representative": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1054-33.jpg",
+      "fitting_representative": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1054-33.jpg",
+      "fitted_recipe": {
+        "exposure": 0.05393792361957495,
+        "temperature": 0.06007813906265445,
+        "tint": -0.02470351737893808,
+        "contrast": -0.10595689439417515,
+        "shadows": 0.3195945268740795,
+        "highlights": -0.2101953765182767,
+        "saturation": 0.0008601491519753059
+      },
+      "fit_metrics": {
+        "initial_mse": 0.006235321880324817,
+        "fit_mse": 0.0005258306111383032,
+        "rmse": 0.022930996732333796,
+        "objective": 0.0005258306111383032,
+        "evaluations": 70,
+        "solver": "damped_gauss_newton"
+      },
+      "heldout_results": [],
+      "skipped": [
+        {
+          "photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1059-34.jpg",
+          "reason": "dimensions differ; alignment required"
+        }
+      ],
+      "comparison_sheets": []
+    },
+    {
+      "id": "scene-07",
+      "configured_representative": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1118-48.jpg",
+      "fitting_representative": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1100-41.jpg",
+      "fitted_recipe": {
+        "exposure": -0.04777199738938525,
+        "temperature": 0.024611927274701753,
+        "tint": -0.017598295129458992,
+        "contrast": -0.06250748576404144,
+        "shadows": 0.32171296042306297,
+        "highlights": -0.26709936556486275,
+        "saturation": 0.0117381896595464
+      },
+      "fit_metrics": {
+        "initial_mse": 0.003252897738635942,
+        "fit_mse": 0.0005565065433064404,
+        "rmse": 0.023590390910420294,
+        "objective": 0.0005565065433064404,
+        "evaluations": 57,
+        "solver": "damped_gauss_newton"
+      },
+      "heldout_results": [],
+      "skipped": [
+        {
+          "photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1070-35.jpg",
+          "reason": "dimensions differ; alignment required"
+        },
+        {
+          "photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1096-40.jpg",
+          "reason": "dimensions differ; alignment required"
+        },
+        {
+          "photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1106-43.jpg",
+          "reason": "dimensions differ; alignment required"
+        },
+        {
+          "photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1109-44.jpg",
+          "reason": "dimensions differ; alignment required"
+        },
+        {
+          "photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1118-48.jpg",
+          "reason": "dimensions differ; alignment required"
+        }
+      ],
+      "comparison_sheets": []
+    },
+    {
+      "id": "scene-08",
+      "configured_representative": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1088-38.jpg",
+      "fitting_representative": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1088-38.jpg",
+      "fitted_recipe": {
+        "exposure": -0.35262954828043014,
+        "temperature": 0.07914775854947537,
+        "tint": 0.04008192240758329,
+        "contrast": -0.1341396318619911,
+        "shadows": 0.3076395574187303,
+        "highlights": 0.4994703478147915,
+        "saturation": 0.1936921851937263
+      },
+      "fit_metrics": {
+        "initial_mse": 0.009716070073816164,
+        "fit_mse": 0.002713063557501901,
+        "rmse": 0.05208707668416323,
+        "objective": 0.002713063557501901,
+        "evaluations": 143,
+        "solver": "damped_gauss_newton"
+      },
+      "heldout_results": [
+        {
+          "photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1114-46.jpg",
+          "edit": "/Users/abhijitnambiar/Downloads/Morph/edits/DSC_1114-46.jpg",
+          "identity_rmse": 0.10207179933786392,
+          "transfer_rmse": 0.056319188785106826
+        },
+        {
+          "photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1116-47.jpg",
+          "edit": "/Users/abhijitnambiar/Downloads/Morph/edits/DSC_1116-47.jpg",
+          "identity_rmse": 0.09877598285675049,
+          "transfer_rmse": 0.05502607536146089
+        }
+      ],
+      "skipped": [
+        {
+          "photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1074-36.jpg",
+          "reason": "dimensions differ; alignment required"
+        },
+        {
+          "photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1083-37.jpg",
+          "reason": "dimensions differ; alignment required"
+        },
+        {
+          "photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1090-39.jpg",
+          "reason": "dimensions differ; alignment required"
+        },
+        {
+          "photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1105-42.jpg",
+          "reason": "dimensions differ; alignment required"
+        },
+        {
+          "photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1111-45.jpg",
+          "reason": "dimensions differ; alignment required"
+        }
+      ],
+      "comparison_sheets": [
+        "comparison-01.jpg"
+      ]
+    },
+    {
+      "id": "scene-09",
+      "configured_representative": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1282-56.jpg",
+      "fitting_representative": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1282-56.jpg",
+      "fitted_recipe": {
+        "exposure": -0.05945762176824884,
+        "temperature": 0.0077703576317944565,
+        "tint": -0.00355134733352058,
+        "contrast": -0.06548882563025947,
+        "shadows": 0.1489617902144507,
+        "highlights": -0.5,
+        "saturation": -0.08762346832491705
+      },
+      "fit_metrics": {
+        "initial_mse": 0.015293825263034326,
+        "fit_mse": 0.0015377095873594208,
+        "rmse": 0.039213640322717055,
+        "objective": 0.0015377095873594208,
+        "evaluations": 103,
+        "solver": "damped_gauss_newton"
+      },
+      "heldout_results": [
+        {
+          "photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1273-54.jpg",
+          "edit": "/Users/abhijitnambiar/Downloads/Morph/edits/DSC_1273-54.jpg",
+          "identity_rmse": 0.1652497798204422,
+          "transfer_rmse": 0.07713815782868257
+        },
+        {
+          "photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1280-55.jpg",
+          "edit": "/Users/abhijitnambiar/Downloads/Morph/edits/DSC_1280-55.jpg",
+          "identity_rmse": 0.10664892941713333,
+          "transfer_rmse": 0.045893466967876856
+        },
+        {
+          "photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1284-57.jpg",
+          "edit": "/Users/abhijitnambiar/Downloads/Morph/edits/DSC_1284-57.jpg",
+          "identity_rmse": 0.12232181429862976,
+          "transfer_rmse": 0.040326059286792795
+        },
+        {
+          "photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1286-58.jpg",
+          "edit": "/Users/abhijitnambiar/Downloads/Morph/edits/DSC_1286-58.jpg",
+          "identity_rmse": 0.12516625225543976,
+          "transfer_rmse": 0.042132141015008576
+        },
+        {
+          "photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1288-59.jpg",
+          "edit": "/Users/abhijitnambiar/Downloads/Morph/edits/DSC_1288-59.jpg",
+          "identity_rmse": 0.10185939073562622,
+          "transfer_rmse": 0.05381518948289622
+        },
+        {
+          "photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1292-61.jpg",
+          "edit": "/Users/abhijitnambiar/Downloads/Morph/edits/DSC_1292-61.jpg",
+          "identity_rmse": 0.10081636905670166,
+          "transfer_rmse": 0.054684141067598446
+        },
+        {
+          "photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1293-62.jpg",
+          "edit": "/Users/abhijitnambiar/Downloads/Morph/edits/DSC_1293-62.jpg",
+          "identity_rmse": 0.10000383108854294,
+          "transfer_rmse": 0.05825313384521313
+        },
+        {
+          "photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1300-63.jpg",
+          "edit": "/Users/abhijitnambiar/Downloads/Morph/edits/DSC_1300-63.jpg",
+          "identity_rmse": 0.09957859665155411,
+          "transfer_rmse": 0.046867619140726395
+        },
+        {
+          "photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1302-64.jpg",
+          "edit": "/Users/abhijitnambiar/Downloads/Morph/edits/DSC_1302-64.jpg",
+          "identity_rmse": 0.09999506175518036,
+          "transfer_rmse": 0.04835577972693595
+        },
+        {
+          "photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1304-65.jpg",
+          "edit": "/Users/abhijitnambiar/Downloads/Morph/edits/DSC_1304-65.jpg",
+          "identity_rmse": 0.10742540657520294,
+          "transfer_rmse": 0.047624999479272005
+        }
+      ],
+      "skipped": [
+        {
+          "photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1291-60.jpg",
+          "reason": "dimensions differ; alignment required"
+        }
+      ],
+      "comparison_sheets": [
+        "comparison-01.jpg"
+      ]
+    },
+    {
+      "id": "scene-10",
+      "configured_representative": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1259-49.jpg",
+      "fitting_representative": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1261-50.jpg",
+      "fitted_recipe": {
+        "exposure": 0.018959465606258285,
+        "temperature": 0.04616731057427979,
+        "tint": -0.005593685359235087,
+        "contrast": -0.07616095518221157,
+        "shadows": 0.28249814619943325,
+        "highlights": -0.22670734540454152,
+        "saturation": 0.08224372349910611
+      },
+      "fit_metrics": {
+        "initial_mse": 0.003521924221230968,
+        "fit_mse": 0.0006307284205204174,
+        "rmse": 0.025114307088200092,
+        "objective": 0.0006307284205204174,
+        "evaluations": 57,
+        "solver": "damped_gauss_newton"
+      },
+      "heldout_results": [],
+      "skipped": [
+        {
+          "photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1259-49.jpg",
+          "reason": "dimensions differ; alignment required"
+        },
+        {
+          "photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1264-51.jpg",
+          "reason": "dimensions differ; alignment required"
+        }
+      ],
+      "comparison_sheets": []
+    },
+    {
+      "id": "scene-11",
+      "configured_representative": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1265-52.jpg",
+      "fitting_representative": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1268-53.jpg",
+      "fitted_recipe": {
+        "exposure": 0.06363074673346675,
+        "temperature": 0.01720084001995907,
+        "tint": 0.020521071546753304,
+        "contrast": -0.0993368691469865,
+        "shadows": 0.07604909390582866,
+        "highlights": -0.44727474062021616,
+        "saturation": 0.1294328275770775
+      },
+      "fit_metrics": {
+        "initial_mse": 0.005714999085705261,
+        "fit_mse": 0.0012058469644795253,
+        "rmse": 0.034725307262564654,
+        "objective": 0.0012058469644795253,
+        "evaluations": 75,
+        "solver": "damped_gauss_newton"
+      },
+      "heldout_results": [],
+      "skipped": [
+        {
+          "photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1265-52.jpg",
+          "reason": "dimensions differ; alignment required"
+        }
+      ],
+      "comparison_sheets": []
+    },
+    {
+      "id": "scene-12",
+      "configured_representative": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1320-70.jpg",
+      "fitting_representative": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1310-67.jpg",
+      "fitted_recipe": {
+        "exposure": -0.02951224515209865,
+        "temperature": -0.00910303407192633,
+        "tint": 0.0031267111393150585,
+        "contrast": -0.057411393796286896,
+        "shadows": 0.10949126462744666,
+        "highlights": -0.5,
+        "saturation": -0.07312006372904582
+      },
+      "fit_metrics": {
+        "initial_mse": 0.010630580445249487,
+        "fit_mse": 0.001507215680224796,
+        "rmse": 0.03882287573357744,
+        "objective": 0.001507215680224796,
+        "evaluations": 384,
+        "solver": "damped_gauss_newton"
+      },
+      "heldout_results": [
+        {
+          "photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1312-68.jpg",
+          "edit": "/Users/abhijitnambiar/Downloads/Morph/edits/DSC_1312-68.jpg",
+          "identity_rmse": 0.10643031448125839,
+          "transfer_rmse": 0.03903836086058316
+        },
+        {
+          "photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1315-69.jpg",
+          "edit": "/Users/abhijitnambiar/Downloads/Morph/edits/DSC_1315-69.jpg",
+          "identity_rmse": 0.0627782940864563,
+          "transfer_rmse": 0.07269797547457284
+        },
+        {
+          "photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1324-72.jpg",
+          "edit": "/Users/abhijitnambiar/Downloads/Morph/edits/DSC_1324-72.jpg",
+          "identity_rmse": 0.10561349242925644,
+          "transfer_rmse": 0.04001622268587462
+        }
+      ],
+      "skipped": [
+        {
+          "photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1308-66.jpg",
+          "reason": "dimensions differ; alignment required"
+        },
+        {
+          "photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1320-70.jpg",
+          "reason": "dimensions differ; alignment required"
+        },
+        {
+          "photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1322-71.jpg",
+          "reason": "dimensions differ; alignment required"
+        }
+      ],
+      "comparison_sheets": [
+        "comparison-01.jpg"
+      ]
+    },
+    {
+      "id": "scene-13",
+      "configured_representative": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1334-76.jpg",
+      "fitting_representative": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1326-73.jpg",
+      "fitted_recipe": {
+        "exposure": -0.023107080799598202,
+        "temperature": 0.017367053619684568,
+        "tint": -0.016427219292079815,
+        "contrast": -0.08808123934942441,
+        "shadows": 0.22669771895071544,
+        "highlights": -0.27505527179462946,
+        "saturation": 0.05498365762922976
+      },
+      "fit_metrics": {
+        "initial_mse": 0.0028444240328493204,
+        "fit_mse": 0.0003780004144579271,
+        "rmse": 0.01944223275392842,
+        "objective": 0.0003780004144579271,
+        "evaluations": 57,
+        "solver": "damped_gauss_newton"
+      },
+      "heldout_results": [
+        {
+          "photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1329-74.jpg",
+          "edit": "/Users/abhijitnambiar/Downloads/Morph/edits/DSC_1329-74.jpg",
+          "identity_rmse": 0.05186779052019119,
+          "transfer_rmse": 0.02176855206293608
+        },
+        {
+          "photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1335-77.jpg",
+          "edit": "/Users/abhijitnambiar/Downloads/Morph/edits/DSC_1335-77.jpg",
+          "identity_rmse": 0.09697925299406052,
+          "transfer_rmse": 0.06782917671795459
+        },
+        {
+          "photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1344-82.jpg",
+          "edit": "/Users/abhijitnambiar/Downloads/Morph/edits/DSC_1344-82.jpg",
+          "identity_rmse": 0.2085287719964981,
+          "transfer_rmse": 0.1855236152545165
+        }
+      ],
+      "skipped": [
+        {
+          "photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1330-75.jpg",
+          "reason": "dimensions differ; alignment required"
+        },
+        {
+          "photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1334-76.jpg",
+          "reason": "dimensions differ; alignment required"
+        },
+        {
+          "photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1337-78.jpg",
+          "reason": "dimensions differ; alignment required"
+        }
+      ],
+      "comparison_sheets": [
+        "comparison-01.jpg"
+      ]
+    },
+    {
+      "id": "scene-14",
+      "configured_representative": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1340-80.jpg",
+      "fitting_representative": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1339-79.jpg",
+      "fitted_recipe": {
+        "exposure": 0.038203036568428085,
+        "temperature": 0.04573164071637389,
+        "tint": 0.119707231017768,
+        "contrast": -0.12851064117954067,
+        "shadows": 0.29946257677042626,
+        "highlights": 0.5,
+        "saturation": 0.2294424310925573
+      },
+      "fit_metrics": {
+        "initial_mse": 0.03285865063061263,
+        "fit_mse": 0.0035492907599728447,
+        "rmse": 0.05957592433166979,
+        "objective": 0.0035492907599728447,
+        "evaluations": 383,
+        "solver": "damped_gauss_newton"
+      },
+      "heldout_results": [],
+      "skipped": [
+        {
+          "photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1340-80.jpg",
+          "reason": "dimensions differ; alignment required"
+        },
+        {
+          "photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1342-81.jpg",
+          "reason": "dimensions differ; alignment required"
+        }
+      ],
+      "comparison_sheets": []
+    },
+    {
+      "id": "scene-15",
+      "configured_representative": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1363-85.jpg",
+      "fitting_representative": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1363-85.jpg",
+      "fitted_recipe": {
+        "exposure": 0.033676014142936785,
+        "temperature": -0.0296882426963963,
+        "tint": 0.036309032845658916,
+        "contrast": -0.1672777309604869,
+        "shadows": 0.08040904815168928,
+        "highlights": 0.14904977725534144,
+        "saturation": 0.3715241009108473
+      },
+      "fit_metrics": {
+        "initial_mse": 0.0059274501562998,
+        "fit_mse": 0.0017031741676208228,
+        "rmse": 0.041269530741466186,
+        "objective": 0.0017031741676208228,
+        "evaluations": 57,
+        "solver": "damped_gauss_newton"
+      },
+      "heldout_results": [
+        {
+          "photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1360-83.jpg",
+          "edit": "/Users/abhijitnambiar/Downloads/Morph/edits/DSC_1360-83.jpg",
+          "identity_rmse": 0.07585199177265167,
+          "transfer_rmse": 0.04051912661035742
+        },
+        {
+          "photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1362-84.jpg",
+          "edit": "/Users/abhijitnambiar/Downloads/Morph/edits/DSC_1362-84.jpg",
+          "identity_rmse": 0.07719243317842484,
+          "transfer_rmse": 0.04113783144473581
+        },
+        {
+          "photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1365-86.jpg",
+          "edit": "/Users/abhijitnambiar/Downloads/Morph/edits/DSC_1365-86.jpg",
+          "identity_rmse": 0.08308140188455582,
+          "transfer_rmse": 0.04695954187727157
+        },
+        {
+          "photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1367-87.jpg",
+          "edit": "/Users/abhijitnambiar/Downloads/Morph/edits/DSC_1367-87.jpg",
+          "identity_rmse": 0.0842568501830101,
+          "transfer_rmse": 0.048566293213103726
+        },
+        {
+          "photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1378-88.jpg",
+          "edit": "/Users/abhijitnambiar/Downloads/Morph/edits/DSC_1378-88.jpg",
+          "identity_rmse": 0.07954233884811401,
+          "transfer_rmse": 0.04981849482199119
+        }
+      ],
+      "skipped": [],
+      "comparison_sheets": [
+        "comparison-01.jpg"
+      ]
+    }
+  ]
+}

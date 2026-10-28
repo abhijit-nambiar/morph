@@ -1,0 +1,87 @@
+{
+  "method": "Regular spatial sampling before export encoding. High = any channel >= 254/255; low = all channels <= 1/255. Flag = either fraction increased more than 1 percentage point; heuristic, not a quality verdict.",
+  "note": "Preview checks cover only the selected samples, not the rest of the album.",
+  "photos": [
+    {
+      "scene": "scene-01",
+      "original": "originals/DSC_0906-4.jpg",
+      "export": "test-output/scene-01/samples/DSC_0906-4.jpg",
+      "clipping": {
+        "sampled_pixels": 201850,
+        "before": {
+          "high": 0.0030270002477086944,
+          "low": 0.0006093633886549418
+        },
+        "after": {
+          "high": 0.002368095120138717,
+          "low": 0.00013376269507059697
+        },
+        "high_increase": -0.0006589051275699776,
+        "low_increase": -0.00047560069358434486,
+        "flag": false
+      },
+      "transfer": {
+        "role": "representative",
+        "status": "evaluated",
+        "source_to_target_rmse": 0.028736794367432594,
+        "output_to_target_rmse": 0.001614620100972652,
+        "worse_than_source": false,
+        "size": 320
+      }
+    },
+    {
+      "scene": "scene-01",
+      "original": "originals/DSC_0928-10.jpg",
+      "export": "test-output/scene-01/samples/DSC_0928-10.jpg",
+      "clipping": {
+        "sampled_pixels": 201850,
+        "before": {
+          "high": 0.0035868218974486003,
+          "low": 0.0020559821649739907
+        },
+        "after": {
+          "high": 0.0030616794649492196,
+          "low": 0.0002526628684666832
+        },
+        "high_increase": -0.0005251424324993806,
+        "low_increase": -0.0018033192965073075,
+        "flag": false
+      },
+      "transfer": {
+        "role": "other photo",
+        "status": "evaluated",
+        "source_to_target_rmse": 0.027192646637558937,
+        "output_to_target_rmse": 0.0019807526336109347,
+        "worse_than_source": false,
+        "size": 320
+      }
+    },
+    {
+      "scene": "scene-01",
+      "original": "originals/DSC_0901-1.jpg",
+      "export": "test-output/scene-01/samples/DSC_0901-1.jpg",
+      "clipping": {
+        "sampled_pixels": 201850,
+        "before": {
+          "high": 0.008724300222937825,
+          "low": 0.0005647758236314095
+        },
+        "after": {
+          "high": 0.00766906118404756,
+          "low": 2.972504334902155e-05
+        },
+        "high_increase": -0.0010552390388902655,
+        "low_increase": -0.000535050780282388,
+        "flag": false
+      },
+      "transfer": {
+        "role": "other photo",
+        "status": "evaluated",
+        "source_to_target_rmse": 0.028982141986489296,
+        "output_to_target_rmse": 0.0019878187965896047,
+        "worse_than_source": false,
+        "size": 320
+      }
+    }
+  ]
+}

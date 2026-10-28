@@ -1,0 +1,115 @@
+{
+  "renderer": "polynomial",
+  "source_fit": "outputs/morph-reconstruction/demo-polynomial/scene-01/fit.json",
+  "strength": 1.0,
+  "applied_recipe": {
+    "kind": "polynomial-rgb-v1",
+    "features": [
+      "red",
+      "green",
+      "blue",
+      "red2",
+      "green2",
+      "blue2",
+      "red_green",
+      "red_blue",
+      "green_blue",
+      "constant"
+    ],
+    "weights": [
+      [
+        0.047701422128722436,
+        0.010478193037143181,
+        -0.017281870630094592
+      ],
+      [
+        0.06929740964520473,
+        0.047151840836487914,
+        0.023741424521261243
+      ],
+      [
+        0.09456462257133229,
+        0.0835941315694504,
+        0.06218674921847191
+      ],
+      [
+        -0.05987915649335425,
+        -0.04200493449063367,
+        -0.02183213547907336
+      ],
+      [
+        -0.038201964610596446,
+        -0.025237888196222455,
+        -0.005968221938398749
+      ],
+      [
+        -0.010456662928843265,
+        -0.009650360158834227,
+        -0.02502837064472928
+      ],
+      [
+        -0.05045207183264794,
+        -0.0337173384688197,
+        -0.012220903793402868
+      ],
+      [
+        -0.043697277683374926,
+        -0.029345084930438425,
+        -0.012145454323044123
+      ],
+      [
+        -0.0275588053194053,
+        -0.01941900881328996,
+        -0.010691545095875075
+      ],
+      [
+        0.009919304019720286,
+        0.009852736776370797,
+        0.008138166834235051
+      ]
+    ]
+  },
+  "correction_renderer": "gamut",
+  "album_correction": {
+    "exposure": 0.0,
+    "temperature": 0.02,
+    "tint": 0.0,
+    "contrast": 0.0,
+    "shadows": 0.0,
+    "highlights": 0.0,
+    "saturation": 0.0,
+    "cool_saturation": 0.0,
+    "warm_saturation": 0.0
+  },
+  "scene_correction": {
+    "exposure": 0.0,
+    "temperature": 0.0,
+    "tint": 0.0,
+    "contrast": 0.0,
+    "shadows": 0.06,
+    "highlights": 0.0,
+    "saturation": 0.0,
+    "cool_saturation": 0.0,
+    "warm_saturation": 0.0
+  },
+  "photo_corrections": {
+    "DSC_0916-6.jpg": {
+      "exposure": 0.08,
+      "temperature": 0.0,
+      "tint": 0.0,
+      "contrast": 0.0,
+      "shadows": 0.0,
+      "highlights": 0.0,
+      "saturation": 0.0,
+      "cool_saturation": 0.0,
+      "warm_saturation": 0.0
+    }
+  },
+  "representative": "/Users/abhijitnambiar/Documents/Codex/2026-10-27/i/work/morph-demo/DSC_0906-4.jpg",
+  "operation_order": [
+    "photo correction",
+    "fitted look",
+    "scene correction",
+    "album correction"
+  ]
+}

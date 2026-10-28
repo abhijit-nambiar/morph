@@ -1,0 +1,119 @@
+{
+  "method": "Regular spatial sampling before export encoding. High = any channel >= 254/255; low = all channels <= 1/255. Flag = either fraction increased more than 1 percentage point; heuristic, not a quality verdict.",
+  "photos": [
+    {
+      "scene": "scene-01",
+      "original": "/Users/abhijitnambiar/Documents/Codex/2026-10-27/i/work/morph-demo/DSC_0901-1.jpg",
+      "export": "outputs/morph-reconstruction/demo-pillow-half/scene-01/exports/DSC_0901-1.jpg",
+      "clipping": {
+        "sampled_pixels": 240000,
+        "before": {
+          "high": 0.009541666666666667,
+          "low": 0.0005125
+        },
+        "after": {
+          "high": 0.0436125,
+          "low": 0.006216666666666666
+        },
+        "high_increase": 0.03407083333333333,
+        "low_increase": 0.005704166666666666,
+        "flag": true
+      }
+    },
+    {
+      "scene": "scene-01",
+      "original": "/Users/abhijitnambiar/Documents/Codex/2026-10-27/i/work/morph-demo/DSC_0906-4.jpg",
+      "export": "outputs/morph-reconstruction/demo-pillow-half/scene-01/exports/DSC_0906-4.jpg",
+      "clipping": {
+        "sampled_pixels": 240000,
+        "before": {
+          "high": 0.0032291666666666666,
+          "low": 0.00044583333333333335
+        },
+        "after": {
+          "high": 0.1019,
+          "low": 0.023545833333333332
+        },
+        "high_increase": 0.09867083333333333,
+        "low_increase": 0.0231,
+        "flag": true
+      }
+    },
+    {
+      "scene": "scene-01",
+      "original": "/Users/abhijitnambiar/Documents/Codex/2026-10-27/i/work/morph-demo/DSC_0914-5.jpg",
+      "export": "outputs/morph-reconstruction/demo-pillow-half/scene-01/exports/DSC_0914-5.jpg",
+      "clipping": {
+        "sampled_pixels": 240000,
+        "before": {
+          "high": 0.0029,
+          "low": 0.0023541666666666667
+        },
+        "after": {
+          "high": 0.1037625,
+          "low": 0.029575
+        },
+        "high_increase": 0.1008625,
+        "low_increase": 0.027220833333333333,
+        "flag": true
+      }
+    },
+    {
+      "scene": "scene-01",
+      "original": "/Users/abhijitnambiar/Documents/Codex/2026-10-27/i/work/morph-demo/DSC_0916-6.jpg",
+      "export": "outputs/morph-reconstruction/demo-pillow-half/scene-01/exports/DSC_0916-6.jpg",
+      "clipping": {
+        "sampled_pixels": 240000,
+        "before": {
+          "high": 0.004520833333333333,
+          "low": 0.0014708333333333333
+        },
+        "after": {
+          "high": 0.10930416666666666,
+          "low": 0.0287625
+        },
+        "high_increase": 0.10478333333333333,
+        "low_increase": 0.027291666666666665,
+        "flag": true
+      }
+    },
+    {
+      "scene": "scene-02",
+      "original": "/Users/abhijitnambiar/Documents/Codex/2026-10-27/i/work/morph-demo/DSC_0904-2.jpg",
+      "export": "outputs/morph-reconstruction/demo-pillow-half/scene-02/exports/DSC_0904-2.jpg",
+      "clipping": {
+        "sampled_pixels": 240000,
+        "before": {
+          "high": 0.017679166666666666,
+          "low": 0.0002625
+        },
+        "after": {
+          "high": 0.15005,
+          "low": 0.006520833333333333
+        },
+        "high_increase": 0.13237083333333333,
+        "low_increase": 0.006258333333333334,
+        "flag": true
+      }
+    },
+    {
+      "scene": "scene-02",
+      "original": "/Users/abhijitnambiar/Documents/Codex/2026-10-27/i/work/morph-demo/DSC_0905-3.jpg",
+      "export": "outputs/morph-reconstruction/demo-pillow-half/scene-02/exports/DSC_0905-3.jpg",
+      "clipping": {
+        "sampled_pixels": 240000,
+        "before": {
+          "high": 0.012491666666666667,
+          "low": 0.0003333333333333333
+        },
+        "after": {
+          "high": 0.1473375,
+          "low": 0.008741666666666667
+        },
+        "high_increase": 0.13484583333333333,
+        "low_increase": 0.008408333333333334,
+        "flag": true
+      }
+    }
+  ]
+}

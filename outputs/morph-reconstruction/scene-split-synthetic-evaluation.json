@@ -1,0 +1,96 @@
+{
+  "scope": "The split was selected by visual inspection of this same album. Synthetic target uses the same global controls and face detections for every photo and is not a human edit; both methods share the target generator. Every representative used by either method is excluded from evaluation. Pixel RMSE does not measure aesthetics or validate grouping in other albums.",
+  "representatives_excluded": [
+    "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_0958-15.jpg",
+    "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_0995-22.jpg"
+  ],
+  "summary": {
+    "heldout": 11,
+    "split_lower": 5,
+    "split_higher": 0,
+    "effectively_equal": 6,
+    "unsplit_mean_rmse": 0.0072211313614995365,
+    "split_mean_rmse": 0.006069311896444351,
+    "unsplit_median_rmse": 0.007448371852657624,
+    "split_median_rmse": 0.005898539330068344
+  },
+  "photos": [
+    {
+      "photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_0965-16.jpg",
+      "split_scene": "scene-02",
+      "source_rmse": 0.0254232045263052,
+      "unsplit_rmse": 0.007448371852657624,
+      "split_rmse": 0.007448371852657624
+    },
+    {
+      "photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_0990-20.jpg",
+      "split_scene": "scene-02",
+      "source_rmse": 0.029319901019334793,
+      "unsplit_rmse": 0.006528242425089324,
+      "split_rmse": 0.006528242425089324
+    },
+    {
+      "photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_0993-21.jpg",
+      "split_scene": "scene-02",
+      "source_rmse": 0.02720867656171322,
+      "unsplit_rmse": 0.007149000669080006,
+      "split_rmse": 0.007149000669080006
+    },
+    {
+      "photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_0997-23.jpg",
+      "split_scene": "scene-02",
+      "source_rmse": 0.025706822052598,
+      "unsplit_rmse": 0.007117544810675753,
+      "split_rmse": 0.007117544810675753
+    },
+    {
+      "photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_0998-24.jpg",
+      "split_scene": "scene-02",
+      "source_rmse": 0.02849041298031807,
+      "unsplit_rmse": 0.005898539330068344,
+      "split_rmse": 0.005898539330068344
+    },
+    {
+      "photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1012-25.jpg",
+      "split_scene": "scene-02",
+      "source_rmse": 0.02786332368850708,
+      "unsplit_rmse": 0.0065065212093628946,
+      "split_rmse": 0.0065065212093628946
+    },
+    {
+      "photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_0947-13.jpg",
+      "split_scene": "scene-02-lawn",
+      "source_rmse": 0.03438509255647659,
+      "unsplit_rmse": 0.007969097436890185,
+      "split_rmse": 0.005707300706036166
+    },
+    {
+      "photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_0948-14.jpg",
+      "split_scene": "scene-02-lawn",
+      "source_rmse": 0.03411167114973068,
+      "unsplit_rmse": 0.007532481093829454,
+      "split_rmse": 0.0053341786758960485
+    },
+    {
+      "photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_0970-17.jpg",
+      "split_scene": "scene-02-lawn",
+      "source_rmse": 0.03031165711581707,
+      "unsplit_rmse": 0.007621239940457336,
+      "split_rmse": 0.004881041106615148
+    },
+    {
+      "photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_0974-18.jpg",
+      "split_scene": "scene-02-lawn",
+      "source_rmse": 0.03204501047730446,
+      "unsplit_rmse": 0.007828263124800793,
+      "split_rmse": 0.004994908359150551
+    },
+    {
+      "photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_0987-19.jpg",
+      "split_scene": "scene-02-lawn",
+      "source_rmse": 0.0342852957546711,
+      "unsplit_rmse": 0.00783314308358319,
+      "split_rmse": 0.005196781716255999
+    }
+  ]
+}

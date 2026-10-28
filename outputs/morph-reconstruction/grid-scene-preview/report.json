@@ -1,0 +1,44 @@
+{
+  "mode": "preview",
+  "target_engine": "spatial-soft",
+  "prompt": "warm and lift shadows",
+  "interpreted_prompt": [
+    {
+      "phrase": "warm",
+      "intensity": 1.0
+    },
+    {
+      "phrase": "lift shadows",
+      "intensity": 1.0
+    }
+  ],
+  "renderer": "grid",
+  "regularization": 0.0001,
+  "strength": 1.0,
+  "scenes": [
+    {
+      "scene": "scene-01",
+      "representative": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_0906-4.jpg",
+      "photos": 12,
+      "sample_photos": [
+        "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_0906-4.jpg",
+        "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_0928-10.jpg"
+      ],
+      "metrics": {
+        "initial_mse": 0.0013283679727464914,
+        "fit_mse": 9.854966087497072e-06,
+        "rmse": 0.0031392620291235762,
+        "metric_scope": "entire fitting-resolution image",
+        "regularization": 0.0001
+      }
+    }
+  ],
+  "export_count": 0,
+  "sample_count": 2,
+  "clipping_flags": 0,
+  "transfer_check": {
+    "enabled": true,
+    "other_photos_evaluated": 1,
+    "worse_than_source": 0
+  }
+}

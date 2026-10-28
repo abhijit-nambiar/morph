@@ -1,0 +1,49 @@
+{
+  "mode": "preview",
+  "target_engine": "gaussian-soft",
+  "prompt": "warm and brighten upper left",
+  "interpreted_prompt": [
+    {
+      "phrase": "warm",
+      "intensity": 1.0
+    },
+    {
+      "phrase": "brighten upper left",
+      "intensity": 1.0,
+      "center": [
+        0.2,
+        0.2
+      ],
+      "local_strength": 0.3
+    }
+  ],
+  "renderer": "grid",
+  "regularization": 0.0001,
+  "strength": 1.0,
+  "scenes": [
+    {
+      "scene": "scene-01",
+      "representative": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_0906-4.jpg",
+      "photos": 12,
+      "sample_photos": [
+        "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_0906-4.jpg",
+        "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_0928-10.jpg"
+      ],
+      "metrics": {
+        "initial_mse": 0.0006684600375592709,
+        "fit_mse": 9.937173906417394e-06,
+        "rmse": 0.0031523283309987547,
+        "metric_scope": "entire fitting-resolution image",
+        "regularization": 0.0001
+      }
+    }
+  ],
+  "export_count": 0,
+  "sample_count": 2,
+  "clipping_flags": 0,
+  "transfer_check": {
+    "enabled": true,
+    "other_photos_evaluated": 1,
+    "worse_than_source": 0
+  }
+}

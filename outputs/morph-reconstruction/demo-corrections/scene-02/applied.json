@@ -1,0 +1,46 @@
+{
+  "renderer": "gamut",
+  "source_fit": "outputs/morph-reconstruction/demo-custom-target/scene-02/fit.json",
+  "strength": 1.0,
+  "applied_recipe": {
+    "exposure": 0.265,
+    "temperature": 0.05501,
+    "tint": 0.002032,
+    "contrast": -0.020641,
+    "shadows": 0.003021,
+    "highlights": -0.056265,
+    "saturation": -0.006535,
+    "cool_saturation": -0.175266,
+    "warm_saturation": 0.0752
+  },
+  "album_correction": {
+    "exposure": 0.0,
+    "temperature": 0.02,
+    "tint": 0.0,
+    "contrast": 0.0,
+    "shadows": 0.0,
+    "highlights": 0.0,
+    "saturation": 0.0,
+    "cool_saturation": 0.0,
+    "warm_saturation": 0.0
+  },
+  "scene_correction": {
+    "exposure": 0.0,
+    "temperature": 0.0,
+    "tint": 0.0,
+    "contrast": 0.0,
+    "shadows": 0.0,
+    "highlights": 0.0,
+    "saturation": 0.0,
+    "cool_saturation": 0.0,
+    "warm_saturation": 0.0
+  },
+  "photo_corrections": {},
+  "representative": "/Users/abhijitnambiar/Documents/Codex/2026-10-27/i/work/morph-demo/DSC_0904-2.jpg",
+  "operation_order": [
+    "photo correction",
+    "fitted look",
+    "scene correction",
+    "album correction"
+  ]
+}

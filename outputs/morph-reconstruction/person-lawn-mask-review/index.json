@@ -1,0 +1,47 @@
+{
+  "scope": "Reduced-resolution mask overlays for human review. Blank-mask flag is a heuristic and does not validate mask coverage. Source and masks were checked against the manifest at review time.",
+  "photos": [
+    {
+      "source": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_0947-13.jpg",
+      "mask": "/Users/abhijitnambiar/Documents/Codex/2026-10-27/i/outputs/morph-reconstruction/person-lawn-masks/DSC_0947-13-mask.png",
+      "mean_mask_weight": 0.0008035294595174491,
+      "empty_mask_flag": true,
+      "sheet": "comparison-01.jpg"
+    },
+    {
+      "source": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_0948-14.jpg",
+      "mask": "/Users/abhijitnambiar/Documents/Codex/2026-10-27/i/outputs/morph-reconstruction/person-lawn-masks/DSC_0948-14-mask.png",
+      "mean_mask_weight": 0.025204772129654884,
+      "empty_mask_flag": false,
+      "sheet": "comparison-01.jpg"
+    },
+    {
+      "source": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_0958-15.jpg",
+      "mask": "/Users/abhijitnambiar/Documents/Codex/2026-10-27/i/outputs/morph-reconstruction/person-lawn-masks/DSC_0958-15-mask.png",
+      "mean_mask_weight": 0.09202072024345398,
+      "empty_mask_flag": false,
+      "sheet": "comparison-01.jpg"
+    },
+    {
+      "source": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_0970-17.jpg",
+      "mask": "/Users/abhijitnambiar/Documents/Codex/2026-10-27/i/outputs/morph-reconstruction/person-lawn-masks/DSC_0970-17-mask.png",
+      "mean_mask_weight": 0.1505081057548523,
+      "empty_mask_flag": false,
+      "sheet": "comparison-01.jpg"
+    },
+    {
+      "source": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_0974-18.jpg",
+      "mask": "/Users/abhijitnambiar/Documents/Codex/2026-10-27/i/outputs/morph-reconstruction/person-lawn-masks/DSC_0974-18-mask.png",
+      "mean_mask_weight": 0.1138392835855484,
+      "empty_mask_flag": false,
+      "sheet": "comparison-01.jpg"
+    },
+    {
+      "source": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_0987-19.jpg",
+      "mask": "/Users/abhijitnambiar/Documents/Codex/2026-10-27/i/outputs/morph-reconstruction/person-lawn-masks/DSC_0987-19-mask.png",
+      "mean_mask_weight": 0.05230405181646347,
+      "empty_mask_flag": false,
+      "sheet": "comparison-02.jpg"
+    }
+  ]
+}

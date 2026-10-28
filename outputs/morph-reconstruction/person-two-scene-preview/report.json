@@ -1,0 +1,19 @@
+{
+  "kind": "experimental-person-album-output-v1",
+  "scope": "One shared mask-aware mapping per scene; corrections are manual. Inspect masks and full-resolution output.",
+  "mode": "preview",
+  "fits": "/Users/abhijitnambiar/Documents/Codex/2026-10-27/i/outputs/morph-reconstruction/person-two-scene-fits",
+  "scenes": [
+    {
+      "scene": "scene-02-lawn",
+      "photos": 2,
+      "report": "scene-02-lawn/report.json"
+    },
+    {
+      "scene": "scene-02",
+      "photos": 2,
+      "report": "scene-02/report.json"
+    }
+  ],
+  "photos": 4
+}

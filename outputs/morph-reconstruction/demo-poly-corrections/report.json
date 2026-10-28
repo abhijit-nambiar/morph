@@ -1,0 +1,19 @@
+{
+  "source_fits": "outputs/morph-reconstruction/demo-polynomial",
+  "scenes": [
+    {
+      "scene": "scene-01",
+      "photos": 4,
+      "renderer": "polynomial",
+      "strength": 1.0
+    },
+    {
+      "scene": "scene-02",
+      "photos": 2,
+      "renderer": "polynomial",
+      "strength": 1.0
+    }
+  ],
+  "export_count": 6,
+  "clipping_flags": 0
+}

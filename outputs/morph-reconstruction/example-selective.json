@@ -1,0 +1,10 @@
+{
+  "exposure": 0.08,
+  "temperature": 0.04,
+  "contrast": 0.08,
+  "shadows": 0.10,
+  "highlights": -0.10,
+  "saturation": 0.03,
+  "cool_saturation": -0.15,
+  "warm_saturation": 0.12
+}

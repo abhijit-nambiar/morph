@@ -1,0 +1,90 @@
+{
+  "method": "Regular spatial sampling before export encoding. High = any channel >= 254/255; low = all channels <= 1/255. Flag = either fraction increased more than 1 percentage point; heuristic, not a quality verdict.",
+  "note": "Preview checks cover only the selected samples, not the rest of the album.",
+  "photos": [
+    {
+      "scene": "scene-01",
+      "original": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_0906-4.jpg",
+      "export": "outputs/morph-reconstruction/transfer-check-preview/scene-01/samples/DSC_0906-4.jpg",
+      "clipping": {
+        "sampled_pixels": 201850,
+        "before": {
+          "high": 0.0030270002477086944,
+          "low": 0.0006093633886549418
+        },
+        "after": {
+          "high": 0.0011097349516968045,
+          "low": 0.0
+        },
+        "high_increase": -0.00191726529601189,
+        "low_increase": -0.0006093633886549418,
+        "flag": false,
+        "polynomial_out_of_gamut_fraction": 0.0008471637354471142
+      },
+      "transfer": {
+        "role": "representative",
+        "status": "evaluated",
+        "source_to_target_rmse": 0.028736794367432594,
+        "output_to_target_rmse": 0.004512039218186496,
+        "worse_than_source": false,
+        "size": 320
+      }
+    },
+    {
+      "scene": "scene-01",
+      "original": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_0928-10.jpg",
+      "export": "outputs/morph-reconstruction/transfer-check-preview/scene-01/samples/DSC_0928-10.jpg",
+      "clipping": {
+        "sampled_pixels": 201850,
+        "before": {
+          "high": 0.0035868218974486003,
+          "low": 0.0020559821649739907
+        },
+        "after": {
+          "high": 0.0005895466930889274,
+          "low": 0.0
+        },
+        "high_increase": -0.002997275204359673,
+        "low_increase": -0.0020559821649739907,
+        "flag": false,
+        "polynomial_out_of_gamut_fraction": 0.00044587565023532325
+      },
+      "transfer": {
+        "role": "other photo",
+        "status": "evaluated",
+        "source_to_target_rmse": 0.027192646637558937,
+        "output_to_target_rmse": 0.005619862996364658,
+        "worse_than_source": false,
+        "size": 320
+      }
+    },
+    {
+      "scene": "scene-01",
+      "original": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_0904-2.jpg",
+      "export": "outputs/morph-reconstruction/transfer-check-preview/scene-01/samples/DSC_0904-2.jpg",
+      "clipping": {
+        "sampled_pixels": 201850,
+        "before": {
+          "high": 0.0128263562051028,
+          "low": 0.00025761704235818675
+        },
+        "after": {
+          "high": 0.004562794154074808,
+          "low": 0.0
+        },
+        "high_increase": -0.008263562051027993,
+        "low_increase": -0.00025761704235818675,
+        "flag": false,
+        "polynomial_out_of_gamut_fraction": 0.004245727025018578
+      },
+      "transfer": {
+        "role": "other photo",
+        "status": "evaluated",
+        "source_to_target_rmse": 0.02827054262161255,
+        "output_to_target_rmse": 0.006589033988669392,
+        "worse_than_source": false,
+        "size": 320
+      }
+    }
+  ]
+}

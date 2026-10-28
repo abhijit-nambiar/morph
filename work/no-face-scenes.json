@@ -1,0 +1,20 @@
+{
+  "groups": [
+    {
+      "id": "scene-02",
+      "representative": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_0947-13.jpg",
+      "photos": [
+        "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_0947-13.jpg",
+        "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_0948-14.jpg"
+      ]
+    },
+    {
+      "id": "scene-04",
+      "representative": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1054-33.jpg",
+      "photos": [
+        "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1054-33.jpg",
+        "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1059-34.jpg"
+      ]
+    }
+  ]
+}

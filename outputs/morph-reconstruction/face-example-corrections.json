@@ -1,0 +1,5 @@
+{
+  "album": {"temperature": 0.02},
+  "scenes": {"scene-01": {"shadows": 0.05}},
+  "photos": {"scene-01": {"DSC_0904-2.jpg": {"exposure": 0.10}}}
+}

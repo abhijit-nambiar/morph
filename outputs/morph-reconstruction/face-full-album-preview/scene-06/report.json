@@ -1,0 +1,32 @@
+{
+  "scope": "Experimental face-relative reconstruction. Face boxes are unverified and local lighting affects surroundings.",
+  "scene": "scene-06",
+  "source_fit": "outputs/morph-reconstruction/face-full-album-fits/scene-06/fit.json",
+  "local_status": "fitted",
+  "mode": "preview",
+  "correction_renderer": "gamut",
+  "corrections": {
+    "album": {},
+    "scene": {},
+    "photos": {}
+  },
+  "operation_order": [
+    "photo correction",
+    "fitted look",
+    "scene correction",
+    "album correction"
+  ],
+  "photos_without_detected_faces": 0,
+  "photos": [
+    {
+      "source": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1286-58.jpg",
+      "output": "outputs/morph-reconstruction/face-full-album-preview/scene-06/exports/DSC_1286-58.jpg",
+      "faces": 2,
+      "local_lighting": "applied around detected faces",
+      "dimensions": [
+        4032,
+        6048
+      ]
+    }
+  ]
+}

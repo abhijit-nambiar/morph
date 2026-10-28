@@ -1,0 +1,30 @@
+{
+  "groups": [
+    {
+      "id": "scene-01",
+      "representative": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_0935-12.jpg",
+      "photo_count": 11,
+      "contact_sheet": "scene-01.jpg"
+    },
+    {
+      "id": "scene-02",
+      "representative": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1012-25.jpg",
+      "photo_count": 34,
+      "contact_sheet": "scene-02.jpg"
+    },
+    {
+      "id": "scene-03",
+      "representative": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1096-40.jpg",
+      "photo_count": 24,
+      "contact_sheet": "scene-03.jpg"
+    },
+    {
+      "id": "scene-04",
+      "representative": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1264-51.jpg",
+      "photo_count": 19,
+      "contact_sheet": "scene-04.jpg"
+    }
+  ],
+  "unassigned": [],
+  "outside_source": []
+}

@@ -1,0 +1,8 @@
+{
+  "scope": "Thumbnail review; no album or scene correction layers are shown. Inspect full-resolution samples before export. Blank decisions are not accepted.",
+  "candidates": 4,
+  "comparison_sheets": [
+    "comparison-01.jpg"
+  ],
+  "decisions": "decisions.csv"
+}

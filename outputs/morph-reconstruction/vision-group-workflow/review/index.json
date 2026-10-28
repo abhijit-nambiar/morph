@@ -1,0 +1,132 @@
+{
+  "groups": [
+    {
+      "id": "scene-01",
+      "representative": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_0919-7.jpg",
+      "photo_count": 9,
+      "contact_sheet": "scene-01.jpg"
+    },
+    {
+      "id": "scene-02",
+      "representative": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_0921-8.jpg",
+      "photo_count": 2,
+      "contact_sheet": "scene-02.jpg"
+    },
+    {
+      "id": "scene-03",
+      "representative": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_0928-10.jpg",
+      "photo_count": 1,
+      "contact_sheet": "scene-03.jpg"
+    },
+    {
+      "id": "scene-04",
+      "representative": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_0948-14.jpg",
+      "photo_count": 5,
+      "contact_sheet": "scene-04.jpg"
+    },
+    {
+      "id": "scene-05",
+      "representative": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_0965-16.jpg",
+      "photo_count": 1,
+      "contact_sheet": "scene-05.jpg"
+    },
+    {
+      "id": "scene-06",
+      "representative": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_0987-19.jpg",
+      "photo_count": 1,
+      "contact_sheet": "scene-06.jpg"
+    },
+    {
+      "id": "scene-07",
+      "representative": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_0995-22.jpg",
+      "photo_count": 6,
+      "contact_sheet": "scene-07.jpg"
+    },
+    {
+      "id": "scene-08",
+      "representative": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1021-26.jpg",
+      "photo_count": 2,
+      "contact_sheet": "scene-08.jpg"
+    },
+    {
+      "id": "scene-09",
+      "representative": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1028-28.jpg",
+      "photo_count": 1,
+      "contact_sheet": "scene-09.jpg"
+    },
+    {
+      "id": "scene-10",
+      "representative": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1033-30.jpg",
+      "photo_count": 4,
+      "contact_sheet": "scene-10.jpg"
+    },
+    {
+      "id": "scene-11",
+      "representative": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1054-33.jpg",
+      "photo_count": 2,
+      "contact_sheet": "scene-11.jpg"
+    },
+    {
+      "id": "scene-12",
+      "representative": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1100-41.jpg",
+      "photo_count": 9,
+      "contact_sheet": "scene-12.jpg"
+    },
+    {
+      "id": "scene-13",
+      "representative": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1116-47.jpg",
+      "photo_count": 5,
+      "contact_sheet": "scene-13.jpg"
+    },
+    {
+      "id": "scene-14",
+      "representative": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1264-51.jpg",
+      "photo_count": 6,
+      "contact_sheet": "scene-14.jpg"
+    },
+    {
+      "id": "scene-15",
+      "representative": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1280-55.jpg",
+      "photo_count": 10,
+      "contact_sheet": "scene-15.jpg"
+    },
+    {
+      "id": "scene-16",
+      "representative": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1304-65.jpg",
+      "photo_count": 1,
+      "contact_sheet": "scene-16.jpg"
+    },
+    {
+      "id": "scene-17",
+      "representative": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1312-68.jpg",
+      "photo_count": 6,
+      "contact_sheet": "scene-17.jpg"
+    },
+    {
+      "id": "scene-18",
+      "representative": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1324-72.jpg",
+      "photo_count": 1,
+      "contact_sheet": "scene-18.jpg"
+    },
+    {
+      "id": "scene-19",
+      "representative": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1334-76.jpg",
+      "photo_count": 6,
+      "contact_sheet": "scene-19.jpg"
+    },
+    {
+      "id": "scene-20",
+      "representative": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1342-81.jpg",
+      "photo_count": 4,
+      "contact_sheet": "scene-20.jpg"
+    },
+    {
+      "id": "scene-21",
+      "representative": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1362-84.jpg",
+      "photo_count": 6,
+      "contact_sheet": "scene-21.jpg"
+    }
+  ],
+  "unassigned": [],
+  "outside_source": []
+}

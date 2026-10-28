@@ -1,0 +1,65 @@
+{
+  "results": [
+    {
+      "file": "DSC_0901-1.jpg",
+      "status": "skipped: dimensions differ; alignment required"
+    },
+    {
+      "file": "DSC_0904-2.jpg",
+      "status": "fit; equal dimensions do not guarantee registration",
+      "recipe": {
+        "exposure": -0.002812,
+        "temperature": 0.056875,
+        "tint": -0.001172,
+        "contrast": -0.192969,
+        "shadows": -0.003867,
+        "highlights": 0.005625,
+        "saturation": -0.24
+      },
+      "metrics": {
+        "initial_mse": 0.012921652916000873,
+        "fit_mse": 0.00906894899892318,
+        "rmse": 0.0952310296012974,
+        "evaluations": 603
+      }
+    },
+    {
+      "file": "DSC_0905-3.jpg",
+      "status": "fit; equal dimensions do not guarantee registration",
+      "recipe": {
+        "exposure": 0.001406,
+        "temperature": 0.096797,
+        "tint": -0.001172,
+        "contrast": -0.185156,
+        "shadows": 0.049922,
+        "highlights": -0.025664,
+        "saturation": -0.405
+      },
+      "metrics": {
+        "initial_mse": 0.01351365141043543,
+        "fit_mse": 0.008571322727494151,
+        "rmse": 0.09258143835291258,
+        "evaluations": 519
+      }
+    },
+    {
+      "file": "DSC_0906-4.jpg",
+      "status": "fit; equal dimensions do not guarantee registration",
+      "recipe": {
+        "exposure": 0.052031,
+        "temperature": 0.079844,
+        "tint": 0.005156,
+        "contrast": -0.173438,
+        "shadows": 0.353672,
+        "highlights": 0.180703,
+        "saturation": -0.184687
+      },
+      "metrics": {
+        "initial_mse": 0.016700567082213114,
+        "fit_mse": 0.0018736090565881895,
+        "rmse": 0.04328520597835003,
+        "evaluations": 631
+      }
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "status": "complete",
+  "mode": "preview",
+  "prompt": "warm and slightly soft contrast and lift shadows and slightly brighten faces",
+  "groups": "/Users/abhijitnambiar/Documents/Codex/2026-10-27/i/work/face-two-scene.json",
+  "completed_stages": [
+    "review-detections",
+    "fit",
+    "render",
+    "review",
+    "clipping-audit"
+  ],
+  "outputs": {
+    "review": "review/index.html",
+    "detections_review": "detections-review/index.json",
+    "clipping_audit": "clipping-audit.json",
+    "verification": null
+  }
+}

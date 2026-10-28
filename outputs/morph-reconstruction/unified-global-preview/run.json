@@ -1,0 +1,19 @@
+{
+  "status": "complete",
+  "mode": "preview",
+  "renderer": "gamut",
+  "prompt": "warm and slightly soft contrast and lift shadows",
+  "groups": "/Users/abhijitnambiar/Documents/Codex/2026-10-27/i/work/one-scene.json",
+  "completed_stages": [
+    "review-groups",
+    "fit",
+    "render",
+    "review"
+  ],
+  "outputs": {
+    "review": "review/index.html",
+    "groups_review": "groups-review/index.json",
+    "diagnostics": "album/review.json",
+    "verification": null
+  }
+}

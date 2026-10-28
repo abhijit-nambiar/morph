@@ -1,0 +1,55 @@
+{
+  "scope": "Approximate reduced-resolution pre-JPEG check, recomputed from originals and stored settings. Downsampling may hide localized clipping or artifacts; near-limit increases are heuristics, not judgments of quality. Out-of-gamut fraction is measured before the fitted mapping clamp, after any photo correction and before later corrections.",
+  "sample_max_side": 512,
+  "photos": 2,
+  "near_limit_flags": 0,
+  "photos_without_faces": 0,
+  "rows": [
+    {
+      "scene": "scene-01",
+      "source": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_0906-4.jpg",
+      "faces": 4,
+      "clipping": {
+        "sample_size": [
+          512,
+          341
+        ],
+        "before": {
+          "near_white": 0.00266907991202346,
+          "near_black": 0.0014433651026392962
+        },
+        "after": {
+          "near_white": 0.0004123900293255132,
+          "near_black": 0.0
+        },
+        "near_white_increase": -0.002256689882697947,
+        "near_black_increase": -0.0014433651026392962,
+        "near_limit_flag": false,
+        "face_mapping_out_of_gamut_fraction": 0.0002691990469208211
+      }
+    },
+    {
+      "scene": "scene-02",
+      "source": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_0958-15.jpg",
+      "faces": 5,
+      "clipping": {
+        "sample_size": [
+          512,
+          341
+        ],
+        "before": {
+          "near_white": 0.01072786840175953,
+          "near_black": 0.0026289864369501465
+        },
+        "after": {
+          "near_white": 4.009347507331378e-05,
+          "near_black": 0.0
+        },
+        "near_white_increase": -0.010687774926686216,
+        "near_black_increase": -0.0026289864369501465,
+        "near_limit_flag": false,
+        "face_mapping_out_of_gamut_fraction": 5.727639296187683e-06
+      }
+    }
+  ]
+}

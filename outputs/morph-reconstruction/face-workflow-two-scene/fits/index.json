@@ -1,0 +1,9 @@
+{
+  "version": 1,
+  "scenes": [
+    "scene-01",
+    "scene-02"
+  ],
+  "prompt": "warm and slightly soft contrast and lift shadows and slightly brighten faces",
+  "target_engine": "synthetic-face"
+}

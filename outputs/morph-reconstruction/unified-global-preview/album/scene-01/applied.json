@@ -1,0 +1,49 @@
+{
+  "renderer": "gamut",
+  "source_fit": "/Users/abhijitnambiar/Documents/Codex/2026-10-27/i/outputs/morph-reconstruction/unified-global-preview/fits/scene-01/fit.json",
+  "source_validation": "verified",
+  "strength": 1.0,
+  "local_strength": null,
+  "applied_recipe": {
+    "exposure": 0.13936437494721984,
+    "temperature": 0.09600017037041164,
+    "tint": 0.0018395437165625867,
+    "contrast": 0.009047141858117698,
+    "shadows": 0.07603555029941807,
+    "highlights": -0.07457062895609416,
+    "saturation": -0.07228459257496546,
+    "cool_saturation": 0.07178765369514241,
+    "warm_saturation": 0.01766017499810571
+  },
+  "correction_renderer": "gamut",
+  "album_correction": {
+    "exposure": 0.0,
+    "temperature": 0.0,
+    "tint": 0.0,
+    "contrast": 0.0,
+    "shadows": 0.0,
+    "highlights": 0.0,
+    "saturation": 0.0,
+    "cool_saturation": 0.0,
+    "warm_saturation": 0.0
+  },
+  "scene_correction": {
+    "exposure": 0.0,
+    "temperature": 0.0,
+    "tint": 0.0,
+    "contrast": 0.0,
+    "shadows": 0.0,
+    "highlights": 0.0,
+    "saturation": 0.0,
+    "cool_saturation": 0.0,
+    "warm_saturation": 0.0
+  },
+  "photo_corrections": {},
+  "representative": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_0906-4.jpg",
+  "operation_order": [
+    "photo correction",
+    "fitted look",
+    "scene correction",
+    "album correction"
+  ]
+}

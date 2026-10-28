@@ -1,0 +1,42 @@
+{
+  "scope": "Thumbnail comparisons and links to full-resolution scene exports; dimensions checked, ICC presence reported. Does not verify perceptual quality, correct masks, or clipping.",
+  "scene": "scene-02-lawn",
+  "photos": [
+    {
+      "source": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_0947-13.jpg",
+      "output": "/Users/abhijitnambiar/Documents/Codex/2026-10-27/i/outputs/morph-reconstruction/person-lawn-selected-full/exports/DSC_0947-13.jpg",
+      "review_flag": false,
+      "icc_profile_present": true
+    },
+    {
+      "source": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_0948-14.jpg",
+      "output": "/Users/abhijitnambiar/Documents/Codex/2026-10-27/i/outputs/morph-reconstruction/person-lawn-selected-full/exports/DSC_0948-14.jpg",
+      "review_flag": false,
+      "icc_profile_present": true
+    },
+    {
+      "source": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_0958-15.jpg",
+      "output": "/Users/abhijitnambiar/Documents/Codex/2026-10-27/i/outputs/morph-reconstruction/person-lawn-selected-full/exports/DSC_0958-15.jpg",
+      "review_flag": false,
+      "icc_profile_present": true
+    },
+    {
+      "source": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_0970-17.jpg",
+      "output": "/Users/abhijitnambiar/Documents/Codex/2026-10-27/i/outputs/morph-reconstruction/person-lawn-selected-full/exports/DSC_0970-17.jpg",
+      "review_flag": false,
+      "icc_profile_present": true
+    },
+    {
+      "source": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_0974-18.jpg",
+      "output": "/Users/abhijitnambiar/Documents/Codex/2026-10-27/i/outputs/morph-reconstruction/person-lawn-selected-full/exports/DSC_0974-18.jpg",
+      "review_flag": false,
+      "icc_profile_present": true
+    },
+    {
+      "source": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_0987-19.jpg",
+      "output": "/Users/abhijitnambiar/Documents/Codex/2026-10-27/i/outputs/morph-reconstruction/person-lawn-selected-full/exports/DSC_0987-19.jpg",
+      "review_flag": false,
+      "icc_profile_present": true
+    }
+  ]
+}

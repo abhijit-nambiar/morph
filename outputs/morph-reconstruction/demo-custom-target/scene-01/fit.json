@@ -1,0 +1,50 @@
+{
+  "target_engine": "pillow-soft",
+  "preset": null,
+  "target_settings": {
+    "tone_exposure": 0.15,
+    "tone_contrast": 0.1,
+    "tone_shadows": 0.18,
+    "tone_highlights": -0.18,
+    "tone_temperature": 0.06,
+    "cool_saturation": -0.2,
+    "warm_saturation": 0.12
+  },
+  "known_recipe": null,
+  "fitted_recipe": {
+    "exposure": 0.270942,
+    "temperature": 0.054782,
+    "tint": 0.004249,
+    "contrast": -0.010476,
+    "shadows": 0.017172,
+    "highlights": -0.070301,
+    "saturation": -0.00989,
+    "cool_saturation": -0.198219,
+    "warm_saturation": 0.085
+  },
+  "applied_recipe": {
+    "exposure": 0.270942,
+    "temperature": 0.054782,
+    "tint": 0.004249,
+    "contrast": -0.010476,
+    "shadows": 0.017172,
+    "highlights": -0.070301,
+    "saturation": -0.00989,
+    "cool_saturation": -0.198219,
+    "warm_saturation": 0.085
+  },
+  "renderer": "gamut",
+  "regularization": 0,
+  "solver": "gauss-newton",
+  "strength": 1.0,
+  "iterations": 45,
+  "metrics": {
+    "initial_mse": 0.001175487303218556,
+    "fit_mse": 1.97674471712387e-05,
+    "rmse": 0.004446059735455508,
+    "objective": 1.97674471712387e-05,
+    "evaluations": 101,
+    "solver": "damped_gauss_newton"
+  },
+  "representative": "/Users/abhijitnambiar/Documents/Codex/2026-10-27/i/work/morph-demo/DSC_0906-4.jpg"
+}

@@ -1,0 +1,1041 @@
+{
+  "scope": "Comparison on same-renderer synthetic edits, same album and recipes; fixed 6000-pixel sample for Gauss-Newton versus up to 12000 for pattern search. Timing is local and approximate.",
+  "summary": {
+    "pattern": {
+      "mean_absolute_parameter_error": {
+        "exposure": 0.03990125,
+        "temperature": 0.0006754166666666659,
+        "tint": 0.0012250416666666657,
+        "contrast": 0.010247958333333335,
+        "shadows": 0.02076829166666667,
+        "highlights": 0.06572054166666667,
+        "saturation": 0.03137879166666666
+      },
+      "mean_heldout_rmse": 0.0027074127122518085,
+      "median_seconds": 0.517067146
+    },
+    "gauss_newton": {
+      "mean_absolute_parameter_error": {
+        "exposure": 4.083333333330478e-06,
+        "temperature": 1.6666666666683336e-07,
+        "tint": 1.6666666666683336e-07,
+        "contrast": 1.416666666667469e-06,
+        "shadows": 2.500000000001922e-06,
+        "highlights": 6.874999999999594e-06,
+        "saturation": 6.541666666665909e-06
+      },
+      "mean_heldout_rmse": 3.077200336749118e-07,
+      "median_seconds": 0.03127310400000011
+    }
+  },
+  "cases": [
+    {
+      "scene": "scene-01",
+      "case": 0,
+      "true": {
+        "exposure": -0.293324,
+        "temperature": 0.052539,
+        "tint": -0.033775,
+        "contrast": 0.173235,
+        "shadows": -0.15807,
+        "highlights": 0.066575,
+        "saturation": 0.127702
+      },
+      "pattern": {
+        "exposure": -0.21375,
+        "temperature": 0.0525,
+        "tint": -0.03375,
+        "contrast": 0.204687,
+        "shadows": -0.108984,
+        "highlights": -0.119531,
+        "saturation": 0.044063
+      },
+      "gauss_newton": {
+        "exposure": -0.293322,
+        "temperature": 0.052539,
+        "tint": -0.033775,
+        "contrast": 0.173236,
+        "shadows": -0.158069,
+        "highlights": 0.06657,
+        "saturation": 0.127699
+      },
+      "pattern_fit_seconds": 0.51278,
+      "gauss_newton_fit_seconds": 0.057700583,
+      "pattern_heldout_rmse": 0.003979483777095951,
+      "gauss_newton_heldout_rmse": 7.973097061114592e-08,
+      "gauss_newton_metrics": {
+        "initial_mse": 0.016557489343815845,
+        "fit_mse": 4.9830154506997215e-15,
+        "rmse": 7.059047705391798e-08,
+        "evaluations": 73,
+        "solver": "damped_gauss_newton"
+      }
+    },
+    {
+      "scene": "scene-01",
+      "case": 1,
+      "true": {
+        "exposure": 0.11494,
+        "temperature": 0.119591,
+        "tint": 0.053758,
+        "contrast": -0.083269,
+        "shadows": -0.079473,
+        "highlights": 0.039937,
+        "saturation": 0.051806
+      },
+      "pattern": {
+        "exposure": 0.109687,
+        "temperature": 0.120313,
+        "tint": 0.054844,
+        "contrast": -0.079687,
+        "shadows": -0.068906,
+        "highlights": 0.035156,
+        "saturation": 0.043125
+      },
+      "gauss_newton": {
+        "exposure": 0.114937,
+        "temperature": 0.119593,
+        "tint": 0.05376,
+        "contrast": -0.083268,
+        "shadows": -0.079468,
+        "highlights": 0.039933,
+        "saturation": 0.051781
+      },
+      "pattern_fit_seconds": 0.49476441699999996,
+      "gauss_newton_fit_seconds": 0.031251625000000005,
+      "pattern_heldout_rmse": 0.0008410822783218254,
+      "gauss_newton_heldout_rmse": 1.0754312963813026e-06,
+      "gauss_newton_metrics": {
+        "initial_mse": 0.0027865598550936236,
+        "fit_mse": 7.510271948970643e-13,
+        "rmse": 8.666182521139653e-07,
+        "evaluations": 62,
+        "solver": "damped_gauss_newton"
+      }
+    },
+    {
+      "scene": "scene-01",
+      "case": 2,
+      "true": {
+        "exposure": -0.190722,
+        "temperature": 0.067344,
+        "tint": 0.079362,
+        "contrast": 0.081835,
+        "shadows": -0.167945,
+        "highlights": 0.122267,
+        "saturation": -0.050446
+      },
+      "pattern": {
+        "exposure": -0.18,
+        "temperature": 0.067266,
+        "tint": 0.079219,
+        "contrast": 0.09375,
+        "shadows": -0.145547,
+        "highlights": 0.078047,
+        "saturation": -0.064687
+      },
+      "gauss_newton": {
+        "exposure": -0.190722,
+        "temperature": 0.067344,
+        "tint": 0.079362,
+        "contrast": 0.081835,
+        "shadows": -0.167945,
+        "highlights": 0.122266,
+        "saturation": -0.050446
+      },
+      "pattern_fit_seconds": 0.502334958,
+      "gauss_newton_fit_seconds": 0.03291008400000006,
+      "pattern_heldout_rmse": 0.0015089155747127232,
+      "gauss_newton_heldout_rmse": 3.341715996929464e-08,
+      "gauss_newton_metrics": {
+        "initial_mse": 0.005749914300616779,
+        "fit_mse": 7.720437332859332e-16,
+        "rmse": 2.778567496545537e-08,
+        "evaluations": 65,
+        "solver": "damped_gauss_newton"
+      }
+    },
+    {
+      "scene": "scene-01",
+      "case": 3,
+      "true": {
+        "exposure": -0.251369,
+        "temperature": -0.115115,
+        "tint": 0.037682,
+        "contrast": 0.156008,
+        "shadows": 0.121506,
+        "highlights": 0.001331,
+        "saturation": 0.155689
+      },
+      "pattern": {
+        "exposure": -0.212344,
+        "temperature": -0.115937,
+        "tint": 0.037969,
+        "contrast": 0.159375,
+        "shadows": 0.12375,
+        "highlights": -0.066094,
+        "saturation": 0.118125
+      },
+      "gauss_newton": {
+        "exposure": -0.251368,
+        "temperature": -0.115115,
+        "tint": 0.037682,
+        "contrast": 0.156008,
+        "shadows": 0.121506,
+        "highlights": 0.001329,
+        "saturation": 0.155688
+      },
+      "pattern_fit_seconds": 0.5123071669999997,
+      "gauss_newton_fit_seconds": 0.03311245800000007,
+      "pattern_heldout_rmse": 0.0024653139764780163,
+      "gauss_newton_heldout_rmse": 5.0505357030978496e-08,
+      "gauss_newton_metrics": {
+        "initial_mse": 0.004683655323486898,
+        "fit_mse": 1.803720636867039e-15,
+        "rmse": 4.247023236182066e-08,
+        "evaluations": 65,
+        "solver": "damped_gauss_newton"
+      }
+    },
+    {
+      "scene": "scene-01",
+      "case": 4,
+      "true": {
+        "exposure": 0.29484,
+        "temperature": -0.035581,
+        "tint": -0.078409,
+        "contrast": 0.16526,
+        "shadows": -0.004825,
+        "highlights": 0.19324,
+        "saturation": 0.094767
+      },
+      "pattern": {
+        "exposure": 0.18,
+        "temperature": -0.035,
+        "tint": -0.075,
+        "contrast": 0.196875,
+        "shadows": 0.070313,
+        "highlights": 0.284062,
+        "saturation": 0.1575
+      },
+      "gauss_newton": {
+        "exposure": 0.294833,
+        "temperature": -0.035581,
+        "tint": -0.078409,
+        "contrast": 0.165259,
+        "shadows": -0.004826,
+        "highlights": 0.193253,
+        "saturation": 0.094774
+      },
+      "pattern_fit_seconds": 0.49800749999999994,
+      "gauss_newton_fit_seconds": 0.03313129199999998,
+      "pattern_heldout_rmse": 0.0047310957549975404,
+      "gauss_newton_heldout_rmse": 3.0508088325917345e-07,
+      "gauss_newton_metrics": {
+        "initial_mse": 0.010781167152482425,
+        "fit_mse": 5.255834718174369e-14,
+        "rmse": 2.2925607338027862e-07,
+        "evaluations": 65,
+        "solver": "damped_gauss_newton"
+      }
+    },
+    {
+      "scene": "scene-01",
+      "case": 5,
+      "true": {
+        "exposure": -0.273342,
+        "temperature": 0.07804,
+        "tint": 0.025395,
+        "contrast": -0.010034,
+        "shadows": 0.067801,
+        "highlights": 0.044041,
+        "saturation": 0.004764
+      },
+      "pattern": {
+        "exposure": -0.219375,
+        "temperature": 0.077656,
+        "tint": 0.024375,
+        "contrast": -0.003125,
+        "shadows": 0.080156,
+        "highlights": -0.061875,
+        "saturation": -0.035625
+      },
+      "gauss_newton": {
+        "exposure": -0.27334,
+        "temperature": 0.07804,
+        "tint": 0.025395,
+        "contrast": -0.010034,
+        "shadows": 0.067801,
+        "highlights": 0.044038,
+        "saturation": 0.004762
+      },
+      "pattern_fit_seconds": 0.517009625,
+      "gauss_newton_fit_seconds": 0.03332708300000009,
+      "pattern_heldout_rmse": 0.003198432073144184,
+      "gauss_newton_heldout_rmse": 8.96845809965856e-08,
+      "gauss_newton_metrics": {
+        "initial_mse": 0.003575500932262631,
+        "fit_mse": 4.1287409369648245e-15,
+        "rmse": 6.425527944818873e-08,
+        "evaluations": 65,
+        "solver": "damped_gauss_newton"
+      }
+    },
+    {
+      "scene": "scene-02",
+      "case": 0,
+      "true": {
+        "exposure": -0.020003,
+        "temperature": -0.098531,
+        "tint": -0.085499,
+        "contrast": 0.15925,
+        "shadows": 0.010351,
+        "highlights": 0.122903,
+        "saturation": 0.112948
+      },
+      "pattern": {
+        "exposure": -0.008437,
+        "temperature": -0.099805,
+        "tint": -0.086484,
+        "contrast": 0.148438,
+        "shadows": -0.004922,
+        "highlights": 0.121992,
+        "saturation": 0.107812
+      },
+      "gauss_newton": {
+        "exposure": -0.019996,
+        "temperature": -0.098533,
+        "tint": -0.0855,
+        "contrast": 0.159244,
+        "shadows": 0.010342,
+        "highlights": 0.122904,
+        "saturation": 0.112935
+      },
+      "pattern_fit_seconds": 0.5173560830000001,
+      "gauss_newton_fit_seconds": 0.031121875000000188,
+      "pattern_heldout_rmse": 0.0010381316890049773,
+      "gauss_newton_heldout_rmse": 6.848776578591854e-07,
+      "gauss_newton_metrics": {
+        "initial_mse": 0.003903872425994789,
+        "fit_mse": 4.693911788377948e-13,
+        "rmse": 6.851212876840091e-07,
+        "evaluations": 62,
+        "solver": "damped_gauss_newton"
+      }
+    },
+    {
+      "scene": "scene-02",
+      "case": 1,
+      "true": {
+        "exposure": 0.09286,
+        "temperature": 0.025881,
+        "tint": 0.040781,
+        "contrast": -0.044794,
+        "shadows": 0.192222,
+        "highlights": 0.005177,
+        "saturation": 0.096616
+      },
+      "pattern": {
+        "exposure": 0.099844,
+        "temperature": 0.025703,
+        "tint": 0.040781,
+        "contrast": -0.042187,
+        "shadows": 0.198281,
+        "highlights": -0.010547,
+        "saturation": 0.089063
+      },
+      "gauss_newton": {
+        "exposure": 0.092855,
+        "temperature": 0.025881,
+        "tint": 0.040781,
+        "contrast": -0.044798,
+        "shadows": 0.192213,
+        "highlights": 0.005193,
+        "saturation": 0.09663
+      },
+      "pattern_fit_seconds": 0.517124667,
+      "gauss_newton_fit_seconds": 0.03093454100000015,
+      "pattern_heldout_rmse": 0.0015978676999569268,
+      "gauss_newton_heldout_rmse": 1.5205632064551343e-06,
+      "gauss_newton_metrics": {
+        "initial_mse": 0.0040775997727799706,
+        "fit_mse": 7.897740926561612e-13,
+        "rmse": 8.886923498355104e-07,
+        "evaluations": 62,
+        "solver": "damped_gauss_newton"
+      }
+    },
+    {
+      "scene": "scene-02",
+      "case": 2,
+      "true": {
+        "exposure": 0.298547,
+        "temperature": -0.052256,
+        "tint": -0.016029,
+        "contrast": -0.028243,
+        "shadows": -0.131625,
+        "highlights": 0.043215,
+        "saturation": -0.032063
+      },
+      "pattern": {
+        "exposure": 0.210937,
+        "temperature": -0.050313,
+        "tint": -0.017813,
+        "contrast": -0.023438,
+        "shadows": -0.135,
+        "highlights": 0.205312,
+        "saturation": 0.01875
+      },
+      "gauss_newton": {
+        "exposure": 0.298546,
+        "temperature": -0.052256,
+        "tint": -0.016029,
+        "contrast": -0.028244,
+        "shadows": -0.131627,
+        "highlights": 0.043218,
+        "saturation": -0.032062
+      },
+      "pattern_fit_seconds": 0.5136363749999999,
+      "gauss_newton_fit_seconds": 0.029068583000000148,
+      "pattern_heldout_rmse": 0.006196297776973412,
+      "gauss_newton_heldout_rmse": 1.468158223075292e-07,
+      "gauss_newton_metrics": {
+        "initial_mse": 0.00817528677201749,
+        "fit_mse": 1.863175083058451e-14,
+        "rmse": 1.3649817152835604e-07,
+        "evaluations": 57,
+        "solver": "damped_gauss_newton"
+      }
+    },
+    {
+      "scene": "scene-02",
+      "case": 3,
+      "true": {
+        "exposure": 0.221059,
+        "temperature": -0.019842,
+        "tint": -0.079764,
+        "contrast": -0.050382,
+        "shadows": -0.07932,
+        "highlights": -0.147953,
+        "saturation": 0.064957
+      },
+      "pattern": {
+        "exposure": 0.163125,
+        "temperature": -0.0175,
+        "tint": -0.075,
+        "contrast": -0.05625,
+        "shadows": -0.106875,
+        "highlights": -0.036562,
+        "saturation": 0.13125
+      },
+      "gauss_newton": {
+        "exposure": 0.221058,
+        "temperature": -0.019842,
+        "tint": -0.079764,
+        "contrast": -0.050382,
+        "shadows": -0.079321,
+        "highlights": -0.147951,
+        "saturation": 0.064958
+      },
+      "pattern_fit_seconds": 0.5210546249999997,
+      "gauss_newton_fit_seconds": 0.02891787499999987,
+      "pattern_heldout_rmse": 0.006974045734863969,
+      "gauss_newton_heldout_rmse": 9.29900980181515e-08,
+      "gauss_newton_metrics": {
+        "initial_mse": 0.0010280923032578207,
+        "fit_mse": 5.862163295982027e-15,
+        "rmse": 7.656476536881718e-08,
+        "evaluations": 57,
+        "solver": "damped_gauss_newton"
+      }
+    },
+    {
+      "scene": "scene-02",
+      "case": 4,
+      "true": {
+        "exposure": -0.102516,
+        "temperature": 0.049022,
+        "tint": -0.069265,
+        "contrast": 0.14102,
+        "shadows": 0.098403,
+        "highlights": -0.134193,
+        "saturation": -0.139085
+      },
+      "pattern": {
+        "exposure": -0.1125,
+        "temperature": 0.048125,
+        "tint": -0.0675,
+        "contrast": 0.115625,
+        "shadows": 0.047813,
+        "highlights": -0.070312,
+        "saturation": -0.1125
+      },
+      "gauss_newton": {
+        "exposure": -0.102516,
+        "temperature": 0.049022,
+        "tint": -0.069265,
+        "contrast": 0.141019,
+        "shadows": 0.098402,
+        "highlights": -0.134192,
+        "saturation": -0.139084
+      },
+      "pattern_fit_seconds": 0.5240331669999998,
+      "gauss_newton_fit_seconds": 0.029228457999999957,
+      "pattern_heldout_rmse": 0.003081487138294906,
+      "gauss_newton_heldout_rmse": 7.274055934116422e-08,
+      "gauss_newton_metrics": {
+        "initial_mse": 0.004391076856164603,
+        "fit_mse": 5.6585013826417726e-15,
+        "rmse": 7.5223010991596e-08,
+        "evaluations": 57,
+        "solver": "damped_gauss_newton"
+      }
+    },
+    {
+      "scene": "scene-02",
+      "case": 5,
+      "true": {
+        "exposure": 0.235884,
+        "temperature": -0.073567,
+        "tint": -0.078354,
+        "contrast": -0.058603,
+        "shadows": 0.193135,
+        "highlights": 0.16257,
+        "saturation": -0.179313
+      },
+      "pattern": {
+        "exposure": 0.194062,
+        "temperature": -0.072188,
+        "tint": -0.075938,
+        "contrast": -0.05625,
+        "shadows": 0.205313,
+        "highlights": 0.209531,
+        "saturation": -0.15375
+      },
+      "gauss_newton": {
+        "exposure": 0.235881,
+        "temperature": -0.073567,
+        "tint": -0.078354,
+        "contrast": -0.058603,
+        "shadows": 0.193134,
+        "highlights": 0.162575,
+        "saturation": -0.17931
+      },
+      "pattern_fit_seconds": 0.522145417,
+      "gauss_newton_fit_seconds": 0.028883707999999952,
+      "pattern_heldout_rmse": 0.0027488207781883353,
+      "gauss_newton_heldout_rmse": 2.3678006928196442e-07,
+      "gauss_newton_metrics": {
+        "initial_mse": 0.013341088521795429,
+        "fit_mse": 3.7759849367554735e-14,
+        "rmse": 1.943189372334944e-07,
+        "evaluations": 57,
+        "solver": "damped_gauss_newton"
+      }
+    },
+    {
+      "scene": "scene-03",
+      "case": 0,
+      "true": {
+        "exposure": -0.292242,
+        "temperature": -0.049944,
+        "tint": -0.099707,
+        "contrast": -0.079862,
+        "shadows": 0.160825,
+        "highlights": -0.071196,
+        "saturation": 0.134479
+      },
+      "pattern": {
+        "exposure": -0.217969,
+        "temperature": -0.050313,
+        "tint": -0.100781,
+        "contrast": -0.079688,
+        "shadows": 0.138516,
+        "highlights": -0.138516,
+        "saturation": 0.072188
+      },
+      "gauss_newton": {
+        "exposure": -0.292201,
+        "temperature": -0.049944,
+        "tint": -0.099708,
+        "contrast": -0.079859,
+        "shadows": 0.160819,
+        "highlights": -0.071244,
+        "saturation": 0.134438
+      },
+      "pattern_fit_seconds": 0.5157704999999995,
+      "gauss_newton_fit_seconds": 0.03934179099999957,
+      "pattern_heldout_rmse": 0.0014106848574573325,
+      "gauss_newton_heldout_rmse": 7.314925789576098e-07,
+      "gauss_newton_metrics": {
+        "initial_mse": 0.003353741758518979,
+        "fit_mse": 5.398554129051494e-13,
+        "rmse": 7.347485371915683e-07,
+        "evaluations": 78,
+        "solver": "damped_gauss_newton"
+      }
+    },
+    {
+      "scene": "scene-03",
+      "case": 1,
+      "true": {
+        "exposure": 0.185419,
+        "temperature": 0.018816,
+        "tint": -0.091274,
+        "contrast": -0.086423,
+        "shadows": -0.003306,
+        "highlights": -0.17584,
+        "saturation": 0.080798
+      },
+      "pattern": {
+        "exposure": 0.149062,
+        "temperature": 0.018594,
+        "tint": -0.089062,
+        "contrast": -0.098438,
+        "shadows": -0.03375,
+        "highlights": -0.094219,
+        "saturation": 0.129375
+      },
+      "gauss_newton": {
+        "exposure": 0.185418,
+        "temperature": 0.018816,
+        "tint": -0.091274,
+        "contrast": -0.086423,
+        "shadows": -0.003307,
+        "highlights": -0.175838,
+        "saturation": 0.0808
+      },
+      "pattern_fit_seconds": 0.5173685410000006,
+      "gauss_newton_fit_seconds": 0.030378792000000043,
+      "pattern_heldout_rmse": 0.003217267002453,
+      "gauss_newton_heldout_rmse": 8.292693528572188e-08,
+      "gauss_newton_metrics": {
+        "initial_mse": 0.0010907067857115096,
+        "fit_mse": 6.020572523977437e-15,
+        "rmse": 7.759234835972834e-08,
+        "evaluations": 57,
+        "solver": "damped_gauss_newton"
+      }
+    },
+    {
+      "scene": "scene-03",
+      "case": 2,
+      "true": {
+        "exposure": -0.200107,
+        "temperature": 0.01479,
+        "tint": 0.005925,
+        "contrast": 0.164212,
+        "shadows": 0.196615,
+        "highlights": -0.178773,
+        "saturation": -0.060343
+      },
+      "pattern": {
+        "exposure": -0.19125,
+        "temperature": 0.015313,
+        "tint": 0.005625,
+        "contrast": 0.15,
+        "shadows": 0.171562,
+        "highlights": -0.160312,
+        "saturation": -0.05625
+      },
+      "gauss_newton": {
+        "exposure": -0.20011,
+        "temperature": 0.01479,
+        "tint": 0.005925,
+        "contrast": 0.164209,
+        "shadows": 0.196612,
+        "highlights": -0.178765,
+        "saturation": -0.060337
+      },
+      "pattern_fit_seconds": 0.525414917,
+      "gauss_newton_fit_seconds": 0.03510750000000007,
+      "pattern_heldout_rmse": 0.001834886876583162,
+      "gauss_newton_heldout_rmse": 2.96032893777969e-07,
+      "gauss_newton_metrics": {
+        "initial_mse": 0.0025304987936922364,
+        "fit_mse": 8.84704689792721e-14,
+        "rmse": 2.9743985775156646e-07,
+        "evaluations": 70,
+        "solver": "damped_gauss_newton"
+      }
+    },
+    {
+      "scene": "scene-03",
+      "case": 3,
+      "true": {
+        "exposure": -0.017638,
+        "temperature": -0.079801,
+        "tint": -0.062777,
+        "contrast": 0.021667,
+        "shadows": 0.023546,
+        "highlights": 0.028365,
+        "saturation": 0.107237
+      },
+      "pattern": {
+        "exposure": -0.004922,
+        "temperature": -0.080117,
+        "tint": -0.062813,
+        "contrast": 0.01875,
+        "shadows": 0.014766,
+        "highlights": 0.019687,
+        "saturation": 0.099375
+      },
+      "gauss_newton": {
+        "exposure": -0.01763,
+        "temperature": -0.079801,
+        "tint": -0.062777,
+        "contrast": 0.021668,
+        "shadows": 0.023547,
+        "highlights": 0.028352,
+        "saturation": 0.107227
+      },
+      "pattern_fit_seconds": 0.5233065420000003,
+      "gauss_newton_fit_seconds": 0.03594512500000002,
+      "pattern_heldout_rmse": 0.0008884528392251329,
+      "gauss_newton_heldout_rmse": 3.3384589914705507e-07,
+      "gauss_newton_metrics": {
+        "initial_mse": 0.0009655104194090389,
+        "fit_mse": 1.2390168269400756e-13,
+        "rmse": 3.5199670835677933e-07,
+        "evaluations": 70,
+        "solver": "damped_gauss_newton"
+      }
+    },
+    {
+      "scene": "scene-03",
+      "case": 4,
+      "true": {
+        "exposure": -0.240914,
+        "temperature": 0.067611,
+        "tint": -0.07907,
+        "contrast": 0.021632,
+        "shadows": 0.03361,
+        "highlights": -0.049228,
+        "saturation": 0.146903
+      },
+      "pattern": {
+        "exposure": -0.210937,
+        "temperature": 0.067813,
+        "tint": -0.079219,
+        "contrast": 0.020313,
+        "shadows": 0.025312,
+        "highlights": -0.081562,
+        "saturation": 0.122812
+      },
+      "gauss_newton": {
+        "exposure": -0.24091,
+        "temperature": 0.067611,
+        "tint": -0.07907,
+        "contrast": 0.021632,
+        "shadows": 0.03361,
+        "highlights": -0.049234,
+        "saturation": 0.146898
+      },
+      "pattern_fit_seconds": 0.5241362089999999,
+      "gauss_newton_fit_seconds": 0.03261491700000008,
+      "pattern_heldout_rmse": 0.0008884538021416845,
+      "gauss_newton_heldout_rmse": 1.1529567704283397e-07,
+      "gauss_newton_metrics": {
+        "initial_mse": 0.0051219671980307505,
+        "fit_mse": 1.381822061531055e-14,
+        "rmse": 1.1755092775180701e-07,
+        "evaluations": 65,
+        "solver": "damped_gauss_newton"
+      }
+    },
+    {
+      "scene": "scene-03",
+      "case": 5,
+      "true": {
+        "exposure": 0.180079,
+        "temperature": -0.117699,
+        "tint": 0.086317,
+        "contrast": -0.126352,
+        "shadows": -0.172301,
+        "highlights": 0.054272,
+        "saturation": -0.161361
+      },
+      "pattern": {
+        "exposure": 0.18,
+        "temperature": -0.117852,
+        "tint": 0.08625,
+        "contrast": -0.125,
+        "shadows": -0.169102,
+        "highlights": 0.05168,
+        "saturation": -0.162656
+      },
+      "gauss_newton": {
+        "exposure": 0.180078,
+        "temperature": -0.117699,
+        "tint": 0.086317,
+        "contrast": -0.126352,
+        "shadows": -0.172301,
+        "highlights": 0.054273,
+        "saturation": -0.16136
+      },
+      "pattern_fit_seconds": 0.49822879199999903,
+      "gauss_newton_fit_seconds": 0.029026750000000323,
+      "pattern_heldout_rmse": 0.0002786433475201226,
+      "gauss_newton_heldout_rmse": 7.595172130651543e-08,
+      "gauss_newton_metrics": {
+        "initial_mse": 0.0032377607467072287,
+        "fit_mse": 4.148241442770103e-15,
+        "rmse": 6.440684313619247e-08,
+        "evaluations": 57,
+        "solver": "damped_gauss_newton"
+      }
+    },
+    {
+      "scene": "scene-04",
+      "case": 0,
+      "true": {
+        "exposure": 0.151921,
+        "temperature": -0.051828,
+        "tint": -0.019507,
+        "contrast": 0.154664,
+        "shadows": -0.144029,
+        "highlights": -0.059571,
+        "saturation": -0.019375
+      },
+      "pattern": {
+        "exposure": 0.050625,
+        "temperature": -0.049219,
+        "tint": -0.016875,
+        "contrast": 0.173438,
+        "shadows": -0.137812,
+        "highlights": 0.10125,
+        "saturation": 0.016875
+      },
+      "gauss_newton": {
+        "exposure": 0.151921,
+        "temperature": -0.051828,
+        "tint": -0.019507,
+        "contrast": 0.15466,
+        "shadows": -0.144034,
+        "highlights": -0.059567,
+        "saturation": -0.019372
+      },
+      "pattern_fit_seconds": 0.5129402910000014,
+      "gauss_newton_fit_seconds": 0.029136958000000046,
+      "pattern_heldout_rmse": 0.006627465631029364,
+      "gauss_newton_heldout_rmse": 1.903173006881641e-07,
+      "gauss_newton_metrics": {
+        "initial_mse": 0.003461157072263774,
+        "fit_mse": 3.4065643276486586e-14,
+        "rmse": 1.8456880363833588e-07,
+        "evaluations": 57,
+        "solver": "damped_gauss_newton"
+      }
+    },
+    {
+      "scene": "scene-04",
+      "case": 1,
+      "true": {
+        "exposure": -0.055127,
+        "temperature": -0.117795,
+        "tint": -0.035132,
+        "contrast": -0.075411,
+        "shadows": -0.004135,
+        "highlights": 0.10194,
+        "saturation": 0.180535
+      },
+      "pattern": {
+        "exposure": -0.009844,
+        "temperature": -0.118125,
+        "tint": -0.035625,
+        "contrast": -0.069531,
+        "shadows": 0.006328,
+        "highlights": 0.021094,
+        "saturation": 0.139687
+      },
+      "gauss_newton": {
+        "exposure": -0.055125,
+        "temperature": -0.117795,
+        "tint": -0.035132,
+        "contrast": -0.075411,
+        "shadows": -0.004135,
+        "highlights": 0.101936,
+        "saturation": 0.180533
+      },
+      "pattern_fit_seconds": 0.5164061250000014,
+      "gauss_newton_fit_seconds": 0.03300500000000017,
+      "pattern_heldout_rmse": 0.001716569361769059,
+      "gauss_newton_heldout_rmse": 7.735769586881784e-08,
+      "gauss_newton_metrics": {
+        "initial_mse": 0.002820798890312303,
+        "fit_mse": 8.351344556465796e-15,
+        "rmse": 9.138569120199177e-08,
+        "evaluations": 65,
+        "solver": "damped_gauss_newton"
+      }
+    },
+    {
+      "scene": "scene-04",
+      "case": 2,
+      "true": {
+        "exposure": 0.074994,
+        "temperature": 0.020742,
+        "tint": -0.079419,
+        "contrast": -0.069357,
+        "shadows": 0.089675,
+        "highlights": -0.111394,
+        "saturation": -0.149697
+      },
+      "pattern": {
+        "exposure": 0.050625,
+        "temperature": 0.020781,
+        "tint": -0.077812,
+        "contrast": -0.079688,
+        "shadows": 0.066094,
+        "highlights": -0.054844,
+        "saturation": -0.12375
+      },
+      "gauss_newton": {
+        "exposure": 0.074994,
+        "temperature": 0.020742,
+        "tint": -0.079419,
+        "contrast": -0.069357,
+        "shadows": 0.089675,
+        "highlights": -0.111394,
+        "saturation": -0.149697
+      },
+      "pattern_fit_seconds": 0.5223036669999992,
+      "gauss_newton_fit_seconds": 0.029149041999999792,
+      "pattern_heldout_rmse": 0.0021648298255746807,
+      "gauss_newton_heldout_rmse": 2.7239861171672068e-08,
+      "gauss_newton_metrics": {
+        "initial_mse": 0.001130086013445056,
+        "fit_mse": 9.479002865907933e-16,
+        "rmse": 3.078798932361114e-08,
+        "evaluations": 57,
+        "solver": "damped_gauss_newton"
+      }
+    },
+    {
+      "scene": "scene-04",
+      "case": 3,
+      "true": {
+        "exposure": -0.122326,
+        "temperature": 0.00871,
+        "tint": 0.052139,
+        "contrast": 0.042945,
+        "shadows": -0.12638,
+        "highlights": 0.064989,
+        "saturation": 0.139343
+      },
+      "pattern": {
+        "exposure": -0.178594,
+        "temperature": 0.008203,
+        "tint": 0.052031,
+        "contrast": 0.060156,
+        "shadows": -0.099844,
+        "highlights": 0.132187,
+        "saturation": 0.165
+      },
+      "gauss_newton": {
+        "exposure": -0.122322,
+        "temperature": 0.00871,
+        "tint": 0.052139,
+        "contrast": 0.042948,
+        "shadows": -0.126375,
+        "highlights": 0.064978,
+        "saturation": 0.139337
+      },
+      "pattern_fit_seconds": 0.5184557079999994,
+      "gauss_newton_fit_seconds": 0.034941083000000095,
+      "pattern_heldout_rmse": 0.0028035166363412703,
+      "gauss_newton_heldout_rmse": 3.0883568577680594e-07,
+      "gauss_newton_metrics": {
+        "initial_mse": 0.0027579973305352024,
+        "fit_mse": 1.0842596259525603e-13,
+        "rmse": 3.2928097818619287e-07,
+        "evaluations": 70,
+        "solver": "damped_gauss_newton"
+      }
+    },
+    {
+      "scene": "scene-04",
+      "case": 4,
+      "true": {
+        "exposure": -0.037563,
+        "temperature": -0.116219,
+        "tint": 0.057389,
+        "contrast": -0.104745,
+        "shadows": -0.038971,
+        "highlights": 0.033202,
+        "saturation": 0.026083
+      },
+      "pattern": {
+        "exposure": -0.016875,
+        "temperature": -0.116484,
+        "tint": 0.057187,
+        "contrast": -0.109375,
+        "shadows": -0.046406,
+        "highlights": 0.007734,
+        "saturation": 0.015938
+      },
+      "gauss_newton": {
+        "exposure": -0.037563,
+        "temperature": -0.116219,
+        "tint": 0.057389,
+        "contrast": -0.104745,
+        "shadows": -0.038971,
+        "highlights": 0.033201,
+        "saturation": 0.026082
+      },
+      "pattern_fit_seconds": 0.5205832499999996,
+      "gauss_newton_fit_seconds": 0.029072124999999893,
+      "pattern_heldout_rmse": 0.0012544139602368336,
+      "gauss_newton_heldout_rmse": 4.276757375440196e-08,
+      "gauss_newton_metrics": {
+        "initial_mse": 0.002383993875706506,
+        "fit_mse": 2.3176420651017918e-15,
+        "rmse": 4.814189511331883e-08,
+        "evaluations": 57,
+        "solver": "damped_gauss_newton"
+      }
+    },
+    {
+      "scene": "scene-04",
+      "case": 5,
+      "true": {
+        "exposure": 0.112561,
+        "temperature": 0.085348,
+        "tint": -0.062837,
+        "contrast": 0.003956,
+        "shadows": 0.084306,
+        "highlights": -0.184856,
+        "saturation": 0.060655
+      },
+      "pattern": {
+        "exposure": 0.084375,
+        "temperature": 0.085312,
+        "tint": -0.06,
+        "contrast": -0.0125,
+        "shadows": 0.045,
+        "highlights": -0.109687,
+        "saturation": 0.0975
+      },
+      "gauss_newton": {
+        "exposure": 0.112559,
+        "temperature": 0.085348,
+        "tint": -0.062837,
+        "contrast": 0.003951,
+        "shadows": 0.084297,
+        "highlights": -0.184845,
+        "saturation": 0.060664
+      },
+      "pattern_fit_seconds": 0.5159037919999996,
+      "gauss_newton_fit_seconds": 0.03129458300000021,
+      "pattern_heldout_rmse": 0.0035317467016789915,
+      "gauss_newton_heldout_rmse": 7.145993239087054e-07,
+      "gauss_newton_metrics": {
+        "initial_mse": 0.0019731266753038323,
+        "fit_mse": 4.968190880537572e-13,
+        "rmse": 7.048539480301981e-07,
+        "evaluations": 62,
+        "solver": "damped_gauss_newton"
+      }
+    }
+  ]
+}

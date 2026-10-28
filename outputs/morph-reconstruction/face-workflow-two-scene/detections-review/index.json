@@ -1,0 +1,7 @@
+{
+  "scope": "Thumbnail face-box review, not an accuracy verdict. Red rectangles indicate detections; no boxes may indicate a missed face.",
+  "photos": 8,
+  "sheets": [
+    "detections-01.jpg"
+  ]
+}

@@ -1,0 +1,44 @@
+{
+  "method": "Regular spatial sampling before export encoding. High = any channel >= 254/255; low = all channels <= 1/255. Flag = either fraction increased more than 1 percentage point; heuristic, not a quality verdict.",
+  "note": "Preview checks cover only the selected samples, not the rest of the album.",
+  "photos": [
+    {
+      "scene": "scene-01",
+      "original": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_0906-4.jpg",
+      "export": "outputs/morph-reconstruction/exposure-suggestion-preview/scene-01/samples/DSC_0906-4.jpg",
+      "clipping": {
+        "sampled_pixels": 201850,
+        "before": {
+          "high": 0.0030270002477086944,
+          "low": 0.0006093633886549418
+        },
+        "after": {
+          "high": 0.003180579638345306,
+          "low": 0.00013376269507059697
+        },
+        "high_increase": 0.00015357939063661164,
+        "low_increase": -0.00047560069358434486,
+        "flag": false
+      }
+    },
+    {
+      "scene": "scene-01",
+      "original": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_0904-2.jpg",
+      "export": "outputs/morph-reconstruction/exposure-suggestion-preview/scene-01/samples/DSC_0904-2.jpg",
+      "clipping": {
+        "sampled_pixels": 201850,
+        "before": {
+          "high": 0.0128263562051028,
+          "low": 0.00025761704235818675
+        },
+        "after": {
+          "high": 0.008555858310626703,
+          "low": 0.00010403765172157542
+        },
+        "high_increase": -0.004270497894476097,
+        "low_increase": -0.00015357939063661132,
+        "flag": false
+      }
+    }
+  ]
+}

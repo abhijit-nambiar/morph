@@ -1,0 +1,208 @@
+{
+  "cases": [
+    {
+      "case": 0,
+      "old_rmse": 0.00275325579340502,
+      "new_rmse": 0.0016146806447138954,
+      "old_highlights_error": 0.186106,
+      "new_highlights_error": 0.12177031250000016,
+      "old_recipe": {
+        "exposure": -0.21375,
+        "temperature": 0.0525,
+        "tint": -0.03375,
+        "contrast": 0.204687,
+        "shadows": -0.108984,
+        "highlights": -0.119531,
+        "saturation": 0.044063
+      },
+      "new_recipe": {
+        "exposure": -0.241172,
+        "temperature": 0.0525,
+        "tint": -0.03375,
+        "contrast": 0.195312,
+        "shadows": -0.125859,
+        "highlights": -0.055195,
+        "saturation": 0.072188
+      },
+      "expected": {
+        "exposure": -0.293324,
+        "temperature": 0.052539,
+        "tint": -0.033775,
+        "contrast": 0.173235,
+        "shadows": -0.15807,
+        "highlights": 0.066575,
+        "saturation": 0.127702
+      }
+    },
+    {
+      "case": 1,
+      "old_rmse": 0.0007659314150013787,
+      "new_rmse": 0.0002516914704295949,
+      "old_highlights_error": 0.0047810000000000005,
+      "new_highlights_error": 0.0012651249999999989,
+      "old_recipe": {
+        "exposure": 0.109687,
+        "temperature": 0.120313,
+        "tint": 0.054844,
+        "contrast": -0.079687,
+        "shadows": -0.068906,
+        "highlights": 0.035156,
+        "saturation": 0.043125
+      },
+      "new_recipe": {
+        "exposure": 0.113203,
+        "temperature": 0.119766,
+        "tint": 0.054141,
+        "contrast": -0.082031,
+        "shadows": -0.076289,
+        "highlights": 0.038672,
+        "saturation": 0.049219
+      },
+      "expected": {
+        "exposure": 0.11494,
+        "temperature": 0.119591,
+        "tint": 0.053758,
+        "contrast": -0.083269,
+        "shadows": -0.079473,
+        "highlights": 0.039937,
+        "saturation": 0.051806
+      }
+    },
+    {
+      "case": 2,
+      "old_rmse": 0.0011665338943139222,
+      "new_rmse": 0.0006607868537846197,
+      "old_highlights_error": 0.044219999999999995,
+      "new_highlights_error": 0.029102937500000023,
+      "old_recipe": {
+        "exposure": -0.18,
+        "temperature": 0.067266,
+        "tint": 0.079219,
+        "contrast": 0.09375,
+        "shadows": -0.145547,
+        "highlights": 0.078047,
+        "saturation": -0.064687
+      },
+      "new_recipe": {
+        "exposure": -0.18,
+        "temperature": 0.067266,
+        "tint": 0.078984,
+        "contrast": 0.085547,
+        "shadows": -0.159609,
+        "highlights": 0.093164,
+        "saturation": -0.057656
+      },
+      "expected": {
+        "exposure": -0.190722,
+        "temperature": 0.067344,
+        "tint": 0.079362,
+        "contrast": 0.081835,
+        "shadows": -0.167945,
+        "highlights": 0.122267,
+        "saturation": -0.050446
+      }
+    },
+    {
+      "case": 3,
+      "old_rmse": 0.0017143404669279936,
+      "new_rmse": 0.0007045467265922559,
+      "old_highlights_error": 0.067425,
+      "new_highlights_error": 0.03402631250000006,
+      "old_recipe": {
+        "exposure": -0.212344,
+        "temperature": -0.115937,
+        "tint": 0.037969,
+        "contrast": 0.159375,
+        "shadows": 0.12375,
+        "highlights": -0.066094,
+        "saturation": 0.118125
+      },
+      "new_recipe": {
+        "exposure": -0.234141,
+        "temperature": -0.115117,
+        "tint": 0.0375,
+        "contrast": 0.161328,
+        "shadows": 0.126914,
+        "highlights": -0.032695,
+        "saturation": 0.137344
+      },
+      "expected": {
+        "exposure": -0.251369,
+        "temperature": -0.115115,
+        "tint": 0.037682,
+        "contrast": 0.156008,
+        "shadows": 0.121506,
+        "highlights": 0.001331,
+        "saturation": 0.155689
+      }
+    },
+    {
+      "case": 4,
+      "old_rmse": 0.0037514228214747714,
+      "new_rmse": 0.00211002680299532,
+      "old_highlights_error": 0.09082199999999999,
+      "new_highlights_error": 0.16429906250000068,
+      "old_recipe": {
+        "exposure": 0.18,
+        "temperature": -0.035,
+        "tint": -0.075,
+        "contrast": 0.196875,
+        "shadows": 0.070313,
+        "highlights": 0.284062,
+        "saturation": 0.1575
+      },
+      "new_recipe": {
+        "exposure": 0.184922,
+        "temperature": -0.035273,
+        "tint": -0.076641,
+        "contrast": 0.159766,
+        "shadows": 0.01125,
+        "highlights": 0.357539,
+        "saturation": 0.186563
+      },
+      "expected": {
+        "exposure": 0.29484,
+        "temperature": -0.035581,
+        "tint": -0.078409,
+        "contrast": 0.16526,
+        "shadows": -0.004825,
+        "highlights": 0.19324,
+        "saturation": 0.094767
+      }
+    },
+    {
+      "case": 5,
+      "old_rmse": 0.002227376977996328,
+      "new_rmse": 0.0008077205823446803,
+      "old_highlights_error": 0.105916,
+      "new_highlights_error": 0.042283187500000145,
+      "old_recipe": {
+        "exposure": -0.219375,
+        "temperature": 0.077656,
+        "tint": 0.024375,
+        "contrast": -0.003125,
+        "shadows": 0.080156,
+        "highlights": -0.061875,
+        "saturation": -0.035625
+      },
+      "new_recipe": {
+        "exposure": -0.250312,
+        "temperature": 0.07793,
+        "tint": 0.025312,
+        "contrast": -0.007813,
+        "shadows": 0.070664,
+        "highlights": 0.001758,
+        "saturation": -0.012187
+      },
+      "expected": {
+        "exposure": -0.273342,
+        "temperature": 0.07804,
+        "tint": 0.025395,
+        "contrast": -0.010034,
+        "shadows": 0.067801,
+        "highlights": 0.044041,
+        "saturation": 0.004764
+      }
+    }
+  ]
+}

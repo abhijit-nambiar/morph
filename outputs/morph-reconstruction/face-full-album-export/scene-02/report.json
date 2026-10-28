@@ -1,0 +1,152 @@
+{
+  "scope": "Experimental face-relative reconstruction. Face boxes are unverified and local lighting affects surroundings.",
+  "scene": "scene-02",
+  "source_fit": "outputs/morph-reconstruction/face-full-album-fits/scene-02/fit.json",
+  "local_status": "fitted",
+  "mode": "scene",
+  "correction_renderer": "gamut",
+  "corrections": {
+    "album": {},
+    "scene": {},
+    "photos": {}
+  },
+  "operation_order": [
+    "photo correction",
+    "fitted look",
+    "scene correction",
+    "album correction"
+  ],
+  "photos_without_detected_faces": 2,
+  "photos": [
+    {
+      "source": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_0947-13.jpg",
+      "output": "outputs/morph-reconstruction/face-full-album-export/scene-02/exports/DSC_0947-13.jpg",
+      "faces": 0,
+      "local_lighting": "skipped: no faces detected; inspect photo",
+      "dimensions": [
+        4032,
+        6048
+      ]
+    },
+    {
+      "source": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_0948-14.jpg",
+      "output": "outputs/morph-reconstruction/face-full-album-export/scene-02/exports/DSC_0948-14.jpg",
+      "faces": 0,
+      "local_lighting": "skipped: no faces detected; inspect photo",
+      "dimensions": [
+        4032,
+        6048
+      ]
+    },
+    {
+      "source": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_0958-15.jpg",
+      "output": "outputs/morph-reconstruction/face-full-album-export/scene-02/exports/DSC_0958-15.jpg",
+      "faces": 5,
+      "local_lighting": "applied around detected faces",
+      "dimensions": [
+        6048,
+        4032
+      ]
+    },
+    {
+      "source": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_0965-16.jpg",
+      "output": "outputs/morph-reconstruction/face-full-album-export/scene-02/exports/DSC_0965-16.jpg",
+      "faces": 3,
+      "local_lighting": "applied around detected faces",
+      "dimensions": [
+        4032,
+        6048
+      ]
+    },
+    {
+      "source": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_0970-17.jpg",
+      "output": "outputs/morph-reconstruction/face-full-album-export/scene-02/exports/DSC_0970-17.jpg",
+      "faces": 3,
+      "local_lighting": "applied around detected faces",
+      "dimensions": [
+        4032,
+        6048
+      ]
+    },
+    {
+      "source": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_0974-18.jpg",
+      "output": "outputs/morph-reconstruction/face-full-album-export/scene-02/exports/DSC_0974-18.jpg",
+      "faces": 4,
+      "local_lighting": "applied around detected faces",
+      "dimensions": [
+        6048,
+        4032
+      ]
+    },
+    {
+      "source": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_0987-19.jpg",
+      "output": "outputs/morph-reconstruction/face-full-album-export/scene-02/exports/DSC_0987-19.jpg",
+      "faces": 1,
+      "local_lighting": "applied around detected faces",
+      "dimensions": [
+        4032,
+        6048
+      ]
+    },
+    {
+      "source": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_0990-20.jpg",
+      "output": "outputs/morph-reconstruction/face-full-album-export/scene-02/exports/DSC_0990-20.jpg",
+      "faces": 2,
+      "local_lighting": "applied around detected faces",
+      "dimensions": [
+        4032,
+        6048
+      ]
+    },
+    {
+      "source": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_0993-21.jpg",
+      "output": "outputs/morph-reconstruction/face-full-album-export/scene-02/exports/DSC_0993-21.jpg",
+      "faces": 4,
+      "local_lighting": "applied around detected faces",
+      "dimensions": [
+        6048,
+        4032
+      ]
+    },
+    {
+      "source": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_0995-22.jpg",
+      "output": "outputs/morph-reconstruction/face-full-album-export/scene-02/exports/DSC_0995-22.jpg",
+      "faces": 4,
+      "local_lighting": "applied around detected faces",
+      "dimensions": [
+        6048,
+        4032
+      ]
+    },
+    {
+      "source": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_0997-23.jpg",
+      "output": "outputs/morph-reconstruction/face-full-album-export/scene-02/exports/DSC_0997-23.jpg",
+      "faces": 4,
+      "local_lighting": "applied around detected faces",
+      "dimensions": [
+        4032,
+        6048
+      ]
+    },
+    {
+      "source": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_0998-24.jpg",
+      "output": "outputs/morph-reconstruction/face-full-album-export/scene-02/exports/DSC_0998-24.jpg",
+      "faces": 6,
+      "local_lighting": "applied around detected faces",
+      "dimensions": [
+        6048,
+        4032
+      ]
+    },
+    {
+      "source": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1012-25.jpg",
+      "output": "outputs/morph-reconstruction/face-full-album-export/scene-02/exports/DSC_1012-25.jpg",
+      "faces": 7,
+      "local_lighting": "applied around detected faces",
+      "dimensions": [
+        6048,
+        4032
+      ]
+    }
+  ]
+}

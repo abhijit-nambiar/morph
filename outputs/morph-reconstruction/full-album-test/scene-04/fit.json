@@ -1,0 +1,51 @@
+{
+  "target_engine": "morph",
+  "preset": null,
+  "known_recipe": {
+    "exposure": 0.08,
+    "temperature": 0.04,
+    "tint": 0.0,
+    "contrast": 0.08,
+    "shadows": 0.1,
+    "highlights": -0.1,
+    "saturation": 0.03,
+    "cool_saturation": -0.15,
+    "warm_saturation": 0.12
+  },
+  "fitted_recipe": {
+    "exposure": 0.08,
+    "temperature": 0.04,
+    "tint": 0.0,
+    "contrast": 0.08,
+    "shadows": 0.1,
+    "highlights": -0.1,
+    "saturation": 0.029998,
+    "cool_saturation": -0.149997,
+    "warm_saturation": 0.120003
+  },
+  "applied_recipe": {
+    "exposure": 0.08,
+    "temperature": 0.04,
+    "tint": 0.0,
+    "contrast": 0.08,
+    "shadows": 0.1,
+    "highlights": -0.1,
+    "saturation": 0.029998,
+    "cool_saturation": -0.149997,
+    "warm_saturation": 0.120003
+  },
+  "renderer": "selective",
+  "regularization": 0,
+  "solver": "gauss-newton",
+  "strength": 1.0,
+  "iterations": 45,
+  "metrics": {
+    "initial_mse": 0.000679322470252364,
+    "fit_mse": 1.57733892068961e-15,
+    "rmse": 3.971572636487478e-08,
+    "objective": 1.57733892068961e-15,
+    "evaluations": 91,
+    "solver": "damped_gauss_newton"
+  },
+  "representative": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1054-33.jpg"
+}

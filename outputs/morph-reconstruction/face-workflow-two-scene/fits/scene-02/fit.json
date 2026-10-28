@@ -1,0 +1,175 @@
+{
+  "version": 1,
+  "scope": "Experimental face-relative lighting. Boxes are not validated by this tool; masks extend outside faces.",
+  "scene": "scene-02",
+  "representative": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_0958-15.jpg",
+  "prompt": "warm and slightly soft contrast and lift shadows and slightly brighten faces",
+  "target_engine": "synthetic-face",
+  "target_path": null,
+  "target_sha256": null,
+  "global_interpretation": [
+    {
+      "phrase": "warm",
+      "intensity": 1.0
+    },
+    {
+      "phrase": "soft contrast",
+      "intensity": 0.5
+    },
+    {
+      "phrase": "lift shadows",
+      "intensity": 1.0
+    }
+  ],
+  "target_settings": {
+    "tone_exposure": 0.0,
+    "tone_contrast": -0.1,
+    "tone_shadows": 0.2,
+    "tone_highlights": 0.0,
+    "tone_temperature": 0.12,
+    "cool_saturation": 0.0,
+    "warm_saturation": 0.0
+  },
+  "target_face_light": 0.15,
+  "local_status": "fitted",
+  "fit_size": 320,
+  "regularization": 0.0001,
+  "weights": [
+    [
+      0.09558781463286116,
+      -0.026178124961211358,
+      0.02858074973815252
+    ],
+    [
+      0.1447178986952964,
+      0.1246929391309966,
+      -0.001396733569638045
+    ],
+    [
+      -0.01590408383597524,
+      -0.004183675848393141,
+      -0.05209245411843784
+    ],
+    [
+      -0.1239247089354021,
+      -0.0046597457890151595,
+      -0.027314902237603376
+    ],
+    [
+      -0.09032711926537501,
+      -0.13248275467184042,
+      -0.0020806401522338765
+    ],
+    [
+      0.002396345043600391,
+      -0.012858051915809547,
+      -0.006301550669388959
+    ],
+    [
+      -0.08703406901284091,
+      -0.05546961544047987,
+      -0.015383337423229644
+    ],
+    [
+      0.07506889782205163,
+      0.12869616859431268,
+      0.017690225416222057
+    ],
+    [
+      -0.02612618032962799,
+      -0.04640739979832872,
+      0.03867167768470762
+    ],
+    [
+      0.007121730476161996,
+      0.01125638483019143,
+      0.009952136527808976
+    ],
+    [
+      0.06670924221084325,
+      0.045804179486255814,
+      0.040386083747794926
+    ],
+    [
+      0.024781826700538936,
+      0.03470654634705215,
+      0.03065949070530317
+    ],
+    [
+      0.03549076337245478,
+      0.041470110730505896,
+      0.05059724051665428
+    ]
+  ],
+  "manifest": [
+    {
+      "path": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_0958-15.jpg",
+      "sha256": "3929f529a87b72ed8416403d84a3b12c59e7207ce36e40813fd9820987d3ee3a",
+      "faces": [
+        {
+          "x": 0.4137301445007324,
+          "y": 0.5037620775401592,
+          "width": 0.03128726780414581,
+          "height": 0.04693089798092842
+        },
+        {
+          "x": 0.5434642434120178,
+          "y": 0.5120973363518715,
+          "width": 0.027993295341730118,
+          "height": 0.041989944875240326
+        },
+        {
+          "x": 0.6215365529060364,
+          "y": 0.5083334557712078,
+          "width": 0.028374267742037773,
+          "height": 0.042561400681734085
+        },
+        {
+          "x": 0.48851868510246277,
+          "y": 0.5315887108445168,
+          "width": 0.02799609862267971,
+          "height": 0.04199414700269699
+        },
+        {
+          "x": 0.33700108528137207,
+          "y": 0.5130789801478386,
+          "width": 0.029875202104449272,
+          "height": 0.04481280595064163
+        }
+      ],
+      "detection_validation": "verified"
+    },
+    {
+      "path": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_0987-19.jpg",
+      "sha256": "e2d502e0f3641cde40897f70a397ffc7e131aed11ce0a6a34310ea6dee6cd6e4",
+      "faces": [
+        {
+          "x": 0.47347691655158997,
+          "y": 0.6480280756950378,
+          "width": 0.06383554637432098,
+          "height": 0.04255703091621399
+        }
+      ],
+      "detection_validation": "verified"
+    },
+    {
+      "path": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_0990-20.jpg",
+      "sha256": "ec279da48a6c0249807664c965b43b40bb13a24dbaf09c1d6f4d967ee17254fc",
+      "faces": [
+        {
+          "x": 0.35282188653945923,
+          "y": 0.41027800738811493,
+          "width": 0.10008468478918076,
+          "height": 0.06672312319278717
+        },
+        {
+          "x": 0.6930543184280396,
+          "y": 0.4257347881793976,
+          "width": 0.09461085498332977,
+          "height": 0.06307390332221985
+        }
+      ],
+      "detection_validation": "verified"
+    }
+  ]
+}

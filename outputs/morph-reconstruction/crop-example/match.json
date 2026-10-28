@@ -1,0 +1,15 @@
+{
+  "original": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_0901-1.jpg",
+  "target": "/Users/abhijitnambiar/Downloads/Morph/edits/DSC_0901-1.jpg",
+  "estimate": {
+    "score": 0.8546376824378967,
+    "factor": 1.05,
+    "box": [
+      0.033112582781456956,
+      0.019801980198019802,
+      0.9867549668874173,
+      0.9702970297029703
+    ]
+  },
+  "warning": "Exploratory crop estimate; scores are not calibrated. Does not estimate rotation or local warps. Inspect before using for evaluation; never use this crop for export."
+}

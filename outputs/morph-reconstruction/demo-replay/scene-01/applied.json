@@ -1,0 +1,17 @@
+{
+  "renderer": "gamut",
+  "source_fit": "outputs/morph-reconstruction/demo-custom-target/scene-01/fit.json",
+  "strength": 0.7,
+  "applied_recipe": {
+    "exposure": 0.1896594,
+    "temperature": 0.0383474,
+    "tint": 0.0029743,
+    "contrast": -0.007333199999999999,
+    "shadows": 0.012020399999999999,
+    "highlights": -0.049210699999999996,
+    "saturation": -0.0069229999999999995,
+    "cool_saturation": -0.1387533,
+    "warm_saturation": 0.0595
+  },
+  "representative": "/Users/abhijitnambiar/Documents/Codex/2026-10-27/i/work/morph-demo/DSC_0906-4.jpg"
+}

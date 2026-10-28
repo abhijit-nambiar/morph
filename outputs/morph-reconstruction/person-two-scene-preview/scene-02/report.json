@@ -1,0 +1,31 @@
+{
+  "scene": "scene-02",
+  "source_fit": "/Users/abhijitnambiar/Documents/Codex/2026-10-27/i/outputs/morph-reconstruction/person-two-scene-fits/scene-02/fit.json",
+  "mode": "preview",
+  "scope": "Inspect mask edges and full-resolution outputs. Empty masks receive global components only; corrections are manual, not automatic normalization.",
+  "corrections": {
+    "album": {},
+    "scene": {},
+    "photos": {}
+  },
+  "operation_order": [
+    "photo correction",
+    "fitted look",
+    "scene correction",
+    "album correction"
+  ],
+  "photos": [
+    {
+      "source": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_0965-16.jpg",
+      "output": "/Users/abhijitnambiar/Documents/Codex/2026-10-27/i/outputs/morph-reconstruction/person-two-scene-preview/scene-02/exports/DSC_0965-16.jpg",
+      "mask_mean": 0.5452966690063477,
+      "review_flag": false
+    },
+    {
+      "source": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_0995-22.jpg",
+      "output": "/Users/abhijitnambiar/Documents/Codex/2026-10-27/i/outputs/morph-reconstruction/person-two-scene-preview/scene-02/exports/DSC_0995-22.jpg",
+      "mask_mean": 0.24644535779953003,
+      "review_flag": false
+    }
+  ]
+}

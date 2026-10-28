@@ -1,0 +1,52 @@
+{
+  "scope": "Experimental face-relative reconstruction. Face boxes are unverified and local lighting affects surroundings.",
+  "scene": "scene-05",
+  "source_fit": "/Users/abhijitnambiar/Documents/Codex/2026-10-27/i/outputs/morph-reconstruction/face-workflow-originals-preview/fits/scene-05/fit.json",
+  "local_status": "fitted",
+  "mode": "preview",
+  "correction_renderer": "gamut",
+  "corrections": {
+    "album": {},
+    "scene": {},
+    "photos": {}
+  },
+  "operation_order": [
+    "photo correction",
+    "fitted look",
+    "scene correction",
+    "album correction"
+  ],
+  "photos_without_detected_faces": 0,
+  "near_limit_flags": 0,
+  "diagnostic_scope": "Reduced-resolution, pre-JPEG estimates; not proof of visible damage or quality.",
+  "photos": [
+    {
+      "source": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1111-45.jpg",
+      "output": "/Users/abhijitnambiar/Documents/Codex/2026-10-27/i/outputs/morph-reconstruction/face-workflow-originals-preview/album/scene-05/exports/DSC_1111-45.jpg",
+      "clipping": {
+        "sample_size": [
+          341,
+          512
+        ],
+        "before": {
+          "near_white": 0.003579774560117302,
+          "near_black": 0.001317357038123167
+        },
+        "after": {
+          "near_white": 1.718291788856305e-05,
+          "near_black": 0.0
+        },
+        "near_white_increase": -0.003562591642228739,
+        "near_black_increase": -0.001317357038123167,
+        "near_limit_flag": false,
+        "face_mapping_out_of_gamut_fraction": 0.0
+      },
+      "faces": 2,
+      "local_lighting": "applied around detected faces",
+      "dimensions": [
+        4032,
+        6048
+      ]
+    }
+  ]
+}

@@ -1,0 +1,51 @@
+{
+  "target_engine": "morph",
+  "preset": null,
+  "known_recipe": {
+    "exposure": 0.08,
+    "temperature": 0.04,
+    "tint": 0.0,
+    "contrast": 0.08,
+    "shadows": 0.1,
+    "highlights": -0.1,
+    "saturation": 0.03,
+    "cool_saturation": -0.15,
+    "warm_saturation": 0.12
+  },
+  "fitted_recipe": {
+    "exposure": 0.08,
+    "temperature": 0.04,
+    "tint": 0.0,
+    "contrast": 0.08,
+    "shadows": 0.1,
+    "highlights": -0.1,
+    "saturation": 0.029991,
+    "cool_saturation": -0.149973,
+    "warm_saturation": 0.120013
+  },
+  "applied_recipe": {
+    "exposure": 0.08,
+    "temperature": 0.04,
+    "tint": 0.0,
+    "contrast": 0.08,
+    "shadows": 0.1,
+    "highlights": -0.1,
+    "saturation": 0.029991,
+    "cool_saturation": -0.149973,
+    "warm_saturation": 0.120013
+  },
+  "renderer": "selective",
+  "regularization": 0,
+  "solver": "gauss-newton",
+  "strength": 1.0,
+  "iterations": 45,
+  "metrics": {
+    "initial_mse": 0.000999142988324125,
+    "fit_mse": 3.885663304005646e-14,
+    "rmse": 1.9712085896742756e-07,
+    "objective": 3.885663304005646e-14,
+    "evaluations": 91,
+    "solver": "damped_gauss_newton"
+  },
+  "representative": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1111-45.jpg"
+}

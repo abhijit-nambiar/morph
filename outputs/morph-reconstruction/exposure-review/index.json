@@ -1,0 +1,14 @@
+{
+  "scope": "Preview thumbnails only; use full-resolution sample export to inspect detail. Blank decisions are not accepted.",
+  "fit_validation": "Source checksums and membership are verified by the apply command, not this thumbnail review.",
+  "candidates": 52,
+  "comparison_sheets": [
+    "comparison-01.jpg",
+    "comparison-02.jpg",
+    "comparison-03.jpg",
+    "comparison-04.jpg",
+    "comparison-05.jpg",
+    "comparison-06.jpg"
+  ],
+  "decision_file": "decisions.csv"
+}

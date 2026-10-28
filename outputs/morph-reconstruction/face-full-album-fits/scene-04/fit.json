@@ -1,0 +1,118 @@
+{
+  "version": 1,
+  "scope": "Experimental face-relative lighting. Boxes are not validated by this tool; masks extend outside faces.",
+  "scene": "scene-04",
+  "representative": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1054-33.jpg",
+  "prompt": "warm and slightly soft contrast and lift shadows and slightly brighten faces",
+  "target_engine": "synthetic-face",
+  "target_path": null,
+  "target_sha256": null,
+  "global_interpretation": [
+    {
+      "phrase": "warm",
+      "intensity": 1.0
+    },
+    {
+      "phrase": "soft contrast",
+      "intensity": 0.5
+    },
+    {
+      "phrase": "lift shadows",
+      "intensity": 1.0
+    }
+  ],
+  "target_settings": {
+    "tone_exposure": 0.0,
+    "tone_contrast": -0.1,
+    "tone_shadows": 0.2,
+    "tone_highlights": 0.0,
+    "tone_temperature": 0.12,
+    "cool_saturation": 0.0,
+    "warm_saturation": 0.0
+  },
+  "target_face_light": 0.15,
+  "local_status": "unavailable: no faces detected in scene; review",
+  "fit_size": 320,
+  "regularization": 0.0001,
+  "weights": [
+    [
+      0.14488655867101197,
+      -0.002042940374065425,
+      -0.024472255361997375
+    ],
+    [
+      0.09291868065370884,
+      0.07675605815999928,
+      -0.004469135597661168
+    ],
+    [
+      -0.00508395879478016,
+      0.027772428954566743,
+      0.011242554815934681
+    ],
+    [
+      -0.13858586703542705,
+      -0.0017819575159740138,
+      0.022519385100618704
+    ],
+    [
+      -0.03663155185168221,
+      -0.06061820791982034,
+      0.010647658432880356
+    ],
+    [
+      -0.0014665658922845108,
+      -0.02778002034791177,
+      -0.052099959515994526
+    ],
+    [
+      -0.07228012926212933,
+      -0.030015937571674825,
+      0.019907706651844544
+    ],
+    [
+      -0.01849811545334414,
+      0.006918895860574066,
+      -0.0032801799108582467
+    ],
+    [
+      0.0014458377664051873,
+      -0.026984385616287913,
+      -0.01563975161715991
+    ],
+    [
+      0.008624828059414414,
+      0.011716133103487614,
+      0.011420266145764982
+    ],
+    [
+      0.0,
+      0.0,
+      0.0
+    ],
+    [
+      0.0,
+      0.0,
+      0.0
+    ],
+    [
+      0.0,
+      0.0,
+      0.0
+    ]
+  ],
+  "manifest": [
+    {
+      "path": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1054-33.jpg",
+      "sha256": "dd8f2dae5f851b25251b1d09a26d51330f3ebf7563385d951d2f7deacd93f2b6",
+      "faces": [],
+      "detection_validation": "verified"
+    },
+    {
+      "path": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1059-34.jpg",
+      "sha256": "168f7c839e57200cfc6fc0c96e96072bdc734c0f4db059ee24b861d40ea4ceb5",
+      "faces": [],
+      "detection_validation": "verified"
+    }
+  ]
+}

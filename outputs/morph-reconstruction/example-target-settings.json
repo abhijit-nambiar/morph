@@ -1,0 +1,9 @@
+{
+  "tone_exposure": 0.15,
+  "tone_contrast": 0.10,
+  "tone_shadows": 0.18,
+  "tone_highlights": -0.18,
+  "tone_temperature": 0.06,
+  "cool_saturation": -0.20,
+  "warm_saturation": 0.12
+}

@@ -1,0 +1,16 @@
+{
+  "scope": "Experimental face-relative album reconstruction; inspect detections and output.",
+  "mode": "preview",
+  "scenes": [
+    "scene-01",
+    "scene-02",
+    "scene-03",
+    "scene-04",
+    "scene-05",
+    "scene-06",
+    "scene-07",
+    "scene-08",
+    "scene-09"
+  ],
+  "source_fits": "/Users/abhijitnambiar/Documents/Codex/2026-10-27/i/outputs/morph-reconstruction/face-workflow-originals-preview/fits"
+}

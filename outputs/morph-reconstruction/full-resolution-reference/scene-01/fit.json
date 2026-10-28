@@ -1,0 +1,50 @@
+{
+  "target_engine": "pillow-soft",
+  "preset": null,
+  "target_settings": {
+    "tone_exposure": 0.15,
+    "tone_contrast": 0.1,
+    "tone_shadows": 0.18,
+    "tone_highlights": -0.18,
+    "tone_temperature": 0.06,
+    "cool_saturation": -0.2,
+    "warm_saturation": 0.12
+  },
+  "known_recipe": null,
+  "fitted_recipe": {
+    "exposure": 0.27911332696009045,
+    "temperature": 0.05465601329177073,
+    "tint": 0.0041133584420787375,
+    "contrast": -0.011707863256704233,
+    "shadows": 0.010786801351527722,
+    "highlights": -0.07466266782397568,
+    "saturation": -0.008664954165719054,
+    "cool_saturation": -0.20710022784787638,
+    "warm_saturation": 0.08518906525899021
+  },
+  "applied_recipe": {
+    "exposure": 0.27911332696009045,
+    "temperature": 0.05465601329177073,
+    "tint": 0.0041133584420787375,
+    "contrast": -0.011707863256704233,
+    "shadows": 0.010786801351527722,
+    "highlights": -0.07466266782397568,
+    "saturation": -0.008664954165719054,
+    "cool_saturation": -0.20710022784787638,
+    "warm_saturation": 0.08518906525899021
+  },
+  "renderer": "gamut",
+  "regularization": 0,
+  "solver": "gauss-newton",
+  "strength": 1.0,
+  "iterations": 45,
+  "metrics": {
+    "initial_mse": 0.0011768371964480562,
+    "fit_mse": 1.8725747385088792e-05,
+    "rmse": 0.004327325662009828,
+    "objective": 1.8725747385088792e-05,
+    "evaluations": 111,
+    "solver": "damped_gauss_newton"
+  },
+  "representative": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_0906-4.jpg"
+}

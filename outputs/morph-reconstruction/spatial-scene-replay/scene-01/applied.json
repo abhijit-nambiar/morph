@@ -1,0 +1,107 @@
+{
+  "renderer": "spatial",
+  "source_fit": "outputs/morph-reconstruction/spatial-scene-preview/scene-01/fit.json",
+  "source_validation": "verified",
+  "strength": 1.0,
+  "applied_recipe": {
+    "kind": "radial-rgb-v1",
+    "weights": [
+      [
+        0.06829159693726246,
+        -0.024700495158790393,
+        -0.08599626719903325
+      ],
+      [
+        0.07592180304004241,
+        0.06786698279283483,
+        0.015233938556528005
+      ],
+      [
+        0.07822912138224146,
+        0.10600140369359469,
+        0.15135706906180643
+      ],
+      [
+        -0.06853835817439229,
+        -0.008496967873102789,
+        0.015834798481609492
+      ],
+      [
+        -0.027659222352700664,
+        -0.0347724796925506,
+        0.008933766515779424
+      ],
+      [
+        0.023813480229154638,
+        -0.0026793165259531558,
+        -0.11929693578386898
+      ],
+      [
+        -0.05692478553977219,
+        -0.0242142132057872,
+        0.01955149416623426
+      ],
+      [
+        -0.08405787935319434,
+        -0.05238433052949399,
+        0.004396026525970042
+      ],
+      [
+        -0.02730061149935842,
+        -0.045057785694141136,
+        -0.032061259153902864
+      ],
+      [
+        0.008070147716446431,
+        0.008509724896228865,
+        0.007557481909532426
+      ],
+      [
+        0.16690981453334486,
+        0.10047919073004717,
+        0.028903970186690598
+      ],
+      [
+        0.0999685791804181,
+        0.11593239374381009,
+        0.05780505006565079
+      ],
+      [
+        0.0357070960829879,
+        0.07992186317165238,
+        0.17408096290231195
+      ]
+    ]
+  },
+  "correction_renderer": "gamut",
+  "album_correction": {
+    "exposure": 0.0,
+    "temperature": 0.0,
+    "tint": 0.0,
+    "contrast": 0.0,
+    "shadows": 0.0,
+    "highlights": 0.0,
+    "saturation": 0.0,
+    "cool_saturation": 0.0,
+    "warm_saturation": 0.0
+  },
+  "scene_correction": {
+    "exposure": 0.0,
+    "temperature": 0.0,
+    "tint": 0.0,
+    "contrast": 0.0,
+    "shadows": 0.0,
+    "highlights": 0.0,
+    "saturation": 0.0,
+    "cool_saturation": 0.0,
+    "warm_saturation": 0.0
+  },
+  "photo_corrections": {},
+  "representative": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_0906-4.jpg",
+  "operation_order": [
+    "photo correction",
+    "fitted look",
+    "scene correction",
+    "album correction"
+  ]
+}

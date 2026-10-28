@@ -1,0 +1,8 @@
+{
+  "version": 1,
+  "scenes": [
+    "scene-01",
+    "scene-02"
+  ],
+  "prompt": "warm and brighten faces"
+}

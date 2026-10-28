@@ -1,0 +1,60 @@
+{
+  "method": "Regular spatial sampling before export encoding. High = any channel >= 254/255; low = all channels <= 1/255. Flag = either fraction increased more than 1 percentage point; heuristic, not a quality verdict.",
+  "note": "Preview checks cover only the selected samples, not the rest of the album.",
+  "photos": [
+    {
+      "scene": "scene-01",
+      "original": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_0906-4.jpg",
+      "export": "outputs/morph-reconstruction/grid-scene-preview/scene-01/samples/DSC_0906-4.jpg",
+      "clipping": {
+        "sampled_pixels": 201850,
+        "before": {
+          "high": 0.0030270002477086944,
+          "low": 0.0006093633886549418
+        },
+        "after": {
+          "high": 0.0012484518206589052,
+          "low": 0.0
+        },
+        "high_increase": -0.0017785484270497892,
+        "low_increase": -0.0006093633886549418,
+        "flag": false
+      },
+      "transfer": {
+        "role": "representative",
+        "status": "evaluated",
+        "source_to_target_rmse": 0.03644678369164467,
+        "output_to_target_rmse": 0.0031392620291235762,
+        "worse_than_source": false,
+        "size": 320
+      }
+    },
+    {
+      "scene": "scene-01",
+      "original": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_0928-10.jpg",
+      "export": "outputs/morph-reconstruction/grid-scene-preview/scene-01/samples/DSC_0928-10.jpg",
+      "clipping": {
+        "sampled_pixels": 201850,
+        "before": {
+          "high": 0.0035868218974486003,
+          "low": 0.0020559821649739907
+        },
+        "after": {
+          "high": 0.0005697299975229131,
+          "low": 0.0
+        },
+        "high_increase": -0.0030170918999256873,
+        "low_increase": -0.0020559821649739907,
+        "flag": false
+      },
+      "transfer": {
+        "role": "other photo",
+        "status": "evaluated",
+        "source_to_target_rmse": 0.03399497643113136,
+        "output_to_target_rmse": 0.0038626745012632045,
+        "worse_than_source": false,
+        "size": 320
+      }
+    }
+  ]
+}

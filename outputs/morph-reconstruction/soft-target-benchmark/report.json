@@ -1,0 +1,3107 @@
+{
+  "scope": "Independent Pillow-based tone operations and HSV hue-range adjustments; no geometry changes. Representative fit and heldout transfer are tested on the same album and unvalidated proposed groups.",
+  "target_engine": "pillow-soft",
+  "summary": {
+    "global": {
+      "heldout": 36,
+      "mean_rmse": 0.008269276144671843,
+      "median_rmse": 0.006698737945126534,
+      "clipping_flags": 10,
+      "mean_near_white_increase": 0.020058196400625977,
+      "mean_target_near_white_fraction": 0.017291422143974958,
+      "mean_output_near_white_fraction": 0.03734961854460094
+    },
+    "selective": {
+      "heldout": 36,
+      "mean_rmse": 0.007916573423245097,
+      "median_rmse": 0.006582043521360027,
+      "clipping_flags": 9,
+      "mean_near_white_increase": 0.018910162363067293,
+      "mean_target_near_white_fraction": 0.017291422143974958,
+      "mean_output_near_white_fraction": 0.03620158450704225
+    },
+    "gamut": {
+      "heldout": 36,
+      "mean_rmse": 0.006139169019460108,
+      "median_rmse": 0.0041585351777415815,
+      "clipping_flags": 0,
+      "mean_near_white_increase": -0.002644920448617631,
+      "mean_target_near_white_fraction": 0.017291422143974958,
+      "mean_output_near_white_fraction": 0.014646501695357327
+    }
+  },
+  "cases": [
+    {
+      "scene": "scene-01",
+      "look": "warm",
+      "representative": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_0935-12.jpg",
+      "fits": {
+        "global": {
+          "recipe": {
+            "exposure": -0.001837,
+            "temperature": 0.015548,
+            "tint": 0.00107,
+            "contrast": -0.000773,
+            "shadows": 0.092108,
+            "highlights": 0.0504,
+            "saturation": -0.121634
+          },
+          "fit_metrics": {
+            "initial_mse": 0.0007228049042821231,
+            "fit_mse": 2.9374132160018996e-05,
+            "rmse": 0.005419790785631766,
+            "objective": 2.9374132160018996e-05,
+            "evaluations": 58,
+            "solver": "damped_gauss_newton"
+          }
+        },
+        "selective": {
+          "recipe": {
+            "exposure": -0.003822,
+            "temperature": 0.014534,
+            "tint": 0.001139,
+            "contrast": -0.000848,
+            "shadows": 0.092806,
+            "highlights": 0.054058,
+            "saturation": -0.224904,
+            "cool_saturation": 0.221411,
+            "warm_saturation": 0.300513
+          },
+          "fit_metrics": {
+            "initial_mse": 0.0007228049042821231,
+            "fit_mse": 2.292804662874757e-05,
+            "rmse": 0.00478832398953408,
+            "objective": 2.292804662874757e-05,
+            "evaluations": 111,
+            "solver": "damped_gauss_newton"
+          }
+        },
+        "gamut": {
+          "recipe": {
+            "exposure": 0.211854,
+            "temperature": 0.04233,
+            "tint": 0.002027,
+            "contrast": -0.007495,
+            "shadows": 0.001245,
+            "highlights": -0.014681,
+            "saturation": -0.070777,
+            "cool_saturation": -0.033182,
+            "warm_saturation": 0.017388
+          },
+          "fit_metrics": {
+            "initial_mse": 0.0007228048802123372,
+            "fit_mse": 1.048195115379304e-05,
+            "rmse": 0.0032375841539322246,
+            "objective": 1.048195115379304e-05,
+            "evaluations": 96,
+            "solver": "damped_gauss_newton"
+          }
+        }
+      },
+      "heldout": {
+        "global": [
+          {
+            "photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_0901-1.jpg",
+            "rmse": 0.006350603377062126,
+            "clipping": {
+              "sampled_pixels": 68160,
+              "before": {
+                "high": 0.007321009389671362,
+                "low": 0.0010710093896713615
+              },
+              "after": {
+                "high": 0.011106220657276995,
+                "low": 0.000528169014084507
+              },
+              "high_increase": 0.003785211267605633,
+              "low_increase": -0.0005428403755868545,
+              "flag": false
+            },
+            "target_near_white_fraction": 0.007321009389671362,
+            "target_near_black_fraction": 0.0010710093896713615
+          },
+          {
+            "photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_0906-4.jpg",
+            "rmse": 0.005703931034155821,
+            "clipping": {
+              "sampled_pixels": 68160,
+              "before": {
+                "high": 0.003403755868544601,
+                "low": 0.0016578638497652582
+              },
+              "after": {
+                "high": 0.005707159624413145,
+                "low": 0.0013937793427230046
+              },
+              "high_increase": 0.0023034037558685443,
+              "low_increase": -0.0002640845070422536,
+              "flag": false
+            },
+            "target_near_white_fraction": 0.003403755868544601,
+            "target_near_black_fraction": 0.0016578638497652582
+          },
+          {
+            "photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_0914-5.jpg",
+            "rmse": 0.006299699871099795,
+            "clipping": {
+              "sampled_pixels": 68160,
+              "before": {
+                "high": 0.0019806338028169014,
+                "low": 0.004357394366197183
+              },
+              "after": {
+                "high": 0.002992957746478873,
+                "low": 0.002098004694835681
+              },
+              "high_increase": 0.0010123239436619718,
+              "low_increase": -0.0022593896713615025,
+              "flag": false
+            },
+            "target_near_white_fraction": 0.0019806338028169014,
+            "target_near_black_fraction": 0.004357394366197183
+          }
+        ],
+        "selective": [
+          {
+            "photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_0901-1.jpg",
+            "rmse": 0.006048073471363945,
+            "clipping": {
+              "sampled_pixels": 68160,
+              "before": {
+                "high": 0.007321009389671362,
+                "low": 0.0010710093896713615
+              },
+              "after": {
+                "high": 0.010534037558685446,
+                "low": 0.0005428403755868544
+              },
+              "high_increase": 0.0032130281690140846,
+              "low_increase": -0.0005281690140845071,
+              "flag": false
+            },
+            "target_near_white_fraction": 0.007321009389671362,
+            "target_near_black_fraction": 0.0010710093896713615
+          },
+          {
+            "photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_0906-4.jpg",
+            "rmse": 0.005184654306549868,
+            "clipping": {
+              "sampled_pixels": 68160,
+              "before": {
+                "high": 0.003403755868544601,
+                "low": 0.0016578638497652582
+              },
+              "after": {
+                "high": 0.0048562206572769955,
+                "low": 0.001437793427230047
+              },
+              "high_increase": 0.0014524647887323946,
+              "low_increase": -0.0002200704225352112,
+              "flag": false
+            },
+            "target_near_white_fraction": 0.003403755868544601,
+            "target_near_black_fraction": 0.0016578638497652582
+          },
+          {
+            "photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_0914-5.jpg",
+            "rmse": 0.0055407193586599224,
+            "clipping": {
+              "sampled_pixels": 68160,
+              "before": {
+                "high": 0.0019806338028169014,
+                "low": 0.004357394366197183
+              },
+              "after": {
+                "high": 0.0027142018779342724,
+                "low": 0.0022007042253521128
+              },
+              "high_increase": 0.0007335680751173711,
+              "low_increase": -0.0021566901408450706,
+              "flag": false
+            },
+            "target_near_white_fraction": 0.0019806338028169014,
+            "target_near_black_fraction": 0.004357394366197183
+          }
+        ],
+        "gamut": [
+          {
+            "photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_0901-1.jpg",
+            "rmse": 0.003581183404796181,
+            "clipping": {
+              "sampled_pixels": 68160,
+              "before": {
+                "high": 0.007321009389671362,
+                "low": 0.0010710093896713615
+              },
+              "after": {
+                "high": 0.006470070422535211,
+                "low": 0.0004254694835680751
+              },
+              "high_increase": -0.0008509389671361505,
+              "low_increase": -0.0006455399061032865,
+              "flag": false
+            },
+            "target_near_white_fraction": 0.007321009389671362,
+            "target_near_black_fraction": 0.0010710093896713615
+          },
+          {
+            "photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_0906-4.jpg",
+            "rmse": 0.003056977536259828,
+            "clipping": {
+              "sampled_pixels": 68160,
+              "before": {
+                "high": 0.003403755868544601,
+                "low": 0.0016578638497652582
+              },
+              "after": {
+                "high": 0.002743544600938967,
+                "low": 0.0010416666666666667
+              },
+              "high_increase": -0.0006602112676056338,
+              "low_increase": -0.0006161971830985916,
+              "flag": false
+            },
+            "target_near_white_fraction": 0.003403755868544601,
+            "target_near_black_fraction": 0.0016578638497652582
+          },
+          {
+            "photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_0914-5.jpg",
+            "rmse": 0.003893168081281874,
+            "clipping": {
+              "sampled_pixels": 68160,
+              "before": {
+                "high": 0.0019806338028169014,
+                "low": 0.004357394366197183
+              },
+              "after": {
+                "high": 0.001716549295774648,
+                "low": 0.0014818075117370893
+              },
+              "high_increase": -0.0002640845070422534,
+              "low_increase": -0.002875586854460094,
+              "flag": false
+            },
+            "target_near_white_fraction": 0.0019806338028169014,
+            "target_near_black_fraction": 0.004357394366197183
+          }
+        ]
+      }
+    },
+    {
+      "scene": "scene-01",
+      "look": "cool",
+      "representative": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_0935-12.jpg",
+      "fits": {
+        "global": {
+          "recipe": {
+            "exposure": 0.005246,
+            "temperature": -0.015419,
+            "tint": 0.000244,
+            "contrast": 0.000157,
+            "shadows": 0.061654,
+            "highlights": -0.000533,
+            "saturation": 0.001882
+          },
+          "fit_metrics": {
+            "initial_mse": 0.00026200778301441684,
+            "fit_mse": 1.8053709649635382e-05,
+            "rmse": 0.004248965715281236,
+            "objective": 1.8053709649635382e-05,
+            "evaluations": 49,
+            "solver": "damped_gauss_newton"
+          }
+        },
+        "selective": {
+          "recipe": {
+            "exposure": 0.006208,
+            "temperature": -0.012216,
+            "tint": 0.0003,
+            "contrast": 0.000222,
+            "shadows": 0.060964,
+            "highlights": -0.003429,
+            "saturation": 0.113136,
+            "cool_saturation": -0.148518,
+            "warm_saturation": -0.238268
+          },
+          "fit_metrics": {
+            "initial_mse": 0.00026200778301441684,
+            "fit_mse": 9.981886210961343e-06,
+            "rmse": 0.0031594123205054042,
+            "objective": 9.981886210961343e-06,
+            "evaluations": 101,
+            "solver": "damped_gauss_newton"
+          }
+        },
+        "gamut": {
+          "recipe": {
+            "exposure": 0.095424,
+            "temperature": -0.039442,
+            "tint": 0.003091,
+            "contrast": 0.004055,
+            "shadows": 0.032068,
+            "highlights": -0.024338,
+            "saturation": -0.095686,
+            "cool_saturation": 0.074662,
+            "warm_saturation": -0.028355
+          },
+          "fit_metrics": {
+            "initial_mse": 0.0002620077737385225,
+            "fit_mse": 4.389509052580976e-06,
+            "rmse": 0.00209511552249058,
+            "objective": 4.389509052580976e-06,
+            "evaluations": 101,
+            "solver": "damped_gauss_newton"
+          }
+        }
+      },
+      "heldout": {
+        "global": [
+          {
+            "photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_0901-1.jpg",
+            "rmse": 0.005891650350692806,
+            "clipping": {
+              "sampled_pixels": 68160,
+              "before": {
+                "high": 0.007321009389671362,
+                "low": 0.0010710093896713615
+              },
+              "after": {
+                "high": 0.01192781690140845,
+                "low": 0.00044014084507042255
+              },
+              "high_increase": 0.0046068075117370886,
+              "low_increase": -0.0006308685446009389,
+              "flag": false
+            },
+            "target_near_white_fraction": 0.007321009389671362,
+            "target_near_black_fraction": 0.0010710093896713615
+          },
+          {
+            "photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_0906-4.jpg",
+            "rmse": 0.004385421783675654,
+            "clipping": {
+              "sampled_pixels": 68160,
+              "before": {
+                "high": 0.003403755868544601,
+                "low": 0.0016578638497652582
+              },
+              "after": {
+                "high": 0.0025528169014084508,
+                "low": 0.0010856807511737088
+              },
+              "high_increase": -0.0008509389671361501,
+              "low_increase": -0.0005721830985915494,
+              "flag": false
+            },
+            "target_near_white_fraction": 0.003403755868544601,
+            "target_near_black_fraction": 0.0016578638497652582
+          },
+          {
+            "photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_0914-5.jpg",
+            "rmse": 0.005140510931163022,
+            "clipping": {
+              "sampled_pixels": 68160,
+              "before": {
+                "high": 0.0019806338028169014,
+                "low": 0.004357394366197183
+              },
+              "after": {
+                "high": 0.0029196009389671363,
+                "low": 0.0015845070422535212
+              },
+              "high_increase": 0.0009389671361502349,
+              "low_increase": -0.002772887323943662,
+              "flag": false
+            },
+            "target_near_white_fraction": 0.0019806338028169014,
+            "target_near_black_fraction": 0.004357394366197183
+          }
+        ],
+        "selective": [
+          {
+            "photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_0901-1.jpg",
+            "rmse": 0.004677166823374641,
+            "clipping": {
+              "sampled_pixels": 68160,
+              "before": {
+                "high": 0.007321009389671362,
+                "low": 0.0010710093896713615
+              },
+              "after": {
+                "high": 0.012661384976525821,
+                "low": 0.0004254694835680751
+              },
+              "high_increase": 0.00534037558685446,
+              "low_increase": -0.0006455399061032865,
+              "flag": false
+            },
+            "target_near_white_fraction": 0.007321009389671362,
+            "target_near_black_fraction": 0.0010710093896713615
+          },
+          {
+            "photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_0906-4.jpg",
+            "rmse": 0.003584997447099445,
+            "clipping": {
+              "sampled_pixels": 68160,
+              "before": {
+                "high": 0.003403755868544601,
+                "low": 0.0016578638497652582
+              },
+              "after": {
+                "high": 0.002494131455399061,
+                "low": 0.0010416666666666667
+              },
+              "high_increase": -0.0009096244131455399,
+              "low_increase": -0.0006161971830985916,
+              "flag": false
+            },
+            "target_near_white_fraction": 0.003403755868544601,
+            "target_near_black_fraction": 0.0016578638497652582
+          },
+          {
+            "photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_0914-5.jpg",
+            "rmse": 0.004081121226536698,
+            "clipping": {
+              "sampled_pixels": 68160,
+              "before": {
+                "high": 0.0019806338028169014,
+                "low": 0.004357394366197183
+              },
+              "after": {
+                "high": 0.002948943661971831,
+                "low": 0.0014818075117370893
+              },
+              "high_increase": 0.0009683098591549296,
+              "low_increase": -0.002875586854460094,
+              "flag": false
+            },
+            "target_near_white_fraction": 0.0019806338028169014,
+            "target_near_black_fraction": 0.004357394366197183
+          }
+        ],
+        "gamut": [
+          {
+            "photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_0901-1.jpg",
+            "rmse": 0.0025934096490811544,
+            "clipping": {
+              "sampled_pixels": 68160,
+              "before": {
+                "high": 0.007321009389671362,
+                "low": 0.0010710093896713615
+              },
+              "after": {
+                "high": 0.006103286384976526,
+                "low": 0.00044014084507042255
+              },
+              "high_increase": -0.001217723004694836,
+              "low_increase": -0.0006308685446009389,
+              "flag": false
+            },
+            "target_near_white_fraction": 0.007321009389671362,
+            "target_near_black_fraction": 0.0010710093896713615
+          },
+          {
+            "photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_0906-4.jpg",
+            "rmse": 0.0020986751956404166,
+            "clipping": {
+              "sampled_pixels": 68160,
+              "before": {
+                "high": 0.003403755868544601,
+                "low": 0.0016578638497652582
+              },
+              "after": {
+                "high": 0.0026261737089201876,
+                "low": 0.0010856807511737088
+              },
+              "high_increase": -0.0007775821596244133,
+              "low_increase": -0.0005721830985915494,
+              "flag": false
+            },
+            "target_near_white_fraction": 0.003403755868544601,
+            "target_near_black_fraction": 0.0016578638497652582
+          },
+          {
+            "photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_0914-5.jpg",
+            "rmse": 0.0022365803497568313,
+            "clipping": {
+              "sampled_pixels": 68160,
+              "before": {
+                "high": 0.0019806338028169014,
+                "low": 0.004357394366197183
+              },
+              "after": {
+                "high": 0.0015698356807511736,
+                "low": 0.0015845070422535212
+              },
+              "high_increase": -0.00041079812206572773,
+              "low_increase": -0.002772887323943662,
+              "flag": false
+            },
+            "target_near_white_fraction": 0.0019806338028169014,
+            "target_near_black_fraction": 0.004357394366197183
+          }
+        ]
+      }
+    },
+    {
+      "scene": "scene-01",
+      "look": "soft",
+      "representative": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_0935-12.jpg",
+      "fits": {
+        "global": {
+          "recipe": {
+            "exposure": 9.2e-05,
+            "temperature": 0.008128,
+            "tint": 0.001254,
+            "contrast": -0.001996,
+            "shadows": 0.163018,
+            "highlights": -0.05637,
+            "saturation": -0.11929
+          },
+          "fit_metrics": {
+            "initial_mse": 0.0009186039594466758,
+            "fit_mse": 1.865204582291951e-05,
+            "rmse": 0.004318801433606263,
+            "objective": 1.865204582291951e-05,
+            "evaluations": 57,
+            "solver": "damped_gauss_newton"
+          }
+        },
+        "selective": {
+          "recipe": {
+            "exposure": -0.00022,
+            "temperature": 0.008116,
+            "tint": 0.001286,
+            "contrast": -0.00195,
+            "shadows": 0.163327,
+            "highlights": -0.056117,
+            "saturation": -0.148319,
+            "cool_saturation": 0.079393,
+            "warm_saturation": 0.061758
+          },
+          "fit_metrics": {
+            "initial_mse": 0.0009186039594466758,
+            "fit_mse": 1.837489428612062e-05,
+            "rmse": 0.004286594719135531,
+            "objective": 1.837489428612062e-05,
+            "evaluations": 101,
+            "solver": "damped_gauss_newton"
+          }
+        },
+        "gamut": {
+          "recipe": {
+            "exposure": 0.16901,
+            "temperature": 0.022067,
+            "tint": 0.00318,
+            "contrast": 0.001418,
+            "shadows": 0.094697,
+            "highlights": -0.11738,
+            "saturation": -0.136405,
+            "cool_saturation": 0.002118,
+            "warm_saturation": -0.002709
+          },
+          "fit_metrics": {
+            "initial_mse": 0.0009186039316579371,
+            "fit_mse": 8.910960061032799e-06,
+            "rmse": 0.002985123123261886,
+            "objective": 8.910960061032799e-06,
+            "evaluations": 91,
+            "solver": "damped_gauss_newton"
+          }
+        }
+      },
+      "heldout": {
+        "global": [
+          {
+            "photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_0901-1.jpg",
+            "rmse": 0.004799081770071253,
+            "clipping": {
+              "sampled_pixels": 68160,
+              "before": {
+                "high": 0.007321009389671362,
+                "low": 0.0010710093896713615
+              },
+              "after": {
+                "high": 0.007849178403755869,
+                "low": 0.0004254694835680751
+              },
+              "high_increase": 0.0005281690140845072,
+              "low_increase": -0.0006455399061032865,
+              "flag": false
+            },
+            "target_near_white_fraction": 0.007321009389671362,
+            "target_near_black_fraction": 0.0010710093896713615
+          },
+          {
+            "photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_0906-4.jpg",
+            "rmse": 0.004326455205530218,
+            "clipping": {
+              "sampled_pixels": 68160,
+              "before": {
+                "high": 0.003403755868544601,
+                "low": 0.0016578638497652582
+              },
+              "after": {
+                "high": 0.0030369718309859154,
+                "low": 0.0010416666666666667
+              },
+              "high_increase": -0.00036678403755868554,
+              "low_increase": -0.0006161971830985916,
+              "flag": false
+            },
+            "target_near_white_fraction": 0.003403755868544601,
+            "target_near_black_fraction": 0.0016578638497652582
+          },
+          {
+            "photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_0914-5.jpg",
+            "rmse": 0.005175965696977853,
+            "clipping": {
+              "sampled_pixels": 68160,
+              "before": {
+                "high": 0.0019806338028169014,
+                "low": 0.004357394366197183
+              },
+              "after": {
+                "high": 0.0019806338028169014,
+                "low": 0.0014818075117370893
+              },
+              "high_increase": 0.0,
+              "low_increase": -0.002875586854460094,
+              "flag": false
+            },
+            "target_near_white_fraction": 0.0019806338028169014,
+            "target_near_black_fraction": 0.004357394366197183
+          }
+        ],
+        "selective": [
+          {
+            "photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_0901-1.jpg",
+            "rmse": 0.004876590493404089,
+            "clipping": {
+              "sampled_pixels": 68160,
+              "before": {
+                "high": 0.007321009389671362,
+                "low": 0.0010710093896713615
+              },
+              "after": {
+                "high": 0.007790492957746479,
+                "low": 0.0004254694835680751
+              },
+              "high_increase": 0.00046948356807511703,
+              "low_increase": -0.0006455399061032865,
+              "flag": false
+            },
+            "target_near_white_fraction": 0.007321009389671362,
+            "target_near_black_fraction": 0.0010710093896713615
+          },
+          {
+            "photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_0906-4.jpg",
+            "rmse": 0.004281593235536246,
+            "clipping": {
+              "sampled_pixels": 68160,
+              "before": {
+                "high": 0.003403755868544601,
+                "low": 0.0016578638497652582
+              },
+              "after": {
+                "high": 0.0030076291079812207,
+                "low": 0.0010416666666666667
+              },
+              "high_increase": -0.0003961267605633802,
+              "low_increase": -0.0006161971830985916,
+              "flag": false
+            },
+            "target_near_white_fraction": 0.003403755868544601,
+            "target_near_black_fraction": 0.0016578638497652582
+          },
+          {
+            "photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_0914-5.jpg",
+            "rmse": 0.005147818312930359,
+            "clipping": {
+              "sampled_pixels": 68160,
+              "before": {
+                "high": 0.0019806338028169014,
+                "low": 0.004357394366197183
+              },
+              "after": {
+                "high": 0.0019806338028169014,
+                "low": 0.0014818075117370893
+              },
+              "high_increase": 0.0,
+              "low_increase": -0.002875586854460094,
+              "flag": false
+            },
+            "target_near_white_fraction": 0.0019806338028169014,
+            "target_near_black_fraction": 0.004357394366197183
+          }
+        ],
+        "gamut": [
+          {
+            "photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_0901-1.jpg",
+            "rmse": 0.0035492186502265473,
+            "clipping": {
+              "sampled_pixels": 68160,
+              "before": {
+                "high": 0.007321009389671362,
+                "low": 0.0010710093896713615
+              },
+              "after": {
+                "high": 0.004650821596244132,
+                "low": 0.0004254694835680751
+              },
+              "high_increase": -0.0026701877934272302,
+              "low_increase": -0.0006455399061032865,
+              "flag": false
+            },
+            "target_near_white_fraction": 0.007321009389671362,
+            "target_near_black_fraction": 0.0010710093896713615
+          },
+          {
+            "photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_0906-4.jpg",
+            "rmse": 0.002970879555334218,
+            "clipping": {
+              "sampled_pixels": 68160,
+              "before": {
+                "high": 0.003403755868544601,
+                "low": 0.0016578638497652582
+              },
+              "after": {
+                "high": 0.002244718309859155,
+                "low": 0.0010416666666666667
+              },
+              "high_increase": -0.001159037558685446,
+              "low_increase": -0.0006161971830985916,
+              "flag": false
+            },
+            "target_near_white_fraction": 0.003403755868544601,
+            "target_near_black_fraction": 0.0016578638497652582
+          },
+          {
+            "photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_0914-5.jpg",
+            "rmse": 0.003602894036084484,
+            "clipping": {
+              "sampled_pixels": 68160,
+              "before": {
+                "high": 0.0019806338028169014,
+                "low": 0.004357394366197183
+              },
+              "after": {
+                "high": 0.0013791079812206573,
+                "low": 0.0014818075117370893
+              },
+              "high_increase": -0.000601525821596244,
+              "low_increase": -0.002875586854460094,
+              "flag": false
+            },
+            "target_near_white_fraction": 0.0019806338028169014,
+            "target_near_black_fraction": 0.004357394366197183
+          }
+        ]
+      }
+    },
+    {
+      "scene": "scene-02",
+      "look": "warm",
+      "representative": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1012-25.jpg",
+      "fits": {
+        "global": {
+          "recipe": {
+            "exposure": 0.036229,
+            "temperature": 0.024192,
+            "tint": -0.000162,
+            "contrast": -0.006801,
+            "shadows": 0.073439,
+            "highlights": 0.010798,
+            "saturation": -0.037871
+          },
+          "fit_metrics": {
+            "initial_mse": 0.0007541808872964511,
+            "fit_mse": 4.9675255319449e-05,
+            "rmse": 0.007048067488287056,
+            "objective": 4.9675255319449e-05,
+            "evaluations": 49,
+            "solver": "damped_gauss_newton"
+          }
+        },
+        "selective": {
+          "recipe": {
+            "exposure": 0.034016,
+            "temperature": 0.022036,
+            "tint": -0.000528,
+            "contrast": -0.007926,
+            "shadows": 0.071741,
+            "highlights": 0.017305,
+            "saturation": -0.051078,
+            "cool_saturation": -0.064889,
+            "warm_saturation": 0.052415
+          },
+          "fit_metrics": {
+            "initial_mse": 0.0007541808872964511,
+            "fit_mse": 4.5658039885394957e-05,
+            "rmse": 0.00675707332248178,
+            "objective": 4.5658039885394957e-05,
+            "evaluations": 81,
+            "solver": "damped_gauss_newton"
+          }
+        },
+        "gamut": {
+          "recipe": {
+            "exposure": 0.093204,
+            "temperature": 0.044188,
+            "tint": 0.002538,
+            "contrast": -0.012869,
+            "shadows": 0.057564,
+            "highlights": 0.074776,
+            "saturation": -0.065473,
+            "cool_saturation": -0.025205,
+            "warm_saturation": 0.041844
+          },
+          "fit_metrics": {
+            "initial_mse": 0.0007541808548617172,
+            "fit_mse": 2.9658490839379818e-05,
+            "rmse": 0.005445960965649664,
+            "objective": 2.9658490839379818e-05,
+            "evaluations": 91,
+            "solver": "damped_gauss_newton"
+          }
+        }
+      },
+      "heldout": {
+        "global": [
+          {
+            "photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_0904-2.jpg",
+            "rmse": 0.007065717668635697,
+            "clipping": {
+              "sampled_pixels": 68160,
+              "before": {
+                "high": 0.01737089201877934,
+                "low": 0.0005428403755868544
+              },
+              "after": {
+                "high": 0.13192488262910798,
+                "low": 0.0003961267605633803
+              },
+              "high_increase": 0.11455399061032864,
+              "low_increase": -0.00014671361502347413,
+              "flag": true
+            },
+            "target_near_white_fraction": 0.01737089201877934,
+            "target_near_black_fraction": 0.0005428403755868544
+          },
+          {
+            "photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_0905-3.jpg",
+            "rmse": 0.008493209339340209,
+            "clipping": {
+              "sampled_pixels": 68160,
+              "before": {
+                "high": 0.013761737089201878,
+                "low": 0.0006161971830985916
+              },
+              "after": {
+                "high": 0.1268926056338028,
+                "low": 0.0003374413145539906
+              },
+              "high_increase": 0.11313086854460093,
+              "low_increase": -0.000278755868544601,
+              "flag": true
+            },
+            "target_near_white_fraction": 0.013761737089201878,
+            "target_near_black_fraction": 0.0006161971830985916
+          },
+          {
+            "photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_0965-16.jpg",
+            "rmse": 0.007568174833333755,
+            "clipping": {
+              "sampled_pixels": 68160,
+              "before": {
+                "high": 0.14008215962441314,
+                "low": 0.00027875586854460093
+              },
+              "after": {
+                "high": 0.18581279342723006,
+                "low": 0.00019072769953051643
+              },
+              "high_increase": 0.04573063380281692,
+              "low_increase": -8.80281690140845e-05,
+              "flag": true
+            },
+            "target_near_white_fraction": 0.14008215962441314,
+            "target_near_black_fraction": 0.00027875586854460093
+          }
+        ],
+        "selective": [
+          {
+            "photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_0904-2.jpg",
+            "rmse": 0.006902904076232258,
+            "clipping": {
+              "sampled_pixels": 68160,
+              "before": {
+                "high": 0.01737089201877934,
+                "low": 0.0005428403755868544
+              },
+              "after": {
+                "high": 0.1310299295774648,
+                "low": 0.0
+              },
+              "high_increase": 0.11365903755868545,
+              "low_increase": -0.0005428403755868544,
+              "flag": true
+            },
+            "target_near_white_fraction": 0.01737089201877934,
+            "target_near_black_fraction": 0.0005428403755868544
+          },
+          {
+            "photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_0905-3.jpg",
+            "rmse": 0.008004877011739242,
+            "clipping": {
+              "sampled_pixels": 68160,
+              "before": {
+                "high": 0.013761737089201878,
+                "low": 0.0006161971830985916
+              },
+              "after": {
+                "high": 0.12400234741784037,
+                "low": 0.0
+              },
+              "high_increase": 0.1102406103286385,
+              "low_increase": -0.0006161971830985916,
+              "flag": true
+            },
+            "target_near_white_fraction": 0.013761737089201878,
+            "target_near_black_fraction": 0.0006161971830985916
+          },
+          {
+            "photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_0965-16.jpg",
+            "rmse": 0.007412549509287631,
+            "clipping": {
+              "sampled_pixels": 68160,
+              "before": {
+                "high": 0.14008215962441314,
+                "low": 0.00027875586854460093
+              },
+              "after": {
+                "high": 0.18438967136150236,
+                "low": 0.0
+              },
+              "high_increase": 0.04430751173708922,
+              "low_increase": -0.00027875586854460093,
+              "flag": true
+            },
+            "target_near_white_fraction": 0.14008215962441314,
+            "target_near_black_fraction": 0.00027875586854460093
+          }
+        ],
+        "gamut": [
+          {
+            "photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_0904-2.jpg",
+            "rmse": 0.0038543374915864606,
+            "clipping": {
+              "sampled_pixels": 68160,
+              "before": {
+                "high": 0.01737089201877934,
+                "low": 0.0005428403755868544
+              },
+              "after": {
+                "high": 0.0170481220657277,
+                "low": 0.0003961267605633803
+              },
+              "high_increase": -0.0003227699530516416,
+              "low_increase": -0.00014671361502347413,
+              "flag": false
+            },
+            "target_near_white_fraction": 0.01737089201877934,
+            "target_near_black_fraction": 0.0005428403755868544
+          },
+          {
+            "photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_0905-3.jpg",
+            "rmse": 0.0047501150701758105,
+            "clipping": {
+              "sampled_pixels": 68160,
+              "before": {
+                "high": 0.013761737089201878,
+                "low": 0.0006161971830985916
+              },
+              "after": {
+                "high": 0.013248239436619718,
+                "low": 0.0003374413145539906
+              },
+              "high_increase": -0.0005134976525821601,
+              "low_increase": -0.000278755868544601,
+              "flag": false
+            },
+            "target_near_white_fraction": 0.013761737089201878,
+            "target_near_black_fraction": 0.0006161971830985916
+          },
+          {
+            "photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_0965-16.jpg",
+            "rmse": 0.005889772315178105,
+            "clipping": {
+              "sampled_pixels": 68160,
+              "before": {
+                "high": 0.14008215962441314,
+                "low": 0.00027875586854460093
+              },
+              "after": {
+                "high": 0.13754401408450703,
+                "low": 0.00019072769953051643
+              },
+              "high_increase": -0.0025381455399061115,
+              "low_increase": -8.80281690140845e-05,
+              "flag": false
+            },
+            "target_near_white_fraction": 0.14008215962441314,
+            "target_near_black_fraction": 0.00027875586854460093
+          }
+        ]
+      }
+    },
+    {
+      "scene": "scene-02",
+      "look": "cool",
+      "representative": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1012-25.jpg",
+      "fits": {
+        "global": {
+          "recipe": {
+            "exposure": 0.019691,
+            "temperature": -0.015765,
+            "tint": 0.001829,
+            "contrast": -0.001212,
+            "shadows": 0.058201,
+            "highlights": -0.019662,
+            "saturation": -0.050423
+          },
+          "fit_metrics": {
+            "initial_mse": 0.00021214320018402575,
+            "fit_mse": 2.2187180676067263e-05,
+            "rmse": 0.0047103270243229675,
+            "objective": 2.2187180676067263e-05,
+            "evaluations": 49,
+            "solver": "damped_gauss_newton"
+          }
+        },
+        "selective": {
+          "recipe": {
+            "exposure": 0.018599,
+            "temperature": -0.014407,
+            "tint": 0.001941,
+            "contrast": -0.000961,
+            "shadows": 0.058882,
+            "highlights": -0.019184,
+            "saturation": -0.008854,
+            "cool_saturation": -0.048669,
+            "warm_saturation": -0.052155
+          },
+          "fit_metrics": {
+            "initial_mse": 0.00021214320018402575,
+            "fit_mse": 2.1683728796320082e-05,
+            "rmse": 0.004656579087304336,
+            "objective": 2.1683728796320082e-05,
+            "evaluations": 91,
+            "solver": "damped_gauss_newton"
+          }
+        },
+        "gamut": {
+          "recipe": {
+            "exposure": 0.071473,
+            "temperature": -0.036843,
+            "tint": 0.003078,
+            "contrast": -0.016936,
+            "shadows": 0.018345,
+            "highlights": 0.018455,
+            "saturation": -0.038789,
+            "cool_saturation": 0.013615,
+            "warm_saturation": -0.013414
+          },
+          "fit_metrics": {
+            "initial_mse": 0.00021214318376127,
+            "fit_mse": 6.770716330536033e-06,
+            "rmse": 0.002602060016705232,
+            "objective": 6.770716330536033e-06,
+            "evaluations": 81,
+            "solver": "damped_gauss_newton"
+          }
+        }
+      },
+      "heldout": {
+        "global": [
+          {
+            "photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_0904-2.jpg",
+            "rmse": 0.006762202251038091,
+            "clipping": {
+              "sampled_pixels": 68160,
+              "before": {
+                "high": 0.01737089201877934,
+                "low": 0.0005428403755868544
+              },
+              "after": {
+                "high": 0.08082453051643193,
+                "low": 0.0003961267605633803
+              },
+              "high_increase": 0.06345363849765259,
+              "low_increase": -0.00014671361502347413,
+              "flag": true
+            },
+            "target_near_white_fraction": 0.01737089201877934,
+            "target_near_black_fraction": 0.0005428403755868544
+          },
+          {
+            "photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_0905-3.jpg",
+            "rmse": 0.006570134272392787,
+            "clipping": {
+              "sampled_pixels": 68160,
+              "before": {
+                "high": 0.013761737089201878,
+                "low": 0.0006161971830985916
+              },
+              "after": {
+                "high": 0.09583333333333334,
+                "low": 0.0003374413145539906
+              },
+              "high_increase": 0.08207159624413146,
+              "low_increase": -0.000278755868544601,
+              "flag": true
+            },
+            "target_near_white_fraction": 0.013761737089201878,
+            "target_near_black_fraction": 0.0006161971830985916
+          },
+          {
+            "photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_0965-16.jpg",
+            "rmse": 0.006635273639214977,
+            "clipping": {
+              "sampled_pixels": 68160,
+              "before": {
+                "high": 0.14008215962441314,
+                "low": 0.00027875586854460093
+              },
+              "after": {
+                "high": 0.1934712441314554,
+                "low": 0.00019072769953051643
+              },
+              "high_increase": 0.053389084507042245,
+              "low_increase": -8.80281690140845e-05,
+              "flag": true
+            },
+            "target_near_white_fraction": 0.14008215962441314,
+            "target_near_black_fraction": 0.00027875586854460093
+          }
+        ],
+        "selective": [
+          {
+            "photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_0904-2.jpg",
+            "rmse": 0.006551392140074963,
+            "clipping": {
+              "sampled_pixels": 68160,
+              "before": {
+                "high": 0.01737089201877934,
+                "low": 0.0005428403755868544
+              },
+              "after": {
+                "high": 0.07433978873239437,
+                "low": 0.0003961267605633803
+              },
+              "high_increase": 0.05696889671361503,
+              "low_increase": -0.00014671361502347413,
+              "flag": true
+            },
+            "target_near_white_fraction": 0.01737089201877934,
+            "target_near_black_fraction": 0.0005428403755868544
+          },
+          {
+            "photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_0905-3.jpg",
+            "rmse": 0.006356381676987385,
+            "clipping": {
+              "sampled_pixels": 68160,
+              "before": {
+                "high": 0.013761737089201878,
+                "low": 0.0006161971830985916
+              },
+              "after": {
+                "high": 0.09558392018779342,
+                "low": 0.0003374413145539906
+              },
+              "high_increase": 0.08182218309859154,
+              "low_increase": -0.000278755868544601,
+              "flag": true
+            },
+            "target_near_white_fraction": 0.013761737089201878,
+            "target_near_black_fraction": 0.0006161971830985916
+          },
+          {
+            "photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_0965-16.jpg",
+            "rmse": 0.006612694902645092,
+            "clipping": {
+              "sampled_pixels": 68160,
+              "before": {
+                "high": 0.14008215962441314,
+                "low": 0.00027875586854460093
+              },
+              "after": {
+                "high": 0.19300176056338028,
+                "low": 0.00019072769953051643
+              },
+              "high_increase": 0.05291960093896714,
+              "low_increase": -8.80281690140845e-05,
+              "flag": true
+            },
+            "target_near_white_fraction": 0.14008215962441314,
+            "target_near_black_fraction": 0.00027875586854460093
+          }
+        ],
+        "gamut": [
+          {
+            "photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_0904-2.jpg",
+            "rmse": 0.002596011114427392,
+            "clipping": {
+              "sampled_pixels": 68160,
+              "before": {
+                "high": 0.01737089201877934,
+                "low": 0.0005428403755868544
+              },
+              "after": {
+                "high": 0.015272887323943662,
+                "low": 0.0003961267605633803
+              },
+              "high_increase": -0.002098004694835679,
+              "low_increase": -0.00014671361502347413,
+              "flag": false
+            },
+            "target_near_white_fraction": 0.01737089201877934,
+            "target_near_black_fraction": 0.0005428403755868544
+          },
+          {
+            "photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_0905-3.jpg",
+            "rmse": 0.0025025929089350185,
+            "clipping": {
+              "sampled_pixels": 68160,
+              "before": {
+                "high": 0.013761737089201878,
+                "low": 0.0006161971830985916
+              },
+              "after": {
+                "high": 0.01210387323943662,
+                "low": 0.0003374413145539906
+              },
+              "high_increase": -0.001657863849765259,
+              "low_increase": -0.000278755868544601,
+              "flag": false
+            },
+            "target_near_white_fraction": 0.013761737089201878,
+            "target_near_black_fraction": 0.0006161971830985916
+          },
+          {
+            "photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_0965-16.jpg",
+            "rmse": 0.0029228424495918457,
+            "clipping": {
+              "sampled_pixels": 68160,
+              "before": {
+                "high": 0.14008215962441314,
+                "low": 0.00027875586854460093
+              },
+              "after": {
+                "high": 0.13620892018779343,
+                "low": 0.00019072769953051643
+              },
+              "high_increase": -0.003873239436619713,
+              "low_increase": -8.80281690140845e-05,
+              "flag": false
+            },
+            "target_near_white_fraction": 0.14008215962441314,
+            "target_near_black_fraction": 0.00027875586854460093
+          }
+        ]
+      }
+    },
+    {
+      "scene": "scene-02",
+      "look": "soft",
+      "representative": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1012-25.jpg",
+      "fits": {
+        "global": {
+          "recipe": {
+            "exposure": 0.0212,
+            "temperature": 0.012322,
+            "tint": 8.1e-05,
+            "contrast": -0.01008,
+            "shadows": 0.142125,
+            "highlights": -0.066355,
+            "saturation": -0.062998
+          },
+          "fit_metrics": {
+            "initial_mse": 0.00052386436300887,
+            "fit_mse": 4.1117104438331836e-05,
+            "rmse": 0.0064122620375599,
+            "objective": 4.1117104438331836e-05,
+            "evaluations": 65,
+            "solver": "damped_gauss_newton"
+          }
+        },
+        "selective": {
+          "recipe": {
+            "exposure": 0.019343,
+            "temperature": 0.010642,
+            "tint": -0.000758,
+            "contrast": -0.011046,
+            "shadows": 0.14069,
+            "highlights": -0.061015,
+            "saturation": -0.073044,
+            "cool_saturation": -0.033106,
+            "warm_saturation": 0.034768
+          },
+          "fit_metrics": {
+            "initial_mse": 0.00052386436300887,
+            "fit_mse": 3.986559412349162e-05,
+            "rmse": 0.006313920661798944,
+            "objective": 3.986559412349162e-05,
+            "evaluations": 86,
+            "solver": "damped_gauss_newton"
+          }
+        },
+        "gamut": {
+          "recipe": {
+            "exposure": 0.086049,
+            "temperature": 0.021056,
+            "tint": 0.002772,
+            "contrast": -0.036832,
+            "shadows": 0.092959,
+            "highlights": -0.014768,
+            "saturation": -0.108626,
+            "cool_saturation": 0.005838,
+            "warm_saturation": 0.05742
+          },
+          "fit_metrics": {
+            "initial_mse": 0.000523864344633348,
+            "fit_mse": 2.300829045240912e-05,
+            "rmse": 0.004796695784851184,
+            "objective": 2.300829045240912e-05,
+            "evaluations": 91,
+            "solver": "damped_gauss_newton"
+          }
+        }
+      },
+      "heldout": {
+        "global": [
+          {
+            "photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_0904-2.jpg",
+            "rmse": 0.006000620674863322,
+            "clipping": {
+              "sampled_pixels": 68160,
+              "before": {
+                "high": 0.01737089201877934,
+                "low": 0.0005428403755868544
+              },
+              "after": {
+                "high": 0.11175176056338028,
+                "low": 0.0
+              },
+              "high_increase": 0.09438086854460094,
+              "low_increase": -0.0005428403755868544,
+              "flag": true
+            },
+            "target_near_white_fraction": 0.01737089201877934,
+            "target_near_black_fraction": 0.0005428403755868544
+          },
+          {
+            "photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_0905-3.jpg",
+            "rmse": 0.0073400260893174245,
+            "clipping": {
+              "sampled_pixels": 68160,
+              "before": {
+                "high": 0.013761737089201878,
+                "low": 0.0006161971830985916
+              },
+              "after": {
+                "high": 0.09297241784037559,
+                "low": 0.0
+              },
+              "high_increase": 0.07921068075117371,
+              "low_increase": -0.0006161971830985916,
+              "flag": true
+            },
+            "target_near_white_fraction": 0.013761737089201878,
+            "target_near_black_fraction": 0.0006161971830985916
+          },
+          {
+            "photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_0965-16.jpg",
+            "rmse": 0.006949820089585762,
+            "clipping": {
+              "sampled_pixels": 68160,
+              "before": {
+                "high": 0.14008215962441314,
+                "low": 0.00027875586854460093
+              },
+              "after": {
+                "high": 0.17544014084507042,
+                "low": 0.0
+              },
+              "high_increase": 0.03535798122065728,
+              "low_increase": -0.00027875586854460093,
+              "flag": true
+            },
+            "target_near_white_fraction": 0.14008215962441314,
+            "target_near_black_fraction": 0.00027875586854460093
+          }
+        ],
+        "selective": [
+          {
+            "photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_0904-2.jpg",
+            "rmse": 0.005771836063571985,
+            "clipping": {
+              "sampled_pixels": 68160,
+              "before": {
+                "high": 0.01737089201877934,
+                "low": 0.0005428403755868544
+              },
+              "after": {
+                "high": 0.10093896713615023,
+                "low": 0.0
+              },
+              "high_increase": 0.0835680751173709,
+              "low_increase": -0.0005428403755868544,
+              "flag": true
+            },
+            "target_near_white_fraction": 0.01737089201877934,
+            "target_near_black_fraction": 0.0005428403755868544
+          },
+          {
+            "photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_0905-3.jpg",
+            "rmse": 0.006808987497815024,
+            "clipping": {
+              "sampled_pixels": 68160,
+              "before": {
+                "high": 0.013761737089201878,
+                "low": 0.0006161971830985916
+              },
+              "after": {
+                "high": 0.08019366197183099,
+                "low": 0.0
+              },
+              "high_increase": 0.06643192488262911,
+              "low_increase": -0.0006161971830985916,
+              "flag": true
+            },
+            "target_near_white_fraction": 0.013761737089201878,
+            "target_near_black_fraction": 0.0006161971830985916
+          },
+          {
+            "photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_0965-16.jpg",
+            "rmse": 0.007089876264933746,
+            "clipping": {
+              "sampled_pixels": 68160,
+              "before": {
+                "high": 0.14008215962441314,
+                "low": 0.00027875586854460093
+              },
+              "after": {
+                "high": 0.1728286384976526,
+                "low": 0.0
+              },
+              "high_increase": 0.03274647887323945,
+              "low_increase": -0.00027875586854460093,
+              "flag": true
+            },
+            "target_near_white_fraction": 0.14008215962441314,
+            "target_near_black_fraction": 0.00027875586854460093
+          }
+        ],
+        "gamut": [
+          {
+            "photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_0904-2.jpg",
+            "rmse": 0.0039594910955132725,
+            "clipping": {
+              "sampled_pixels": 68160,
+              "before": {
+                "high": 0.01737089201877934,
+                "low": 0.0005428403755868544
+              },
+              "after": {
+                "high": 0.013703051643192488,
+                "low": 0.0003961267605633803
+              },
+              "high_increase": -0.0036678403755868536,
+              "low_increase": -0.00014671361502347413,
+              "flag": false
+            },
+            "target_near_white_fraction": 0.01737089201877934,
+            "target_near_black_fraction": 0.0005428403755868544
+          },
+          {
+            "photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_0905-3.jpg",
+            "rmse": 0.004433354033145287,
+            "clipping": {
+              "sampled_pixels": 68160,
+              "before": {
+                "high": 0.013761737089201878,
+                "low": 0.0006161971830985916
+              },
+              "after": {
+                "high": 0.010167253521126761,
+                "low": 0.0003374413145539906
+              },
+              "high_increase": -0.003594483568075117,
+              "low_increase": -0.000278755868544601,
+              "flag": false
+            },
+            "target_near_white_fraction": 0.013761737089201878,
+            "target_near_black_fraction": 0.0006161971830985916
+          },
+          {
+            "photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_0965-16.jpg",
+            "rmse": 0.005583134796708822,
+            "clipping": {
+              "sampled_pixels": 68160,
+              "before": {
+                "high": 0.14008215962441314,
+                "low": 0.00027875586854460093
+              },
+              "after": {
+                "high": 0.09012617370892019,
+                "low": 0.00019072769953051643
+              },
+              "high_increase": -0.049955985915492954,
+              "low_increase": -8.80281690140845e-05,
+              "flag": false
+            },
+            "target_near_white_fraction": 0.14008215962441314,
+            "target_near_black_fraction": 0.00027875586854460093
+          }
+        ]
+      }
+    },
+    {
+      "scene": "scene-03",
+      "look": "warm",
+      "representative": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1096-40.jpg",
+      "fits": {
+        "global": {
+          "recipe": {
+            "exposure": 0.016928,
+            "temperature": 0.026373,
+            "tint": 0.000536,
+            "contrast": -0.00365,
+            "shadows": 0.076588,
+            "highlights": 0.033319,
+            "saturation": -0.073179
+          },
+          "fit_metrics": {
+            "initial_mse": 0.000824234370587845,
+            "fit_mse": 2.499356462164876e-05,
+            "rmse": 0.004999356420745451,
+            "objective": 2.499356462164876e-05,
+            "evaluations": 49,
+            "solver": "damped_gauss_newton"
+          }
+        },
+        "selective": {
+          "recipe": {
+            "exposure": 0.019344,
+            "temperature": 0.026925,
+            "tint": 0.000367,
+            "contrast": -0.003329,
+            "shadows": 0.076767,
+            "highlights": 0.029715,
+            "saturation": -0.039019,
+            "cool_saturation": -0.056887,
+            "warm_saturation": -0.066596
+          },
+          "fit_metrics": {
+            "initial_mse": 0.000824234370587845,
+            "fit_mse": 2.4505553853370196e-05,
+            "rmse": 0.004950308460426501,
+            "objective": 2.4505553853370196e-05,
+            "evaluations": 91,
+            "solver": "damped_gauss_newton"
+          }
+        },
+        "gamut": {
+          "recipe": {
+            "exposure": 0.136867,
+            "temperature": 0.04089,
+            "tint": 0.000315,
+            "contrast": -0.007968,
+            "shadows": 0.033473,
+            "highlights": 0.04512,
+            "saturation": -0.080765,
+            "cool_saturation": -0.007857,
+            "warm_saturation": 0.047528
+          },
+          "fit_metrics": {
+            "initial_mse": 0.0008242343436149724,
+            "fit_mse": 1.445929633923559e-05,
+            "rmse": 0.0038025381443498488,
+            "objective": 1.445929633923559e-05,
+            "evaluations": 91,
+            "solver": "damped_gauss_newton"
+          }
+        }
+      },
+      "heldout": {
+        "global": [
+          {
+            "photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_0928-10.jpg",
+            "rmse": 0.005074223053139163,
+            "clipping": {
+              "sampled_pixels": 68160,
+              "before": {
+                "high": 0.0027288732394366196,
+                "low": 0.0027142018779342724
+              },
+              "after": {
+                "high": 0.004577464788732394,
+                "low": 0.0007042253521126761
+              },
+              "high_increase": 0.0018485915492957748,
+              "low_increase": -0.0020099765258215965,
+              "flag": false
+            },
+            "target_near_white_fraction": 0.0027288732394366196,
+            "target_near_black_fraction": 0.0027142018779342724
+          },
+          {
+            "photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_0974-18.jpg",
+            "rmse": 0.013381340982050642,
+            "clipping": {
+              "sampled_pixels": 68160,
+              "before": {
+                "high": 0.0015551643192488263,
+                "low": 0.002846244131455399
+              },
+              "after": {
+                "high": 0.0016285211267605634,
+                "low": 0.0017312206572769953
+              },
+              "high_increase": 7.335680751173706e-05,
+              "low_increase": -0.0011150234741784037,
+              "flag": false
+            },
+            "target_near_white_fraction": 0.0015551643192488263,
+            "target_near_black_fraction": 0.002846244131455399
+          },
+          {
+            "photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1026-27.jpg",
+            "rmse": 0.009770076120265972,
+            "clipping": {
+              "sampled_pixels": 68160,
+              "before": {
+                "high": 0.0009683098591549296,
+                "low": 0.008744131455399061
+              },
+              "after": {
+                "high": 0.0013644366197183098,
+                "low": 0.001613849765258216
+              },
+              "high_increase": 0.0003961267605633802,
+              "low_increase": -0.007130281690140845,
+              "flag": false
+            },
+            "target_near_white_fraction": 0.0009683098591549296,
+            "target_near_black_fraction": 0.008744131455399061
+          }
+        ],
+        "selective": [
+          {
+            "photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_0928-10.jpg",
+            "rmse": 0.005215160995739091,
+            "clipping": {
+              "sampled_pixels": 68160,
+              "before": {
+                "high": 0.0027288732394366196,
+                "low": 0.0027142018779342724
+              },
+              "after": {
+                "high": 0.00443075117370892,
+                "low": 0.0007042253521126761
+              },
+              "high_increase": 0.0017018779342723002,
+              "low_increase": -0.0020099765258215965,
+              "flag": false
+            },
+            "target_near_white_fraction": 0.0027288732394366196,
+            "target_near_black_fraction": 0.0027142018779342724
+          },
+          {
+            "photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_0974-18.jpg",
+            "rmse": 0.013150345052206705,
+            "clipping": {
+              "sampled_pixels": 68160,
+              "before": {
+                "high": 0.0015551643192488263,
+                "low": 0.002846244131455399
+              },
+              "after": {
+                "high": 0.0017458920187793426,
+                "low": 0.0017312206572769953
+              },
+              "high_increase": 0.00019072769953051632,
+              "low_increase": -0.0011150234741784037,
+              "flag": false
+            },
+            "target_near_white_fraction": 0.0015551643192488263,
+            "target_near_black_fraction": 0.002846244131455399
+          },
+          {
+            "photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1026-27.jpg",
+            "rmse": 0.009624539763641861,
+            "clipping": {
+              "sampled_pixels": 68160,
+              "before": {
+                "high": 0.0009683098591549296,
+                "low": 0.008744131455399061
+              },
+              "after": {
+                "high": 0.0012470657276995305,
+                "low": 0.001613849765258216
+              },
+              "high_increase": 0.00027875586854460093,
+              "low_increase": -0.007130281690140845,
+              "flag": false
+            },
+            "target_near_white_fraction": 0.0009683098591549296,
+            "target_near_black_fraction": 0.008744131455399061
+          }
+        ],
+        "gamut": [
+          {
+            "photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_0928-10.jpg",
+            "rmse": 0.003921040443952124,
+            "clipping": {
+              "sampled_pixels": 68160,
+              "before": {
+                "high": 0.0027288732394366196,
+                "low": 0.0027142018779342724
+              },
+              "after": {
+                "high": 0.002450117370892019,
+                "low": 0.0007042253521126761
+              },
+              "high_increase": -0.0002787558685446007,
+              "low_increase": -0.0020099765258215965,
+              "flag": false
+            },
+            "target_near_white_fraction": 0.0027288732394366196,
+            "target_near_black_fraction": 0.0027142018779342724
+          },
+          {
+            "photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_0974-18.jpg",
+            "rmse": 0.010621658923770871,
+            "clipping": {
+              "sampled_pixels": 68160,
+              "before": {
+                "high": 0.0015551643192488263,
+                "low": 0.002846244131455399
+              },
+              "after": {
+                "high": 0.0011883802816901408,
+                "low": 0.0017312206572769953
+              },
+              "high_increase": -0.00036678403755868554,
+              "low_increase": -0.0011150234741784037,
+              "flag": false
+            },
+            "target_near_white_fraction": 0.0015551643192488263,
+            "target_near_black_fraction": 0.002846244131455399
+          },
+          {
+            "photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1026-27.jpg",
+            "rmse": 0.007696162967342768,
+            "clipping": {
+              "sampled_pixels": 68160,
+              "before": {
+                "high": 0.0009683098591549296,
+                "low": 0.008744131455399061
+              },
+              "after": {
+                "high": 0.0006602112676056338,
+                "low": 0.001613849765258216
+              },
+              "high_increase": -0.0003080985915492958,
+              "low_increase": -0.007130281690140845,
+              "flag": false
+            },
+            "target_near_white_fraction": 0.0009683098591549296,
+            "target_near_black_fraction": 0.008744131455399061
+          }
+        ]
+      }
+    },
+    {
+      "scene": "scene-03",
+      "look": "cool",
+      "representative": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1096-40.jpg",
+      "fits": {
+        "global": {
+          "recipe": {
+            "exposure": 0.017837,
+            "temperature": -0.025397,
+            "tint": 0.001371,
+            "contrast": -0.002235,
+            "shadows": 0.049839,
+            "highlights": -0.002393,
+            "saturation": -0.063872
+          },
+          "fit_metrics": {
+            "initial_mse": 0.0003205246209680035,
+            "fit_mse": 1.9293928478944685e-05,
+            "rmse": 0.004392485455746517,
+            "objective": 1.9293928478944685e-05,
+            "evaluations": 65,
+            "solver": "damped_gauss_newton"
+          }
+        },
+        "selective": {
+          "recipe": {
+            "exposure": 0.014382,
+            "temperature": -0.021686,
+            "tint": 0.001617,
+            "contrast": -0.002436,
+            "shadows": 0.050241,
+            "highlights": 0.001053,
+            "saturation": 0.00479,
+            "cool_saturation": -0.08002,
+            "warm_saturation": -0.13933
+          },
+          "fit_metrics": {
+            "initial_mse": 0.0003205246209680035,
+            "fit_mse": 1.7473418391795175e-05,
+            "rmse": 0.00418012181542538,
+            "objective": 1.7473418391795175e-05,
+            "evaluations": 91,
+            "solver": "damped_gauss_newton"
+          }
+        },
+        "gamut": {
+          "recipe": {
+            "exposure": 0.054134,
+            "temperature": -0.03872,
+            "tint": 0.001964,
+            "contrast": -0.003029,
+            "shadows": 0.041067,
+            "highlights": 0.029238,
+            "saturation": -0.073658,
+            "cool_saturation": 0.045186,
+            "warm_saturation": -0.028439
+          },
+          "fit_metrics": {
+            "initial_mse": 0.000320524601392575,
+            "fit_mse": 7.079907735666364e-06,
+            "rmse": 0.0026608096015435533,
+            "objective": 7.079907735666364e-06,
+            "evaluations": 91,
+            "solver": "damped_gauss_newton"
+          }
+        }
+      },
+      "heldout": {
+        "global": [
+          {
+            "photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_0928-10.jpg",
+            "rmse": 0.004829872480537546,
+            "clipping": {
+              "sampled_pixels": 68160,
+              "before": {
+                "high": 0.0027288732394366196,
+                "low": 0.0027142018779342724
+              },
+              "after": {
+                "high": 0.0044014084507042256,
+                "low": 0.0007042253521126761
+              },
+              "high_increase": 0.001672535211267606,
+              "low_increase": -0.0020099765258215965,
+              "flag": false
+            },
+            "target_near_white_fraction": 0.0027288732394366196,
+            "target_near_black_fraction": 0.0027142018779342724
+          },
+          {
+            "photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_0974-18.jpg",
+            "rmse": 0.006778703940636553,
+            "clipping": {
+              "sampled_pixels": 68160,
+              "before": {
+                "high": 0.0015551643192488263,
+                "low": 0.002846244131455399
+              },
+              "after": {
+                "high": 0.0027582159624413146,
+                "low": 0.0017312206572769953
+              },
+              "high_increase": 0.0012030516431924883,
+              "low_increase": -0.0011150234741784037,
+              "flag": false
+            },
+            "target_near_white_fraction": 0.0015551643192488263,
+            "target_near_black_fraction": 0.002846244131455399
+          },
+          {
+            "photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1026-27.jpg",
+            "rmse": 0.005809237575704034,
+            "clipping": {
+              "sampled_pixels": 68160,
+              "before": {
+                "high": 0.0009683098591549296,
+                "low": 0.008744131455399061
+              },
+              "after": {
+                "high": 0.0030223004694835682,
+                "low": 0.001613849765258216
+              },
+              "high_increase": 0.0020539906103286387,
+              "low_increase": -0.007130281690140845,
+              "flag": false
+            },
+            "target_near_white_fraction": 0.0009683098591549296,
+            "target_near_black_fraction": 0.008744131455399061
+          }
+        ],
+        "selective": [
+          {
+            "photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_0928-10.jpg",
+            "rmse": 0.004151118917288644,
+            "clipping": {
+              "sampled_pixels": 68160,
+              "before": {
+                "high": 0.0027288732394366196,
+                "low": 0.0027142018779342724
+              },
+              "after": {
+                "high": 0.0041373239436619715,
+                "low": 0.0007042253521126761
+              },
+              "high_increase": 0.001408450704225352,
+              "low_increase": -0.0020099765258215965,
+              "flag": false
+            },
+            "target_near_white_fraction": 0.0027288732394366196,
+            "target_near_black_fraction": 0.0027142018779342724
+          },
+          {
+            "photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_0974-18.jpg",
+            "rmse": 0.005938166961366375,
+            "clipping": {
+              "sampled_pixels": 68160,
+              "before": {
+                "high": 0.0015551643192488263,
+                "low": 0.002846244131455399
+              },
+              "after": {
+                "high": 0.002596830985915493,
+                "low": 0.0017312206572769953
+              },
+              "high_increase": 0.0010416666666666667,
+              "low_increase": -0.0011150234741784037,
+              "flag": false
+            },
+            "target_near_white_fraction": 0.0015551643192488263,
+            "target_near_black_fraction": 0.002846244131455399
+          },
+          {
+            "photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1026-27.jpg",
+            "rmse": 0.0054783220824767,
+            "clipping": {
+              "sampled_pixels": 68160,
+              "before": {
+                "high": 0.0009683098591549296,
+                "low": 0.008744131455399061
+              },
+              "after": {
+                "high": 0.0026848591549295774,
+                "low": 0.001613849765258216
+              },
+              "high_increase": 0.0017165492957746478,
+              "low_increase": -0.007130281690140845,
+              "flag": false
+            },
+            "target_near_white_fraction": 0.0009683098591549296,
+            "target_near_black_fraction": 0.008744131455399061
+          }
+        ],
+        "gamut": [
+          {
+            "photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_0928-10.jpg",
+            "rmse": 0.002627275767030256,
+            "clipping": {
+              "sampled_pixels": 68160,
+              "before": {
+                "high": 0.0027288732394366196,
+                "low": 0.0027142018779342724
+              },
+              "after": {
+                "high": 0.0023327464788732394,
+                "low": 0.0007042253521126761
+              },
+              "high_increase": -0.0003961267605633802,
+              "low_increase": -0.0020099765258215965,
+              "flag": false
+            },
+            "target_near_white_fraction": 0.0027288732394366196,
+            "target_near_black_fraction": 0.0027142018779342724
+          },
+          {
+            "photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_0974-18.jpg",
+            "rmse": 0.00513679135989251,
+            "clipping": {
+              "sampled_pixels": 68160,
+              "before": {
+                "high": 0.0015551643192488263,
+                "low": 0.002846244131455399
+              },
+              "after": {
+                "high": 0.0012030516431924883,
+                "low": 0.0017312206572769953
+              },
+              "high_increase": -0.000352112676056338,
+              "low_increase": -0.0011150234741784037,
+              "flag": false
+            },
+            "target_near_white_fraction": 0.0015551643192488263,
+            "target_near_black_fraction": 0.002846244131455399
+          },
+          {
+            "photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1026-27.jpg",
+            "rmse": 0.0043575792599698905,
+            "clipping": {
+              "sampled_pixels": 68160,
+              "before": {
+                "high": 0.0009683098591549296,
+                "low": 0.008744131455399061
+              },
+              "after": {
+                "high": 0.0006748826291079812,
+                "low": 0.001613849765258216
+              },
+              "high_increase": -0.00029342723004694836,
+              "low_increase": -0.007130281690140845,
+              "flag": false
+            },
+            "target_near_white_fraction": 0.0009683098591549296,
+            "target_near_black_fraction": 0.008744131455399061
+          }
+        ]
+      }
+    },
+    {
+      "scene": "scene-03",
+      "look": "soft",
+      "representative": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1096-40.jpg",
+      "fits": {
+        "global": {
+          "recipe": {
+            "exposure": 0.008665,
+            "temperature": 0.011193,
+            "tint": 0.001491,
+            "contrast": -0.005352,
+            "shadows": 0.148849,
+            "highlights": -0.055658,
+            "saturation": -0.110154
+          },
+          "fit_metrics": {
+            "initial_mse": 0.0009366996370394769,
+            "fit_mse": 2.4654238300693467e-05,
+            "rmse": 0.004965303444976295,
+            "objective": 2.4654238300693467e-05,
+            "evaluations": 57,
+            "solver": "damped_gauss_newton"
+          }
+        },
+        "selective": {
+          "recipe": {
+            "exposure": 0.009164,
+            "temperature": 0.013662,
+            "tint": 0.001332,
+            "contrast": -0.005017,
+            "shadows": 0.149537,
+            "highlights": -0.057488,
+            "saturation": -0.048829,
+            "cool_saturation": -0.056902,
+            "warm_saturation": -0.135593
+          },
+          "fit_metrics": {
+            "initial_mse": 0.0009366996370394769,
+            "fit_mse": 2.2684300590297456e-05,
+            "rmse": 0.004762803858054356,
+            "objective": 2.2684300590297456e-05,
+            "evaluations": 91,
+            "solver": "damped_gauss_newton"
+          }
+        },
+        "gamut": {
+          "recipe": {
+            "exposure": 0.115153,
+            "temperature": 0.018695,
+            "tint": 0.001223,
+            "contrast": -0.006174,
+            "shadows": 0.108083,
+            "highlights": -0.05973,
+            "saturation": -0.134791,
+            "cool_saturation": 0.004265,
+            "warm_saturation": -0.000967
+          },
+          "fit_metrics": {
+            "initial_mse": 0.000936699615955123,
+            "fit_mse": 1.302048886337192e-05,
+            "rmse": 0.0036083914509614837,
+            "objective": 1.302048886337192e-05,
+            "evaluations": 91,
+            "solver": "damped_gauss_newton"
+          }
+        }
+      },
+      "heldout": {
+        "global": [
+          {
+            "photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_0928-10.jpg",
+            "rmse": 0.004970565444453482,
+            "clipping": {
+              "sampled_pixels": 68160,
+              "before": {
+                "high": 0.0027288732394366196,
+                "low": 0.0027142018779342724
+              },
+              "after": {
+                "high": 0.0031690140845070424,
+                "low": 0.0007042253521126761
+              },
+              "high_increase": 0.0004401408450704228,
+              "low_increase": -0.0020099765258215965,
+              "flag": false
+            },
+            "target_near_white_fraction": 0.0027288732394366196,
+            "target_near_black_fraction": 0.0027142018779342724
+          },
+          {
+            "photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_0974-18.jpg",
+            "rmse": 0.012460459107035906,
+            "clipping": {
+              "sampled_pixels": 68160,
+              "before": {
+                "high": 0.0015551643192488263,
+                "low": 0.002846244131455399
+              },
+              "after": {
+                "high": 0.0009536384976525822,
+                "low": 0.0017312206572769953
+              },
+              "high_increase": -0.0006015258215962442,
+              "low_increase": -0.0011150234741784037,
+              "flag": false
+            },
+            "target_near_white_fraction": 0.0015551643192488263,
+            "target_near_black_fraction": 0.002846244131455399
+          },
+          {
+            "photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1026-27.jpg",
+            "rmse": 0.00988624364634887,
+            "clipping": {
+              "sampled_pixels": 68160,
+              "before": {
+                "high": 0.0009683098591549296,
+                "low": 0.008744131455399061
+              },
+              "after": {
+                "high": 0.0003961267605633803,
+                "low": 0.001613849765258216
+              },
+              "high_increase": -0.0005721830985915493,
+              "low_increase": -0.007130281690140845,
+              "flag": false
+            },
+            "target_near_white_fraction": 0.0009683098591549296,
+            "target_near_black_fraction": 0.008744131455399061
+          }
+        ],
+        "selective": [
+          {
+            "photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_0928-10.jpg",
+            "rmse": 0.004908208449936652,
+            "clipping": {
+              "sampled_pixels": 68160,
+              "before": {
+                "high": 0.0027288732394366196,
+                "low": 0.0027142018779342724
+              },
+              "after": {
+                "high": 0.0032863849765258214,
+                "low": 0.0007042253521126761
+              },
+              "high_increase": 0.0005575117370892019,
+              "low_increase": -0.0020099765258215965,
+              "flag": false
+            },
+            "target_near_white_fraction": 0.0027288732394366196,
+            "target_near_black_fraction": 0.0027142018779342724
+          },
+          {
+            "photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_0974-18.jpg",
+            "rmse": 0.012622797358437923,
+            "clipping": {
+              "sampled_pixels": 68160,
+              "before": {
+                "high": 0.0015551643192488263,
+                "low": 0.002846244131455399
+              },
+              "after": {
+                "high": 0.0010269953051643193,
+                "low": 0.0017312206572769953
+              },
+              "high_increase": -0.000528169014084507,
+              "low_increase": -0.0011150234741784037,
+              "flag": false
+            },
+            "target_near_white_fraction": 0.0015551643192488263,
+            "target_near_black_fraction": 0.002846244131455399
+          },
+          {
+            "photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1026-27.jpg",
+            "rmse": 0.009625381180829626,
+            "clipping": {
+              "sampled_pixels": 68160,
+              "before": {
+                "high": 0.0009683098591549296,
+                "low": 0.008744131455399061
+              },
+              "after": {
+                "high": 0.0004254694835680751,
+                "low": 0.001613849765258216
+              },
+              "high_increase": -0.0005428403755868545,
+              "low_increase": -0.007130281690140845,
+              "flag": false
+            },
+            "target_near_white_fraction": 0.0009683098591549296,
+            "target_near_black_fraction": 0.008744131455399061
+          }
+        ],
+        "gamut": [
+          {
+            "photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_0928-10.jpg",
+            "rmse": 0.003612247902945418,
+            "clipping": {
+              "sampled_pixels": 68160,
+              "before": {
+                "high": 0.0027288732394366196,
+                "low": 0.0027142018779342724
+              },
+              "after": {
+                "high": 0.0017605633802816902,
+                "low": 0.0007042253521126761
+              },
+              "high_increase": -0.0009683098591549294,
+              "low_increase": -0.0020099765258215965,
+              "flag": false
+            },
+            "target_near_white_fraction": 0.0027288732394366196,
+            "target_near_black_fraction": 0.0027142018779342724
+          },
+          {
+            "photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_0974-18.jpg",
+            "rmse": 0.01009268961939529,
+            "clipping": {
+              "sampled_pixels": 68160,
+              "before": {
+                "high": 0.0015551643192488263,
+                "low": 0.002846244131455399
+              },
+              "after": {
+                "high": 0.000806924882629108,
+                "low": 0.0017312206572769953
+              },
+              "high_increase": -0.0007482394366197183,
+              "low_increase": -0.0011150234741784037,
+              "flag": false
+            },
+            "target_near_white_fraction": 0.0015551643192488263,
+            "target_near_black_fraction": 0.002846244131455399
+          },
+          {
+            "photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1026-27.jpg",
+            "rmse": 0.007077189004599011,
+            "clipping": {
+              "sampled_pixels": 68160,
+              "before": {
+                "high": 0.0009683098591549296,
+                "low": 0.008744131455399061
+              },
+              "after": {
+                "high": 0.0003374413145539906,
+                "low": 0.001613849765258216
+              },
+              "high_increase": -0.0006308685446009389,
+              "low_increase": -0.007130281690140845,
+              "flag": false
+            },
+            "target_near_white_fraction": 0.0009683098591549296,
+            "target_near_black_fraction": 0.008744131455399061
+          }
+        ]
+      }
+    },
+    {
+      "scene": "scene-04",
+      "look": "warm",
+      "representative": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1264-51.jpg",
+      "fits": {
+        "global": {
+          "recipe": {
+            "exposure": 0.030275,
+            "temperature": 0.025429,
+            "tint": 0.000955,
+            "contrast": -0.008788,
+            "shadows": 0.04447,
+            "highlights": 0.046287,
+            "saturation": -0.054451
+          },
+          "fit_metrics": {
+            "initial_mse": 0.0010206049657458015,
+            "fit_mse": 7.420746053687615e-05,
+            "rmse": 0.008614375226148217,
+            "objective": 7.420746053687615e-05,
+            "evaluations": 54,
+            "solver": "damped_gauss_newton"
+          }
+        },
+        "selective": {
+          "recipe": {
+            "exposure": 0.029004,
+            "temperature": 0.01842,
+            "tint": 0.002355,
+            "contrast": -0.009344,
+            "shadows": 0.045879,
+            "highlights": 0.048206,
+            "saturation": -0.017519,
+            "cool_saturation": -0.135452,
+            "warm_saturation": 0.019303
+          },
+          "fit_metrics": {
+            "initial_mse": 0.0010206049657458015,
+            "fit_mse": 6.141589902683692e-05,
+            "rmse": 0.00783682965406528,
+            "objective": 6.141589902683692e-05,
+            "evaluations": 81,
+            "solver": "damped_gauss_newton"
+          }
+        },
+        "gamut": {
+          "recipe": {
+            "exposure": 0.059639,
+            "temperature": 0.040633,
+            "tint": -0.000982,
+            "contrast": -0.053951,
+            "shadows": 0.013083,
+            "highlights": 0.172461,
+            "saturation": -0.00481,
+            "cool_saturation": -0.045298,
+            "warm_saturation": 0.012752
+          },
+          "fit_metrics": {
+            "initial_mse": 0.001020604936262239,
+            "fit_mse": 3.236668180015423e-05,
+            "rmse": 0.005689172329975093,
+            "objective": 3.236668180015423e-05,
+            "evaluations": 96,
+            "solver": "damped_gauss_newton"
+          }
+        }
+      },
+      "heldout": {
+        "global": [
+          {
+            "photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_0947-13.jpg",
+            "rmse": 0.021689646076726292,
+            "clipping": {
+              "sampled_pixels": 68160,
+              "before": {
+                "high": 0.0024061032863849766,
+                "low": 0.003653169014084507
+              },
+              "after": {
+                "high": 0.0025234741784037557,
+                "low": 0.0
+              },
+              "high_increase": 0.00011737089201877904,
+              "low_increase": -0.003653169014084507,
+              "flag": false
+            },
+            "target_near_white_fraction": 0.0024061032863849766,
+            "target_near_black_fraction": 0.003653169014084507
+          },
+          {
+            "photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_0948-14.jpg",
+            "rmse": 0.020020868951867627,
+            "clipping": {
+              "sampled_pixels": 68160,
+              "before": {
+                "high": 0.005472417840375587,
+                "low": 0.0013497652582159625
+              },
+              "after": {
+                "high": 0.008348004694835681,
+                "low": 0.0
+              },
+              "high_increase": 0.002875586854460094,
+              "low_increase": -0.0013497652582159625,
+              "flag": false
+            },
+            "target_near_white_fraction": 0.005472417840375587,
+            "target_near_black_fraction": 0.0013497652582159625
+          },
+          {
+            "photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_0958-15.jpg",
+            "rmse": 0.010444657730996405,
+            "clipping": {
+              "sampled_pixels": 68160,
+              "before": {
+                "high": 0.010446009389671362,
+                "low": 0.0030223004694835682
+              },
+              "after": {
+                "high": 0.021170774647887323,
+                "low": 0.0
+              },
+              "high_increase": 0.010724765258215961,
+              "low_increase": -0.0030223004694835682,
+              "flag": true
+            },
+            "target_near_white_fraction": 0.010446009389671362,
+            "target_near_black_fraction": 0.0030223004694835682
+          }
+        ],
+        "selective": [
+          {
+            "photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_0947-13.jpg",
+            "rmse": 0.020609426985327386,
+            "clipping": {
+              "sampled_pixels": 68160,
+              "before": {
+                "high": 0.0024061032863849766,
+                "low": 0.003653169014084507
+              },
+              "after": {
+                "high": 0.002596830985915493,
+                "low": 0.0
+              },
+              "high_increase": 0.00019072769953051632,
+              "low_increase": -0.003653169014084507,
+              "flag": false
+            },
+            "target_near_white_fraction": 0.0024061032863849766,
+            "target_near_black_fraction": 0.003653169014084507
+          },
+          {
+            "photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_0948-14.jpg",
+            "rmse": 0.018583864347722922,
+            "clipping": {
+              "sampled_pixels": 68160,
+              "before": {
+                "high": 0.005472417840375587,
+                "low": 0.0013497652582159625
+              },
+              "after": {
+                "high": 0.007878521126760563,
+                "low": 0.0
+              },
+              "high_increase": 0.002406103286384976,
+              "low_increase": -0.0013497652582159625,
+              "flag": false
+            },
+            "target_near_white_fraction": 0.005472417840375587,
+            "target_near_black_fraction": 0.0013497652582159625
+          },
+          {
+            "photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_0958-15.jpg",
+            "rmse": 0.009533771841256922,
+            "clipping": {
+              "sampled_pixels": 68160,
+              "before": {
+                "high": 0.010446009389671362,
+                "low": 0.0030223004694835682
+              },
+              "after": {
+                "high": 0.017062793427230046,
+                "low": 0.0
+              },
+              "high_increase": 0.006616784037558684,
+              "low_increase": -0.0030223004694835682,
+              "flag": false
+            },
+            "target_near_white_fraction": 0.010446009389671362,
+            "target_near_black_fraction": 0.0030223004694835682
+          }
+        ],
+        "gamut": [
+          {
+            "photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_0947-13.jpg",
+            "rmse": 0.02077585918908345,
+            "clipping": {
+              "sampled_pixels": 68160,
+              "before": {
+                "high": 0.0024061032863849766,
+                "low": 0.003653169014084507
+              },
+              "after": {
+                "high": 0.0020246478873239436,
+                "low": 0.0026261737089201876
+              },
+              "high_increase": -0.0003814553990610331,
+              "low_increase": -0.0010269953051643193,
+              "flag": false
+            },
+            "target_near_white_fraction": 0.0024061032863849766,
+            "target_near_black_fraction": 0.003653169014084507
+          },
+          {
+            "photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_0948-14.jpg",
+            "rmse": 0.01824141745585457,
+            "clipping": {
+              "sampled_pixels": 68160,
+              "before": {
+                "high": 0.005472417840375587,
+                "low": 0.0013497652582159625
+              },
+              "after": {
+                "high": 0.0045921361502347414,
+                "low": 0.000806924882629108
+              },
+              "high_increase": -0.0008802816901408456,
+              "low_increase": -0.0005428403755868544,
+              "flag": false
+            },
+            "target_near_white_fraction": 0.005472417840375587,
+            "target_near_black_fraction": 0.0013497652582159625
+          },
+          {
+            "photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_0958-15.jpg",
+            "rmse": 0.007865637246810869,
+            "clipping": {
+              "sampled_pixels": 68160,
+              "before": {
+                "high": 0.010446009389671362,
+                "low": 0.0030223004694835682
+              },
+              "after": {
+                "high": 0.009389671361502348,
+                "low": 0.0019072769953051643
+              },
+              "high_increase": -0.0010563380281690144,
+              "low_increase": -0.001115023474178404,
+              "flag": false
+            },
+            "target_near_white_fraction": 0.010446009389671362,
+            "target_near_black_fraction": 0.0030223004694835682
+          }
+        ]
+      }
+    },
+    {
+      "scene": "scene-04",
+      "look": "cool",
+      "representative": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1264-51.jpg",
+      "fits": {
+        "global": {
+          "recipe": {
+            "exposure": -0.004267,
+            "temperature": -0.017809,
+            "tint": 0.004261,
+            "contrast": -0.001305,
+            "shadows": 0.048014,
+            "highlights": 0.026905,
+            "saturation": -0.061586
+          },
+          "fit_metrics": {
+            "initial_mse": 0.00031998466316150194,
+            "fit_mse": 2.840631453571068e-05,
+            "rmse": 0.005329757455617533,
+            "objective": 2.840631453571068e-05,
+            "evaluations": 49,
+            "solver": "damped_gauss_newton"
+          }
+        },
+        "selective": {
+          "recipe": {
+            "exposure": -0.002463,
+            "temperature": -0.021282,
+            "tint": 0.003847,
+            "contrast": -0.001088,
+            "shadows": 0.049164,
+            "highlights": 0.024633,
+            "saturation": -0.064356,
+            "cool_saturation": -0.040851,
+            "warm_saturation": 0.050303
+          },
+          "fit_metrics": {
+            "initial_mse": 0.00031998466316150194,
+            "fit_mse": 2.4725258368284678e-05,
+            "rmse": 0.004972449936227079,
+            "objective": 2.4725258368284678e-05,
+            "evaluations": 81,
+            "solver": "damped_gauss_newton"
+          }
+        },
+        "gamut": {
+          "recipe": {
+            "exposure": 0.085455,
+            "temperature": -0.036854,
+            "tint": 0.001798,
+            "contrast": -0.050275,
+            "shadows": -0.031676,
+            "highlights": 0.058361,
+            "saturation": 0.002377,
+            "cool_saturation": 0.003889,
+            "warm_saturation": -0.024868
+          },
+          "fit_metrics": {
+            "initial_mse": 0.00031998465060436725,
+            "fit_mse": 1.0930206844844127e-05,
+            "rmse": 0.0033060863335436547,
+            "objective": 1.0930206844844127e-05,
+            "evaluations": 96,
+            "solver": "damped_gauss_newton"
+          }
+        }
+      },
+      "heldout": {
+        "global": [
+          {
+            "photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_0947-13.jpg",
+            "rmse": 0.006764294666474661,
+            "clipping": {
+              "sampled_pixels": 68160,
+              "before": {
+                "high": 0.0024061032863849766,
+                "low": 0.003653169014084507
+              },
+              "after": {
+                "high": 0.003653169014084507,
+                "low": 0.0026261737089201876
+              },
+              "high_increase": 0.0012470657276995303,
+              "low_increase": -0.0010269953051643193,
+              "flag": false
+            },
+            "target_near_white_fraction": 0.0024061032863849766,
+            "target_near_black_fraction": 0.003653169014084507
+          },
+          {
+            "photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_0948-14.jpg",
+            "rmse": 0.006202311018159828,
+            "clipping": {
+              "sampled_pixels": 68160,
+              "before": {
+                "high": 0.005472417840375587,
+                "low": 0.0013497652582159625
+              },
+              "after": {
+                "high": 0.008744131455399061,
+                "low": 0.000806924882629108
+              },
+              "high_increase": 0.003271713615023474,
+              "low_increase": -0.0005428403755868544,
+              "flag": false
+            },
+            "target_near_white_fraction": 0.005472417840375587,
+            "target_near_black_fraction": 0.0013497652582159625
+          },
+          {
+            "photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_0958-15.jpg",
+            "rmse": 0.005890837946061533,
+            "clipping": {
+              "sampled_pixels": 68160,
+              "before": {
+                "high": 0.010446009389671362,
+                "low": 0.0030223004694835682
+              },
+              "after": {
+                "high": 0.015889084507042253,
+                "low": 0.0019072769953051643
+              },
+              "high_increase": 0.005443075117370891,
+              "low_increase": -0.001115023474178404,
+              "flag": false
+            },
+            "target_near_white_fraction": 0.010446009389671362,
+            "target_near_black_fraction": 0.0030223004694835682
+          }
+        ],
+        "selective": [
+          {
+            "photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_0947-13.jpg",
+            "rmse": 0.009143144242736805,
+            "clipping": {
+              "sampled_pixels": 68160,
+              "before": {
+                "high": 0.0024061032863849766,
+                "low": 0.003653169014084507
+              },
+              "after": {
+                "high": 0.003946596244131456,
+                "low": 0.0026261737089201876
+              },
+              "high_increase": 0.001540492957746479,
+              "low_increase": -0.0010269953051643193,
+              "flag": false
+            },
+            "target_near_white_fraction": 0.0024061032863849766,
+            "target_near_black_fraction": 0.003653169014084507
+          },
+          {
+            "photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_0948-14.jpg",
+            "rmse": 0.007951946820624271,
+            "clipping": {
+              "sampled_pixels": 68160,
+              "before": {
+                "high": 0.005472417840375587,
+                "low": 0.0013497652582159625
+              },
+              "after": {
+                "high": 0.009389671361502348,
+                "low": 0.000806924882629108
+              },
+              "high_increase": 0.0039172535211267605,
+              "low_increase": -0.0005428403755868544,
+              "flag": false
+            },
+            "target_near_white_fraction": 0.005472417840375587,
+            "target_near_black_fraction": 0.0013497652582159625
+          },
+          {
+            "photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_0958-15.jpg",
+            "rmse": 0.005749162641489241,
+            "clipping": {
+              "sampled_pixels": 68160,
+              "before": {
+                "high": 0.010446009389671362,
+                "low": 0.0030223004694835682
+              },
+              "after": {
+                "high": 0.017033450704225354,
+                "low": 0.0019072769953051643
+              },
+              "high_increase": 0.006587441314553992,
+              "low_increase": -0.001115023474178404,
+              "flag": false
+            },
+            "target_near_white_fraction": 0.010446009389671362,
+            "target_near_black_fraction": 0.0030223004694835682
+          }
+        ],
+        "gamut": [
+          {
+            "photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_0947-13.jpg",
+            "rmse": 0.007118063706623916,
+            "clipping": {
+              "sampled_pixels": 68160,
+              "before": {
+                "high": 0.0024061032863849766,
+                "low": 0.003653169014084507
+              },
+              "after": {
+                "high": 0.0018779342723004694,
+                "low": 0.0026261737089201876
+              },
+              "high_increase": -0.0005281690140845072,
+              "low_increase": -0.0010269953051643193,
+              "flag": false
+            },
+            "target_near_white_fraction": 0.0024061032863849766,
+            "target_near_black_fraction": 0.003653169014084507
+          },
+          {
+            "photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_0948-14.jpg",
+            "rmse": 0.006424587153932356,
+            "clipping": {
+              "sampled_pixels": 68160,
+              "before": {
+                "high": 0.005472417840375587,
+                "low": 0.0013497652582159625
+              },
+              "after": {
+                "high": 0.003902582159624413,
+                "low": 0.000806924882629108
+              },
+              "high_increase": -0.001569835680751174,
+              "low_increase": -0.0005428403755868544,
+              "flag": false
+            },
+            "target_near_white_fraction": 0.005472417840375587,
+            "target_near_black_fraction": 0.0013497652582159625
+          },
+          {
+            "photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_0958-15.jpg",
+            "rmse": 0.003750638606885751,
+            "clipping": {
+              "sampled_pixels": 68160,
+              "before": {
+                "high": 0.010446009389671362,
+                "low": 0.0030223004694835682
+              },
+              "after": {
+                "high": 0.006954225352112676,
+                "low": 0.0019072769953051643
+              },
+              "high_increase": -0.0034917840375586857,
+              "low_increase": -0.001115023474178404,
+              "flag": false
+            },
+            "target_near_white_fraction": 0.010446009389671362,
+            "target_near_black_fraction": 0.0030223004694835682
+          }
+        ]
+      }
+    },
+    {
+      "scene": "scene-04",
+      "look": "soft",
+      "representative": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1264-51.jpg",
+      "fits": {
+        "global": {
+          "recipe": {
+            "exposure": 0.019348,
+            "temperature": 0.009912,
+            "tint": 0.001236,
+            "contrast": -0.010352,
+            "shadows": 0.115809,
+            "highlights": -0.035022,
+            "saturation": -0.089617
+          },
+          "fit_metrics": {
+            "initial_mse": 0.0008104763910522867,
+            "fit_mse": 6.83174402218914e-05,
+            "rmse": 0.008265436481026964,
+            "objective": 6.83174402218914e-05,
+            "evaluations": 57,
+            "solver": "damped_gauss_newton"
+          }
+        },
+        "selective": {
+          "recipe": {
+            "exposure": 0.01959,
+            "temperature": 0.004724,
+            "tint": 0.002003,
+            "contrast": -0.010561,
+            "shadows": 0.116937,
+            "highlights": -0.035255,
+            "saturation": -0.0747,
+            "cool_saturation": -0.08853,
+            "warm_saturation": 0.039421
+          },
+          "fit_metrics": {
+            "initial_mse": 0.0008104763910522867,
+            "fit_mse": 6.084934043648177e-05,
+            "rmse": 0.0078005987229495255,
+            "objective": 6.084934043648177e-05,
+            "evaluations": 86,
+            "solver": "damped_gauss_newton"
+          }
+        },
+        "gamut": {
+          "recipe": {
+            "exposure": 0.076292,
+            "temperature": 0.017382,
+            "tint": 0.000595,
+            "contrast": -0.098555,
+            "shadows": 0.014494,
+            "highlights": 0.089346,
+            "saturation": -0.030926,
+            "cool_saturation": -0.018502,
+            "warm_saturation": 0.008382
+          },
+          "fit_metrics": {
+            "initial_mse": 0.0008104763709076298,
+            "fit_mse": 3.051626579651306e-05,
+            "rmse": 0.005524152948327287,
+            "objective": 3.051626579651306e-05,
+            "evaluations": 83,
+            "solver": "damped_gauss_newton"
+          }
+        }
+      },
+      "heldout": {
+        "global": [
+          {
+            "photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_0947-13.jpg",
+            "rmse": 0.016714858140649633,
+            "clipping": {
+              "sampled_pixels": 68160,
+              "before": {
+                "high": 0.0024061032863849766,
+                "low": 0.003653169014084507
+              },
+              "after": {
+                "high": 0.0016725352112676056,
+                "low": 0.0
+              },
+              "high_increase": -0.0007335680751173711,
+              "low_increase": -0.003653169014084507,
+              "flag": false
+            },
+            "target_near_white_fraction": 0.0024061032863849766,
+            "target_near_black_fraction": 0.003653169014084507
+          },
+          {
+            "photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_0948-14.jpg",
+            "rmse": 0.016085185805124157,
+            "clipping": {
+              "sampled_pixels": 68160,
+              "before": {
+                "high": 0.005472417840375587,
+                "low": 0.0013497652582159625
+              },
+              "after": {
+                "high": 0.004768192488262911,
+                "low": 0.0
+              },
+              "high_increase": -0.000704225352112676,
+              "low_increase": -0.0013497652582159625,
+              "flag": false
+            },
+            "target_near_white_fraction": 0.005472417840375587,
+            "target_near_black_fraction": 0.0013497652582159625
+          },
+          {
+            "photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_0958-15.jpg",
+            "rmse": 0.009462059643803505,
+            "clipping": {
+              "sampled_pixels": 68160,
+              "before": {
+                "high": 0.010446009389671362,
+                "low": 0.0030223004694835682
+              },
+              "after": {
+                "high": 0.010548708920187793,
+                "low": 0.0
+              },
+              "high_increase": 0.00010269953051643063,
+              "low_increase": -0.0030223004694835682,
+              "flag": false
+            },
+            "target_near_white_fraction": 0.010446009389671362,
+            "target_near_black_fraction": 0.0030223004694835682
+          }
+        ],
+        "selective": [
+          {
+            "photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_0947-13.jpg",
+            "rmse": 0.014684594690097485,
+            "clipping": {
+              "sampled_pixels": 68160,
+              "before": {
+                "high": 0.0024061032863849766,
+                "low": 0.003653169014084507
+              },
+              "after": {
+                "high": 0.002142018779342723,
+                "low": 0.0
+              },
+              "high_increase": -0.0002640845070422536,
+              "low_increase": -0.003653169014084507,
+              "flag": false
+            },
+            "target_near_white_fraction": 0.0024061032863849766,
+            "target_near_black_fraction": 0.003653169014084507
+          },
+          {
+            "photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_0948-14.jpg",
+            "rmse": 0.013975212258320331,
+            "clipping": {
+              "sampled_pixels": 68160,
+              "before": {
+                "high": 0.005472417840375587,
+                "low": 0.0013497652582159625
+              },
+              "after": {
+                "high": 0.005384389671361503,
+                "low": 0.0
+              },
+              "high_increase": -8.802816901408439e-05,
+              "low_increase": -0.0013497652582159625,
+              "flag": false
+            },
+            "target_near_white_fraction": 0.005472417840375587,
+            "target_near_black_fraction": 0.0013497652582159625
+          },
+          {
+            "photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_0958-15.jpg",
+            "rmse": 0.009117244828581993,
+            "clipping": {
+              "sampled_pixels": 68160,
+              "before": {
+                "high": 0.010446009389671362,
+                "low": 0.0030223004694835682
+              },
+              "after": {
+                "high": 0.010944835680751174,
+                "low": 0.0
+              },
+              "high_increase": 0.0004988262910798121,
+              "low_increase": -0.0030223004694835682,
+              "flag": false
+            },
+            "target_near_white_fraction": 0.010446009389671362,
+            "target_near_black_fraction": 0.0030223004694835682
+          }
+        ],
+        "gamut": [
+          {
+            "photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_0947-13.jpg",
+            "rmse": 0.015944620837610998,
+            "clipping": {
+              "sampled_pixels": 68160,
+              "before": {
+                "high": 0.0024061032863849766,
+                "low": 0.003653169014084507
+              },
+              "after": {
+                "high": 0.001789906103286385,
+                "low": 0.0026261737089201876
+              },
+              "high_increase": -0.0006161971830985916,
+              "low_increase": -0.0010269953051643193,
+              "flag": false
+            },
+            "target_near_white_fraction": 0.0024061032863849766,
+            "target_near_black_fraction": 0.003653169014084507
+          },
+          {
+            "photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_0948-14.jpg",
+            "rmse": 0.014381498628663756,
+            "clipping": {
+              "sampled_pixels": 68160,
+              "before": {
+                "high": 0.005472417840375587,
+                "low": 0.0013497652582159625
+              },
+              "after": {
+                "high": 0.003829225352112676,
+                "low": 0.000806924882629108
+              },
+              "high_increase": -0.001643192488262911,
+              "low_increase": -0.0005428403755868544,
+              "flag": false
+            },
+            "target_near_white_fraction": 0.005472417840375587,
+            "target_near_black_fraction": 0.0013497652582159625
+          },
+          {
+            "photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_0958-15.jpg",
+            "rmse": 0.0072904888924765245,
+            "clipping": {
+              "sampled_pixels": 68160,
+              "before": {
+                "high": 0.010446009389671362,
+                "low": 0.0030223004694835682
+              },
+              "after": {
+                "high": 0.006572769953051643,
+                "low": 0.0019072769953051643
+              },
+              "high_increase": -0.0038732394366197192,
+              "low_increase": -0.001115023474178404,
+              "flag": false
+            },
+            "target_near_white_fraction": 0.010446009389671362,
+            "target_near_black_fraction": 0.0030223004694835682
+          }
+        ]
+      }
+    }
+  ]
+}

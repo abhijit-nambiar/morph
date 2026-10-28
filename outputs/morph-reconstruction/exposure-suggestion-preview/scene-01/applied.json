@@ -1,0 +1,93 @@
+{
+  "renderer": "gamut",
+  "source_fit": "outputs/morph-reconstruction/full-album-soft/scene-01/fit.json",
+  "source_validation": "legacy-unverified",
+  "strength": 1.0,
+  "applied_recipe": {
+    "exposure": 0.279113,
+    "temperature": 0.054656,
+    "tint": 0.004113,
+    "contrast": -0.011708,
+    "shadows": 0.010787,
+    "highlights": -0.074663,
+    "saturation": -0.008665,
+    "cool_saturation": -0.2071,
+    "warm_saturation": 0.085189
+  },
+  "correction_renderer": "gamut",
+  "album_correction": {
+    "exposure": 0.0,
+    "temperature": 0.0,
+    "tint": 0.0,
+    "contrast": 0.0,
+    "shadows": 0.0,
+    "highlights": 0.0,
+    "saturation": 0.0,
+    "cool_saturation": 0.0,
+    "warm_saturation": 0.0
+  },
+  "scene_correction": {
+    "exposure": 0.0,
+    "temperature": 0.0,
+    "tint": 0.0,
+    "contrast": 0.0,
+    "shadows": 0.0,
+    "highlights": 0.0,
+    "saturation": 0.0,
+    "cool_saturation": 0.0,
+    "warm_saturation": 0.0
+  },
+  "photo_corrections": {
+    "DSC_0901-1.jpg": {
+      "exposure": -0.16825063385856032,
+      "temperature": 0.0,
+      "tint": 0.0,
+      "contrast": 0.0,
+      "shadows": 0.0,
+      "highlights": 0.0,
+      "saturation": 0.0,
+      "cool_saturation": 0.0,
+      "warm_saturation": 0.0
+    },
+    "DSC_0904-2.jpg": {
+      "exposure": -0.16951797627815937,
+      "temperature": 0.0,
+      "tint": 0.0,
+      "contrast": 0.0,
+      "shadows": 0.0,
+      "highlights": 0.0,
+      "saturation": 0.0,
+      "cool_saturation": 0.0,
+      "warm_saturation": 0.0
+    },
+    "DSC_0905-3.jpg": {
+      "exposure": -0.16951797627815937,
+      "temperature": 0.0,
+      "tint": 0.0,
+      "contrast": 0.0,
+      "shadows": 0.0,
+      "highlights": 0.0,
+      "saturation": 0.0,
+      "cool_saturation": 0.0,
+      "warm_saturation": 0.0
+    },
+    "DSC_0930-11.jpg": {
+      "exposure": 0.16096404744368117,
+      "temperature": 0.0,
+      "tint": 0.0,
+      "contrast": 0.0,
+      "shadows": 0.0,
+      "highlights": 0.0,
+      "saturation": 0.0,
+      "cool_saturation": 0.0,
+      "warm_saturation": 0.0
+    }
+  },
+  "representative": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_0906-4.jpg",
+  "operation_order": [
+    "photo correction",
+    "fitted look",
+    "scene correction",
+    "album correction"
+  ]
+}

@@ -1,0 +1,107 @@
+{
+  "scope": "Synthetic local-light target and reconstruction use the same face detections, but different mask shapes; detections unverified and masks extend into surroundings. One scene, two photos; not a real edit or professional quality validation. Fit at reduced resolution; JPEGs rendered at source dimensions.",
+  "size": 320,
+  "strength": 0.3,
+  "settings": {
+    "tone_exposure": 0.15,
+    "tone_contrast": 0.1,
+    "tone_shadows": 0.18,
+    "tone_highlights": -0.18,
+    "tone_temperature": 0.06,
+    "cool_saturation": -0.2,
+    "warm_saturation": 0.12
+  },
+  "weights": [
+    [
+      0.0556471319509675,
+      -0.02122800347739529,
+      -0.07183603301529876
+    ],
+    [
+      0.07307901642380005,
+      0.053377644456444565,
+      0.018749124318592172
+    ],
+    [
+      0.09673955591493395,
+      0.1210746186759029,
+      0.1331658360827311
+    ],
+    [
+      -0.05762904195519011,
+      -0.0003574413137413326,
+      0.014511946033796528
+    ],
+    [
+      -0.017693853812633956,
+      -0.030324950141422405,
+      0.0038428079290166095
+    ],
+    [
+      -0.0025367702161969213,
+      -0.028154105070945266,
+      -0.11805264714313173
+    ],
+    [
+      -0.04970962693004415,
+      -0.021769186319427935,
+      0.013140603295963836
+    ],
+    [
+      -0.08802453878408535,
+      -0.04889949400450666,
+      0.010655523948419999
+    ],
+    [
+      -0.029296051805519422,
+      -0.043611136431136704,
+      -0.026049252982648447
+    ],
+    [
+      0.00781341612502378,
+      0.00800663127410625,
+      0.006733766095956717
+    ],
+    [
+      0.13830275996361188,
+      0.08380132841360854,
+      0.06339304617206636
+    ],
+    [
+      0.07444879014104254,
+      0.07264513206120227,
+      0.062325954569815455
+    ],
+    [
+      0.047821038493624284,
+      0.06627745148191096,
+      0.07127019536985009
+    ]
+  ],
+  "photos": [
+    {
+      "role": "representative",
+      "source": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_0906-4.jpg",
+      "source_sha256": "b537d85511aabe821f2476c542516bce46ee7d812e67f43da80cfbe452a478ca",
+      "faces": 4,
+      "source_to_target_rmse": 0.03531287983059883,
+      "output_to_target_rmse": 0.004777794596466485,
+      "dimensions": [
+        6048,
+        4032
+      ]
+    },
+    {
+      "role": "heldout",
+      "source": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_0928-10.jpg",
+      "source_sha256": "d5f317f0866bcb85d8278fae8a03803d588c7a1048244c86ea29ebc90ce3df54",
+      "faces": 3,
+      "source_to_target_rmse": 0.03642752021551132,
+      "output_to_target_rmse": 0.0060423463356514585,
+      "dimensions": [
+        6048,
+        4032
+      ]
+    }
+  ]
+}

@@ -1,0 +1,140 @@
+{
+  "version": 1,
+  "kind": "experimental-person-scene-v1",
+  "scope": "Soft predicted person masks can miss people or include background. Inspect masks and full-resolution previews. Synthetic targets and reconstruction share masks.",
+  "scene": "scene-02-lawn",
+  "representative": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_0958-15.jpg",
+  "prompt": "warm and slightly soft contrast and lift shadows and brighten people",
+  "global_interpretation": [
+    {
+      "phrase": "warm",
+      "intensity": 1.0
+    },
+    {
+      "phrase": "soft contrast",
+      "intensity": 0.5
+    },
+    {
+      "phrase": "lift shadows",
+      "intensity": 1.0
+    }
+  ],
+  "target_settings": {
+    "tone_temperature": 0.12,
+    "tone_contrast": -0.1,
+    "tone_shadows": 0.2
+  },
+  "target_person_light": 0.24,
+  "fit_size": 256,
+  "regularization": 1e-05,
+  "weights": [
+    [
+      0.09790789779928431,
+      -0.10598934504166202,
+      0.03661826712030312
+    ],
+    [
+      0.18870315896074555,
+      0.2476999150380044,
+      0.012625867786942978
+    ],
+    [
+      -0.04129597522908458,
+      -0.032294745367729846,
+      -0.06708908566721951
+    ],
+    [
+      -0.20887003066077653,
+      -0.00022531463707972546,
+      -0.03955156912280308
+    ],
+    [
+      -0.12425815594582798,
+      -0.24444253151845025,
+      -0.03890977301972002
+    ],
+    [
+      -0.01596813445278311,
+      -0.021775104404789622,
+      -0.047302203699199796
+    ],
+    [
+      -0.07220160550383625,
+      -0.04184262539195392,
+      -0.03287509039445191
+    ],
+    [
+      0.2217533604927512,
+      0.25580903689649614,
+      0.026724666601418794
+    ],
+    [
+      -0.07109380201744524,
+      -0.08075710187028279,
+      0.1295451141231213
+    ],
+    [
+      0.004044942359303256,
+      0.0075999552613095185,
+      0.009012270227407668
+    ],
+    [
+      0.2523943718662579,
+      0.137948601760145,
+      0.0002815948002728512
+    ],
+    [
+      -0.12498511202809326,
+      -0.024718398578323024,
+      -0.050585256932366214
+    ],
+    [
+      0.07914985155182491,
+      0.11298042158395089,
+      0.27248838738802283
+    ],
+    [
+      0.008106402023683729,
+      0.004270548559929593,
+      0.004959675222175301
+    ]
+  ],
+  "manifest": [
+    {
+      "source": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_0947-13.jpg",
+      "source_sha256": "e543bbeea49393e7a0ac65ce8a76fd2e8c0d418de73f7a4478bf36980140a849",
+      "mask": "/Users/abhijitnambiar/Documents/Codex/2026-10-27/i/outputs/morph-reconstruction/person-lawn-masks/DSC_0947-13-mask.png",
+      "mask_sha256": "58fabe6d8cd14bc0884052c04deabf721a11acbaacb63e46e6d9ad1fe0ffdfd8"
+    },
+    {
+      "source": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_0948-14.jpg",
+      "source_sha256": "baf72136ebae12c6ace821688ec3f62dc912b1176dfe914f34034d4e70dfdbce",
+      "mask": "/Users/abhijitnambiar/Documents/Codex/2026-10-27/i/outputs/morph-reconstruction/person-lawn-masks/DSC_0948-14-mask.png",
+      "mask_sha256": "2a7ce14da4746c4550b3868fadf446eefdb4fe1313f43dda40ea6542fea56dfc"
+    },
+    {
+      "source": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_0958-15.jpg",
+      "source_sha256": "3929f529a87b72ed8416403d84a3b12c59e7207ce36e40813fd9820987d3ee3a",
+      "mask": "/Users/abhijitnambiar/Documents/Codex/2026-10-27/i/outputs/morph-reconstruction/person-lawn-masks/DSC_0958-15-mask.png",
+      "mask_sha256": "4cf92ba43b3d8609eab0b81781d53cdee44a29f733c891483407474ac8fb94bd"
+    },
+    {
+      "source": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_0970-17.jpg",
+      "source_sha256": "e63953c0060cc94571859fe3536df4fc8d8eaa5c9d4dd7b63683813878df7686",
+      "mask": "/Users/abhijitnambiar/Documents/Codex/2026-10-27/i/outputs/morph-reconstruction/person-lawn-masks/DSC_0970-17-mask.png",
+      "mask_sha256": "48d2e735e4758a84ba242d6a452225feaf146141a23d42366624b33a495ff6be"
+    },
+    {
+      "source": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_0974-18.jpg",
+      "source_sha256": "abfc924a4c4a85edca68b85a22f85278b2826f2c71b955a8bd8c4c0e3b89d2e2",
+      "mask": "/Users/abhijitnambiar/Documents/Codex/2026-10-27/i/outputs/morph-reconstruction/person-lawn-masks/DSC_0974-18-mask.png",
+      "mask_sha256": "5649f47f2eb86a338fb17473416367f7ea73a781a3169fed3aea6ce40e7e94db"
+    },
+    {
+      "source": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_0987-19.jpg",
+      "source_sha256": "e2d502e0f3641cde40897f70a397ffc7e131aed11ce0a6a34310ea6dee6cd6e4",
+      "mask": "/Users/abhijitnambiar/Documents/Codex/2026-10-27/i/outputs/morph-reconstruction/person-lawn-masks/DSC_0987-19-mask.png",
+      "mask_sha256": "d1038017e05e9d8f1463ce8829b41b7fa0f60696a72c568cd42d57d00e104084"
+    }
+  ]
+}

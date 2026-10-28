@@ -1,0 +1,1677 @@
+{
+  "method": "Regular spatial sampling before export encoding. High = any channel >= 254/255; low = all channels <= 1/255. Flag = either fraction increased more than 1 percentage point; heuristic, not a quality verdict.",
+  "photos": [
+    {
+      "scene": "scene-01",
+      "original": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_0901-1.jpg",
+      "export": "outputs/morph-reconstruction/full-album-soft/scene-01/exports/DSC_0901-1.jpg",
+      "clipping": {
+        "sampled_pixels": 201850,
+        "before": {
+          "high": 0.008724300222937825,
+          "low": 0.0005647758236314095
+        },
+        "after": {
+          "high": 0.009744860044587566,
+          "low": 2.972504334902155e-05
+        },
+        "high_increase": 0.0010205598216497403,
+        "low_increase": -0.000535050780282388,
+        "flag": false
+      }
+    },
+    {
+      "scene": "scene-01",
+      "original": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_0904-2.jpg",
+      "export": "outputs/morph-reconstruction/full-album-soft/scene-01/exports/DSC_0904-2.jpg",
+      "clipping": {
+        "sampled_pixels": 201850,
+        "before": {
+          "high": 0.0128263562051028,
+          "low": 0.00025761704235818675
+        },
+        "after": {
+          "high": 0.013841961852861035,
+          "low": 0.00010403765172157542
+        },
+        "high_increase": 0.0010156056477582352,
+        "low_increase": -0.00015357939063661132,
+        "flag": false
+      }
+    },
+    {
+      "scene": "scene-01",
+      "original": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_0905-3.jpg",
+      "export": "outputs/morph-reconstruction/full-album-soft/scene-01/exports/DSC_0905-3.jpg",
+      "clipping": {
+        "sampled_pixels": 201850,
+        "before": {
+          "high": 0.009769630914045082,
+          "low": 0.0003864255635372802
+        },
+        "after": {
+          "high": 0.010052018825860787,
+          "low": 0.0002328461729006688
+        },
+        "high_increase": 0.0002823879118157048,
+        "low_increase": -0.00015357939063661137,
+        "flag": false
+      }
+    },
+    {
+      "scene": "scene-01",
+      "original": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_0906-4.jpg",
+      "export": "outputs/morph-reconstruction/full-album-soft/scene-01/exports/DSC_0906-4.jpg",
+      "clipping": {
+        "sampled_pixels": 201850,
+        "before": {
+          "high": 0.0030270002477086944,
+          "low": 0.0006093633886549418
+        },
+        "after": {
+          "high": 0.003180579638345306,
+          "low": 0.00013376269507059697
+        },
+        "high_increase": 0.00015357939063661164,
+        "low_increase": -0.00047560069358434486,
+        "flag": false
+      }
+    },
+    {
+      "scene": "scene-01",
+      "original": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_0914-5.jpg",
+      "export": "outputs/morph-reconstruction/full-album-soft/scene-01/exports/DSC_0914-5.jpg",
+      "clipping": {
+        "sampled_pixels": 201850,
+        "before": {
+          "high": 0.00255139955412435,
+          "low": 0.003249938072826356
+        },
+        "after": {
+          "high": 0.0024572702501857815,
+          "low": 0.00034679217240525143
+        },
+        "high_increase": -9.412930393856841e-05,
+        "low_increase": -0.0029031459004211046,
+        "flag": false
+      }
+    },
+    {
+      "scene": "scene-01",
+      "original": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_0916-6.jpg",
+      "export": "outputs/morph-reconstruction/full-album-soft/scene-01/exports/DSC_0916-6.jpg",
+      "clipping": {
+        "sampled_pixels": 201850,
+        "before": {
+          "high": 0.004597473371315333,
+          "low": 0.0019123111221203864
+        },
+        "after": {
+          "high": 0.004691602675253901,
+          "low": 0.0004805548674758484
+        },
+        "high_increase": 9.412930393856798e-05,
+        "low_increase": -0.001431756254644538,
+        "flag": false
+      }
+    },
+    {
+      "scene": "scene-01",
+      "original": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_0919-7.jpg",
+      "export": "outputs/morph-reconstruction/full-album-soft/scene-01/exports/DSC_0919-7.jpg",
+      "clipping": {
+        "sampled_pixels": 201850,
+        "before": {
+          "high": 0.002987366856576666,
+          "low": 0.002789199900916522
+        },
+        "after": {
+          "high": 0.0030418627693832054,
+          "low": 0.0003963339113202873
+        },
+        "high_increase": 5.449591280653945e-05,
+        "low_increase": -0.0023928659895962345,
+        "flag": false
+      }
+    },
+    {
+      "scene": "scene-01",
+      "original": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_0921-8.jpg",
+      "export": "outputs/morph-reconstruction/full-album-soft/scene-01/exports/DSC_0921-8.jpg",
+      "clipping": {
+        "sampled_pixels": 201850,
+        "before": {
+          "high": 0.0026158038147138965,
+          "low": 0.0016200148625216744
+        },
+        "after": {
+          "high": 0.0030715878127322268,
+          "low": 0.0002774337379242011
+        },
+        "high_increase": 0.0004557839980183303,
+        "low_increase": -0.0013425811245974732,
+        "flag": false
+      }
+    },
+    {
+      "scene": "scene-01",
+      "original": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_0925-9.jpg",
+      "export": "outputs/morph-reconstruction/full-album-soft/scene-01/exports/DSC_0925-9.jpg",
+      "clipping": {
+        "sampled_pixels": 201850,
+        "before": {
+          "high": 0.0043051771117166215,
+          "low": 0.0010750557344562793
+        },
+        "after": {
+          "high": 0.00415159772108001,
+          "low": 0.0002378003467921724
+        },
+        "high_increase": -0.00015357939063661164,
+        "low_increase": -0.0008372553876641069,
+        "flag": false
+      }
+    },
+    {
+      "scene": "scene-01",
+      "original": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_0928-10.jpg",
+      "export": "outputs/morph-reconstruction/full-album-soft/scene-01/exports/DSC_0928-10.jpg",
+      "clipping": {
+        "sampled_pixels": 201850,
+        "before": {
+          "high": 0.0035868218974486003,
+          "low": 0.0020559821649739907
+        },
+        "after": {
+          "high": 0.0035620510279910826,
+          "low": 0.0002526628684666832
+        },
+        "high_increase": -2.4770869457517615e-05,
+        "low_increase": -0.0018033192965073075,
+        "flag": false
+      }
+    },
+    {
+      "scene": "scene-01",
+      "original": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_0930-11.jpg",
+      "export": "outputs/morph-reconstruction/full-album-soft/scene-01/exports/DSC_0930-11.jpg",
+      "clipping": {
+        "sampled_pixels": 201850,
+        "before": {
+          "high": 0.0016299232103046818,
+          "low": 0.006395838493931137
+        },
+        "after": {
+          "high": 0.0014268020807530345,
+          "low": 0.0015457022541491207
+        },
+        "high_increase": -0.0002031211295516473,
+        "low_increase": -0.004850136239782017,
+        "flag": false
+      }
+    },
+    {
+      "scene": "scene-01",
+      "original": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_0935-12.jpg",
+      "export": "outputs/morph-reconstruction/full-album-soft/scene-01/exports/DSC_0935-12.jpg",
+      "clipping": {
+        "sampled_pixels": 201850,
+        "before": {
+          "high": 0.0032598464206093636,
+          "low": 0.0030567252910577163
+        },
+        "after": {
+          "high": 0.0031954421600198166,
+          "low": 0.0008967054743621501
+        },
+        "high_increase": -6.440426058954701e-05,
+        "low_increase": -0.002160019816695566,
+        "flag": false
+      }
+    },
+    {
+      "scene": "scene-02",
+      "original": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_0947-13.jpg",
+      "export": "outputs/morph-reconstruction/full-album-soft/scene-02/exports/DSC_0947-13.jpg",
+      "clipping": {
+        "sampled_pixels": 201850,
+        "before": {
+          "high": 0.004067376764924449,
+          "low": 0.0009660639088432004
+        },
+        "after": {
+          "high": 0.0032449838989348527,
+          "low": 0.00010899182561307902
+        },
+        "high_increase": -0.0008223928659895959,
+        "low_increase": -0.0008570720832301214,
+        "flag": false
+      }
+    },
+    {
+      "scene": "scene-02",
+      "original": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_0948-14.jpg",
+      "export": "outputs/morph-reconstruction/full-album-soft/scene-02/exports/DSC_0948-14.jpg",
+      "clipping": {
+        "sampled_pixels": 201850,
+        "before": {
+          "high": 0.008020807530344315,
+          "low": 0.0009611097349516968
+        },
+        "after": {
+          "high": 0.0059053752786722815,
+          "low": 0.0002328461729006688
+        },
+        "high_increase": -0.0021154322516720335,
+        "low_increase": -0.0007282635620510279,
+        "flag": false
+      }
+    },
+    {
+      "scene": "scene-02",
+      "original": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_0958-15.jpg",
+      "export": "outputs/morph-reconstruction/full-album-soft/scene-02/exports/DSC_0958-15.jpg",
+      "clipping": {
+        "sampled_pixels": 201850,
+        "before": {
+          "high": 0.012989843943522417,
+          "low": 0.0005697299975229131
+        },
+        "after": {
+          "high": 0.010725786475105276,
+          "low": 9.908347783007183e-05
+        },
+        "high_increase": -0.0022640574684171418,
+        "low_increase": -0.00047064651969284124,
+        "flag": false
+      }
+    },
+    {
+      "scene": "scene-02",
+      "original": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_0965-16.jpg",
+      "export": "outputs/morph-reconstruction/full-album-soft/scene-02/exports/DSC_0965-16.jpg",
+      "clipping": {
+        "sampled_pixels": 201850,
+        "before": {
+          "high": 0.13802328461729008,
+          "low": 0.0
+        },
+        "after": {
+          "high": 0.13538766410701017,
+          "low": 0.0
+        },
+        "high_increase": -0.002635620510279907,
+        "low_increase": 0.0,
+        "flag": false
+      }
+    },
+    {
+      "scene": "scene-02",
+      "original": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_0970-17.jpg",
+      "export": "outputs/morph-reconstruction/full-album-soft/scene-02/exports/DSC_0970-17.jpg",
+      "clipping": {
+        "sampled_pixels": 201850,
+        "before": {
+          "high": 0.006742630666336388,
+          "low": 0.0007778053009660639
+        },
+        "after": {
+          "high": 0.0059697795392618285,
+          "low": 0.00022789199900916522
+        },
+        "high_increase": -0.0007728511270745598,
+        "low_increase": -0.0005499133019568987,
+        "flag": false
+      }
+    },
+    {
+      "scene": "scene-02",
+      "original": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_0974-18.jpg",
+      "export": "outputs/morph-reconstruction/full-album-soft/scene-02/exports/DSC_0974-18.jpg",
+      "clipping": {
+        "sampled_pixels": 201850,
+        "before": {
+          "high": 0.003532325984642061,
+          "low": 0.002194699033936091
+        },
+        "after": {
+          "high": 0.0033341590289819173,
+          "low": 0.0004111964329947981
+        },
+        "high_increase": -0.00019816695566014352,
+        "low_increase": -0.0017835026009412928,
+        "flag": false
+      }
+    },
+    {
+      "scene": "scene-02",
+      "original": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_0987-19.jpg",
+      "export": "outputs/morph-reconstruction/full-album-soft/scene-02/exports/DSC_0987-19.jpg",
+      "clipping": {
+        "sampled_pixels": 201850,
+        "before": {
+          "high": 0.0037205845925191976,
+          "low": 0.0019123111221203864
+        },
+        "after": {
+          "high": 0.0027247956403269754,
+          "low": 0.00015357939063661134
+        },
+        "high_increase": -0.0009957889521922223,
+        "low_increase": -0.001758731731483775,
+        "flag": false
+      }
+    },
+    {
+      "scene": "scene-02",
+      "original": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_0990-20.jpg",
+      "export": "outputs/morph-reconstruction/full-album-soft/scene-02/exports/DSC_0990-20.jpg",
+      "clipping": {
+        "sampled_pixels": 201850,
+        "before": {
+          "high": 0.1375328214020312,
+          "low": 9.908347783007184e-06
+        },
+        "after": {
+          "high": 0.10555858310626703,
+          "low": 0.0
+        },
+        "high_increase": -0.03197423829576418,
+        "low_increase": -9.908347783007184e-06,
+        "flag": false
+      }
+    },
+    {
+      "scene": "scene-02",
+      "original": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_0993-21.jpg",
+      "export": "outputs/morph-reconstruction/full-album-soft/scene-02/exports/DSC_0993-21.jpg",
+      "clipping": {
+        "sampled_pixels": 201850,
+        "before": {
+          "high": 0.14456774832796632,
+          "low": 0.0
+        },
+        "after": {
+          "high": 0.1437404012880852,
+          "low": 0.0
+        },
+        "high_increase": -0.0008273470398811045,
+        "low_increase": 0.0,
+        "flag": false
+      }
+    },
+    {
+      "scene": "scene-02",
+      "original": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_0995-22.jpg",
+      "export": "outputs/morph-reconstruction/full-album-soft/scene-02/exports/DSC_0995-22.jpg",
+      "clipping": {
+        "sampled_pixels": 201850,
+        "before": {
+          "high": 0.13634381966807035,
+          "low": 0.0
+        },
+        "after": {
+          "high": 0.13245479316324002,
+          "low": 0.0
+        },
+        "high_increase": -0.003889026504830334,
+        "low_increase": 0.0,
+        "flag": false
+      }
+    },
+    {
+      "scene": "scene-02",
+      "original": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_0997-23.jpg",
+      "export": "outputs/morph-reconstruction/full-album-soft/scene-02/exports/DSC_0997-23.jpg",
+      "clipping": {
+        "sampled_pixels": 201850,
+        "before": {
+          "high": 0.22218974486004459,
+          "low": 4.954173891503592e-06
+        },
+        "after": {
+          "high": 0.22183304433985632,
+          "low": 0.0
+        },
+        "high_increase": -0.0003567005201882689,
+        "low_increase": -4.954173891503592e-06,
+        "flag": false
+      }
+    },
+    {
+      "scene": "scene-02",
+      "original": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_0998-24.jpg",
+      "export": "outputs/morph-reconstruction/full-album-soft/scene-02/exports/DSC_0998-24.jpg",
+      "clipping": {
+        "sampled_pixels": 201850,
+        "before": {
+          "high": 0.18310131285608125,
+          "low": 4.954173891503592e-06
+        },
+        "after": {
+          "high": 0.1450978449343572,
+          "low": 4.954173891503592e-06
+        },
+        "high_increase": -0.03800346792172404,
+        "low_increase": 0.0,
+        "flag": false
+      }
+    },
+    {
+      "scene": "scene-02",
+      "original": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1012-25.jpg",
+      "export": "outputs/morph-reconstruction/full-album-soft/scene-02/exports/DSC_1012-25.jpg",
+      "clipping": {
+        "sampled_pixels": 201850,
+        "before": {
+          "high": 0.2001337626950706,
+          "low": 0.0
+        },
+        "after": {
+          "high": 0.19634877384196187,
+          "low": 0.0
+        },
+        "high_increase": -0.0037849888531087394,
+        "low_increase": 0.0,
+        "flag": false
+      }
+    },
+    {
+      "scene": "scene-03",
+      "original": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1021-26.jpg",
+      "export": "outputs/morph-reconstruction/full-album-soft/scene-03/exports/DSC_1021-26.jpg",
+      "clipping": {
+        "sampled_pixels": 201850,
+        "before": {
+          "high": 0.009457517958880357,
+          "low": 0.003740401288085212
+        },
+        "after": {
+          "high": 0.005137478325489225,
+          "low": 0.0010651473866732722
+        },
+        "high_increase": -0.004320039633391132,
+        "low_increase": -0.0026752539014119397,
+        "flag": false
+      }
+    },
+    {
+      "scene": "scene-03",
+      "original": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1026-27.jpg",
+      "export": "outputs/morph-reconstruction/full-album-soft/scene-03/exports/DSC_1026-27.jpg",
+      "clipping": {
+        "sampled_pixels": 201850,
+        "before": {
+          "high": 0.0010205598216497399,
+          "low": 0.01449591280653951
+        },
+        "after": {
+          "high": 0.0014565271241020559,
+          "low": 0.004656923458013377
+        },
+        "high_increase": 0.000435967302452316,
+        "low_increase": -0.009838989348526134,
+        "flag": false
+      }
+    },
+    {
+      "scene": "scene-03",
+      "original": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1028-28.jpg",
+      "export": "outputs/morph-reconstruction/full-album-soft/scene-03/exports/DSC_1028-28.jpg",
+      "clipping": {
+        "sampled_pixels": 201850,
+        "before": {
+          "high": 0.0005647758236314095,
+          "low": 0.008065395095367847
+        },
+        "after": {
+          "high": 0.0006589051275699777,
+          "low": 0.002452316076294278
+        },
+        "high_increase": 9.41293039385682e-05,
+        "low_increase": -0.005613079019073569,
+        "flag": false
+      }
+    },
+    {
+      "scene": "scene-03",
+      "original": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1030-29.jpg",
+      "export": "outputs/morph-reconstruction/full-album-soft/scene-03/exports/DSC_1030-29.jpg",
+      "clipping": {
+        "sampled_pixels": 201850,
+        "before": {
+          "high": 0.010101560564775824,
+          "low": 0.012553876641070102
+        },
+        "after": {
+          "high": 0.009497151350012386,
+          "low": 0.0037057220708446867
+        },
+        "high_increase": -0.0006044092147634381,
+        "low_increase": -0.008848154570225416,
+        "flag": false
+      }
+    },
+    {
+      "scene": "scene-03",
+      "original": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1033-30.jpg",
+      "export": "outputs/morph-reconstruction/full-album-soft/scene-03/exports/DSC_1033-30.jpg",
+      "clipping": {
+        "sampled_pixels": 201850,
+        "before": {
+          "high": 0.006390884320039633,
+          "low": 0.007193460490463216
+        },
+        "after": {
+          "high": 0.005637849888531088,
+          "low": 0.0019816695566014365
+        },
+        "high_increase": -0.0007530344315085456,
+        "low_increase": -0.005211790933861779,
+        "flag": false
+      }
+    },
+    {
+      "scene": "scene-03",
+      "original": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1037-31.jpg",
+      "export": "outputs/morph-reconstruction/full-album-soft/scene-03/exports/DSC_1037-31.jpg",
+      "clipping": {
+        "sampled_pixels": 201850,
+        "before": {
+          "high": 0.0045429774585087936,
+          "low": 0.015501610106514739
+        },
+        "after": {
+          "high": 0.0037552638097597224,
+          "low": 0.0030369085954917016
+        },
+        "high_increase": -0.0007877136487490712,
+        "low_increase": -0.012464701511023038,
+        "flag": false
+      }
+    },
+    {
+      "scene": "scene-03",
+      "original": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1038-32.jpg",
+      "export": "outputs/morph-reconstruction/full-album-soft/scene-03/exports/DSC_1038-32.jpg",
+      "clipping": {
+        "sampled_pixels": 201850,
+        "before": {
+          "high": 0.003918751548179341,
+          "low": 0.008347783007183552
+        },
+        "after": {
+          "high": 0.0022789199900916522,
+          "low": 0.0019222194699033935
+        },
+        "high_increase": -0.001639831558087689,
+        "low_increase": -0.006425563537280158,
+        "flag": false
+      }
+    },
+    {
+      "scene": "scene-04",
+      "original": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1054-33.jpg",
+      "export": "outputs/morph-reconstruction/full-album-soft/scene-04/exports/DSC_1054-33.jpg",
+      "clipping": {
+        "sampled_pixels": 201850,
+        "before": {
+          "high": 0.006321525885558583,
+          "low": 0.0015258855585831062
+        },
+        "after": {
+          "high": 0.005836016844191231,
+          "low": 0.0004260589546693089
+        },
+        "high_increase": -0.00048550904136735167,
+        "low_increase": -0.0010998266039137974,
+        "flag": false
+      }
+    },
+    {
+      "scene": "scene-04",
+      "original": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1059-34.jpg",
+      "export": "outputs/morph-reconstruction/full-album-soft/scene-04/exports/DSC_1059-34.jpg",
+      "clipping": {
+        "sampled_pixels": 201850,
+        "before": {
+          "high": 0.006980431013128561,
+          "low": 0.0012286351250928907
+        },
+        "after": {
+          "high": 0.006480059450086698,
+          "low": 0.0005350507802823879
+        },
+        "high_increase": -0.0005003715630418635,
+        "low_increase": -0.0006935843448105029,
+        "flag": false
+      }
+    },
+    {
+      "scene": "scene-05",
+      "original": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1070-35.jpg",
+      "export": "outputs/morph-reconstruction/full-album-soft/scene-05/exports/DSC_1070-35.jpg",
+      "clipping": {
+        "sampled_pixels": 201850,
+        "before": {
+          "high": 0.009204855090413673,
+          "low": 0.0019866237304929403
+        },
+        "after": {
+          "high": 0.008897696309140451,
+          "low": 0.0005152340847163735
+        },
+        "high_increase": -0.00030715878127322155,
+        "low_increase": -0.0014713896457765668,
+        "flag": false
+      }
+    },
+    {
+      "scene": "scene-05",
+      "original": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1074-36.jpg",
+      "export": "outputs/morph-reconstruction/full-album-soft/scene-05/exports/DSC_1074-36.jpg",
+      "clipping": {
+        "sampled_pixels": 201850,
+        "before": {
+          "high": 0.0058409710180827345,
+          "low": 0.0005895466930889274
+        },
+        "after": {
+          "high": 0.005518949715135001,
+          "low": 0.0001783502600941293
+        },
+        "high_increase": -0.00032202130294773333,
+        "low_increase": -0.0004111964329947981,
+        "flag": false
+      }
+    },
+    {
+      "scene": "scene-05",
+      "original": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1083-37.jpg",
+      "export": "outputs/morph-reconstruction/full-album-soft/scene-05/exports/DSC_1083-37.jpg",
+      "clipping": {
+        "sampled_pixels": 201850,
+        "before": {
+          "high": 0.007589794401783503,
+          "low": 0.0003864255635372802
+        },
+        "after": {
+          "high": 0.007129056229873669,
+          "low": 0.0001783502600941293
+        },
+        "high_increase": -0.00046073817190983406,
+        "low_increase": -0.00020807530344315087,
+        "flag": false
+      }
+    },
+    {
+      "scene": "scene-05",
+      "original": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1088-38.jpg",
+      "export": "outputs/morph-reconstruction/full-album-soft/scene-05/exports/DSC_1088-38.jpg",
+      "clipping": {
+        "sampled_pixels": 201850,
+        "before": {
+          "high": 0.004196185286103543,
+          "low": 0.00038147138964577656
+        },
+        "after": {
+          "high": 0.0033837007678969534,
+          "low": 0.00022789199900916522
+        },
+        "high_increase": -0.0008124845182065892,
+        "low_increase": -0.00015357939063661134,
+        "flag": false
+      }
+    },
+    {
+      "scene": "scene-05",
+      "original": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1090-39.jpg",
+      "export": "outputs/morph-reconstruction/full-album-soft/scene-05/exports/DSC_1090-39.jpg",
+      "clipping": {
+        "sampled_pixels": 201850,
+        "before": {
+          "high": 0.006286846668318058,
+          "low": 0.0005251424324993807
+        },
+        "after": {
+          "high": 0.005489224671785979,
+          "low": 0.00034679217240525143
+        },
+        "high_increase": -0.0007976219965320783,
+        "low_increase": -0.0001783502600941293,
+        "flag": false
+      }
+    },
+    {
+      "scene": "scene-05",
+      "original": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1096-40.jpg",
+      "export": "outputs/morph-reconstruction/full-album-soft/scene-05/exports/DSC_1096-40.jpg",
+      "clipping": {
+        "sampled_pixels": 201850,
+        "before": {
+          "high": 0.009249442655437206,
+          "low": 0.0008174386920980927
+        },
+        "after": {
+          "high": 0.009011642308645033,
+          "low": 0.00032697547683923706
+        },
+        "high_increase": -0.00023780034679217292,
+        "low_increase": -0.0004904632152588557,
+        "flag": false
+      }
+    },
+    {
+      "scene": "scene-05",
+      "original": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1100-41.jpg",
+      "export": "outputs/morph-reconstruction/full-album-soft/scene-05/exports/DSC_1100-41.jpg",
+      "clipping": {
+        "sampled_pixels": 201850,
+        "before": {
+          "high": 0.004126826851622492,
+          "low": 0.001590289819172653
+        },
+        "after": {
+          "high": 0.004067376764924449,
+          "low": 0.00046073817190983406
+        },
+        "high_increase": -5.9450086698043664e-05,
+        "low_increase": -0.001129551647262819,
+        "flag": false
+      }
+    },
+    {
+      "scene": "scene-05",
+      "original": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1105-42.jpg",
+      "export": "outputs/morph-reconstruction/full-album-soft/scene-05/exports/DSC_1105-42.jpg",
+      "clipping": {
+        "sampled_pixels": 201850,
+        "before": {
+          "high": 0.0005895466930889274,
+          "low": 0.0017636859053752787
+        },
+        "after": {
+          "high": 0.0004260589546693089,
+          "low": 0.0007332177359425316
+        },
+        "high_increase": -0.00016348773841961856,
+        "low_increase": -0.001030468169432747,
+        "flag": false
+      }
+    },
+    {
+      "scene": "scene-05",
+      "original": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1106-43.jpg",
+      "export": "outputs/morph-reconstruction/full-album-soft/scene-05/exports/DSC_1106-43.jpg",
+      "clipping": {
+        "sampled_pixels": 201850,
+        "before": {
+          "high": 0.008223928659895963,
+          "low": 0.002293782511766163
+        },
+        "after": {
+          "high": 0.008149616051523409,
+          "low": 0.0007778053009660639
+        },
+        "high_increase": -7.431260837255371e-05,
+        "low_increase": -0.0015159772108000991,
+        "flag": false
+      }
+    },
+    {
+      "scene": "scene-05",
+      "original": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1109-44.jpg",
+      "export": "outputs/morph-reconstruction/full-album-soft/scene-05/exports/DSC_1109-44.jpg",
+      "clipping": {
+        "sampled_pixels": 201850,
+        "before": {
+          "high": 0.010260094129303938,
+          "low": 0.00371067624473619
+        },
+        "after": {
+          "high": 0.010101560564775824,
+          "low": 0.0009214763438196681
+        },
+        "high_increase": -0.00015853356452811412,
+        "low_increase": -0.002789199900916522,
+        "flag": false
+      }
+    },
+    {
+      "scene": "scene-05",
+      "original": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1111-45.jpg",
+      "export": "outputs/morph-reconstruction/full-album-soft/scene-05/exports/DSC_1111-45.jpg",
+      "clipping": {
+        "sampled_pixels": 201850,
+        "before": {
+          "high": 0.005325736933366361,
+          "low": 0.0006836759970274956
+        },
+        "after": {
+          "high": 0.005142432499380728,
+          "low": 0.0001783502600941293
+        },
+        "high_increase": -0.0001833044339856326,
+        "low_increase": -0.0005053257369333664,
+        "flag": false
+      }
+    },
+    {
+      "scene": "scene-05",
+      "original": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1114-46.jpg",
+      "export": "outputs/morph-reconstruction/full-album-soft/scene-05/exports/DSC_1114-46.jpg",
+      "clipping": {
+        "sampled_pixels": 201850,
+        "before": {
+          "high": 0.010874411691850385,
+          "low": 0.0015209313846916027
+        },
+        "after": {
+          "high": 0.00995788952192222,
+          "low": 0.0004954173891503591
+        },
+        "high_increase": -0.0009165221699281648,
+        "low_increase": -0.0010255139955412437,
+        "flag": false
+      }
+    },
+    {
+      "scene": "scene-05",
+      "original": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1116-47.jpg",
+      "export": "outputs/morph-reconstruction/full-album-soft/scene-05/exports/DSC_1116-47.jpg",
+      "clipping": {
+        "sampled_pixels": 201850,
+        "before": {
+          "high": 0.006707951449095863,
+          "low": 0.0007282635620510279
+        },
+        "after": {
+          "high": 0.0059995045826108494,
+          "low": 0.0002526628684666832
+        },
+        "high_increase": -0.0007084468664850137,
+        "low_increase": -0.00047560069358434476,
+        "flag": false
+      }
+    },
+    {
+      "scene": "scene-05",
+      "original": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1118-48.jpg",
+      "export": "outputs/morph-reconstruction/full-album-soft/scene-05/exports/DSC_1118-48.jpg",
+      "clipping": {
+        "sampled_pixels": 201850,
+        "before": {
+          "high": 0.010250185781520932,
+          "low": 0.0033936091156799605
+        },
+        "after": {
+          "high": 0.010265048303195442,
+          "low": 0.0008422095615556106
+        },
+        "high_increase": 1.4862521674510049e-05,
+        "low_increase": -0.00255139955412435,
+        "flag": false
+      }
+    },
+    {
+      "scene": "scene-06",
+      "original": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1259-49.jpg",
+      "export": "outputs/morph-reconstruction/full-album-soft/scene-06/exports/DSC_1259-49.jpg",
+      "clipping": {
+        "sampled_pixels": 201850,
+        "before": {
+          "high": 0.0018528610354223434,
+          "low": 0.004374535546197672
+        },
+        "after": {
+          "high": 0.001347535298488977,
+          "low": 0.0003616546940797622
+        },
+        "high_increase": -0.0005053257369333664,
+        "low_increase": -0.00401288085211791,
+        "flag": false
+      }
+    },
+    {
+      "scene": "scene-06",
+      "original": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1261-50.jpg",
+      "export": "outputs/morph-reconstruction/full-album-soft/scene-06/exports/DSC_1261-50.jpg",
+      "clipping": {
+        "sampled_pixels": 201850,
+        "before": {
+          "high": 0.002160019816695566,
+          "low": 0.005989596234827843
+        },
+        "after": {
+          "high": 0.0014168937329700274,
+          "low": 0.000485509041367352
+        },
+        "high_increase": -0.0007431260837255389,
+        "low_increase": -0.005504087193460491,
+        "flag": false
+      }
+    },
+    {
+      "scene": "scene-06",
+      "original": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1264-51.jpg",
+      "export": "outputs/morph-reconstruction/full-album-soft/scene-06/exports/DSC_1264-51.jpg",
+      "clipping": {
+        "sampled_pixels": 201850,
+        "before": {
+          "high": 0.0018280901659648253,
+          "low": 0.001942036165469408
+        },
+        "after": {
+          "high": 0.0011741392122863513,
+          "low": 0.0002774337379242011
+        },
+        "high_increase": -0.000653950953678474,
+        "low_increase": -0.001664602427545207,
+        "flag": false
+      }
+    },
+    {
+      "scene": "scene-06",
+      "original": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1265-52.jpg",
+      "export": "outputs/morph-reconstruction/full-album-soft/scene-06/exports/DSC_1265-52.jpg",
+      "clipping": {
+        "sampled_pixels": 201850,
+        "before": {
+          "high": 0.011141937081991578,
+          "low": 0.0004161506068863017
+        },
+        "after": {
+          "high": 0.0066187763190487985,
+          "low": 0.00011394599950458261
+        },
+        "high_increase": -0.004523160762942779,
+        "low_increase": -0.00030220460738171907,
+        "flag": false
+      }
+    },
+    {
+      "scene": "scene-06",
+      "original": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1268-53.jpg",
+      "export": "outputs/morph-reconstruction/full-album-soft/scene-06/exports/DSC_1268-53.jpg",
+      "clipping": {
+        "sampled_pixels": 201850,
+        "before": {
+          "high": 0.0024820411196432995,
+          "low": 0.0005994550408719346
+        },
+        "after": {
+          "high": 0.0019618528610354223,
+          "low": 0.0001833044339856329
+        },
+        "high_increase": -0.0005201882586078773,
+        "low_increase": -0.00041615060688630163,
+        "flag": false
+      }
+    },
+    {
+      "scene": "scene-06",
+      "original": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1273-54.jpg",
+      "export": "outputs/morph-reconstruction/full-album-soft/scene-06/exports/DSC_1273-54.jpg",
+      "clipping": {
+        "sampled_pixels": 201850,
+        "before": {
+          "high": 0.034748575675006194,
+          "low": 0.0010948724300222938
+        },
+        "after": {
+          "high": 0.0313103789943027,
+          "low": 0.00020312112955164725
+        },
+        "high_increase": -0.003438196680703491,
+        "low_increase": -0.0008917513004706465,
+        "flag": false
+      }
+    },
+    {
+      "scene": "scene-06",
+      "original": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1280-55.jpg",
+      "export": "outputs/morph-reconstruction/full-album-soft/scene-06/exports/DSC_1280-55.jpg",
+      "clipping": {
+        "sampled_pixels": 201850,
+        "before": {
+          "high": 0.10103542234332424,
+          "low": 0.0
+        },
+        "after": {
+          "high": 0.09794401783502601,
+          "low": 0.0
+        },
+        "high_increase": -0.003091404508298229,
+        "low_increase": 0.0,
+        "flag": false
+      }
+    },
+    {
+      "scene": "scene-06",
+      "original": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1282-56.jpg",
+      "export": "outputs/morph-reconstruction/full-album-soft/scene-06/exports/DSC_1282-56.jpg",
+      "clipping": {
+        "sampled_pixels": 201850,
+        "before": {
+          "high": 0.10478077780530097,
+          "low": 0.0
+        },
+        "after": {
+          "high": 0.10392370572207084,
+          "low": 0.0
+        },
+        "high_increase": -0.0008570720832301315,
+        "low_increase": 0.0,
+        "flag": false
+      }
+    },
+    {
+      "scene": "scene-06",
+      "original": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1284-57.jpg",
+      "export": "outputs/morph-reconstruction/full-album-soft/scene-06/exports/DSC_1284-57.jpg",
+      "clipping": {
+        "sampled_pixels": 201850,
+        "before": {
+          "high": 0.0935298488976963,
+          "low": 0.0
+        },
+        "after": {
+          "high": 0.09265296011890017,
+          "low": 0.0
+        },
+        "high_increase": -0.000876888778796131,
+        "low_increase": 0.0,
+        "flag": false
+      }
+    },
+    {
+      "scene": "scene-06",
+      "original": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1286-58.jpg",
+      "export": "outputs/morph-reconstruction/full-album-soft/scene-06/exports/DSC_1286-58.jpg",
+      "clipping": {
+        "sampled_pixels": 201850,
+        "before": {
+          "high": 0.06859549170175873,
+          "low": 0.0
+        },
+        "after": {
+          "high": 0.06838741639831558,
+          "low": 0.0
+        },
+        "high_increase": -0.00020807530344314762,
+        "low_increase": 0.0,
+        "flag": false
+      }
+    },
+    {
+      "scene": "scene-06",
+      "original": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1288-59.jpg",
+      "export": "outputs/morph-reconstruction/full-album-soft/scene-06/exports/DSC_1288-59.jpg",
+      "clipping": {
+        "sampled_pixels": 201850,
+        "before": {
+          "high": 0.23358434481050286,
+          "low": 5.449591280653951e-05
+        },
+        "after": {
+          "high": 0.23244983898934854,
+          "low": 2.972504334902155e-05
+        },
+        "high_increase": -0.001134505821154319,
+        "low_increase": -2.4770869457517957e-05,
+        "flag": false
+      }
+    },
+    {
+      "scene": "scene-06",
+      "original": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1291-60.jpg",
+      "export": "outputs/morph-reconstruction/full-album-soft/scene-06/exports/DSC_1291-60.jpg",
+      "clipping": {
+        "sampled_pixels": 201850,
+        "before": {
+          "high": 0.22425563537280158,
+          "low": 9.908347783007183e-05
+        },
+        "after": {
+          "high": 0.22346792172405253,
+          "low": 4.9541738915035914e-05
+        },
+        "high_increase": -0.0007877136487490499,
+        "low_increase": -4.9541738915035914e-05,
+        "flag": false
+      }
+    },
+    {
+      "scene": "scene-06",
+      "original": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1292-61.jpg",
+      "export": "outputs/morph-reconstruction/full-album-soft/scene-06/exports/DSC_1292-61.jpg",
+      "clipping": {
+        "sampled_pixels": 201850,
+        "before": {
+          "high": 0.21754768392370571,
+          "low": 8.917513004706466e-05
+        },
+        "after": {
+          "high": 0.21643299479811742,
+          "low": 4.458756502353233e-05
+        },
+        "high_increase": -0.0011146891255882918,
+        "low_increase": -4.458756502353233e-05,
+        "flag": false
+      }
+    },
+    {
+      "scene": "scene-06",
+      "original": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1293-62.jpg",
+      "export": "outputs/morph-reconstruction/full-album-soft/scene-06/exports/DSC_1293-62.jpg",
+      "clipping": {
+        "sampled_pixels": 201850,
+        "before": {
+          "high": 0.23287589794401783,
+          "low": 5.94500866980431e-05
+        },
+        "after": {
+          "high": 0.23135496655932622,
+          "low": 9.908347783007184e-06
+        },
+        "high_increase": -0.001520931384691615,
+        "low_increase": -4.954173891503592e-05,
+        "flag": false
+      }
+    },
+    {
+      "scene": "scene-06",
+      "original": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1300-63.jpg",
+      "export": "outputs/morph-reconstruction/full-album-soft/scene-06/exports/DSC_1300-63.jpg",
+      "clipping": {
+        "sampled_pixels": 201850,
+        "before": {
+          "high": 0.13720089175130046,
+          "low": 0.0
+        },
+        "after": {
+          "high": 0.13595739410453306,
+          "low": 0.0
+        },
+        "high_increase": -0.0012434976467673997,
+        "low_increase": 0.0,
+        "flag": false
+      }
+    },
+    {
+      "scene": "scene-06",
+      "original": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1302-64.jpg",
+      "export": "outputs/morph-reconstruction/full-album-soft/scene-06/exports/DSC_1302-64.jpg",
+      "clipping": {
+        "sampled_pixels": 201850,
+        "before": {
+          "high": 0.142065890512757,
+          "low": 0.0
+        },
+        "after": {
+          "high": 0.14073817190983404,
+          "low": 0.0
+        },
+        "high_increase": -0.001327718602922967,
+        "low_increase": 0.0,
+        "flag": false
+      }
+    },
+    {
+      "scene": "scene-06",
+      "original": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1304-65.jpg",
+      "export": "outputs/morph-reconstruction/full-album-soft/scene-06/exports/DSC_1304-65.jpg",
+      "clipping": {
+        "sampled_pixels": 201850,
+        "before": {
+          "high": 0.10272479564032698,
+          "low": 0.0
+        },
+        "after": {
+          "high": 0.10005449591280655,
+          "low": 0.0
+        },
+        "high_increase": -0.0026702997275204338,
+        "low_increase": 0.0,
+        "flag": false
+      }
+    },
+    {
+      "scene": "scene-07",
+      "original": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1308-66.jpg",
+      "export": "outputs/morph-reconstruction/full-album-soft/scene-07/exports/DSC_1308-66.jpg",
+      "clipping": {
+        "sampled_pixels": 201850,
+        "before": {
+          "high": 0.1997473371315333,
+          "low": 4.954173891503592e-06
+        },
+        "after": {
+          "high": 0.18475600693584346,
+          "low": 0.0
+        },
+        "high_increase": -0.01499133019568985,
+        "low_increase": -4.954173891503592e-06,
+        "flag": false
+      }
+    },
+    {
+      "scene": "scene-07",
+      "original": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1310-67.jpg",
+      "export": "outputs/morph-reconstruction/full-album-soft/scene-07/exports/DSC_1310-67.jpg",
+      "clipping": {
+        "sampled_pixels": 201850,
+        "before": {
+          "high": 0.2126826851622492,
+          "low": 0.0
+        },
+        "after": {
+          "high": 0.19136487490710924,
+          "low": 0.0
+        },
+        "high_increase": -0.021317810255139957,
+        "low_increase": 0.0,
+        "flag": false
+      }
+    },
+    {
+      "scene": "scene-07",
+      "original": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1312-68.jpg",
+      "export": "outputs/morph-reconstruction/full-album-soft/scene-07/exports/DSC_1312-68.jpg",
+      "clipping": {
+        "sampled_pixels": 201850,
+        "before": {
+          "high": 0.22080753034431508,
+          "low": 0.0
+        },
+        "after": {
+          "high": 0.21149863760217982,
+          "low": 0.0
+        },
+        "high_increase": -0.009308892742135255,
+        "low_increase": 0.0,
+        "flag": false
+      }
+    },
+    {
+      "scene": "scene-07",
+      "original": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1315-69.jpg",
+      "export": "outputs/morph-reconstruction/full-album-soft/scene-07/exports/DSC_1315-69.jpg",
+      "clipping": {
+        "sampled_pixels": 201850,
+        "before": {
+          "high": 0.14087193460490463,
+          "low": 9.908347783007184e-06
+        },
+        "after": {
+          "high": 0.09881099826603913,
+          "low": 0.0
+        },
+        "high_increase": -0.0420609363388655,
+        "low_increase": -9.908347783007184e-06,
+        "flag": false
+      }
+    },
+    {
+      "scene": "scene-07",
+      "original": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1320-70.jpg",
+      "export": "outputs/morph-reconstruction/full-album-soft/scene-07/exports/DSC_1320-70.jpg",
+      "clipping": {
+        "sampled_pixels": 201850,
+        "before": {
+          "high": 0.18886797126579144,
+          "low": 0.0
+        },
+        "after": {
+          "high": 0.1660738171909834,
+          "low": 0.0
+        },
+        "high_increase": -0.022794154074808032,
+        "low_increase": 0.0,
+        "flag": false
+      }
+    },
+    {
+      "scene": "scene-07",
+      "original": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1322-71.jpg",
+      "export": "outputs/morph-reconstruction/full-album-soft/scene-07/exports/DSC_1322-71.jpg",
+      "clipping": {
+        "sampled_pixels": 201850,
+        "before": {
+          "high": 0.13684419123111222,
+          "low": 0.0
+        },
+        "after": {
+          "high": 0.12084220956155561,
+          "low": 0.0
+        },
+        "high_increase": -0.016001981669556603,
+        "low_increase": 0.0,
+        "flag": false
+      }
+    },
+    {
+      "scene": "scene-07",
+      "original": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1324-72.jpg",
+      "export": "outputs/morph-reconstruction/full-album-soft/scene-07/exports/DSC_1324-72.jpg",
+      "clipping": {
+        "sampled_pixels": 201850,
+        "before": {
+          "high": 0.2091107257864751,
+          "low": 9.908347783007184e-06
+        },
+        "after": {
+          "high": 0.16693584344810503,
+          "low": 9.908347783007184e-06
+        },
+        "high_increase": -0.04217488233837008,
+        "low_increase": 0.0,
+        "flag": false
+      }
+    },
+    {
+      "scene": "scene-08",
+      "original": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1326-73.jpg",
+      "export": "outputs/morph-reconstruction/full-album-soft/scene-08/exports/DSC_1326-73.jpg",
+      "clipping": {
+        "sampled_pixels": 201850,
+        "before": {
+          "high": 0.008159524399306416,
+          "low": 0.0023334159028981917
+        },
+        "after": {
+          "high": 0.006876393361406986,
+          "low": 0.0003616546940797622
+        },
+        "high_increase": -0.00128313103789943,
+        "low_increase": -0.0019717612088184294,
+        "flag": false
+      }
+    },
+    {
+      "scene": "scene-08",
+      "original": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1329-74.jpg",
+      "export": "outputs/morph-reconstruction/full-album-soft/scene-08/exports/DSC_1329-74.jpg",
+      "clipping": {
+        "sampled_pixels": 201850,
+        "before": {
+          "high": 0.007470894228387416,
+          "low": 0.0015754272974981421
+        },
+        "after": {
+          "high": 0.006341342581124597,
+          "low": 0.0005400049541738916
+        },
+        "high_increase": -0.0011295516472628192,
+        "low_increase": -0.0010354223433242506,
+        "flag": false
+      }
+    },
+    {
+      "scene": "scene-08",
+      "original": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1330-75.jpg",
+      "export": "outputs/morph-reconstruction/full-album-soft/scene-08/exports/DSC_1330-75.jpg",
+      "clipping": {
+        "sampled_pixels": 201850,
+        "before": {
+          "high": 0.008610354223433243,
+          "low": 0.0013326727768144663
+        },
+        "after": {
+          "high": 0.007723557096854099,
+          "low": 0.000485509041367352
+        },
+        "high_increase": -0.0008867971265791438,
+        "low_increase": -0.0008471637354471143,
+        "flag": false
+      }
+    },
+    {
+      "scene": "scene-08",
+      "original": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1334-76.jpg",
+      "export": "outputs/morph-reconstruction/full-album-soft/scene-08/exports/DSC_1334-76.jpg",
+      "clipping": {
+        "sampled_pixels": 201850,
+        "before": {
+          "high": 0.0025068119891008176,
+          "low": 0.0009016596482536537
+        },
+        "after": {
+          "high": 0.002259103294525638,
+          "low": 0.0005598216497399058
+        },
+        "high_increase": -0.0002477086945751796,
+        "low_increase": -0.0003418379985137479,
+        "flag": false
+      }
+    },
+    {
+      "scene": "scene-08",
+      "original": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1335-77.jpg",
+      "export": "outputs/morph-reconstruction/full-album-soft/scene-08/exports/DSC_1335-77.jpg",
+      "clipping": {
+        "sampled_pixels": 201850,
+        "before": {
+          "high": 0.0021501114689125586,
+          "low": 0.0011790933861778549
+        },
+        "after": {
+          "high": 0.002075798860540005,
+          "low": 0.0005598216497399058
+        },
+        "high_increase": -7.431260837255371e-05,
+        "low_increase": -0.000619271736437949,
+        "flag": false
+      }
+    },
+    {
+      "scene": "scene-08",
+      "original": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1337-78.jpg",
+      "export": "outputs/morph-reconstruction/full-album-soft/scene-08/exports/DSC_1337-78.jpg",
+      "clipping": {
+        "sampled_pixels": 201850,
+        "before": {
+          "high": 0.0024225910329452563,
+          "low": 0.0011642308645033442
+        },
+        "after": {
+          "high": 0.0021203864255635372,
+          "low": 0.000594500866980431
+        },
+        "high_increase": -0.00030220460738171907,
+        "low_increase": -0.0005697299975229132,
+        "flag": false
+      }
+    },
+    {
+      "scene": "scene-08",
+      "original": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1339-79.jpg",
+      "export": "outputs/morph-reconstruction/full-album-soft/scene-08/exports/DSC_1339-79.jpg",
+      "clipping": {
+        "sampled_pixels": 201850,
+        "before": {
+          "high": 0.0010750557344562793,
+          "low": 0.0024919494674263067
+        },
+        "after": {
+          "high": 0.0012434976467674014,
+          "low": 0.000753034431508546
+        },
+        "high_increase": 0.00016844191231112212,
+        "low_increase": -0.0017389150359177607,
+        "flag": false
+      }
+    },
+    {
+      "scene": "scene-08",
+      "original": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1340-80.jpg",
+      "export": "outputs/morph-reconstruction/full-album-soft/scene-08/exports/DSC_1340-80.jpg",
+      "clipping": {
+        "sampled_pixels": 201850,
+        "before": {
+          "high": 0.0013029477334654447,
+          "low": 0.002353232598464206
+        },
+        "after": {
+          "high": 0.0014763438196680704,
+          "low": 0.0008273470398810998
+        },
+        "high_increase": 0.0001733960862026257,
+        "low_increase": -0.0015258855585831062,
+        "flag": false
+      }
+    },
+    {
+      "scene": "scene-08",
+      "original": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1342-81.jpg",
+      "export": "outputs/morph-reconstruction/full-album-soft/scene-08/exports/DSC_1342-81.jpg",
+      "clipping": {
+        "sampled_pixels": 201850,
+        "before": {
+          "high": 0.0012484518206589052,
+          "low": 0.002090661382214516
+        },
+        "after": {
+          "high": 0.0014367104285360416,
+          "low": 0.0006935843448105029
+        },
+        "high_increase": 0.0001882586078771364,
+        "low_increase": -0.001397077037404013,
+        "flag": false
+      }
+    },
+    {
+      "scene": "scene-08",
+      "original": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1344-82.jpg",
+      "export": "outputs/morph-reconstruction/full-album-soft/scene-08/exports/DSC_1344-82.jpg",
+      "clipping": {
+        "sampled_pixels": 201850,
+        "before": {
+          "high": 0.0027446123358929896,
+          "low": 0.004835273718107506
+        },
+        "after": {
+          "high": 0.003398563289571464,
+          "low": 0.0011444141689373297
+        },
+        "high_increase": 0.0006539509536784742,
+        "low_increase": -0.0036908595491701762,
+        "flag": false
+      }
+    },
+    {
+      "scene": "scene-09",
+      "original": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1360-83.jpg",
+      "export": "outputs/morph-reconstruction/full-album-soft/scene-09/exports/DSC_1360-83.jpg",
+      "clipping": {
+        "sampled_pixels": 201850,
+        "before": {
+          "high": 0.00140698538518702,
+          "low": 0.0017587317314837752
+        },
+        "after": {
+          "high": 0.001491206341342581,
+          "low": 0.00015853356452811494
+        },
+        "high_increase": 8.422095615556106e-05,
+        "low_increase": -0.0016001981669556602,
+        "flag": false
+      }
+    },
+    {
+      "scene": "scene-09",
+      "original": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1362-84.jpg",
+      "export": "outputs/morph-reconstruction/full-album-soft/scene-09/exports/DSC_1362-84.jpg",
+      "clipping": {
+        "sampled_pixels": 201850,
+        "before": {
+          "high": 0.0040029725043349024,
+          "low": 0.0017438692098092643
+        },
+        "after": {
+          "high": 0.004072330938815953,
+          "low": 0.0001833044339856329
+        },
+        "high_increase": 6.935843448105036e-05,
+        "low_increase": -0.0015605647758236314,
+        "flag": false
+      }
+    },
+    {
+      "scene": "scene-09",
+      "original": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1363-85.jpg",
+      "export": "outputs/morph-reconstruction/full-album-soft/scene-09/exports/DSC_1363-85.jpg",
+      "clipping": {
+        "sampled_pixels": 201850,
+        "before": {
+          "high": 0.0026653455536289326,
+          "low": 0.0018726777309883576
+        },
+        "after": {
+          "high": 0.0027693832053505077,
+          "low": 0.0001783502600941293
+        },
+        "high_increase": 0.00010403765172157511,
+        "low_increase": -0.0016943274708942284,
+        "flag": false
+      }
+    },
+    {
+      "scene": "scene-09",
+      "original": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1365-86.jpg",
+      "export": "outputs/morph-reconstruction/full-album-soft/scene-09/exports/DSC_1365-86.jpg",
+      "clipping": {
+        "sampled_pixels": 201850,
+        "before": {
+          "high": 0.002254149120634134,
+          "low": 0.0029229625959871193
+        },
+        "after": {
+          "high": 0.003433242506811989,
+          "low": 0.0004409214763438197
+        },
+        "high_increase": 0.0011790933861778549,
+        "low_increase": -0.0024820411196432995,
+        "flag": false
+      }
+    },
+    {
+      "scene": "scene-09",
+      "original": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1367-87.jpg",
+      "export": "outputs/morph-reconstruction/full-album-soft/scene-09/exports/DSC_1367-87.jpg",
+      "clipping": {
+        "sampled_pixels": 201850,
+        "before": {
+          "high": 0.003155808768887788,
+          "low": 0.0030765419866237305
+        },
+        "after": {
+          "high": 0.004741144414168937,
+          "low": 0.0004756006935843448
+        },
+        "high_increase": 0.001585335645281149,
+        "low_increase": -0.0026009412930393856,
+        "flag": false
+      }
+    },
+    {
+      "scene": "scene-09",
+      "original": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1378-88.jpg",
+      "export": "outputs/morph-reconstruction/full-album-soft/scene-09/exports/DSC_1378-88.jpg",
+      "clipping": {
+        "sampled_pixels": 201850,
+        "before": {
+          "high": 0.0037057220708446867,
+          "low": 0.0006836759970274956
+        },
+        "after": {
+          "high": 0.0002526628684666832,
+          "low": 0.00020807530344315084
+        },
+        "high_increase": -0.0034530592023780038,
+        "low_increase": -0.00047560069358434476,
+        "flag": false
+      }
+    }
+  ]
+}

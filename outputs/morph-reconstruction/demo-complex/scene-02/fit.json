@@ -1,0 +1,41 @@
+{
+  "target_engine": "pillow-selective",
+  "preset": "warm",
+  "known_recipe": null,
+  "fitted_recipe": {
+    "exposure": 0.005811,
+    "temperature": 0.056529,
+    "tint": -0.001427,
+    "contrast": 0.099503,
+    "shadows": -0.041683,
+    "highlights": 0.196981,
+    "saturation": 0.280853,
+    "cool_saturation": -0.238737,
+    "warm_saturation": 0.097862
+  },
+  "applied_recipe": {
+    "exposure": 0.005811,
+    "temperature": 0.056529,
+    "tint": -0.001427,
+    "contrast": 0.099503,
+    "shadows": -0.041683,
+    "highlights": 0.196981,
+    "saturation": 0.280853,
+    "cool_saturation": -0.238737,
+    "warm_saturation": 0.097862
+  },
+  "renderer": "selective",
+  "regularization": 0,
+  "solver": "gauss-newton",
+  "strength": 1.0,
+  "iterations": 45,
+  "metrics": {
+    "initial_mse": 0.0029995188570923243,
+    "fit_mse": 0.00010518256624288126,
+    "rmse": 0.010255855217527267,
+    "objective": 0.00010518256624288126,
+    "evaluations": 96,
+    "solver": "damped_gauss_newton"
+  },
+  "representative": "/Users/abhijitnambiar/Documents/Codex/2026-10-27/i/work/morph-demo/DSC_0904-2.jpg"
+}

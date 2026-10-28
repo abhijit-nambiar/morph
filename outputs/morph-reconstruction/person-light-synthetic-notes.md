@@ -1,0 +1,7 @@
+# Segmentation-aware lighting reconstruction
+
+A separate target routine applies a warm, softer look and lifts the predicted person region using a soft mask. For each of two manually selected groups, the experiment fits one global-only mapping and one mapping that includes mask-dependent color features, then applies each mapping to the other photos in its group. The two methods use the same fitting resolution and regularization. The held-out photo was not used for fitting.
+
+On 11 held-out photos, global-only reconstruction had mean RGB RMSE 0.0132 and the person-mask-aware mapping 0.0056. The mask-aware output had lower error on all 11, and the mask-weighted mean error fell from 0.0224 to 0.0071. Targets and the reconstruction both use the same person masks, and the generated target is intentionally mask-dependent. This confirms the feature can approximate this constructed effect; it does not establish mask accuracy, performance on independently edited photos, professional quality, or safe automatic normalization.
+
+The comparison sheet is a thumbnail preview. One photo was also exported at its original 6048 × 4032 oriented resolution, with the recovered mask-aware scene mapping. The mask originates from a low-resolution segmentation and was interpolated for full-resolution rendering; edges and any missed subjects need inspection. This is experimental and has not been integrated into the main pipeline.

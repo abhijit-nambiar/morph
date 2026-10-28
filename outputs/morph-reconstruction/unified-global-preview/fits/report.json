@@ -1,0 +1,46 @@
+{
+  "mode": "preview",
+  "target_engine": "pillow-soft",
+  "prompt": "warm and slightly soft contrast and lift shadows",
+  "interpreted_prompt": [
+    {
+      "phrase": "warm",
+      "intensity": 1.0
+    },
+    {
+      "phrase": "soft contrast",
+      "intensity": 0.5
+    },
+    {
+      "phrase": "lift shadows",
+      "intensity": 1.0
+    }
+  ],
+  "renderer": "gamut",
+  "regularization": 0,
+  "strength": 1.0,
+  "scenes": [
+    {
+      "scene": "scene-01",
+      "representative": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_0906-4.jpg",
+      "photos": 12,
+      "sample_photos": [],
+      "metrics": {
+        "initial_mse": 0.0008205989758854636,
+        "fit_mse": 2.566506674403446e-06,
+        "rmse": 0.001602032045373452,
+        "objective": 2.566506674403446e-06,
+        "evaluations": 101,
+        "solver": "damped_gauss_newton"
+      }
+    }
+  ],
+  "export_count": 0,
+  "sample_count": 0,
+  "clipping_flags": null,
+  "transfer_check": {
+    "enabled": false,
+    "other_photos_evaluated": 0,
+    "worse_than_source": 0
+  }
+}

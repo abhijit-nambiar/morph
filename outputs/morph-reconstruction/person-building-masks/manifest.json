@@ -1,0 +1,44 @@
+[
+  {
+    "source": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_0965-16.jpg",
+    "source_sha256": "5fa49f5badf8557591fbdf151ba7712866b922704727a4280c3d134471cc44f4",
+    "mask": "/Users/abhijitnambiar/Documents/Codex/2026-10-27/i/outputs/morph-reconstruction/person-building-masks/DSC_0965-16-mask.png",
+    "mask_sha256": "b3c72bfd2509062b3b9f9aaa1f291c5119ed542c9b4fe70e3919cf4b056696df"
+  },
+  {
+    "source": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_0990-20.jpg",
+    "source_sha256": "ec279da48a6c0249807664c965b43b40bb13a24dbaf09c1d6f4d967ee17254fc",
+    "mask": "/Users/abhijitnambiar/Documents/Codex/2026-10-27/i/outputs/morph-reconstruction/person-building-masks/DSC_0990-20-mask.png",
+    "mask_sha256": "66586a26db5aeb7a3de4a89ddf2345ead90207b7939654a4e4dbfe96ba4633dd"
+  },
+  {
+    "source": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_0993-21.jpg",
+    "source_sha256": "ac9902e4fb4cf1700dd6feca05955b8937b41e25fd19b8510abe9476100c8fdf",
+    "mask": "/Users/abhijitnambiar/Documents/Codex/2026-10-27/i/outputs/morph-reconstruction/person-building-masks/DSC_0993-21-mask.png",
+    "mask_sha256": "58506bc394a62a98b1270d7b746eab8a42fa9ddfb82421804f23e4f499ad7a8a"
+  },
+  {
+    "source": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_0995-22.jpg",
+    "source_sha256": "e31109eba49d00e8004198ed731fd28545b4b970518d9ad838ec39bf95de1169",
+    "mask": "/Users/abhijitnambiar/Documents/Codex/2026-10-27/i/outputs/morph-reconstruction/person-building-masks/DSC_0995-22-mask.png",
+    "mask_sha256": "12eee22bc5b7041021085e945fcd574da7443f97387f672170a6e56eca968262"
+  },
+  {
+    "source": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_0997-23.jpg",
+    "source_sha256": "9d82c1fd806d3e5644c416b61c712a9019af5f62c16940f8394b7f6a474fe366",
+    "mask": "/Users/abhijitnambiar/Documents/Codex/2026-10-27/i/outputs/morph-reconstruction/person-building-masks/DSC_0997-23-mask.png",
+    "mask_sha256": "0abf3ca37ac590245bbf9422c5977d11d921900e68562b22924850557c9617fd"
+  },
+  {
+    "source": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_0998-24.jpg",
+    "source_sha256": "b7498e847dace9e0d9040b5724e2a3bcd02a3b81c8df4372b019c06b78cb1008",
+    "mask": "/Users/abhijitnambiar/Documents/Codex/2026-10-27/i/outputs/morph-reconstruction/person-building-masks/DSC_0998-24-mask.png",
+    "mask_sha256": "97f5161ae9319fd37e5cf8a9861b91646e549fc40e25d00a4d9242049c5535e5"
+  },
+  {
+    "source": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1012-25.jpg",
+    "source_sha256": "8d0a7695c5ed786d1544f53613c00822155a80b2f6c7bb120fd0d8a58cefc245",
+    "mask": "/Users/abhijitnambiar/Documents/Codex/2026-10-27/i/outputs/morph-reconstruction/person-building-masks/DSC_1012-25-mask.png",
+    "mask_sha256": "39522323a0a547f4f7bbc4de1904e7ee30e29542af51efd4b1a620cd7c6ca277"
+  }
+]

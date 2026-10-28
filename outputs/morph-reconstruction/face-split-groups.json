@@ -1,0 +1,98 @@
+{
+  "groups": [
+    {
+      "id": "scene-01",
+      "representative": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_0906-4.jpg",
+      "photos": [
+        "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_0906-4.jpg",
+        "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_0904-2.jpg",
+        "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_0905-3.jpg",
+        "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_0914-5.jpg",
+        "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_0935-12.jpg"
+      ]
+    },
+    {
+      "id": "scene-02",
+      "representative": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_0958-15.jpg",
+      "photos": [
+        "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_0958-15.jpg",
+        "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_0987-19.jpg",
+        "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_0990-20.jpg"
+      ]
+    },
+    {
+      "id": "scene-03",
+      "representative": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1037-31.jpg",
+      "photos": [
+        "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1037-31.jpg",
+        "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1021-26.jpg",
+        "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1026-27.jpg",
+        "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1028-28.jpg",
+        "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1033-30.jpg",
+        "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1038-32.jpg"
+      ]
+    },
+    {
+      "id": "scene-05",
+      "representative": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1088-38.jpg",
+      "photos": [
+        "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1088-38.jpg",
+        "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1100-41.jpg",
+        "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1114-46.jpg",
+        "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1116-47.jpg"
+      ]
+    },
+    {
+      "id": "scene-06",
+      "representative": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1286-58.jpg",
+      "photos": [
+        "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1286-58.jpg",
+        "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1261-50.jpg",
+        "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1268-53.jpg",
+        "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1273-54.jpg",
+        "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1280-55.jpg",
+        "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1282-56.jpg",
+        "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1284-57.jpg",
+        "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1288-59.jpg",
+        "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1292-61.jpg",
+        "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1293-62.jpg",
+        "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1300-63.jpg",
+        "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1302-64.jpg",
+        "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1304-65.jpg"
+      ]
+    },
+    {
+      "id": "scene-07",
+      "representative": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1310-67.jpg",
+      "photos": [
+        "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1310-67.jpg",
+        "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1312-68.jpg",
+        "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1315-69.jpg",
+        "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1324-72.jpg"
+      ]
+    },
+    {
+      "id": "scene-08",
+      "representative": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1326-73.jpg",
+      "photos": [
+        "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1326-73.jpg",
+        "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1329-74.jpg",
+        "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1335-77.jpg",
+        "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1339-79.jpg",
+        "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1344-82.jpg"
+      ]
+    },
+    {
+      "id": "scene-09",
+      "representative": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1363-85.jpg",
+      "photos": [
+        "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1363-85.jpg",
+        "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1360-83.jpg",
+        "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1362-84.jpg",
+        "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1365-86.jpg",
+        "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1367-87.jpg",
+        "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1378-88.jpg"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,62 @@
+{
+  "method": "Regular spatial sampling before export encoding. High = any channel >= 254/255; low = all channels <= 1/255. Flag = either fraction increased more than 1 percentage point; heuristic, not a quality verdict.",
+  "note": "Preview checks cover only the selected samples, not the rest of the album.",
+  "photos": [
+    {
+      "scene": "scene-01",
+      "original": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_0906-4.jpg",
+      "export": "outputs/morph-reconstruction/gaussian-scene-preview/scene-01/samples/DSC_0906-4.jpg",
+      "clipping": {
+        "sampled_pixels": 201850,
+        "before": {
+          "high": 0.0030270002477086944,
+          "low": 0.0006093633886549418
+        },
+        "after": {
+          "high": 0.0007084468664850137,
+          "low": 0.0
+        },
+        "high_increase": -0.0023185533812236808,
+        "low_increase": -0.0006093633886549418,
+        "flag": false,
+        "grid_out_of_gamut_fraction": 0.00043596730245231606
+      },
+      "transfer": {
+        "role": "representative",
+        "status": "evaluated",
+        "source_to_target_rmse": 0.04017253592610359,
+        "output_to_target_rmse": 0.004271243357008501,
+        "worse_than_source": false,
+        "size": 320
+      }
+    },
+    {
+      "scene": "scene-01",
+      "original": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_0928-10.jpg",
+      "export": "outputs/morph-reconstruction/gaussian-scene-preview/scene-01/samples/DSC_0928-10.jpg",
+      "clipping": {
+        "sampled_pixels": 201850,
+        "before": {
+          "high": 0.0035868218974486003,
+          "low": 0.0020559821649739907
+        },
+        "after": {
+          "high": 0.0005400049541738916,
+          "low": 0.0
+        },
+        "high_increase": -0.0030468169432747087,
+        "low_increase": -0.0020559821649739907,
+        "flag": false,
+        "grid_out_of_gamut_fraction": 0.00044587565023532325
+      },
+      "transfer": {
+        "role": "other photo",
+        "status": "evaluated",
+        "source_to_target_rmse": 0.03685925155878067,
+        "output_to_target_rmse": 0.004867061679838086,
+        "worse_than_source": false,
+        "size": 320
+      }
+    }
+  ]
+}

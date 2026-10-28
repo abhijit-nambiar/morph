@@ -1,0 +1,525 @@
+{
+  "scope": "One album, preselected same-size pairs and proposed unverified scenes. Each held-out photo and its edit are excluded from all training mappings; other edited examples in that scene are required. We average coefficients fitted separately to other pairs, not jointly fitted parameters. Mean individual-representative error gives each held-out photo equal weight and is not an oracle or an estimate for a specific choice of representative. Equal size does not ensure alignment and human edits may differ intentionally. Reduced-resolution RGB RMSE is not visual quality.",
+  "size": 128,
+  "regularization": 0.001,
+  "summary": {
+    "scenes": 8,
+    "heldout_photos": 46,
+    "source_mean_rmse": 0.10074902852268322,
+    "single_representative_mean_rmse": 0.06718031967188916,
+    "mean_mapping_mean_rmse": 0.05954339045741169,
+    "median_mapping_mean_rmse": 0.06101795950446322,
+    "mean_mapping_lower_than_single_average": 46,
+    "median_mapping_lower_than_single_average": 32
+  },
+  "scenes": [
+    {
+      "scene": "scene-01",
+      "photos": 5,
+      "heldout": [
+        {
+          "photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_0906-4.jpg",
+          "training_pairs": 4,
+          "source_rmse": 0.12625227868556976,
+          "single_representative_mean_rmse": 0.07561278288666952,
+          "single_representative_min_rmse": 0.04273273377702545,
+          "single_representative_max_rmse": 0.09670527469383088,
+          "mean_mapping_rmse": 0.07391900115053893,
+          "median_mapping_rmse": 0.07507490236551179
+        },
+        {
+          "photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_0904-2.jpg",
+          "training_pairs": 4,
+          "source_rmse": 0.08772210776805878,
+          "single_representative_mean_rmse": 0.08988607292921331,
+          "single_representative_min_rmse": 0.07001841537579166,
+          "single_representative_max_rmse": 0.11602396894587842,
+          "mean_mapping_rmse": 0.08459119810965893,
+          "median_mapping_rmse": 0.08660187413244207
+        },
+        {
+          "photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_0905-3.jpg",
+          "training_pairs": 4,
+          "source_rmse": 0.09072311967611313,
+          "single_representative_mean_rmse": 0.08700299253587122,
+          "single_representative_min_rmse": 0.06508177989325326,
+          "single_representative_max_rmse": 0.11454925566272847,
+          "mean_mapping_rmse": 0.08068790479550556,
+          "median_mapping_rmse": 0.0843307851096463
+        },
+        {
+          "photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_0914-5.jpg",
+          "training_pairs": 4,
+          "source_rmse": 0.1312759816646576,
+          "single_representative_mean_rmse": 0.09506590968515576,
+          "single_representative_min_rmse": 0.08613190224826626,
+          "single_representative_max_rmse": 0.10394880943704332,
+          "mean_mapping_rmse": 0.08790156155964353,
+          "median_mapping_rmse": 0.08964476157743348
+        },
+        {
+          "photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_0935-12.jpg",
+          "training_pairs": 4,
+          "source_rmse": 0.08870372921228409,
+          "single_representative_mean_rmse": 0.061175673614981614,
+          "single_representative_min_rmse": 0.05524536691520218,
+          "single_representative_max_rmse": 0.0753694504480199,
+          "mean_mapping_rmse": 0.0473625806170856,
+          "median_mapping_rmse": 0.04722341890014751
+        }
+      ]
+    },
+    {
+      "scene": "scene-02",
+      "photos": 3,
+      "heldout": [
+        {
+          "photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_0958-15.jpg",
+          "training_pairs": 2,
+          "source_rmse": 0.06686754524707794,
+          "single_representative_mean_rmse": 0.06164871161902897,
+          "single_representative_min_rmse": 0.04127484403368682,
+          "single_representative_max_rmse": 0.08202257920437112,
+          "mean_mapping_rmse": 0.05908790712345794,
+          "median_mapping_rmse": 0.05908790712345794
+        },
+        {
+          "photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_0987-19.jpg",
+          "training_pairs": 2,
+          "source_rmse": 0.08200439065694809,
+          "single_representative_mean_rmse": 0.04998655675162625,
+          "single_representative_min_rmse": 0.045224017122643345,
+          "single_representative_max_rmse": 0.054749096380609145,
+          "mean_mapping_rmse": 0.04070200813536096,
+          "median_mapping_rmse": 0.04070200813536096
+        },
+        {
+          "photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_0990-20.jpg",
+          "training_pairs": 2,
+          "source_rmse": 0.06934071332216263,
+          "single_representative_mean_rmse": 0.08450787119106784,
+          "single_representative_min_rmse": 0.07745924893770018,
+          "single_representative_max_rmse": 0.09155649344443552,
+          "mean_mapping_rmse": 0.08339801301214449,
+          "median_mapping_rmse": 0.08339801301214449
+        }
+      ]
+    },
+    {
+      "scene": "scene-03",
+      "photos": 6,
+      "heldout": [
+        {
+          "photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1037-31.jpg",
+          "training_pairs": 5,
+          "source_rmse": 0.06753385066986084,
+          "single_representative_mean_rmse": 0.08059767617963792,
+          "single_representative_min_rmse": 0.03152923946841269,
+          "single_representative_max_rmse": 0.1545205098503255,
+          "mean_mapping_rmse": 0.06940937563206577,
+          "median_mapping_rmse": 0.0367847713842705
+        },
+        {
+          "photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1021-26.jpg",
+          "training_pairs": 5,
+          "source_rmse": 0.08540438860654831,
+          "single_representative_mean_rmse": 0.08090447509619739,
+          "single_representative_min_rmse": 0.04425542179267996,
+          "single_representative_max_rmse": 0.13789328325303105,
+          "mean_mapping_rmse": 0.05039269782381189,
+          "median_mapping_rmse": 0.043483738980389826
+        },
+        {
+          "photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1026-27.jpg",
+          "training_pairs": 5,
+          "source_rmse": 0.20990650355815887,
+          "single_representative_mean_rmse": 0.13126003410919512,
+          "single_representative_min_rmse": 0.0446089072324558,
+          "single_representative_max_rmse": 0.16292335359007945,
+          "mean_mapping_rmse": 0.12772969992023908,
+          "median_mapping_rmse": 0.14783758075925826
+        },
+        {
+          "photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1028-28.jpg",
+          "training_pairs": 5,
+          "source_rmse": 0.228854700922966,
+          "single_representative_mean_rmse": 0.13538073021885116,
+          "single_representative_min_rmse": 0.03797904447883871,
+          "single_representative_max_rmse": 0.17000436512533693,
+          "mean_mapping_rmse": 0.12815722899701967,
+          "median_mapping_rmse": 0.15312419881697062
+        },
+        {
+          "photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1033-30.jpg",
+          "training_pairs": 5,
+          "source_rmse": 0.07642548531293869,
+          "single_representative_mean_rmse": 0.08782593504823483,
+          "single_representative_min_rmse": 0.03025737000625887,
+          "single_representative_max_rmse": 0.16741483688938785,
+          "mean_mapping_rmse": 0.07826043077172862,
+          "median_mapping_rmse": 0.03666355004749665
+        },
+        {
+          "photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1038-32.jpg",
+          "training_pairs": 5,
+          "source_rmse": 0.07738352566957474,
+          "single_representative_mean_rmse": 0.08380192082739435,
+          "single_representative_min_rmse": 0.028593666635384818,
+          "single_representative_max_rmse": 0.163974701225304,
+          "mean_mapping_rmse": 0.0723579122204591,
+          "median_mapping_rmse": 0.030330550130825605
+        }
+      ]
+    },
+    {
+      "scene": "scene-05",
+      "photos": 4,
+      "heldout": [
+        {
+          "photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1088-38.jpg",
+          "training_pairs": 3,
+          "source_rmse": 0.09742803126573563,
+          "single_representative_mean_rmse": 0.03957471189862249,
+          "single_representative_min_rmse": 0.02250375582311017,
+          "single_representative_max_rmse": 0.07292670390892884,
+          "mean_mapping_rmse": 0.0325007565288938,
+          "median_mapping_rmse": 0.024655951259397117
+        },
+        {
+          "photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1100-41.jpg",
+          "training_pairs": 3,
+          "source_rmse": 0.05537031963467598,
+          "single_representative_mean_rmse": 0.0371513661247042,
+          "single_representative_min_rmse": 0.035953329326747004,
+          "single_representative_max_rmse": 0.03894369922446876,
+          "mean_mapping_rmse": 0.036887353131485744,
+          "median_mapping_rmse": 0.0364159966175755
+        },
+        {
+          "photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1114-46.jpg",
+          "training_pairs": 3,
+          "source_rmse": 0.10104221105575562,
+          "single_representative_mean_rmse": 0.04882742406163112,
+          "single_representative_min_rmse": 0.03009877026467556,
+          "single_representative_max_rmse": 0.0850455115809551,
+          "mean_mapping_rmse": 0.04180558113881244,
+          "median_mapping_rmse": 0.03621281906408239
+        },
+        {
+          "photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1116-47.jpg",
+          "training_pairs": 3,
+          "source_rmse": 0.09740859270095825,
+          "single_representative_mean_rmse": 0.04438136440834903,
+          "single_representative_min_rmse": 0.02658215026902234,
+          "single_representative_max_rmse": 0.07951684765104121,
+          "mean_mapping_rmse": 0.035974488365153094,
+          "median_mapping_rmse": 0.030689515859130063
+        }
+      ]
+    },
+    {
+      "scene": "scene-06",
+      "photos": 13,
+      "heldout": [
+        {
+          "photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1286-58.jpg",
+          "training_pairs": 12,
+          "source_rmse": 0.12341409921646118,
+          "single_representative_mean_rmse": 0.05581778382711064,
+          "single_representative_min_rmse": 0.03749062166211633,
+          "single_representative_max_rmse": 0.10723479499496393,
+          "mean_mapping_rmse": 0.04953236318848408,
+          "median_mapping_rmse": 0.0411746453708393
+        },
+        {
+          "photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1261-50.jpg",
+          "training_pairs": 12,
+          "source_rmse": 0.05787213519215584,
+          "single_representative_mean_rmse": 0.0881521905998552,
+          "single_representative_min_rmse": 0.04988382912898273,
+          "single_representative_max_rmse": 0.12680179356972035,
+          "mean_mapping_rmse": 0.08725949290321966,
+          "median_mapping_rmse": 0.10037301922350816
+        },
+        {
+          "photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1268-53.jpg",
+          "training_pairs": 12,
+          "source_rmse": 0.07348276674747467,
+          "single_representative_mean_rmse": 0.059279703416759734,
+          "single_representative_min_rmse": 0.04452525691973274,
+          "single_representative_max_rmse": 0.07920445475381815,
+          "mean_mapping_rmse": 0.04769948494448478,
+          "median_mapping_rmse": 0.06625823267400914
+        },
+        {
+          "photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1273-54.jpg",
+          "training_pairs": 12,
+          "source_rmse": 0.16371844708919525,
+          "single_representative_mean_rmse": 0.09767998263716653,
+          "single_representative_min_rmse": 0.0759123279613632,
+          "single_representative_max_rmse": 0.15654501545396873,
+          "mean_mapping_rmse": 0.09520015935746134,
+          "median_mapping_rmse": 0.08590629804603381
+        },
+        {
+          "photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1280-55.jpg",
+          "training_pairs": 12,
+          "source_rmse": 0.10500648617744446,
+          "single_representative_mean_rmse": 0.049313532725627336,
+          "single_representative_min_rmse": 0.03753145125585958,
+          "single_representative_max_rmse": 0.0851600257195825,
+          "mean_mapping_rmse": 0.03990199428932845,
+          "median_mapping_rmse": 0.04779679903291699
+        },
+        {
+          "photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1282-56.jpg",
+          "training_pairs": 12,
+          "source_rmse": 0.1220906600356102,
+          "single_representative_mean_rmse": 0.053614661671118315,
+          "single_representative_min_rmse": 0.03752306704487891,
+          "single_representative_max_rmse": 0.10208057252417632,
+          "mean_mapping_rmse": 0.046429740112618946,
+          "median_mapping_rmse": 0.04446600933431693
+        },
+        {
+          "photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1284-57.jpg",
+          "training_pairs": 12,
+          "source_rmse": 0.12073574215173721,
+          "single_representative_mean_rmse": 0.05419227666372492,
+          "single_representative_min_rmse": 0.0377164230134384,
+          "single_representative_max_rmse": 0.1025461985142564,
+          "mean_mapping_rmse": 0.047384306019193904,
+          "median_mapping_rmse": 0.04212514509116887
+        },
+        {
+          "photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1288-59.jpg",
+          "training_pairs": 12,
+          "source_rmse": 0.09964609146118164,
+          "single_representative_mean_rmse": 0.05064090538921773,
+          "single_representative_min_rmse": 0.038657805508361384,
+          "single_representative_max_rmse": 0.08018958496924838,
+          "mean_mapping_rmse": 0.04154835460787167,
+          "median_mapping_rmse": 0.05544209870775052
+        },
+        {
+          "photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1292-61.jpg",
+          "training_pairs": 12,
+          "source_rmse": 0.09848649799823761,
+          "single_representative_mean_rmse": 0.05148297797558842,
+          "single_representative_min_rmse": 0.03896823565023283,
+          "single_representative_max_rmse": 0.08133007541231473,
+          "mean_mapping_rmse": 0.04250136203636003,
+          "median_mapping_rmse": 0.05517885574717541
+        },
+        {
+          "photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1293-62.jpg",
+          "training_pairs": 12,
+          "source_rmse": 0.09809055924415588,
+          "single_representative_mean_rmse": 0.051575589862073806,
+          "single_representative_min_rmse": 0.0361761137566243,
+          "single_representative_max_rmse": 0.08377259066053734,
+          "mean_mapping_rmse": 0.043582817779513804,
+          "median_mapping_rmse": 0.05816626584487847
+        },
+        {
+          "photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1300-63.jpg",
+          "training_pairs": 12,
+          "source_rmse": 0.0980125367641449,
+          "single_representative_mean_rmse": 0.04922967337069342,
+          "single_representative_min_rmse": 0.03731525571830627,
+          "single_representative_max_rmse": 0.07863944647848185,
+          "mean_mapping_rmse": 0.04014533607443341,
+          "median_mapping_rmse": 0.054169366568010156
+        },
+        {
+          "photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1302-64.jpg",
+          "training_pairs": 12,
+          "source_rmse": 0.09841067343950272,
+          "single_representative_mean_rmse": 0.04989958489863696,
+          "single_representative_min_rmse": 0.037967795235170444,
+          "single_representative_max_rmse": 0.07823835387817017,
+          "mean_mapping_rmse": 0.04083580088594256,
+          "median_mapping_rmse": 0.05648280575541725
+        },
+        {
+          "photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1304-65.jpg",
+          "training_pairs": 12,
+          "source_rmse": 0.10636080801486969,
+          "single_representative_mean_rmse": 0.05238086410947368,
+          "single_representative_min_rmse": 0.03944055855822059,
+          "single_representative_max_rmse": 0.08823179625284801,
+          "mean_mapping_rmse": 0.04255273005342778,
+          "median_mapping_rmse": 0.05043865156891179
+        }
+      ]
+    },
+    {
+      "scene": "scene-07",
+      "photos": 4,
+      "heldout": [
+        {
+          "photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1310-67.jpg",
+          "training_pairs": 3,
+          "source_rmse": 0.10251698642969131,
+          "single_representative_mean_rmse": 0.04828291421864043,
+          "single_representative_min_rmse": 0.033488303878058207,
+          "single_representative_max_rmse": 0.07517471411699583,
+          "mean_mapping_rmse": 0.04181625943547479,
+          "median_mapping_rmse": 0.03853293749268795
+        },
+        {
+          "photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1312-68.jpg",
+          "training_pairs": 3,
+          "source_rmse": 0.1051880344748497,
+          "single_representative_mean_rmse": 0.049589687015598606,
+          "single_representative_min_rmse": 0.0344541041471554,
+          "single_representative_max_rmse": 0.07726148293862864,
+          "mean_mapping_rmse": 0.04395925647685103,
+          "median_mapping_rmse": 0.041447282972819806
+        },
+        {
+          "photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1315-69.jpg",
+          "training_pairs": 3,
+          "source_rmse": 0.061248283833265305,
+          "single_representative_mean_rmse": 0.06536163466594479,
+          "single_representative_min_rmse": 0.06337796295209568,
+          "single_representative_max_rmse": 0.06718400726682044,
+          "mean_mapping_rmse": 0.06516269716640784,
+          "median_mapping_rmse": 0.06623927453179683
+        },
+        {
+          "photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1324-72.jpg",
+          "training_pairs": 3,
+          "source_rmse": 0.10477472096681595,
+          "single_representative_mean_rmse": 0.04686691464283315,
+          "single_representative_min_rmse": 0.03562736750875799,
+          "single_representative_max_rmse": 0.06900768502498342,
+          "mean_mapping_rmse": 0.0404824227523676,
+          "median_mapping_rmse": 0.03585232768625447
+        }
+      ]
+    },
+    {
+      "scene": "scene-08",
+      "photos": 5,
+      "heldout": [
+        {
+          "photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1326-73.jpg",
+          "training_pairs": 4,
+          "source_rmse": 0.051110778003931046,
+          "single_representative_mean_rmse": 0.08330559475928173,
+          "single_representative_min_rmse": 0.02086054040837877,
+          "single_representative_max_rmse": 0.13865198964020892,
+          "mean_mapping_rmse": 0.07777056189878273,
+          "median_mapping_rmse": 0.09498003851916888
+        },
+        {
+          "photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1329-74.jpg",
+          "training_pairs": 4,
+          "source_rmse": 0.049548182636499405,
+          "single_representative_mean_rmse": 0.08656566337690758,
+          "single_representative_min_rmse": 0.02229620781778139,
+          "single_representative_max_rmse": 0.1428158750404285,
+          "mean_mapping_rmse": 0.08255242524557437,
+          "median_mapping_rmse": 0.09356960821280438
+        },
+        {
+          "photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1335-77.jpg",
+          "training_pairs": 4,
+          "source_rmse": 0.09612924605607986,
+          "single_representative_mean_rmse": 0.06355561228684417,
+          "single_representative_min_rmse": 0.0383636068833316,
+          "single_representative_max_rmse": 0.07338121449782203,
+          "mean_mapping_rmse": 0.023610655184646258,
+          "median_mapping_rmse": 0.02577876617994024
+        },
+        {
+          "photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1339-79.jpg",
+          "training_pairs": 4,
+          "source_rmse": 0.18082724511623383,
+          "single_representative_mean_rmse": 0.1218560255803657,
+          "single_representative_min_rmse": 0.05921319188995612,
+          "single_representative_max_rmse": 0.17182550391046805,
+          "mean_mapping_rmse": 0.09910056495756725,
+          "median_mapping_rmse": 0.12471612497398167
+        },
+        {
+          "photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1344-82.jpg",
+          "training_pairs": 4,
+          "source_rmse": 0.20797111093997955,
+          "single_representative_mean_rmse": 0.14034650771927687,
+          "single_representative_min_rmse": 0.06786465296783352,
+          "single_representative_max_rmse": 0.19072722402745643,
+          "mean_mapping_rmse": 0.13770559782722352,
+          "median_mapping_rmse": 0.15593818848369378
+        }
+      ]
+    },
+    {
+      "scene": "scene-09",
+      "photos": 6,
+      "heldout": [
+        {
+          "photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1363-85.jpg",
+          "training_pairs": 5,
+          "source_rmse": 0.07565455883741379,
+          "single_representative_mean_rmse": 0.037403944978439865,
+          "single_representative_min_rmse": 0.03308295096787609,
+          "single_representative_max_rmse": 0.04155945691159808,
+          "mean_mapping_rmse": 0.03357073946374298,
+          "median_mapping_rmse": 0.033899625017112626
+        },
+        {
+          "photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1360-83.jpg",
+          "training_pairs": 5,
+          "source_rmse": 0.07486630976200104,
+          "single_representative_mean_rmse": 0.037409764951159975,
+          "single_representative_min_rmse": 0.03313313156187164,
+          "single_representative_max_rmse": 0.04147731880266682,
+          "mean_mapping_rmse": 0.0335166525380514,
+          "median_mapping_rmse": 0.033595423833131924
+        },
+        {
+          "photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1362-84.jpg",
+          "training_pairs": 5,
+          "source_rmse": 0.07609958201646805,
+          "single_representative_mean_rmse": 0.03751523110895565,
+          "single_representative_min_rmse": 0.033369970485012744,
+          "single_representative_max_rmse": 0.0421584727718243,
+          "mean_mapping_rmse": 0.03366713604975195,
+          "median_mapping_rmse": 0.03366668714537653
+        },
+        {
+          "photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1365-86.jpg",
+          "training_pairs": 5,
+          "source_rmse": 0.08200586587190628,
+          "single_representative_mean_rmse": 0.04088202437089794,
+          "single_representative_min_rmse": 0.03432318321012617,
+          "single_representative_max_rmse": 0.05357109723713429,
+          "mean_mapping_rmse": 0.038845264172102434,
+          "median_mapping_rmse": 0.03906630321462071
+        },
+        {
+          "photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1367-87.jpg",
+          "training_pairs": 5,
+          "source_rmse": 0.08326385170221329,
+          "single_representative_mean_rmse": 0.04241232995972699,
+          "single_representative_min_rmse": 0.034255417822269936,
+          "single_representative_max_rmse": 0.056062125471607036,
+          "mean_mapping_rmse": 0.04094108658664185,
+          "median_mapping_rmse": 0.04067499680203824
+        },
+        {
+          "photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1378-88.jpg",
+          "training_pairs": 5,
+          "source_rmse": 0.07827557623386383,
+          "single_representative_mean_rmse": 0.051088918938548736,
+          "single_representative_min_rmse": 0.04502239253881073,
+          "single_representative_max_rmse": 0.06127455118976466,
+          "mean_mapping_rmse": 0.050595000000346155,
+          "median_mapping_rmse": 0.04862801589940248
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,127 @@
+{
+  "target_engine": "pillow-soft",
+  "renderer": "gamut",
+  "regularization": 0,
+  "strength": 1.0,
+  "scenes": [
+    {
+      "scene": "scene-01",
+      "representative": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_0906-4.jpg",
+      "photos": 12,
+      "metrics": {
+        "initial_mse": 0.0011768371964480562,
+        "fit_mse": 1.8725747385088792e-05,
+        "rmse": 0.004327325662009828,
+        "objective": 1.8725747385088792e-05,
+        "evaluations": 111,
+        "solver": "damped_gauss_newton"
+      }
+    },
+    {
+      "scene": "scene-02",
+      "representative": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_0995-22.jpg",
+      "photos": 13,
+      "metrics": {
+        "initial_mse": 0.0011921534572718003,
+        "fit_mse": 5.278886802041177e-05,
+        "rmse": 0.007265594815320475,
+        "objective": 5.278886802041177e-05,
+        "evaluations": 91,
+        "solver": "damped_gauss_newton"
+      }
+    },
+    {
+      "scene": "scene-03",
+      "representative": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1037-31.jpg",
+      "photos": 7,
+      "metrics": {
+        "initial_mse": 0.0015793404399535404,
+        "fit_mse": 8.21013777644885e-05,
+        "rmse": 0.009060981059713594,
+        "objective": 8.21013777644885e-05,
+        "evaluations": 91,
+        "solver": "damped_gauss_newton"
+      }
+    },
+    {
+      "scene": "scene-04",
+      "representative": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1054-33.jpg",
+      "photos": 2,
+      "metrics": {
+        "initial_mse": 0.0016085993831306865,
+        "fit_mse": 3.357614239081258e-05,
+        "rmse": 0.0057944924187380365,
+        "objective": 3.357614239081258e-05,
+        "evaluations": 91,
+        "solver": "damped_gauss_newton"
+      }
+    },
+    {
+      "scene": "scene-05",
+      "representative": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1111-45.jpg",
+      "photos": 14,
+      "metrics": {
+        "initial_mse": 0.0014182315049394855,
+        "fit_mse": 3.7016504945919576e-05,
+        "rmse": 0.006084119077230456,
+        "objective": 3.7016504945919576e-05,
+        "evaluations": 91,
+        "solver": "damped_gauss_newton"
+      }
+    },
+    {
+      "scene": "scene-06",
+      "representative": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1286-58.jpg",
+      "photos": 17,
+      "metrics": {
+        "initial_mse": 0.0006881003218682864,
+        "fit_mse": 5.405843987632275e-05,
+        "rmse": 0.007352444483049345,
+        "objective": 5.405843987632275e-05,
+        "evaluations": 106,
+        "solver": "damped_gauss_newton"
+      }
+    },
+    {
+      "scene": "scene-07",
+      "representative": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1320-70.jpg",
+      "photos": 7,
+      "metrics": {
+        "initial_mse": 0.0010241625687634356,
+        "fit_mse": 4.7038119800805634e-05,
+        "rmse": 0.0068584342091184075,
+        "objective": 4.7038119800805634e-05,
+        "evaluations": 81,
+        "solver": "damped_gauss_newton"
+      }
+    },
+    {
+      "scene": "scene-08",
+      "representative": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1334-76.jpg",
+      "photos": 10,
+      "metrics": {
+        "initial_mse": 0.0014834440102729357,
+        "fit_mse": 2.7187419514574262e-05,
+        "rmse": 0.0052141556856862515,
+        "objective": 2.7187419514574262e-05,
+        "evaluations": 101,
+        "solver": "damped_gauss_newton"
+      }
+    },
+    {
+      "scene": "scene-09",
+      "representative": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1363-85.jpg",
+      "photos": 6,
+      "metrics": {
+        "initial_mse": 0.0010064026498483225,
+        "fit_mse": 3.851068764923431e-05,
+        "rmse": 0.0062056979985521624,
+        "objective": 3.851068764923431e-05,
+        "evaluations": 91,
+        "solver": "damped_gauss_newton"
+      }
+    }
+  ],
+  "export_count": 88,
+  "clipping_flags": 0
+}

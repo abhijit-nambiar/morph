@@ -1,0 +1,51 @@
+{
+  "target_engine": "morph",
+  "preset": null,
+  "known_recipe": {
+    "exposure": 0.08,
+    "temperature": 0.04,
+    "tint": 0.0,
+    "contrast": 0.08,
+    "shadows": 0.1,
+    "highlights": -0.1,
+    "saturation": 0.03,
+    "cool_saturation": -0.15,
+    "warm_saturation": 0.12
+  },
+  "fitted_recipe": {
+    "exposure": 0.08,
+    "temperature": 0.04,
+    "tint": 0.0,
+    "contrast": 0.08,
+    "shadows": 0.099999,
+    "highlights": -0.099999,
+    "saturation": 0.029985,
+    "cool_saturation": -0.149973,
+    "warm_saturation": 0.12002
+  },
+  "applied_recipe": {
+    "exposure": 0.08,
+    "temperature": 0.04,
+    "tint": 0.0,
+    "contrast": 0.08,
+    "shadows": 0.099999,
+    "highlights": -0.099999,
+    "saturation": 0.029985,
+    "cool_saturation": -0.149973,
+    "warm_saturation": 0.12002
+  },
+  "renderer": "selective",
+  "regularization": 0,
+  "solver": "gauss-newton",
+  "strength": 1.0,
+  "iterations": 45,
+  "metrics": {
+    "initial_mse": 0.001223675158897412,
+    "fit_mse": 1.388125581582807e-13,
+    "rmse": 3.725755737542126e-07,
+    "objective": 1.388125581582807e-13,
+    "evaluations": 81,
+    "solver": "damped_gauss_newton"
+  },
+  "representative": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1320-70.jpg"
+}

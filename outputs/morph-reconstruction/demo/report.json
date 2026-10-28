@@ -1,0 +1,26 @@
+{
+  "scenes": [
+    {
+      "scene": "scene-01",
+      "representative": "/Users/abhijitnambiar/Documents/Codex/2026-10-27/i/work/morph-demo/DSC_0906-4.jpg",
+      "photos": 4,
+      "metrics": {
+        "initial_mse": 0.003839719246852388,
+        "fit_mse": 1.0724612418649009e-07,
+        "rmse": 0.00032748454037784757,
+        "evaluations": 603
+      }
+    },
+    {
+      "scene": "scene-02",
+      "representative": "/Users/abhijitnambiar/Documents/Codex/2026-10-27/i/work/morph-demo/DSC_0904-2.jpg",
+      "photos": 2,
+      "metrics": {
+        "initial_mse": 0.005608765242034064,
+        "fit_mse": 6.984800837187473e-07,
+        "rmse": 0.0008357512092236225,
+        "evaluations": 631
+      }
+    }
+  ]
+}

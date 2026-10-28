@@ -1,0 +1,157 @@
+{
+  "scope": "Exploratory same-album, reduced-resolution pre-JPEG brightness proxy using the same detections for both fits. Group boundaries, representatives and mapping change together. Face boxes include surrounding pixels and can miss people; brightness varies with identity, pose, background and artistic intent. Flags do not establish quality or a need for correction.",
+  "threshold_log2_luminance_ratio": 0.5,
+  "size": 320,
+  "old_scene_median": 0.3920523945509613,
+  "split_scene_medians": {
+    "scene-02": 0.3920523945509613,
+    "scene-02-lawn": 0.3778540773811252
+  },
+  "old_flags": 1,
+  "new_flags": 1,
+  "photos": [
+    {
+      "photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_0965-16.jpg",
+      "split_scene": "scene-02",
+      "measured_faces": 3,
+      "old_luminance": 0.4424157566935642,
+      "new_luminance": 0.4424157566935642,
+      "old_log2_luminance_ratio": 0.17435629680350143,
+      "old_review_flag": false,
+      "new_log2_luminance_ratio": 0.17435629680350143,
+      "new_review_flag": false
+    },
+    {
+      "photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_0990-20.jpg",
+      "split_scene": "scene-02",
+      "measured_faces": 2,
+      "old_luminance": 0.36397332575293906,
+      "new_luminance": 0.36397332575293906,
+      "old_log2_luminance_ratio": -0.1072137468906934,
+      "old_review_flag": false,
+      "new_log2_luminance_ratio": -0.1072137468906934,
+      "new_review_flag": false
+    },
+    {
+      "photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_0993-21.jpg",
+      "split_scene": "scene-02",
+      "measured_faces": 4,
+      "old_luminance": 0.41974054021088614,
+      "new_luminance": 0.41974054021088614,
+      "old_log2_luminance_ratio": 0.09845133972678156,
+      "old_review_flag": false,
+      "new_log2_luminance_ratio": 0.09845133972678156,
+      "new_review_flag": false
+    },
+    {
+      "photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_0995-22.jpg",
+      "split_scene": "scene-02",
+      "measured_faces": 4,
+      "old_luminance": 0.3321306776352817,
+      "new_luminance": 0.3321306776352817,
+      "old_log2_luminance_ratio": -0.23929548625585798,
+      "old_review_flag": false,
+      "new_log2_luminance_ratio": -0.23929548625585798,
+      "new_review_flag": false
+    },
+    {
+      "photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_0997-23.jpg",
+      "split_scene": "scene-02",
+      "measured_faces": 4,
+      "old_luminance": 0.40266144772318324,
+      "new_luminance": 0.40266144772318324,
+      "old_log2_luminance_ratio": 0.03852087855443706,
+      "old_review_flag": false,
+      "new_log2_luminance_ratio": 0.03852087855443706,
+      "new_review_flag": false
+    },
+    {
+      "photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_0998-24.jpg",
+      "split_scene": "scene-02",
+      "measured_faces": 6,
+      "old_luminance": 0.3305983128908529,
+      "new_luminance": 0.3305983128908529,
+      "old_log2_luminance_ratio": -0.24596710916349693,
+      "old_review_flag": false,
+      "new_log2_luminance_ratio": -0.24596710916349693,
+      "new_review_flag": false
+    },
+    {
+      "photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1012-25.jpg",
+      "split_scene": "scene-02",
+      "measured_faces": 7,
+      "old_luminance": 0.3920523945509613,
+      "new_luminance": 0.3920523945509613,
+      "old_log2_luminance_ratio": 0.0,
+      "old_review_flag": false,
+      "new_log2_luminance_ratio": 0.0,
+      "new_review_flag": false
+    },
+    {
+      "photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_0947-13.jpg",
+      "split_scene": "scene-02-lawn",
+      "measured_faces": 6,
+      "old_luminance": 0.3349220733482437,
+      "new_luminance": 0.33561215567275915,
+      "old_log2_luminance_ratio": -0.22722101012618176,
+      "old_review_flag": false,
+      "new_log2_luminance_ratio": -0.17103422055751397,
+      "new_review_flag": false
+    },
+    {
+      "photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_0948-14.jpg",
+      "split_scene": "scene-02-lawn",
+      "measured_faces": 6,
+      "old_luminance": 0.35383387070126215,
+      "new_luminance": 0.35439574741282764,
+      "old_log2_luminance_ratio": -0.14797431501801922,
+      "old_review_flag": false,
+      "new_log2_luminance_ratio": -0.09246789852332028,
+      "new_review_flag": false
+    },
+    {
+      "photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_0958-15.jpg",
+      "split_scene": "scene-02-lawn",
+      "measured_faces": 5,
+      "old_luminance": 0.4019910294445655,
+      "new_luminance": 0.4035174601945269,
+      "old_log2_luminance_ratio": 0.0361168361208764,
+      "old_review_flag": false,
+      "new_log2_luminance_ratio": 0.0948019094084446,
+      "new_review_flag": false
+    },
+    {
+      "photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_0970-17.jpg",
+      "split_scene": "scene-02-lawn",
+      "measured_faces": 3,
+      "old_luminance": 0.40677005332211175,
+      "new_luminance": 0.4078530977926172,
+      "old_log2_luminance_ratio": 0.05316699949870561,
+      "old_review_flag": false,
+      "new_log2_luminance_ratio": 0.11022041908072165,
+      "new_review_flag": false
+    },
+    {
+      "photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_0974-18.jpg",
+      "split_scene": "scene-02-lawn",
+      "measured_faces": 4,
+      "old_luminance": 0.25012132319806435,
+      "new_luminance": 0.24881919378806133,
+      "old_log2_luminance_ratio": -0.6484184168887167,
+      "old_review_flag": true,
+      "new_log2_luminance_ratio": -0.6027314123038537,
+      "new_review_flag": true
+    },
+    {
+      "photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_0987-19.jpg",
+      "split_scene": "scene-02-lawn",
+      "measured_faces": 1,
+      "old_luminance": 0.40038390950707414,
+      "new_luminance": 0.4013124073494227,
+      "old_log2_luminance_ratio": 0.030337525347404536,
+      "old_review_flag": false,
+      "new_log2_luminance_ratio": 0.08689656967727107,
+      "new_review_flag": false
+    }
+  ]
+}

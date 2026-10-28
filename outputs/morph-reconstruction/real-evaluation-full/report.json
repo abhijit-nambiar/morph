@@ -1,0 +1,1067 @@
+{
+  "results": [
+    {
+      "file": "DSC_0901-1.jpg",
+      "status": "skipped: dimensions differ; alignment required"
+    },
+    {
+      "file": "DSC_0904-2.jpg",
+      "status": "fit; equal dimensions do not guarantee registration",
+      "recipe": {
+        "exposure": 0.0,
+        "temperature": 0.057969,
+        "tint": -0.000937,
+        "contrast": -0.190234,
+        "shadows": -0.01582,
+        "highlights": 0.016523,
+        "saturation": -0.231094
+      },
+      "metrics": {
+        "initial_mse": 0.011265658200210617,
+        "fit_mse": 0.007681152930125702,
+        "rmse": 0.08764218693144131,
+        "evaluations": 575
+      }
+    },
+    {
+      "file": "DSC_0905-3.jpg",
+      "status": "fit; equal dimensions do not guarantee registration",
+      "recipe": {
+        "exposure": 0.004922,
+        "temperature": 0.100898,
+        "tint": -0.001172,
+        "contrast": -0.182813,
+        "shadows": 0.031289,
+        "highlights": -0.002109,
+        "saturation": -0.435469
+      },
+      "metrics": {
+        "initial_mse": 0.01185362958982398,
+        "fit_mse": 0.007208274750110135,
+        "rmse": 0.0849015591736108,
+        "evaluations": 561
+      }
+    },
+    {
+      "file": "DSC_0906-4.jpg",
+      "status": "fit; equal dimensions do not guarantee registration",
+      "recipe": {
+        "exposure": 0.047813,
+        "temperature": 0.080937,
+        "tint": 0.006562,
+        "contrast": -0.173438,
+        "shadows": 0.345937,
+        "highlights": 0.198281,
+        "saturation": -0.1875
+      },
+      "metrics": {
+        "initial_mse": 0.016488390211087892,
+        "fit_mse": 0.0015076403888961674,
+        "rmse": 0.03882834517329019,
+        "evaluations": 631
+      }
+    },
+    {
+      "file": "DSC_0914-5.jpg",
+      "status": "fit; equal dimensions do not guarantee registration",
+      "recipe": {
+        "exposure": -0.023203,
+        "temperature": 0.113203,
+        "tint": -0.006328,
+        "contrast": -0.155859,
+        "shadows": 0.371953,
+        "highlights": 0.080156,
+        "saturation": -0.354844
+      },
+      "metrics": {
+        "initial_mse": 0.02180374280566444,
+        "fit_mse": 0.010824080523303406,
+        "rmse": 0.1040388414165758,
+        "evaluations": 547
+      }
+    },
+    {
+      "file": "DSC_0916-6.jpg",
+      "status": "skipped: dimensions differ; alignment required"
+    },
+    {
+      "file": "DSC_0919-7.jpg",
+      "status": "skipped: dimensions differ; alignment required"
+    },
+    {
+      "file": "DSC_0921-8.jpg",
+      "status": "skipped: dimensions differ; alignment required"
+    },
+    {
+      "file": "DSC_0925-9.jpg",
+      "status": "skipped: dimensions differ; alignment required"
+    },
+    {
+      "file": "DSC_0928-10.jpg",
+      "status": "skipped: dimensions differ; alignment required"
+    },
+    {
+      "file": "DSC_0930-11.jpg",
+      "status": "skipped: dimensions differ; alignment required"
+    },
+    {
+      "file": "DSC_0935-12.jpg",
+      "status": "fit; equal dimensions do not guarantee registration",
+      "recipe": {
+        "exposure": -0.041484,
+        "temperature": 0.0875,
+        "tint": -0.022266,
+        "contrast": -0.091797,
+        "shadows": 0.347695,
+        "highlights": -0.121289,
+        "saturation": -0.185156
+      },
+      "metrics": {
+        "initial_mse": 0.009324118552779242,
+        "fit_mse": 0.003200653449154866,
+        "rmse": 0.05657431792920588,
+        "evaluations": 631
+      }
+    },
+    {
+      "file": "DSC_0947-13.jpg",
+      "status": "skipped: dimensions differ; alignment required"
+    },
+    {
+      "file": "DSC_0948-14.jpg",
+      "status": "skipped: dimensions differ; alignment required"
+    },
+    {
+      "file": "DSC_0958-15.jpg",
+      "status": "fit; equal dimensions do not guarantee registration",
+      "recipe": {
+        "exposure": -0.045,
+        "temperature": 0.06125,
+        "tint": 0.01875,
+        "contrast": -0.11875,
+        "shadows": -0.028125,
+        "highlights": -0.061875,
+        "saturation": 0.3525
+      },
+      "metrics": {
+        "initial_mse": 0.004688116575539461,
+        "fit_mse": 0.0018763859525606538,
+        "rmse": 0.04331727083462962,
+        "evaluations": 631
+      }
+    },
+    {
+      "file": "DSC_0965-16.jpg",
+      "status": "skipped: dimensions differ; alignment required"
+    },
+    {
+      "file": "DSC_0970-17.jpg",
+      "status": "skipped: dimensions differ; alignment required"
+    },
+    {
+      "file": "DSC_0974-18.jpg",
+      "status": "skipped: dimensions differ; alignment required"
+    },
+    {
+      "file": "DSC_0987-19.jpg",
+      "status": "fit; equal dimensions do not guarantee registration",
+      "recipe": {
+        "exposure": -0.2025,
+        "temperature": 0.073281,
+        "tint": 0.084375,
+        "contrast": -0.060937,
+        "shadows": 0.210937,
+        "highlights": 0.253125,
+        "saturation": 0.1425
+      },
+      "metrics": {
+        "initial_mse": 0.006843365488708198,
+        "fit_mse": 0.002543197642711405,
+        "rmse": 0.05043012634042676,
+        "evaluations": 631
+      }
+    },
+    {
+      "file": "DSC_0990-20.jpg",
+      "status": "fit; equal dimensions do not guarantee registration",
+      "recipe": {
+        "exposure": 0.150469,
+        "temperature": 0.048398,
+        "tint": -0.024375,
+        "contrast": -0.128906,
+        "shadows": 0.03375,
+        "highlights": 0.018633,
+        "saturation": -0.064688
+      },
+      "metrics": {
+        "initial_mse": 0.004924083875795387,
+        "fit_mse": 0.0019021710838262118,
+        "rmse": 0.04361388636462259,
+        "evaluations": 603
+      }
+    },
+    {
+      "file": "DSC_0993-21.jpg",
+      "status": "skipped: dimensions differ; alignment required"
+    },
+    {
+      "file": "DSC_0995-22.jpg",
+      "status": "skipped: dimensions differ; alignment required"
+    },
+    {
+      "file": "DSC_0997-23.jpg",
+      "status": "skipped: dimensions differ; alignment required"
+    },
+    {
+      "file": "DSC_0998-24.jpg",
+      "status": "skipped: dimensions differ; alignment required"
+    },
+    {
+      "file": "DSC_1012-25.jpg",
+      "status": "skipped: dimensions differ; alignment required"
+    },
+    {
+      "file": "DSC_1021-26.jpg",
+      "status": "fit; equal dimensions do not guarantee registration",
+      "recipe": {
+        "exposure": -0.12375,
+        "temperature": 0.062344,
+        "tint": 0.008438,
+        "contrast": -0.085938,
+        "shadows": 0.246094,
+        "highlights": 0.177187,
+        "saturation": 0.159375
+      },
+      "metrics": {
+        "initial_mse": 0.007595696995242577,
+        "fit_mse": 0.002690696621920619,
+        "rmse": 0.051871925180396176,
+        "evaluations": 631
+      }
+    },
+    {
+      "file": "DSC_1026-27.jpg",
+      "status": "fit; equal dimensions do not guarantee registration",
+      "recipe": {
+        "exposure": 0.253125,
+        "temperature": 0.135078,
+        "tint": -0.010312,
+        "contrast": -0.167969,
+        "shadows": 0.5,
+        "highlights": 0.274219,
+        "saturation": 0.274688
+      },
+      "metrics": {
+        "initial_mse": 0.04429052762539775,
+        "fit_mse": 0.003084321087316233,
+        "rmse": 0.055536664351725634,
+        "evaluations": 631
+      }
+    },
+    {
+      "file": "DSC_1028-28.jpg",
+      "status": "fit; equal dimensions do not guarantee registration",
+      "recipe": {
+        "exposure": 0.27,
+        "temperature": 0.175,
+        "tint": -0.005625,
+        "contrast": -0.078125,
+        "shadows": 0.410625,
+        "highlights": 0.46125,
+        "saturation": 0.075
+      },
+      "metrics": {
+        "initial_mse": 0.05248643053737221,
+        "fit_mse": 0.004178249118480115,
+        "rmse": 0.06463937746049318,
+        "evaluations": 631
+      }
+    },
+    {
+      "file": "DSC_1030-29.jpg",
+      "status": "skipped: dimensions differ; alignment required"
+    },
+    {
+      "file": "DSC_1033-30.jpg",
+      "status": "fit; equal dimensions do not guarantee registration",
+      "recipe": {
+        "exposure": -0.2025,
+        "temperature": 0.083125,
+        "tint": 0.01125,
+        "contrast": -0.059375,
+        "shadows": 0.210937,
+        "highlights": 0.241875,
+        "saturation": 0.0675
+      },
+      "metrics": {
+        "initial_mse": 0.00606666291979118,
+        "fit_mse": 0.00250667217660678,
+        "rmse": 0.05006667730743453,
+        "evaluations": 631
+      }
+    },
+    {
+      "file": "DSC_1037-31.jpg",
+      "status": "fit; equal dimensions do not guarantee registration",
+      "recipe": {
+        "exposure": -0.100547,
+        "temperature": 0.046484,
+        "tint": 0.010781,
+        "contrast": -0.041797,
+        "shadows": 0.320273,
+        "highlights": -0.131484,
+        "saturation": 0.07125
+      },
+      "metrics": {
+        "initial_mse": 0.004826734600564771,
+        "fit_mse": 0.0014176976400740796,
+        "rmse": 0.037652325825559295,
+        "evaluations": 631
+      }
+    },
+    {
+      "file": "DSC_1038-32.jpg",
+      "status": "fit; equal dimensions do not guarantee registration",
+      "recipe": {
+        "exposure": -0.216562,
+        "temperature": 0.064531,
+        "tint": 0.016875,
+        "contrast": -0.05625,
+        "shadows": 0.298125,
+        "highlights": 0.16875,
+        "saturation": 0.13125
+      },
+      "metrics": {
+        "initial_mse": 0.006249997425825833,
+        "fit_mse": 0.0022414785284880683,
+        "rmse": 0.04734425549618526,
+        "evaluations": 631
+      }
+    },
+    {
+      "file": "DSC_1054-33.jpg",
+      "status": "fit; equal dimensions do not guarantee registration",
+      "recipe": {
+        "exposure": 0.057656,
+        "temperature": 0.059063,
+        "tint": -0.024375,
+        "contrast": -0.108594,
+        "shadows": 0.312891,
+        "highlights": -0.207422,
+        "saturation": -0.008438
+      },
+      "metrics": {
+        "initial_mse": 0.006154089445381215,
+        "fit_mse": 0.0005277235405923159,
+        "rmse": 0.02297223412279084,
+        "evaluations": 631
+      }
+    },
+    {
+      "file": "DSC_1059-34.jpg",
+      "status": "skipped: dimensions differ; alignment required"
+    },
+    {
+      "file": "DSC_1070-35.jpg",
+      "status": "skipped: dimensions differ; alignment required"
+    },
+    {
+      "file": "DSC_1074-36.jpg",
+      "status": "skipped: dimensions differ; alignment required"
+    },
+    {
+      "file": "DSC_1083-37.jpg",
+      "status": "skipped: dimensions differ; alignment required"
+    },
+    {
+      "file": "DSC_1088-38.jpg",
+      "status": "fit; equal dimensions do not guarantee registration",
+      "recipe": {
+        "exposure": -0.10125,
+        "temperature": 0.07875,
+        "tint": 0.043125,
+        "contrast": -0.196875,
+        "shadows": 0.073125,
+        "highlights": 0.396562,
+        "saturation": 0.07875
+      },
+      "metrics": {
+        "initial_mse": 0.009737813408402726,
+        "fit_mse": 0.002748538647235335,
+        "rmse": 0.05242650710504501,
+        "evaluations": 631
+      }
+    },
+    {
+      "file": "DSC_1090-39.jpg",
+      "status": "skipped: dimensions differ; alignment required"
+    },
+    {
+      "file": "DSC_1096-40.jpg",
+      "status": "skipped: dimensions differ; alignment required"
+    },
+    {
+      "file": "DSC_1100-41.jpg",
+      "status": "fit; equal dimensions do not guarantee registration",
+      "recipe": {
+        "exposure": -0.040781,
+        "temperature": 0.025156,
+        "tint": -0.018281,
+        "contrast": -0.0625,
+        "shadows": 0.321328,
+        "highlights": -0.273516,
+        "saturation": 0.0075
+      },
+      "metrics": {
+        "initial_mse": 0.0032374758951362746,
+        "fit_mse": 0.0005523550969496573,
+        "rmse": 0.023502235998935448,
+        "evaluations": 631
+      }
+    },
+    {
+      "file": "DSC_1105-42.jpg",
+      "status": "skipped: dimensions differ; alignment required"
+    },
+    {
+      "file": "DSC_1106-43.jpg",
+      "status": "skipped: dimensions differ; alignment required"
+    },
+    {
+      "file": "DSC_1109-44.jpg",
+      "status": "skipped: dimensions differ; alignment required"
+    },
+    {
+      "file": "DSC_1111-45.jpg",
+      "status": "skipped: dimensions differ; alignment required"
+    },
+    {
+      "file": "DSC_1114-46.jpg",
+      "status": "fit; equal dimensions do not guarantee registration",
+      "recipe": {
+        "exposure": -0.16875,
+        "temperature": 0.06125,
+        "tint": 0.058125,
+        "contrast": -0.109375,
+        "shadows": 0.222187,
+        "highlights": 0.36,
+        "saturation": -0.06
+      },
+      "metrics": {
+        "initial_mse": 0.010417273578199467,
+        "fit_mse": 0.002879310433981281,
+        "rmse": 0.05365920642332759,
+        "evaluations": 631
+      }
+    },
+    {
+      "file": "DSC_1116-47.jpg",
+      "status": "fit; equal dimensions do not guarantee registration",
+      "recipe": {
+        "exposure": -0.12375,
+        "temperature": 0.07,
+        "tint": 0.0525,
+        "contrast": -0.13125,
+        "shadows": 0.1575,
+        "highlights": 0.3375,
+        "saturation": 0.0
+      },
+      "metrics": {
+        "initial_mse": 0.009744847915801344,
+        "fit_mse": 0.0029267631479674987,
+        "rmse": 0.05409956698502769,
+        "evaluations": 631
+      }
+    },
+    {
+      "file": "DSC_1118-48.jpg",
+      "status": "skipped: dimensions differ; alignment required"
+    },
+    {
+      "file": "DSC_1259-49.jpg",
+      "status": "skipped: dimensions differ; alignment required"
+    },
+    {
+      "file": "DSC_1261-50.jpg",
+      "status": "fit; equal dimensions do not guarantee registration",
+      "recipe": {
+        "exposure": 0.016875,
+        "temperature": 0.047031,
+        "tint": -0.004687,
+        "contrast": -0.082813,
+        "shadows": 0.27,
+        "highlights": -0.209531,
+        "saturation": 0.09
+      },
+      "metrics": {
+        "initial_mse": 0.0035685533054778,
+        "fit_mse": 0.0006128401503834695,
+        "rmse": 0.02475560846320424,
+        "evaluations": 631
+      }
+    },
+    {
+      "file": "DSC_1264-51.jpg",
+      "status": "skipped: dimensions differ; alignment required"
+    },
+    {
+      "file": "DSC_1265-52.jpg",
+      "status": "skipped: dimensions differ; alignment required"
+    },
+    {
+      "file": "DSC_1268-53.jpg",
+      "status": "fit; equal dimensions do not guarantee registration",
+      "recipe": {
+        "exposure": -0.0225,
+        "temperature": 0.0175,
+        "tint": 0.0225,
+        "contrast": -0.1375,
+        "shadows": -0.073125,
+        "highlights": -0.185625,
+        "saturation": 0.225
+      },
+      "metrics": {
+        "initial_mse": 0.005687160223995182,
+        "fit_mse": 0.001419555028093808,
+        "rmse": 0.0376769827360659,
+        "evaluations": 631
+      }
+    },
+    {
+      "file": "DSC_1273-54.jpg",
+      "status": "fit; equal dimensions do not guarantee registration",
+      "recipe": {
+        "exposure": -0.225,
+        "temperature": 0.00875,
+        "tint": -0.0075,
+        "contrast": -0.14375,
+        "shadows": -0.2025,
+        "highlights": -0.140625,
+        "saturation": 0.3525
+      },
+      "metrics": {
+        "initial_mse": 0.027114756871645208,
+        "fit_mse": 0.004707385260317572,
+        "rmse": 0.06861038740830408,
+        "evaluations": 631
+      }
+    },
+    {
+      "file": "DSC_1280-55.jpg",
+      "status": "fit; equal dimensions do not guarantee registration",
+      "recipe": {
+        "exposure": -0.049219,
+        "temperature": 0.007109,
+        "tint": 0.003281,
+        "contrast": -0.085156,
+        "shadows": 0.173672,
+        "highlights": -0.438047,
+        "saturation": -0.075938
+      },
+      "metrics": {
+        "initial_mse": 0.011425128519627159,
+        "fit_mse": 0.0017577307899118565,
+        "rmse": 0.041925300117135196,
+        "evaluations": 631
+      }
+    },
+    {
+      "file": "DSC_1282-56.jpg",
+      "status": "fit; equal dimensions do not guarantee registration",
+      "recipe": {
+        "exposure": -0.064688,
+        "temperature": 0.007656,
+        "tint": 0.000937,
+        "contrast": -0.064063,
+        "shadows": 0.151875,
+        "highlights": -0.497812,
+        "saturation": -0.07875
+      },
+      "metrics": {
+        "initial_mse": 0.015286331557096326,
+        "fit_mse": 0.0014809016091556868,
+        "rmse": 0.03848248444624758,
+        "evaluations": 631
+      }
+    },
+    {
+      "file": "DSC_1284-57.jpg",
+      "status": "fit; equal dimensions do not guarantee registration",
+      "recipe": {
+        "exposure": -0.073125,
+        "temperature": 0.009844,
+        "tint": 0.00375,
+        "contrast": -0.0625,
+        "shadows": 0.147656,
+        "highlights": -0.493594,
+        "saturation": -0.1125
+      },
+      "metrics": {
+        "initial_mse": 0.014817086078640067,
+        "fit_mse": 0.0015598363736235943,
+        "rmse": 0.039494763876032915,
+        "evaluations": 631
+      }
+    },
+    {
+      "file": "DSC_1286-58.jpg",
+      "status": "fit; equal dimensions do not guarantee registration",
+      "recipe": {
+        "exposure": -0.084375,
+        "temperature": 0.010938,
+        "tint": 0.00375,
+        "contrast": -0.08125,
+        "shadows": 0.118125,
+        "highlights": -0.464062,
+        "saturation": -0.105
+      },
+      "metrics": {
+        "initial_mse": 0.01559141055479622,
+        "fit_mse": 0.0017345668405203162,
+        "rmse": 0.04164813129685792,
+        "evaluations": 631
+      }
+    },
+    {
+      "file": "DSC_1288-59.jpg",
+      "status": "fit; equal dimensions do not guarantee registration",
+      "recipe": {
+        "exposure": -0.050625,
+        "temperature": -0.001094,
+        "tint": 0.0,
+        "contrast": -0.153906,
+        "shadows": 0.013359,
+        "highlights": -0.221484,
+        "saturation": 0.124688
+      },
+      "metrics": {
+        "initial_mse": 0.01040508744186371,
+        "fit_mse": 0.0019855190417053413,
+        "rmse": 0.04455916338650605,
+        "evaluations": 631
+      }
+    },
+    {
+      "file": "DSC_1291-60.jpg",
+      "status": "skipped: dimensions differ; alignment required"
+    },
+    {
+      "file": "DSC_1292-61.jpg",
+      "status": "fit; equal dimensions do not guarantee registration",
+      "recipe": {
+        "exposure": -0.050625,
+        "temperature": 0.002188,
+        "tint": -0.001875,
+        "contrast": -0.15625,
+        "shadows": 0.005625,
+        "highlights": -0.208125,
+        "saturation": 0.11625
+      },
+      "metrics": {
+        "initial_mse": 0.010182409859533155,
+        "fit_mse": 0.0020595143566746,
+        "rmse": 0.045381872555841064,
+        "evaluations": 631
+      }
+    },
+    {
+      "file": "DSC_1293-62.jpg",
+      "status": "fit; equal dimensions do not guarantee registration",
+      "recipe": {
+        "exposure": -0.081562,
+        "temperature": -0.002188,
+        "tint": -0.002812,
+        "contrast": -0.1625,
+        "shadows": -0.004219,
+        "highlights": -0.063281,
+        "saturation": 0.178125
+      },
+      "metrics": {
+        "initial_mse": 0.009965637175138011,
+        "fit_mse": 0.0016176027380767212,
+        "rmse": 0.04021943234403889,
+        "evaluations": 631
+      }
+    },
+    {
+      "file": "DSC_1300-63.jpg",
+      "status": "fit; equal dimensions do not guarantee registration",
+      "recipe": {
+        "exposure": -0.057656,
+        "temperature": 0.002188,
+        "tint": 0.003281,
+        "contrast": -0.067188,
+        "shadows": 0.186328,
+        "highlights": -0.408516,
+        "saturation": -0.053437
+      },
+      "metrics": {
+        "initial_mse": 0.009893328848877817,
+        "fit_mse": 0.0016983757743374696,
+        "rmse": 0.04121135491994251,
+        "evaluations": 631
+      }
+    },
+    {
+      "file": "DSC_1302-64.jpg",
+      "status": "fit; equal dimensions do not guarantee registration",
+      "recipe": {
+        "exposure": -0.054844,
+        "temperature": 0.003281,
+        "tint": 0.004219,
+        "contrast": -0.067188,
+        "shadows": 0.196172,
+        "highlights": -0.421172,
+        "saturation": -0.053438
+      },
+      "metrics": {
+        "initial_mse": 0.010019921603735348,
+        "fit_mse": 0.0017337607380743234,
+        "rmse": 0.04163845263784815,
+        "evaluations": 631
+      }
+    },
+    {
+      "file": "DSC_1304-65.jpg",
+      "status": "fit; equal dimensions do not guarantee registration",
+      "recipe": {
+        "exposure": -0.045,
+        "temperature": 0.00875,
+        "tint": 0.00375,
+        "contrast": -0.09375,
+        "shadows": 0.1125,
+        "highlights": -0.399375,
+        "saturation": -0.09
+      },
+      "metrics": {
+        "initial_mse": 0.01156799250754506,
+        "fit_mse": 0.0018622159028145908,
+        "rmse": 0.04315339966693923,
+        "evaluations": 631
+      }
+    },
+    {
+      "file": "DSC_1308-66.jpg",
+      "status": "skipped: dimensions differ; alignment required"
+    },
+    {
+      "file": "DSC_1310-67.jpg",
+      "status": "fit; equal dimensions do not guarantee registration",
+      "recipe": {
+        "exposure": -0.061875,
+        "temperature": -0.00875,
+        "tint": 0.0225,
+        "contrast": -0.01875,
+        "shadows": 0.1575,
+        "highlights": -0.5,
+        "saturation": -0.12
+      },
+      "metrics": {
+        "initial_mse": 0.010794689089117258,
+        "fit_mse": 0.0016130270793952314,
+        "rmse": 0.04016250838026967,
+        "evaluations": 631
+      }
+    },
+    {
+      "file": "DSC_1312-68.jpg",
+      "status": "fit; equal dimensions do not guarantee registration",
+      "recipe": {
+        "exposure": -0.05625,
+        "temperature": -0.004375,
+        "tint": 0.013125,
+        "contrast": -0.0125,
+        "shadows": 0.160313,
+        "highlights": -0.5,
+        "saturation": -0.1275
+      },
+      "metrics": {
+        "initial_mse": 0.011389524431391882,
+        "fit_mse": 0.0015587989193474002,
+        "rmse": 0.03948162761775913,
+        "evaluations": 631
+      }
+    },
+    {
+      "file": "DSC_1315-69.jpg",
+      "status": "fit; equal dimensions do not guarantee registration",
+      "recipe": {
+        "exposure": 0.0,
+        "temperature": -0.003828,
+        "tint": -0.007031,
+        "contrast": -0.094531,
+        "shadows": 0.146602,
+        "highlights": -0.220078,
+        "saturation": -0.035625
+      },
+      "metrics": {
+        "initial_mse": 0.003920707519897909,
+        "fit_mse": 0.0016711326358202672,
+        "rmse": 0.04087948918247716,
+        "evaluations": 477
+      }
+    },
+    {
+      "file": "DSC_1320-70.jpg",
+      "status": "skipped: dimensions differ; alignment required"
+    },
+    {
+      "file": "DSC_1322-71.jpg",
+      "status": "skipped: dimensions differ; alignment required"
+    },
+    {
+      "file": "DSC_1324-72.jpg",
+      "status": "fit; equal dimensions do not guarantee registration",
+      "recipe": {
+        "exposure": -0.03375,
+        "temperature": -0.013125,
+        "tint": 0.020625,
+        "contrast": -0.078125,
+        "shadows": 0.075937,
+        "highlights": -0.486562,
+        "saturation": -0.14625
+      },
+      "metrics": {
+        "initial_mse": 0.011144083183300957,
+        "fit_mse": 0.0016008985124846625,
+        "rmse": 0.04001122982969484,
+        "evaluations": 631
+      }
+    },
+    {
+      "file": "DSC_1326-73.jpg",
+      "status": "fit; equal dimensions do not guarantee registration",
+      "recipe": {
+        "exposure": -0.015469,
+        "temperature": 0.017227,
+        "tint": -0.016641,
+        "contrast": -0.089844,
+        "shadows": 0.220078,
+        "highlights": -0.277031,
+        "saturation": 0.052969
+      },
+      "metrics": {
+        "initial_mse": 0.0028417865816602293,
+        "fit_mse": 0.0003789978768653283,
+        "rmse": 0.01946786780480411,
+        "evaluations": 631
+      }
+    },
+    {
+      "file": "DSC_1329-74.jpg",
+      "status": "fit; equal dimensions do not guarantee registration",
+      "recipe": {
+        "exposure": -0.001406,
+        "temperature": 0.022969,
+        "tint": -0.022969,
+        "contrast": -0.095312,
+        "shadows": 0.194766,
+        "highlights": -0.285469,
+        "saturation": 0.005625
+      },
+      "metrics": {
+        "initial_mse": 0.002722657195422887,
+        "fit_mse": 0.0004726351214628895,
+        "rmse": 0.02174017298603876,
+        "evaluations": 631
+      }
+    },
+    {
+      "file": "DSC_1330-75.jpg",
+      "status": "skipped: dimensions differ; alignment required"
+    },
+    {
+      "file": "DSC_1334-76.jpg",
+      "status": "skipped: dimensions differ; alignment required"
+    },
+    {
+      "file": "DSC_1335-77.jpg",
+      "status": "fit; equal dimensions do not guarantee registration",
+      "recipe": {
+        "exposure": 0.082969,
+        "temperature": 0.025156,
+        "tint": -0.009844,
+        "contrast": -0.139063,
+        "shadows": 0.325547,
+        "highlights": -0.131484,
+        "saturation": 0.195938
+      },
+      "metrics": {
+        "initial_mse": 0.009319179416337604,
+        "fit_mse": 0.000350069389485796,
+        "rmse": 0.018710141353976886,
+        "evaluations": 631
+      }
+    },
+    {
+      "file": "DSC_1337-78.jpg",
+      "status": "skipped: dimensions differ; alignment required"
+    },
+    {
+      "file": "DSC_1339-79.jpg",
+      "status": "fit; equal dimensions do not guarantee registration",
+      "recipe": {
+        "exposure": 0.12375,
+        "temperature": 0.044844,
+        "tint": 0.120937,
+        "contrast": -0.153125,
+        "shadows": 0.194062,
+        "highlights": 0.5,
+        "saturation": 0.185625
+      },
+      "metrics": {
+        "initial_mse": 0.032980149623441535,
+        "fit_mse": 0.003620102363832855,
+        "rmse": 0.060167286492186556,
+        "evaluations": 631
+      }
+    },
+    {
+      "file": "DSC_1340-80.jpg",
+      "status": "skipped: dimensions differ; alignment required"
+    },
+    {
+      "file": "DSC_1342-81.jpg",
+      "status": "skipped: dimensions differ; alignment required"
+    },
+    {
+      "file": "DSC_1344-82.jpg",
+      "status": "fit; equal dimensions do not guarantee registration",
+      "recipe": {
+        "exposure": 0.080859,
+        "temperature": 0.008203,
+        "tint": 0.081797,
+        "contrast": -0.183984,
+        "shadows": 0.5,
+        "highlights": 0.361758,
+        "saturation": 0.305156
+      },
+      "metrics": {
+        "initial_mse": 0.04356517789217999,
+        "fit_mse": 0.00664805376936078,
+        "rmse": 0.08153559817258214,
+        "evaluations": 617
+      }
+    },
+    {
+      "file": "DSC_1360-83.jpg",
+      "status": "fit; equal dimensions do not guarantee registration",
+      "recipe": {
+        "exposure": 0.009141,
+        "temperature": -0.030352,
+        "tint": 0.038906,
+        "contrast": -0.153125,
+        "shadows": 0.110039,
+        "highlights": 0.14168,
+        "saturation": 0.379688
+      },
+      "metrics": {
+        "initial_mse": 0.005772526802642271,
+        "fit_mse": 0.0016538005760619195,
+        "rmse": 0.04066694697247286,
+        "evaluations": 631
+      }
+    },
+    {
+      "file": "DSC_1362-84.jpg",
+      "status": "fit; equal dimensions do not guarantee registration",
+      "recipe": {
+        "exposure": 0.025312,
+        "temperature": -0.030625,
+        "tint": 0.035625,
+        "contrast": -0.163281,
+        "shadows": 0.091406,
+        "highlights": 0.155391,
+        "saturation": 0.3825
+      },
+      "metrics": {
+        "initial_mse": 0.006050954353352188,
+        "fit_mse": 0.0017584279679149994,
+        "rmse": 0.04193361381892812,
+        "evaluations": 631
+      }
+    },
+    {
+      "file": "DSC_1363-85.jpg",
+      "status": "fit; equal dimensions do not guarantee registration",
+      "recipe": {
+        "exposure": 0.025312,
+        "temperature": -0.030625,
+        "tint": 0.036562,
+        "contrast": -0.160937,
+        "shadows": 0.097031,
+        "highlights": 0.143437,
+        "saturation": 0.36375
+      },
+      "metrics": {
+        "initial_mse": 0.005969424192183368,
+        "fit_mse": 0.0017100772015755284,
+        "rmse": 0.0413530797108937,
+        "evaluations": 631
+      }
+    },
+    {
+      "file": "DSC_1365-86.jpg",
+      "status": "fit; equal dimensions do not guarantee registration",
+      "recipe": {
+        "exposure": 0.037969,
+        "temperature": -0.061797,
+        "tint": 0.035625,
+        "contrast": -0.173437,
+        "shadows": 0.073828,
+        "highlights": 0.131484,
+        "saturation": 0.283125
+      },
+      "metrics": {
+        "initial_mse": 0.006836461681958385,
+        "fit_mse": 0.00188544667523837,
+        "rmse": 0.04342173044960749,
+        "evaluations": 631
+      }
+    },
+    {
+      "file": "DSC_1367-87.jpg",
+      "status": "fit; equal dimensions do not guarantee registration",
+      "recipe": {
+        "exposure": 0.042187,
+        "temperature": -0.067813,
+        "tint": 0.036562,
+        "contrast": -0.178125,
+        "shadows": 0.066797,
+        "highlights": 0.132891,
+        "saturation": 0.259687
+      },
+      "metrics": {
+        "initial_mse": 0.007074280889270409,
+        "fit_mse": 0.0019536162161748285,
+        "rmse": 0.04419973095138508,
+        "evaluations": 631
+      }
+    },
+    {
+      "file": "DSC_1378-88.jpg",
+      "status": "fit; equal dimensions do not guarantee registration",
+      "recipe": {
+        "exposure": 0.021094,
+        "temperature": 0.006016,
+        "tint": 0.034219,
+        "contrast": -0.1875,
+        "shadows": 0.053438,
+        "highlights": 0.240469,
+        "saturation": 0.35625
+      },
+      "metrics": {
+        "initial_mse": 0.00635486737687152,
+        "fit_mse": 0.0018988816221397289,
+        "rmse": 0.04357615887316973,
+        "evaluations": 631
+      }
+    }
+  ],
+  "comparison_sheets": [
+    "comparison-01.jpg",
+    "comparison-02.jpg",
+    "comparison-03.jpg",
+    "comparison-04.jpg"
+  ]
+}

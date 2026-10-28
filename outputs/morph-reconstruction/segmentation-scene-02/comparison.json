@@ -1,0 +1,17 @@
+{
+  "scope": "Exploratory descriptive comparison against one manually chosen two-group split in the same album. Pairwise distances share photos, are dependent, and rank fraction is not a classification accuracy. Neutral gray subject fills change image statistics; masks have errors. This is not independent validation or evidence of editing quality.",
+  "whole_image": {
+    "same_median": 0.5220883000000001,
+    "different_median": 0.687267275,
+    "pair_rank_fraction": 0.8809523809523809,
+    "same_count": 36,
+    "different_count": 42
+  },
+  "masked_subjects": {
+    "same_median": 0.58472106,
+    "different_median": 0.776742875,
+    "pair_rank_fraction": 0.8842592592592593,
+    "same_count": 36,
+    "different_count": 42
+  }
+}

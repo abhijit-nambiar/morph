@@ -1,0 +1,734 @@
+{
+  "method": "Gradient-correlation thumbnail translation search. Heuristic only: correlation is sensitive to content, color processing, scale and rotation. Flag does not prove a crop, and an unflagged pair is not guaranteed aligned. dx/dy are offsets in thumbnail pixels.",
+  "size": 128,
+  "rows": [
+    {
+      "file": "DSC_0901-1.jpg",
+      "status": "different dimensions"
+    },
+    {
+      "file": "DSC_0904-2.jpg",
+      "status": "audited",
+      "analysis": {
+        "zero_score": 0.864844024181366,
+        "best_score": 0.864844024181366,
+        "dx": 0,
+        "dy": 0,
+        "score_improvement": 0.0,
+        "flag": false
+      }
+    },
+    {
+      "file": "DSC_0905-3.jpg",
+      "status": "audited",
+      "analysis": {
+        "zero_score": 0.8816477656364441,
+        "best_score": 0.8816477656364441,
+        "dx": 0,
+        "dy": 0,
+        "score_improvement": 0.0,
+        "flag": false
+      }
+    },
+    {
+      "file": "DSC_0906-4.jpg",
+      "status": "audited",
+      "analysis": {
+        "zero_score": 0.9700740575790405,
+        "best_score": 0.9700740575790405,
+        "dx": 0,
+        "dy": 0,
+        "score_improvement": 0.0,
+        "flag": false
+      }
+    },
+    {
+      "file": "DSC_0914-5.jpg",
+      "status": "audited",
+      "analysis": {
+        "zero_score": 0.8258637189865112,
+        "best_score": 0.8258637189865112,
+        "dx": 0,
+        "dy": 0,
+        "score_improvement": 0.0,
+        "flag": false
+      }
+    },
+    {
+      "file": "DSC_0916-6.jpg",
+      "status": "different dimensions"
+    },
+    {
+      "file": "DSC_0919-7.jpg",
+      "status": "different dimensions"
+    },
+    {
+      "file": "DSC_0921-8.jpg",
+      "status": "different dimensions"
+    },
+    {
+      "file": "DSC_0925-9.jpg",
+      "status": "different dimensions"
+    },
+    {
+      "file": "DSC_0928-10.jpg",
+      "status": "different dimensions"
+    },
+    {
+      "file": "DSC_0930-11.jpg",
+      "status": "different dimensions"
+    },
+    {
+      "file": "DSC_0935-12.jpg",
+      "status": "audited",
+      "analysis": {
+        "zero_score": 0.9224839210510254,
+        "best_score": 0.9224839210510254,
+        "dx": 0,
+        "dy": 0,
+        "score_improvement": 0.0,
+        "flag": false
+      }
+    },
+    {
+      "file": "DSC_0947-13.jpg",
+      "status": "different dimensions"
+    },
+    {
+      "file": "DSC_0948-14.jpg",
+      "status": "different dimensions"
+    },
+    {
+      "file": "DSC_0958-15.jpg",
+      "status": "audited",
+      "analysis": {
+        "zero_score": 0.9867020845413208,
+        "best_score": 0.9867020845413208,
+        "dx": 0,
+        "dy": 0,
+        "score_improvement": 0.0,
+        "flag": false
+      }
+    },
+    {
+      "file": "DSC_0965-16.jpg",
+      "status": "different dimensions"
+    },
+    {
+      "file": "DSC_0970-17.jpg",
+      "status": "different dimensions"
+    },
+    {
+      "file": "DSC_0974-18.jpg",
+      "status": "different dimensions"
+    },
+    {
+      "file": "DSC_0987-19.jpg",
+      "status": "audited",
+      "analysis": {
+        "zero_score": 0.9798146486282349,
+        "best_score": 0.9798146486282349,
+        "dx": 0,
+        "dy": 0,
+        "score_improvement": 0.0,
+        "flag": false
+      }
+    },
+    {
+      "file": "DSC_0990-20.jpg",
+      "status": "audited",
+      "analysis": {
+        "zero_score": 0.9857390522956848,
+        "best_score": 0.9857390522956848,
+        "dx": 0,
+        "dy": 0,
+        "score_improvement": 0.0,
+        "flag": false
+      }
+    },
+    {
+      "file": "DSC_0993-21.jpg",
+      "status": "different dimensions"
+    },
+    {
+      "file": "DSC_0995-22.jpg",
+      "status": "different dimensions"
+    },
+    {
+      "file": "DSC_0997-23.jpg",
+      "status": "different dimensions"
+    },
+    {
+      "file": "DSC_0998-24.jpg",
+      "status": "different dimensions"
+    },
+    {
+      "file": "DSC_1012-25.jpg",
+      "status": "different dimensions"
+    },
+    {
+      "file": "DSC_1021-26.jpg",
+      "status": "audited",
+      "analysis": {
+        "zero_score": 0.9791659116744995,
+        "best_score": 0.9791659116744995,
+        "dx": 0,
+        "dy": 0,
+        "score_improvement": 0.0,
+        "flag": false
+      }
+    },
+    {
+      "file": "DSC_1026-27.jpg",
+      "status": "audited",
+      "analysis": {
+        "zero_score": 0.9476467370986938,
+        "best_score": 0.9476467370986938,
+        "dx": 0,
+        "dy": 0,
+        "score_improvement": 0.0,
+        "flag": false
+      }
+    },
+    {
+      "file": "DSC_1028-28.jpg",
+      "status": "audited",
+      "analysis": {
+        "zero_score": 0.9509909152984619,
+        "best_score": 0.9509909152984619,
+        "dx": 0,
+        "dy": 0,
+        "score_improvement": 0.0,
+        "flag": false
+      }
+    },
+    {
+      "file": "DSC_1030-29.jpg",
+      "status": "different dimensions"
+    },
+    {
+      "file": "DSC_1033-30.jpg",
+      "status": "audited",
+      "analysis": {
+        "zero_score": 0.9833081364631653,
+        "best_score": 0.9833081364631653,
+        "dx": 0,
+        "dy": 0,
+        "score_improvement": 0.0,
+        "flag": false
+      }
+    },
+    {
+      "file": "DSC_1037-31.jpg",
+      "status": "audited",
+      "analysis": {
+        "zero_score": 0.9860894680023193,
+        "best_score": 0.9860894680023193,
+        "dx": 0,
+        "dy": 0,
+        "score_improvement": 0.0,
+        "flag": false
+      }
+    },
+    {
+      "file": "DSC_1038-32.jpg",
+      "status": "audited",
+      "analysis": {
+        "zero_score": 0.9833913445472717,
+        "best_score": 0.9833913445472717,
+        "dx": 0,
+        "dy": 0,
+        "score_improvement": 0.0,
+        "flag": false
+      }
+    },
+    {
+      "file": "DSC_1054-33.jpg",
+      "status": "audited",
+      "analysis": {
+        "zero_score": 0.9860219955444336,
+        "best_score": 0.9860219955444336,
+        "dx": 0,
+        "dy": 0,
+        "score_improvement": 0.0,
+        "flag": false
+      }
+    },
+    {
+      "file": "DSC_1059-34.jpg",
+      "status": "different dimensions"
+    },
+    {
+      "file": "DSC_1070-35.jpg",
+      "status": "different dimensions"
+    },
+    {
+      "file": "DSC_1074-36.jpg",
+      "status": "different dimensions"
+    },
+    {
+      "file": "DSC_1083-37.jpg",
+      "status": "different dimensions"
+    },
+    {
+      "file": "DSC_1088-38.jpg",
+      "status": "audited",
+      "analysis": {
+        "zero_score": 0.9784919619560242,
+        "best_score": 0.9784919619560242,
+        "dx": 0,
+        "dy": 0,
+        "score_improvement": 0.0,
+        "flag": false
+      }
+    },
+    {
+      "file": "DSC_1090-39.jpg",
+      "status": "different dimensions"
+    },
+    {
+      "file": "DSC_1096-40.jpg",
+      "status": "different dimensions"
+    },
+    {
+      "file": "DSC_1100-41.jpg",
+      "status": "audited",
+      "analysis": {
+        "zero_score": 0.9868075251579285,
+        "best_score": 0.9868075251579285,
+        "dx": 0,
+        "dy": 0,
+        "score_improvement": 0.0,
+        "flag": false
+      }
+    },
+    {
+      "file": "DSC_1105-42.jpg",
+      "status": "different dimensions"
+    },
+    {
+      "file": "DSC_1106-43.jpg",
+      "status": "different dimensions"
+    },
+    {
+      "file": "DSC_1109-44.jpg",
+      "status": "different dimensions"
+    },
+    {
+      "file": "DSC_1111-45.jpg",
+      "status": "different dimensions"
+    },
+    {
+      "file": "DSC_1114-46.jpg",
+      "status": "audited",
+      "analysis": {
+        "zero_score": 0.9773653745651245,
+        "best_score": 0.9773653745651245,
+        "dx": 0,
+        "dy": 0,
+        "score_improvement": 0.0,
+        "flag": false
+      }
+    },
+    {
+      "file": "DSC_1116-47.jpg",
+      "status": "audited",
+      "analysis": {
+        "zero_score": 0.9771352410316467,
+        "best_score": 0.9771352410316467,
+        "dx": 0,
+        "dy": 0,
+        "score_improvement": 0.0,
+        "flag": false
+      }
+    },
+    {
+      "file": "DSC_1118-48.jpg",
+      "status": "different dimensions"
+    },
+    {
+      "file": "DSC_1259-49.jpg",
+      "status": "different dimensions"
+    },
+    {
+      "file": "DSC_1261-50.jpg",
+      "status": "audited",
+      "analysis": {
+        "zero_score": 0.9823412895202637,
+        "best_score": 0.9823412895202637,
+        "dx": 0,
+        "dy": 0,
+        "score_improvement": 0.0,
+        "flag": false
+      }
+    },
+    {
+      "file": "DSC_1264-51.jpg",
+      "status": "different dimensions"
+    },
+    {
+      "file": "DSC_1265-52.jpg",
+      "status": "different dimensions"
+    },
+    {
+      "file": "DSC_1268-53.jpg",
+      "status": "audited",
+      "analysis": {
+        "zero_score": 0.9814183712005615,
+        "best_score": 0.9814183712005615,
+        "dx": 0,
+        "dy": 0,
+        "score_improvement": 0.0,
+        "flag": false
+      }
+    },
+    {
+      "file": "DSC_1273-54.jpg",
+      "status": "audited",
+      "analysis": {
+        "zero_score": 0.9581116437911987,
+        "best_score": 0.9581116437911987,
+        "dx": 0,
+        "dy": 0,
+        "score_improvement": 0.0,
+        "flag": false
+      }
+    },
+    {
+      "file": "DSC_1280-55.jpg",
+      "status": "audited",
+      "analysis": {
+        "zero_score": 0.9764664173126221,
+        "best_score": 0.9764664173126221,
+        "dx": 0,
+        "dy": 0,
+        "score_improvement": 0.0,
+        "flag": false
+      }
+    },
+    {
+      "file": "DSC_1282-56.jpg",
+      "status": "audited",
+      "analysis": {
+        "zero_score": 0.9762358665466309,
+        "best_score": 0.9762358665466309,
+        "dx": 0,
+        "dy": 0,
+        "score_improvement": 0.0,
+        "flag": false
+      }
+    },
+    {
+      "file": "DSC_1284-57.jpg",
+      "status": "audited",
+      "analysis": {
+        "zero_score": 0.9744645953178406,
+        "best_score": 0.9744645953178406,
+        "dx": 0,
+        "dy": 0,
+        "score_improvement": 0.0,
+        "flag": false
+      }
+    },
+    {
+      "file": "DSC_1286-58.jpg",
+      "status": "audited",
+      "analysis": {
+        "zero_score": 0.9757242798805237,
+        "best_score": 0.9757242798805237,
+        "dx": 0,
+        "dy": 0,
+        "score_improvement": 0.0,
+        "flag": false
+      }
+    },
+    {
+      "file": "DSC_1288-59.jpg",
+      "status": "audited",
+      "analysis": {
+        "zero_score": 0.9807531833648682,
+        "best_score": 0.9807531833648682,
+        "dx": 0,
+        "dy": 0,
+        "score_improvement": 0.0,
+        "flag": false
+      }
+    },
+    {
+      "file": "DSC_1291-60.jpg",
+      "status": "different dimensions"
+    },
+    {
+      "file": "DSC_1292-61.jpg",
+      "status": "audited",
+      "analysis": {
+        "zero_score": 0.9800700545310974,
+        "best_score": 0.9800700545310974,
+        "dx": 0,
+        "dy": 0,
+        "score_improvement": 0.0,
+        "flag": false
+      }
+    },
+    {
+      "file": "DSC_1293-62.jpg",
+      "status": "audited",
+      "analysis": {
+        "zero_score": 0.987321138381958,
+        "best_score": 0.987321138381958,
+        "dx": 0,
+        "dy": 0,
+        "score_improvement": 0.0,
+        "flag": false
+      }
+    },
+    {
+      "file": "DSC_1300-63.jpg",
+      "status": "audited",
+      "analysis": {
+        "zero_score": 0.9708318114280701,
+        "best_score": 0.9708318114280701,
+        "dx": 0,
+        "dy": 0,
+        "score_improvement": 0.0,
+        "flag": false
+      }
+    },
+    {
+      "file": "DSC_1302-64.jpg",
+      "status": "audited",
+      "analysis": {
+        "zero_score": 0.9710487127304077,
+        "best_score": 0.9710487127304077,
+        "dx": 0,
+        "dy": 0,
+        "score_improvement": 0.0,
+        "flag": false
+      }
+    },
+    {
+      "file": "DSC_1304-65.jpg",
+      "status": "audited",
+      "analysis": {
+        "zero_score": 0.9673051238059998,
+        "best_score": 0.9673051238059998,
+        "dx": 0,
+        "dy": 0,
+        "score_improvement": 0.0,
+        "flag": false
+      }
+    },
+    {
+      "file": "DSC_1308-66.jpg",
+      "status": "different dimensions"
+    },
+    {
+      "file": "DSC_1310-67.jpg",
+      "status": "audited",
+      "analysis": {
+        "zero_score": 0.9733325839042664,
+        "best_score": 0.9733325839042664,
+        "dx": 0,
+        "dy": 0,
+        "score_improvement": 0.0,
+        "flag": false
+      }
+    },
+    {
+      "file": "DSC_1312-68.jpg",
+      "status": "audited",
+      "analysis": {
+        "zero_score": 0.9717559218406677,
+        "best_score": 0.9717559218406677,
+        "dx": 0,
+        "dy": 0,
+        "score_improvement": 0.0,
+        "flag": false
+      }
+    },
+    {
+      "file": "DSC_1315-69.jpg",
+      "status": "audited",
+      "analysis": {
+        "zero_score": 0.9699877500534058,
+        "best_score": 0.9699877500534058,
+        "dx": 0,
+        "dy": 0,
+        "score_improvement": 0.0,
+        "flag": false
+      }
+    },
+    {
+      "file": "DSC_1320-70.jpg",
+      "status": "different dimensions"
+    },
+    {
+      "file": "DSC_1322-71.jpg",
+      "status": "different dimensions"
+    },
+    {
+      "file": "DSC_1324-72.jpg",
+      "status": "audited",
+      "analysis": {
+        "zero_score": 0.9731800556182861,
+        "best_score": 0.9731800556182861,
+        "dx": 0,
+        "dy": 0,
+        "score_improvement": 0.0,
+        "flag": false
+      }
+    },
+    {
+      "file": "DSC_1326-73.jpg",
+      "status": "audited",
+      "analysis": {
+        "zero_score": 0.9843500852584839,
+        "best_score": 0.9843500852584839,
+        "dx": 0,
+        "dy": 0,
+        "score_improvement": 0.0,
+        "flag": false
+      }
+    },
+    {
+      "file": "DSC_1329-74.jpg",
+      "status": "audited",
+      "analysis": {
+        "zero_score": 0.9848843216896057,
+        "best_score": 0.9848843216896057,
+        "dx": 0,
+        "dy": 0,
+        "score_improvement": 0.0,
+        "flag": false
+      }
+    },
+    {
+      "file": "DSC_1330-75.jpg",
+      "status": "different dimensions"
+    },
+    {
+      "file": "DSC_1334-76.jpg",
+      "status": "different dimensions"
+    },
+    {
+      "file": "DSC_1335-77.jpg",
+      "status": "audited",
+      "analysis": {
+        "zero_score": 0.9821085333824158,
+        "best_score": 0.9821085333824158,
+        "dx": 0,
+        "dy": 0,
+        "score_improvement": 0.0,
+        "flag": false
+      }
+    },
+    {
+      "file": "DSC_1337-78.jpg",
+      "status": "different dimensions"
+    },
+    {
+      "file": "DSC_1339-79.jpg",
+      "status": "audited",
+      "analysis": {
+        "zero_score": 0.9424465894699097,
+        "best_score": 0.9424465894699097,
+        "dx": 0,
+        "dy": 0,
+        "score_improvement": 0.0,
+        "flag": false
+      }
+    },
+    {
+      "file": "DSC_1340-80.jpg",
+      "status": "different dimensions"
+    },
+    {
+      "file": "DSC_1342-81.jpg",
+      "status": "different dimensions"
+    },
+    {
+      "file": "DSC_1344-82.jpg",
+      "status": "audited",
+      "analysis": {
+        "zero_score": 0.9462988972663879,
+        "best_score": 0.9462988972663879,
+        "dx": 0,
+        "dy": 0,
+        "score_improvement": 0.0,
+        "flag": false
+      }
+    },
+    {
+      "file": "DSC_1360-83.jpg",
+      "status": "audited",
+      "analysis": {
+        "zero_score": 0.9847989082336426,
+        "best_score": 0.9847989082336426,
+        "dx": 0,
+        "dy": 0,
+        "score_improvement": 0.0,
+        "flag": false
+      }
+    },
+    {
+      "file": "DSC_1362-84.jpg",
+      "status": "audited",
+      "analysis": {
+        "zero_score": 0.985481321811676,
+        "best_score": 0.985481321811676,
+        "dx": 0,
+        "dy": 0,
+        "score_improvement": 0.0,
+        "flag": false
+      }
+    },
+    {
+      "file": "DSC_1363-85.jpg",
+      "status": "audited",
+      "analysis": {
+        "zero_score": 0.9847524166107178,
+        "best_score": 0.9847524166107178,
+        "dx": 0,
+        "dy": 0,
+        "score_improvement": 0.0,
+        "flag": false
+      }
+    },
+    {
+      "file": "DSC_1365-86.jpg",
+      "status": "audited",
+      "analysis": {
+        "zero_score": 0.9857999086380005,
+        "best_score": 0.9857999086380005,
+        "dx": 0,
+        "dy": 0,
+        "score_improvement": 0.0,
+        "flag": false
+      }
+    },
+    {
+      "file": "DSC_1367-87.jpg",
+      "status": "audited",
+      "analysis": {
+        "zero_score": 0.985908031463623,
+        "best_score": 0.985908031463623,
+        "dx": 0,
+        "dy": 0,
+        "score_improvement": 0.0,
+        "flag": false
+      }
+    },
+    {
+      "file": "DSC_1378-88.jpg",
+      "status": "audited",
+      "analysis": {
+        "zero_score": 0.9814075231552124,
+        "best_score": 0.9814075231552124,
+        "dx": 0,
+        "dy": 0,
+        "score_improvement": 0.0,
+        "flag": false
+      }
+    }
+  ]
+}

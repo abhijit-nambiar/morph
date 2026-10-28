@@ -1,0 +1,20 @@
+{
+  "mode": "preview",
+  "source_fits": "/Users/abhijitnambiar/Documents/Codex/2026-10-27/i/outputs/morph-reconstruction/unified-global-preview/fits",
+  "scenes": [
+    {
+      "scene": "scene-01",
+      "photos": 12,
+      "sample_photos": [
+        "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_0906-4.jpg",
+        "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_0928-10.jpg"
+      ],
+      "renderer": "gamut",
+      "source_validation": "verified",
+      "strength": 1.0
+    }
+  ],
+  "export_count": 0,
+  "sample_count": 2,
+  "clipping_flags": 0
+}

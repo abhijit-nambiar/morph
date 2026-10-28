@@ -1,0 +1,20 @@
+{
+  "mode": "preview",
+  "source_fits": "outputs/morph-reconstruction/full-album-soft",
+  "scenes": [
+    {
+      "scene": "scene-01",
+      "photos": 12,
+      "sample_photos": [
+        "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_0906-4.jpg",
+        "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_0904-2.jpg"
+      ],
+      "renderer": "gamut",
+      "source_validation": "legacy-unverified",
+      "strength": 1.0
+    }
+  ],
+  "export_count": 0,
+  "sample_count": 2,
+  "clipping_flags": 0
+}

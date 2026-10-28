@@ -1,0 +1,14 @@
+{
+  "scope": "Side-by-side thumbnail review; near-limit flags are heuristics, not verdicts.",
+  "photos": 88,
+  "comparison_sheets": [
+    "comparison-01.jpg",
+    "comparison-02.jpg",
+    "comparison-03.jpg",
+    "comparison-04.jpg",
+    "comparison-05.jpg",
+    "comparison-06.jpg",
+    "comparison-07.jpg",
+    "comparison-08.jpg"
+  ]
+}

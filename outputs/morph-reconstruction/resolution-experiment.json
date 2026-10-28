@@ -1,0 +1,742 @@
+{
+  "scope": "Samples original-resolution representative pixels and independently generates the target from those same pixels; no JPEG encode, transfer photos, crop, or unseen album. Per-pixel target generation is valid for pillow-soft. Full-image resampling, clipping and visual quality are not established by RMSE.",
+  "target_settings": {
+    "tone_exposure": 0.15,
+    "tone_contrast": 0.1,
+    "tone_shadows": 0.18,
+    "tone_highlights": -0.18,
+    "tone_temperature": 0.06,
+    "cool_saturation": -0.2,
+    "warm_saturation": 0.12
+  },
+  "summary": [
+    {
+      "fit_max_dimension": 320,
+      "mean_full_resolution_sample_rmse": 0.006628952265312644,
+      "mean_fit_seconds": 0.08249719433333297
+    },
+    {
+      "fit_max_dimension": 640,
+      "mean_full_resolution_sample_rmse": 0.0066135348777902805,
+      "mean_fit_seconds": 0.08196672699999996
+    },
+    {
+      "fit_max_dimension": 1024,
+      "mean_full_resolution_sample_rmse": 0.0066125365789017595,
+      "mean_fit_seconds": 0.08454102311111097
+    }
+  ],
+  "cases": [
+    {
+      "scene": "scene-01",
+      "representative": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_0906-4.jpg",
+      "sampled_full_resolution_pixels": 80000,
+      "fits": [
+        {
+          "fit_max_dimension": 320,
+          "full_resolution_sample_rmse": 0.004494085904169164,
+          "fit_seconds": 0.09641633300000008,
+          "metrics": {
+            "initial_mse": 0.0011768371964480562,
+            "fit_mse": 1.8725747385088792e-05,
+            "rmse": 0.004327325662009828,
+            "objective": 1.8725747385088792e-05,
+            "evaluations": 111,
+            "solver": "damped_gauss_newton"
+          },
+          "recipe": {
+            "exposure": 0.27911332696009045,
+            "temperature": 0.05465601329177073,
+            "tint": 0.0041133584420787375,
+            "contrast": -0.011707863256704233,
+            "shadows": 0.010786801351527722,
+            "highlights": -0.07466266782397568,
+            "saturation": -0.008664954165719054,
+            "cool_saturation": -0.20710022784787638,
+            "warm_saturation": 0.08518906525899021
+          }
+        },
+        {
+          "fit_max_dimension": 640,
+          "full_resolution_sample_rmse": 0.004489349909851351,
+          "fit_seconds": 0.08799695900000004,
+          "metrics": {
+            "initial_mse": 0.0011797514569285214,
+            "fit_mse": 2.0555880317888307e-05,
+            "rmse": 0.004533859318272712,
+            "objective": 2.0555880317888307e-05,
+            "evaluations": 101,
+            "solver": "damped_gauss_newton"
+          },
+          "recipe": {
+            "exposure": 0.2752207414810531,
+            "temperature": 0.05551037689862316,
+            "tint": 0.004121287162339321,
+            "contrast": -0.008255950105229903,
+            "shadows": 0.017825540383391434,
+            "highlights": -0.07665357402680827,
+            "saturation": -0.013548920865626661,
+            "cool_saturation": -0.17984270323976131,
+            "warm_saturation": 0.08502558245941004
+          }
+        },
+        {
+          "fit_max_dimension": 1024,
+          "full_resolution_sample_rmse": 0.004489037110517345,
+          "fit_seconds": 0.0888881250000002,
+          "metrics": {
+            "initial_mse": 0.0011852313804417345,
+            "fit_mse": 2.1706668039368105e-05,
+            "rmse": 0.004659041536557503,
+            "objective": 2.1706668039368105e-05,
+            "evaluations": 101,
+            "solver": "damped_gauss_newton"
+          },
+          "recipe": {
+            "exposure": 0.27379377423690754,
+            "temperature": 0.05546098707521632,
+            "tint": 0.003934729875711392,
+            "contrast": -0.003052667748920024,
+            "shadows": 0.026227546564907504,
+            "highlights": -0.08461104461989007,
+            "saturation": -0.014531636331652345,
+            "cool_saturation": -0.204664314213563,
+            "warm_saturation": 0.08404034145337926
+          }
+        }
+      ]
+    },
+    {
+      "scene": "scene-02",
+      "representative": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_0995-22.jpg",
+      "sampled_full_resolution_pixels": 80000,
+      "fits": [
+        {
+          "fit_max_dimension": 320,
+          "full_resolution_sample_rmse": 0.007364218594370686,
+          "fit_seconds": 0.07952179199999998,
+          "metrics": {
+            "initial_mse": 0.0011921534572718003,
+            "fit_mse": 5.278886802041177e-05,
+            "rmse": 0.007265594815320475,
+            "objective": 5.278886802041177e-05,
+            "evaluations": 91,
+            "solver": "damped_gauss_newton"
+          },
+          "recipe": {
+            "exposure": 0.11988996255422465,
+            "temperature": 0.05462630066354698,
+            "tint": 0.003894670231618507,
+            "contrast": -0.0015148513838966228,
+            "shadows": 0.11266362623661999,
+            "highlights": 0.020531834163508934,
+            "saturation": -0.04109763787523064,
+            "cool_saturation": -0.13525592142200224,
+            "warm_saturation": 0.08132410180794082
+          }
+        },
+        {
+          "fit_max_dimension": 640,
+          "full_resolution_sample_rmse": 0.007354200683202887,
+          "fit_seconds": 0.0838339170000002,
+          "metrics": {
+            "initial_mse": 0.0011852842875968255,
+            "fit_mse": 5.29402738052804e-05,
+            "rmse": 0.007276006721085433,
+            "objective": 5.29402738052804e-05,
+            "evaluations": 96,
+            "solver": "damped_gauss_newton"
+          },
+          "recipe": {
+            "exposure": 0.11722465803984493,
+            "temperature": 0.054323988884174286,
+            "tint": 0.003935518532310217,
+            "contrast": 0.0023844425303603443,
+            "shadows": 0.11877583908292762,
+            "highlights": 0.01712745988075175,
+            "saturation": -0.04848777238220072,
+            "cool_saturation": -0.13231667416870502,
+            "warm_saturation": 0.09642680118109245
+          }
+        },
+        {
+          "fit_max_dimension": 1024,
+          "full_resolution_sample_rmse": 0.00735202248389723,
+          "fit_seconds": 0.08422145800000003,
+          "metrics": {
+            "initial_mse": 0.0011764945166389928,
+            "fit_mse": 5.42048945208005e-05,
+            "rmse": 0.0073623973351619985,
+            "objective": 5.42048945208005e-05,
+            "evaluations": 96,
+            "solver": "damped_gauss_newton"
+          },
+          "recipe": {
+            "exposure": 0.11296396746639466,
+            "temperature": 0.05479880006258734,
+            "tint": 0.0040514216850528586,
+            "contrast": 0.009856216824514902,
+            "shadows": 0.1316627611383427,
+            "highlights": 0.010242416272626932,
+            "saturation": -0.05575265663771094,
+            "cool_saturation": -0.13174912564821492,
+            "warm_saturation": 0.09812720137344706
+          }
+        }
+      ]
+    },
+    {
+      "scene": "scene-03",
+      "representative": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1037-31.jpg",
+      "sampled_full_resolution_pixels": 80000,
+      "fits": [
+        {
+          "fit_max_dimension": 320,
+          "full_resolution_sample_rmse": 0.009165761550029607,
+          "fit_seconds": 0.08021908299999936,
+          "metrics": {
+            "initial_mse": 0.0015793404399535404,
+            "fit_mse": 8.21013777644885e-05,
+            "rmse": 0.009060981059713594,
+            "objective": 8.21013777644885e-05,
+            "evaluations": 91,
+            "solver": "damped_gauss_newton"
+          },
+          "recipe": {
+            "exposure": 0.3451636075293567,
+            "temperature": 0.050373033199500365,
+            "tint": 0.004125833350127666,
+            "contrast": -0.0839492933650211,
+            "shadows": -0.10893542828297219,
+            "highlights": -0.0013345145755940904,
+            "saturation": 0.020128784805293426,
+            "cool_saturation": -0.11321358249049723,
+            "warm_saturation": 0.09649703161477942
+          }
+        },
+        {
+          "fit_max_dimension": 640,
+          "full_resolution_sample_rmse": 0.00910878969061437,
+          "fit_seconds": 0.07943266699999985,
+          "metrics": {
+            "initial_mse": 0.0015892349421105106,
+            "fit_mse": 8.264766669116215e-05,
+            "rmse": 0.009091076211932345,
+            "objective": 8.264766669116215e-05,
+            "evaluations": 91,
+            "solver": "damped_gauss_newton"
+          },
+          "recipe": {
+            "exposure": 0.3416029882272629,
+            "temperature": 0.05224376011229739,
+            "tint": 0.004438587962227364,
+            "contrast": -0.055529935038878056,
+            "shadows": -0.07294590953811021,
+            "highlights": -0.03648474303763883,
+            "saturation": 0.0011015610852179957,
+            "cool_saturation": -0.12019754696806308,
+            "warm_saturation": 0.086670852582732
+          }
+        },
+        {
+          "fit_max_dimension": 1024,
+          "full_resolution_sample_rmse": 0.009110092112351162,
+          "fit_seconds": 0.0793157080000002,
+          "metrics": {
+            "initial_mse": 0.0015674134037646217,
+            "fit_mse": 8.236682274183589e-05,
+            "rmse": 0.009075616934502904,
+            "objective": 8.236682274183589e-05,
+            "evaluations": 91,
+            "solver": "damped_gauss_newton"
+          },
+          "recipe": {
+            "exposure": 0.3405621306194736,
+            "temperature": 0.05195064023581094,
+            "tint": 0.003851179134498498,
+            "contrast": -0.05747643150288142,
+            "shadows": -0.07496535708222699,
+            "highlights": -0.033857690860741474,
+            "saturation": -0.00220984121177073,
+            "cool_saturation": -0.11501272915185745,
+            "warm_saturation": 0.09694889928461028
+          }
+        }
+      ]
+    },
+    {
+      "scene": "scene-04",
+      "representative": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1054-33.jpg",
+      "sampled_full_resolution_pixels": 80000,
+      "fits": [
+        {
+          "fit_max_dimension": 320,
+          "full_resolution_sample_rmse": 0.006311812272408187,
+          "fit_seconds": 0.0787290839999999,
+          "metrics": {
+            "initial_mse": 0.0016085993831306865,
+            "fit_mse": 3.357614239081258e-05,
+            "rmse": 0.0057944924187380365,
+            "objective": 3.357614239081258e-05,
+            "evaluations": 91,
+            "solver": "damped_gauss_newton"
+          },
+          "recipe": {
+            "exposure": 0.1886050805208803,
+            "temperature": 0.05449201629230625,
+            "tint": 0.002487245068169161,
+            "contrast": -0.007263228712189302,
+            "shadows": 0.06411378101301804,
+            "highlights": -0.0015901604261479008,
+            "saturation": -0.03608151288690127,
+            "cool_saturation": -0.1466918739658297,
+            "warm_saturation": 0.054478142793816416
+          }
+        },
+        {
+          "fit_max_dimension": 640,
+          "full_resolution_sample_rmse": 0.006305161221336226,
+          "fit_seconds": 0.07961008399999958,
+          "metrics": {
+            "initial_mse": 0.00157599052992574,
+            "fit_mse": 3.812618111723558e-05,
+            "rmse": 0.006174640160951534,
+            "objective": 3.812618111723558e-05,
+            "evaluations": 91,
+            "solver": "damped_gauss_newton"
+          },
+          "recipe": {
+            "exposure": 0.19848269449777056,
+            "temperature": 0.05457750990009456,
+            "tint": 0.0022420990057175783,
+            "contrast": -0.011156925600334534,
+            "shadows": 0.05553324880688296,
+            "highlights": -0.008823764217312752,
+            "saturation": -0.031469668528747524,
+            "cool_saturation": -0.1452602599353175,
+            "warm_saturation": 0.05635369638459736
+          }
+        },
+        {
+          "fit_max_dimension": 1024,
+          "full_resolution_sample_rmse": 0.006299732702246735,
+          "fit_seconds": 0.08345924999999976,
+          "metrics": {
+            "initial_mse": 0.00157162383586033,
+            "fit_mse": 3.7002047411731736e-05,
+            "rmse": 0.0060829308241777446,
+            "objective": 3.7002047411731736e-05,
+            "evaluations": 96,
+            "solver": "damped_gauss_newton"
+          },
+          "recipe": {
+            "exposure": 0.20066347358190587,
+            "temperature": 0.05407050196865067,
+            "tint": 0.002381603394816102,
+            "contrast": -0.01458668354070889,
+            "shadows": 0.05060528266302687,
+            "highlights": -0.005302776895109404,
+            "saturation": -0.0342749611783974,
+            "cool_saturation": -0.13787501634992405,
+            "warm_saturation": 0.06717450975359822
+          }
+        }
+      ]
+    },
+    {
+      "scene": "scene-05",
+      "representative": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1111-45.jpg",
+      "sampled_full_resolution_pixels": 80000,
+      "fits": [
+        {
+          "fit_max_dimension": 320,
+          "full_resolution_sample_rmse": 0.006344538680115741,
+          "fit_seconds": 0.07902341699999837,
+          "metrics": {
+            "initial_mse": 0.0014182315049394855,
+            "fit_mse": 3.7016504945919576e-05,
+            "rmse": 0.006084119077230456,
+            "objective": 3.7016504945919576e-05,
+            "evaluations": 91,
+            "solver": "damped_gauss_newton"
+          },
+          "recipe": {
+            "exposure": 0.18969117975397962,
+            "temperature": 0.05723948111057198,
+            "tint": 0.0012935523962848583,
+            "contrast": 0.02906427207624256,
+            "shadows": 0.1123945566589844,
+            "highlights": -0.0769053001388583,
+            "saturation": -0.05406361351359723,
+            "cool_saturation": -0.15777304503789924,
+            "warm_saturation": 0.07491660679925831
+          }
+        },
+        {
+          "fit_max_dimension": 640,
+          "full_resolution_sample_rmse": 0.0063400988342539955,
+          "fit_seconds": 0.07982116600000033,
+          "metrics": {
+            "initial_mse": 0.0014066684283344185,
+            "fit_mse": 4.135297400062236e-05,
+            "rmse": 0.006430627807657846,
+            "objective": 4.135297400062236e-05,
+            "evaluations": 91,
+            "solver": "damped_gauss_newton"
+          },
+          "recipe": {
+            "exposure": 0.17387005739641267,
+            "temperature": 0.056914446250050925,
+            "tint": 0.00117810246542446,
+            "contrast": 0.022842710331018604,
+            "shadows": 0.11380054380829402,
+            "highlights": -0.05741238511838868,
+            "saturation": -0.052314613946698174,
+            "cool_saturation": -0.15212843733765533,
+            "warm_saturation": 0.08509131542101292
+          }
+        },
+        {
+          "fit_max_dimension": 1024,
+          "full_resolution_sample_rmse": 0.006341908596216217,
+          "fit_seconds": 0.08915454199999928,
+          "metrics": {
+            "initial_mse": 0.0013974036281724342,
+            "fit_mse": 3.9068330799572494e-05,
+            "rmse": 0.006250466446560008,
+            "objective": 3.9068330799572494e-05,
+            "evaluations": 101,
+            "solver": "damped_gauss_newton"
+          },
+          "recipe": {
+            "exposure": 0.20174152016657895,
+            "temperature": 0.056457515602924335,
+            "tint": 0.0012279156922842874,
+            "contrast": 0.01311167625450831,
+            "shadows": 0.08808330777206053,
+            "highlights": -0.06837139461812583,
+            "saturation": -0.03987499642156122,
+            "cool_saturation": -0.1652342495886076,
+            "warm_saturation": 0.07232987808954526
+          }
+        }
+      ]
+    },
+    {
+      "scene": "scene-06",
+      "representative": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1286-58.jpg",
+      "sampled_full_resolution_pixels": 80000,
+      "fits": [
+        {
+          "fit_max_dimension": 320,
+          "full_resolution_sample_rmse": 0.0074635945574908534,
+          "fit_seconds": 0.09166516599999852,
+          "metrics": {
+            "initial_mse": 0.0006881003218682864,
+            "fit_mse": 5.405843987632275e-05,
+            "rmse": 0.007352444483049345,
+            "objective": 5.405843987632275e-05,
+            "evaluations": 106,
+            "solver": "damped_gauss_newton"
+          },
+          "recipe": {
+            "exposure": 0.08134741492750107,
+            "temperature": 0.05360878158770001,
+            "tint": -0.006149950112896058,
+            "contrast": 0.017297101252103306,
+            "shadows": 0.14333021334194593,
+            "highlights": -0.007611180970397252,
+            "saturation": -0.055833262652526805,
+            "cool_saturation": -0.14468160050235002,
+            "warm_saturation": 0.08133237291865102
+          }
+        },
+        {
+          "fit_max_dimension": 640,
+          "full_resolution_sample_rmse": 0.0074145940964452555,
+          "fit_seconds": 0.0797342909999994,
+          "metrics": {
+            "initial_mse": 0.0006859148269477125,
+            "fit_mse": 5.611551687373901e-05,
+            "rmse": 0.0074910290931045655,
+            "objective": 5.611551687373901e-05,
+            "evaluations": 91,
+            "solver": "damped_gauss_newton"
+          },
+          "recipe": {
+            "exposure": 0.09236028669514168,
+            "temperature": 0.053010660959202614,
+            "tint": -0.00679995802670495,
+            "contrast": 0.014948781991415914,
+            "shadows": 0.1377357720551223,
+            "highlights": -0.011692687927090422,
+            "saturation": -0.05956403850420631,
+            "cool_saturation": -0.13707508342799915,
+            "warm_saturation": 0.09471840866567986
+          }
+        },
+        {
+          "fit_max_dimension": 1024,
+          "full_resolution_sample_rmse": 0.007411778721090721,
+          "fit_seconds": 0.0924760409999994,
+          "metrics": {
+            "initial_mse": 0.0006721124527328306,
+            "fit_mse": 5.509665701230029e-05,
+            "rmse": 0.007422712240973665,
+            "objective": 5.509665701230029e-05,
+            "evaluations": 106,
+            "solver": "damped_gauss_newton"
+          },
+          "recipe": {
+            "exposure": 0.08769049050276269,
+            "temperature": 0.05310702829630152,
+            "tint": -0.007043542378484773,
+            "contrast": 0.011439000252378458,
+            "shadows": 0.1356688761892458,
+            "highlights": -0.006179185176986605,
+            "saturation": -0.05725132881241862,
+            "cool_saturation": -0.13577481327994045,
+            "warm_saturation": 0.09507823943207268
+          }
+        }
+      ]
+    },
+    {
+      "scene": "scene-07",
+      "representative": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1320-70.jpg",
+      "sampled_full_resolution_pixels": 80000,
+      "fits": [
+        {
+          "fit_max_dimension": 320,
+          "full_resolution_sample_rmse": 0.006761258022777108,
+          "fit_seconds": 0.07057020799999947,
+          "metrics": {
+            "initial_mse": 0.0010241625687634356,
+            "fit_mse": 4.7038119800805634e-05,
+            "rmse": 0.0068584342091184075,
+            "objective": 4.7038119800805634e-05,
+            "evaluations": 81,
+            "solver": "damped_gauss_newton"
+          },
+          "recipe": {
+            "exposure": 0.06810143083148339,
+            "temperature": 0.052179869476568476,
+            "tint": 0.0015380377730568411,
+            "contrast": -0.01995902805376755,
+            "shadows": 0.11645544878762858,
+            "highlights": 0.07521232933782322,
+            "saturation": -0.05367378347801485,
+            "cool_saturation": -0.11767468006378583,
+            "warm_saturation": 0.13218515220974408
+          }
+        },
+        {
+          "fit_max_dimension": 640,
+          "full_resolution_sample_rmse": 0.006760087953603571,
+          "fit_seconds": 0.07972287499999986,
+          "metrics": {
+            "initial_mse": 0.0010219164010723167,
+            "fit_mse": 4.453137990250595e-05,
+            "rmse": 0.006673183640699988,
+            "objective": 4.453137990250595e-05,
+            "evaluations": 91,
+            "solver": "damped_gauss_newton"
+          },
+          "recipe": {
+            "exposure": 0.0549110421711534,
+            "temperature": 0.05186360719268787,
+            "tint": 0.0016526743273869017,
+            "contrast": -0.0204515160365321,
+            "shadows": 0.12437998812861174,
+            "highlights": 0.08428072706832995,
+            "saturation": -0.05252163327478179,
+            "cool_saturation": -0.13614011319342045,
+            "warm_saturation": 0.13430346102078491
+          }
+        },
+        {
+          "fit_max_dimension": 1024,
+          "full_resolution_sample_rmse": 0.006754152902890759,
+          "fit_seconds": 0.07145812500000126,
+          "metrics": {
+            "initial_mse": 0.001019916331937319,
+            "fit_mse": 4.568601032675622e-05,
+            "rmse": 0.006759142721289159,
+            "objective": 4.568601032675622e-05,
+            "evaluations": 81,
+            "solver": "damped_gauss_newton"
+          },
+          "recipe": {
+            "exposure": 0.05357234469453906,
+            "temperature": 0.05248665696057454,
+            "tint": 0.0016482117529660215,
+            "contrast": -0.015850264024967163,
+            "shadows": 0.13088665601760663,
+            "highlights": 0.08015644377451542,
+            "saturation": -0.06254643121508957,
+            "cool_saturation": -0.11774272583040396,
+            "warm_saturation": 0.13774954718218296
+          }
+        }
+      ]
+    },
+    {
+      "scene": "scene-08",
+      "representative": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1334-76.jpg",
+      "sampled_full_resolution_pixels": 80000,
+      "fits": [
+        {
+          "fit_max_dimension": 320,
+          "full_resolution_sample_rmse": 0.005287079221170616,
+          "fit_seconds": 0.08712275000000069,
+          "metrics": {
+            "initial_mse": 0.0014834440102729357,
+            "fit_mse": 2.7187419514574262e-05,
+            "rmse": 0.0052141556856862515,
+            "objective": 2.7187419514574262e-05,
+            "evaluations": 101,
+            "solver": "damped_gauss_newton"
+          },
+          "recipe": {
+            "exposure": 0.2612717454681608,
+            "temperature": 0.054052021650149426,
+            "tint": 0.0025367399491777612,
+            "contrast": 0.008889164533359082,
+            "shadows": 0.05029539532152921,
+            "highlights": -0.110360240824229,
+            "saturation": -0.04760904074198525,
+            "cool_saturation": -0.16404299956937174,
+            "warm_saturation": 0.091251791139105
+          }
+        },
+        {
+          "fit_max_dimension": 640,
+          "full_resolution_sample_rmse": 0.005284868688725009,
+          "fit_seconds": 0.08757016700000086,
+          "metrics": {
+            "initial_mse": 0.0014748609934988346,
+            "fit_mse": 2.846164854311802e-05,
+            "rmse": 0.005334945973776869,
+            "objective": 2.846164854311802e-05,
+            "evaluations": 101,
+            "solver": "damped_gauss_newton"
+          },
+          "recipe": {
+            "exposure": 0.2616121216765104,
+            "temperature": 0.05395308715184973,
+            "tint": 0.0025350940072499874,
+            "contrast": 0.003778827287385612,
+            "shadows": 0.04392859182329146,
+            "highlights": -0.10273486363012917,
+            "saturation": -0.04149440749820228,
+            "cool_saturation": -0.1766961231082392,
+            "warm_saturation": 0.07960503413596053
+          }
+        },
+        {
+          "fit_max_dimension": 1024,
+          "full_resolution_sample_rmse": 0.0052880201730262,
+          "fit_seconds": 0.09190679199999963,
+          "metrics": {
+            "initial_mse": 0.0014780836565584446,
+            "fit_mse": 2.9412894987931573e-05,
+            "rmse": 0.005423365651321287,
+            "objective": 2.9412894987931573e-05,
+            "evaluations": 106,
+            "solver": "damped_gauss_newton"
+          },
+          "recipe": {
+            "exposure": 0.271949888234658,
+            "temperature": 0.05409041908570124,
+            "tint": 0.002540850017406395,
+            "contrast": 0.001729990858539963,
+            "shadows": 0.036933566177573804,
+            "highlights": -0.111304189846932,
+            "saturation": -0.04541276688251715,
+            "cool_saturation": -0.15128293127963688,
+            "warm_saturation": 0.09358358076777115
+          }
+        }
+      ]
+    },
+    {
+      "scene": "scene-09",
+      "representative": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1363-85.jpg",
+      "sampled_full_resolution_pixels": 80000,
+      "fits": [
+        {
+          "fit_max_dimension": 320,
+          "full_resolution_sample_rmse": 0.0064682215852818305,
+          "fit_seconds": 0.0792069160000004,
+          "metrics": {
+            "initial_mse": 0.0010064026498483225,
+            "fit_mse": 3.851068764923431e-05,
+            "rmse": 0.0062056979985521624,
+            "objective": 3.851068764923431e-05,
+            "evaluations": 91,
+            "solver": "damped_gauss_newton"
+          },
+          "recipe": {
+            "exposure": 0.056951200672011634,
+            "temperature": 0.0515228536534032,
+            "tint": 0.00044430481056567504,
+            "contrast": -0.025072869298148663,
+            "shadows": 0.09973350877127539,
+            "highlights": 0.12122250830801387,
+            "saturation": 0.0011170244923734184,
+            "cool_saturation": -0.19871555607951463,
+            "warm_saturation": 0.08898366418745467
+          }
+        },
+        {
+          "fit_max_dimension": 640,
+          "full_resolution_sample_rmse": 0.006464662822079864,
+          "fit_seconds": 0.07997841699999952,
+          "metrics": {
+            "initial_mse": 0.0010134486728588536,
+            "fit_mse": 4.3026653041771956e-05,
+            "rmse": 0.006559470484861713,
+            "objective": 4.3026653041771956e-05,
+            "evaluations": 91,
+            "solver": "damped_gauss_newton"
+          },
+          "recipe": {
+            "exposure": 0.05355625638188215,
+            "temperature": 0.05168873230480878,
+            "tint": -1.1475669275065433e-05,
+            "contrast": -0.02388844771165452,
+            "shadows": 0.10475466710426444,
+            "highlights": 0.12080704235313831,
+            "saturation": 0.001788359761619665,
+            "cool_saturation": -0.20231811572755948,
+            "warm_saturation": 0.08634265521585162
+          }
+        },
+        {
+          "fit_max_dimension": 1024,
+          "full_resolution_sample_rmse": 0.006466084407879472,
+          "fit_seconds": 0.07998916699999903,
+          "metrics": {
+            "initial_mse": 0.001009011906269624,
+            "fit_mse": 4.374706207425366e-05,
+            "rmse": 0.0066141561876216426,
+            "objective": 4.374706207425366e-05,
+            "evaluations": 91,
+            "solver": "damped_gauss_newton"
+          },
+          "recipe": {
+            "exposure": 0.052846263058189326,
+            "temperature": 0.05231299712164414,
+            "tint": 0.00018883563277122725,
+            "contrast": -0.022058924152628025,
+            "shadows": 0.10654666355999728,
+            "highlights": 0.11741698123037166,
+            "saturation": 0.0007904892622946299,
+            "cool_saturation": -0.20238903694294752,
+            "warm_saturation": 0.08497421991774302
+          }
+        }
+      ]
+    }
+  ]
+}

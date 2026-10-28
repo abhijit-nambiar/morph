@@ -1,0 +1,34 @@
+{
+  "target_engine": "pillow-soft",
+  "renderer": "polynomial",
+  "regularization": 0.001,
+  "strength": 1.0,
+  "scenes": [
+    {
+      "scene": "scene-01",
+      "representative": "/Users/abhijitnambiar/Documents/Codex/2026-10-27/i/work/morph-demo/DSC_0906-4.jpg",
+      "photos": 4,
+      "metrics": {
+        "sampled_pixels": 30000,
+        "initial_mse": 0.0011856872588396072,
+        "fit_mse": 2.3368753407549446e-05,
+        "rmse": 0.004834123851076785,
+        "regularization": 0.001
+      }
+    },
+    {
+      "scene": "scene-02",
+      "representative": "/Users/abhijitnambiar/Documents/Codex/2026-10-27/i/work/morph-demo/DSC_0904-2.jpg",
+      "photos": 2,
+      "metrics": {
+        "sampled_pixels": 30000,
+        "initial_mse": 0.0010650519980117679,
+        "fit_mse": 3.1280003766777945e-05,
+        "rmse": 0.005592852918393076,
+        "regularization": 0.001
+      }
+    }
+  ],
+  "export_count": 6,
+  "clipping_flags": 0
+}

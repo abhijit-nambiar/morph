@@ -1,0 +1,89 @@
+{
+  "scope": "Neutral re-encode through the bounded renderer and JPEG quality 95, full-resolution images but random pixel samples only. RGB metrics use decoded sRGB and compare against the original JPEG; they do not measure perceived sharpness, non-neutral edits, or absolute camera RAW quality. JPEG encoding is lossy.",
+  "cases": [
+    {
+      "scene": "scene-01",
+      "source": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_0906-4.jpg",
+      "dimensions": [
+        6048,
+        4032
+      ],
+      "sampled_full_resolution_pixels": 150000,
+      "pre_encoding_neutral_max_error": 2.353786471287478e-08,
+      "jpeg_roundtrip": {
+        "rmse": 0.0020410583572515587,
+        "mean_absolute_error": 0.0008664226739781185,
+        "absolute_error_99th_percentile": 0.00784313678741455,
+        "psnr_db": 53.80289155810377
+      },
+      "metadata": {
+        "same_oriented_dimensions": true,
+        "capture_time_preserved": true,
+        "output_has_icc": true
+      }
+    },
+    {
+      "scene": "scene-03",
+      "source": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1037-31.jpg",
+      "dimensions": [
+        4032,
+        6048
+      ],
+      "sampled_full_resolution_pixels": 150000,
+      "pre_encoding_neutral_max_error": 2.353786471287478e-08,
+      "jpeg_roundtrip": {
+        "rmse": 0.0020603812284264557,
+        "mean_absolute_error": 0.0008528366160485894,
+        "absolute_error_99th_percentile": 0.00784313678741455,
+        "psnr_db": 53.72104831024913
+      },
+      "metadata": {
+        "same_oriented_dimensions": true,
+        "capture_time_preserved": true,
+        "output_has_icc": true
+      }
+    },
+    {
+      "scene": "scene-06",
+      "source": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1286-58.jpg",
+      "dimensions": [
+        4032,
+        6048
+      ],
+      "sampled_full_resolution_pixels": 150000,
+      "pre_encoding_neutral_max_error": 2.353786471287478e-08,
+      "jpeg_roundtrip": {
+        "rmse": 0.0019478791116436178,
+        "mean_absolute_error": 0.0006723834461946454,
+        "absolute_error_99th_percentile": 0.00784313678741455,
+        "psnr_db": 54.208759992014805
+      },
+      "metadata": {
+        "same_oriented_dimensions": true,
+        "capture_time_preserved": true,
+        "output_has_icc": true
+      }
+    },
+    {
+      "scene": "scene-09",
+      "source": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1363-85.jpg",
+      "dimensions": [
+        4032,
+        6048
+      ],
+      "sampled_full_resolution_pixels": 150000,
+      "pre_encoding_neutral_max_error": 2.353786471287478e-08,
+      "jpeg_roundtrip": {
+        "rmse": 0.0017034340048875227,
+        "mean_absolute_error": 0.0006107451000199136,
+        "absolute_error_99th_percentile": 0.00784313678741455,
+        "psnr_db": 55.37349374756785
+      },
+      "metadata": {
+        "same_oriented_dimensions": true,
+        "capture_time_preserved": true,
+        "output_has_icc": true
+      }
+    }
+  ]
+}

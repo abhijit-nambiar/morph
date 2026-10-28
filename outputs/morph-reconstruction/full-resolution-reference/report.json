@@ -1,0 +1,23 @@
+{
+  "target_engine": "pillow-soft",
+  "renderer": "gamut",
+  "regularization": 0,
+  "strength": 1.0,
+  "scenes": [
+    {
+      "scene": "scene-01",
+      "representative": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_0906-4.jpg",
+      "photos": 1,
+      "metrics": {
+        "initial_mse": 0.0011768371964480562,
+        "fit_mse": 1.8725747385088792e-05,
+        "rmse": 0.004327325662009828,
+        "objective": 1.8725747385088792e-05,
+        "evaluations": 111,
+        "solver": "damped_gauss_newton"
+      }
+    }
+  ],
+  "export_count": 1,
+  "clipping_flags": 0
+}

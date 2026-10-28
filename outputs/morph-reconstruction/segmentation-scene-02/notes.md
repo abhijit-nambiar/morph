@@ -1,0 +1,7 @@
+# Person segmentation for scene grouping: preliminary probe
+
+Local person segmentation produces a soft mask in a fixed-size image; we resized it to the oriented image dimensions for this preview. The review sheet shows three original photos, masks, and overlays. The small people in the lawn photo have patchy confidence, and masks may include clothing and other nearby areas. They are not skin, face, or background labels.
+
+For the 13 photos in the mixed lawn/building chronological scene, we replaced the predicted person area with neutral gray and computed image-feature distances again. We compared those distances with a manually selected two-group split of this same scene. Across the 36 within-group and 42 between-group photo pairs, the fraction of cross-comparisons in which a within-group distance was smaller than a between-group distance was 0.881 for the full images and 0.884 after masking people. These pairs share photos and are statistically dependent; this is a descriptive ranking, not an accuracy or independent test. Neutral gray introduces an artificial shape and changes the distance scale.
+
+This small result does not show a meaningful improvement from masking, and it does not test editing transfer. The subject masks remain experimental and are not enabled in the main workflow. More diverse scenes, alternative background representations, reliable segmentation, and transfer-based evaluation are needed before adopting them for grouping or local adjustments.

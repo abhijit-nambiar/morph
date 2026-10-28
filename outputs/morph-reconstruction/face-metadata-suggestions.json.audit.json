@@ -1,0 +1,69 @@
+{
+  "warning": "Review candidates; camera settings do not measure scene light, JPEG processing, or photographer intent. This heuristic has mixed results and is not automatically applied.",
+  "photos": [
+    {
+      "scene": "scene-01",
+      "photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_0906-4.jpg",
+      "eligible": false,
+      "reason": "camera exposure difference below threshold",
+      "metadata_stops": 0.0
+    },
+    {
+      "scene": "scene-01",
+      "photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_0904-2.jpg",
+      "eligible": true,
+      "reason": "review candidate, not an automatic correction",
+      "metadata_stops": 0.6780719051126375,
+      "elapsed_seconds": 114.0,
+      "proposed_exposure": -0.16951797627815937
+    },
+    {
+      "scene": "scene-01",
+      "photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_0905-3.jpg",
+      "eligible": true,
+      "reason": "review candidate, not an automatic correction",
+      "metadata_stops": 0.6780719051126375,
+      "elapsed_seconds": 56.0,
+      "proposed_exposure": -0.16951797627815937
+    },
+    {
+      "scene": "scene-01",
+      "photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_0914-5.jpg",
+      "eligible": false,
+      "reason": "camera exposure difference below threshold",
+      "metadata_stops": 0.0
+    },
+    {
+      "scene": "scene-01",
+      "photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_0935-12.jpg",
+      "eligible": false,
+      "reason": "camera exposure difference below threshold",
+      "metadata_stops": -0.29278174922784583
+    },
+    {
+      "scene": "scene-02",
+      "photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_0958-15.jpg",
+      "eligible": false,
+      "reason": "camera exposure difference below threshold",
+      "metadata_stops": 0.0
+    },
+    {
+      "scene": "scene-02",
+      "photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_0987-19.jpg",
+      "eligible": true,
+      "reason": "review candidate, not an automatic correction",
+      "metadata_stops": -0.30400618689009967,
+      "elapsed_seconds": 378.0,
+      "proposed_exposure": 0.07600154672252492
+    },
+    {
+      "scene": "scene-02",
+      "photo": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_0990-20.jpg",
+      "eligible": true,
+      "reason": "review candidate, not an automatic correction",
+      "metadata_stops": 1.0179219079972626,
+      "elapsed_seconds": 451.0,
+      "proposed_exposure": -0.25
+    }
+  ]
+}

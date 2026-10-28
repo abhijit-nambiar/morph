@@ -1,0 +1,50 @@
+{
+  "mode": "preview",
+  "target_engine": "pillow-soft",
+  "prompt": "warm, slightly soft contrast and lift shadows",
+  "interpreted_prompt": [
+    {
+      "phrase": "warm",
+      "intensity": 1.0
+    },
+    {
+      "phrase": "soft contrast",
+      "intensity": 0.5
+    },
+    {
+      "phrase": "lift shadows",
+      "intensity": 1.0
+    }
+  ],
+  "renderer": "gamut",
+  "regularization": 0,
+  "strength": 1.0,
+  "scenes": [
+    {
+      "scene": "scene-01",
+      "representative": "originals/DSC_0906-4.jpg",
+      "photos": 3,
+      "sample_photos": [
+        "originals/DSC_0906-4.jpg",
+        "originals/DSC_0928-10.jpg",
+        "originals/DSC_0901-1.jpg"
+      ],
+      "metrics": {
+        "initial_mse": 0.0008205989758854636,
+        "fit_mse": 2.566506674403446e-06,
+        "rmse": 0.001602032045373452,
+        "objective": 2.566506674403446e-06,
+        "evaluations": 101,
+        "solver": "damped_gauss_newton"
+      }
+    }
+  ],
+  "export_count": 0,
+  "sample_count": 3,
+  "clipping_flags": 0,
+  "transfer_check": {
+    "enabled": true,
+    "other_photos_evaluated": 2,
+    "worse_than_source": 0
+  }
+}

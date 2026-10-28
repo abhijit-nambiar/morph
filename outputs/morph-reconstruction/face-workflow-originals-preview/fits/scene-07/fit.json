@@ -1,0 +1,233 @@
+{
+  "version": 1,
+  "scope": "Experimental face-relative lighting. Boxes are not validated by this tool; masks extend outside faces.",
+  "scene": "scene-07",
+  "representative": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1320-70.jpg",
+  "prompt": "warm and slightly soft contrast and lift shadows and slightly brighten faces",
+  "target_engine": "synthetic-face",
+  "target_path": null,
+  "target_sha256": null,
+  "global_interpretation": [
+    {
+      "phrase": "warm",
+      "intensity": 1.0
+    },
+    {
+      "phrase": "soft contrast",
+      "intensity": 0.5
+    },
+    {
+      "phrase": "lift shadows",
+      "intensity": 1.0
+    }
+  ],
+  "target_settings": {
+    "tone_exposure": 0.0,
+    "tone_contrast": -0.1,
+    "tone_shadows": 0.2,
+    "tone_highlights": 0.0,
+    "tone_temperature": 0.12,
+    "cool_saturation": 0.0,
+    "warm_saturation": 0.0
+  },
+  "target_face_light": 0.15,
+  "local_status": "fitted",
+  "fit_size": 320,
+  "regularization": 0.0001,
+  "weights": [
+    [
+      0.14537202785095601,
+      0.003721388138553388,
+      -0.024613118517143658
+    ],
+    [
+      0.08642098509790058,
+      0.036002845384791454,
+      -0.010233352350374375
+    ],
+    [
+      -0.05110681469891821,
+      0.011488295620289465,
+      -0.042905899006560236
+    ],
+    [
+      -0.16760839431796365,
+      0.017073773433637307,
+      0.046890148356523005
+    ],
+    [
+      -0.03098863139461813,
+      -0.056032061101106756,
+      -0.011361128455492912
+    ],
+    [
+      -0.0402646347400208,
+      -0.04327468034875128,
+      -0.0170954280752328
+    ],
+    [
+      -0.08179613648051494,
+      -0.04595290884496438,
+      -0.0004130020816012169
+    ],
+    [
+      0.07626583496180922,
+      0.04721831182001933,
+      0.03341844817814219
+    ],
+    [
+      0.045000468811659596,
+      0.01004956034558146,
+      0.0052064526535150315
+    ],
+    [
+      0.013643327144668276,
+      0.016146933064343828,
+      0.01928743527956533
+    ],
+    [
+      0.07936978672592167,
+      0.0515847564647861,
+      0.04970653480119408
+    ],
+    [
+      0.026670126176433568,
+      0.0404649267869194,
+      0.04096544865317344
+    ],
+    [
+      0.02237441074854484,
+      0.03589070667815194,
+      0.03687119326638281
+    ]
+  ],
+  "manifest": [
+    {
+      "path": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1308-66.jpg",
+      "sha256": "b64156a691744d90e1bdbd065f21062c89fc5d7df1f5ea431e773923183bd406",
+      "faces": [
+        {
+          "x": 0.4308245778083801,
+          "y": 0.33326587080955505,
+          "width": 0.11292184889316559,
+          "height": 0.07528123259544373
+        },
+        {
+          "x": 0.6208765506744385,
+          "y": 0.357034794986248,
+          "width": 0.11076066642999649,
+          "height": 0.07384044677019119
+        }
+      ],
+      "detection_validation": "verified"
+    },
+    {
+      "path": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1310-67.jpg",
+      "sha256": "972c2fb5f3ca59fab37aabbe2afdf37667fd4451def9ee781efc922be3e98c84",
+      "faces": [
+        {
+          "x": 0.4056902825832367,
+          "y": 0.33382968604564667,
+          "width": 0.10707461833953857,
+          "height": 0.07138307392597198
+        },
+        {
+          "x": 0.5992741584777832,
+          "y": 0.36385881900787354,
+          "width": 0.10189738124608994,
+          "height": 0.06793159246444702
+        }
+      ],
+      "detection_validation": "verified"
+    },
+    {
+      "path": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1312-68.jpg",
+      "sha256": "38f7f36169550e6a5d9e9d7671999f00fed3431fea42d824ca4a826ec134c72a",
+      "faces": [
+        {
+          "x": 0.4087508022785187,
+          "y": 0.33511219173669815,
+          "width": 0.10268920660018921,
+          "height": 0.06845947355031967
+        },
+        {
+          "x": 0.5956106781959534,
+          "y": 0.3629662021994591,
+          "width": 0.10312669724225998,
+          "height": 0.06875113397836685
+        }
+      ],
+      "detection_validation": "verified"
+    },
+    {
+      "path": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1315-69.jpg",
+      "sha256": "a200d5d87453268dc49ef58142008199f7edbc756187607a6034a5fd95a7036b",
+      "faces": [
+        {
+          "x": 0.5500661730766296,
+          "y": 0.3143167942762375,
+          "width": 0.16833484172821045,
+          "height": 0.11222322285175323
+        },
+        {
+          "x": 0.228521928191185,
+          "y": 0.26937302201986313,
+          "width": 0.17241477966308594,
+          "height": 0.11494318395853043
+        }
+      ],
+      "detection_validation": "verified"
+    },
+    {
+      "path": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1320-70.jpg",
+      "sha256": "eda818c079aeae0961c2b3d9cd3e09f453885115439df2d331e80655e825a695",
+      "faces": [
+        {
+          "x": 0.4209465980529785,
+          "y": 0.19605346024036407,
+          "width": 0.09017971903085709,
+          "height": 0.13526956737041473
+        },
+        {
+          "x": 0.5796959400177002,
+          "y": 0.2395130693912506,
+          "width": 0.0881134495139122,
+          "height": 0.132170170545578
+        }
+      ],
+      "detection_validation": "verified"
+    },
+    {
+      "path": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1322-71.jpg",
+      "sha256": "0b4f6bb3984b1f6db4ec65ecf25774e30740664be1a6d3b1da75f0eac4d19c57",
+      "faces": [
+        {
+          "x": 0.6821687817573547,
+          "y": 0.2501043751835823,
+          "width": 0.06941544264554977,
+          "height": 0.10412316769361496
+        },
+        {
+          "x": 0.5591198205947876,
+          "y": 0.2134786918759346,
+          "width": 0.06975126266479492,
+          "height": 0.10462688654661179
+        }
+      ],
+      "detection_validation": "verified"
+    },
+    {
+      "path": "/Users/abhijitnambiar/Downloads/Morph/originals/DSC_1324-72.jpg",
+      "sha256": "18e5c055992810a1e7da9e2207f5b4dfe6cbf40837041afb1cc33e61ffca8dbf",
+      "faces": [
+        {
+          "x": 0.5207255482673645,
+          "y": 0.3120700493454933,
+          "width": 0.16258008778095245,
+          "height": 0.10838671773672104
+        }
+      ],
+      "detection_validation": "verified"
+    }
+  ]
+}

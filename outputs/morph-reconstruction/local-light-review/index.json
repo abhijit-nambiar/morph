@@ -1,0 +1,11 @@
+{
+  "scope": "Thumbnail review only; sampled photos, not the entire album. No other correction layers are applied. Full-resolution sample export via apply is needed to inspect detail.",
+  "source_validation": "Source checksum and membership validation occurs in apply, not in this thumbnail review.",
+  "scenes": 1,
+  "photos": 3,
+  "comparison_sheets": [
+    "comparison-01.jpg"
+  ],
+  "decisions": "decisions.csv",
+  "choices": "Any value from 0 to 1; blank scenes are omitted on compile."
+}
