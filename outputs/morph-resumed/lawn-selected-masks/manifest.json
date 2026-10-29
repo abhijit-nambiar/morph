@@ -1,0 +1,38 @@
+[
+  {
+    "source": "Morph/originals/DSC_0947-13.jpg",
+    "source_sha256": "e543bbeea49393e7a0ac65ce8a76fd2e8c0d418de73f7a4478bf36980140a849",
+    "mask": "outputs/morph-resumed/lawn-selected-masks/DSC_0947-13-mask.png",
+    "mask_sha256": "58c93f7a38d87c4e77ed3775d3925d86db725299af857df846325d7e97986804"
+  },
+  {
+    "source": "Morph/originals/DSC_0948-14.jpg",
+    "source_sha256": "baf72136ebae12c6ace821688ec3f62dc912b1176dfe914f34034d4e70dfdbce",
+    "mask": "outputs/morph-resumed/lawn-selected-masks/DSC_0948-14-mask.png",
+    "mask_sha256": "56be9ec97a5d88b31ca26947ecf0064cdf2ff48ad5606156e84e77cf63a44f5c"
+  },
+  {
+    "source": "Morph/originals/DSC_0958-15.jpg",
+    "source_sha256": "3929f529a87b72ed8416403d84a3b12c59e7207ce36e40813fd9820987d3ee3a",
+    "mask": "outputs/morph-resumed/lawn-selected-masks/DSC_0958-15-mask.png",
+    "mask_sha256": "4cf92ba43b3d8609eab0b81781d53cdee44a29f733c891483407474ac8fb94bd"
+  },
+  {
+    "source": "Morph/originals/DSC_0970-17.jpg",
+    "source_sha256": "e63953c0060cc94571859fe3536df4fc8d8eaa5c9d4dd7b63683813878df7686",
+    "mask": "outputs/morph-resumed/lawn-selected-masks/DSC_0970-17-mask.png",
+    "mask_sha256": "48d2e735e4758a84ba242d6a452225feaf146141a23d42366624b33a495ff6be"
+  },
+  {
+    "source": "Morph/originals/DSC_0974-18.jpg",
+    "source_sha256": "abfc924a4c4a85edca68b85a22f85278b2826f2c71b955a8bd8c4c0e3b89d2e2",
+    "mask": "outputs/morph-resumed/lawn-selected-masks/DSC_0974-18-mask.png",
+    "mask_sha256": "5649f47f2eb86a338fb17473416367f7ea73a781a3169fed3aea6ce40e7e94db"
+  },
+  {
+    "source": "Morph/originals/DSC_0987-19.jpg",
+    "source_sha256": "e2d502e0f3641cde40897f70a397ffc7e131aed11ce0a6a34310ea6dee6cd6e4",
+    "mask": "outputs/morph-resumed/lawn-selected-masks/DSC_0987-19-mask.png",
+    "mask_sha256": "d1038017e05e9d8f1463ce8829b41b7fa0f60696a72c568cd42d57d00e104084"
+  }
+]

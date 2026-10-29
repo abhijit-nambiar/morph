@@ -1,0 +1,5 @@
+{
+  "method": "Regular spatial sampling before export encoding. High = any channel >= 254/255; low = all channels <= 1/255. Flag = either fraction increased more than 1 percentage point; heuristic, not a quality verdict.",
+  "note": "No album photos were checked in preview-only mode.",
+  "photos": []
+}

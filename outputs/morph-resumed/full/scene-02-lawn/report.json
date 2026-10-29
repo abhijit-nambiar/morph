@@ -1,0 +1,55 @@
+{
+  "scene": "scene-02-lawn",
+  "source_fit": "outputs/morph-resumed/fits/scene-02-lawn/fit.json",
+  "mode": "scene",
+  "scope": "Inspect mask edges and full-resolution outputs. Empty masks receive global components only; corrections are manual, not automatic normalization.",
+  "corrections": {
+    "album": {},
+    "scene": {},
+    "photos": {}
+  },
+  "operation_order": [
+    "photo correction",
+    "fitted look",
+    "scene correction",
+    "album correction"
+  ],
+  "photos": [
+    {
+      "source": "Morph/originals/DSC_0947-13.jpg",
+      "output": "outputs/morph-resumed/full/scene-02-lawn/exports/DSC_0947-13.jpg",
+      "mask_mean": 0.061172328889369965,
+      "review_flag": false
+    },
+    {
+      "source": "Morph/originals/DSC_0948-14.jpg",
+      "output": "outputs/morph-resumed/full/scene-02-lawn/exports/DSC_0948-14.jpg",
+      "mask_mean": 0.077536940574646,
+      "review_flag": false
+    },
+    {
+      "source": "Morph/originals/DSC_0958-15.jpg",
+      "output": "outputs/morph-resumed/full/scene-02-lawn/exports/DSC_0958-15.jpg",
+      "mask_mean": 0.09202815592288971,
+      "review_flag": false
+    },
+    {
+      "source": "Morph/originals/DSC_0970-17.jpg",
+      "output": "outputs/morph-resumed/full/scene-02-lawn/exports/DSC_0970-17.jpg",
+      "mask_mean": 0.150510773062706,
+      "review_flag": false
+    },
+    {
+      "source": "Morph/originals/DSC_0974-18.jpg",
+      "output": "outputs/morph-resumed/full/scene-02-lawn/exports/DSC_0974-18.jpg",
+      "mask_mean": 0.1138552576303482,
+      "review_flag": false
+    },
+    {
+      "source": "Morph/originals/DSC_0987-19.jpg",
+      "output": "outputs/morph-resumed/full/scene-02-lawn/exports/DSC_0987-19.jpg",
+      "mask_mean": 0.05231146886944771,
+      "review_flag": false
+    }
+  ]
+}

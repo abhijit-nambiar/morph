@@ -1,0 +1,6 @@
+{
+  "status": "failed",
+  "completed_styles": [],
+  "scope": "New copies of the same album intentionally replay clean-reference style fits. The existing explicit input-change option permits these copies; their current checksums are verified against the normalization manifest before rendering.",
+  "error": "Command '['.venv/bin/python', 'outputs/morph-starter/morph.py', 'apply', 'outputs/morph-showcase/variances/groups.json', 'outputs/morph-showcase/models/sunlit/fits', '--allow-changed-inputs', '--corrections', 'outputs/morph-showcase/corrections.json', '--out', 'outputs/morph-showcase/albums/sunlit']' returned non-zero exit status 1."
+}

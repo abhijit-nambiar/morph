@@ -1,0 +1,221 @@
+{
+  "renderer": "cubic",
+  "source_fit": "outputs/morph-showcase/models/coastal/fits/scene-06-walk/fit.json",
+  "source_validation": "changed-inputs-allowed",
+  "strength": 1.0,
+  "local_strength": null,
+  "applied_recipe": {
+    "kind": "cubic-rgb-v1",
+    "features": [
+      "red",
+      "green",
+      "blue",
+      "red2",
+      "green2",
+      "blue2",
+      "red_green",
+      "red_blue",
+      "green_blue",
+      "constant",
+      "red3",
+      "green3",
+      "blue3",
+      "red2_green",
+      "red2_blue",
+      "green2_red",
+      "green2_blue",
+      "blue2_red",
+      "blue2_green",
+      "red_green_blue"
+    ],
+    "weights": [
+      [
+        -0.14656079593174529,
+        0.06486243135879735,
+        0.05133368181998859
+      ],
+      [
+        -0.011171410611112202,
+        -0.01649370205169055,
+        -0.0373556367829047
+      ],
+      [
+        -0.09703861866836179,
+        -0.06083382061814607,
+        0.19933505954340963
+      ],
+      [
+        0.1450674148814998,
+        -0.04358876114510028,
+        0.02831141327620025
+      ],
+      [
+        -0.0612977902276863,
+        0.08984929515754272,
+        -0.017067223504277366
+      ],
+      [
+        -0.30878030084760694,
+        -0.2268042373782909,
+        -0.06974303223850273
+      ],
+      [
+        0.06814941528097768,
+        -0.14087157331033492,
+        0.03641171754775106
+      ],
+      [
+        0.2925359124600216,
+        0.11559374193373731,
+        -0.26101503758981265
+      ],
+      [
+        0.137549863581396,
+        0.25756652833801863,
+        0.1397425251740836
+      ],
+      [
+        -0.0002514846601017229,
+        -0.000744512179052671,
+        0.001318318970875665
+      ],
+      [
+        -0.17115824310370337,
+        0.11553882661486439,
+        0.1434502292277711
+      ],
+      [
+        0.05681584340450625,
+        0.022080482868980306,
+        -0.11527930485253968
+      ],
+      [
+        0.042983720666359616,
+        -0.15142165202857563,
+        -0.18338108665689523
+      ],
+      [
+        0.15054137363861345,
+        0.0040955103355841,
+        -0.04196839000389912
+      ],
+      [
+        0.3127671161002596,
+        0.033011260814852894,
+        -0.3548573506830847
+      ],
+      [
+        -0.05854058921099235,
+        -0.09894576370870031,
+        -0.00381992110250365
+      ],
+      [
+        -0.11960026400851563,
+        -0.1615399870945675,
+        0.12694819225788093
+      ],
+      [
+        -0.28232520809425427,
+        -0.03517009807831549,
+        0.27258323591453226
+      ],
+      [
+        0.40043094424417053,
+        0.4875551525303102,
+        -0.12589183093214992
+      ],
+      [
+        -0.35189319325117246,
+        -0.2531770832979008,
+        0.21165335824698725
+      ]
+    ]
+  },
+  "correction_renderer": "gamut",
+  "album_correction": {
+    "exposure": 0.0,
+    "temperature": 0.0,
+    "tint": 0.0,
+    "contrast": 0.0,
+    "shadows": 0.0,
+    "highlights": 0.0,
+    "saturation": 0.0,
+    "cool_saturation": 0.0,
+    "warm_saturation": 0.0
+  },
+  "scene_correction": {
+    "exposure": 0.0,
+    "temperature": 0.0,
+    "tint": 0.0,
+    "contrast": 0.0,
+    "shadows": 0.0,
+    "highlights": 0.0,
+    "saturation": 0.0,
+    "cool_saturation": 0.0,
+    "warm_saturation": 0.0
+  },
+  "photo_corrections": {
+    "varied-DSC_1259-49.jpg": {
+      "exposure": -0.05284735019696553,
+      "temperature": 0.03551158352795593,
+      "tint": -0.013064597520260565,
+      "contrast": -0.1141090218734283,
+      "shadows": 0.0,
+      "highlights": 0.0,
+      "saturation": 0.0,
+      "cool_saturation": 0.0,
+      "warm_saturation": 0.0
+    },
+    "varied-DSC_1261-50.jpg": {
+      "exposure": 0.26161984488765333,
+      "temperature": 0.03017290635592656,
+      "tint": -0.01909700034780447,
+      "contrast": -0.019483901620299893,
+      "shadows": 0.0,
+      "highlights": 0.0,
+      "saturation": 0.0,
+      "cool_saturation": 0.0,
+      "warm_saturation": 0.0
+    },
+    "varied-DSC_1264-51.jpg": {
+      "exposure": -0.11301371323490039,
+      "temperature": -0.003334263121813261,
+      "tint": -0.001169903614617628,
+      "contrast": 0.014417900068919742,
+      "shadows": 0.0,
+      "highlights": 0.0,
+      "saturation": 0.0,
+      "cool_saturation": 0.0,
+      "warm_saturation": 0.0
+    },
+    "varied-DSC_1265-52.jpg": {
+      "exposure": -0.9675061443541152,
+      "temperature": 0.03180589384833215,
+      "tint": 0.0070503101636113594,
+      "contrast": -0.09912593886151833,
+      "shadows": 0.0,
+      "highlights": 0.0,
+      "saturation": 0.0,
+      "cool_saturation": 0.0,
+      "warm_saturation": 0.0
+    },
+    "varied-DSC_1268-53.jpg": {
+      "exposure": -0.3908043870762646,
+      "temperature": 0.041737225356139475,
+      "tint": 0.005255133046683321,
+      "contrast": -0.009753783217006817,
+      "shadows": 0.0,
+      "highlights": 0.0,
+      "saturation": 0.0,
+      "cool_saturation": 0.0,
+      "warm_saturation": 0.0
+    }
+  },
+  "representative": "Morph/originals/DSC_1264-51.jpg",
+  "operation_order": [
+    "photo correction",
+    "fitted look",
+    "scene correction",
+    "album correction"
+  ]
+}

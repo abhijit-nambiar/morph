@@ -1,0 +1,80 @@
+[
+  {
+    "source": "Morph/originals/DSC_0947-13.jpg",
+    "source_sha256": "e543bbeea49393e7a0ac65ce8a76fd2e8c0d418de73f7a4478bf36980140a849",
+    "mask": "outputs/morph-resumed/lawn-selected-masks/DSC_0947-13-mask.png",
+    "mask_sha256": "58c93f7a38d87c4e77ed3775d3925d86db725299af857df846325d7e97986804"
+  },
+  {
+    "source": "Morph/originals/DSC_0948-14.jpg",
+    "source_sha256": "baf72136ebae12c6ace821688ec3f62dc912b1176dfe914f34034d4e70dfdbce",
+    "mask": "outputs/morph-resumed/lawn-selected-masks/DSC_0948-14-mask.png",
+    "mask_sha256": "56be9ec97a5d88b31ca26947ecf0064cdf2ff48ad5606156e84e77cf63a44f5c"
+  },
+  {
+    "source": "Morph/originals/DSC_0958-15.jpg",
+    "source_sha256": "3929f529a87b72ed8416403d84a3b12c59e7207ce36e40813fd9820987d3ee3a",
+    "mask": "outputs/morph-resumed/lawn-selected-masks/DSC_0958-15-mask.png",
+    "mask_sha256": "4cf92ba43b3d8609eab0b81781d53cdee44a29f733c891483407474ac8fb94bd"
+  },
+  {
+    "source": "Morph/originals/DSC_0970-17.jpg",
+    "source_sha256": "e63953c0060cc94571859fe3536df4fc8d8eaa5c9d4dd7b63683813878df7686",
+    "mask": "outputs/morph-resumed/lawn-selected-masks/DSC_0970-17-mask.png",
+    "mask_sha256": "48d2e735e4758a84ba242d6a452225feaf146141a23d42366624b33a495ff6be"
+  },
+  {
+    "source": "Morph/originals/DSC_0974-18.jpg",
+    "source_sha256": "abfc924a4c4a85edca68b85a22f85278b2826f2c71b955a8bd8c4c0e3b89d2e2",
+    "mask": "outputs/morph-resumed/lawn-selected-masks/DSC_0974-18-mask.png",
+    "mask_sha256": "5649f47f2eb86a338fb17473416367f7ea73a781a3169fed3aea6ce40e7e94db"
+  },
+  {
+    "source": "Morph/originals/DSC_0987-19.jpg",
+    "source_sha256": "e2d502e0f3641cde40897f70a397ffc7e131aed11ce0a6a34310ea6dee6cd6e4",
+    "mask": "outputs/morph-resumed/lawn-selected-masks/DSC_0987-19-mask.png",
+    "mask_sha256": "d1038017e05e9d8f1463ce8829b41b7fa0f60696a72c568cd42d57d00e104084"
+  },
+  {
+    "source": "Morph/originals/DSC_0965-16.jpg",
+    "source_sha256": "5fa49f5badf8557591fbdf151ba7712866b922704727a4280c3d134471cc44f4",
+    "mask": "outputs/morph-resumed/building-masks/DSC_0965-16-mask.png",
+    "mask_sha256": "b3c72bfd2509062b3b9f9aaa1f291c5119ed542c9b4fe70e3919cf4b056696df"
+  },
+  {
+    "source": "Morph/originals/DSC_0990-20.jpg",
+    "source_sha256": "ec279da48a6c0249807664c965b43b40bb13a24dbaf09c1d6f4d967ee17254fc",
+    "mask": "outputs/morph-resumed/building-masks/DSC_0990-20-mask.png",
+    "mask_sha256": "66586a26db5aeb7a3de4a89ddf2345ead90207b7939654a4e4dbfe96ba4633dd"
+  },
+  {
+    "source": "Morph/originals/DSC_0993-21.jpg",
+    "source_sha256": "ac9902e4fb4cf1700dd6feca05955b8937b41e25fd19b8510abe9476100c8fdf",
+    "mask": "outputs/morph-resumed/building-masks/DSC_0993-21-mask.png",
+    "mask_sha256": "58506bc394a62a98b1270d7b746eab8a42fa9ddfb82421804f23e4f499ad7a8a"
+  },
+  {
+    "source": "Morph/originals/DSC_0995-22.jpg",
+    "source_sha256": "e31109eba49d00e8004198ed731fd28545b4b970518d9ad838ec39bf95de1169",
+    "mask": "outputs/morph-resumed/building-masks/DSC_0995-22-mask.png",
+    "mask_sha256": "12eee22bc5b7041021085e945fcd574da7443f97387f672170a6e56eca968262"
+  },
+  {
+    "source": "Morph/originals/DSC_0997-23.jpg",
+    "source_sha256": "9d82c1fd806d3e5644c416b61c712a9019af5f62c16940f8394b7f6a474fe366",
+    "mask": "outputs/morph-resumed/building-masks/DSC_0997-23-mask.png",
+    "mask_sha256": "0abf3ca37ac590245bbf9422c5977d11d921900e68562b22924850557c9617fd"
+  },
+  {
+    "source": "Morph/originals/DSC_0998-24.jpg",
+    "source_sha256": "b7498e847dace9e0d9040b5724e2a3bcd02a3b81c8df4372b019c06b78cb1008",
+    "mask": "outputs/morph-resumed/building-masks/DSC_0998-24-mask.png",
+    "mask_sha256": "97f5161ae9319fd37e5cf8a9861b91646e549fc40e25d00a4d9242049c5535e5"
+  },
+  {
+    "source": "Morph/originals/DSC_1012-25.jpg",
+    "source_sha256": "8d0a7695c5ed786d1544f53613c00822155a80b2f6c7bb120fd0d8a58cefc245",
+    "mask": "outputs/morph-resumed/building-masks/DSC_1012-25-mask.png",
+    "mask_sha256": "39522323a0a547f4f7bbc4de1904e7ee30e29542af51efd4b1a620cd7c6ca277"
+  }
+]

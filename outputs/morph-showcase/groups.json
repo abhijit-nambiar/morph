@@ -1,0 +1,192 @@
+{
+  "version": 1,
+  "method": "Agent visual review of all 88 originals: split three mixed backdrops before target-score inspection. Original chronological structure and earlier lawn/building split retained. These are review assignments for this album, not automatic scene recognition. The shaded close-up DSC_1273-54 has different visible content and no verified overlap with the walkway reference; it is a separate calibrated lighting group, with no scene-transfer claim.",
+  "groups": [
+    {
+      "id": "scene-01",
+      "label": "South Hall \u00b7 doorway",
+      "photos": [
+        "Morph/originals/DSC_0901-1.jpg",
+        "Morph/originals/DSC_0904-2.jpg",
+        "Morph/originals/DSC_0905-3.jpg",
+        "Morph/originals/DSC_0906-4.jpg",
+        "Morph/originals/DSC_0914-5.jpg",
+        "Morph/originals/DSC_0916-6.jpg",
+        "Morph/originals/DSC_0919-7.jpg",
+        "Morph/originals/DSC_0921-8.jpg",
+        "Morph/originals/DSC_0925-9.jpg",
+        "Morph/originals/DSC_0928-10.jpg",
+        "Morph/originals/DSC_0930-11.jpg",
+        "Morph/originals/DSC_0935-12.jpg"
+      ],
+      "representative": "Morph/originals/DSC_0906-4.jpg"
+    },
+    {
+      "id": "scene-02-lawn",
+      "label": "Campanile lawn",
+      "photos": [
+        "Morph/originals/DSC_0947-13.jpg",
+        "Morph/originals/DSC_0948-14.jpg",
+        "Morph/originals/DSC_0958-15.jpg",
+        "Morph/originals/DSC_0970-17.jpg",
+        "Morph/originals/DSC_0974-18.jpg",
+        "Morph/originals/DSC_0987-19.jpg"
+      ],
+      "representative": "Morph/originals/DSC_0958-15.jpg"
+    },
+    {
+      "id": "scene-02",
+      "label": "Library steps",
+      "photos": [
+        "Morph/originals/DSC_0965-16.jpg",
+        "Morph/originals/DSC_0990-20.jpg",
+        "Morph/originals/DSC_0993-21.jpg",
+        "Morph/originals/DSC_0995-22.jpg",
+        "Morph/originals/DSC_0997-23.jpg",
+        "Morph/originals/DSC_0998-24.jpg",
+        "Morph/originals/DSC_1012-25.jpg"
+      ],
+      "representative": "Morph/originals/DSC_0995-22.jpg"
+    },
+    {
+      "id": "scene-03",
+      "label": "Campanile \u00b7 terrace",
+      "photos": [
+        "Morph/originals/DSC_1021-26.jpg",
+        "Morph/originals/DSC_1026-27.jpg",
+        "Morph/originals/DSC_1028-28.jpg",
+        "Morph/originals/DSC_1030-29.jpg",
+        "Morph/originals/DSC_1033-30.jpg",
+        "Morph/originals/DSC_1037-31.jpg",
+        "Morph/originals/DSC_1038-32.jpg"
+      ],
+      "representative": "Morph/originals/DSC_1037-31.jpg"
+    },
+    {
+      "id": "scene-04",
+      "label": "Library \u00b7 graduating class",
+      "photos": [
+        "Morph/originals/DSC_1054-33.jpg",
+        "Morph/originals/DSC_1059-34.jpg"
+      ],
+      "representative": "Morph/originals/DSC_1054-33.jpg"
+    },
+    {
+      "id": "scene-05",
+      "label": "Library \u00b7 balustrade",
+      "photos": [
+        "Morph/originals/DSC_1070-35.jpg",
+        "Morph/originals/DSC_1074-36.jpg",
+        "Morph/originals/DSC_1083-37.jpg",
+        "Morph/originals/DSC_1096-40.jpg",
+        "Morph/originals/DSC_1100-41.jpg",
+        "Morph/originals/DSC_1106-43.jpg",
+        "Morph/originals/DSC_1109-44.jpg",
+        "Morph/originals/DSC_1111-45.jpg",
+        "Morph/originals/DSC_1118-48.jpg"
+      ],
+      "representative": "Morph/originals/DSC_1111-45.jpg"
+    },
+    {
+      "id": "scene-05-tower",
+      "label": "Campanile \u00b7 seated portraits",
+      "photos": [
+        "Morph/originals/DSC_1088-38.jpg",
+        "Morph/originals/DSC_1090-39.jpg",
+        "Morph/originals/DSC_1105-42.jpg",
+        "Morph/originals/DSC_1114-46.jpg",
+        "Morph/originals/DSC_1116-47.jpg"
+      ],
+      "representative": "Morph/originals/DSC_1105-42.jpg"
+    },
+    {
+      "id": "scene-06-walk",
+      "label": "Sather plaza \u00b7 walkway",
+      "photos": [
+        "Morph/originals/DSC_1259-49.jpg",
+        "Morph/originals/DSC_1261-50.jpg",
+        "Morph/originals/DSC_1264-51.jpg",
+        "Morph/originals/DSC_1265-52.jpg",
+        "Morph/originals/DSC_1268-53.jpg"
+      ],
+      "representative": "Morph/originals/DSC_1264-51.jpg"
+    },
+    {
+      "id": "scene-06-shade",
+      "label": "Sather plaza \u00b7 shaded close-up",
+      "representative": "Morph/originals/DSC_1273-54.jpg",
+      "photos": [
+        "Morph/originals/DSC_1273-54.jpg"
+      ]
+    },
+    {
+      "id": "scene-06",
+      "label": "Sather plaza \u00b7 fountain",
+      "photos": [
+        "Morph/originals/DSC_1280-55.jpg",
+        "Morph/originals/DSC_1282-56.jpg",
+        "Morph/originals/DSC_1284-57.jpg",
+        "Morph/originals/DSC_1286-58.jpg",
+        "Morph/originals/DSC_1288-59.jpg",
+        "Morph/originals/DSC_1291-60.jpg",
+        "Morph/originals/DSC_1292-61.jpg",
+        "Morph/originals/DSC_1293-62.jpg",
+        "Morph/originals/DSC_1300-63.jpg",
+        "Morph/originals/DSC_1302-64.jpg",
+        "Morph/originals/DSC_1304-65.jpg"
+      ],
+      "representative": "Morph/originals/DSC_1286-58.jpg"
+    },
+    {
+      "id": "scene-07",
+      "label": "Library colonnade",
+      "photos": [
+        "Morph/originals/DSC_1308-66.jpg",
+        "Morph/originals/DSC_1310-67.jpg",
+        "Morph/originals/DSC_1312-68.jpg",
+        "Morph/originals/DSC_1315-69.jpg",
+        "Morph/originals/DSC_1320-70.jpg",
+        "Morph/originals/DSC_1322-71.jpg",
+        "Morph/originals/DSC_1324-72.jpg"
+      ],
+      "representative": "Morph/originals/DSC_1320-70.jpg"
+    },
+    {
+      "id": "scene-08",
+      "label": "Library \u00b7 couple portraits",
+      "photos": [
+        "Morph/originals/DSC_1326-73.jpg",
+        "Morph/originals/DSC_1329-74.jpg",
+        "Morph/originals/DSC_1330-75.jpg",
+        "Morph/originals/DSC_1334-76.jpg",
+        "Morph/originals/DSC_1335-77.jpg",
+        "Morph/originals/DSC_1337-78.jpg"
+      ],
+      "representative": "Morph/originals/DSC_1334-76.jpg"
+    },
+    {
+      "id": "scene-08-tower",
+      "label": "Campanile \u00b7 couple portraits",
+      "photos": [
+        "Morph/originals/DSC_1339-79.jpg",
+        "Morph/originals/DSC_1340-80.jpg",
+        "Morph/originals/DSC_1342-81.jpg",
+        "Morph/originals/DSC_1344-82.jpg"
+      ],
+      "representative": "Morph/originals/DSC_1342-81.jpg"
+    },
+    {
+      "id": "scene-09",
+      "label": "Sather Gate",
+      "photos": [
+        "Morph/originals/DSC_1360-83.jpg",
+        "Morph/originals/DSC_1362-84.jpg",
+        "Morph/originals/DSC_1363-85.jpg",
+        "Morph/originals/DSC_1365-86.jpg",
+        "Morph/originals/DSC_1367-87.jpg",
+        "Morph/originals/DSC_1378-88.jpg"
+      ],
+      "representative": "Morph/originals/DSC_1363-85.jpg"
+    }
+  ]
+}

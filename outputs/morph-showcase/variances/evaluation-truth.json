@@ -1,0 +1,1679 @@
+{
+  "scope": "Evaluation-only perturbation truth. Never supplied to normalization or fitting. Bounded logit tone curves simulate global settings changes; they do not simulate new shadows, clipping, sensor noise or RAW camera processing.",
+  "seed": 20261029,
+  "size": 0,
+  "photos": [
+    {
+      "source": "Morph/originals/DSC_0901-1.jpg",
+      "varied": "outputs/morph-showcase/variances/inputs/DSC_0901-1.jpg",
+      "scene": "scene-01",
+      "settings": {
+        "exposure_stops": 0.09750100472322315,
+        "contrast": 0.03316082743713356,
+        "white_balance": [
+          0.07192421480512375,
+          -0.012439481710524248,
+          -0.07192421480512375
+        ]
+      },
+      "scene_settings": {
+        "exposure_stops": -0.03276877896649916,
+        "warm_cool": 0.050670077751525856,
+        "contrast": 0.03345639889382303
+      }
+    },
+    {
+      "source": "Morph/originals/DSC_0904-2.jpg",
+      "varied": "outputs/morph-showcase/variances/inputs/DSC_0904-2.jpg",
+      "scene": "scene-01",
+      "settings": {
+        "exposure_stops": 0.06559736039270943,
+        "contrast": 0.03012354237834807,
+        "white_balance": [
+          0.03967667187552946,
+          0.0017567518391551618,
+          -0.03967667187552946
+        ]
+      },
+      "scene_settings": {
+        "exposure_stops": -0.03276877896649916,
+        "warm_cool": 0.050670077751525856,
+        "contrast": 0.03345639889382303
+      }
+    },
+    {
+      "source": "Morph/originals/DSC_0905-3.jpg",
+      "varied": "outputs/morph-showcase/variances/inputs/DSC_0905-3.jpg",
+      "scene": "scene-01",
+      "settings": {
+        "exposure_stops": -0.2091590244821861,
+        "contrast": 0.03483506484172644,
+        "white_balance": [
+          0.07191858637541497,
+          0.019300155912469835,
+          -0.07191858637541497
+        ]
+      },
+      "scene_settings": {
+        "exposure_stops": -0.03276877896649916,
+        "warm_cool": 0.050670077751525856,
+        "contrast": 0.03345639889382303
+      }
+    },
+    {
+      "source": "Morph/originals/DSC_0906-4.jpg",
+      "varied": "outputs/morph-showcase/variances/inputs/DSC_0906-4.jpg",
+      "scene": "scene-01",
+      "settings": {
+        "exposure_stops": 0.0011053664584712436,
+        "contrast": 0.03874046356199193,
+        "white_balance": [
+          0.021151018230662125,
+          -0.009214051877764305,
+          -0.021151018230662125
+        ]
+      },
+      "scene_settings": {
+        "exposure_stops": -0.03276877896649916,
+        "warm_cool": 0.050670077751525856,
+        "contrast": 0.03345639889382303
+      }
+    },
+    {
+      "source": "Morph/originals/DSC_0914-5.jpg",
+      "varied": "outputs/morph-showcase/variances/inputs/DSC_0914-5.jpg",
+      "scene": "scene-01",
+      "settings": {
+        "exposure_stops": -0.1559170024387079,
+        "contrast": 0.03656890822036318,
+        "white_balance": [
+          0.04888163536753981,
+          0.009550981835522037,
+          -0.04888163536753981
+        ]
+      },
+      "scene_settings": {
+        "exposure_stops": -0.03276877896649916,
+        "warm_cool": 0.050670077751525856,
+        "contrast": 0.03345639889382303
+      }
+    },
+    {
+      "source": "Morph/originals/DSC_0916-6.jpg",
+      "varied": "outputs/morph-showcase/variances/inputs/DSC_0916-6.jpg",
+      "scene": "scene-01",
+      "settings": {
+        "exposure_stops": -0.03618842292252264,
+        "contrast": 0.03031196730653806,
+        "white_balance": [
+          0.06946348065860686,
+          -0.014950218025035232,
+          -0.06946348065860686
+        ]
+      },
+      "scene_settings": {
+        "exposure_stops": -0.03276877896649916,
+        "warm_cool": 0.050670077751525856,
+        "contrast": 0.03345639889382303
+      }
+    },
+    {
+      "source": "Morph/originals/DSC_0919-7.jpg",
+      "varied": "outputs/morph-showcase/variances/inputs/DSC_0919-7.jpg",
+      "scene": "scene-01",
+      "settings": {
+        "exposure_stops": -0.20961305620743562,
+        "contrast": 0.01752744012052819,
+        "white_balance": [
+          0.07695656666191787,
+          0.017603325182821785,
+          -0.07695656666191787
+        ]
+      },
+      "scene_settings": {
+        "exposure_stops": -0.03276877896649916,
+        "warm_cool": 0.050670077751525856,
+        "contrast": 0.03345639889382303
+      }
+    },
+    {
+      "source": "Morph/originals/DSC_0921-8.jpg",
+      "varied": "outputs/morph-showcase/variances/inputs/DSC_0921-8.jpg",
+      "scene": "scene-01",
+      "settings": {
+        "exposure_stops": -0.06343764475178193,
+        "contrast": 0.018393040015847763,
+        "white_balance": [
+          0.053153889696765974,
+          -0.014394939646948646,
+          -0.053153889696765974
+        ]
+      },
+      "scene_settings": {
+        "exposure_stops": -0.03276877896649916,
+        "warm_cool": 0.050670077751525856,
+        "contrast": 0.03345639889382303
+      }
+    },
+    {
+      "source": "Morph/originals/DSC_0925-9.jpg",
+      "varied": "outputs/morph-showcase/variances/inputs/DSC_0925-9.jpg",
+      "scene": "scene-01",
+      "settings": {
+        "exposure_stops": -0.16575322685873167,
+        "contrast": 0.05343828558991509,
+        "white_balance": [
+          0.04974208966257823,
+          -0.007020487157610629,
+          -0.04974208966257823
+        ]
+      },
+      "scene_settings": {
+        "exposure_stops": -0.03276877896649916,
+        "warm_cool": 0.050670077751525856,
+        "contrast": 0.03345639889382303
+      }
+    },
+    {
+      "source": "Morph/originals/DSC_0928-10.jpg",
+      "varied": "outputs/morph-showcase/variances/inputs/DSC_0928-10.jpg",
+      "scene": "scene-01",
+      "settings": {
+        "exposure_stops": -0.13276524205274065,
+        "contrast": 0.04747735565805048,
+        "white_balance": [
+          0.026213492137801827,
+          0.016928916610755886,
+          -0.026213492137801827
+        ]
+      },
+      "scene_settings": {
+        "exposure_stops": -0.03276877896649916,
+        "warm_cool": 0.050670077751525856,
+        "contrast": 0.03345639889382303
+      }
+    },
+    {
+      "source": "Morph/originals/DSC_0930-11.jpg",
+      "varied": "outputs/morph-showcase/variances/inputs/DSC_0930-11.jpg",
+      "scene": "scene-01",
+      "settings": {
+        "exposure_stops": -0.040870035377918605,
+        "contrast": 0.030580183571827516,
+        "white_balance": [
+          0.017350756656620177,
+          0.01419856514224909,
+          -0.017350756656620177
+        ]
+      },
+      "scene_settings": {
+        "exposure_stops": -0.03276877896649916,
+        "warm_cool": 0.050670077751525856,
+        "contrast": 0.03345639889382303
+      }
+    },
+    {
+      "source": "Morph/originals/DSC_0935-12.jpg",
+      "varied": "outputs/morph-showcase/variances/inputs/DSC_0935-12.jpg",
+      "scene": "scene-01",
+      "settings": {
+        "exposure_stops": -0.004511134079209524,
+        "contrast": 0.0389120947612181,
+        "white_balance": [
+          0.01948992289759292,
+          -0.009320375972394887,
+          -0.01948992289759292
+        ]
+      },
+      "scene_settings": {
+        "exposure_stops": -0.03276877896649916,
+        "warm_cool": 0.050670077751525856,
+        "contrast": 0.03345639889382303
+      }
+    },
+    {
+      "source": "Morph/originals/DSC_0947-13.jpg",
+      "varied": "outputs/morph-showcase/variances/inputs/DSC_0947-13.jpg",
+      "scene": "scene-02-lawn",
+      "settings": {
+        "exposure_stops": -0.15045935590444334,
+        "contrast": 0.03466129968479472,
+        "white_balance": [
+          0.015848607327602238,
+          0.01289443487346753,
+          -0.015848607327602238
+        ]
+      },
+      "scene_settings": {
+        "exposure_stops": -0.10747411674404055,
+        "warm_cool": 0.03551231476187918,
+        "contrast": 0.020879693463252122
+      }
+    },
+    {
+      "source": "Morph/originals/DSC_0948-14.jpg",
+      "varied": "outputs/morph-showcase/variances/inputs/DSC_0948-14.jpg",
+      "scene": "scene-02-lawn",
+      "settings": {
+        "exposure_stops": -0.06485230466787711,
+        "contrast": 0.0005649873866279097,
+        "white_balance": [
+          0.006639126646981065,
+          0.007686652670872154,
+          -0.006639126646981065
+        ]
+      },
+      "scene_settings": {
+        "exposure_stops": -0.10747411674404055,
+        "warm_cool": 0.03551231476187918,
+        "contrast": 0.020879693463252122
+      }
+    },
+    {
+      "source": "Morph/originals/DSC_0958-15.jpg",
+      "varied": "outputs/morph-showcase/variances/inputs/DSC_0958-15.jpg",
+      "scene": "scene-02-lawn",
+      "settings": {
+        "exposure_stops": -0.23352436475035038,
+        "contrast": 0.04479682251914934,
+        "white_balance": [
+          0.036792826823814656,
+          -0.013444271408882075,
+          -0.036792826823814656
+        ]
+      },
+      "scene_settings": {
+        "exposure_stops": -0.10747411674404055,
+        "warm_cool": 0.03551231476187918,
+        "contrast": 0.020879693463252122
+      }
+    },
+    {
+      "source": "Morph/originals/DSC_0970-17.jpg",
+      "varied": "outputs/morph-showcase/variances/inputs/DSC_0970-17.jpg",
+      "scene": "scene-02-lawn",
+      "settings": {
+        "exposure_stops": -0.028805450964647317,
+        "contrast": 0.016952394393893226,
+        "white_balance": [
+          0.06305415922132174,
+          -0.010958641819715696,
+          -0.06305415922132174
+        ]
+      },
+      "scene_settings": {
+        "exposure_stops": -0.10747411674404055,
+        "warm_cool": 0.03551231476187918,
+        "contrast": 0.020879693463252122
+      }
+    },
+    {
+      "source": "Morph/originals/DSC_0974-18.jpg",
+      "varied": "outputs/morph-showcase/variances/inputs/DSC_0974-18.jpg",
+      "scene": "scene-02-lawn",
+      "settings": {
+        "exposure_stops": 0.02676324764955003,
+        "contrast": 0.030773990908650815,
+        "white_balance": [
+          0.04739538716139531,
+          -0.007938134448947799,
+          -0.04739538716139531
+        ]
+      },
+      "scene_settings": {
+        "exposure_stops": -0.10747411674404055,
+        "warm_cool": 0.03551231476187918,
+        "contrast": 0.020879693463252122
+      }
+    },
+    {
+      "source": "Morph/originals/DSC_0987-19.jpg",
+      "varied": "outputs/morph-showcase/variances/inputs/DSC_0987-19.jpg",
+      "scene": "scene-02-lawn",
+      "settings": {
+        "exposure_stops": -0.26410390789954835,
+        "contrast": -0.0010652026301023292,
+        "white_balance": [
+          0.04226151110922397,
+          0.01957538401706148,
+          -0.04226151110922397
+        ]
+      },
+      "scene_settings": {
+        "exposure_stops": -0.10747411674404055,
+        "warm_cool": 0.03551231476187918,
+        "contrast": 0.020879693463252122
+      }
+    },
+    {
+      "source": "Morph/originals/DSC_0965-16.jpg",
+      "varied": "outputs/morph-showcase/variances/inputs/DSC_0965-16.jpg",
+      "scene": "scene-02",
+      "settings": {
+        "exposure_stops": -0.2604030752413491,
+        "contrast": -0.024310350492622382,
+        "white_balance": [
+          0.02015968464974155,
+          -0.0182512762621495,
+          -0.02015968464974155
+        ]
+      },
+      "scene_settings": {
+        "exposure_stops": -0.12634009737489366,
+        "warm_cool": 0.04580735870366027,
+        "contrast": -0.026876721589419193
+      }
+    },
+    {
+      "source": "Morph/originals/DSC_0990-20.jpg",
+      "varied": "outputs/morph-showcase/variances/inputs/DSC_0990-20.jpg",
+      "scene": "scene-02",
+      "settings": {
+        "exposure_stops": -0.061348278646930404,
+        "contrast": -0.012196271662853662,
+        "white_balance": [
+          0.022666424537576602,
+          -0.01468209970817521,
+          -0.022666424537576602
+        ]
+      },
+      "scene_settings": {
+        "exposure_stops": -0.12634009737489366,
+        "warm_cool": 0.04580735870366027,
+        "contrast": -0.026876721589419193
+      }
+    },
+    {
+      "source": "Morph/originals/DSC_0993-21.jpg",
+      "varied": "outputs/morph-showcase/variances/inputs/DSC_0993-21.jpg",
+      "scene": "scene-02",
+      "settings": {
+        "exposure_stops": 0.02078705985499804,
+        "contrast": -0.03833269928672914,
+        "white_balance": [
+          0.010964479770722055,
+          0.002480866941197739,
+          -0.010964479770722055
+        ]
+      },
+      "scene_settings": {
+        "exposure_stops": -0.12634009737489366,
+        "warm_cool": 0.04580735870366027,
+        "contrast": -0.026876721589419193
+      }
+    },
+    {
+      "source": "Morph/originals/DSC_0995-22.jpg",
+      "varied": "outputs/morph-showcase/variances/inputs/DSC_0995-22.jpg",
+      "scene": "scene-02",
+      "settings": {
+        "exposure_stops": -0.09180135890918995,
+        "contrast": -0.042910551059582094,
+        "white_balance": [
+          0.01539220933686172,
+          -0.007282180454830072,
+          -0.01539220933686172
+        ]
+      },
+      "scene_settings": {
+        "exposure_stops": -0.12634009737489366,
+        "warm_cool": 0.04580735870366027,
+        "contrast": -0.026876721589419193
+      }
+    },
+    {
+      "source": "Morph/originals/DSC_0997-23.jpg",
+      "varied": "outputs/morph-showcase/variances/inputs/DSC_0997-23.jpg",
+      "scene": "scene-02",
+      "settings": {
+        "exposure_stops": -0.12930942395572143,
+        "contrast": -0.012934393175418717,
+        "white_balance": [
+          0.01926587241724337,
+          0.016914323922145896,
+          -0.01926587241724337
+        ]
+      },
+      "scene_settings": {
+        "exposure_stops": -0.12634009737489366,
+        "warm_cool": 0.04580735870366027,
+        "contrast": -0.026876721589419193
+      }
+    },
+    {
+      "source": "Morph/originals/DSC_0998-24.jpg",
+      "varied": "outputs/morph-showcase/variances/inputs/DSC_0998-24.jpg",
+      "scene": "scene-02",
+      "settings": {
+        "exposure_stops": -0.23079314598912148,
+        "contrast": -0.04703545576078161,
+        "white_balance": [
+          0.07047592706673676,
+          0.009252995169866201,
+          -0.07047592706673676
+        ]
+      },
+      "scene_settings": {
+        "exposure_stops": -0.12634009737489366,
+        "warm_cool": 0.04580735870366027,
+        "contrast": -0.026876721589419193
+      }
+    },
+    {
+      "source": "Morph/originals/DSC_1012-25.jpg",
+      "varied": "outputs/morph-showcase/variances/inputs/DSC_1012-25.jpg",
+      "scene": "scene-02",
+      "settings": {
+        "exposure_stops": -0.23281409841564035,
+        "contrast": -0.051226339791781025,
+        "white_balance": [
+          0.019871874751511153,
+          0.001949496472315624,
+          -0.019871874751511153
+        ]
+      },
+      "scene_settings": {
+        "exposure_stops": -0.12634009737489366,
+        "warm_cool": 0.04580735870366027,
+        "contrast": -0.026876721589419193
+      }
+    },
+    {
+      "source": "Morph/originals/DSC_1021-26.jpg",
+      "varied": "outputs/morph-showcase/variances/inputs/DSC_1021-26.jpg",
+      "scene": "scene-03",
+      "settings": {
+        "exposure_stops": 0.23892848545750064,
+        "contrast": -0.022845396295250255,
+        "white_balance": [
+          0.007955666251822936,
+          -0.017237766597195472,
+          -0.007955666251822936
+        ]
+      },
+      "scene_settings": {
+        "exposure_stops": 0.11386740503993698,
+        "warm_cool": -0.013384549069899587,
+        "contrast": -0.0090727553706912
+      }
+    },
+    {
+      "source": "Morph/originals/DSC_1026-27.jpg",
+      "varied": "outputs/morph-showcase/variances/inputs/DSC_1026-27.jpg",
+      "scene": "scene-03",
+      "settings": {
+        "exposure_stops": -0.020068446778329307,
+        "contrast": -0.01944623603491997,
+        "white_balance": [
+          -0.03147851389113338,
+          0.007851261402546394,
+          0.03147851389113338
+        ]
+      },
+      "scene_settings": {
+        "exposure_stops": 0.11386740503993698,
+        "warm_cool": -0.013384549069899587,
+        "contrast": -0.0090727553706912
+      }
+    },
+    {
+      "source": "Morph/originals/DSC_1028-28.jpg",
+      "varied": "outputs/morph-showcase/variances/inputs/DSC_1028-28.jpg",
+      "scene": "scene-03",
+      "settings": {
+        "exposure_stops": 0.19962084777420896,
+        "contrast": -0.018338309486004567,
+        "white_balance": [
+          -0.023973129002688585,
+          -0.005952277173292324,
+          0.023973129002688585
+        ]
+      },
+      "scene_settings": {
+        "exposure_stops": 0.11386740503993698,
+        "warm_cool": -0.013384549069899587,
+        "contrast": -0.0090727553706912
+      }
+    },
+    {
+      "source": "Morph/originals/DSC_1030-29.jpg",
+      "varied": "outputs/morph-showcase/variances/inputs/DSC_1030-29.jpg",
+      "scene": "scene-03",
+      "settings": {
+        "exposure_stops": 0.09805085334003608,
+        "contrast": 0.011844567920684756,
+        "white_balance": [
+          -0.023514774534141827,
+          -0.0077192038277630595,
+          0.023514774534141827
+        ]
+      },
+      "scene_settings": {
+        "exposure_stops": 0.11386740503993698,
+        "warm_cool": -0.013384549069899587,
+        "contrast": -0.0090727553706912
+      }
+    },
+    {
+      "source": "Morph/originals/DSC_1033-30.jpg",
+      "varied": "outputs/morph-showcase/variances/inputs/DSC_1033-30.jpg",
+      "scene": "scene-03",
+      "settings": {
+        "exposure_stops": 0.04046996947103074,
+        "contrast": -0.001834269410438084,
+        "white_balance": [
+          -0.01893821724993048,
+          0.017477375849748625,
+          0.01893821724993048
+        ]
+      },
+      "scene_settings": {
+        "exposure_stops": 0.11386740503993698,
+        "warm_cool": -0.013384549069899587,
+        "contrast": -0.0090727553706912
+      }
+    },
+    {
+      "source": "Morph/originals/DSC_1037-31.jpg",
+      "varied": "outputs/morph-showcase/variances/inputs/DSC_1037-31.jpg",
+      "scene": "scene-03",
+      "settings": {
+        "exposure_stops": 0.10200457289118342,
+        "contrast": -0.01155465662910944,
+        "white_balance": [
+          -0.032339135556033474,
+          0.015578589840032714,
+          0.032339135556033474
+        ]
+      },
+      "scene_settings": {
+        "exposure_stops": 0.11386740503993698,
+        "warm_cool": -0.013384549069899587,
+        "contrast": -0.0090727553706912
+      }
+    },
+    {
+      "source": "Morph/originals/DSC_1038-32.jpg",
+      "varied": "outputs/morph-showcase/variances/inputs/DSC_1038-32.jpg",
+      "scene": "scene-03",
+      "settings": {
+        "exposure_stops": -0.027251384764288344,
+        "contrast": 0.006963462963986254,
+        "white_balance": [
+          -0.04377792615708048,
+          -0.005891971519031923,
+          0.04377792615708048
+        ]
+      },
+      "scene_settings": {
+        "exposure_stops": 0.11386740503993698,
+        "warm_cool": -0.013384549069899587,
+        "contrast": -0.0090727553706912
+      }
+    },
+    {
+      "source": "Morph/originals/DSC_1054-33.jpg",
+      "varied": "outputs/morph-showcase/variances/inputs/DSC_1054-33.jpg",
+      "scene": "scene-04",
+      "settings": {
+        "exposure_stops": 0.06819486714959404,
+        "contrast": 0.031213544509212814,
+        "white_balance": [
+          -0.044479197087772926,
+          -0.000927191317562377,
+          0.044479197087772926
+        ]
+      },
+      "scene_settings": {
+        "exposure_stops": 0.027027002191640833,
+        "warm_cool": -0.010581730875379192,
+        "contrast": 0.015973552701253044
+      }
+    },
+    {
+      "source": "Morph/originals/DSC_1059-34.jpg",
+      "varied": "outputs/morph-showcase/variances/inputs/DSC_1059-34.jpg",
+      "scene": "scene-04",
+      "settings": {
+        "exposure_stops": -0.11539107489213352,
+        "contrast": -0.006258047863027898,
+        "white_balance": [
+          -0.007036897056136682,
+          -0.007005360185794359,
+          0.007036897056136682
+        ]
+      },
+      "scene_settings": {
+        "exposure_stops": 0.027027002191640833,
+        "warm_cool": -0.010581730875379192,
+        "contrast": 0.015973552701253044
+      }
+    },
+    {
+      "source": "Morph/originals/DSC_1070-35.jpg",
+      "varied": "outputs/morph-showcase/variances/inputs/DSC_1070-35.jpg",
+      "scene": "scene-05",
+      "settings": {
+        "exposure_stops": 0.06944224125350028,
+        "contrast": 0.009593786793796879,
+        "white_balance": [
+          0.051969372406106065,
+          0.018161337328737714,
+          -0.051969372406106065
+        ]
+      },
+      "scene_settings": {
+        "exposure_stops": -0.015388229791716931,
+        "warm_cool": 0.04402659559112957,
+        "contrast": 0.015320816438581884
+      }
+    },
+    {
+      "source": "Morph/originals/DSC_1074-36.jpg",
+      "varied": "outputs/morph-showcase/variances/inputs/DSC_1074-36.jpg",
+      "scene": "scene-05",
+      "settings": {
+        "exposure_stops": -0.13217505468900165,
+        "contrast": 0.019748331397994215,
+        "white_balance": [
+          0.03309685630882862,
+          0.005681773409238722,
+          -0.03309685630882862
+        ]
+      },
+      "scene_settings": {
+        "exposure_stops": -0.015388229791716931,
+        "warm_cool": 0.04402659559112957,
+        "contrast": 0.015320816438581884
+      }
+    },
+    {
+      "source": "Morph/originals/DSC_1083-37.jpg",
+      "varied": "outputs/morph-showcase/variances/inputs/DSC_1083-37.jpg",
+      "scene": "scene-05",
+      "settings": {
+        "exposure_stops": -0.012869409182126942,
+        "contrast": 0.003185361770101227,
+        "white_balance": [
+          0.06634695823513632,
+          0.0011331378364273137,
+          -0.06634695823513632
+        ]
+      },
+      "scene_settings": {
+        "exposure_stops": -0.015388229791716931,
+        "warm_cool": 0.04402659559112957,
+        "contrast": 0.015320816438581884
+      }
+    },
+    {
+      "source": "Morph/originals/DSC_1096-40.jpg",
+      "varied": "outputs/morph-showcase/variances/inputs/DSC_1096-40.jpg",
+      "scene": "scene-05",
+      "settings": {
+        "exposure_stops": 0.15982199721230667,
+        "contrast": 0.009384973208353945,
+        "white_balance": [
+          0.01054347717258032,
+          -0.01151729763080346,
+          -0.01054347717258032
+        ]
+      },
+      "scene_settings": {
+        "exposure_stops": -0.015388229791716931,
+        "warm_cool": 0.04402659559112957,
+        "contrast": 0.015320816438581884
+      }
+    },
+    {
+      "source": "Morph/originals/DSC_1100-41.jpg",
+      "varied": "outputs/morph-showcase/variances/inputs/DSC_1100-41.jpg",
+      "scene": "scene-05",
+      "settings": {
+        "exposure_stops": -0.05930637805244865,
+        "contrast": 0.013897546609556513,
+        "white_balance": [
+          0.04287904555031242,
+          -0.00432336472325463,
+          -0.04287904555031242
+        ]
+      },
+      "scene_settings": {
+        "exposure_stops": -0.015388229791716931,
+        "warm_cool": 0.04402659559112957,
+        "contrast": 0.015320816438581884
+      }
+    },
+    {
+      "source": "Morph/originals/DSC_1106-43.jpg",
+      "varied": "outputs/morph-showcase/variances/inputs/DSC_1106-43.jpg",
+      "scene": "scene-05",
+      "settings": {
+        "exposure_stops": -0.12784360981331844,
+        "contrast": 0.026369316181781836,
+        "white_balance": [
+          0.07612479098323618,
+          -0.004200671238423727,
+          -0.07612479098323618
+        ]
+      },
+      "scene_settings": {
+        "exposure_stops": -0.015388229791716931,
+        "warm_cool": 0.04402659559112957,
+        "contrast": 0.015320816438581884
+      }
+    },
+    {
+      "source": "Morph/originals/DSC_1109-44.jpg",
+      "varied": "outputs/morph-showcase/variances/inputs/DSC_1109-44.jpg",
+      "scene": "scene-05",
+      "settings": {
+        "exposure_stops": -0.10088859176455696,
+        "contrast": 0.01532444422455567,
+        "white_balance": [
+          0.015017969783001902,
+          -0.007026962788002624,
+          -0.015017969783001902
+        ]
+      },
+      "scene_settings": {
+        "exposure_stops": -0.015388229791716931,
+        "warm_cool": 0.04402659559112957,
+        "contrast": 0.015320816438581884
+      }
+    },
+    {
+      "source": "Morph/originals/DSC_1111-45.jpg",
+      "varied": "outputs/morph-showcase/variances/inputs/DSC_1111-45.jpg",
+      "scene": "scene-05",
+      "settings": {
+        "exposure_stops": -0.16027635770564008,
+        "contrast": 0.022517342152277124,
+        "white_balance": [
+          0.011439795532097147,
+          0.01971113944493106,
+          -0.011439795532097147
+        ]
+      },
+      "scene_settings": {
+        "exposure_stops": -0.015388229791716931,
+        "warm_cool": 0.04402659559112957,
+        "contrast": 0.015320816438581884
+      }
+    },
+    {
+      "source": "Morph/originals/DSC_1118-48.jpg",
+      "varied": "outputs/morph-showcase/variances/inputs/DSC_1118-48.jpg",
+      "scene": "scene-05",
+      "settings": {
+        "exposure_stops": 0.030796850997317257,
+        "contrast": 0.03854153961262104,
+        "white_balance": [
+          0.021309960356653404,
+          0.01651377251729193,
+          -0.021309960356653404
+        ]
+      },
+      "scene_settings": {
+        "exposure_stops": -0.015388229791716931,
+        "warm_cool": 0.04402659559112957,
+        "contrast": 0.015320816438581884
+      }
+    },
+    {
+      "source": "Morph/originals/DSC_1088-38.jpg",
+      "varied": "outputs/morph-showcase/variances/inputs/DSC_1088-38.jpg",
+      "scene": "scene-05-tower",
+      "settings": {
+        "exposure_stops": 0.05021210210131119,
+        "contrast": 0.012462781642085821,
+        "white_balance": [
+          0.0216009036598147,
+          -0.007275824285558055,
+          -0.0216009036598147
+        ]
+      },
+      "scene_settings": {
+        "exposure_stops": 0.20009816851932716,
+        "warm_cool": 0.010889461810030934,
+        "contrast": 0.02809495409928543
+      }
+    },
+    {
+      "source": "Morph/originals/DSC_1090-39.jpg",
+      "varied": "outputs/morph-showcase/variances/inputs/DSC_1090-39.jpg",
+      "scene": "scene-05-tower",
+      "settings": {
+        "exposure_stops": 0.08489840422122018,
+        "contrast": 0.05112528436411422,
+        "white_balance": [
+          0.004083079056355382,
+          -0.004016307298733497,
+          -0.004083079056355382
+        ]
+      },
+      "scene_settings": {
+        "exposure_stops": 0.20009816851932716,
+        "warm_cool": 0.010889461810030934,
+        "contrast": 0.02809495409928543
+      }
+    },
+    {
+      "source": "Morph/originals/DSC_1105-42.jpg",
+      "varied": "outputs/morph-showcase/variances/inputs/DSC_1105-42.jpg",
+      "scene": "scene-05-tower",
+      "settings": {
+        "exposure_stops": 0.07303823320860575,
+        "contrast": 0.01273466649780514,
+        "white_balance": [
+          -0.00997103600697707,
+          0.0006624328350476505,
+          0.00997103600697707
+        ]
+      },
+      "scene_settings": {
+        "exposure_stops": 0.20009816851932716,
+        "warm_cool": 0.010889461810030934,
+        "contrast": 0.02809495409928543
+      }
+    },
+    {
+      "source": "Morph/originals/DSC_1114-46.jpg",
+      "varied": "outputs/morph-showcase/variances/inputs/DSC_1114-46.jpg",
+      "scene": "scene-05-tower",
+      "settings": {
+        "exposure_stops": 0.13539684743116318,
+        "contrast": 0.041697330895299485,
+        "white_balance": [
+          0.003686488910182842,
+          0.01725588595355901,
+          -0.003686488910182842
+        ]
+      },
+      "scene_settings": {
+        "exposure_stops": 0.20009816851932716,
+        "warm_cool": 0.010889461810030934,
+        "contrast": 0.02809495409928543
+      }
+    },
+    {
+      "source": "Morph/originals/DSC_1116-47.jpg",
+      "varied": "outputs/morph-showcase/variances/inputs/DSC_1116-47.jpg",
+      "scene": "scene-05-tower",
+      "settings": {
+        "exposure_stops": 0.321873805200772,
+        "contrast": 0.03550218573160116,
+        "white_balance": [
+          -0.01349936969567437,
+          0.005584291144833183,
+          0.01349936969567437
+        ]
+      },
+      "scene_settings": {
+        "exposure_stops": 0.20009816851932716,
+        "warm_cool": 0.010889461810030934,
+        "contrast": 0.02809495409928543
+      }
+    },
+    {
+      "source": "Morph/originals/DSC_1259-49.jpg",
+      "varied": "outputs/morph-showcase/variances/inputs/DSC_1259-49.jpg",
+      "scene": "scene-06-walk",
+      "settings": {
+        "exposure_stops": 0.01660306287098008,
+        "contrast": -0.05352223040330645,
+        "white_balance": [
+          0.008777522583977551,
+          -0.015837834518464513,
+          -0.008777522583977551
+        ]
+      },
+      "scene_settings": {
+        "exposure_stops": -0.007065587024754963,
+        "warm_cool": -0.01017426203911387,
+        "contrast": -0.032925347272515545
+      }
+    },
+    {
+      "source": "Morph/originals/DSC_1261-50.jpg",
+      "varied": "outputs/morph-showcase/variances/inputs/DSC_1261-50.jpg",
+      "scene": "scene-06-walk",
+      "settings": {
+        "exposure_stops": 0.11441236337514403,
+        "contrast": -0.03236887775121772,
+        "white_balance": [
+          0.011675223455620524,
+          -0.008973936426378627,
+          -0.011675223455620524
+        ]
+      },
+      "scene_settings": {
+        "exposure_stops": -0.007065587024754963,
+        "warm_cool": -0.01017426203911387,
+        "contrast": -0.032925347272515545
+      }
+    },
+    {
+      "source": "Morph/originals/DSC_1264-51.jpg",
+      "varied": "outputs/morph-showcase/variances/inputs/DSC_1264-51.jpg",
+      "scene": "scene-06-walk",
+      "settings": {
+        "exposure_stops": 0.1247083973814607,
+        "contrast": -0.050211921972889664,
+        "white_balance": [
+          -0.02200586203698906,
+          0.018719340716641417,
+          0.02200586203698906
+        ]
+      },
+      "scene_settings": {
+        "exposure_stops": -0.007065587024754963,
+        "warm_cool": -0.01017426203911387,
+        "contrast": -0.032925347272515545
+      }
+    },
+    {
+      "source": "Morph/originals/DSC_1265-52.jpg",
+      "varied": "outputs/morph-showcase/variances/inputs/DSC_1265-52.jpg",
+      "scene": "scene-06-walk",
+      "settings": {
+        "exposure_stops": 0.1549277673129952,
+        "contrast": -0.04557432616013397,
+        "white_balance": [
+          -0.04475377731065985,
+          -0.003970998654395537,
+          0.04475377731065985
+        ]
+      },
+      "scene_settings": {
+        "exposure_stops": -0.007065587024754963,
+        "warm_cool": -0.01017426203911387,
+        "contrast": -0.032925347272515545
+      }
+    },
+    {
+      "source": "Morph/originals/DSC_1268-53.jpg",
+      "varied": "outputs/morph-showcase/variances/inputs/DSC_1268-53.jpg",
+      "scene": "scene-06-walk",
+      "settings": {
+        "exposure_stops": 0.08966070924433428,
+        "contrast": -0.021352525263094065,
+        "white_balance": [
+          0.020945206501455607,
+          0.010830432036001439,
+          -0.020945206501455607
+        ]
+      },
+      "scene_settings": {
+        "exposure_stops": -0.007065587024754963,
+        "warm_cool": -0.01017426203911387,
+        "contrast": -0.032925347272515545
+      }
+    },
+    {
+      "source": "Morph/originals/DSC_1273-54.jpg",
+      "varied": "outputs/morph-showcase/variances/inputs/DSC_1273-54.jpg",
+      "scene": "scene-06-shade",
+      "settings": {
+        "exposure_stops": -0.0681605047283288,
+        "contrast": -0.00011966700149175502,
+        "white_balance": [
+          -0.06773861346628537,
+          0.0015917215800342844,
+          0.06773861346628537
+        ]
+      },
+      "scene_settings": {
+        "exposure_stops": -0.16800885757076023,
+        "warm_cool": -0.054290399518021774,
+        "contrast": -0.012268663553261097
+      }
+    },
+    {
+      "source": "Morph/originals/DSC_1280-55.jpg",
+      "varied": "outputs/morph-showcase/variances/inputs/DSC_1280-55.jpg",
+      "scene": "scene-06",
+      "settings": {
+        "exposure_stops": 0.11989915174230721,
+        "contrast": 0.02846201042157097,
+        "white_balance": [
+          0.015668482975978705,
+          -0.006538870579879777,
+          -0.015668482975978705
+        ]
+      },
+      "scene_settings": {
+        "exposure_stops": 0.05226323698107149,
+        "warm_cool": 0.0468714487883705,
+        "contrast": 0.004178282204454724
+      }
+    },
+    {
+      "source": "Morph/originals/DSC_1282-56.jpg",
+      "varied": "outputs/morph-showcase/variances/inputs/DSC_1282-56.jpg",
+      "scene": "scene-06",
+      "settings": {
+        "exposure_stops": 0.018976028844461104,
+        "contrast": -0.006450181340862884,
+        "white_balance": [
+          0.07982247260226698,
+          0.0011986312455844405,
+          -0.07982247260226698
+        ]
+      },
+      "scene_settings": {
+        "exposure_stops": 0.05226323698107149,
+        "warm_cool": 0.0468714487883705,
+        "contrast": 0.004178282204454724
+      }
+    },
+    {
+      "source": "Morph/originals/DSC_1284-57.jpg",
+      "varied": "outputs/morph-showcase/variances/inputs/DSC_1284-57.jpg",
+      "scene": "scene-06",
+      "settings": {
+        "exposure_stops": -0.05088546455782944,
+        "contrast": 0.020443868480572357,
+        "white_balance": [
+          0.026398220538026262,
+          -0.0174679434031048,
+          -0.026398220538026262
+        ]
+      },
+      "scene_settings": {
+        "exposure_stops": 0.05226323698107149,
+        "warm_cool": 0.0468714487883705,
+        "contrast": 0.004178282204454724
+      }
+    },
+    {
+      "source": "Morph/originals/DSC_1286-58.jpg",
+      "varied": "outputs/morph-showcase/variances/inputs/DSC_1286-58.jpg",
+      "scene": "scene-06",
+      "settings": {
+        "exposure_stops": -0.06551795528331131,
+        "contrast": 0.005143839491633677,
+        "white_balance": [
+          0.041338663915283694,
+          -0.011018681415855793,
+          -0.041338663915283694
+        ]
+      },
+      "scene_settings": {
+        "exposure_stops": 0.05226323698107149,
+        "warm_cool": 0.0468714487883705,
+        "contrast": 0.004178282204454724
+      }
+    },
+    {
+      "source": "Morph/originals/DSC_1288-59.jpg",
+      "varied": "outputs/morph-showcase/variances/inputs/DSC_1288-59.jpg",
+      "scene": "scene-06",
+      "settings": {
+        "exposure_stops": -0.07106569399430376,
+        "contrast": 0.02364774747477806,
+        "white_balance": [
+          0.07674954747030012,
+          -0.006870807735607509,
+          -0.07674954747030012
+        ]
+      },
+      "scene_settings": {
+        "exposure_stops": 0.05226323698107149,
+        "warm_cool": 0.0468714487883705,
+        "contrast": 0.004178282204454724
+      }
+    },
+    {
+      "source": "Morph/originals/DSC_1291-60.jpg",
+      "varied": "outputs/morph-showcase/variances/inputs/DSC_1291-60.jpg",
+      "scene": "scene-06",
+      "settings": {
+        "exposure_stops": 0.22995564174575836,
+        "contrast": 0.012956387067382745,
+        "white_balance": [
+          0.030501084171511542,
+          -0.002195070968264625,
+          -0.030501084171511542
+        ]
+      },
+      "scene_settings": {
+        "exposure_stops": 0.05226323698107149,
+        "warm_cool": 0.0468714487883705,
+        "contrast": 0.004178282204454724
+      }
+    },
+    {
+      "source": "Morph/originals/DSC_1292-61.jpg",
+      "varied": "outputs/morph-showcase/variances/inputs/DSC_1292-61.jpg",
+      "scene": "scene-06",
+      "settings": {
+        "exposure_stops": -0.10975556648264395,
+        "contrast": -0.02005721934272478,
+        "white_balance": [
+          0.0301675983383174,
+          0.015975700753207638,
+          -0.0301675983383174
+        ]
+      },
+      "scene_settings": {
+        "exposure_stops": 0.05226323698107149,
+        "warm_cool": 0.0468714487883705,
+        "contrast": 0.004178282204454724
+      }
+    },
+    {
+      "source": "Morph/originals/DSC_1293-62.jpg",
+      "varied": "outputs/morph-showcase/variances/inputs/DSC_1293-62.jpg",
+      "scene": "scene-06",
+      "settings": {
+        "exposure_stops": 0.014443706941183757,
+        "contrast": 0.02559581967029402,
+        "white_balance": [
+          0.012095879339421925,
+          -0.0170436377074753,
+          -0.012095879339421925
+        ]
+      },
+      "scene_settings": {
+        "exposure_stops": 0.05226323698107149,
+        "warm_cool": 0.0468714487883705,
+        "contrast": 0.004178282204454724
+      }
+    },
+    {
+      "source": "Morph/originals/DSC_1300-63.jpg",
+      "varied": "outputs/morph-showcase/variances/inputs/DSC_1300-63.jpg",
+      "scene": "scene-06",
+      "settings": {
+        "exposure_stops": 0.20520849304666602,
+        "contrast": -0.010702892537167743,
+        "white_balance": [
+          0.027821396593776793,
+          -0.017335239873238123,
+          -0.027821396593776793
+        ]
+      },
+      "scene_settings": {
+        "exposure_stops": 0.05226323698107149,
+        "warm_cool": 0.0468714487883705,
+        "contrast": 0.004178282204454724
+      }
+    },
+    {
+      "source": "Morph/originals/DSC_1302-64.jpg",
+      "varied": "outputs/morph-showcase/variances/inputs/DSC_1302-64.jpg",
+      "scene": "scene-06",
+      "settings": {
+        "exposure_stops": -0.02180036620233923,
+        "contrast": 0.02633600595969411,
+        "white_balance": [
+          0.02781767214496677,
+          -0.0015468685654397474,
+          -0.02781767214496677
+        ]
+      },
+      "scene_settings": {
+        "exposure_stops": 0.05226323698107149,
+        "warm_cool": 0.0468714487883705,
+        "contrast": 0.004178282204454724
+      }
+    },
+    {
+      "source": "Morph/originals/DSC_1304-65.jpg",
+      "varied": "outputs/morph-showcase/variances/inputs/DSC_1304-65.jpg",
+      "scene": "scene-06",
+      "settings": {
+        "exposure_stops": 0.22966996059935674,
+        "contrast": 0.005916475145759269,
+        "white_balance": [
+          0.07097440466126398,
+          0.005891169886064765,
+          -0.07097440466126398
+        ]
+      },
+      "scene_settings": {
+        "exposure_stops": 0.05226323698107149,
+        "warm_cool": 0.0468714487883705,
+        "contrast": 0.004178282204454724
+      }
+    },
+    {
+      "source": "Morph/originals/DSC_1308-66.jpg",
+      "varied": "outputs/morph-showcase/variances/inputs/DSC_1308-66.jpg",
+      "scene": "scene-07",
+      "settings": {
+        "exposure_stops": 0.1777121871930295,
+        "contrast": 0.031559236430933876,
+        "white_balance": [
+          0.06798447454136512,
+          -0.004958761252856658,
+          -0.06798447454136512
+        ]
+      },
+      "scene_settings": {
+        "exposure_stops": 0.15387776023540042,
+        "warm_cool": 0.042987341296816084,
+        "contrast": 0.0109520983440997
+      }
+    },
+    {
+      "source": "Morph/originals/DSC_1310-67.jpg",
+      "varied": "outputs/morph-showcase/variances/inputs/DSC_1310-67.jpg",
+      "scene": "scene-07",
+      "settings": {
+        "exposure_stops": 0.005914422201985847,
+        "contrast": 0.0072786732508413575,
+        "white_balance": [
+          0.03323868431238439,
+          -0.007545944575505321,
+          -0.03323868431238439
+        ]
+      },
+      "scene_settings": {
+        "exposure_stops": 0.15387776023540042,
+        "warm_cool": 0.042987341296816084,
+        "contrast": 0.0109520983440997
+      }
+    },
+    {
+      "source": "Morph/originals/DSC_1312-68.jpg",
+      "varied": "outputs/morph-showcase/variances/inputs/DSC_1312-68.jpg",
+      "scene": "scene-07",
+      "settings": {
+        "exposure_stops": 0.178159988686367,
+        "contrast": 0.02677957718437798,
+        "white_balance": [
+          0.013764949124579894,
+          0.012985491105874977,
+          -0.013764949124579894
+        ]
+      },
+      "scene_settings": {
+        "exposure_stops": 0.15387776023540042,
+        "warm_cool": 0.042987341296816084,
+        "contrast": 0.0109520983440997
+      }
+    },
+    {
+      "source": "Morph/originals/DSC_1315-69.jpg",
+      "varied": "outputs/morph-showcase/variances/inputs/DSC_1315-69.jpg",
+      "scene": "scene-07",
+      "settings": {
+        "exposure_stops": 0.2686305913661042,
+        "contrast": -0.011307266570982404,
+        "white_balance": [
+          0.021945502303801878,
+          0.006660182489028559,
+          -0.021945502303801878
+        ]
+      },
+      "scene_settings": {
+        "exposure_stops": 0.15387776023540042,
+        "warm_cool": 0.042987341296816084,
+        "contrast": 0.0109520983440997
+      }
+    },
+    {
+      "source": "Morph/originals/DSC_1320-70.jpg",
+      "varied": "outputs/morph-showcase/variances/inputs/DSC_1320-70.jpg",
+      "scene": "scene-07",
+      "settings": {
+        "exposure_stops": 0.2037824491161942,
+        "contrast": 0.018643354711643842,
+        "white_balance": [
+          0.038062539127097186,
+          -0.006518544584348382,
+          -0.038062539127097186
+        ]
+      },
+      "scene_settings": {
+        "exposure_stops": 0.15387776023540042,
+        "warm_cool": 0.042987341296816084,
+        "contrast": 0.0109520983440997
+      }
+    },
+    {
+      "source": "Morph/originals/DSC_1322-71.jpg",
+      "varied": "outputs/morph-showcase/variances/inputs/DSC_1322-71.jpg",
+      "scene": "scene-07",
+      "settings": {
+        "exposure_stops": 0.2055689796524406,
+        "contrast": -0.005455863438694811,
+        "white_balance": [
+          0.018412181775280388,
+          0.01621583648658039,
+          -0.018412181775280388
+        ]
+      },
+      "scene_settings": {
+        "exposure_stops": 0.15387776023540042,
+        "warm_cool": 0.042987341296816084,
+        "contrast": 0.0109520983440997
+      }
+    },
+    {
+      "source": "Morph/originals/DSC_1324-72.jpg",
+      "varied": "outputs/morph-showcase/variances/inputs/DSC_1324-72.jpg",
+      "scene": "scene-07",
+      "settings": {
+        "exposure_stops": 0.3221174072657875,
+        "contrast": 0.0026653762359748617,
+        "white_balance": [
+          0.014812813512726467,
+          0.0047770593314497714,
+          -0.014812813512726467
+        ]
+      },
+      "scene_settings": {
+        "exposure_stops": 0.15387776023540042,
+        "warm_cool": 0.042987341296816084,
+        "contrast": 0.0109520983440997
+      }
+    },
+    {
+      "source": "Morph/originals/DSC_1326-73.jpg",
+      "varied": "outputs/morph-showcase/variances/inputs/DSC_1326-73.jpg",
+      "scene": "scene-08",
+      "settings": {
+        "exposure_stops": -0.031220719813123438,
+        "contrast": -0.03029669526455229,
+        "white_balance": [
+          0.010202646116383642,
+          0.014405513243128732,
+          -0.010202646116383642
+        ]
+      },
+      "scene_settings": {
+        "exposure_stops": -0.15500593893177317,
+        "warm_cool": 0.031790189909689695,
+        "contrast": -0.015902278269492177
+      }
+    },
+    {
+      "source": "Morph/originals/DSC_1329-74.jpg",
+      "varied": "outputs/morph-showcase/variances/inputs/DSC_1329-74.jpg",
+      "scene": "scene-08",
+      "settings": {
+        "exposure_stops": 0.023172952901366617,
+        "contrast": -0.036800763371809514,
+        "white_balance": [
+          0.013522044033374824,
+          -0.004814610298606161,
+          -0.013522044033374824
+        ]
+      },
+      "scene_settings": {
+        "exposure_stops": -0.15500593893177317,
+        "warm_cool": 0.031790189909689695,
+        "contrast": -0.015902278269492177
+      }
+    },
+    {
+      "source": "Morph/originals/DSC_1330-75.jpg",
+      "varied": "outputs/morph-showcase/variances/inputs/DSC_1330-75.jpg",
+      "scene": "scene-08",
+      "settings": {
+        "exposure_stops": -0.2921515847894109,
+        "contrast": -0.0014707284309184842,
+        "white_balance": [
+          0.057507216264227695,
+          -0.015267247856491984,
+          -0.057507216264227695
+        ]
+      },
+      "scene_settings": {
+        "exposure_stops": -0.15500593893177317,
+        "warm_cool": 0.031790189909689695,
+        "contrast": -0.015902278269492177
+      }
+    },
+    {
+      "source": "Morph/originals/DSC_1334-76.jpg",
+      "varied": "outputs/morph-showcase/variances/inputs/DSC_1334-76.jpg",
+      "scene": "scene-08",
+      "settings": {
+        "exposure_stops": -0.21749316816303696,
+        "contrast": 0.00315570207668725,
+        "white_balance": [
+          0.06314530876649468,
+          -0.019280204764219055,
+          -0.06314530876649468
+        ]
+      },
+      "scene_settings": {
+        "exposure_stops": -0.15500593893177317,
+        "warm_cool": 0.031790189909689695,
+        "contrast": -0.015902278269492177
+      }
+    },
+    {
+      "source": "Morph/originals/DSC_1335-77.jpg",
+      "varied": "outputs/morph-showcase/variances/inputs/DSC_1335-77.jpg",
+      "scene": "scene-08",
+      "settings": {
+        "exposure_stops": -0.20478833339558206,
+        "contrast": -0.0028716047064046516,
+        "white_balance": [
+          0.03022180689735978,
+          -0.0002905606570141384,
+          -0.03022180689735978
+        ]
+      },
+      "scene_settings": {
+        "exposure_stops": -0.15500593893177317,
+        "warm_cool": 0.031790189909689695,
+        "contrast": -0.015902278269492177
+      }
+    },
+    {
+      "source": "Morph/originals/DSC_1337-78.jpg",
+      "varied": "outputs/morph-showcase/variances/inputs/DSC_1337-78.jpg",
+      "scene": "scene-08",
+      "settings": {
+        "exposure_stops": -0.1341798992908289,
+        "contrast": 0.003578155347642449,
+        "white_balance": [
+          0.04860601666517503,
+          -0.002613627091865145,
+          -0.04860601666517503
+        ]
+      },
+      "scene_settings": {
+        "exposure_stops": -0.15500593893177317,
+        "warm_cool": 0.031790189909689695,
+        "contrast": -0.015902278269492177
+      }
+    },
+    {
+      "source": "Morph/originals/DSC_1339-79.jpg",
+      "varied": "outputs/morph-showcase/variances/inputs/DSC_1339-79.jpg",
+      "scene": "scene-08-tower",
+      "settings": {
+        "exposure_stops": -0.12112010143918332,
+        "contrast": 0.023327948593944433,
+        "white_balance": [
+          -0.06448052405734161,
+          -0.014872875868576281,
+          0.06448052405734161
+        ]
+      },
+      "scene_settings": {
+        "exposure_stops": -0.16367053784499583,
+        "warm_cool": -0.04510283318882814,
+        "contrast": 0.01856418248008117
+      }
+    },
+    {
+      "source": "Morph/originals/DSC_1340-80.jpg",
+      "varied": "outputs/morph-showcase/variances/inputs/DSC_1340-80.jpg",
+      "scene": "scene-08-tower",
+      "settings": {
+        "exposure_stops": -0.23664271898497763,
+        "contrast": 0.016411121012948865,
+        "white_balance": [
+          -0.02185925346662672,
+          -0.015599394454257372,
+          0.02185925346662672
+        ]
+      },
+      "scene_settings": {
+        "exposure_stops": -0.16367053784499583,
+        "warm_cool": -0.04510283318882814,
+        "contrast": 0.01856418248008117
+      }
+    },
+    {
+      "source": "Morph/originals/DSC_1342-81.jpg",
+      "varied": "outputs/morph-showcase/variances/inputs/DSC_1342-81.jpg",
+      "scene": "scene-08-tower",
+      "settings": {
+        "exposure_stops": -0.018189878751957933,
+        "contrast": 0.009014467821166472,
+        "white_balance": [
+          -0.0671134556775557,
+          -0.015582542161001158,
+          0.0671134556775557
+        ]
+      },
+      "scene_settings": {
+        "exposure_stops": -0.16367053784499583,
+        "warm_cool": -0.04510283318882814,
+        "contrast": 0.01856418248008117
+      }
+    },
+    {
+      "source": "Morph/originals/DSC_1344-82.jpg",
+      "varied": "outputs/morph-showcase/variances/inputs/DSC_1344-82.jpg",
+      "scene": "scene-08-tower",
+      "settings": {
+        "exposure_stops": -0.33722056894690383,
+        "contrast": 0.032754885849225826,
+        "white_balance": [
+          -0.0471621688410374,
+          -0.018043499067331426,
+          0.0471621688410374
+        ]
+      },
+      "scene_settings": {
+        "exposure_stops": -0.16367053784499583,
+        "warm_cool": -0.04510283318882814,
+        "contrast": 0.01856418248008117
+      }
+    },
+    {
+      "source": "Morph/originals/DSC_1360-83.jpg",
+      "varied": "outputs/morph-showcase/variances/inputs/DSC_1360-83.jpg",
+      "scene": "scene-09",
+      "settings": {
+        "exposure_stops": -0.2919667426865049,
+        "contrast": 0.004484029048969124,
+        "white_balance": [
+          0.017498366663615792,
+          0.01626980130587633,
+          -0.017498366663615792
+        ]
+      },
+      "scene_settings": {
+        "exposure_stops": -0.21131668588457522,
+        "warm_cool": 0.027414731467889794,
+        "contrast": -0.016494906761955003
+      }
+    },
+    {
+      "source": "Morph/originals/DSC_1362-84.jpg",
+      "varied": "outputs/morph-showcase/variances/inputs/DSC_1362-84.jpg",
+      "scene": "scene-09",
+      "settings": {
+        "exposure_stops": -0.3593773146506691,
+        "contrast": -0.030052091655251773,
+        "white_balance": [
+          -0.007452622897977046,
+          0.008634137452725411,
+          0.007452622897977046
+        ]
+      },
+      "scene_settings": {
+        "exposure_stops": -0.21131668588457522,
+        "warm_cool": 0.027414731467889794,
+        "contrast": -0.016494906761955003
+      }
+    },
+    {
+      "source": "Morph/originals/DSC_1363-85.jpg",
+      "varied": "outputs/morph-showcase/variances/inputs/DSC_1363-85.jpg",
+      "scene": "scene-09",
+      "settings": {
+        "exposure_stops": -0.31230198983809226,
+        "contrast": -0.02915663516910008,
+        "white_balance": [
+          -0.005113898788591552,
+          0.010430877972956516,
+          0.005113898788591552
+        ]
+      },
+      "scene_settings": {
+        "exposure_stops": -0.21131668588457522,
+        "warm_cool": 0.027414731467889794,
+        "contrast": -0.016494906761955003
+      }
+    },
+    {
+      "source": "Morph/originals/DSC_1365-86.jpg",
+      "varied": "outputs/morph-showcase/variances/inputs/DSC_1365-86.jpg",
+      "scene": "scene-09",
+      "settings": {
+        "exposure_stops": -0.1298144294380985,
+        "contrast": -0.029218765351116817,
+        "white_balance": [
+          0.012488261514547168,
+          0.007426724654850143,
+          -0.012488261514547168
+        ]
+      },
+      "scene_settings": {
+        "exposure_stops": -0.21131668588457522,
+        "warm_cool": 0.027414731467889794,
+        "contrast": -0.016494906761955003
+      }
+    },
+    {
+      "source": "Morph/originals/DSC_1367-87.jpg",
+      "varied": "outputs/morph-showcase/variances/inputs/DSC_1367-87.jpg",
+      "scene": "scene-09",
+      "settings": {
+        "exposure_stops": -0.24784120864375242,
+        "contrast": -0.007037476086138361,
+        "white_balance": [
+          0.03200128544348491,
+          0.008478687745566305,
+          -0.03200128544348491
+        ]
+      },
+      "scene_settings": {
+        "exposure_stops": -0.21131668588457522,
+        "warm_cool": 0.027414731467889794,
+        "contrast": -0.016494906761955003
+      }
+    },
+    {
+      "source": "Morph/originals/DSC_1378-88.jpg",
+      "varied": "outputs/morph-showcase/variances/inputs/DSC_1378-88.jpg",
+      "scene": "scene-09",
+      "settings": {
+        "exposure_stops": -0.331682886141529,
+        "contrast": -0.009505226889922475,
+        "white_balance": [
+          0.0007535446865550681,
+          -0.015758666834712783,
+          -0.0007535446865550681
+        ]
+      },
+      "scene_settings": {
+        "exposure_stops": -0.21131668588457522,
+        "warm_cool": 0.027414731467889794,
+        "contrast": -0.016494906761955003
+      }
+    }
+  ]
+}

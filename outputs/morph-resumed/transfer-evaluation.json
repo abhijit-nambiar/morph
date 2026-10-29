@@ -1,0 +1,77 @@
+{
+  "scope": "Controlled test of recovered mappings at fit resolution before JPEG export. One representative per scene is excluded. Each held-out target is generated separately for that photo using the stored deterministic settings. Target and model share regenerated masks. Does not validate mask accuracy, human edits, automatic normalization, aesthetics, full-resolution errors or unseen albums.",
+  "summary": {
+    "heldout_photos": 11,
+    "lower_error_than_source": 11,
+    "source_mean_rmse": 0.03803508830341426,
+    "recovered_mean_rmse": 0.005627765005876807
+  },
+  "photos": [
+    {
+      "scene": "scene-02-lawn",
+      "photo": "DSC_0947-13.jpg",
+      "source_rmse": 0.0362413264811039,
+      "recovered_rmse": 0.007074784893283483
+    },
+    {
+      "scene": "scene-02-lawn",
+      "photo": "DSC_0948-14.jpg",
+      "source_rmse": 0.036838386207818985,
+      "recovered_rmse": 0.0065900486914884215
+    },
+    {
+      "scene": "scene-02-lawn",
+      "photo": "DSC_0970-17.jpg",
+      "source_rmse": 0.03645066171884537,
+      "recovered_rmse": 0.005054350782481707
+    },
+    {
+      "scene": "scene-02-lawn",
+      "photo": "DSC_0974-18.jpg",
+      "source_rmse": 0.03608909621834755,
+      "recovered_rmse": 0.0051380165843177075
+    },
+    {
+      "scene": "scene-02-lawn",
+      "photo": "DSC_0987-19.jpg",
+      "source_rmse": 0.03578133136034012,
+      "recovered_rmse": 0.006226363874688127
+    },
+    {
+      "scene": "scene-02",
+      "photo": "DSC_0965-16.jpg",
+      "source_rmse": 0.04234752804040909,
+      "recovered_rmse": 0.005809316323521766
+    },
+    {
+      "scene": "scene-02",
+      "photo": "DSC_0990-20.jpg",
+      "source_rmse": 0.037488486617803574,
+      "recovered_rmse": 0.00475701592596176
+    },
+    {
+      "scene": "scene-02",
+      "photo": "DSC_0993-21.jpg",
+      "source_rmse": 0.040971849113702774,
+      "recovered_rmse": 0.0054548361840325525
+    },
+    {
+      "scene": "scene-02",
+      "photo": "DSC_0997-23.jpg",
+      "source_rmse": 0.0392196848988533,
+      "recovered_rmse": 0.005314778059475567
+    },
+    {
+      "scene": "scene-02",
+      "photo": "DSC_0998-24.jpg",
+      "source_rmse": 0.03731067106127739,
+      "recovered_rmse": 0.005623047307974815
+    },
+    {
+      "scene": "scene-02",
+      "photo": "DSC_1012-25.jpg",
+      "source_rmse": 0.039646949619054794,
+      "recovered_rmse": 0.004862856437418963
+    }
+  ]
+}

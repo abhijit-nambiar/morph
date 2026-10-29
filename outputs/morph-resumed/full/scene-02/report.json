@@ -1,0 +1,61 @@
+{
+  "scene": "scene-02",
+  "source_fit": "outputs/morph-resumed/fits/scene-02/fit.json",
+  "mode": "scene",
+  "scope": "Inspect mask edges and full-resolution outputs. Empty masks receive global components only; corrections are manual, not automatic normalization.",
+  "corrections": {
+    "album": {},
+    "scene": {},
+    "photos": {}
+  },
+  "operation_order": [
+    "photo correction",
+    "fitted look",
+    "scene correction",
+    "album correction"
+  ],
+  "photos": [
+    {
+      "source": "Morph/originals/DSC_0965-16.jpg",
+      "output": "outputs/morph-resumed/full/scene-02/exports/DSC_0965-16.jpg",
+      "mask_mean": 0.5452959537506104,
+      "review_flag": false
+    },
+    {
+      "source": "Morph/originals/DSC_0990-20.jpg",
+      "output": "outputs/morph-resumed/full/scene-02/exports/DSC_0990-20.jpg",
+      "mask_mean": 0.25942501425743103,
+      "review_flag": false
+    },
+    {
+      "source": "Morph/originals/DSC_0993-21.jpg",
+      "output": "outputs/morph-resumed/full/scene-02/exports/DSC_0993-21.jpg",
+      "mask_mean": 0.30757129192352295,
+      "review_flag": false
+    },
+    {
+      "source": "Morph/originals/DSC_0995-22.jpg",
+      "output": "outputs/morph-resumed/full/scene-02/exports/DSC_0995-22.jpg",
+      "mask_mean": 0.24644538760185242,
+      "review_flag": false
+    },
+    {
+      "source": "Morph/originals/DSC_0997-23.jpg",
+      "output": "outputs/morph-resumed/full/scene-02/exports/DSC_0997-23.jpg",
+      "mask_mean": 0.2777218222618103,
+      "review_flag": false
+    },
+    {
+      "source": "Morph/originals/DSC_0998-24.jpg",
+      "output": "outputs/morph-resumed/full/scene-02/exports/DSC_0998-24.jpg",
+      "mask_mean": 0.18539805710315704,
+      "review_flag": false
+    },
+    {
+      "source": "Morph/originals/DSC_1012-25.jpg",
+      "output": "outputs/morph-resumed/full/scene-02/exports/DSC_1012-25.jpg",
+      "mask_mean": 0.28654739260673523,
+      "review_flag": false
+    }
+  ]
+}

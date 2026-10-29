@@ -1,0 +1,888 @@
+{
+  "scope": "SHA-256 of every dataset image compared with committed Git LFS object identity.",
+  "originals": 88,
+  "edits": 88,
+  "problems": 0,
+  "photos": [
+    {
+      "path": "Morph/edits/DSC_0901-1.jpg",
+      "sha256": "b8c684937c7b279b1c4ea7a612ab0334ba7690101e5409630457e7ac8f2af6b2",
+      "matches_git_lfs": true
+    },
+    {
+      "path": "Morph/edits/DSC_0904-2.jpg",
+      "sha256": "4cde4ed0191d8b12f26b4cd2e8f6b01b5782d24e7a47ae840f12a5462cc093f7",
+      "matches_git_lfs": true
+    },
+    {
+      "path": "Morph/edits/DSC_0905-3.jpg",
+      "sha256": "0584b406e4236d4ba2d40306557dc96968efb76eb0907346abe07a36b9a764dd",
+      "matches_git_lfs": true
+    },
+    {
+      "path": "Morph/edits/DSC_0906-4.jpg",
+      "sha256": "9efe2892695930c80a68c6f0c7d4a874bad02e7f6a6a109830a615d106030d11",
+      "matches_git_lfs": true
+    },
+    {
+      "path": "Morph/edits/DSC_0914-5.jpg",
+      "sha256": "4b654143277a5890ee4a84fe9faf18f7b49cd1b23ff18b232e472edfc940a59a",
+      "matches_git_lfs": true
+    },
+    {
+      "path": "Morph/edits/DSC_0916-6.jpg",
+      "sha256": "032997eb8d79f7baf59a9da57dbcbb0aca6cb6d89295745c0adc066127d40be9",
+      "matches_git_lfs": true
+    },
+    {
+      "path": "Morph/edits/DSC_0919-7.jpg",
+      "sha256": "04347dee66114ff2c3a7b4e38c3e0b3b30988bcacae6c16db9dc193ece68dcd2",
+      "matches_git_lfs": true
+    },
+    {
+      "path": "Morph/edits/DSC_0921-8.jpg",
+      "sha256": "f6297240eb86c111b3ddc2160385234fbb70517c8b6fd2dc1bbc1ed3419fc748",
+      "matches_git_lfs": true
+    },
+    {
+      "path": "Morph/edits/DSC_0925-9.jpg",
+      "sha256": "55585a09230dc6f797042d3e305212df623d0e31624a5d2958e7f64e360f452a",
+      "matches_git_lfs": true
+    },
+    {
+      "path": "Morph/edits/DSC_0928-10.jpg",
+      "sha256": "598f44e710b9ea12d8319e0e580831d7dd2c45fa85b1ae6d8f1beef735f59c2b",
+      "matches_git_lfs": true
+    },
+    {
+      "path": "Morph/edits/DSC_0930-11.jpg",
+      "sha256": "e440f1ace4cd27dc8733dee93861696550676900997b6481ca3a89b6f01d2117",
+      "matches_git_lfs": true
+    },
+    {
+      "path": "Morph/edits/DSC_0935-12.jpg",
+      "sha256": "bdad1cb924992939d2ff0430d6977d0f6c502e1dbebb48bcb72e189d725d9e9c",
+      "matches_git_lfs": true
+    },
+    {
+      "path": "Morph/edits/DSC_0947-13.jpg",
+      "sha256": "f6702f671236ba1cd4d6bb47c86cf31f5f02dcc996eb241607e700e8beaf6f87",
+      "matches_git_lfs": true
+    },
+    {
+      "path": "Morph/edits/DSC_0948-14.jpg",
+      "sha256": "1fbdc8865a147debf72e6d967d291676a254344fe92f804f4032ffca3339a42a",
+      "matches_git_lfs": true
+    },
+    {
+      "path": "Morph/edits/DSC_0958-15.jpg",
+      "sha256": "9bada0721512a4b9a060ff2fd8706b65025d3bfa0f1b91264c37be4e4ed224b9",
+      "matches_git_lfs": true
+    },
+    {
+      "path": "Morph/edits/DSC_0965-16.jpg",
+      "sha256": "92c9e19ee0cd597205a2ad52b66820842ca4c30f5da10bd88ff89cde4f712b67",
+      "matches_git_lfs": true
+    },
+    {
+      "path": "Morph/edits/DSC_0970-17.jpg",
+      "sha256": "c90aab3dee7a78e96326bf5f59b957751a5fe46af75652c68e81e0028d782def",
+      "matches_git_lfs": true
+    },
+    {
+      "path": "Morph/edits/DSC_0974-18.jpg",
+      "sha256": "aeb29830eb0f1b57125dd354b4b8ff4054fa11091cf30d024680d9b0112e2f86",
+      "matches_git_lfs": true
+    },
+    {
+      "path": "Morph/edits/DSC_0987-19.jpg",
+      "sha256": "24036a8c7c0f20e852a0bc09a758e8e36c2c35f47a9e5955430107ad0a32fe21",
+      "matches_git_lfs": true
+    },
+    {
+      "path": "Morph/edits/DSC_0990-20.jpg",
+      "sha256": "d3e9700acbb3f93edff3dd66ba3e841d54d27b79918407553feb647853874e1c",
+      "matches_git_lfs": true
+    },
+    {
+      "path": "Morph/edits/DSC_0993-21.jpg",
+      "sha256": "148dfbddafce076225db3c91c550ba9dbc0a8b369d6a2ed7f0798491630d51ce",
+      "matches_git_lfs": true
+    },
+    {
+      "path": "Morph/edits/DSC_0995-22.jpg",
+      "sha256": "351b15eeb9dd5642abeea07c3ed599cf2ed79e9bf9ff3bf5ef8ad919d21a1a6c",
+      "matches_git_lfs": true
+    },
+    {
+      "path": "Morph/edits/DSC_0997-23.jpg",
+      "sha256": "1c7ad774c099c76c1ec2635d06b8829804f9de7733b26924602bca7d9b7b3f89",
+      "matches_git_lfs": true
+    },
+    {
+      "path": "Morph/edits/DSC_0998-24.jpg",
+      "sha256": "831fc746d232181ecb1ecdb61c758251ba81b11dc0b909302f40877d6c0599cc",
+      "matches_git_lfs": true
+    },
+    {
+      "path": "Morph/edits/DSC_1012-25.jpg",
+      "sha256": "9f0a68c9747267730e3d907ddf35ca50c5b5330421376819431fdb5a9f4cf627",
+      "matches_git_lfs": true
+    },
+    {
+      "path": "Morph/edits/DSC_1021-26.jpg",
+      "sha256": "dbb9c9d629b28a3a806abd4fcd2de8bc004f03d8b9a0ccd6b8ae1f157e4da60a",
+      "matches_git_lfs": true
+    },
+    {
+      "path": "Morph/edits/DSC_1026-27.jpg",
+      "sha256": "09f814f8476883be85f1b68291b98af8de23654e3da0ba7099a1765d12a6556e",
+      "matches_git_lfs": true
+    },
+    {
+      "path": "Morph/edits/DSC_1028-28.jpg",
+      "sha256": "d9568f92362d5ed05be48fa0451021b5fa62675d08b8964ebacb8e359b33a0f0",
+      "matches_git_lfs": true
+    },
+    {
+      "path": "Morph/edits/DSC_1030-29.jpg",
+      "sha256": "a6f0fcd7ba2d29b2c4fd29e178e13d78a220ad95466476bb2a7df06bac848a91",
+      "matches_git_lfs": true
+    },
+    {
+      "path": "Morph/edits/DSC_1033-30.jpg",
+      "sha256": "4940928fc05025544b9b4c1397a668f00426046577cecaaf9ad001313ced3905",
+      "matches_git_lfs": true
+    },
+    {
+      "path": "Morph/edits/DSC_1037-31.jpg",
+      "sha256": "8b53a29be1cdaa31232ddb2a6872eac6e182a699953e7fb66845d3105a1c4dc3",
+      "matches_git_lfs": true
+    },
+    {
+      "path": "Morph/edits/DSC_1038-32.jpg",
+      "sha256": "84ec366c0074d6369bf9714483358c6003202d1bf22e4b9a78a5df7785980a0d",
+      "matches_git_lfs": true
+    },
+    {
+      "path": "Morph/edits/DSC_1054-33.jpg",
+      "sha256": "08e90c36dcafa53c01adbfb89a02d3fcecda8cf8182b19341eb8b224dc1a4161",
+      "matches_git_lfs": true
+    },
+    {
+      "path": "Morph/edits/DSC_1059-34.jpg",
+      "sha256": "ef7dcc3e8aad6232fd5a690b8857c49f3bbd7ba5419523ac6e24820324a95cae",
+      "matches_git_lfs": true
+    },
+    {
+      "path": "Morph/edits/DSC_1070-35.jpg",
+      "sha256": "4ffa66281cba11f24078ea46a57fca46ee0fa80b737c1450de9af576e77750e7",
+      "matches_git_lfs": true
+    },
+    {
+      "path": "Morph/edits/DSC_1074-36.jpg",
+      "sha256": "b2908ec9e500801dbbf389d1fccf0632e37068be084606f15d0fa97dd718c02d",
+      "matches_git_lfs": true
+    },
+    {
+      "path": "Morph/edits/DSC_1083-37.jpg",
+      "sha256": "47c45e0f7e87bf43cbd12fc3275c353558d62b72caefeda76a4bd1205cd80070",
+      "matches_git_lfs": true
+    },
+    {
+      "path": "Morph/edits/DSC_1088-38.jpg",
+      "sha256": "58613c3e740d59ca67ab2f82a631df2f9cc7fc95438a03ff9a209f6c3f26b99e",
+      "matches_git_lfs": true
+    },
+    {
+      "path": "Morph/edits/DSC_1090-39.jpg",
+      "sha256": "08dcec2d3c6c1206a74b2cccfb30677b9bf5d50e85eb5f07709e520d87b83f31",
+      "matches_git_lfs": true
+    },
+    {
+      "path": "Morph/edits/DSC_1096-40.jpg",
+      "sha256": "20fd471a2e094613fa76221c4131b5e2e4a389ea3e76b7cae39352c5626e9338",
+      "matches_git_lfs": true
+    },
+    {
+      "path": "Morph/edits/DSC_1100-41.jpg",
+      "sha256": "2754e74814d389d44c2e2e4d83bfc9449b69207b3626d50c6b4f3a26eae6a732",
+      "matches_git_lfs": true
+    },
+    {
+      "path": "Morph/edits/DSC_1105-42.jpg",
+      "sha256": "7a5d9ded5824bf65c85a27926c21e046383c43bedca462cd45ac2b8023d9fa68",
+      "matches_git_lfs": true
+    },
+    {
+      "path": "Morph/edits/DSC_1106-43.jpg",
+      "sha256": "6fc911e7b966dc1c05b5ff9020b87cca1ae538af00f100ceac4f30e4b5dde047",
+      "matches_git_lfs": true
+    },
+    {
+      "path": "Morph/edits/DSC_1109-44.jpg",
+      "sha256": "b384e5bf554c5e3e17dc8641051fc08e7c9e8ac5df3f07209e7d146cb182307f",
+      "matches_git_lfs": true
+    },
+    {
+      "path": "Morph/edits/DSC_1111-45.jpg",
+      "sha256": "24035c506561ac10e7e7c74614aea51ad2144f72a4a3e1aa4ef758b1f1d1e554",
+      "matches_git_lfs": true
+    },
+    {
+      "path": "Morph/edits/DSC_1114-46.jpg",
+      "sha256": "6c0536d14663e04cdab34975a62154d3fef50a1526aefaadca777862798380d5",
+      "matches_git_lfs": true
+    },
+    {
+      "path": "Morph/edits/DSC_1116-47.jpg",
+      "sha256": "07300d43bc5409657ff1c15a2ee1c9ae3b2609bb7bc7e3acefb9b403e472f43c",
+      "matches_git_lfs": true
+    },
+    {
+      "path": "Morph/edits/DSC_1118-48.jpg",
+      "sha256": "fb4671a48a1c28aba87bdd682d3b5c4c96d1c834cd7a59ec60785d2ef3c12772",
+      "matches_git_lfs": true
+    },
+    {
+      "path": "Morph/edits/DSC_1259-49.jpg",
+      "sha256": "9389747c852a1dfed4247568d08f38ae6871246ebbcfe86f42d1ee4b2d131e35",
+      "matches_git_lfs": true
+    },
+    {
+      "path": "Morph/edits/DSC_1261-50.jpg",
+      "sha256": "1508b5b152a2efb7bfc4c6d4260c64fad71de412ef4d7a4da5707b8f58cd9422",
+      "matches_git_lfs": true
+    },
+    {
+      "path": "Morph/edits/DSC_1264-51.jpg",
+      "sha256": "d4882e5b7685c1e76c3d0c4c41cfa3b1557460a429d2c4baf806fa4d597190c6",
+      "matches_git_lfs": true
+    },
+    {
+      "path": "Morph/edits/DSC_1265-52.jpg",
+      "sha256": "a1fd915a0185a34bfa34cb61abc9509483d62de9f168be252cca7d6bf00f20b5",
+      "matches_git_lfs": true
+    },
+    {
+      "path": "Morph/edits/DSC_1268-53.jpg",
+      "sha256": "606849d99d1a82e5ddc235be67393a5123521d7bdee1a477d03f57c1a7e273e6",
+      "matches_git_lfs": true
+    },
+    {
+      "path": "Morph/edits/DSC_1273-54.jpg",
+      "sha256": "b4bc798a9aadf79886e6209de444085bf4a79839be6caa84df1d46d8946ab1ff",
+      "matches_git_lfs": true
+    },
+    {
+      "path": "Morph/edits/DSC_1280-55.jpg",
+      "sha256": "9c805e89f07fe114155767073b5e4a1b94bb8481983e17c760dfff5a21ab02f3",
+      "matches_git_lfs": true
+    },
+    {
+      "path": "Morph/edits/DSC_1282-56.jpg",
+      "sha256": "d2c156aa7b706542dc06c2a68bda281ca769a9a1915ff3694dfa82bd6e72a867",
+      "matches_git_lfs": true
+    },
+    {
+      "path": "Morph/edits/DSC_1284-57.jpg",
+      "sha256": "35a64cf6923eb22411bb1cb8651f5f00a54cfe0c8ddd7196a569ee875a7e1327",
+      "matches_git_lfs": true
+    },
+    {
+      "path": "Morph/edits/DSC_1286-58.jpg",
+      "sha256": "eb3055dd375e5b0fa69d7c5082d6ed8817a5be3fab85ce007209f2246bf8c9cb",
+      "matches_git_lfs": true
+    },
+    {
+      "path": "Morph/edits/DSC_1288-59.jpg",
+      "sha256": "0248e228dd505b65b581a72713005bbee26ade87e29c479efd89dc92e1b7b11b",
+      "matches_git_lfs": true
+    },
+    {
+      "path": "Morph/edits/DSC_1291-60.jpg",
+      "sha256": "8723f72b231971612bb47502f2d5489b55efc2bb29a33403631e457ed4e7a557",
+      "matches_git_lfs": true
+    },
+    {
+      "path": "Morph/edits/DSC_1292-61.jpg",
+      "sha256": "0ca2df04c18371ce29d0ad8b50baecb7c7e0f333c7a6995c973c13c2dbf539ea",
+      "matches_git_lfs": true
+    },
+    {
+      "path": "Morph/edits/DSC_1293-62.jpg",
+      "sha256": "342a19f36cfa38f92f28d1a28f32a7a2d72581f9865a5015f14ac44217f3b6e9",
+      "matches_git_lfs": true
+    },
+    {
+      "path": "Morph/edits/DSC_1300-63.jpg",
+      "sha256": "849360e511c562bbd964b8757dd42f76c3bdd5138a529c359fb6a6ffa2f0a421",
+      "matches_git_lfs": true
+    },
+    {
+      "path": "Morph/edits/DSC_1302-64.jpg",
+      "sha256": "2156334d0e46a18d951ecf07c83080a557b58b61378b83b8c5918b8dfbbdbf3c",
+      "matches_git_lfs": true
+    },
+    {
+      "path": "Morph/edits/DSC_1304-65.jpg",
+      "sha256": "295ae0751def2764c498f14e44afda6873d4b842986fdb916d8ed0512ff1f095",
+      "matches_git_lfs": true
+    },
+    {
+      "path": "Morph/edits/DSC_1308-66.jpg",
+      "sha256": "b201c585df78f0a4a736ba620ef0ec7b9299e6540205b75356b796771623edf1",
+      "matches_git_lfs": true
+    },
+    {
+      "path": "Morph/edits/DSC_1310-67.jpg",
+      "sha256": "633b4682ca5b52e9e6bb9c6c4d9bcd73375b4eeb3ce02846582e3eaa680b6b89",
+      "matches_git_lfs": true
+    },
+    {
+      "path": "Morph/edits/DSC_1312-68.jpg",
+      "sha256": "ed9f14b8fced6959a4739ecab8d632f7c5f12642a3d91ba8f23d225e37ec7771",
+      "matches_git_lfs": true
+    },
+    {
+      "path": "Morph/edits/DSC_1315-69.jpg",
+      "sha256": "3e032dbc76ea897a4f3abdbfdf144dcc945587df2d243765594f1a7843185c5f",
+      "matches_git_lfs": true
+    },
+    {
+      "path": "Morph/edits/DSC_1320-70.jpg",
+      "sha256": "b0d26950502f413859917bd54919c80356562145a2ca059fac592e399bada4bc",
+      "matches_git_lfs": true
+    },
+    {
+      "path": "Morph/edits/DSC_1322-71.jpg",
+      "sha256": "acccc5e00d99a9cbf87dce22d803d7a1e90647ea3d164fa764372d7deb0a5f84",
+      "matches_git_lfs": true
+    },
+    {
+      "path": "Morph/edits/DSC_1324-72.jpg",
+      "sha256": "3bb7f64a9ebf7ffa23cb2007e5e9312a1fd13732e033f54ae5912a3f069c8dec",
+      "matches_git_lfs": true
+    },
+    {
+      "path": "Morph/edits/DSC_1326-73.jpg",
+      "sha256": "2137e98f389a4374bd5656ba9acd68beeeffa26c58101dc6ab68fa5df46859d0",
+      "matches_git_lfs": true
+    },
+    {
+      "path": "Morph/edits/DSC_1329-74.jpg",
+      "sha256": "3a6a85d78c7edb172f6edd58059e03e8e8ca494ad8b976d15b7b9b5848ce2160",
+      "matches_git_lfs": true
+    },
+    {
+      "path": "Morph/edits/DSC_1330-75.jpg",
+      "sha256": "f155185d03f11a17a3086d71a62d82388222b49acb4d9e07cd91efa5c4dfc7cb",
+      "matches_git_lfs": true
+    },
+    {
+      "path": "Morph/edits/DSC_1334-76.jpg",
+      "sha256": "d4124476ccaa16a3fe6525964dc467a074df03442167b99ad660aaf5e4f78fd3",
+      "matches_git_lfs": true
+    },
+    {
+      "path": "Morph/edits/DSC_1335-77.jpg",
+      "sha256": "362aae86112cb838940f1ecd1e40f6e5ed7646e6b02c9d7e6dd5abd1a1d07c18",
+      "matches_git_lfs": true
+    },
+    {
+      "path": "Morph/edits/DSC_1337-78.jpg",
+      "sha256": "e2a41ceb46f39a5aebbfc0dd502d685464f13b6f6a27cdf2a2741f825bf90539",
+      "matches_git_lfs": true
+    },
+    {
+      "path": "Morph/edits/DSC_1339-79.jpg",
+      "sha256": "38573fb2ab8aa9138c071d3449551b59096a43bc2ee1ce8eeb84ca1ceff57c8f",
+      "matches_git_lfs": true
+    },
+    {
+      "path": "Morph/edits/DSC_1340-80.jpg",
+      "sha256": "6db7fe3c805c6047487c6911562198e5f65a05ac2c89414a4331a978647207ff",
+      "matches_git_lfs": true
+    },
+    {
+      "path": "Morph/edits/DSC_1342-81.jpg",
+      "sha256": "66aa8e085d89c6f355e29da50fa4c3f82ce98735adfa62a240672c4d828337cc",
+      "matches_git_lfs": true
+    },
+    {
+      "path": "Morph/edits/DSC_1344-82.jpg",
+      "sha256": "5027d0eb783311a7de8733fe5b7f4bba2823281861783f9a865e017ccdad873b",
+      "matches_git_lfs": true
+    },
+    {
+      "path": "Morph/edits/DSC_1360-83.jpg",
+      "sha256": "1a08e5233f8cfe3d52c8ffe5692d141b551b12729c11cbe76073fbff4a383029",
+      "matches_git_lfs": true
+    },
+    {
+      "path": "Morph/edits/DSC_1362-84.jpg",
+      "sha256": "6167af1c13f37a8a4b9d4e627057c5794c4b5fac89109057c8ed4373d5949595",
+      "matches_git_lfs": true
+    },
+    {
+      "path": "Morph/edits/DSC_1363-85.jpg",
+      "sha256": "6c89a0c7c3a4abc53f692d56699066d96aede38da23d22346766765248ae2d6e",
+      "matches_git_lfs": true
+    },
+    {
+      "path": "Morph/edits/DSC_1365-86.jpg",
+      "sha256": "ec425e903f353150a0f2c6f96d53a5a2ccbb3d87898e3e6f71a697da2e04b11d",
+      "matches_git_lfs": true
+    },
+    {
+      "path": "Morph/edits/DSC_1367-87.jpg",
+      "sha256": "4cce628c0816e4e6d234e6fdddc2a29d7b49771bbc39610d3f11fa32c36e7089",
+      "matches_git_lfs": true
+    },
+    {
+      "path": "Morph/edits/DSC_1378-88.jpg",
+      "sha256": "8c04298c48ffb05b4e84c60d6016f818f27bbdda339d68fcb82bc7d71987c243",
+      "matches_git_lfs": true
+    },
+    {
+      "path": "Morph/originals/DSC_0901-1.jpg",
+      "sha256": "a29acb96cf96ba04613f085605f5e2d226391b2626695b2e1658bdd50a5653cb",
+      "matches_git_lfs": true
+    },
+    {
+      "path": "Morph/originals/DSC_0904-2.jpg",
+      "sha256": "cc9d8b6c6fbe5ccea8764d15078555125555a1898f4fab81176c07c898db1c69",
+      "matches_git_lfs": true
+    },
+    {
+      "path": "Morph/originals/DSC_0905-3.jpg",
+      "sha256": "d230ca013da06a15f7c54282ef232153c04fab00adc358e8c533664aa0ac78e2",
+      "matches_git_lfs": true
+    },
+    {
+      "path": "Morph/originals/DSC_0906-4.jpg",
+      "sha256": "b537d85511aabe821f2476c542516bce46ee7d812e67f43da80cfbe452a478ca",
+      "matches_git_lfs": true
+    },
+    {
+      "path": "Morph/originals/DSC_0914-5.jpg",
+      "sha256": "48a4f2e280e7f2dcc71a1686f0f6fb1e7f5c82de3bc173479e3e78512bbc0658",
+      "matches_git_lfs": true
+    },
+    {
+      "path": "Morph/originals/DSC_0916-6.jpg",
+      "sha256": "e316958f740ffb0d475963fd24ddeb3dfa580f30eb827aaeed0c8bffc47e9c76",
+      "matches_git_lfs": true
+    },
+    {
+      "path": "Morph/originals/DSC_0919-7.jpg",
+      "sha256": "4e8f3aa6e91e034a304473d747b56da64bafc8259d48b89d87ba02c695db3c32",
+      "matches_git_lfs": true
+    },
+    {
+      "path": "Morph/originals/DSC_0921-8.jpg",
+      "sha256": "f4866070b5b7c63bbb49052c32854ce4607854c1b4ceb3774e251064dbf87763",
+      "matches_git_lfs": true
+    },
+    {
+      "path": "Morph/originals/DSC_0925-9.jpg",
+      "sha256": "a14a165ebfd46780a58386d2b517c616ca1ad7b42e210113e12e056086763e59",
+      "matches_git_lfs": true
+    },
+    {
+      "path": "Morph/originals/DSC_0928-10.jpg",
+      "sha256": "d5f317f0866bcb85d8278fae8a03803d588c7a1048244c86ea29ebc90ce3df54",
+      "matches_git_lfs": true
+    },
+    {
+      "path": "Morph/originals/DSC_0930-11.jpg",
+      "sha256": "e3f77e76ea628139ce9207de359eeb72226a6cce9d0e5743864b155adf6a7367",
+      "matches_git_lfs": true
+    },
+    {
+      "path": "Morph/originals/DSC_0935-12.jpg",
+      "sha256": "e2b31ff884eaf3bac759781da639b2c47ee3177e5c2b7cf4180eced96a349330",
+      "matches_git_lfs": true
+    },
+    {
+      "path": "Morph/originals/DSC_0947-13.jpg",
+      "sha256": "e543bbeea49393e7a0ac65ce8a76fd2e8c0d418de73f7a4478bf36980140a849",
+      "matches_git_lfs": true
+    },
+    {
+      "path": "Morph/originals/DSC_0948-14.jpg",
+      "sha256": "baf72136ebae12c6ace821688ec3f62dc912b1176dfe914f34034d4e70dfdbce",
+      "matches_git_lfs": true
+    },
+    {
+      "path": "Morph/originals/DSC_0958-15.jpg",
+      "sha256": "3929f529a87b72ed8416403d84a3b12c59e7207ce36e40813fd9820987d3ee3a",
+      "matches_git_lfs": true
+    },
+    {
+      "path": "Morph/originals/DSC_0965-16.jpg",
+      "sha256": "5fa49f5badf8557591fbdf151ba7712866b922704727a4280c3d134471cc44f4",
+      "matches_git_lfs": true
+    },
+    {
+      "path": "Morph/originals/DSC_0970-17.jpg",
+      "sha256": "e63953c0060cc94571859fe3536df4fc8d8eaa5c9d4dd7b63683813878df7686",
+      "matches_git_lfs": true
+    },
+    {
+      "path": "Morph/originals/DSC_0974-18.jpg",
+      "sha256": "abfc924a4c4a85edca68b85a22f85278b2826f2c71b955a8bd8c4c0e3b89d2e2",
+      "matches_git_lfs": true
+    },
+    {
+      "path": "Morph/originals/DSC_0987-19.jpg",
+      "sha256": "e2d502e0f3641cde40897f70a397ffc7e131aed11ce0a6a34310ea6dee6cd6e4",
+      "matches_git_lfs": true
+    },
+    {
+      "path": "Morph/originals/DSC_0990-20.jpg",
+      "sha256": "ec279da48a6c0249807664c965b43b40bb13a24dbaf09c1d6f4d967ee17254fc",
+      "matches_git_lfs": true
+    },
+    {
+      "path": "Morph/originals/DSC_0993-21.jpg",
+      "sha256": "ac9902e4fb4cf1700dd6feca05955b8937b41e25fd19b8510abe9476100c8fdf",
+      "matches_git_lfs": true
+    },
+    {
+      "path": "Morph/originals/DSC_0995-22.jpg",
+      "sha256": "e31109eba49d00e8004198ed731fd28545b4b970518d9ad838ec39bf95de1169",
+      "matches_git_lfs": true
+    },
+    {
+      "path": "Morph/originals/DSC_0997-23.jpg",
+      "sha256": "9d82c1fd806d3e5644c416b61c712a9019af5f62c16940f8394b7f6a474fe366",
+      "matches_git_lfs": true
+    },
+    {
+      "path": "Morph/originals/DSC_0998-24.jpg",
+      "sha256": "b7498e847dace9e0d9040b5724e2a3bcd02a3b81c8df4372b019c06b78cb1008",
+      "matches_git_lfs": true
+    },
+    {
+      "path": "Morph/originals/DSC_1012-25.jpg",
+      "sha256": "8d0a7695c5ed786d1544f53613c00822155a80b2f6c7bb120fd0d8a58cefc245",
+      "matches_git_lfs": true
+    },
+    {
+      "path": "Morph/originals/DSC_1021-26.jpg",
+      "sha256": "f4dc33068553bd6421019a1df32ef2618ffc841bd74ce6a4f7887441239a913f",
+      "matches_git_lfs": true
+    },
+    {
+      "path": "Morph/originals/DSC_1026-27.jpg",
+      "sha256": "2975d872d7dadd7061243d3ce70de109118adce36e754a50bb89b5cc6abcc142",
+      "matches_git_lfs": true
+    },
+    {
+      "path": "Morph/originals/DSC_1028-28.jpg",
+      "sha256": "751798a428c2cb1d37ddef8cf629abb6ec9fe55e859cfaa11217f666372b97d2",
+      "matches_git_lfs": true
+    },
+    {
+      "path": "Morph/originals/DSC_1030-29.jpg",
+      "sha256": "2dbd7586f54de67cbd1bbc079153963be91920e4b445fd0060cbc1bfa70b2dac",
+      "matches_git_lfs": true
+    },
+    {
+      "path": "Morph/originals/DSC_1033-30.jpg",
+      "sha256": "e785adb8b916a8172fd9efd0f710331c4ada7a932e524210114c25b19b6474b7",
+      "matches_git_lfs": true
+    },
+    {
+      "path": "Morph/originals/DSC_1037-31.jpg",
+      "sha256": "ad3ae9e8a7693fff31bd7e4bba662d1abf46e8163dbf943157d346e844e45e26",
+      "matches_git_lfs": true
+    },
+    {
+      "path": "Morph/originals/DSC_1038-32.jpg",
+      "sha256": "3cb12f68b54ea851b877ba7418c8fd3b2bafc58c8aefdaa8b335bc59b25c9908",
+      "matches_git_lfs": true
+    },
+    {
+      "path": "Morph/originals/DSC_1054-33.jpg",
+      "sha256": "dd8f2dae5f851b25251b1d09a26d51330f3ebf7563385d951d2f7deacd93f2b6",
+      "matches_git_lfs": true
+    },
+    {
+      "path": "Morph/originals/DSC_1059-34.jpg",
+      "sha256": "168f7c839e57200cfc6fc0c96e96072bdc734c0f4db059ee24b861d40ea4ceb5",
+      "matches_git_lfs": true
+    },
+    {
+      "path": "Morph/originals/DSC_1070-35.jpg",
+      "sha256": "127a0956be78b2cd2d2a56a310eede9a9c8787929d50c4165c0fce5141647df7",
+      "matches_git_lfs": true
+    },
+    {
+      "path": "Morph/originals/DSC_1074-36.jpg",
+      "sha256": "552ac4fd081a3f0718e5f8974b88db6ca3d43b0f689d8c4226712132ff36991b",
+      "matches_git_lfs": true
+    },
+    {
+      "path": "Morph/originals/DSC_1083-37.jpg",
+      "sha256": "d9fe1f2d63ae2e064eedf1021f225bec54996387833f678fe43edb5a8e479680",
+      "matches_git_lfs": true
+    },
+    {
+      "path": "Morph/originals/DSC_1088-38.jpg",
+      "sha256": "aef3eaeb8a6beaa4c5156ef301cde9197516a4262b78d9d85ea51a0273b9caf4",
+      "matches_git_lfs": true
+    },
+    {
+      "path": "Morph/originals/DSC_1090-39.jpg",
+      "sha256": "bfe29aaebe1a2d7efe5eb6b771cd2dcdb3806b1d9874b68f3bbbb6d1a2ba499a",
+      "matches_git_lfs": true
+    },
+    {
+      "path": "Morph/originals/DSC_1096-40.jpg",
+      "sha256": "ad528d00c8d14f2a8d75c58c51850c3d9070e583022a86b99737ce0a0646e008",
+      "matches_git_lfs": true
+    },
+    {
+      "path": "Morph/originals/DSC_1100-41.jpg",
+      "sha256": "afe9ccd0237de76a7ff2b56a9d6786a1a9bda368d386b430b267ef2b9e82f4da",
+      "matches_git_lfs": true
+    },
+    {
+      "path": "Morph/originals/DSC_1105-42.jpg",
+      "sha256": "0ff1c29940797edc80f9762168233aa440d078db032580b3073940f9038d9a14",
+      "matches_git_lfs": true
+    },
+    {
+      "path": "Morph/originals/DSC_1106-43.jpg",
+      "sha256": "f27859ebde3c640694f407f36369cc87d91da51af4f7d5170bb24533a98d4620",
+      "matches_git_lfs": true
+    },
+    {
+      "path": "Morph/originals/DSC_1109-44.jpg",
+      "sha256": "bc841f56fb47bdcebd754779bfb3cf70e1c1eea6af90515dd956ab4bdb4240b9",
+      "matches_git_lfs": true
+    },
+    {
+      "path": "Morph/originals/DSC_1111-45.jpg",
+      "sha256": "0c4202103a893c6fd720e0b8901a15eba4a3ddc3889f04552a76e615e485bbe1",
+      "matches_git_lfs": true
+    },
+    {
+      "path": "Morph/originals/DSC_1114-46.jpg",
+      "sha256": "61eddd18dfbaa37765e6f3a668b60915858de1a7474d670dc06b493d96492aaf",
+      "matches_git_lfs": true
+    },
+    {
+      "path": "Morph/originals/DSC_1116-47.jpg",
+      "sha256": "799917fbcb743dab983c8132989e44d8d96d6a922bfa3ad09bde1d0d3406ac33",
+      "matches_git_lfs": true
+    },
+    {
+      "path": "Morph/originals/DSC_1118-48.jpg",
+      "sha256": "41f223785a7e8aee90c81e9fe2cc99ff2f79fac03862dab7248cfee7a406cc12",
+      "matches_git_lfs": true
+    },
+    {
+      "path": "Morph/originals/DSC_1259-49.jpg",
+      "sha256": "1e7fe9569ca739f29bdf644ef33a308b66bed29e5edb3f83974c1bc6389c6e9d",
+      "matches_git_lfs": true
+    },
+    {
+      "path": "Morph/originals/DSC_1261-50.jpg",
+      "sha256": "36af9133f0122c17524d093e46d3384656a7a5370150d597a0e7c8acd06a7544",
+      "matches_git_lfs": true
+    },
+    {
+      "path": "Morph/originals/DSC_1264-51.jpg",
+      "sha256": "32619ee4644a9fd9a214032124b1dc19b4ad906c5896843d1b22ef51c5b8de13",
+      "matches_git_lfs": true
+    },
+    {
+      "path": "Morph/originals/DSC_1265-52.jpg",
+      "sha256": "3f5559fb848fbe8e18ee8b27015144e2593284477ad9e840b7944697f0fae643",
+      "matches_git_lfs": true
+    },
+    {
+      "path": "Morph/originals/DSC_1268-53.jpg",
+      "sha256": "0622ac3f779556909e1ba4533df2bee687c68596ceddf8a9fe25af7561c9bee8",
+      "matches_git_lfs": true
+    },
+    {
+      "path": "Morph/originals/DSC_1273-54.jpg",
+      "sha256": "68a88c4bb90ab54dbc45c6ca51eaa67f24d62bb9962459d508c06f9989116656",
+      "matches_git_lfs": true
+    },
+    {
+      "path": "Morph/originals/DSC_1280-55.jpg",
+      "sha256": "7118ed2bc3a63a598f371ea6efcff12e85f2eb6949b0bc215c548d0f340ebee7",
+      "matches_git_lfs": true
+    },
+    {
+      "path": "Morph/originals/DSC_1282-56.jpg",
+      "sha256": "2898cd6307dd41e03e068aa61976bc20b633c676e416d546c01d4237629e18ac",
+      "matches_git_lfs": true
+    },
+    {
+      "path": "Morph/originals/DSC_1284-57.jpg",
+      "sha256": "7778d5e2022a0a3765aa5ba147a2e01818a66ebf8e366f59aea8322b317ceb45",
+      "matches_git_lfs": true
+    },
+    {
+      "path": "Morph/originals/DSC_1286-58.jpg",
+      "sha256": "6234092255c0ed2967021b23b57a229f4c2f23bebb3285b355a05ce1e67a8e31",
+      "matches_git_lfs": true
+    },
+    {
+      "path": "Morph/originals/DSC_1288-59.jpg",
+      "sha256": "258e60900f470fb77bb93a164f7e2e0bd80a9eceb7b2fdb4537d4ad3b94cf247",
+      "matches_git_lfs": true
+    },
+    {
+      "path": "Morph/originals/DSC_1291-60.jpg",
+      "sha256": "228a75c160b18330372bcb5e2bf1896c9ae28079ca6815f6dd0383aeced581c6",
+      "matches_git_lfs": true
+    },
+    {
+      "path": "Morph/originals/DSC_1292-61.jpg",
+      "sha256": "db56362732a422ac44e6a8c573e479828fbc051ef2f6cc3303481fb8729264cc",
+      "matches_git_lfs": true
+    },
+    {
+      "path": "Morph/originals/DSC_1293-62.jpg",
+      "sha256": "3bac664995bf435bb70ad53703eaa7f7586beceb6410961cbfc665cd1d9da20b",
+      "matches_git_lfs": true
+    },
+    {
+      "path": "Morph/originals/DSC_1300-63.jpg",
+      "sha256": "44eed856759ec8d24099fbac31230847cf1d88a0d088ba1ef259580d84e6a91e",
+      "matches_git_lfs": true
+    },
+    {
+      "path": "Morph/originals/DSC_1302-64.jpg",
+      "sha256": "b66f910dc7a9293c7de8570b5455a93447781494ba9370207a93702e658a5637",
+      "matches_git_lfs": true
+    },
+    {
+      "path": "Morph/originals/DSC_1304-65.jpg",
+      "sha256": "b19d94d75198af538824f1963a64b06969d0ea2efc619609512b7c926469e64a",
+      "matches_git_lfs": true
+    },
+    {
+      "path": "Morph/originals/DSC_1308-66.jpg",
+      "sha256": "b64156a691744d90e1bdbd065f21062c89fc5d7df1f5ea431e773923183bd406",
+      "matches_git_lfs": true
+    },
+    {
+      "path": "Morph/originals/DSC_1310-67.jpg",
+      "sha256": "972c2fb5f3ca59fab37aabbe2afdf37667fd4451def9ee781efc922be3e98c84",
+      "matches_git_lfs": true
+    },
+    {
+      "path": "Morph/originals/DSC_1312-68.jpg",
+      "sha256": "38f7f36169550e6a5d9e9d7671999f00fed3431fea42d824ca4a826ec134c72a",
+      "matches_git_lfs": true
+    },
+    {
+      "path": "Morph/originals/DSC_1315-69.jpg",
+      "sha256": "a200d5d87453268dc49ef58142008199f7edbc756187607a6034a5fd95a7036b",
+      "matches_git_lfs": true
+    },
+    {
+      "path": "Morph/originals/DSC_1320-70.jpg",
+      "sha256": "eda818c079aeae0961c2b3d9cd3e09f453885115439df2d331e80655e825a695",
+      "matches_git_lfs": true
+    },
+    {
+      "path": "Morph/originals/DSC_1322-71.jpg",
+      "sha256": "0b4f6bb3984b1f6db4ec65ecf25774e30740664be1a6d3b1da75f0eac4d19c57",
+      "matches_git_lfs": true
+    },
+    {
+      "path": "Morph/originals/DSC_1324-72.jpg",
+      "sha256": "18e5c055992810a1e7da9e2207f5b4dfe6cbf40837041afb1cc33e61ffca8dbf",
+      "matches_git_lfs": true
+    },
+    {
+      "path": "Morph/originals/DSC_1326-73.jpg",
+      "sha256": "f4e17d8b29929a6b542280879b2ff6e88b34901e8bf1cf1d3c05bd79816a0570",
+      "matches_git_lfs": true
+    },
+    {
+      "path": "Morph/originals/DSC_1329-74.jpg",
+      "sha256": "8ee78029c1cc261eda3c7ebe4e0969955bcbd87642fe424e476ec176ada4c940",
+      "matches_git_lfs": true
+    },
+    {
+      "path": "Morph/originals/DSC_1330-75.jpg",
+      "sha256": "f72fc1515678e130413b4c18f04f85ce807f6739948dafcf901ee0adae9ca070",
+      "matches_git_lfs": true
+    },
+    {
+      "path": "Morph/originals/DSC_1334-76.jpg",
+      "sha256": "41781ab89de108688ce7f4cfc6a6240840759106983e7322888bc75347f79472",
+      "matches_git_lfs": true
+    },
+    {
+      "path": "Morph/originals/DSC_1335-77.jpg",
+      "sha256": "9829686df475be9773e9901b730b294944653c410ba0190fb9c602ae852cd154",
+      "matches_git_lfs": true
+    },
+    {
+      "path": "Morph/originals/DSC_1337-78.jpg",
+      "sha256": "a7cd42a0ec4c8b0bacc8f30bdf1d3a4bec1487566f4f105d9b74666a4368735b",
+      "matches_git_lfs": true
+    },
+    {
+      "path": "Morph/originals/DSC_1339-79.jpg",
+      "sha256": "46b553ef5966710b3a291a577a1b8d022e580c6457e69f39d506ef0b2a3464e1",
+      "matches_git_lfs": true
+    },
+    {
+      "path": "Morph/originals/DSC_1340-80.jpg",
+      "sha256": "13b81766e04315082114e69d44b79adce2ce7dc46575bd52ff3b3f3bd5a7528c",
+      "matches_git_lfs": true
+    },
+    {
+      "path": "Morph/originals/DSC_1342-81.jpg",
+      "sha256": "e92411fb9ac04e4a72e483a8ce2704bdfdf03b1c8407be30d7f3f2c075393389",
+      "matches_git_lfs": true
+    },
+    {
+      "path": "Morph/originals/DSC_1344-82.jpg",
+      "sha256": "fe3f13c2b417325dcd115bdabf99ce519a5fec637b07d2409d37b937ec123668",
+      "matches_git_lfs": true
+    },
+    {
+      "path": "Morph/originals/DSC_1360-83.jpg",
+      "sha256": "69bd7a9aee2cfe80903bc2c479f27570536379b6bda2c65d565edb625aee223f",
+      "matches_git_lfs": true
+    },
+    {
+      "path": "Morph/originals/DSC_1362-84.jpg",
+      "sha256": "46f926ea9d97dcc778d1335d2c95dfe6b8de7853112d89be00ba532526b1561d",
+      "matches_git_lfs": true
+    },
+    {
+      "path": "Morph/originals/DSC_1363-85.jpg",
+      "sha256": "b6a7b0bd4c7c631bdd6938b1cce14d3265789dfa8f8e951bdac737059b69a4a8",
+      "matches_git_lfs": true
+    },
+    {
+      "path": "Morph/originals/DSC_1365-86.jpg",
+      "sha256": "134574c80d2fc58a292ddb230ba87967e77b3f36e34c23a71c6da952d6121e66",
+      "matches_git_lfs": true
+    },
+    {
+      "path": "Morph/originals/DSC_1367-87.jpg",
+      "sha256": "7bae2b62ebf4cd663b6fe367d4aeb8f0c78bf204821c072aab0cfbd64b094eda",
+      "matches_git_lfs": true
+    },
+    {
+      "path": "Morph/originals/DSC_1378-88.jpg",
+      "sha256": "a172226864626aec6dbbcd2e3865cc734eb43414bbbaf69d6fc7907aed7bb0ce",
+      "matches_git_lfs": true
+    }
+  ]
+}

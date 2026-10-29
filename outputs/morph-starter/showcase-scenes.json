@@ -1,0 +1,192 @@
+{
+  "version": 1,
+  "method": "Agent visual review of all 88 originals: split three mixed backdrops before target-score inspection. Original chronological structure and earlier lawn/building split retained. These are review assignments for this album, not automatic scene recognition. The shaded close-up DSC_1273-54 has different visible content and no verified overlap with the walkway reference; it is a separate calibrated lighting group, with no scene-transfer claim.",
+  "groups": [
+    {
+      "id": "scene-01",
+      "label": "South Hall \u00b7 doorway",
+      "photos": [
+        "DSC_0901-1.jpg",
+        "DSC_0904-2.jpg",
+        "DSC_0905-3.jpg",
+        "DSC_0906-4.jpg",
+        "DSC_0914-5.jpg",
+        "DSC_0916-6.jpg",
+        "DSC_0919-7.jpg",
+        "DSC_0921-8.jpg",
+        "DSC_0925-9.jpg",
+        "DSC_0928-10.jpg",
+        "DSC_0930-11.jpg",
+        "DSC_0935-12.jpg"
+      ],
+      "representative": "DSC_0906-4.jpg"
+    },
+    {
+      "id": "scene-02-lawn",
+      "label": "Campanile lawn",
+      "photos": [
+        "DSC_0947-13.jpg",
+        "DSC_0948-14.jpg",
+        "DSC_0958-15.jpg",
+        "DSC_0970-17.jpg",
+        "DSC_0974-18.jpg",
+        "DSC_0987-19.jpg"
+      ],
+      "representative": "DSC_0958-15.jpg"
+    },
+    {
+      "id": "scene-02",
+      "label": "Library steps",
+      "photos": [
+        "DSC_0965-16.jpg",
+        "DSC_0990-20.jpg",
+        "DSC_0993-21.jpg",
+        "DSC_0995-22.jpg",
+        "DSC_0997-23.jpg",
+        "DSC_0998-24.jpg",
+        "DSC_1012-25.jpg"
+      ],
+      "representative": "DSC_0995-22.jpg"
+    },
+    {
+      "id": "scene-03",
+      "label": "Campanile \u00b7 terrace",
+      "photos": [
+        "DSC_1021-26.jpg",
+        "DSC_1026-27.jpg",
+        "DSC_1028-28.jpg",
+        "DSC_1030-29.jpg",
+        "DSC_1033-30.jpg",
+        "DSC_1037-31.jpg",
+        "DSC_1038-32.jpg"
+      ],
+      "representative": "DSC_1037-31.jpg"
+    },
+    {
+      "id": "scene-04",
+      "label": "Library \u00b7 graduating class",
+      "photos": [
+        "DSC_1054-33.jpg",
+        "DSC_1059-34.jpg"
+      ],
+      "representative": "DSC_1054-33.jpg"
+    },
+    {
+      "id": "scene-05",
+      "label": "Library \u00b7 balustrade",
+      "photos": [
+        "DSC_1070-35.jpg",
+        "DSC_1074-36.jpg",
+        "DSC_1083-37.jpg",
+        "DSC_1096-40.jpg",
+        "DSC_1100-41.jpg",
+        "DSC_1106-43.jpg",
+        "DSC_1109-44.jpg",
+        "DSC_1111-45.jpg",
+        "DSC_1118-48.jpg"
+      ],
+      "representative": "DSC_1111-45.jpg"
+    },
+    {
+      "id": "scene-05-tower",
+      "label": "Campanile \u00b7 seated portraits",
+      "photos": [
+        "DSC_1088-38.jpg",
+        "DSC_1090-39.jpg",
+        "DSC_1105-42.jpg",
+        "DSC_1114-46.jpg",
+        "DSC_1116-47.jpg"
+      ],
+      "representative": "DSC_1105-42.jpg"
+    },
+    {
+      "id": "scene-06-walk",
+      "label": "Sather plaza \u00b7 walkway",
+      "photos": [
+        "DSC_1259-49.jpg",
+        "DSC_1261-50.jpg",
+        "DSC_1264-51.jpg",
+        "DSC_1265-52.jpg",
+        "DSC_1268-53.jpg"
+      ],
+      "representative": "DSC_1264-51.jpg"
+    },
+    {
+      "id": "scene-06-shade",
+      "label": "Sather plaza \u00b7 shaded close-up",
+      "representative": "DSC_1273-54.jpg",
+      "photos": [
+        "DSC_1273-54.jpg"
+      ]
+    },
+    {
+      "id": "scene-06",
+      "label": "Sather plaza \u00b7 fountain",
+      "photos": [
+        "DSC_1280-55.jpg",
+        "DSC_1282-56.jpg",
+        "DSC_1284-57.jpg",
+        "DSC_1286-58.jpg",
+        "DSC_1288-59.jpg",
+        "DSC_1291-60.jpg",
+        "DSC_1292-61.jpg",
+        "DSC_1293-62.jpg",
+        "DSC_1300-63.jpg",
+        "DSC_1302-64.jpg",
+        "DSC_1304-65.jpg"
+      ],
+      "representative": "DSC_1286-58.jpg"
+    },
+    {
+      "id": "scene-07",
+      "label": "Library colonnade",
+      "photos": [
+        "DSC_1308-66.jpg",
+        "DSC_1310-67.jpg",
+        "DSC_1312-68.jpg",
+        "DSC_1315-69.jpg",
+        "DSC_1320-70.jpg",
+        "DSC_1322-71.jpg",
+        "DSC_1324-72.jpg"
+      ],
+      "representative": "DSC_1320-70.jpg"
+    },
+    {
+      "id": "scene-08",
+      "label": "Library \u00b7 couple portraits",
+      "photos": [
+        "DSC_1326-73.jpg",
+        "DSC_1329-74.jpg",
+        "DSC_1330-75.jpg",
+        "DSC_1334-76.jpg",
+        "DSC_1335-77.jpg",
+        "DSC_1337-78.jpg"
+      ],
+      "representative": "DSC_1334-76.jpg"
+    },
+    {
+      "id": "scene-08-tower",
+      "label": "Campanile \u00b7 couple portraits",
+      "photos": [
+        "DSC_1339-79.jpg",
+        "DSC_1340-80.jpg",
+        "DSC_1342-81.jpg",
+        "DSC_1344-82.jpg"
+      ],
+      "representative": "DSC_1342-81.jpg"
+    },
+    {
+      "id": "scene-09",
+      "label": "Sather Gate",
+      "photos": [
+        "DSC_1360-83.jpg",
+        "DSC_1362-84.jpg",
+        "DSC_1363-85.jpg",
+        "DSC_1365-86.jpg",
+        "DSC_1367-87.jpg",
+        "DSC_1378-88.jpg"
+      ],
+      "representative": "DSC_1363-85.jpg"
+    }
+  ]
+}

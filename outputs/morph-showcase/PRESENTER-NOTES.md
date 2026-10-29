@@ -1,0 +1,18 @@
+# Morph showcase presentation
+
+Start at **Pipeline walkthrough**. Choose a scene, a photo and one of the three looks. The same selected photo stays in context while you move through eight stages with the numbered tabs or Previous/Next controls. Arrow keys, Home and End work while a step tab has focus. The pinned step bar stays available while reading.
+
+1. **Group.** Show the reviewed scene thumbnails and designated reference. Explain that the 88 originals were split into 14 lighting groups after visual review. The singleton shaded close-up has no within-scene transfer evidence.
+2. **Style.** Compare the original reference with its independently styled target. The selected transfer photo has not been used to fit a style. Each scene uses the same target recipe for the chosen album look.
+3. **Fit.** Compare the saved target and recovered fitting previews. Open the saved mapping if useful. The cubic model approximates appearance with 60 coefficients; it does not recover a unique original slider recipe.
+4. **Vary.** Show the selected original beside its varied copy. This is the controlled test setup: scene-wide and individual exposure-like, balance and contrast differences. The simulation uses global tone curves, not new shadows or physical RAW camera processing.
+5. **Normalize.** Compare the intended reference, varied photo and normalized photo before styling. Matching shared scene content estimates one contrast scale and three RGB offsets. Expand **Under the hood** to see this photo’s actual estimated values. Those values are inferred without the injected settings or other clean counterparts. Alignment is used for measurement; output framing is preserved.
+6. **Replay.** Show correction followed by the fixed scene mapping. Open the actual full-resolution export. The estimated correction changes per frame; the scene style is reused without refitting.
+7. **Album.** Compare the same style across different groups. References establish intended lighting and the shared target recipe carries editing intent across scenes. There is no independent absolute calibration inferred between unrelated scenes.
+8. **Verify.** Compare the decoded export with its evaluator-only target and open verification. Scores measure restoration relative to the same normalizer run on the clean album, not independent aesthetic correctness. The synthetic variation family matches the correction model, so this is a favorable controlled test.
+
+Then scroll to **What about faces and people?** The 88-photo, three-style run uses global operations. Separate face-lighting and person-mask paths exist, but they were not composed into those exports. The attached person example comes from the earlier 13-photo experiment: original → soft mask → red overlay → person-aware result. The mask weights people including clothing; face regions use soft areas around detected boxes. Inspect incomplete masks and nearby background. Shared masks in synthetic targets and fitting make low error insufficient to validate mask quality.
+
+The earlier target/reconstruction, scene-transfer, normalization, evidence and all-photo gallery sections remain available after the walkthrough. **Present** provides section navigation with left/right arrows. When focus is on a pipeline tab, those arrows move between pipeline stages instead. Escape exits presentation or closes the gallery inspector.
+
+Allow five to seven minutes for the walkthrough plus one minute for the local-light branch. Quote final measurements from `RESULTS.md`. The next research steps are aligned evaluation of supplied human edits, additional albums with photographer review, reliable group/reference selection and local illumination/subject-mask validation.

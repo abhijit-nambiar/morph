@@ -1,0 +1,530 @@
+[
+  {
+    "photo": "DSC_0901-1.png",
+    "before": 0.05312737822532654,
+    "after": 0.0016044769436120987,
+    "status": "estimated"
+  },
+  {
+    "photo": "DSC_0904-2.png",
+    "before": 0.10189352929592133,
+    "after": 0.0017351513961330056,
+    "status": "estimated"
+  },
+  {
+    "photo": "DSC_0905-3.png",
+    "before": 0.10046003013849258,
+    "after": 0.00171492132358253,
+    "status": "estimated"
+  },
+  {
+    "photo": "DSC_0906-4.png",
+    "before": 0.009370413608849049,
+    "after": 0.001326015219092369,
+    "status": "estimated"
+  },
+  {
+    "photo": "DSC_0914-5.png",
+    "before": 0.010577957145869732,
+    "after": 0.0012811417691409588,
+    "status": "estimated"
+  },
+  {
+    "photo": "DSC_0916-6.png",
+    "before": 0.01866156980395317,
+    "after": 0.0011514677898958325,
+    "status": "estimated"
+  },
+  {
+    "photo": "DSC_0919-7.png",
+    "before": 0.01801154762506485,
+    "after": 0.001834371592849493,
+    "status": "estimated"
+  },
+  {
+    "photo": "DSC_0921-8.png",
+    "before": 0.016983194276690483,
+    "after": 0.0014070516917854548,
+    "status": "estimated"
+  },
+  {
+    "photo": "DSC_0925-9.png",
+    "before": 0.019201405346393585,
+    "after": 0.0029268048238009214,
+    "status": "estimated"
+  },
+  {
+    "photo": "DSC_0928-10.png",
+    "before": 0.0535903126001358,
+    "after": 0.003266445128247142,
+    "status": "estimated"
+  },
+  {
+    "photo": "DSC_0930-11.png",
+    "before": 0.07777361571788788,
+    "after": 0.002556583844125271,
+    "status": "estimated"
+  },
+  {
+    "photo": "DSC_0935-12.png",
+    "before": 0.050645262002944946,
+    "after": 0.0016916504828259349,
+    "status": "estimated"
+  },
+  {
+    "photo": "DSC_0947-13.png",
+    "before": 0.08334395289421082,
+    "after": 0.007112826686352491,
+    "status": "estimated"
+  },
+  {
+    "photo": "DSC_0948-14.png",
+    "before": 0.03871220722794533,
+    "after": 0.005128846969455481,
+    "status": "estimated"
+  },
+  {
+    "photo": "DSC_0958-15.png",
+    "before": 0.017196115106344223,
+    "after": 0.001607466023415327,
+    "status": "estimated"
+  },
+  {
+    "photo": "DSC_0970-17.png",
+    "before": 0.10332848876714706,
+    "after": 0.004752339329570532,
+    "status": "estimated"
+  },
+  {
+    "photo": "DSC_0974-18.png",
+    "before": 0.0563233457505703,
+    "after": 0.013365532271564007,
+    "status": "estimated"
+  },
+  {
+    "photo": "DSC_0987-19.png",
+    "before": 0.10619246959686279,
+    "after": 0.02565038576722145,
+    "status": "estimated"
+  },
+  {
+    "photo": "DSC_0965-16.png",
+    "before": 0.02583973854780197,
+    "after": 0.008866816759109497,
+    "status": "estimated"
+  },
+  {
+    "photo": "DSC_0990-20.png",
+    "before": 0.06545130163431168,
+    "after": 0.0021893996745347977,
+    "status": "estimated"
+  },
+  {
+    "photo": "DSC_0993-21.png",
+    "before": 0.08402404934167862,
+    "after": 0.002729781437665224,
+    "status": "estimated"
+  },
+  {
+    "photo": "DSC_0995-22.png",
+    "before": 0.003161519765853882,
+    "after": 0.0011789716081693769,
+    "status": "estimated"
+  },
+  {
+    "photo": "DSC_0997-23.png",
+    "before": 0.07825584709644318,
+    "after": 0.0015454815002158284,
+    "status": "estimated"
+  },
+  {
+    "photo": "DSC_0998-24.png",
+    "before": 0.03811157867312431,
+    "after": 0.0018222684739157557,
+    "status": "estimated"
+  },
+  {
+    "photo": "DSC_1012-25.png",
+    "before": 0.022556420415639877,
+    "after": 0.0022892304696142673,
+    "status": "estimated"
+  },
+  {
+    "photo": "DSC_1021-26.png",
+    "before": 0.06882456690073013,
+    "after": 0.0038446076214313507,
+    "status": "estimated"
+  },
+  {
+    "photo": "DSC_1026-27.png",
+    "before": 0.11087311059236526,
+    "after": 0.0029476850759238005,
+    "status": "estimated"
+  },
+  {
+    "photo": "DSC_1028-28.png",
+    "before": 0.09873628616333008,
+    "after": 0.0031879153102636337,
+    "status": "estimated"
+  },
+  {
+    "photo": "DSC_1030-29.png",
+    "before": 0.01897329092025757,
+    "after": 0.0016264674486592412,
+    "status": "estimated"
+  },
+  {
+    "photo": "DSC_1033-30.png",
+    "before": 0.025124143809080124,
+    "after": 0.005956423003226519,
+    "status": "estimated"
+  },
+  {
+    "photo": "DSC_1037-31.png",
+    "before": 0.02706654742360115,
+    "after": 0.0022103344090282917,
+    "status": "estimated"
+  },
+  {
+    "photo": "DSC_1038-32.png",
+    "before": 0.01543650683015585,
+    "after": 0.0025591247249394655,
+    "status": "estimated"
+  },
+  {
+    "photo": "DSC_1054-33.png",
+    "before": 0.011744868010282516,
+    "after": 0.0012367896270006895,
+    "status": "estimated"
+  },
+  {
+    "photo": "DSC_1059-34.png",
+    "before": 0.061335545033216476,
+    "after": 0.0026463232934474945,
+    "status": "estimated"
+  },
+  {
+    "photo": "DSC_1070-35.png",
+    "before": 0.09535696357488632,
+    "after": 0.012153452262282372,
+    "status": "estimated"
+  },
+  {
+    "photo": "DSC_1074-36.png",
+    "before": 0.03271459415555,
+    "after": 0.0016811791574582458,
+    "status": "estimated"
+  },
+  {
+    "photo": "DSC_1083-37.png",
+    "before": 0.015743620693683624,
+    "after": 0.001811512978747487,
+    "status": "estimated"
+  },
+  {
+    "photo": "DSC_1096-40.png",
+    "before": 0.08414899557828903,
+    "after": 0.0028501502238214016,
+    "status": "estimated"
+  },
+  {
+    "photo": "DSC_1100-41.png",
+    "before": 0.06427130103111267,
+    "after": 0.001962583512067795,
+    "status": "estimated"
+  },
+  {
+    "photo": "DSC_1106-43.png",
+    "before": 0.12031220644712448,
+    "after": 0.002316119847819209,
+    "status": "estimated"
+  },
+  {
+    "photo": "DSC_1109-44.png",
+    "before": 0.10429735481739044,
+    "after": 0.0023997428361326456,
+    "status": "estimated"
+  },
+  {
+    "photo": "DSC_1111-45.png",
+    "before": 0.026961440220475197,
+    "after": 0.0011951891938224435,
+    "status": "estimated"
+  },
+  {
+    "photo": "DSC_1118-48.png",
+    "before": 0.1322878897190094,
+    "after": 0.0018972097896039486,
+    "status": "estimated"
+  },
+  {
+    "photo": "DSC_1088-38.png",
+    "before": 0.01652451604604721,
+    "after": 0.001824676408432424,
+    "status": "estimated"
+  },
+  {
+    "photo": "DSC_1090-39.png",
+    "before": 0.010821220465004444,
+    "after": 0.0014336544554680586,
+    "status": "estimated"
+  },
+  {
+    "photo": "DSC_1105-42.png",
+    "before": 0.010382099077105522,
+    "after": 0.0017293230630457401,
+    "status": "estimated"
+  },
+  {
+    "photo": "DSC_1114-46.png",
+    "before": 0.014432803727686405,
+    "after": 0.0012445433530956507,
+    "status": "estimated"
+  },
+  {
+    "photo": "DSC_1116-47.png",
+    "before": 0.01844179444015026,
+    "after": 0.001845702761784196,
+    "status": "estimated"
+  },
+  {
+    "photo": "DSC_1259-49.png",
+    "before": 0.019141608849167824,
+    "after": 0.0019377644639462233,
+    "status": "estimated"
+  },
+  {
+    "photo": "DSC_1261-50.png",
+    "before": 0.0465780645608902,
+    "after": 0.0021977631840854883,
+    "status": "estimated"
+  },
+  {
+    "photo": "DSC_1264-51.png",
+    "before": 0.014263602904975414,
+    "after": 0.001811515656299889,
+    "status": "estimated"
+  },
+  {
+    "photo": "DSC_1265-52.png",
+    "before": 0.1534280627965927,
+    "after": 0.0029836618341505527,
+    "status": "estimated"
+  },
+  {
+    "photo": "DSC_1268-53.png",
+    "before": 0.07111941277980804,
+    "after": 0.0021592765115201473,
+    "status": "estimated"
+  },
+  {
+    "photo": "DSC_1273-54.png",
+    "before": 0.013035292737185955,
+    "after": 0.013035290874540806,
+    "status": "review-unconnected"
+  },
+  {
+    "photo": "DSC_1280-55.png",
+    "before": 0.013986067846417427,
+    "after": 0.0020241080783307552,
+    "status": "estimated"
+  },
+  {
+    "photo": "DSC_1282-56.png",
+    "before": 0.0088917575776577,
+    "after": 0.0023856644984334707,
+    "status": "estimated"
+  },
+  {
+    "photo": "DSC_1284-57.png",
+    "before": 0.0032383399084210396,
+    "after": 0.0012804139405488968,
+    "status": "estimated"
+  },
+  {
+    "photo": "DSC_1286-58.png",
+    "before": 0.03268181532621384,
+    "after": 0.0013180020032450557,
+    "status": "estimated"
+  },
+  {
+    "photo": "DSC_1288-59.png",
+    "before": 0.017862895503640175,
+    "after": 0.017211560159921646,
+    "status": "estimated"
+  },
+  {
+    "photo": "DSC_1291-60.png",
+    "before": 0.02985483407974243,
+    "after": 0.016568021848797798,
+    "status": "estimated"
+  },
+  {
+    "photo": "DSC_1292-61.png",
+    "before": 0.04715602844953537,
+    "after": 0.01389539148658514,
+    "status": "estimated"
+  },
+  {
+    "photo": "DSC_1293-62.png",
+    "before": 0.029630349949002266,
+    "after": 0.0168854258954525,
+    "status": "estimated"
+  },
+  {
+    "photo": "DSC_1300-63.png",
+    "before": 0.029378430917859077,
+    "after": 0.012547244317829609,
+    "status": "estimated"
+  },
+  {
+    "photo": "DSC_1302-64.png",
+    "before": 0.031087761744856834,
+    "after": 0.016136782243847847,
+    "status": "estimated"
+  },
+  {
+    "photo": "DSC_1304-65.png",
+    "before": 0.0645710676908493,
+    "after": 0.015405772253870964,
+    "status": "estimated"
+  },
+  {
+    "photo": "DSC_1308-66.png",
+    "before": 0.03639565035700798,
+    "after": 0.0021506021730601788,
+    "status": "estimated"
+  },
+  {
+    "photo": "DSC_1310-67.png",
+    "before": 0.0312802791595459,
+    "after": 0.002304300433024764,
+    "status": "estimated"
+  },
+  {
+    "photo": "DSC_1312-68.png",
+    "before": 0.04446554183959961,
+    "after": 0.0030694601591676474,
+    "status": "estimated"
+  },
+  {
+    "photo": "DSC_1315-69.png",
+    "before": 0.05594385415315628,
+    "after": 0.015411018393933773,
+    "status": "estimated"
+  },
+  {
+    "photo": "DSC_1320-70.png",
+    "before": 0.024690164253115654,
+    "after": 0.0013061075005680323,
+    "status": "estimated"
+  },
+  {
+    "photo": "DSC_1322-71.png",
+    "before": 0.0228051096200943,
+    "after": 0.00552216824144125,
+    "status": "estimated"
+  },
+  {
+    "photo": "DSC_1324-72.png",
+    "before": 0.04559750109910965,
+    "after": 0.0032776491716504097,
+    "status": "estimated"
+  },
+  {
+    "photo": "DSC_1326-73.png",
+    "before": 0.08193261176347733,
+    "after": 0.005859420169144869,
+    "status": "estimated"
+  },
+  {
+    "photo": "DSC_1329-74.png",
+    "before": 0.042452774941921234,
+    "after": 0.0032160270493477583,
+    "status": "estimated"
+  },
+  {
+    "photo": "DSC_1330-75.png",
+    "before": 0.03916148096323013,
+    "after": 0.004101933445781469,
+    "status": "estimated"
+  },
+  {
+    "photo": "DSC_1334-76.png",
+    "before": 0.012535348534584045,
+    "after": 0.0013152272440493107,
+    "status": "estimated"
+  },
+  {
+    "photo": "DSC_1335-77.png",
+    "before": 0.0062544806860387325,
+    "after": 0.0019170332234352827,
+    "status": "estimated"
+  },
+  {
+    "photo": "DSC_1337-78.png",
+    "before": 0.028958192095160484,
+    "after": 0.0016969870775938034,
+    "status": "estimated"
+  },
+  {
+    "photo": "DSC_1339-79.png",
+    "before": 0.05643473565578461,
+    "after": 0.0025953128933906555,
+    "status": "estimated"
+  },
+  {
+    "photo": "DSC_1340-80.png",
+    "before": 0.028590455651283264,
+    "after": 0.001289352192543447,
+    "status": "estimated"
+  },
+  {
+    "photo": "DSC_1342-81.png",
+    "before": 0.012132040224969387,
+    "after": 0.0015544224297627807,
+    "status": "estimated"
+  },
+  {
+    "photo": "DSC_1344-82.png",
+    "before": 0.051104579120874405,
+    "after": 0.002564799040555954,
+    "status": "estimated"
+  },
+  {
+    "photo": "DSC_1360-83.png",
+    "before": 0.04734671860933304,
+    "after": 0.0020387661643326283,
+    "status": "estimated"
+  },
+  {
+    "photo": "DSC_1362-84.png",
+    "before": 0.035477086901664734,
+    "after": 0.001318977097980678,
+    "status": "estimated"
+  },
+  {
+    "photo": "DSC_1363-85.png",
+    "before": 0.02397325448691845,
+    "after": 0.001555733964778483,
+    "status": "estimated"
+  },
+  {
+    "photo": "DSC_1365-86.png",
+    "before": 0.012599830515682697,
+    "after": 0.0014384775422513485,
+    "status": "estimated"
+  },
+  {
+    "photo": "DSC_1367-87.png",
+    "before": 0.021112868562340736,
+    "after": 0.0015641453210264444,
+    "status": "estimated"
+  },
+  {
+    "photo": "DSC_1378-88.png",
+    "before": 0.0441291444003582,
+    "after": 0.0012621382484212518,
+    "status": "estimated"
+  }
+]

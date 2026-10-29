@@ -1,0 +1,618 @@
+[
+  {
+    "photo": "DSC_0901-1.jpg",
+    "scene": "scene-01",
+    "before": 0.06714548915624619,
+    "after": 0.0027970473747700453,
+    "status": "estimated"
+  },
+  {
+    "photo": "DSC_0904-2.jpg",
+    "scene": "scene-01",
+    "before": 0.114606574177742,
+    "after": 0.0032737120054662228,
+    "status": "estimated"
+  },
+  {
+    "photo": "DSC_0905-3.jpg",
+    "scene": "scene-01",
+    "before": 0.07722974568605423,
+    "after": 0.003262632293626666,
+    "status": "estimated"
+  },
+  {
+    "photo": "DSC_0906-4.jpg",
+    "scene": "scene-01",
+    "before": 0.0077997175976634026,
+    "after": 0.0029873372986912727,
+    "status": "estimated"
+  },
+  {
+    "photo": "DSC_0914-5.jpg",
+    "scene": "scene-01",
+    "before": 0.038225363940000534,
+    "after": 0.003342749085277319,
+    "status": "estimated"
+  },
+  {
+    "photo": "DSC_0916-6.jpg",
+    "scene": "scene-01",
+    "before": 0.017758365720510483,
+    "after": 0.00328108505345881,
+    "status": "estimated"
+  },
+  {
+    "photo": "DSC_0919-7.jpg",
+    "scene": "scene-01",
+    "before": 0.041370898485183716,
+    "after": 0.0038316326681524515,
+    "status": "estimated"
+  },
+  {
+    "photo": "DSC_0921-8.jpg",
+    "scene": "scene-01",
+    "before": 0.040579818189144135,
+    "after": 0.0032867370173335075,
+    "status": "estimated"
+  },
+  {
+    "photo": "DSC_0925-9.jpg",
+    "scene": "scene-01",
+    "before": 0.044809404760599136,
+    "after": 0.0037093162536621094,
+    "status": "estimated"
+  },
+  {
+    "photo": "DSC_0928-10.jpg",
+    "scene": "scene-01",
+    "before": 0.09224291890859604,
+    "after": 0.004036330617964268,
+    "status": "estimated"
+  },
+  {
+    "photo": "DSC_0930-11.jpg",
+    "scene": "scene-01",
+    "before": 0.08944682031869888,
+    "after": 0.0036952611990273,
+    "status": "estimated"
+  },
+  {
+    "photo": "DSC_0935-12.jpg",
+    "scene": "scene-01",
+    "before": 0.05524566024541855,
+    "after": 0.0036851016338914633,
+    "status": "estimated"
+  },
+  {
+    "photo": "DSC_0947-13.jpg",
+    "scene": "scene-02-lawn",
+    "before": 0.11155544221401215,
+    "after": 0.004758983384817839,
+    "status": "estimated"
+  },
+  {
+    "photo": "DSC_0948-14.jpg",
+    "scene": "scene-02-lawn",
+    "before": 0.07541957497596741,
+    "after": 0.003728419542312622,
+    "status": "estimated"
+  },
+  {
+    "photo": "DSC_0958-15.jpg",
+    "scene": "scene-02-lawn",
+    "before": 0.030178004875779152,
+    "after": 0.00408589094877243,
+    "status": "estimated"
+  },
+  {
+    "photo": "DSC_0970-17.jpg",
+    "scene": "scene-02-lawn",
+    "before": 0.06283362209796906,
+    "after": 0.004447306506335735,
+    "status": "estimated"
+  },
+  {
+    "photo": "DSC_0974-18.jpg",
+    "scene": "scene-02-lawn",
+    "before": 0.05414622277021408,
+    "after": 0.011570565402507782,
+    "status": "estimated"
+  },
+  {
+    "photo": "DSC_0987-19.jpg",
+    "scene": "scene-02-lawn",
+    "before": 0.156071275472641,
+    "after": 0.156071275472641,
+    "status": "review-outside-bounds"
+  },
+  {
+    "photo": "DSC_0965-16.jpg",
+    "scene": "scene-02",
+    "before": 0.015518048778176308,
+    "after": 0.006104844156652689,
+    "status": "estimated"
+  },
+  {
+    "photo": "DSC_0990-20.jpg",
+    "scene": "scene-02",
+    "before": 0.06468386203050613,
+    "after": 0.0034552363213151693,
+    "status": "estimated"
+  },
+  {
+    "photo": "DSC_0993-21.jpg",
+    "scene": "scene-02",
+    "before": 0.08195973932743073,
+    "after": 0.003944980446249247,
+    "status": "estimated"
+  },
+  {
+    "photo": "DSC_0995-22.jpg",
+    "scene": "scene-02",
+    "before": 0.013253388926386833,
+    "after": 0.003125667804852128,
+    "status": "estimated"
+  },
+  {
+    "photo": "DSC_0997-23.jpg",
+    "scene": "scene-02",
+    "before": 0.051167577505111694,
+    "after": 0.002530270954594016,
+    "status": "estimated"
+  },
+  {
+    "photo": "DSC_0998-24.jpg",
+    "scene": "scene-02",
+    "before": 0.048196014016866684,
+    "after": 0.003129267832264304,
+    "status": "estimated"
+  },
+  {
+    "photo": "DSC_1012-25.jpg",
+    "scene": "scene-02",
+    "before": 0.029767991974949837,
+    "after": 0.003117922693490982,
+    "status": "estimated"
+  },
+  {
+    "photo": "DSC_1021-26.jpg",
+    "scene": "scene-03",
+    "before": 0.10630887001752853,
+    "after": 0.0032658150885254145,
+    "status": "estimated"
+  },
+  {
+    "photo": "DSC_1026-27.jpg",
+    "scene": "scene-03",
+    "before": 0.10080087929964066,
+    "after": 0.00405283784493804,
+    "status": "estimated"
+  },
+  {
+    "photo": "DSC_1028-28.jpg",
+    "scene": "scene-03",
+    "before": 0.06433773040771484,
+    "after": 0.003760767634958029,
+    "status": "estimated"
+  },
+  {
+    "photo": "DSC_1030-29.jpg",
+    "scene": "scene-03",
+    "before": 0.023356711491942406,
+    "after": 0.0033991211093962193,
+    "status": "estimated"
+  },
+  {
+    "photo": "DSC_1033-30.jpg",
+    "scene": "scene-03",
+    "before": 0.05121472850441933,
+    "after": 0.004112355411052704,
+    "status": "estimated"
+  },
+  {
+    "photo": "DSC_1037-31.jpg",
+    "scene": "scene-03",
+    "before": 0.019242463633418083,
+    "after": 0.0036366728600114584,
+    "status": "estimated"
+  },
+  {
+    "photo": "DSC_1038-32.jpg",
+    "scene": "scene-03",
+    "before": 0.019731858745217323,
+    "after": 0.0037920635659247637,
+    "status": "estimated"
+  },
+  {
+    "photo": "DSC_1054-33.jpg",
+    "scene": "scene-04",
+    "before": 0.011352400295436382,
+    "after": 0.0029484496917575598,
+    "status": "estimated"
+  },
+  {
+    "photo": "DSC_1059-34.jpg",
+    "scene": "scene-04",
+    "before": 0.011002382263541222,
+    "after": 0.0031712499912828207,
+    "status": "estimated"
+  },
+  {
+    "photo": "DSC_1070-35.jpg",
+    "scene": "scene-05",
+    "before": 0.07295659929513931,
+    "after": 0.00417238799855113,
+    "status": "estimated"
+  },
+  {
+    "photo": "DSC_1074-36.jpg",
+    "scene": "scene-05",
+    "before": 0.016430580988526344,
+    "after": 0.003626550082117319,
+    "status": "estimated"
+  },
+  {
+    "photo": "DSC_1083-37.jpg",
+    "scene": "scene-05",
+    "before": 0.018404388800263405,
+    "after": 0.0031116048339754343,
+    "status": "estimated"
+  },
+  {
+    "photo": "DSC_1096-40.jpg",
+    "scene": "scene-05",
+    "before": 0.07551755011081696,
+    "after": 0.0035245001781731844,
+    "status": "estimated"
+  },
+  {
+    "photo": "DSC_1100-41.jpg",
+    "scene": "scene-05",
+    "before": 0.06501121819019318,
+    "after": 0.00366747984662652,
+    "status": "estimated"
+  },
+  {
+    "photo": "DSC_1106-43.jpg",
+    "scene": "scene-05",
+    "before": 0.14707744121551514,
+    "after": 0.004453976172953844,
+    "status": "estimated"
+  },
+  {
+    "photo": "DSC_1109-44.jpg",
+    "scene": "scene-05",
+    "before": 0.11603336036205292,
+    "after": 0.0036077953409403563,
+    "status": "estimated"
+  },
+  {
+    "photo": "DSC_1111-45.jpg",
+    "scene": "scene-05",
+    "before": 0.023010624572634697,
+    "after": 0.0030044892337173223,
+    "status": "estimated"
+  },
+  {
+    "photo": "DSC_1118-48.jpg",
+    "scene": "scene-05",
+    "before": 0.10437141358852386,
+    "after": 0.003706785384565592,
+    "status": "estimated"
+  },
+  {
+    "photo": "DSC_1088-38.jpg",
+    "scene": "scene-05-tower",
+    "before": 0.0035698635037988424,
+    "after": 0.003116590203717351,
+    "status": "estimated"
+  },
+  {
+    "photo": "DSC_1090-39.jpg",
+    "scene": "scene-05-tower",
+    "before": 0.03607761114835739,
+    "after": 0.002654486335813999,
+    "status": "estimated"
+  },
+  {
+    "photo": "DSC_1105-42.jpg",
+    "scene": "scene-05-tower",
+    "before": 0.009736230596899986,
+    "after": 0.00302701722830534,
+    "status": "estimated"
+  },
+  {
+    "photo": "DSC_1114-46.jpg",
+    "scene": "scene-05-tower",
+    "before": 0.06238560378551483,
+    "after": 0.003274833783507347,
+    "status": "estimated"
+  },
+  {
+    "photo": "DSC_1116-47.jpg",
+    "scene": "scene-05-tower",
+    "before": 0.07281284779310226,
+    "after": 0.0037405022885650396,
+    "status": "estimated"
+  },
+  {
+    "photo": "DSC_1259-49.jpg",
+    "scene": "scene-06-walk",
+    "before": 0.010067541152238846,
+    "after": 0.0042647309601306915,
+    "status": "estimated"
+  },
+  {
+    "photo": "DSC_1261-50.jpg",
+    "scene": "scene-06-walk",
+    "before": 0.02390451915562153,
+    "after": 0.003937206696718931,
+    "status": "estimated"
+  },
+  {
+    "photo": "DSC_1264-51.jpg",
+    "scene": "scene-06-walk",
+    "before": 0.022873107343912125,
+    "after": 0.003172841388732195,
+    "status": "estimated"
+  },
+  {
+    "photo": "DSC_1265-52.jpg",
+    "scene": "scene-06-walk",
+    "before": 0.1648424118757248,
+    "after": 0.003404668066650629,
+    "status": "estimated"
+  },
+  {
+    "photo": "DSC_1268-53.jpg",
+    "scene": "scene-06-walk",
+    "before": 0.06965368986129761,
+    "after": 0.003575894283130765,
+    "status": "estimated"
+  },
+  {
+    "photo": "DSC_1273-54.jpg",
+    "scene": "scene-06-shade",
+    "before": 0.013500443659722805,
+    "after": 0.0028556291945278645,
+    "status": "estimated"
+  },
+  {
+    "photo": "DSC_1280-55.jpg",
+    "scene": "scene-06",
+    "before": 0.015121027827262878,
+    "after": 0.003036517184227705,
+    "status": "estimated"
+  },
+  {
+    "photo": "DSC_1282-56.jpg",
+    "scene": "scene-06",
+    "before": 0.02037798799574375,
+    "after": 0.00308434572070837,
+    "status": "estimated"
+  },
+  {
+    "photo": "DSC_1284-57.jpg",
+    "scene": "scene-06",
+    "before": 0.008695239201188087,
+    "after": 0.002892839489504695,
+    "status": "estimated"
+  },
+  {
+    "photo": "DSC_1286-58.jpg",
+    "scene": "scene-06",
+    "before": 0.009058263152837753,
+    "after": 0.002890625037252903,
+    "status": "estimated"
+  },
+  {
+    "photo": "DSC_1288-59.jpg",
+    "scene": "scene-06",
+    "before": 0.025845622643828392,
+    "after": 0.025845622643828392,
+    "status": "review-outside-bounds"
+  },
+  {
+    "photo": "DSC_1291-60.jpg",
+    "scene": "scene-06",
+    "before": 0.037058956921100616,
+    "after": 0.037058960646390915,
+    "status": "review-outside-bounds"
+  },
+  {
+    "photo": "DSC_1292-61.jpg",
+    "scene": "scene-06",
+    "before": 0.027413584291934967,
+    "after": 0.027413584291934967,
+    "status": "review-outside-bounds"
+  },
+  {
+    "photo": "DSC_1293-62.jpg",
+    "scene": "scene-06",
+    "before": 0.024198725819587708,
+    "after": 0.024198725819587708,
+    "status": "review-outside-bounds"
+  },
+  {
+    "photo": "DSC_1300-63.jpg",
+    "scene": "scene-06",
+    "before": 0.024305157363414764,
+    "after": 0.03511328995227814,
+    "status": "estimated"
+  },
+  {
+    "photo": "DSC_1302-64.jpg",
+    "scene": "scene-06",
+    "before": 0.025361042469739914,
+    "after": 0.034723397344350815,
+    "status": "estimated"
+  },
+  {
+    "photo": "DSC_1304-65.jpg",
+    "scene": "scene-06",
+    "before": 0.0849214568734169,
+    "after": 0.006624809466302395,
+    "status": "estimated"
+  },
+  {
+    "photo": "DSC_1308-66.jpg",
+    "scene": "scene-07",
+    "before": 0.06923798471689224,
+    "after": 0.004383051302284002,
+    "status": "estimated"
+  },
+  {
+    "photo": "DSC_1310-67.jpg",
+    "scene": "scene-07",
+    "before": 0.0456683486700058,
+    "after": 0.0025747313629835844,
+    "status": "estimated"
+  },
+  {
+    "photo": "DSC_1312-68.jpg",
+    "scene": "scene-07",
+    "before": 0.0865662470459938,
+    "after": 0.0031106453388929367,
+    "status": "estimated"
+  },
+  {
+    "photo": "DSC_1315-69.jpg",
+    "scene": "scene-07",
+    "before": 0.03993021324276924,
+    "after": 0.010415716096758842,
+    "status": "estimated"
+  },
+  {
+    "photo": "DSC_1320-70.jpg",
+    "scene": "scene-07",
+    "before": 0.026391852647066116,
+    "after": 0.0030087882187217474,
+    "status": "estimated"
+  },
+  {
+    "photo": "DSC_1322-71.jpg",
+    "scene": "scene-07",
+    "before": 0.03085932321846485,
+    "after": 0.004930480383336544,
+    "status": "estimated"
+  },
+  {
+    "photo": "DSC_1324-72.jpg",
+    "scene": "scene-07",
+    "before": 0.03789403289556503,
+    "after": 0.005141989793628454,
+    "status": "estimated"
+  },
+  {
+    "photo": "DSC_1326-73.jpg",
+    "scene": "scene-08",
+    "before": 0.059495069086551666,
+    "after": 0.0030952985398471355,
+    "status": "estimated"
+  },
+  {
+    "photo": "DSC_1329-74.jpg",
+    "scene": "scene-08",
+    "before": 0.04355036839842796,
+    "after": 0.0034825829789042473,
+    "status": "estimated"
+  },
+  {
+    "photo": "DSC_1330-75.jpg",
+    "scene": "scene-08",
+    "before": 0.026720376685261726,
+    "after": 0.003177180653437972,
+    "status": "estimated"
+  },
+  {
+    "photo": "DSC_1334-76.jpg",
+    "scene": "scene-08",
+    "before": 0.030110808089375496,
+    "after": 0.0030843939166516066,
+    "status": "estimated"
+  },
+  {
+    "photo": "DSC_1335-77.jpg",
+    "scene": "scene-08",
+    "before": 0.04179312288761139,
+    "after": 0.0031108688563108444,
+    "status": "estimated"
+  },
+  {
+    "photo": "DSC_1337-78.jpg",
+    "scene": "scene-08",
+    "before": 0.02828364446759224,
+    "after": 0.003157075261697173,
+    "status": "estimated"
+  },
+  {
+    "photo": "DSC_1339-79.jpg",
+    "scene": "scene-08-tower",
+    "before": 0.04382365196943283,
+    "after": 0.0053381966426968575,
+    "status": "estimated"
+  },
+  {
+    "photo": "DSC_1340-80.jpg",
+    "scene": "scene-08-tower",
+    "before": 0.03886532783508301,
+    "after": 0.0034698324743658304,
+    "status": "estimated"
+  },
+  {
+    "photo": "DSC_1342-81.jpg",
+    "scene": "scene-08-tower",
+    "before": 0.011694230139255524,
+    "after": 0.0028699771501123905,
+    "status": "estimated"
+  },
+  {
+    "photo": "DSC_1344-82.jpg",
+    "scene": "scene-08-tower",
+    "before": 0.08877222239971161,
+    "after": 0.003782117972150445,
+    "status": "estimated"
+  },
+  {
+    "photo": "DSC_1360-83.jpg",
+    "scene": "scene-09",
+    "before": 0.03465486317873001,
+    "after": 0.002873899880796671,
+    "status": "estimated"
+  },
+  {
+    "photo": "DSC_1362-84.jpg",
+    "scene": "scene-09",
+    "before": 0.03496764600276947,
+    "after": 0.0031264135614037514,
+    "status": "estimated"
+  },
+  {
+    "photo": "DSC_1363-85.jpg",
+    "scene": "scene-09",
+    "before": 0.034110285341739655,
+    "after": 0.0030410902108997107,
+    "status": "estimated"
+  },
+  {
+    "photo": "DSC_1365-86.jpg",
+    "scene": "scene-09",
+    "before": 0.01939408667385578,
+    "after": 0.0027403610292822123,
+    "status": "estimated"
+  },
+  {
+    "photo": "DSC_1367-87.jpg",
+    "scene": "scene-09",
+    "before": 0.03132055699825287,
+    "after": 0.002936174627393484,
+    "status": "estimated"
+  },
+  {
+    "photo": "DSC_1378-88.jpg",
+    "scene": "scene-09",
+    "before": 0.057173438370227814,
+    "after": 0.003466198919340968,
+    "status": "estimated"
+  }
+]

@@ -1,0 +1,48 @@
+{
+  "scope": "Thumbnail comparisons and links to full-resolution scene exports; dimensions checked, ICC presence reported. Does not verify perceptual quality, correct masks, or clipping.",
+  "scene": "scene-02",
+  "photos": [
+    {
+      "source": "Morph/originals/DSC_0965-16.jpg",
+      "output": "outputs/morph-resumed/full/scene-02/exports/DSC_0965-16.jpg",
+      "review_flag": false,
+      "icc_profile_present": true
+    },
+    {
+      "source": "Morph/originals/DSC_0990-20.jpg",
+      "output": "outputs/morph-resumed/full/scene-02/exports/DSC_0990-20.jpg",
+      "review_flag": false,
+      "icc_profile_present": true
+    },
+    {
+      "source": "Morph/originals/DSC_0993-21.jpg",
+      "output": "outputs/morph-resumed/full/scene-02/exports/DSC_0993-21.jpg",
+      "review_flag": false,
+      "icc_profile_present": true
+    },
+    {
+      "source": "Morph/originals/DSC_0995-22.jpg",
+      "output": "outputs/morph-resumed/full/scene-02/exports/DSC_0995-22.jpg",
+      "review_flag": false,
+      "icc_profile_present": true
+    },
+    {
+      "source": "Morph/originals/DSC_0997-23.jpg",
+      "output": "outputs/morph-resumed/full/scene-02/exports/DSC_0997-23.jpg",
+      "review_flag": false,
+      "icc_profile_present": true
+    },
+    {
+      "source": "Morph/originals/DSC_0998-24.jpg",
+      "output": "outputs/morph-resumed/full/scene-02/exports/DSC_0998-24.jpg",
+      "review_flag": false,
+      "icc_profile_present": true
+    },
+    {
+      "source": "Morph/originals/DSC_1012-25.jpg",
+      "output": "outputs/morph-resumed/full/scene-02/exports/DSC_1012-25.jpg",
+      "review_flag": false,
+      "icc_profile_present": true
+    }
+  ]
+}

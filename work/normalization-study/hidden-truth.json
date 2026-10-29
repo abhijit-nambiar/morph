@@ -1,0 +1,970 @@
+{
+  "/Users/abhijit.nambiar/morph/work/normalization-study/DSC_0901-1.png": {
+    "source": "/Users/abhijit.nambiar/morph/Morph/originals/DSC_0901-1.jpg",
+    "ev": -0.03531327952729349,
+    "contrast": 0.012930447004761654,
+    "wb": [
+      0.009052879498075875,
+      -0.01742108627619051,
+      -0.009052879498075875
+    ],
+    "scene_ev": 0.12937731159130844
+  },
+  "/Users/abhijit.nambiar/morph/work/normalization-study/DSC_0904-2.png": {
+    "source": "/Users/abhijit.nambiar/morph/Morph/originals/DSC_0904-2.jpg",
+    "ev": -0.03959049687092678,
+    "contrast": 0.0364685431623164,
+    "wb": [
+      0.01899187632828643,
+      -0.0007311558732015832,
+      -0.01899187632828643
+    ],
+    "scene_ev": 0.12937731159130844
+  },
+  "/Users/abhijit.nambiar/morph/work/normalization-study/DSC_0905-3.png": {
+    "source": "/Users/abhijit.nambiar/morph/Morph/originals/DSC_0905-3.jpg",
+    "ev": -0.010662760683709,
+    "contrast": 0.04313423807973861,
+    "wb": [
+      0.024904575899509708,
+      0.01249807492350571,
+      -0.024904575899509708
+    ],
+    "scene_ev": 0.12937731159130844
+  },
+  "/Users/abhijit.nambiar/morph/work/normalization-study/DSC_0906-4.png": {
+    "source": "/Users/abhijit.nambiar/morph/Morph/originals/DSC_0906-4.jpg",
+    "ev": -0.0285402343593478,
+    "contrast": 0.044125268973922674,
+    "wb": [
+      0.006127214634306429,
+      -0.0010483353485995427,
+      -0.006127214634306429
+    ],
+    "scene_ev": 0.12937731159130844
+  },
+  "/Users/abhijit.nambiar/morph/work/normalization-study/DSC_0914-5.png": {
+    "source": "/Users/abhijit.nambiar/morph/Morph/originals/DSC_0914-5.jpg",
+    "ev": 0.15425376982340727,
+    "contrast": 0.015905242653727704,
+    "wb": [
+      0.029349558172448803,
+      0.0013216471044251677,
+      -0.029349558172448803
+    ],
+    "scene_ev": 0.12937731159130844
+  },
+  "/Users/abhijit.nambiar/morph/work/normalization-study/DSC_0916-6.png": {
+    "source": "/Users/abhijit.nambiar/morph/Morph/originals/DSC_0916-6.jpg",
+    "ev": 0.09485123540958654,
+    "contrast": 0.017442334685003662,
+    "wb": [
+      -0.02834431761784794,
+      -0.0028304319689506354,
+      0.02834431761784794
+    ],
+    "scene_ev": 0.12937731159130844
+  },
+  "/Users/abhijit.nambiar/morph/work/normalization-study/DSC_0919-7.png": {
+    "source": "/Users/abhijit.nambiar/morph/Morph/originals/DSC_0919-7.jpg",
+    "ev": 0.13858243540302392,
+    "contrast": 0.04371337871272735,
+    "wb": [
+      -0.0039540121300673595,
+      0.014179930989323273,
+      0.0039540121300673595
+    ],
+    "scene_ev": 0.12937731159130844
+  },
+  "/Users/abhijit.nambiar/morph/work/normalization-study/DSC_0921-8.png": {
+    "source": "/Users/abhijit.nambiar/morph/Morph/originals/DSC_0921-8.jpg",
+    "ev": 0.16529269571105928,
+    "contrast": 0.008891616768588812,
+    "wb": [
+      0.030763979567673145,
+      -0.005891672992208523,
+      -0.030763979567673145
+    ],
+    "scene_ev": 0.12937731159130844
+  },
+  "/Users/abhijit.nambiar/morph/work/normalization-study/DSC_0925-9.png": {
+    "source": "/Users/abhijit.nambiar/morph/Morph/originals/DSC_0925-9.jpg",
+    "ev": 0.18472143274383468,
+    "contrast": 0.03983980450241832,
+    "wb": [
+      0.015793390669708977,
+      -0.0023367819599183683,
+      -0.015793390669708977
+    ],
+    "scene_ev": 0.12937731159130844
+  },
+  "/Users/abhijit.nambiar/morph/work/normalization-study/DSC_0928-10.png": {
+    "source": "/Users/abhijit.nambiar/morph/Morph/originals/DSC_0928-10.jpg",
+    "ev": 0.22462425955617965,
+    "contrast": 0.005449854769566099,
+    "wb": [
+      0.02879753260479491,
+      -0.009296838049235508,
+      -0.02879753260479491
+    ],
+    "scene_ev": 0.12937731159130844
+  },
+  "/Users/abhijit.nambiar/morph/work/normalization-study/DSC_0930-11.png": {
+    "source": "/Users/abhijit.nambiar/morph/Morph/originals/DSC_0930-11.jpg",
+    "ev": 0.08874751040216391,
+    "contrast": 0.03754786173401621,
+    "wb": [
+      -0.019098247835470886,
+      0.004932837123450606,
+      0.019098247835470886
+    ],
+    "scene_ev": 0.12937731159130844
+  },
+  "/Users/abhijit.nambiar/morph/work/normalization-study/DSC_0935-12.png": {
+    "source": "/Users/abhijit.nambiar/morph/Morph/originals/DSC_0935-12.jpg",
+    "ev": 0.02824219730383172,
+    "contrast": 0.0313200258412293,
+    "wb": [
+      0.006602751284818955,
+      -0.00591595406418278,
+      -0.006602751284818955
+    ],
+    "scene_ev": 0.12937731159130844
+  },
+  "/Users/abhijit.nambiar/morph/work/normalization-study/DSC_0947-13.png": {
+    "source": "/Users/abhijit.nambiar/morph/Morph/originals/DSC_0947-13.jpg",
+    "ev": 0.08071987477877635,
+    "contrast": 0.009099257141034375,
+    "wb": [
+      -0.025649686592467812,
+      -0.01991982154656938,
+      0.025649686592467812
+    ],
+    "scene_ev": 0.21567823173464273
+  },
+  "/Users/abhijit.nambiar/morph/work/normalization-study/DSC_0948-14.png": {
+    "source": "/Users/abhijit.nambiar/morph/Morph/originals/DSC_0948-14.jpg",
+    "ev": 0.23521470598595387,
+    "contrast": 0.039312241096578736,
+    "wb": [
+      -0.01999038892344001,
+      -0.017712179345694693,
+      0.01999038892344001
+    ],
+    "scene_ev": 0.21567823173464273
+  },
+  "/Users/abhijit.nambiar/morph/work/normalization-study/DSC_0958-15.png": {
+    "source": "/Users/abhijit.nambiar/morph/Morph/originals/DSC_0958-15.jpg",
+    "ev": 0.10442342590579438,
+    "contrast": 0.0500297949592238,
+    "wb": [
+      -0.027290798233607513,
+      0.010523915915604002,
+      0.027290798233607513
+    ],
+    "scene_ev": 0.21567823173464273
+  },
+  "/Users/abhijit.nambiar/morph/work/normalization-study/DSC_0970-17.png": {
+    "source": "/Users/abhijit.nambiar/morph/Morph/originals/DSC_0970-17.jpg",
+    "ev": 0.3839365977065735,
+    "contrast": 0.004798852376749176,
+    "wb": [
+      -0.010357522325257615,
+      0.017552425277306147,
+      0.010357522325257615
+    ],
+    "scene_ev": 0.21567823173464273
+  },
+  "/Users/abhijit.nambiar/morph/work/normalization-study/DSC_0974-18.png": {
+    "source": "/Users/abhijit.nambiar/morph/Morph/originals/DSC_0974-18.jpg",
+    "ev": 0.05851212454091331,
+    "contrast": 0.03976538548356638,
+    "wb": [
+      -0.014665155533170266,
+      0.0018035437218338313,
+      0.014665155533170266
+    ],
+    "scene_ev": 0.21567823173464273
+  },
+  "/Users/abhijit.nambiar/morph/work/normalization-study/DSC_0987-19.png": {
+    "source": "/Users/abhijit.nambiar/morph/Morph/originals/DSC_0987-19.jpg",
+    "ev": 0.11883010961931136,
+    "contrast": 0.005319381561079452,
+    "wb": [
+      -0.03844846884197748,
+      0.00284191461483029,
+      0.03844846884197748
+    ],
+    "scene_ev": 0.21567823173464273
+  },
+  "/Users/abhijit.nambiar/morph/work/normalization-study/DSC_0965-16.png": {
+    "source": "/Users/abhijit.nambiar/morph/Morph/originals/DSC_0965-16.jpg",
+    "ev": -0.05681781536109201,
+    "contrast": 0.003737579883983622,
+    "wb": [
+      0.007801923051275795,
+      -0.016102722621629314,
+      -0.007801923051275795
+    ],
+    "scene_ev": 0.024044729744620758
+  },
+  "/Users/abhijit.nambiar/morph/work/normalization-study/DSC_0990-20.png": {
+    "source": "/Users/abhijit.nambiar/morph/Morph/originals/DSC_0990-20.jpg",
+    "ev": -0.06320590595182218,
+    "contrast": -0.010129710026641842,
+    "wb": [
+      0.041340986554414844,
+      -0.01939864849317685,
+      -0.041340986554414844
+    ],
+    "scene_ev": 0.024044729744620758
+  },
+  "/Users/abhijit.nambiar/morph/work/normalization-study/DSC_0993-21.png": {
+    "source": "/Users/abhijit.nambiar/morph/Morph/originals/DSC_0993-21.jpg",
+    "ev": 0.020701390614401252,
+    "contrast": -0.01342524256628383,
+    "wb": [
+      0.04727383159493945,
+      0.0012978073796780798,
+      -0.04727383159493945
+    ],
+    "scene_ev": 0.024044729744620758
+  },
+  "/Users/abhijit.nambiar/morph/work/normalization-study/DSC_0995-22.png": {
+    "source": "/Users/abhijit.nambiar/morph/Morph/originals/DSC_0995-22.jpg",
+    "ev": 0.013731463485853348,
+    "contrast": -0.029148055999598552,
+    "wb": [
+      0.00033006389176474735,
+      0.006015159087991817,
+      -0.00033006389176474735
+    ],
+    "scene_ev": 0.024044729744620758
+  },
+  "/Users/abhijit.nambiar/morph/work/normalization-study/DSC_0997-23.png": {
+    "source": "/Users/abhijit.nambiar/morph/Morph/originals/DSC_0997-23.jpg",
+    "ev": 0.09554627255867161,
+    "contrast": 0.014769229150626818,
+    "wb": [
+      0.051865890496337407,
+      0.0064038283000954,
+      -0.051865890496337407
+    ],
+    "scene_ev": 0.024044729744620758
+  },
+  "/Users/abhijit.nambiar/morph/work/normalization-study/DSC_0998-24.png": {
+    "source": "/Users/abhijit.nambiar/morph/Morph/originals/DSC_0998-24.jpg",
+    "ev": -0.15434788921675363,
+    "contrast": -0.017642898414623846,
+    "wb": [
+      0.0398270077469721,
+      0.00801000120031067,
+      -0.0398270077469721
+    ],
+    "scene_ev": 0.024044729744620758
+  },
+  "/Users/abhijit.nambiar/morph/work/normalization-study/DSC_1012-25.png": {
+    "source": "/Users/abhijit.nambiar/morph/Morph/originals/DSC_1012-25.jpg",
+    "ev": -0.1477462736309505,
+    "contrast": -0.017120533092738255,
+    "wb": [
+      0.002536560739989112,
+      0.006355638176739604,
+      -0.002536560739989112
+    ],
+    "scene_ev": 0.024044729744620758
+  },
+  "/Users/abhijit.nambiar/morph/work/normalization-study/DSC_1021-26.png": {
+    "source": "/Users/abhijit.nambiar/morph/Morph/originals/DSC_1021-26.jpg",
+    "ev": -0.07523383678435513,
+    "contrast": -0.02484085828657378,
+    "wb": [
+      -0.06099388176552814,
+      -0.013569065749230407,
+      0.06099388176552814
+    ],
+    "scene_ev": -0.1574924720869059
+  },
+  "/Users/abhijit.nambiar/morph/work/normalization-study/DSC_1026-27.png": {
+    "source": "/Users/abhijit.nambiar/morph/Morph/originals/DSC_1026-27.jpg",
+    "ev": -0.13628156884458809,
+    "contrast": -0.03818953888488201,
+    "wb": [
+      -0.040830086948812135,
+      0.01709051904484889,
+      0.040830086948812135
+    ],
+    "scene_ev": -0.1574924720869059
+  },
+  "/Users/abhijit.nambiar/morph/work/normalization-study/DSC_1028-28.png": {
+    "source": "/Users/abhijit.nambiar/morph/Morph/originals/DSC_1028-28.jpg",
+    "ev": -0.06694276184177422,
+    "contrast": -0.005928890235446283,
+    "wb": [
+      -0.0641529787740151,
+      -0.003938987041490178,
+      0.0641529787740151
+    ],
+    "scene_ev": -0.1574924720869059
+  },
+  "/Users/abhijit.nambiar/morph/work/normalization-study/DSC_1030-29.png": {
+    "source": "/Users/abhijit.nambiar/morph/Morph/originals/DSC_1030-29.jpg",
+    "ev": -0.16615194346024734,
+    "contrast": -0.017712072746162454,
+    "wb": [
+      -0.0440684775250761,
+      0.010346577358514773,
+      0.0440684775250761
+    ],
+    "scene_ev": -0.1574924720869059
+  },
+  "/Users/abhijit.nambiar/morph/work/normalization-study/DSC_1033-30.png": {
+    "source": "/Users/abhijit.nambiar/morph/Morph/originals/DSC_1033-30.jpg",
+    "ev": -0.16972965574613247,
+    "contrast": -0.04939587930362349,
+    "wb": [
+      -0.03298800443189705,
+      0.006531632970078097,
+      0.03298800443189705
+    ],
+    "scene_ev": -0.1574924720869059
+  },
+  "/Users/abhijit.nambiar/morph/work/normalization-study/DSC_1037-31.png": {
+    "source": "/Users/abhijit.nambiar/morph/Morph/originals/DSC_1037-31.jpg",
+    "ev": -0.26572094074083497,
+    "contrast": -0.03499297562373227,
+    "wb": [
+      -0.05824393991590088,
+      0.004192901987791089,
+      0.05824393991590088
+    ],
+    "scene_ev": -0.1574924720869059
+  },
+  "/Users/abhijit.nambiar/morph/work/normalization-study/DSC_1038-32.png": {
+    "source": "/Users/abhijit.nambiar/morph/Morph/originals/DSC_1038-32.jpg",
+    "ev": -0.07847948800655445,
+    "contrast": -0.014998442633553835,
+    "wb": [
+      -0.041680420780565025,
+      -0.006036740123975899,
+      0.041680420780565025
+    ],
+    "scene_ev": -0.1574924720869059
+  },
+  "/Users/abhijit.nambiar/morph/work/normalization-study/DSC_1054-33.png": {
+    "source": "/Users/abhijit.nambiar/morph/Morph/originals/DSC_1054-33.jpg",
+    "ev": 0.04344372494457231,
+    "contrast": -0.007310828334761702,
+    "wb": [
+      0.058413606184685565,
+      -0.00540792799772563,
+      -0.058413606184685565
+    ],
+    "scene_ev": 0.14984416306046436
+  },
+  "/Users/abhijit.nambiar/morph/work/normalization-study/DSC_1059-34.png": {
+    "source": "/Users/abhijit.nambiar/morph/Morph/originals/DSC_1059-34.jpg",
+    "ev": 0.2392354790395888,
+    "contrast": 0.0021503397548937233,
+    "wb": [
+      -1.1189916253144527e-06,
+      0.01980757488707372,
+      1.1189916253144527e-06
+    ],
+    "scene_ev": 0.14984416306046436
+  },
+  "/Users/abhijit.nambiar/morph/work/normalization-study/DSC_1070-35.png": {
+    "source": "/Users/abhijit.nambiar/morph/Morph/originals/DSC_1070-35.jpg",
+    "ev": -0.09206028538547602,
+    "contrast": 0.03223869527876107,
+    "wb": [
+      -0.023719816509145442,
+      -0.0035672835182842724,
+      0.023719816509145442
+    ],
+    "scene_ev": -0.019522776659332705
+  },
+  "/Users/abhijit.nambiar/morph/work/normalization-study/DSC_1074-36.png": {
+    "source": "/Users/abhijit.nambiar/morph/Morph/originals/DSC_1074-36.jpg",
+    "ev": 0.025593731708282698,
+    "contrast": 0.034273583087351595,
+    "wb": [
+      -0.05521728036124821,
+      -0.016171005548659405,
+      0.05521728036124821
+    ],
+    "scene_ev": -0.019522776659332705
+  },
+  "/Users/abhijit.nambiar/morph/work/normalization-study/DSC_1083-37.png": {
+    "source": "/Users/abhijit.nambiar/morph/Morph/originals/DSC_1083-37.jpg",
+    "ev": -0.16003595597466658,
+    "contrast": 0.023978086808558223,
+    "wb": [
+      -0.006886504569481075,
+      -0.002630033544517252,
+      0.006886504569481075
+    ],
+    "scene_ev": -0.019522776659332705
+  },
+  "/Users/abhijit.nambiar/morph/work/normalization-study/DSC_1096-40.png": {
+    "source": "/Users/abhijit.nambiar/morph/Morph/originals/DSC_1096-40.jpg",
+    "ev": 0.09591883550937275,
+    "contrast": 0.011336833247844152,
+    "wb": [
+      -0.02136086333299437,
+      -0.016540238612874947,
+      0.02136086333299437
+    ],
+    "scene_ev": -0.019522776659332705
+  },
+  "/Users/abhijit.nambiar/morph/work/normalization-study/DSC_1100-41.png": {
+    "source": "/Users/abhijit.nambiar/morph/Morph/originals/DSC_1100-41.jpg",
+    "ev": -0.05471523630558402,
+    "contrast": 0.0014311299051358844,
+    "wb": [
+      -0.07219810826934192,
+      -0.019578978262948202,
+      0.07219810826934192
+    ],
+    "scene_ev": -0.019522776659332705
+  },
+  "/Users/abhijit.nambiar/morph/work/normalization-study/DSC_1106-43.png": {
+    "source": "/Users/abhijit.nambiar/morph/Morph/originals/DSC_1106-43.jpg",
+    "ev": 0.08781292100264929,
+    "contrast": 0.03402013134663588,
+    "wb": [
+      -0.06265571857574605,
+      -0.015983252720244638,
+      0.06265571857574605
+    ],
+    "scene_ev": -0.019522776659332705
+  },
+  "/Users/abhijit.nambiar/morph/work/normalization-study/DSC_1109-44.png": {
+    "source": "/Users/abhijit.nambiar/morph/Morph/originals/DSC_1109-44.jpg",
+    "ev": -0.02296028555370616,
+    "contrast": 0.006467610575593273,
+    "wb": [
+      -0.04861679531949426,
+      -0.002551232484776085,
+      0.04861679531949426
+    ],
+    "scene_ev": -0.019522776659332705
+  },
+  "/Users/abhijit.nambiar/morph/work/normalization-study/DSC_1111-45.png": {
+    "source": "/Users/abhijit.nambiar/morph/Morph/originals/DSC_1111-45.jpg",
+    "ev": -0.1648165556064745,
+    "contrast": 0.023313914668089714,
+    "wb": [
+      -0.04658059726812293,
+      -0.016510748875323222,
+      0.04658059726812293
+    ],
+    "scene_ev": -0.019522776659332705
+  },
+  "/Users/abhijit.nambiar/morph/work/normalization-study/DSC_1118-48.png": {
+    "source": "/Users/abhijit.nambiar/morph/Morph/originals/DSC_1118-48.jpg",
+    "ev": -0.19349051601646433,
+    "contrast": 0.02807692755447322,
+    "wb": [
+      -0.010685868483056606,
+      0.00782562051283871,
+      0.010685868483056606
+    ],
+    "scene_ev": -0.019522776659332705
+  },
+  "/Users/abhijit.nambiar/morph/work/normalization-study/DSC_1088-38.png": {
+    "source": "/Users/abhijit.nambiar/morph/Morph/originals/DSC_1088-38.jpg",
+    "ev": -0.061080313989707036,
+    "contrast": 0.029501487784444152,
+    "wb": [
+      0.050556840375991584,
+      -0.007370451241877279,
+      -0.050556840375991584
+    ],
+    "scene_ev": -0.19482483370882075
+  },
+  "/Users/abhijit.nambiar/morph/work/normalization-study/DSC_1090-39.png": {
+    "source": "/Users/abhijit.nambiar/morph/Morph/originals/DSC_1090-39.jpg",
+    "ev": -0.23668734868019536,
+    "contrast": -0.008080409894367844,
+    "wb": [
+      0.02318495990666745,
+      -0.01761745213374104,
+      -0.02318495990666745
+    ],
+    "scene_ev": -0.19482483370882075
+  },
+  "/Users/abhijit.nambiar/morph/work/normalization-study/DSC_1105-42.png": {
+    "source": "/Users/abhijit.nambiar/morph/Morph/originals/DSC_1105-42.jpg",
+    "ev": -0.04755400893600231,
+    "contrast": 0.00942435418379872,
+    "wb": [
+      0.056976311190031506,
+      0.0066198790194894296,
+      -0.056976311190031506
+    ],
+    "scene_ev": -0.19482483370882075
+  },
+  "/Users/abhijit.nambiar/morph/work/normalization-study/DSC_1114-46.png": {
+    "source": "/Users/abhijit.nambiar/morph/Morph/originals/DSC_1114-46.jpg",
+    "ev": -0.3387758740694551,
+    "contrast": 0.029459602720286287,
+    "wb": [
+      0.07974892103853877,
+      -0.015696076647249067,
+      -0.07974892103853877
+    ],
+    "scene_ev": -0.19482483370882075
+  },
+  "/Users/abhijit.nambiar/morph/work/normalization-study/DSC_1116-47.png": {
+    "source": "/Users/abhijit.nambiar/morph/Morph/originals/DSC_1116-47.jpg",
+    "ev": -0.35368009940633105,
+    "contrast": 0.033241037278200145,
+    "wb": [
+      0.034839787383707285,
+      -0.00945337559878098,
+      -0.034839787383707285
+    ],
+    "scene_ev": -0.19482483370882075
+  },
+  "/Users/abhijit.nambiar/morph/work/normalization-study/DSC_1259-49.png": {
+    "source": "/Users/abhijit.nambiar/morph/Morph/originals/DSC_1259-49.jpg",
+    "ev": 0.06889857167827247,
+    "contrast": -0.006176431113861438,
+    "wb": [
+      0.041142968558195145,
+      0.017007232170836727,
+      -0.041142968558195145
+    ],
+    "scene_ev": 0.028550429922608447
+  },
+  "/Users/abhijit.nambiar/morph/work/normalization-study/DSC_1261-50.png": {
+    "source": "/Users/abhijit.nambiar/morph/Morph/originals/DSC_1261-50.jpg",
+    "ev": -0.023345039529125203,
+    "contrast": -0.004927488154316803,
+    "wb": [
+      -0.02476949437632437,
+      -0.010914280341624463,
+      0.02476949437632437
+    ],
+    "scene_ev": 0.028550429922608447
+  },
+  "/Users/abhijit.nambiar/morph/work/normalization-study/DSC_1264-51.png": {
+    "source": "/Users/abhijit.nambiar/morph/Morph/originals/DSC_1264-51.jpg",
+    "ev": -0.11379327887411952,
+    "contrast": 0.0033080511358295457,
+    "wb": [
+      -0.009814789972051402,
+      0.012010139391675372,
+      0.009814789972051402
+    ],
+    "scene_ev": 0.028550429922608447
+  },
+  "/Users/abhijit.nambiar/morph/work/normalization-study/DSC_1265-52.png": {
+    "source": "/Users/abhijit.nambiar/morph/Morph/originals/DSC_1265-52.jpg",
+    "ev": 0.07043092804662758,
+    "contrast": -0.013540061786466127,
+    "wb": [
+      0.009943828621617141,
+      -0.007192926165924747,
+      -0.009943828621617141
+    ],
+    "scene_ev": 0.028550429922608447
+  },
+  "/Users/abhijit.nambiar/morph/work/normalization-study/DSC_1268-53.png": {
+    "source": "/Users/abhijit.nambiar/morph/Morph/originals/DSC_1268-53.jpg",
+    "ev": 0.12541456828969982,
+    "contrast": -0.0013026830030316372,
+    "wb": [
+      -0.006631065719914428,
+      -0.014467519430581999,
+      0.006631065719914428
+    ],
+    "scene_ev": 0.028550429922608447
+  },
+  "/Users/abhijit.nambiar/morph/work/normalization-study/DSC_1273-54.png": {
+    "source": "/Users/abhijit.nambiar/morph/Morph/originals/DSC_1273-54.jpg",
+    "ev": -0.08904698980956202,
+    "contrast": -0.0051892282558642,
+    "wb": [
+      -0.021130731480676596,
+      -0.017916078925907904,
+      0.021130731480676596
+    ],
+    "scene_ev": 0.028550429922608447
+  },
+  "/Users/abhijit.nambiar/morph/work/normalization-study/DSC_1280-55.png": {
+    "source": "/Users/abhijit.nambiar/morph/Morph/originals/DSC_1280-55.jpg",
+    "ev": -0.0656523534629429,
+    "contrast": -0.004908314132185803,
+    "wb": [
+      0.05419335750154074,
+      -0.01723798706281674,
+      -0.05419335750154074
+    ],
+    "scene_ev": -0.19670371620398397
+  },
+  "/Users/abhijit.nambiar/morph/work/normalization-study/DSC_1282-56.png": {
+    "source": "/Users/abhijit.nambiar/morph/Morph/originals/DSC_1282-56.jpg",
+    "ev": -0.059517050472102984,
+    "contrast": -0.013767070827585853,
+    "wb": [
+      0.022241903833091475,
+      -0.0007377520503957191,
+      -0.022241903833091475
+    ],
+    "scene_ev": -0.19670371620398397
+  },
+  "/Users/abhijit.nambiar/morph/work/normalization-study/DSC_1284-57.png": {
+    "source": "/Users/abhijit.nambiar/morph/Morph/originals/DSC_1284-57.jpg",
+    "ev": -0.12586819036967073,
+    "contrast": -0.013544165557709181,
+    "wb": [
+      0.017944970352218932,
+      -0.00285435625843681,
+      -0.017944970352218932
+    ],
+    "scene_ev": -0.19670371620398397
+  },
+  "/Users/abhijit.nambiar/morph/work/normalization-study/DSC_1286-58.png": {
+    "source": "/Users/abhijit.nambiar/morph/Morph/originals/DSC_1286-58.jpg",
+    "ev": -0.2937436383755999,
+    "contrast": 0.0020256946533161024,
+    "wb": [
+      0.08142136073056122,
+      -0.018543312533204882,
+      -0.08142136073056122
+    ],
+    "scene_ev": -0.19670371620398397
+  },
+  "/Users/abhijit.nambiar/morph/work/normalization-study/DSC_1288-59.png": {
+    "source": "/Users/abhijit.nambiar/morph/Morph/originals/DSC_1288-59.jpg",
+    "ev": -0.09968581578365687,
+    "contrast": -0.008897945299731924,
+    "wb": [
+      0.02655951107042077,
+      0.00020231040164795378,
+      -0.02655951107042077
+    ],
+    "scene_ev": -0.19670371620398397
+  },
+  "/Users/abhijit.nambiar/morph/work/normalization-study/DSC_1291-60.png": {
+    "source": "/Users/abhijit.nambiar/morph/Morph/originals/DSC_1291-60.jpg",
+    "ev": -0.21846103467423506,
+    "contrast": 0.023540409767554817,
+    "wb": [
+      0.0545854990512846,
+      0.002000591043075195,
+      -0.0545854990512846
+    ],
+    "scene_ev": -0.19670371620398397
+  },
+  "/Users/abhijit.nambiar/morph/work/normalization-study/DSC_1292-61.png": {
+    "source": "/Users/abhijit.nambiar/morph/Morph/originals/DSC_1292-61.jpg",
+    "ev": -0.32833740969953984,
+    "contrast": 0.025724650641977688,
+    "wb": [
+      0.029471487112222867,
+      -0.018517941874875515,
+      -0.029471487112222867
+    ],
+    "scene_ev": -0.19670371620398397
+  },
+  "/Users/abhijit.nambiar/morph/work/normalization-study/DSC_1293-62.png": {
+    "source": "/Users/abhijit.nambiar/morph/Morph/originals/DSC_1293-62.jpg",
+    "ev": -0.08698395364225385,
+    "contrast": -0.007604851439882796,
+    "wb": [
+      0.04791119020253302,
+      0.01547470141915956,
+      -0.04791119020253302
+    ],
+    "scene_ev": -0.19670371620398397
+  },
+  "/Users/abhijit.nambiar/morph/work/normalization-study/DSC_1300-63.png": {
+    "source": "/Users/abhijit.nambiar/morph/Morph/originals/DSC_1300-63.jpg",
+    "ev": -0.1633225305554395,
+    "contrast": 0.026896844387794775,
+    "wb": [
+      0.07272305202911995,
+      -0.016613943298147187,
+      -0.07272305202911995
+    ],
+    "scene_ev": -0.19670371620398397
+  },
+  "/Users/abhijit.nambiar/morph/work/normalization-study/DSC_1302-64.png": {
+    "source": "/Users/abhijit.nambiar/morph/Morph/originals/DSC_1302-64.jpg",
+    "ev": -0.1699389268693472,
+    "contrast": 0.020004152813611682,
+    "wb": [
+      0.016426219476428985,
+      0.0010384575254766303,
+      -0.016426219476428985
+    ],
+    "scene_ev": -0.19670371620398397
+  },
+  "/Users/abhijit.nambiar/morph/work/normalization-study/DSC_1304-65.png": {
+    "source": "/Users/abhijit.nambiar/morph/Morph/originals/DSC_1304-65.jpg",
+    "ev": -0.04819966684656993,
+    "contrast": 0.011323930570284526,
+    "wb": [
+      0.058407159187827726,
+      0.0018544687040713682,
+      -0.058407159187827726
+    ],
+    "scene_ev": -0.19670371620398397
+  },
+  "/Users/abhijit.nambiar/morph/work/normalization-study/DSC_1308-66.png": {
+    "source": "/Users/abhijit.nambiar/morph/Morph/originals/DSC_1308-66.jpg",
+    "ev": -0.0983167987761934,
+    "contrast": 0.0345848366301284,
+    "wb": [
+      0.016528760284062707,
+      0.000769980400253214,
+      -0.016528760284062707
+    ],
+    "scene_ev": -0.21970390384334695
+  },
+  "/Users/abhijit.nambiar/morph/work/normalization-study/DSC_1310-67.png": {
+    "source": "/Users/abhijit.nambiar/morph/Morph/originals/DSC_1310-67.jpg",
+    "ev": -0.09732603590041763,
+    "contrast": -0.0016625304255251522,
+    "wb": [
+      -0.020760733213432254,
+      -0.013444600950102088,
+      0.020760733213432254
+    ],
+    "scene_ev": -0.21970390384334695
+  },
+  "/Users/abhijit.nambiar/morph/work/normalization-study/DSC_1312-68.png": {
+    "source": "/Users/abhijit.nambiar/morph/Morph/originals/DSC_1312-68.jpg",
+    "ev": -0.14732475045537258,
+    "contrast": -0.004363635042382567,
+    "wb": [
+      -0.0314314631372529,
+      0.011071880451170272,
+      0.0314314631372529
+    ],
+    "scene_ev": -0.21970390384334695
+  },
+  "/Users/abhijit.nambiar/morph/work/normalization-study/DSC_1315-69.png": {
+    "source": "/Users/abhijit.nambiar/morph/Morph/originals/DSC_1315-69.jpg",
+    "ev": -0.14731751452115852,
+    "contrast": 0.04432303579416784,
+    "wb": [
+      -0.03901195617795745,
+      -0.008702939773420805,
+      0.03901195617795745
+    ],
+    "scene_ev": -0.21970390384334695
+  },
+  "/Users/abhijit.nambiar/morph/work/normalization-study/DSC_1320-70.png": {
+    "source": "/Users/abhijit.nambiar/morph/Morph/originals/DSC_1320-70.jpg",
+    "ev": -0.18374172290412888,
+    "contrast": 0.015035862945232395,
+    "wb": [
+      0.013019740806240942,
+      -0.01512112716386359,
+      -0.013019740806240942
+    ],
+    "scene_ev": -0.21970390384334695
+  },
+  "/Users/abhijit.nambiar/morph/work/normalization-study/DSC_1322-71.png": {
+    "source": "/Users/abhijit.nambiar/morph/Morph/originals/DSC_1322-71.jpg",
+    "ev": -0.12643062651163,
+    "contrast": 0.03657851361844291,
+    "wb": [
+      -0.027358618415804788,
+      0.010816059416032088,
+      0.027358618415804788
+    ],
+    "scene_ev": -0.21970390384334695
+  },
+  "/Users/abhijit.nambiar/morph/work/normalization-study/DSC_1324-72.png": {
+    "source": "/Users/abhijit.nambiar/morph/Morph/originals/DSC_1324-72.jpg",
+    "ev": -0.2555687969689869,
+    "contrast": 0.0007744319958610316,
+    "wb": [
+      -0.042243971044073216,
+      -0.0193885760979349,
+      0.042243971044073216
+    ],
+    "scene_ev": -0.21970390384334695
+  },
+  "/Users/abhijit.nambiar/morph/work/normalization-study/DSC_1326-73.png": {
+    "source": "/Users/abhijit.nambiar/morph/Morph/originals/DSC_1326-73.jpg",
+    "ev": 0.19356307549852736,
+    "contrast": -0.003084011781624013,
+    "wb": [
+      0.05313472809085299,
+      -0.01889637419535747,
+      -0.05313472809085299
+    ],
+    "scene_ev": 0.018476251163784884
+  },
+  "/Users/abhijit.nambiar/morph/work/normalization-study/DSC_1329-74.png": {
+    "source": "/Users/abhijit.nambiar/morph/Morph/originals/DSC_1329-74.jpg",
+    "ev": 0.013742398191005804,
+    "contrast": -0.002589644080574719,
+    "wb": [
+      0.0715499270828236,
+      -0.009921950821609743,
+      -0.0715499270828236
+    ],
+    "scene_ev": 0.018476251163784884
+  },
+  "/Users/abhijit.nambiar/morph/work/normalization-study/DSC_1330-75.png": {
+    "source": "/Users/abhijit.nambiar/morph/Morph/originals/DSC_1330-75.jpg",
+    "ev": -0.08361834258001492,
+    "contrast": 0.03018066424237811,
+    "wb": [
+      0.06475412223056738,
+      0.01050006185116219,
+      -0.06475412223056738
+    ],
+    "scene_ev": 0.018476251163784884
+  },
+  "/Users/abhijit.nambiar/morph/work/normalization-study/DSC_1334-76.png": {
+    "source": "/Users/abhijit.nambiar/morph/Morph/originals/DSC_1334-76.jpg",
+    "ev": -0.005510598417718726,
+    "contrast": -0.0046364156121031855,
+    "wb": [
+      0.08088977914804929,
+      -0.0043951201517858345,
+      -0.08088977914804929
+    ],
+    "scene_ev": 0.018476251163784884
+  },
+  "/Users/abhijit.nambiar/morph/work/normalization-study/DSC_1335-77.png": {
+    "source": "/Users/abhijit.nambiar/morph/Morph/originals/DSC_1335-77.jpg",
+    "ev": 0.16076371689922625,
+    "contrast": -0.0004991605129110559,
+    "wb": [
+      0.023155000439662787,
+      -0.01759232808932366,
+      -0.023155000439662787
+    ],
+    "scene_ev": 0.018476251163784884
+  },
+  "/Users/abhijit.nambiar/morph/work/normalization-study/DSC_1337-78.png": {
+    "source": "/Users/abhijit.nambiar/morph/Morph/originals/DSC_1337-78.jpg",
+    "ev": -0.1304655212018369,
+    "contrast": 0.028308315422045247,
+    "wb": [
+      0.03150086238250626,
+      0.01163109711874283,
+      -0.03150086238250626
+    ],
+    "scene_ev": 0.018476251163784884
+  },
+  "/Users/abhijit.nambiar/morph/work/normalization-study/DSC_1339-79.png": {
+    "source": "/Users/abhijit.nambiar/morph/Morph/originals/DSC_1339-79.jpg",
+    "ev": -0.2635756354436464,
+    "contrast": -0.0242731864751965,
+    "wb": [
+      -0.00793737361582078,
+      -0.012545851058179864,
+      0.00793737361582078
+    ],
+    "scene_ev": -0.09010171929224298
+  },
+  "/Users/abhijit.nambiar/morph/work/normalization-study/DSC_1340-80.png": {
+    "source": "/Users/abhijit.nambiar/morph/Morph/originals/DSC_1340-80.jpg",
+    "ev": -0.15140260311593964,
+    "contrast": -0.018154198328181746,
+    "wb": [
+      0.05412662828642891,
+      0.00532295892560831,
+      -0.05412662828642891
+    ],
+    "scene_ev": -0.09010171929224298
+  },
+  "/Users/abhijit.nambiar/morph/work/normalization-study/DSC_1342-81.png": {
+    "source": "/Users/abhijit.nambiar/morph/Morph/originals/DSC_1342-81.jpg",
+    "ev": -0.09226693480313071,
+    "contrast": -0.016655730729669718,
+    "wb": [
+      0.046633456302443435,
+      0.011970942957699267,
+      -0.046633456302443435
+    ],
+    "scene_ev": -0.09010171929224298
+  },
+  "/Users/abhijit.nambiar/morph/work/normalization-study/DSC_1344-82.png": {
+    "source": "/Users/abhijit.nambiar/morph/Morph/originals/DSC_1344-82.jpg",
+    "ev": -0.06686639876492975,
+    "contrast": -0.0420288334829535,
+    "wb": [
+      -0.004669403283215204,
+      0.0015430624115537572,
+      0.004669403283215204
+    ],
+    "scene_ev": -0.09010171929224298
+  },
+  "/Users/abhijit.nambiar/morph/work/normalization-study/DSC_1360-83.png": {
+    "source": "/Users/abhijit.nambiar/morph/Morph/originals/DSC_1360-83.jpg",
+    "ev": -0.38351340423629354,
+    "contrast": -0.0003733001608773527,
+    "wb": [
+      -0.027365763557361804,
+      0.0013950105069690767,
+      0.027365763557361804
+    ],
+    "scene_ev": -0.2097253969863807
+  },
+  "/Users/abhijit.nambiar/morph/work/normalization-study/DSC_1362-84.png": {
+    "source": "/Users/abhijit.nambiar/morph/Morph/originals/DSC_1362-84.jpg",
+    "ev": -0.33994020173266837,
+    "contrast": -0.02131171750767244,
+    "wb": [
+      -0.07275606768154261,
+      0.015853871763695664,
+      0.07275606768154261
+    ],
+    "scene_ev": -0.2097253969863807
+  },
+  "/Users/abhijit.nambiar/morph/work/normalization-study/DSC_1363-85.png": {
+    "source": "/Users/abhijit.nambiar/morph/Morph/originals/DSC_1363-85.jpg",
+    "ev": -0.19347100829103428,
+    "contrast": -0.00837111847644486,
+    "wb": [
+      -0.05830572412770879,
+      -0.009582167323129243,
+      0.05830572412770879
+    ],
+    "scene_ev": -0.2097253969863807
+  },
+  "/Users/abhijit.nambiar/morph/work/normalization-study/DSC_1365-86.png": {
+    "source": "/Users/abhijit.nambiar/morph/Morph/originals/DSC_1365-86.jpg",
+    "ev": -0.059268811549149314,
+    "contrast": 0.007176948073251824,
+    "wb": [
+      -0.030116042003391356,
+      -0.010876484862883626,
+      0.030116042003391356
+    ],
+    "scene_ev": -0.2097253969863807
+  },
+  "/Users/abhijit.nambiar/morph/work/normalization-study/DSC_1367-87.png": {
+    "source": "/Users/abhijit.nambiar/morph/Morph/originals/DSC_1367-87.jpg",
+    "ev": -0.18061590422332297,
+    "contrast": 0.006660490180647984,
+    "wb": [
+      -0.06329646784612518,
+      -0.019283030565443143,
+      0.06329646784612518
+    ],
+    "scene_ev": -0.2097253969863807
+  },
+  "/Users/abhijit.nambiar/morph/work/normalization-study/DSC_1378-88.png": {
+    "source": "/Users/abhijit.nambiar/morph/Morph/originals/DSC_1378-88.jpg",
+    "ev": -0.14262911061315892,
+    "contrast": -0.022030105365948665,
+    "wb": [
+      -0.08142683299087908,
+      -0.005800306803181701,
+      0.08142683299087908
+    ],
+    "scene_ev": -0.2097253969863807
+  }
+}

@@ -1,0 +1,2046 @@
+{
+  "method": "Regular spatial sampling before export encoding. High = any channel >= 254/255; low = all channels <= 1/255. Flag = either fraction increased more than 1 percentage point; heuristic, not a quality verdict.",
+  "note": null,
+  "photos": [
+    {
+      "scene": "scene-01",
+      "original": "Morph/originals/DSC_0906-4.jpg",
+      "export": "outputs/morph-showcase/final-albums/sunlit/scene-01/exports/DSC_0906-4.jpg",
+      "clipping": {
+        "sampled_pixels": 201850,
+        "before": {
+          "high": 0.0030270002477086944,
+          "low": 0.0006093633886549418
+        },
+        "after": {
+          "high": 0.0030369085954917016,
+          "low": 0.00013376269507059697
+        },
+        "high_increase": 9.908347783007133e-06,
+        "low_increase": -0.00047560069358434486,
+        "flag": false,
+        "cubic_out_of_gamut_fraction": 0.0023383700767896955
+      }
+    },
+    {
+      "scene": "scene-01",
+      "original": "outputs/morph-showcase/varied-album/inputs/varied-DSC_0901-1.jpg",
+      "export": "outputs/morph-showcase/final-albums/sunlit/scene-01/exports/varied-DSC_0901-1.jpg",
+      "clipping": {
+        "sampled_pixels": 201850,
+        "before": {
+          "high": 0.008521179093386178,
+          "low": 0.000594500866980431
+        },
+        "after": {
+          "high": 0.00773841961852861,
+          "low": 3.467921724052514e-05
+        },
+        "high_increase": -0.0007827594748575674,
+        "low_increase": -0.0005598216497399058,
+        "flag": false,
+        "cubic_out_of_gamut_fraction": 0.00504830319544216
+      }
+    },
+    {
+      "scene": "scene-01",
+      "original": "outputs/morph-showcase/varied-album/inputs/varied-DSC_0904-2.jpg",
+      "export": "outputs/morph-showcase/final-albums/sunlit/scene-01/exports/varied-DSC_0904-2.jpg",
+      "clipping": {
+        "sampled_pixels": 201850,
+        "before": {
+          "high": 0.013267277681446619,
+          "low": 0.00025761704235818675
+        },
+        "after": {
+          "high": 0.006673272231855338,
+          "low": 0.00010403765172157542
+        },
+        "high_increase": -0.006594005449591281,
+        "low_increase": -0.00015357939063661132,
+        "flag": false,
+        "cubic_out_of_gamut_fraction": 0.004329947981174139
+      }
+    },
+    {
+      "scene": "scene-01",
+      "original": "outputs/morph-showcase/varied-album/inputs/varied-DSC_0905-3.jpg",
+      "export": "outputs/morph-showcase/final-albums/sunlit/scene-01/exports/varied-DSC_0905-3.jpg",
+      "clipping": {
+        "sampled_pixels": 201850,
+        "before": {
+          "high": 0.009665593262323507,
+          "low": 0.0003963339113202873
+        },
+        "after": {
+          "high": 0.008129799355957394,
+          "low": 0.0002378003467921724
+        },
+        "high_increase": -0.001535793906366113,
+        "low_increase": -0.0001585335645281149,
+        "flag": false,
+        "cubic_out_of_gamut_fraction": 0.0056527124102055985
+      }
+    },
+    {
+      "scene": "scene-01",
+      "original": "outputs/morph-showcase/varied-album/inputs/varied-DSC_0906-4.jpg",
+      "export": "outputs/morph-showcase/final-albums/sunlit/scene-01/exports/varied-DSC_0906-4.jpg",
+      "clipping": {
+        "sampled_pixels": 201850,
+        "before": {
+          "high": 0.0026653455536289326,
+          "low": 0.0006341342581124597
+        },
+        "after": {
+          "high": 0.002888283378746594,
+          "low": 0.00013871686896210056
+        },
+        "high_increase": 0.00022293782511766157,
+        "low_increase": -0.0004954173891503592,
+        "flag": false,
+        "cubic_out_of_gamut_fraction": 0.0021402031211295515
+      }
+    },
+    {
+      "scene": "scene-01",
+      "original": "outputs/morph-showcase/varied-album/inputs/varied-DSC_0914-5.jpg",
+      "export": "outputs/morph-showcase/final-albums/sunlit/scene-01/exports/varied-DSC_0914-5.jpg",
+      "clipping": {
+        "sampled_pixels": 201850,
+        "before": {
+          "high": 0.0024671785979687886,
+          "low": 0.003264800594500867
+        },
+        "after": {
+          "high": 0.002789199900916522,
+          "low": 0.0003666088679712658
+        },
+        "high_increase": 0.00032202130294773333,
+        "low_increase": -0.0028981917265296013,
+        "flag": false,
+        "cubic_out_of_gamut_fraction": 0.002269011642308645
+      }
+    },
+    {
+      "scene": "scene-01",
+      "original": "outputs/morph-showcase/varied-album/inputs/varied-DSC_0916-6.jpg",
+      "export": "outputs/morph-showcase/final-albums/sunlit/scene-01/exports/varied-DSC_0916-6.jpg",
+      "clipping": {
+        "sampled_pixels": 201850,
+        "before": {
+          "high": 0.004379489720089175,
+          "low": 0.0017587317314837752
+        },
+        "after": {
+          "high": 0.004324993807282636,
+          "low": 0.0005251424324993807
+        },
+        "high_increase": -5.449591280653945e-05,
+        "low_increase": -0.0012335892989843943,
+        "flag": false,
+        "cubic_out_of_gamut_fraction": 0.0038246222442407727
+      }
+    },
+    {
+      "scene": "scene-01",
+      "original": "outputs/morph-showcase/varied-album/inputs/varied-DSC_0919-7.jpg",
+      "export": "outputs/morph-showcase/final-albums/sunlit/scene-01/exports/varied-DSC_0919-7.jpg",
+      "clipping": {
+        "sampled_pixels": 201850,
+        "before": {
+          "high": 0.0029675501610106516,
+          "low": 0.0028684666831805795
+        },
+        "after": {
+          "high": 0.003106267029972752,
+          "low": 0.0004310131285608125
+        },
+        "high_increase": 0.0001387168689621003,
+        "low_increase": -0.002437453554619767,
+        "flag": false,
+        "cubic_out_of_gamut_fraction": 0.0027991082486995295
+      }
+    },
+    {
+      "scene": "scene-01",
+      "original": "outputs/morph-showcase/varied-album/inputs/varied-DSC_0921-8.jpg",
+      "export": "outputs/morph-showcase/final-albums/sunlit/scene-01/exports/varied-DSC_0921-8.jpg",
+      "clipping": {
+        "sampled_pixels": 201850,
+        "before": {
+          "high": 0.002417636859053753,
+          "low": 0.0014862521674510775
+        },
+        "after": {
+          "high": 0.0029279167698786227,
+          "low": 0.00032697547683923706
+        },
+        "high_increase": 0.0005102799108248697,
+        "low_increase": -0.0011592766906118404,
+        "flag": false,
+        "cubic_out_of_gamut_fraction": 0.002194699033936091
+      }
+    },
+    {
+      "scene": "scene-01",
+      "original": "outputs/morph-showcase/varied-album/inputs/varied-DSC_0925-9.jpg",
+      "export": "outputs/morph-showcase/final-albums/sunlit/scene-01/exports/varied-DSC_0925-9.jpg",
+      "clipping": {
+        "sampled_pixels": 201850,
+        "before": {
+          "high": 0.0042754520683676,
+          "low": 0.0010899182561307902
+        },
+        "after": {
+          "high": 0.005256378498885311,
+          "low": 0.0002378003467921724
+        },
+        "high_increase": 0.000980926430517711,
+        "low_increase": -0.0008521179093386179,
+        "flag": false,
+        "cubic_out_of_gamut_fraction": 0.004072330938815953
+      }
+    },
+    {
+      "scene": "scene-01",
+      "original": "outputs/morph-showcase/varied-album/inputs/varied-DSC_0928-10.jpg",
+      "export": "outputs/morph-showcase/final-albums/sunlit/scene-01/exports/varied-DSC_0928-10.jpg",
+      "clipping": {
+        "sampled_pixels": 201850,
+        "before": {
+          "high": 0.0031508545949962843,
+          "low": 0.00211047807778053
+        },
+        "after": {
+          "high": 0.003933614069853852,
+          "low": 0.0002774337379242011
+        },
+        "high_increase": 0.0007827594748575678,
+        "low_increase": -0.001833044339856329,
+        "flag": false,
+        "cubic_out_of_gamut_fraction": 0.003081496160515234
+      }
+    },
+    {
+      "scene": "scene-01",
+      "original": "outputs/morph-showcase/varied-album/inputs/varied-DSC_0930-11.jpg",
+      "export": "outputs/morph-showcase/final-albums/sunlit/scene-01/exports/varied-DSC_0930-11.jpg",
+      "clipping": {
+        "sampled_pixels": 201850,
+        "before": {
+          "high": 0.001540748080257617,
+          "low": 0.006148129799355958
+        },
+        "after": {
+          "high": 0.003433242506811989,
+          "low": 0.0015803814713896457
+        },
+        "high_increase": 0.0018924944265543721,
+        "low_increase": -0.004567748327966312,
+        "flag": false,
+        "cubic_out_of_gamut_fraction": 0.003116175377755759
+      }
+    },
+    {
+      "scene": "scene-01",
+      "original": "outputs/morph-showcase/varied-album/inputs/varied-DSC_0935-12.jpg",
+      "export": "outputs/morph-showcase/final-albums/sunlit/scene-01/exports/varied-DSC_0935-12.jpg",
+      "clipping": {
+        "sampled_pixels": 201850,
+        "before": {
+          "high": 0.003423334159028982,
+          "low": 0.003121129551647263
+        },
+        "after": {
+          "high": 0.005087936586574189,
+          "low": 0.0008768887787961357
+        },
+        "high_increase": 0.001664602427545207,
+        "low_increase": -0.002244240772851127,
+        "flag": false,
+        "cubic_out_of_gamut_fraction": 0.0034778300718355214
+      }
+    },
+    {
+      "scene": "scene-02-lawn",
+      "original": "Morph/originals/DSC_0958-15.jpg",
+      "export": "outputs/morph-showcase/final-albums/sunlit/scene-02-lawn/exports/DSC_0958-15.jpg",
+      "clipping": {
+        "sampled_pixels": 201850,
+        "before": {
+          "high": 0.012989843943522417,
+          "low": 0.0005697299975229131
+        },
+        "after": {
+          "high": 0.010195689868714391,
+          "low": 9.908347783007183e-05
+        },
+        "high_increase": -0.002794154074808026,
+        "low_increase": -0.00047064651969284124,
+        "flag": false,
+        "cubic_out_of_gamut_fraction": 0.003596730245231608
+      }
+    },
+    {
+      "scene": "scene-02-lawn",
+      "original": "outputs/morph-showcase/varied-album/inputs/varied-DSC_0947-13.jpg",
+      "export": "outputs/morph-showcase/final-albums/sunlit/scene-02-lawn/exports/varied-DSC_0947-13.jpg",
+      "clipping": {
+        "sampled_pixels": 201850,
+        "before": {
+          "high": 0.00473123606638593,
+          "low": 0.001045330691107258
+        },
+        "after": {
+          "high": 0.0033688382462224425,
+          "low": 0.00016348773841961853
+        },
+        "high_increase": -0.001362397820163488,
+        "low_increase": -0.0008818429526876394,
+        "flag": false,
+        "cubic_out_of_gamut_fraction": 0.0010750557344562793
+      }
+    },
+    {
+      "scene": "scene-02-lawn",
+      "original": "outputs/morph-showcase/varied-album/inputs/varied-DSC_0948-14.jpg",
+      "export": "outputs/morph-showcase/final-albums/sunlit/scene-02-lawn/exports/varied-DSC_0948-14.jpg",
+      "clipping": {
+        "sampled_pixels": 201850,
+        "before": {
+          "high": 0.007832548922467179,
+          "low": 0.000971018082734704
+        },
+        "after": {
+          "high": 0.00657914292791677,
+          "low": 0.000242754520683676
+        },
+        "high_increase": -0.001253405994550409,
+        "low_increase": -0.0007282635620510279,
+        "flag": false,
+        "cubic_out_of_gamut_fraction": 0.0016348773841961854
+      }
+    },
+    {
+      "scene": "scene-02-lawn",
+      "original": "outputs/morph-showcase/varied-album/inputs/varied-DSC_0958-15.jpg",
+      "export": "outputs/morph-showcase/final-albums/sunlit/scene-02-lawn/exports/varied-DSC_0958-15.jpg",
+      "clipping": {
+        "sampled_pixels": 201850,
+        "before": {
+          "high": 0.013965816200148626,
+          "low": 0.0005697299975229131
+        },
+        "after": {
+          "high": 0.011245974733713153,
+          "low": 7.926678226405747e-05
+        },
+        "high_increase": -0.0027198414664354725,
+        "low_increase": -0.0004904632152588556,
+        "flag": false,
+        "cubic_out_of_gamut_fraction": 0.0036115927669061183
+      }
+    },
+    {
+      "scene": "scene-02-lawn",
+      "original": "outputs/morph-showcase/varied-album/inputs/varied-DSC_0970-17.jpg",
+      "export": "outputs/morph-showcase/final-albums/sunlit/scene-02-lawn/exports/varied-DSC_0970-17.jpg",
+      "clipping": {
+        "sampled_pixels": 201850,
+        "before": {
+          "high": 0.007178597968788705,
+          "low": 0.000753034431508546
+        },
+        "after": {
+          "high": 0.004384443893980679,
+          "low": 0.00022789199900916522
+        },
+        "high_increase": -0.002794154074808026,
+        "low_increase": -0.0005251424324993807,
+        "flag": false,
+        "cubic_out_of_gamut_fraction": 0.0019024027743373792
+      }
+    },
+    {
+      "scene": "scene-02-lawn",
+      "original": "outputs/morph-showcase/varied-album/inputs/varied-DSC_0974-18.jpg",
+      "export": "outputs/morph-showcase/final-albums/sunlit/scene-02-lawn/exports/varied-DSC_0974-18.jpg",
+      "clipping": {
+        "sampled_pixels": 201850,
+        "before": {
+          "high": 0.0033539757245479316,
+          "low": 0.003893980678721823
+        },
+        "after": {
+          "high": 0.0018181818181818182,
+          "low": 0.0004954173891503591
+        },
+        "high_increase": -0.0015357939063661134,
+        "low_increase": -0.003398563289571464,
+        "flag": false,
+        "cubic_out_of_gamut_fraction": 0.0010056972999752292
+      }
+    },
+    {
+      "scene": "scene-02-lawn",
+      "original": "outputs/morph-showcase/varied-album/inputs/varied-DSC_0987-19.jpg",
+      "export": "outputs/morph-showcase/final-albums/sunlit/scene-02-lawn/exports/varied-DSC_0987-19.jpg",
+      "clipping": {
+        "sampled_pixels": 201850,
+        "before": {
+          "high": 0.004617290066881347,
+          "low": 0.0018875402526628685
+        },
+        "after": {
+          "high": 0.0032697547683923707,
+          "low": 0.0001783502600941293
+        },
+        "high_increase": -0.0013475352984889766,
+        "low_increase": -0.0017091899925687393,
+        "flag": false,
+        "cubic_out_of_gamut_fraction": 0.0008669804310131286
+      }
+    },
+    {
+      "scene": "scene-02",
+      "original": "Morph/originals/DSC_0995-22.jpg",
+      "export": "outputs/morph-showcase/final-albums/sunlit/scene-02/exports/DSC_0995-22.jpg",
+      "clipping": {
+        "sampled_pixels": 201850,
+        "before": {
+          "high": 0.13634381966807035,
+          "low": 0.0
+        },
+        "after": {
+          "high": 0.13166212534059946,
+          "low": 0.0
+        },
+        "high_increase": -0.004681694327470898,
+        "low_increase": 0.0,
+        "flag": false,
+        "cubic_out_of_gamut_fraction": 2.4770869457517957e-05
+      }
+    },
+    {
+      "scene": "scene-02",
+      "original": "outputs/morph-showcase/varied-album/inputs/varied-DSC_0965-16.jpg",
+      "export": "outputs/morph-showcase/final-albums/sunlit/scene-02/exports/varied-DSC_0965-16.jpg",
+      "clipping": {
+        "sampled_pixels": 201850,
+        "before": {
+          "high": 0.1529997522913054,
+          "low": 0.0
+        },
+        "after": {
+          "high": 0.07479316324002973,
+          "low": 0.0
+        },
+        "high_increase": -0.07820658905127569,
+        "low_increase": 0.0,
+        "flag": false,
+        "cubic_out_of_gamut_fraction": 2.972504334902155e-05
+      }
+    },
+    {
+      "scene": "scene-02",
+      "original": "outputs/morph-showcase/varied-album/inputs/varied-DSC_0990-20.jpg",
+      "export": "outputs/morph-showcase/final-albums/sunlit/scene-02/exports/varied-DSC_0990-20.jpg",
+      "clipping": {
+        "sampled_pixels": 201850,
+        "before": {
+          "high": 0.14311617537775576,
+          "low": 1.4862521674510775e-05
+        },
+        "after": {
+          "high": 0.058612831310379,
+          "low": 4.954173891503592e-06
+        },
+        "high_increase": -0.08450334406737675,
+        "low_increase": -9.908347783007184e-06,
+        "flag": false,
+        "cubic_out_of_gamut_fraction": 1.4862521674510775e-05
+      }
+    },
+    {
+      "scene": "scene-02",
+      "original": "outputs/morph-showcase/varied-album/inputs/varied-DSC_0993-21.jpg",
+      "export": "outputs/morph-showcase/final-albums/sunlit/scene-02/exports/varied-DSC_0993-21.jpg",
+      "clipping": {
+        "sampled_pixels": 201850,
+        "before": {
+          "high": 0.1436016844191231,
+          "low": 0.0
+        },
+        "after": {
+          "high": 0.11419866237304929,
+          "low": 0.0
+        },
+        "high_increase": -0.029403022046073812,
+        "low_increase": 0.0,
+        "flag": false,
+        "cubic_out_of_gamut_fraction": 3.9633391132028734e-05
+      }
+    },
+    {
+      "scene": "scene-02",
+      "original": "outputs/morph-showcase/varied-album/inputs/varied-DSC_0995-22.jpg",
+      "export": "outputs/morph-showcase/final-albums/sunlit/scene-02/exports/varied-DSC_0995-22.jpg",
+      "clipping": {
+        "sampled_pixels": 201850,
+        "before": {
+          "high": 0.13579390636611344,
+          "low": 0.0
+        },
+        "after": {
+          "high": 0.1342036165469408,
+          "low": 0.0
+        },
+        "high_increase": -0.0015902898191726411,
+        "low_increase": 0.0,
+        "flag": false,
+        "cubic_out_of_gamut_fraction": 3.9633391132028734e-05
+      }
+    },
+    {
+      "scene": "scene-02",
+      "original": "outputs/morph-showcase/varied-album/inputs/varied-DSC_0997-23.jpg",
+      "export": "outputs/morph-showcase/final-albums/sunlit/scene-02/exports/varied-DSC_0997-23.jpg",
+      "clipping": {
+        "sampled_pixels": 201850,
+        "before": {
+          "high": 0.22208570720832302,
+          "low": 0.0
+        },
+        "after": {
+          "high": 0.12243249938072827,
+          "low": 0.0
+        },
+        "high_increase": -0.09965320782759475,
+        "low_increase": 0.0,
+        "flag": false,
+        "cubic_out_of_gamut_fraction": 4.458756502353233e-05
+      }
+    },
+    {
+      "scene": "scene-02",
+      "original": "outputs/morph-showcase/varied-album/inputs/varied-DSC_0998-24.jpg",
+      "export": "outputs/morph-showcase/final-albums/sunlit/scene-02/exports/varied-DSC_0998-24.jpg",
+      "clipping": {
+        "sampled_pixels": 201850,
+        "before": {
+          "high": 0.1823581867723557,
+          "low": 5.94500866980431e-05
+        },
+        "after": {
+          "high": 0.1834282883329205,
+          "low": 4.954173891503592e-06
+        },
+        "high_increase": 0.001070101560564779,
+        "low_increase": -5.449591280653951e-05,
+        "flag": false,
+        "cubic_out_of_gamut_fraction": 8.917513004706466e-05
+      }
+    },
+    {
+      "scene": "scene-02",
+      "original": "outputs/morph-showcase/varied-album/inputs/varied-DSC_1012-25.jpg",
+      "export": "outputs/morph-showcase/final-albums/sunlit/scene-02/exports/varied-DSC_1012-25.jpg",
+      "clipping": {
+        "sampled_pixels": 201850,
+        "before": {
+          "high": 0.19990587069606144,
+          "low": 0.0
+        },
+        "after": {
+          "high": 0.09771612583601684,
+          "low": 0.0
+        },
+        "high_increase": -0.1021897448600446,
+        "low_increase": 0.0,
+        "flag": false,
+        "cubic_out_of_gamut_fraction": 3.9633391132028734e-05
+      }
+    },
+    {
+      "scene": "scene-03",
+      "original": "Morph/originals/DSC_1037-31.jpg",
+      "export": "outputs/morph-showcase/final-albums/sunlit/scene-03/exports/DSC_1037-31.jpg",
+      "clipping": {
+        "sampled_pixels": 201850,
+        "before": {
+          "high": 0.0045429774585087936,
+          "low": 0.015501610106514739
+        },
+        "after": {
+          "high": 0.0038295764181322765,
+          "low": 0.0030369085954917016
+        },
+        "high_increase": -0.000713401040376517,
+        "low_increase": -0.012464701511023038,
+        "flag": false,
+        "cubic_out_of_gamut_fraction": 0.006995293534803071
+      }
+    },
+    {
+      "scene": "scene-03",
+      "original": "outputs/morph-showcase/varied-album/inputs/varied-DSC_1021-26.jpg",
+      "export": "outputs/morph-showcase/final-albums/sunlit/scene-03/exports/varied-DSC_1021-26.jpg",
+      "clipping": {
+        "sampled_pixels": 201850,
+        "before": {
+          "high": 0.010081743869209809,
+          "low": 0.0037849888531087442
+        },
+        "after": {
+          "high": 0.0031855338122368094,
+          "low": 0.0010255139955412434
+        },
+        "high_increase": -0.006896210056972999,
+        "low_increase": -0.002759474857567501,
+        "flag": false,
+        "cubic_out_of_gamut_fraction": 0.004324993807282636
+      }
+    },
+    {
+      "scene": "scene-03",
+      "original": "outputs/morph-showcase/varied-album/inputs/varied-DSC_1026-27.jpg",
+      "export": "outputs/morph-showcase/final-albums/sunlit/scene-03/exports/varied-DSC_1026-27.jpg",
+      "clipping": {
+        "sampled_pixels": 201850,
+        "before": {
+          "high": 0.001080009908347783,
+          "low": 0.014322516720336884
+        },
+        "after": {
+          "high": 0.0007976219965320783,
+          "low": 0.004919494674263066
+        },
+        "high_increase": -0.0002823879118157048,
+        "low_increase": -0.009403022046073819,
+        "flag": false,
+        "cubic_out_of_gamut_fraction": 0.007639336140698539
+      }
+    },
+    {
+      "scene": "scene-03",
+      "original": "outputs/morph-showcase/varied-album/inputs/varied-DSC_1028-28.jpg",
+      "export": "outputs/morph-showcase/final-albums/sunlit/scene-03/exports/varied-DSC_1028-28.jpg",
+      "clipping": {
+        "sampled_pixels": 201850,
+        "before": {
+          "high": 0.0005895466930889274,
+          "low": 0.007976219965320783
+        },
+        "after": {
+          "high": 0.0004260589546693089,
+          "low": 0.002452316076294278
+        },
+        "high_increase": -0.00016348773841961856,
+        "low_increase": -0.005523903889026505,
+        "flag": false,
+        "cubic_out_of_gamut_fraction": 0.0062719841466435475
+      }
+    },
+    {
+      "scene": "scene-03",
+      "original": "outputs/morph-showcase/varied-album/inputs/varied-DSC_1030-29.jpg",
+      "export": "outputs/morph-showcase/final-albums/sunlit/scene-03/exports/varied-DSC_1030-29.jpg",
+      "clipping": {
+        "sampled_pixels": 201850,
+        "before": {
+          "high": 0.010899182561307902,
+          "low": 0.012311122120386426
+        },
+        "after": {
+          "high": 0.00409710180827347,
+          "low": 0.003844438939806787
+        },
+        "high_increase": -0.006802080753034431,
+        "low_increase": -0.008466683180579639,
+        "flag": false,
+        "cubic_out_of_gamut_fraction": 0.008422095615556105
+      }
+    },
+    {
+      "scene": "scene-03",
+      "original": "outputs/morph-showcase/varied-album/inputs/varied-DSC_1033-30.jpg",
+      "export": "outputs/morph-showcase/final-albums/sunlit/scene-03/exports/varied-DSC_1033-30.jpg",
+      "clipping": {
+        "sampled_pixels": 201850,
+        "before": {
+          "high": 0.0060639088432003965,
+          "low": 0.007233093881595244
+        },
+        "after": {
+          "high": 0.002293782511766163,
+          "low": 0.002026257121624969
+        },
+        "high_increase": -0.0037701263314342333,
+        "low_increase": -0.005206836759970275,
+        "flag": false,
+        "cubic_out_of_gamut_fraction": 0.005182065890512757
+      }
+    },
+    {
+      "scene": "scene-03",
+      "original": "outputs/morph-showcase/varied-album/inputs/varied-DSC_1037-31.jpg",
+      "export": "outputs/morph-showcase/final-albums/sunlit/scene-03/exports/varied-DSC_1037-31.jpg",
+      "clipping": {
+        "sampled_pixels": 201850,
+        "before": {
+          "high": 0.006281892494426554,
+          "low": 0.015610601932127818
+        },
+        "after": {
+          "high": 0.0023185533812236808,
+          "low": 0.0032003963339113204
+        },
+        "high_increase": -0.003963339113202874,
+        "low_increase": -0.012410205598216498,
+        "flag": false,
+        "cubic_out_of_gamut_fraction": 0.00729749814218479
+      }
+    },
+    {
+      "scene": "scene-03",
+      "original": "outputs/morph-showcase/varied-album/inputs/varied-DSC_1038-32.jpg",
+      "export": "outputs/morph-showcase/final-albums/sunlit/scene-03/exports/varied-DSC_1038-32.jpg",
+      "clipping": {
+        "sampled_pixels": 201850,
+        "before": {
+          "high": 0.0037849888531087442,
+          "low": 0.008402278919990092
+        },
+        "after": {
+          "high": 0.0013822145157295022,
+          "low": 0.0019816695566014365
+        },
+        "high_increase": -0.002402774337379242,
+        "low_increase": -0.006420609363388655,
+        "flag": false,
+        "cubic_out_of_gamut_fraction": 0.005390141193955908
+      }
+    },
+    {
+      "scene": "scene-04",
+      "original": "Morph/originals/DSC_1054-33.jpg",
+      "export": "outputs/morph-showcase/final-albums/sunlit/scene-04/exports/DSC_1054-33.jpg",
+      "clipping": {
+        "sampled_pixels": 201850,
+        "before": {
+          "high": 0.006321525885558583,
+          "low": 0.0015258855585831062
+        },
+        "after": {
+          "high": 0.004840227891999009,
+          "low": 0.0004260589546693089
+        },
+        "high_increase": -0.0014812979935595735,
+        "low_increase": -0.0010998266039137974,
+        "flag": false,
+        "cubic_out_of_gamut_fraction": 0.002378003467921724
+      }
+    },
+    {
+      "scene": "scene-04",
+      "original": "outputs/morph-showcase/varied-album/inputs/varied-DSC_1054-33.jpg",
+      "export": "outputs/morph-showcase/final-albums/sunlit/scene-04/exports/varied-DSC_1054-33.jpg",
+      "clipping": {
+        "sampled_pixels": 201850,
+        "before": {
+          "high": 0.006054000495417389,
+          "low": 0.0037453554619767153
+        },
+        "after": {
+          "high": 0.0045578399801833045,
+          "low": 0.0005350507802823879
+        },
+        "high_increase": -0.0014961605152340844,
+        "low_increase": -0.0032103046816943275,
+        "flag": false,
+        "cubic_out_of_gamut_fraction": 0.0023036908595491703
+      }
+    },
+    {
+      "scene": "scene-04",
+      "original": "outputs/morph-showcase/varied-album/inputs/varied-DSC_1059-34.jpg",
+      "export": "outputs/morph-showcase/final-albums/sunlit/scene-04/exports/varied-DSC_1059-34.jpg",
+      "clipping": {
+        "sampled_pixels": 201850,
+        "before": {
+          "high": 0.006807034926925935,
+          "low": 0.0012286351250928907
+        },
+        "after": {
+          "high": 0.005107753282140203,
+          "low": 0.0005152340847163735
+        },
+        "high_increase": -0.0016992816447857322,
+        "low_increase": -0.0007134010403765172,
+        "flag": false,
+        "cubic_out_of_gamut_fraction": 0.002531582858558335
+      }
+    },
+    {
+      "scene": "scene-05",
+      "original": "Morph/originals/DSC_1111-45.jpg",
+      "export": "outputs/morph-showcase/final-albums/sunlit/scene-05/exports/DSC_1111-45.jpg",
+      "clipping": {
+        "sampled_pixels": 201850,
+        "before": {
+          "high": 0.005325736933366361,
+          "low": 0.0006836759970274956
+        },
+        "after": {
+          "high": 0.003140946247213277,
+          "low": 0.0
+        },
+        "high_increase": -0.002184790686153084,
+        "low_increase": -0.0006836759970274956,
+        "flag": false,
+        "cubic_out_of_gamut_fraction": 0.002090661382214516
+      }
+    },
+    {
+      "scene": "scene-05",
+      "original": "outputs/morph-showcase/varied-album/inputs/varied-DSC_1070-35.jpg",
+      "export": "outputs/morph-showcase/final-albums/sunlit/scene-05/exports/varied-DSC_1070-35.jpg",
+      "clipping": {
+        "sampled_pixels": 201850,
+        "before": {
+          "high": 0.00863512509289076,
+          "low": 0.001991577904384444
+        },
+        "after": {
+          "high": 0.004528114936834283,
+          "low": 0.0
+        },
+        "high_increase": -0.004107010156056477,
+        "low_increase": -0.001991577904384444,
+        "flag": false,
+        "cubic_out_of_gamut_fraction": 0.0031112212038642557
+      }
+    },
+    {
+      "scene": "scene-05",
+      "original": "outputs/morph-showcase/varied-album/inputs/varied-DSC_1074-36.jpg",
+      "export": "outputs/morph-showcase/final-albums/sunlit/scene-05/exports/varied-DSC_1074-36.jpg",
+      "clipping": {
+        "sampled_pixels": 201850,
+        "before": {
+          "high": 0.005538766410701015,
+          "low": 0.0005697299975229131
+        },
+        "after": {
+          "high": 0.0026306663363884074,
+          "low": 0.0
+        },
+        "high_increase": -0.002908100074312608,
+        "low_increase": -0.0005697299975229131,
+        "flag": false,
+        "cubic_out_of_gamut_fraction": 0.002224424077285113
+      }
+    },
+    {
+      "scene": "scene-05",
+      "original": "outputs/morph-showcase/varied-album/inputs/varied-DSC_1083-37.jpg",
+      "export": "outputs/morph-showcase/final-albums/sunlit/scene-05/exports/varied-DSC_1083-37.jpg",
+      "clipping": {
+        "sampled_pixels": 201850,
+        "before": {
+          "high": 0.007277681446618776,
+          "low": 0.0003963339113202873
+        },
+        "after": {
+          "high": 0.003289571463958385,
+          "low": 0.0
+        },
+        "high_increase": -0.003988109982660391,
+        "low_increase": -0.0003963339113202873,
+        "flag": false,
+        "cubic_out_of_gamut_fraction": 0.0026356205102799108
+      }
+    },
+    {
+      "scene": "scene-05",
+      "original": "outputs/morph-showcase/varied-album/inputs/varied-DSC_1096-40.jpg",
+      "export": "outputs/morph-showcase/final-albums/sunlit/scene-05/exports/varied-DSC_1096-40.jpg",
+      "clipping": {
+        "sampled_pixels": 201850,
+        "before": {
+          "high": 0.008912558830814961,
+          "low": 0.0008521179093386178
+        },
+        "after": {
+          "high": 0.006019321278176864,
+          "low": 0.0
+        },
+        "high_increase": -0.0028932375526380975,
+        "low_increase": -0.0008521179093386178,
+        "flag": false,
+        "cubic_out_of_gamut_fraction": 0.0035471885063165717
+      }
+    },
+    {
+      "scene": "scene-05",
+      "original": "outputs/morph-showcase/varied-album/inputs/varied-DSC_1100-41.jpg",
+      "export": "outputs/morph-showcase/final-albums/sunlit/scene-05/exports/varied-DSC_1100-41.jpg",
+      "clipping": {
+        "sampled_pixels": 201850,
+        "before": {
+          "high": 0.004211047807778053,
+          "low": 0.001590289819172653
+        },
+        "after": {
+          "high": 0.0012880852117909338,
+          "low": 0.0
+        },
+        "high_increase": -0.002922962595987119,
+        "low_increase": -0.001590289819172653,
+        "flag": false,
+        "cubic_out_of_gamut_fraction": 0.0011444141689373297
+      }
+    },
+    {
+      "scene": "scene-05",
+      "original": "outputs/morph-showcase/varied-album/inputs/varied-DSC_1106-43.jpg",
+      "export": "outputs/morph-showcase/final-albums/sunlit/scene-05/exports/varied-DSC_1106-43.jpg",
+      "clipping": {
+        "sampled_pixels": 201850,
+        "before": {
+          "high": 0.007906861530839733,
+          "low": 0.0023086450334406736
+        },
+        "after": {
+          "high": 0.0053356452811493685,
+          "low": 0.0
+        },
+        "high_increase": -0.002571216249690364,
+        "low_increase": -0.0023086450334406736,
+        "flag": false,
+        "cubic_out_of_gamut_fraction": 0.0018924944265543721
+      }
+    },
+    {
+      "scene": "scene-05",
+      "original": "outputs/morph-showcase/varied-album/inputs/varied-DSC_1109-44.jpg",
+      "export": "outputs/morph-showcase/final-albums/sunlit/scene-05/exports/varied-DSC_1109-44.jpg",
+      "clipping": {
+        "sampled_pixels": 201850,
+        "before": {
+          "high": 0.009804310131285607,
+          "low": 0.0037800346792172404
+        },
+        "after": {
+          "high": 0.0051919742382957644,
+          "low": 0.0
+        },
+        "high_increase": -0.004612335892989843,
+        "low_increase": -0.0037800346792172404,
+        "flag": false,
+        "cubic_out_of_gamut_fraction": 0.002863512509289076
+      }
+    },
+    {
+      "scene": "scene-05",
+      "original": "outputs/morph-showcase/varied-album/inputs/varied-DSC_1111-45.jpg",
+      "export": "outputs/morph-showcase/final-albums/sunlit/scene-05/exports/varied-DSC_1111-45.jpg",
+      "clipping": {
+        "sampled_pixels": 201850,
+        "before": {
+          "high": 0.0049541738915035915,
+          "low": 0.0006836759970274956
+        },
+        "after": {
+          "high": 0.002962595987119148,
+          "low": 0.0
+        },
+        "high_increase": -0.0019915779043844437,
+        "low_increase": -0.0006836759970274956,
+        "flag": false,
+        "cubic_out_of_gamut_fraction": 0.0019519445132524151
+      }
+    },
+    {
+      "scene": "scene-05",
+      "original": "outputs/morph-showcase/varied-album/inputs/varied-DSC_1118-48.jpg",
+      "export": "outputs/morph-showcase/final-albums/sunlit/scene-05/exports/varied-DSC_1118-48.jpg",
+      "clipping": {
+        "sampled_pixels": 201850,
+        "before": {
+          "high": 0.009353480307158782,
+          "low": 0.0032202130294773346
+        },
+        "after": {
+          "high": 0.005291057716125836,
+          "low": 0.0
+        },
+        "high_increase": -0.004062422591032946,
+        "low_increase": -0.0032202130294773346,
+        "flag": false,
+        "cubic_out_of_gamut_fraction": 0.0032350755511518455
+      }
+    },
+    {
+      "scene": "scene-05-tower",
+      "original": "Morph/originals/DSC_1105-42.jpg",
+      "export": "outputs/morph-showcase/final-albums/sunlit/scene-05-tower/exports/DSC_1105-42.jpg",
+      "clipping": {
+        "sampled_pixels": 201850,
+        "before": {
+          "high": 0.0005895466930889274,
+          "low": 0.0017636859053752787
+        },
+        "after": {
+          "high": 0.00047064651969284124,
+          "low": 0.0007332177359425316
+        },
+        "high_increase": -0.00011890017339608619,
+        "low_increase": -0.001030468169432747,
+        "flag": false,
+        "cubic_out_of_gamut_fraction": 0.0003071587812732227
+      }
+    },
+    {
+      "scene": "scene-05-tower",
+      "original": "outputs/morph-showcase/varied-album/inputs/varied-DSC_1088-38.jpg",
+      "export": "outputs/morph-showcase/final-albums/sunlit/scene-05-tower/exports/varied-DSC_1088-38.jpg",
+      "clipping": {
+        "sampled_pixels": 201850,
+        "before": {
+          "high": 0.003983155808768888,
+          "low": 0.0003963339113202873
+        },
+        "after": {
+          "high": 0.0033391132028734206,
+          "low": 0.00024770869457517957
+        },
+        "high_increase": -0.0006440426058954675,
+        "low_increase": -0.00014862521674510775,
+        "flag": false,
+        "cubic_out_of_gamut_fraction": 0.0012286351250928907
+      }
+    },
+    {
+      "scene": "scene-05-tower",
+      "original": "outputs/morph-showcase/varied-album/inputs/varied-DSC_1090-39.jpg",
+      "export": "outputs/morph-showcase/final-albums/sunlit/scene-05-tower/exports/varied-DSC_1090-39.jpg",
+      "clipping": {
+        "sampled_pixels": 201850,
+        "before": {
+          "high": 0.006058954669308893,
+          "low": 0.0010849640822392867
+        },
+        "after": {
+          "high": 0.0051027991082487,
+          "low": 0.00039137973742878375
+        },
+        "high_increase": -0.0009561555610601933,
+        "low_increase": -0.000693584344810503,
+        "flag": false,
+        "cubic_out_of_gamut_fraction": 0.001431756254644538
+      }
+    },
+    {
+      "scene": "scene-05-tower",
+      "original": "outputs/morph-showcase/varied-album/inputs/varied-DSC_1105-42.jpg",
+      "export": "outputs/morph-showcase/final-albums/sunlit/scene-05-tower/exports/varied-DSC_1105-42.jpg",
+      "clipping": {
+        "sampled_pixels": 201850,
+        "before": {
+          "high": 0.0005796383453059202,
+          "low": 0.0017686400792667823
+        },
+        "after": {
+          "high": 0.0004260589546693089,
+          "low": 0.0007233093881595244
+        },
+        "high_increase": -0.00015357939063661132,
+        "low_increase": -0.001045330691107258,
+        "flag": false,
+        "cubic_out_of_gamut_fraction": 0.00028238791181570475
+      }
+    },
+    {
+      "scene": "scene-05-tower",
+      "original": "outputs/morph-showcase/varied-album/inputs/varied-DSC_1114-46.jpg",
+      "export": "outputs/morph-showcase/final-albums/sunlit/scene-05-tower/exports/varied-DSC_1114-46.jpg",
+      "clipping": {
+        "sampled_pixels": 201850,
+        "before": {
+          "high": 0.010750557344562794,
+          "low": 0.0016893732970027248
+        },
+        "after": {
+          "high": 0.004458756502353232,
+          "low": 0.0004954173891503591
+        },
+        "high_increase": -0.006291800842209562,
+        "low_increase": -0.0011939559078523658,
+        "flag": false,
+        "cubic_out_of_gamut_fraction": 0.0032152588555858313
+      }
+    },
+    {
+      "scene": "scene-05-tower",
+      "original": "outputs/morph-showcase/varied-album/inputs/varied-DSC_1116-47.jpg",
+      "export": "outputs/morph-showcase/final-albums/sunlit/scene-05-tower/exports/varied-DSC_1116-47.jpg",
+      "clipping": {
+        "sampled_pixels": 201850,
+        "before": {
+          "high": 0.006559326232350756,
+          "low": 0.0023086450334406736
+        },
+        "after": {
+          "high": 0.005766658409710181,
+          "low": 0.0004805548674758484
+        },
+        "high_increase": -0.000792667822640575,
+        "low_increase": -0.0018280901659648253,
+        "flag": false,
+        "cubic_out_of_gamut_fraction": 0.0016596482536537032
+      }
+    },
+    {
+      "scene": "scene-06-walk",
+      "original": "Morph/originals/DSC_1264-51.jpg",
+      "export": "outputs/morph-showcase/final-albums/sunlit/scene-06-walk/exports/DSC_1264-51.jpg",
+      "clipping": {
+        "sampled_pixels": 201850,
+        "before": {
+          "high": 0.0018280901659648253,
+          "low": 0.001942036165469408
+        },
+        "after": {
+          "high": 0.001273222690116423,
+          "low": 0.0002774337379242011
+        },
+        "high_increase": -0.0005548674758484023,
+        "low_increase": -0.001664602427545207,
+        "flag": false,
+        "cubic_out_of_gamut_fraction": 0.0006093633886549418
+      }
+    },
+    {
+      "scene": "scene-06-walk",
+      "original": "outputs/morph-showcase/varied-album/inputs/varied-DSC_1259-49.jpg",
+      "export": "outputs/morph-showcase/final-albums/sunlit/scene-06-walk/exports/varied-DSC_1259-49.jpg",
+      "clipping": {
+        "sampled_pixels": 201850,
+        "before": {
+          "high": 0.001942036165469408,
+          "low": 0.0036215011146891254
+        },
+        "after": {
+          "high": 0.0008323012137726034,
+          "low": 0.0004904632152588556
+        },
+        "high_increase": -0.0011097349516968045,
+        "low_increase": -0.00313103789943027,
+        "flag": false,
+        "cubic_out_of_gamut_fraction": 0.0010156056477582363
+      }
+    },
+    {
+      "scene": "scene-06-walk",
+      "original": "outputs/morph-showcase/varied-album/inputs/varied-DSC_1261-50.jpg",
+      "export": "outputs/morph-showcase/final-albums/sunlit/scene-06-walk/exports/varied-DSC_1261-50.jpg",
+      "clipping": {
+        "sampled_pixels": 201850,
+        "before": {
+          "high": 0.002060936338865494,
+          "low": 0.006162992321030468
+        },
+        "after": {
+          "high": 0.001540748080257617,
+          "low": 0.0005350507802823879
+        },
+        "high_increase": -0.0005201882586078771,
+        "low_increase": -0.00562794154074808,
+        "flag": false,
+        "cubic_out_of_gamut_fraction": 0.0009858806044092147
+      }
+    },
+    {
+      "scene": "scene-06-walk",
+      "original": "outputs/morph-showcase/varied-album/inputs/varied-DSC_1264-51.jpg",
+      "export": "outputs/morph-showcase/final-albums/sunlit/scene-06-walk/exports/varied-DSC_1264-51.jpg",
+      "clipping": {
+        "sampled_pixels": 201850,
+        "before": {
+          "high": 0.0023036908595491703,
+          "low": 0.0017934109487243001
+        },
+        "after": {
+          "high": 0.0018280901659648253,
+          "low": 0.00029229625959871193
+        },
+        "high_increase": -0.000475600693584345,
+        "low_increase": -0.0015011146891255882,
+        "flag": false,
+        "cubic_out_of_gamut_fraction": 0.0006143175625464454
+      }
+    },
+    {
+      "scene": "scene-06-walk",
+      "original": "outputs/morph-showcase/varied-album/inputs/varied-DSC_1265-52.jpg",
+      "export": "outputs/morph-showcase/final-albums/sunlit/scene-06-walk/exports/varied-DSC_1265-52.jpg",
+      "clipping": {
+        "sampled_pixels": 201850,
+        "before": {
+          "high": 0.010686153083973247,
+          "low": 0.0004062422591032945
+        },
+        "after": {
+          "high": 0.0019024027743373792,
+          "low": 0.00012880852117909338
+        },
+        "high_increase": -0.008783750309635867,
+        "low_increase": -0.0002774337379242011,
+        "flag": false,
+        "cubic_out_of_gamut_fraction": 0.0018974486004458757
+      }
+    },
+    {
+      "scene": "scene-06-walk",
+      "original": "outputs/morph-showcase/varied-album/inputs/varied-DSC_1268-53.jpg",
+      "export": "outputs/morph-showcase/final-albums/sunlit/scene-06-walk/exports/varied-DSC_1268-53.jpg",
+      "clipping": {
+        "sampled_pixels": 201850,
+        "before": {
+          "high": 0.0024424077285112706,
+          "low": 0.0005400049541738916
+        },
+        "after": {
+          "high": 0.0013524894723804806,
+          "low": 0.0001932127817686401
+        },
+        "high_increase": -0.00108991825613079,
+        "low_increase": -0.0003467921724052515,
+        "flag": false,
+        "cubic_out_of_gamut_fraction": 0.0005994550408719346
+      }
+    },
+    {
+      "scene": "scene-06-shade",
+      "original": "Morph/originals/DSC_1273-54.jpg",
+      "export": "outputs/morph-showcase/final-albums/sunlit/scene-06-shade/exports/DSC_1273-54.jpg",
+      "clipping": {
+        "sampled_pixels": 201850,
+        "before": {
+          "high": 0.034748575675006194,
+          "low": 0.0010948724300222938
+        },
+        "after": {
+          "high": 0.029769630914045084,
+          "low": 0.00020312112955164725
+        },
+        "high_increase": -0.004978944760961109,
+        "low_increase": -0.0008917513004706465,
+        "flag": false,
+        "cubic_out_of_gamut_fraction": 0.02150606886301709
+      }
+    },
+    {
+      "scene": "scene-06-shade",
+      "original": "outputs/morph-showcase/varied-album/inputs/varied-DSC_1273-54.jpg",
+      "export": "outputs/morph-showcase/final-albums/sunlit/scene-06-shade/exports/varied-DSC_1273-54.jpg",
+      "clipping": {
+        "sampled_pixels": 201850,
+        "before": {
+          "high": 0.033871686896210056,
+          "low": 0.0011196432994798116
+        },
+        "after": {
+          "high": 0.027852365618033195,
+          "low": 0.00021302947733465444
+        },
+        "high_increase": -0.006019321278176861,
+        "low_increase": -0.0009066138221451572,
+        "flag": false,
+        "cubic_out_of_gamut_fraction": 0.020767896953183058
+      }
+    },
+    {
+      "scene": "scene-06",
+      "original": "Morph/originals/DSC_1286-58.jpg",
+      "export": "outputs/morph-showcase/final-albums/sunlit/scene-06/exports/DSC_1286-58.jpg",
+      "clipping": {
+        "sampled_pixels": 201850,
+        "before": {
+          "high": 0.06859549170175873,
+          "low": 0.0
+        },
+        "after": {
+          "high": 0.06833292048550904,
+          "low": 0.0
+        },
+        "high_increase": -0.00026257121624968793,
+        "low_increase": 0.0,
+        "flag": false,
+        "cubic_out_of_gamut_fraction": 0.024874907109239536
+      }
+    },
+    {
+      "scene": "scene-06",
+      "original": "outputs/morph-showcase/varied-album/inputs/varied-DSC_1280-55.jpg",
+      "export": "outputs/morph-showcase/final-albums/sunlit/scene-06/exports/varied-DSC_1280-55.jpg",
+      "clipping": {
+        "sampled_pixels": 201850,
+        "before": {
+          "high": 0.10715382709933119,
+          "low": 9.908347783007184e-06
+        },
+        "after": {
+          "high": 0.04436462719841466,
+          "low": 4.954173891503592e-06
+        },
+        "high_increase": -0.06278919990091653,
+        "low_increase": -4.954173891503592e-06,
+        "flag": false,
+        "cubic_out_of_gamut_fraction": 0.018726777309883577
+      }
+    },
+    {
+      "scene": "scene-06",
+      "original": "outputs/morph-showcase/varied-album/inputs/varied-DSC_1282-56.jpg",
+      "export": "outputs/morph-showcase/final-albums/sunlit/scene-06/exports/varied-DSC_1282-56.jpg",
+      "clipping": {
+        "sampled_pixels": 201850,
+        "before": {
+          "high": 0.10519692841218727,
+          "low": 0.0
+        },
+        "after": {
+          "high": 0.10407233093881595,
+          "low": 0.0
+        },
+        "high_increase": -0.0011245974733713193,
+        "low_increase": 0.0,
+        "flag": false,
+        "cubic_out_of_gamut_fraction": 0.0404211047807778
+      }
+    },
+    {
+      "scene": "scene-06",
+      "original": "outputs/morph-showcase/varied-album/inputs/varied-DSC_1284-57.jpg",
+      "export": "outputs/morph-showcase/final-albums/sunlit/scene-06/exports/varied-DSC_1284-57.jpg",
+      "clipping": {
+        "sampled_pixels": 201850,
+        "before": {
+          "high": 0.09362893237552639,
+          "low": 0.0
+        },
+        "after": {
+          "high": 0.09113202873420857,
+          "low": 0.0
+        },
+        "high_increase": -0.002496903641317813,
+        "low_increase": 0.0,
+        "flag": false,
+        "cubic_out_of_gamut_fraction": 0.033732970027247955
+      }
+    },
+    {
+      "scene": "scene-06",
+      "original": "outputs/morph-showcase/varied-album/inputs/varied-DSC_1286-58.jpg",
+      "export": "outputs/morph-showcase/final-albums/sunlit/scene-06/exports/varied-DSC_1286-58.jpg",
+      "clipping": {
+        "sampled_pixels": 201850,
+        "before": {
+          "high": 0.06830814961605153,
+          "low": 0.0
+        },
+        "after": {
+          "high": 0.06774337379242011,
+          "low": 0.0
+        },
+        "high_increase": -0.0005647758236314165,
+        "low_increase": 0.0,
+        "flag": false,
+        "cubic_out_of_gamut_fraction": 0.024235818677235572
+      }
+    },
+    {
+      "scene": "scene-06",
+      "original": "outputs/morph-showcase/varied-album/inputs/varied-DSC_1288-59.jpg",
+      "export": "outputs/morph-showcase/final-albums/sunlit/scene-06/exports/varied-DSC_1288-59.jpg",
+      "clipping": {
+        "sampled_pixels": 201850,
+        "before": {
+          "high": 0.260698538518702,
+          "low": 5.449591280653951e-05
+        },
+        "after": {
+          "high": 0.09038394847659152,
+          "low": 2.972504334902155e-05
+        },
+        "high_increase": -0.17031459004211047,
+        "low_increase": -2.4770869457517957e-05,
+        "flag": false,
+        "cubic_out_of_gamut_fraction": 0.07428288332920485
+      }
+    },
+    {
+      "scene": "scene-06",
+      "original": "outputs/morph-showcase/varied-album/inputs/varied-DSC_1291-60.jpg",
+      "export": "outputs/morph-showcase/final-albums/sunlit/scene-06/exports/varied-DSC_1291-60.jpg",
+      "clipping": {
+        "sampled_pixels": 201850,
+        "before": {
+          "high": 0.25202873420857075,
+          "low": 0.00012385434728758978
+        },
+        "after": {
+          "high": 0.10644042605895467,
+          "low": 4.9541738915035914e-05
+        },
+        "high_increase": -0.1455883081496161,
+        "low_increase": -7.431260837255387e-05,
+        "flag": false,
+        "cubic_out_of_gamut_fraction": 0.09748327966311618
+      }
+    },
+    {
+      "scene": "scene-06",
+      "original": "outputs/morph-showcase/varied-album/inputs/varied-DSC_1292-61.jpg",
+      "export": "outputs/morph-showcase/final-albums/sunlit/scene-06/exports/varied-DSC_1292-61.jpg",
+      "clipping": {
+        "sampled_pixels": 201850,
+        "before": {
+          "high": 0.21923210304681695,
+          "low": 9.412930393856825e-05
+        },
+        "after": {
+          "high": 0.215838493931137,
+          "low": 3.9633391132028734e-05
+        },
+        "high_increase": -0.0033936091156799575,
+        "low_increase": -5.4495912806539515e-05,
+        "flag": false,
+        "cubic_out_of_gamut_fraction": 0.06824869952935347
+      }
+    },
+    {
+      "scene": "scene-06",
+      "original": "outputs/morph-showcase/varied-album/inputs/varied-DSC_1293-62.jpg",
+      "export": "outputs/morph-showcase/final-albums/sunlit/scene-06/exports/varied-DSC_1293-62.jpg",
+      "clipping": {
+        "sampled_pixels": 201850,
+        "before": {
+          "high": 0.23507555115184542,
+          "low": 6.935843448105028e-05
+        },
+        "after": {
+          "high": 0.14480554867475848,
+          "low": 1.9816695566014367e-05
+        },
+        "high_increase": -0.09027000247708694,
+        "low_increase": -4.9541738915035914e-05,
+        "flag": false,
+        "cubic_out_of_gamut_fraction": 0.07606143175625464
+      }
+    },
+    {
+      "scene": "scene-06",
+      "original": "outputs/morph-showcase/varied-album/inputs/varied-DSC_1300-63.jpg",
+      "export": "outputs/morph-showcase/final-albums/sunlit/scene-06/exports/varied-DSC_1300-63.jpg",
+      "clipping": {
+        "sampled_pixels": 201850,
+        "before": {
+          "high": 0.13791924696556848,
+          "low": 0.0
+        },
+        "after": {
+          "high": 0.07501114689125589,
+          "low": 0.0
+        },
+        "high_increase": -0.06290810007431259,
+        "low_increase": 0.0,
+        "flag": false,
+        "cubic_out_of_gamut_fraction": 0.05038394847659153
+      }
+    },
+    {
+      "scene": "scene-06",
+      "original": "outputs/morph-showcase/varied-album/inputs/varied-DSC_1302-64.jpg",
+      "export": "outputs/morph-showcase/final-albums/sunlit/scene-06/exports/varied-DSC_1302-64.jpg",
+      "clipping": {
+        "sampled_pixels": 201850,
+        "before": {
+          "high": 0.1427495665097845,
+          "low": 0.0
+        },
+        "after": {
+          "high": 0.08366113450582116,
+          "low": 0.0
+        },
+        "high_increase": -0.059088432003963326,
+        "low_increase": 0.0,
+        "flag": false,
+        "cubic_out_of_gamut_fraction": 0.053718107505573445
+      }
+    },
+    {
+      "scene": "scene-06",
+      "original": "outputs/morph-showcase/varied-album/inputs/varied-DSC_1304-65.jpg",
+      "export": "outputs/morph-showcase/final-albums/sunlit/scene-06/exports/varied-DSC_1304-65.jpg",
+      "clipping": {
+        "sampled_pixels": 201850,
+        "before": {
+          "high": 0.11352489472380481,
+          "low": 0.0
+        },
+        "after": {
+          "high": 0.0361357443646272,
+          "low": 0.0
+        },
+        "high_increase": -0.07738915035917761,
+        "low_increase": 0.0,
+        "flag": false,
+        "cubic_out_of_gamut_fraction": 0.0195888035670052
+      }
+    },
+    {
+      "scene": "scene-07",
+      "original": "Morph/originals/DSC_1320-70.jpg",
+      "export": "outputs/morph-showcase/final-albums/sunlit/scene-07/exports/DSC_1320-70.jpg",
+      "clipping": {
+        "sampled_pixels": 201850,
+        "before": {
+          "high": 0.18886797126579144,
+          "low": 0.0
+        },
+        "after": {
+          "high": 0.165509041367352,
+          "low": 0.0
+        },
+        "high_increase": -0.023358929898439434,
+        "low_increase": 0.0,
+        "flag": false,
+        "cubic_out_of_gamut_fraction": 1.4862521674510775e-05
+      }
+    },
+    {
+      "scene": "scene-07",
+      "original": "outputs/morph-showcase/varied-album/inputs/varied-DSC_1308-66.jpg",
+      "export": "outputs/morph-showcase/final-albums/sunlit/scene-07/exports/varied-DSC_1308-66.jpg",
+      "clipping": {
+        "sampled_pixels": 201850,
+        "before": {
+          "high": 0.19932127817686401,
+          "low": 0.0
+        },
+        "after": {
+          "high": 0.15832053505078028,
+          "low": 0.0
+        },
+        "high_increase": -0.04100074312608373,
+        "low_increase": 0.0,
+        "flag": false,
+        "cubic_out_of_gamut_fraction": 4.458756502353233e-05
+      }
+    },
+    {
+      "scene": "scene-07",
+      "original": "outputs/morph-showcase/varied-album/inputs/varied-DSC_1310-67.jpg",
+      "export": "outputs/morph-showcase/final-albums/sunlit/scene-07/exports/varied-DSC_1310-67.jpg",
+      "clipping": {
+        "sampled_pixels": 201850,
+        "before": {
+          "high": 0.21264305177111717,
+          "low": 0.0
+        },
+        "after": {
+          "high": 0.15636363636363637,
+          "low": 0.0
+        },
+        "high_increase": -0.0562794154074808,
+        "low_increase": 0.0,
+        "flag": false,
+        "cubic_out_of_gamut_fraction": 3.467921724052514e-05
+      }
+    },
+    {
+      "scene": "scene-07",
+      "original": "outputs/morph-showcase/varied-album/inputs/varied-DSC_1312-68.jpg",
+      "export": "outputs/morph-showcase/final-albums/sunlit/scene-07/exports/varied-DSC_1312-68.jpg",
+      "clipping": {
+        "sampled_pixels": 201850,
+        "before": {
+          "high": 0.22060440921476343,
+          "low": 0.0
+        },
+        "after": {
+          "high": 0.16527124102055982,
+          "low": 0.0
+        },
+        "high_increase": -0.055333168194203614,
+        "low_increase": 0.0,
+        "flag": false,
+        "cubic_out_of_gamut_fraction": 1.4862521674510775e-05
+      }
+    },
+    {
+      "scene": "scene-07",
+      "original": "outputs/morph-showcase/varied-album/inputs/varied-DSC_1315-69.jpg",
+      "export": "outputs/morph-showcase/final-albums/sunlit/scene-07/exports/varied-DSC_1315-69.jpg",
+      "clipping": {
+        "sampled_pixels": 201850,
+        "before": {
+          "high": 0.14086698043101312,
+          "low": 1.4862521674510775e-05
+        },
+        "after": {
+          "high": 0.07254396829328709,
+          "low": 0.0
+        },
+        "high_increase": -0.06832301213772603,
+        "low_increase": -1.4862521674510775e-05,
+        "flag": false,
+        "cubic_out_of_gamut_fraction": 0.0
+      }
+    },
+    {
+      "scene": "scene-07",
+      "original": "outputs/morph-showcase/varied-album/inputs/varied-DSC_1320-70.jpg",
+      "export": "outputs/morph-showcase/final-albums/sunlit/scene-07/exports/varied-DSC_1320-70.jpg",
+      "clipping": {
+        "sampled_pixels": 201850,
+        "before": {
+          "high": 0.18904136735199406,
+          "low": 0.0
+        },
+        "after": {
+          "high": 0.16585087936586573,
+          "low": 0.0
+        },
+        "high_increase": -0.023190487986128328,
+        "low_increase": 0.0,
+        "flag": false,
+        "cubic_out_of_gamut_fraction": 3.467921724052514e-05
+      }
+    },
+    {
+      "scene": "scene-07",
+      "original": "outputs/morph-showcase/varied-album/inputs/varied-DSC_1322-71.jpg",
+      "export": "outputs/morph-showcase/final-albums/sunlit/scene-07/exports/varied-DSC_1322-71.jpg",
+      "clipping": {
+        "sampled_pixels": 201850,
+        "before": {
+          "high": 0.13687887044835273,
+          "low": 0.0
+        },
+        "after": {
+          "high": 0.11410453306911073,
+          "low": 0.0
+        },
+        "high_increase": -0.022774337379242005,
+        "low_increase": 0.0,
+        "flag": false,
+        "cubic_out_of_gamut_fraction": 4.954173891503592e-06
+      }
+    },
+    {
+      "scene": "scene-07",
+      "original": "outputs/morph-showcase/varied-album/inputs/varied-DSC_1324-72.jpg",
+      "export": "outputs/morph-showcase/final-albums/sunlit/scene-07/exports/varied-DSC_1324-72.jpg",
+      "clipping": {
+        "sampled_pixels": 201850,
+        "before": {
+          "high": 0.20858062918008421,
+          "low": 0.0
+        },
+        "after": {
+          "high": 0.1002576170423582,
+          "low": 0.0
+        },
+        "high_increase": -0.10832301213772602,
+        "low_increase": 0.0,
+        "flag": false,
+        "cubic_out_of_gamut_fraction": 5.94500866980431e-05
+      }
+    },
+    {
+      "scene": "scene-08",
+      "original": "Morph/originals/DSC_1334-76.jpg",
+      "export": "outputs/morph-showcase/final-albums/sunlit/scene-08/exports/DSC_1334-76.jpg",
+      "clipping": {
+        "sampled_pixels": 201850,
+        "before": {
+          "high": 0.0025068119891008176,
+          "low": 0.0009016596482536537
+        },
+        "after": {
+          "high": 0.001639831558087689,
+          "low": 0.0005598216497399058
+        },
+        "high_increase": -0.0008669804310131287,
+        "low_increase": -0.0003418379985137479,
+        "flag": false,
+        "cubic_out_of_gamut_fraction": 0.0010601932127817686
+      }
+    },
+    {
+      "scene": "scene-08",
+      "original": "outputs/morph-showcase/varied-album/inputs/varied-DSC_1326-73.jpg",
+      "export": "outputs/morph-showcase/final-albums/sunlit/scene-08/exports/varied-DSC_1326-73.jpg",
+      "clipping": {
+        "sampled_pixels": 201850,
+        "before": {
+          "high": 0.008446866485013624,
+          "low": 0.0022789199900916522
+        },
+        "after": {
+          "high": 0.002531582858558335,
+          "low": 0.0003666088679712658
+        },
+        "high_increase": -0.005915283626455289,
+        "low_increase": -0.0019123111221203864,
+        "flag": false,
+        "cubic_out_of_gamut_fraction": 0.0016596482536537032
+      }
+    },
+    {
+      "scene": "scene-08",
+      "original": "outputs/morph-showcase/varied-album/inputs/varied-DSC_1329-74.jpg",
+      "export": "outputs/morph-showcase/final-albums/sunlit/scene-08/exports/varied-DSC_1329-74.jpg",
+      "clipping": {
+        "sampled_pixels": 201850,
+        "before": {
+          "high": 0.007099331186524647,
+          "low": 0.001491206341342581
+        },
+        "after": {
+          "high": 0.0024969036413178105,
+          "low": 0.0005697299975229131
+        },
+        "high_increase": -0.004602427545206836,
+        "low_increase": -0.000921476343819668,
+        "flag": false,
+        "cubic_out_of_gamut_fraction": 0.0010750557344562793
+      }
+    },
+    {
+      "scene": "scene-08",
+      "original": "outputs/morph-showcase/varied-album/inputs/varied-DSC_1330-75.jpg",
+      "export": "outputs/morph-showcase/final-albums/sunlit/scene-08/exports/varied-DSC_1330-75.jpg",
+      "clipping": {
+        "sampled_pixels": 201850,
+        "before": {
+          "high": 0.008298241268268516,
+          "low": 0.0013673519940549913
+        },
+        "after": {
+          "high": 0.003869209809264305,
+          "low": 0.0004954173891503591
+        },
+        "high_increase": -0.004429031459004211,
+        "low_increase": -0.0008719346049046321,
+        "flag": false,
+        "cubic_out_of_gamut_fraction": 0.002392865989596235
+      }
+    },
+    {
+      "scene": "scene-08",
+      "original": "outputs/morph-showcase/varied-album/inputs/varied-DSC_1334-76.jpg",
+      "export": "outputs/morph-showcase/final-albums/sunlit/scene-08/exports/varied-DSC_1334-76.jpg",
+      "clipping": {
+        "sampled_pixels": 201850,
+        "before": {
+          "high": 0.0023829576418132278,
+          "low": 0.0008867971265791429
+        },
+        "after": {
+          "high": 0.0011939559078523656,
+          "low": 0.000594500866980431
+        },
+        "high_increase": -0.0011890017339608622,
+        "low_increase": -0.00029229625959871193,
+        "flag": false,
+        "cubic_out_of_gamut_fraction": 0.0003418379985137478
+      }
+    },
+    {
+      "scene": "scene-08",
+      "original": "outputs/morph-showcase/varied-album/inputs/varied-DSC_1335-77.jpg",
+      "export": "outputs/morph-showcase/final-albums/sunlit/scene-08/exports/varied-DSC_1335-77.jpg",
+      "clipping": {
+        "sampled_pixels": 201850,
+        "before": {
+          "high": 0.0020460738171909835,
+          "low": 0.0011642308645033442
+        },
+        "after": {
+          "high": 0.0014713896457765668,
+          "low": 0.0005697299975229131
+        },
+        "high_increase": -0.0005746841714144167,
+        "low_increase": -0.0005945008669804311,
+        "flag": false,
+        "cubic_out_of_gamut_fraction": 0.00012385434728758978
+      }
+    },
+    {
+      "scene": "scene-08",
+      "original": "outputs/morph-showcase/varied-album/inputs/varied-DSC_1337-78.jpg",
+      "export": "outputs/morph-showcase/final-albums/sunlit/scene-08/exports/varied-DSC_1337-78.jpg",
+      "clipping": {
+        "sampled_pixels": 201850,
+        "before": {
+          "high": 0.002160019816695566,
+          "low": 0.0011642308645033442
+        },
+        "after": {
+          "high": 0.0014020312112955164,
+          "low": 0.0006093633886549418
+        },
+        "high_increase": -0.0007579886054000498,
+        "low_increase": -0.0005548674758484024,
+        "flag": false,
+        "cubic_out_of_gamut_fraction": 0.0008075303443150854
+      }
+    },
+    {
+      "scene": "scene-08-tower",
+      "original": "Morph/originals/DSC_1342-81.jpg",
+      "export": "outputs/morph-showcase/final-albums/sunlit/scene-08-tower/exports/DSC_1342-81.jpg",
+      "clipping": {
+        "sampled_pixels": 201850,
+        "before": {
+          "high": 0.0012484518206589052,
+          "low": 0.002090661382214516
+        },
+        "after": {
+          "high": 0.0005598216497399058,
+          "low": 0.0006935843448105029
+        },
+        "high_increase": -0.0006886301709189994,
+        "low_increase": -0.001397077037404013,
+        "flag": false,
+        "cubic_out_of_gamut_fraction": 0.00021798365122615803
+      }
+    },
+    {
+      "scene": "scene-08-tower",
+      "original": "outputs/morph-showcase/varied-album/inputs/varied-DSC_1339-79.jpg",
+      "export": "outputs/morph-showcase/final-albums/sunlit/scene-08-tower/exports/varied-DSC_1339-79.jpg",
+      "clipping": {
+        "sampled_pixels": 201850,
+        "before": {
+          "high": 0.0008570720832301214,
+          "low": 0.002283874163983156
+        },
+        "after": {
+          "high": 0.0004260589546693089,
+          "low": 0.000812484518206589
+        },
+        "high_increase": -0.00043101312856081255,
+        "low_increase": -0.001471389645776567,
+        "flag": false,
+        "cubic_out_of_gamut_fraction": 0.00015853356452811494
+      }
+    },
+    {
+      "scene": "scene-08-tower",
+      "original": "outputs/morph-showcase/varied-album/inputs/varied-DSC_1340-80.jpg",
+      "export": "outputs/morph-showcase/final-albums/sunlit/scene-08-tower/exports/varied-DSC_1340-80.jpg",
+      "clipping": {
+        "sampled_pixels": 201850,
+        "before": {
+          "high": 0.0010948724300222938,
+          "low": 0.002368095120138717
+        },
+        "after": {
+          "high": 0.0005400049541738916,
+          "low": 0.0008273470398810998
+        },
+        "high_increase": -0.0005548674758484023,
+        "low_increase": -0.0015407480802576172,
+        "flag": false,
+        "cubic_out_of_gamut_fraction": 0.00020312112955164725
+      }
+    },
+    {
+      "scene": "scene-08-tower",
+      "original": "outputs/morph-showcase/varied-album/inputs/varied-DSC_1342-81.jpg",
+      "export": "outputs/morph-showcase/final-albums/sunlit/scene-08-tower/exports/varied-DSC_1342-81.jpg",
+      "clipping": {
+        "sampled_pixels": 201850,
+        "before": {
+          "high": 0.001104780777805301,
+          "low": 0.0020807530344315087
+        },
+        "after": {
+          "high": 0.0005152340847163735,
+          "low": 0.00070349269259351
+        },
+        "high_increase": -0.0005895466930889274,
+        "low_increase": -0.0013772603418379988,
+        "flag": false,
+        "cubic_out_of_gamut_fraction": 0.0001882586078771365
+      }
+    },
+    {
+      "scene": "scene-08-tower",
+      "original": "outputs/morph-showcase/varied-album/inputs/varied-DSC_1344-82.jpg",
+      "export": "outputs/morph-showcase/final-albums/sunlit/scene-08-tower/exports/varied-DSC_1344-82.jpg",
+      "clipping": {
+        "sampled_pixels": 201850,
+        "before": {
+          "high": 0.002536537032449839,
+          "low": 0.004949219717612088
+        },
+        "after": {
+          "high": 0.0010205598216497399,
+          "low": 0.001189001733960862
+        },
+        "high_increase": -0.0015159772108000991,
+        "low_increase": -0.003760217983651226,
+        "flag": false,
+        "cubic_out_of_gamut_fraction": 0.00026752539014119394
+      }
+    },
+    {
+      "scene": "scene-09",
+      "original": "Morph/originals/DSC_1363-85.jpg",
+      "export": "outputs/morph-showcase/final-albums/sunlit/scene-09/exports/DSC_1363-85.jpg",
+      "clipping": {
+        "sampled_pixels": 201850,
+        "before": {
+          "high": 0.0026653455536289326,
+          "low": 0.0018726777309883576
+        },
+        "after": {
+          "high": 0.0015952439930641566,
+          "low": 0.0001783502600941293
+        },
+        "high_increase": -0.001070101560564776,
+        "low_increase": -0.0016943274708942284,
+        "flag": false,
+        "cubic_out_of_gamut_fraction": 0.0002972504334902155
+      }
+    },
+    {
+      "scene": "scene-09",
+      "original": "outputs/morph-showcase/varied-album/inputs/varied-DSC_1360-83.jpg",
+      "export": "outputs/morph-showcase/final-albums/sunlit/scene-09/exports/varied-DSC_1360-83.jpg",
+      "clipping": {
+        "sampled_pixels": 201850,
+        "before": {
+          "high": 0.005647758236314094,
+          "low": 0.0017636859053752787
+        },
+        "after": {
+          "high": 0.0030418627693832054,
+          "low": 0.0001882586078771365
+        },
+        "high_increase": -0.002605895466930889,
+        "low_increase": -0.0015754272974981423,
+        "flag": false,
+        "cubic_out_of_gamut_fraction": 0.0003170671290562299
+      }
+    },
+    {
+      "scene": "scene-09",
+      "original": "outputs/morph-showcase/varied-album/inputs/varied-DSC_1362-84.jpg",
+      "export": "outputs/morph-showcase/final-albums/sunlit/scene-09/exports/varied-DSC_1362-84.jpg",
+      "clipping": {
+        "sampled_pixels": 201850,
+        "before": {
+          "high": 0.004141689373297002,
+          "low": 0.0017785484270497894
+        },
+        "after": {
+          "high": 0.00313103789943027,
+          "low": 0.0001882586078771365
+        },
+        "high_increase": -0.0010106514738667323,
+        "low_increase": -0.0015902898191726528,
+        "flag": false,
+        "cubic_out_of_gamut_fraction": 0.0002972504334902155
+      }
+    },
+    {
+      "scene": "scene-09",
+      "original": "outputs/morph-showcase/varied-album/inputs/varied-DSC_1363-85.jpg",
+      "export": "outputs/morph-showcase/final-albums/sunlit/scene-09/exports/varied-DSC_1363-85.jpg",
+      "clipping": {
+        "sampled_pixels": 201850,
+        "before": {
+          "high": 0.005538766410701015,
+          "low": 0.001956898687143919
+        },
+        "after": {
+          "high": 0.004602427545206836,
+          "low": 0.00019816695566014366
+        },
+        "high_increase": -0.000936338865494179,
+        "low_increase": -0.0017587317314837752,
+        "flag": false,
+        "cubic_out_of_gamut_fraction": 0.0003418379985137478
+      }
+    },
+    {
+      "scene": "scene-09",
+      "original": "outputs/morph-showcase/varied-album/inputs/varied-DSC_1365-86.jpg",
+      "export": "outputs/morph-showcase/final-albums/sunlit/scene-09/exports/varied-DSC_1365-86.jpg",
+      "clipping": {
+        "sampled_pixels": 201850,
+        "before": {
+          "high": 0.002254149120634134,
+          "low": 0.002962595987119148
+        },
+        "after": {
+          "high": 0.0006638593014614813,
+          "low": 0.0004756006935843448
+        },
+        "high_increase": -0.0015902898191726528,
+        "low_increase": -0.002486995293534803,
+        "flag": false,
+        "cubic_out_of_gamut_fraction": 0.0010205598216497399
+      }
+    },
+    {
+      "scene": "scene-09",
+      "original": "outputs/morph-showcase/varied-album/inputs/varied-DSC_1367-87.jpg",
+      "export": "outputs/morph-showcase/final-albums/sunlit/scene-09/exports/varied-DSC_1367-87.jpg",
+      "clipping": {
+        "sampled_pixels": 201850,
+        "before": {
+          "high": 0.0031013128560812486,
+          "low": 0.0030914045082982415
+        },
+        "after": {
+          "high": 0.0008025761704235819,
+          "low": 0.0005499133019568987
+        },
+        "high_increase": -0.002298736685657667,
+        "low_increase": -0.0025414912063413428,
+        "flag": false,
+        "cubic_out_of_gamut_fraction": 0.0011345058211543226
+      }
+    },
+    {
+      "scene": "scene-09",
+      "original": "outputs/morph-showcase/varied-album/inputs/varied-DSC_1378-88.jpg",
+      "export": "outputs/morph-showcase/final-albums/sunlit/scene-09/exports/varied-DSC_1378-88.jpg",
+      "clipping": {
+        "sampled_pixels": 201850,
+        "before": {
+          "high": 0.019628436958137232,
+          "low": 0.003884072330938816
+        },
+        "after": {
+          "high": 0.0015159772108000991,
+          "low": 0.0003567005201882586
+        },
+        "high_increase": -0.018112459747337134,
+        "low_increase": -0.0035273718107505575,
+        "flag": false,
+        "cubic_out_of_gamut_fraction": 0.0018231359920733217
+      }
+    }
+  ]
+}

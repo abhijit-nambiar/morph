@@ -277,8 +277,8 @@ def main():
     ap=argparse.ArgumentParser(description=__doc__); sub=ap.add_subparsers(dest='cmd',required=True)
     p=sub.add_parser('group');p.add_argument('folder');p.add_argument('--method',choices=['appearance','chronological','hybrid'],default='appearance');p.add_argument('--scenes',type=int,default=4);p.add_argument('--gap-minutes',type=float,default=5);p.add_argument('--approx-photos-per-group',type=int,default=8);p.add_argument('--out',required=True);p.add_argument('--overwrite',action='store_true')
     p=sub.add_parser('target');p.add_argument('original');p.add_argument('--preset',choices=PRESETS,default='warm');p.add_argument('--recipe');p.add_argument('--out',required=True);p.add_argument('--overwrite',action='store_true')
-    p=sub.add_parser('fit');p.add_argument('original');p.add_argument('target');p.add_argument('--out',required=True);p.add_argument('--size',type=int,default=512);p.add_argument('--iterations',type=int,default=45);p.add_argument('--solver',choices=['pattern','gauss-newton','least-squares'],default='pattern');p.add_argument('--renderer',choices=['global','selective','gamut','polynomial','spatial','grid'],default='global');p.add_argument('--regularization',type=float,default=0);p.add_argument('--overwrite',action='store_true')
-    p=sub.add_parser('album');p.add_argument('groups');p.add_argument('--preset',choices=PRESETS,default='warm');p.add_argument('--recipe');p.add_argument('--target-engine',choices=['morph','pillow','pillow-selective','pillow-soft','spatial-soft','gaussian-soft'],default='morph');p.add_argument('--target-settings',help='JSON controls for the independent pillow-soft target');p.add_argument('--targets',help='Folder containing a same-name edited target for every group representative');p.add_argument('--strength',type=float,default=1.0,help='Applied recipe strength from 0 (neutral) to 1 (fully fitted)');p.add_argument('--out',required=True);p.add_argument('--size',type=int,default=512);p.add_argument('--iterations',type=int,default=45);p.add_argument('--solver',choices=['pattern','gauss-newton','least-squares'],default='pattern');p.add_argument('--renderer',choices=['global','selective','gamut','polynomial','spatial','grid'],default='global');p.add_argument('--regularization',type=float,default=0)
+    p=sub.add_parser('fit');p.add_argument('original');p.add_argument('target');p.add_argument('--out',required=True);p.add_argument('--size',type=int,default=512);p.add_argument('--iterations',type=int,default=45);p.add_argument('--solver',choices=['pattern','gauss-newton','least-squares'],default='pattern');p.add_argument('--renderer',choices=['global','selective','gamut','polynomial','cubic','spatial','grid'],default='global');p.add_argument('--regularization',type=float,default=0);p.add_argument('--overwrite',action='store_true')
+    p=sub.add_parser('album');p.add_argument('groups');p.add_argument('--preset',choices=PRESETS,default='warm');p.add_argument('--recipe');p.add_argument('--target-engine',choices=['morph','pillow','pillow-selective','pillow-soft','spatial-soft','gaussian-soft'],default='morph');p.add_argument('--target-settings',help='JSON controls for the independent pillow-soft target');p.add_argument('--targets',help='Folder containing a same-name edited target for every group representative');p.add_argument('--strength',type=float,default=1.0,help='Applied recipe strength from 0 (neutral) to 1 (fully fitted)');p.add_argument('--out',required=True);p.add_argument('--size',type=int,default=512);p.add_argument('--iterations',type=int,default=45);p.add_argument('--solver',choices=['pattern','gauss-newton','least-squares'],default='pattern');p.add_argument('--renderer',choices=['global','selective','gamut','polynomial','cubic','spatial','grid'],default='global');p.add_argument('--regularization',type=float,default=0)
     p=sub.add_parser('apply');p.add_argument('groups');p.add_argument('fits',help='Album output folder containing scene fit.json files');p.add_argument('--out',required=True);p.add_argument('--strength',type=float,help='Override recorded strength, from 0 to 1');p.add_argument('--local-strength',type=float,help='Scale only grid local-light weights from 0 to 1');p.add_argument('--corrections',help='Optional JSON corrections at album, scene, and photo levels');p.add_argument('--preview-samples',type=int,default=0,help='Render only up to N full-resolution photos per scene for review');p.add_argument('--allow-changed-inputs',action='store_true',help='Explicitly allow changed photos or scene membership when replaying a fit');p.add_argument('--overwrite',action='store_true')
     p=sub.add_parser('evaluate');p.add_argument('originals');p.add_argument('edits');p.add_argument('--out',required=True);p.add_argument('--limit',type=int,default=10);p.add_argument('--size',type=int,default=512);p.add_argument('--overwrite',action='store_true')
     sub.add_parser('prompt-help',help='List supported offline photographic prompt phrases')
@@ -295,13 +295,14 @@ def main():
     a=ap.parse_args()
     if a.cmd in ('fit','album'):
         if not math.isfinite(a.regularization) or a.regularization<0:raise ValueError('regularization must be nonnegative and finite')
-        if a.renderer in ('polynomial','spatial','grid'):
+        if a.renderer in ('polynomial','cubic','spatial','grid'):
             if a.solver!='least-squares':raise ValueError(a.renderer+' renderer requires --solver least-squares')
             if a.renderer=='polynomial':import poly_color as model
+            elif a.renderer=='cubic':import cubic_color as model
             elif a.renderer=='spatial':import spatial_light as model
             else:import grid_light as model
             model_render=model.render;model_vec=model.deserialize;model_recipe=model.serialize
-            model_fit=(lambda x,y:model.fit(x,y,regularization=a.regularization)) if a.renderer=='polynomial' else (lambda x,y:model.fit_with_metrics(x,y,regularization=a.regularization))
+            model_fit=(lambda x,y:model.fit(x,y,regularization=a.regularization)) if a.renderer in ('polynomial','cubic') else (lambda x,y:model.fit_with_metrics(x,y,regularization=a.regularization))
         elif a.renderer in ('selective','gamut'):
             if a.solver!='gauss-newton':raise ValueError(a.renderer+' renderer requires --solver gauss-newton')
             if a.renderer=='selective':
@@ -313,8 +314,8 @@ def main():
                 model_fit=lambda x,y:model.fit(x,y,iterations=a.iterations)
             model_render=model.render;model_vec=model.vec;model_recipe=model.recipe
         else:
-            if a.regularization:raise ValueError('regularization is only supported by selective, polynomial, spatial and grid renderers')
-            if a.solver=='least-squares':raise ValueError('least-squares solver requires the polynomial, spatial or grid renderer')
+            if a.regularization:raise ValueError('regularization is only supported by selective, polynomial, cubic, spatial and grid renderers')
+            if a.solver=='least-squares':raise ValueError('least-squares solver requires the polynomial, cubic, spatial or grid renderer')
             model_render=render;model_vec=vec;model_recipe=recipe
             model_fit=lambda x,y:run_fit(x,y,iterations=a.iterations,method=a.solver)
     if a.cmd=='prompt-help':
@@ -363,9 +364,9 @@ def main():
                 if a.target_local_light is not None or a.target_light_center is not None:raise ValueError('Local lighting prompt conflicts with explicit local strength or center')
                 local_light=local_instruction['strength'];light_center=local_instruction['center']
         else:soft_custom=soft_settings(a.preset,json.loads(Path(a.target_settings).read_text())) if a.target_settings else None
-        if a.renderer in ('polynomial','spatial','grid') and a.target_engine=='morph' and not a.recipe and not a.targets:raise ValueError(a.renderer+' target generation requires --recipe or an independent target engine')
+        if a.renderer in ('polynomial','cubic','spatial','grid') and a.target_engine=='morph' and not a.recipe and not a.targets:raise ValueError(a.renderer+' target generation requires --recipe or an independent target engine')
         data=json.loads(Path(a.groups).read_text()); groups=validate_groups(data)
-        target=model_vec(json.loads(Path(a.recipe).read_text())) if a.recipe else (model.identity() if a.renderer in ('polynomial','spatial','grid') else model_vec(PRESETS[a.preset]));out=Path(a.out); records=[];review=[]
+        target=model_vec(json.loads(Path(a.recipe).read_text())) if a.recipe else (model.identity() if a.renderer in ('polynomial','cubic','spatial','grid') else model_vec(PRESETS[a.preset]));out=Path(a.out); records=[];review=[]
         samples={g['id']:preview_samples(g,a.preview_samples) for g in groups} if a.preview_only and a.preview_samples else {}
         inputs=[photo for g in groups for photo in g['photos']]+[a.groups]
         if a.recipe:inputs.append(a.recipe)
@@ -424,9 +425,8 @@ def main():
             selected=samples.get(g['id'],[]) if a.preview_only else g['photos']
             for path in selected:
                 src=Path(path);image=load(src);diag=clipping_diagnostic(image,applied,renderer=model_render)
-                if a.renderer=='polynomial':
-                    import poly_color
-                    diag['polynomial_out_of_gamut_fraction']=poly_color.out_of_gamut(image,applied)
+                if a.renderer in ('polynomial','cubic'):
+                    diag[a.renderer+'_out_of_gamut_fraction']=model.out_of_gamut(image,applied)
                 elif a.renderer=='grid':
                     import grid_light
                     diag['grid_out_of_gamut_fraction']=grid_light.out_of_gamut(image,applied)
@@ -486,7 +486,7 @@ def main():
                 validation='legacy-unverified';warnings.warn('Saved fit has no source checksums; cannot verify inputs: '+g['id'])
             else:
                 if not isinstance(old_manifest,list):raise ValueError('Invalid saved source manifest: '+g['id'])
-                saved={r['path']:r['sha256'] for r in old_manifest};current={str(Path(p).resolve()):p for p in g['photos']}
+                saved={str(Path(r['path']).resolve()):r['sha256'] for r in old_manifest};current={str(Path(p).resolve()):p for p in g['photos']}
                 differences=[]
                 if len(saved)!=len(old_manifest) or set(saved)!=set(current):differences.append('scene membership changed')
                 for path in set(saved)&set(current):
@@ -503,6 +503,9 @@ def main():
             elif renderer=='polynomial':
                 import poly_color as model
                 render_fn=model.render;decode=model.deserialize;encode=model.serialize
+            elif renderer=='cubic':
+                import cubic_color as model
+                render_fn=model.render;decode=model.deserialize;encode=model.serialize
             elif renderer=='spatial':
                 import spatial_light as model
                 render_fn=model.render;decode=model.deserialize;encode=model.serialize
@@ -510,7 +513,7 @@ def main():
                 import grid_light as model
                 render_fn=model.render;decode=model.deserialize;encode=model.serialize
             else:raise ValueError('Unknown saved renderer: '+str(renderer))
-            if renderer in ('polynomial','spatial','grid'):
+            if renderer in ('polynomial','cubic','spatial','grid'):
                 import gamut_renderer as correction_model
                 correction_fn=correction_model.render;correction_decode=correction_model.vec;correction_encode=correction_model.recipe;correction_name='gamut'
             else:correction_fn=render_fn;correction_decode=decode;correction_encode=encode;correction_name=renderer
@@ -555,11 +558,12 @@ def main():
                         return image
                     composed.render_tile=composed_tile
                 diagnostic=clipping_diagnostic(x,applied,renderer=composed)
-                if renderer=='polynomial':
-                    import poly_color
+                if renderer in ('polynomial','cubic'):
+                    import poly_color,cubic_color
+                    color_model=cubic_color if renderer=='cubic' else poly_color
                     stride=max(1,max(x.shape[:2])//512);sample=x[::stride,::stride]
                     precorrected=correction_fn(sample,photo_vector) if photo_vector is not None and np.any(photo_vector) else sample
-                    diagnostic['polynomial_out_of_gamut_fraction']=poly_color.out_of_gamut(precorrected,applied)
+                    diagnostic[renderer+'_out_of_gamut_fraction']=color_model.out_of_gamut(precorrected,applied)
                 elif renderer=='grid':
                     import grid_light
                     pre=(lambda sample:correction_fn(sample,photo_vector)) if photo_vector is not None and np.any(photo_vector) else None

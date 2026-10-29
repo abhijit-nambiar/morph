@@ -1,0 +1,4661 @@
+{
+  "kind": "matched-scene-normalization-v1",
+  "scope": "Geometrically verified SIFT patch matches and robust logit-color fitting to one intended reference per scene. No other clean counterparts, perturbation parameters or evaluation targets are used. Weakly connected photos require review. Reference exposure/color defines the desired scene baseline; shared style fitting provides the subsequent album look. This does not recover clipped detail or local illumination changes.",
+  "size": 1000,
+  "source_manifest": {
+    "outputs/morph-showcase/varied-album/inputs/varied-DSC_0901-1.jpg": "837edfea47045c9ad9684e6a0b2dcf20c694d6f81d54f6cda767a57af64d7dfd",
+    "outputs/morph-showcase/varied-album/inputs/varied-DSC_0904-2.jpg": "a287c7848ea4dc6ecbe3f2200338ea73bb7a8c2c1a2e1b28afe50dabfb892fb7",
+    "outputs/morph-showcase/varied-album/inputs/varied-DSC_0905-3.jpg": "08d96626f5304f862c23a692955db0610f54a6d5a44e93510810ea320fc222cd",
+    "outputs/morph-showcase/varied-album/inputs/varied-DSC_0906-4.jpg": "8eb2d7ac9f6f9bb20197ce33f631a4751b035d99663df010451b17951fc10a60",
+    "outputs/morph-showcase/varied-album/inputs/varied-DSC_0914-5.jpg": "3e0da2316e95e8332ec7ed92916f053b3760a0f4a52be4264fd1623c0a495315",
+    "outputs/morph-showcase/varied-album/inputs/varied-DSC_0916-6.jpg": "d8b4d9aa9979d5058d2511b3f77eae1c234bde5dd1df71731d2ea52c4b5aec92",
+    "outputs/morph-showcase/varied-album/inputs/varied-DSC_0919-7.jpg": "70ebe8f6bc843335255aed9a9b77ce7967371d64607ef3a68fe457e941594955",
+    "outputs/morph-showcase/varied-album/inputs/varied-DSC_0921-8.jpg": "e6f5fd775eae529459fc28a72a1bf85059946da8db05854e2592486f1b5624c6",
+    "outputs/morph-showcase/varied-album/inputs/varied-DSC_0925-9.jpg": "3c14dbdcfd4d5593e0881652e0042eebf4844c3ce40e93ee48574c9a921cbc9f",
+    "outputs/morph-showcase/varied-album/inputs/varied-DSC_0928-10.jpg": "0bd8bd4c2db78d6c508a3e18d40bd139eb6fd774f3ec314051e84ab1bfef77ff",
+    "outputs/morph-showcase/varied-album/inputs/varied-DSC_0930-11.jpg": "3a9234b945bc3dd0d80ae3d596d84b22ed44b1b84a9211b00641dfd702874bc1",
+    "outputs/morph-showcase/varied-album/inputs/varied-DSC_0935-12.jpg": "5eec67f0254d71aff85179b8c130ba48a256d4b3d0356a098fa5675dfaceec8e",
+    "outputs/morph-showcase/varied-album/inputs/varied-DSC_0947-13.jpg": "137f7772d28c9fbc4a8b314e92569111729c51e76cf21153f4a77194373ebd0c",
+    "outputs/morph-showcase/varied-album/inputs/varied-DSC_0948-14.jpg": "54cf81dba51ee9cc2adac3249ed5e416415814a32d5446fe90a2ab37460fcd89",
+    "outputs/morph-showcase/varied-album/inputs/varied-DSC_0958-15.jpg": "b3c7db8c2a31a47f42e4d2612569f6a4249a72147af167cb41d2e7a4a81cf0ad",
+    "outputs/morph-showcase/varied-album/inputs/varied-DSC_0970-17.jpg": "770d8c599469efa9368ed12ae763fb5c1b7b11e23c8f0316674c64b1f6d97112",
+    "outputs/morph-showcase/varied-album/inputs/varied-DSC_0974-18.jpg": "3af94ab102e695de7789270890984139d26477409b4e515bfd454cc6b2ae1df5",
+    "outputs/morph-showcase/varied-album/inputs/varied-DSC_0987-19.jpg": "651614e5c142c66010ac696eb6235150fb450ae8bbbd2a1ee0bf906ff408b894",
+    "outputs/morph-showcase/varied-album/inputs/varied-DSC_0965-16.jpg": "2881444fb58d2da8954d8497f6408f595e5e69edbd70b4e750883dcca52b4aa8",
+    "outputs/morph-showcase/varied-album/inputs/varied-DSC_0990-20.jpg": "e38ab2d0d9d497fbf2dd61e22008e1cae23cf3df072ce35fede5a2c93662a733",
+    "outputs/morph-showcase/varied-album/inputs/varied-DSC_0993-21.jpg": "13e4e3201259c515c1feb261f1b448bb810b1f6e33c0813ba6cd60de79c1b526",
+    "outputs/morph-showcase/varied-album/inputs/varied-DSC_0995-22.jpg": "4c783685b27d14ea3e883e35d3f433325878d7f0eaee01c9035584f69ec8d463",
+    "outputs/morph-showcase/varied-album/inputs/varied-DSC_0997-23.jpg": "59f7744693bd3539e2be39ac83df6fcf4bb1b62d6d1af738613c275374e9222d",
+    "outputs/morph-showcase/varied-album/inputs/varied-DSC_0998-24.jpg": "609ed978f9194961f94be1c4c2ca521881ea9f8b98d229e2a84fc5e910c2ba74",
+    "outputs/morph-showcase/varied-album/inputs/varied-DSC_1012-25.jpg": "40e7ebd60fa794103766652592dbb3f19250421ae7b9353b5e32a3ddd631439c",
+    "outputs/morph-showcase/varied-album/inputs/varied-DSC_1021-26.jpg": "e456289821b78475551e9a50062708a277fbdd5bc4abb04ad44ae9c2a024b8d2",
+    "outputs/morph-showcase/varied-album/inputs/varied-DSC_1026-27.jpg": "1b0ca22cd3ce5f557f44c80bfeedd0f8e25b1bb3424cb4b4250bb53a6f9921f1",
+    "outputs/morph-showcase/varied-album/inputs/varied-DSC_1028-28.jpg": "fe392a798c19de8a84e8af83ac76fcdb670883450b2d4e75a5aff193682829dc",
+    "outputs/morph-showcase/varied-album/inputs/varied-DSC_1030-29.jpg": "72374ba92717dfc61da3d09e529c993fa9d111d7c86a354a444c80d63b571ee1",
+    "outputs/morph-showcase/varied-album/inputs/varied-DSC_1033-30.jpg": "79292c1f031d7bd8a34abf44a1c1a298dbb23f03b20ce78e36fd486384752348",
+    "outputs/morph-showcase/varied-album/inputs/varied-DSC_1037-31.jpg": "39de3d7f0bafcb76f18c723f91ae9e0a0b7bd2e6349373ea2422e46a5eca4b54",
+    "outputs/morph-showcase/varied-album/inputs/varied-DSC_1038-32.jpg": "ed55ac8eb43e8f1312fb6c4cc4c6d1959f08e95f71ad5da76cfb9ed9f2c01e87",
+    "outputs/morph-showcase/varied-album/inputs/varied-DSC_1054-33.jpg": "9c9808b5dc4248e5e5fd7e5ed1e2d406c843f19604d7d1336895c0a6725d44c5",
+    "outputs/morph-showcase/varied-album/inputs/varied-DSC_1059-34.jpg": "a0ae8e7d5a5cf46056132009f76e6a5ca665a4f8270fa891d3feeaf710391433",
+    "outputs/morph-showcase/varied-album/inputs/varied-DSC_1070-35.jpg": "7fde341535ff6dd53caf270a3cb04b5db74430c119f37360d9f18fd2e31f4897",
+    "outputs/morph-showcase/varied-album/inputs/varied-DSC_1074-36.jpg": "f9d873992a69ca3499d1771d8c9ddaeb177eafc758ea6acb381136d4fcd01914",
+    "outputs/morph-showcase/varied-album/inputs/varied-DSC_1083-37.jpg": "289fbb99ad97580486ade919ae448f598391ee67b00c3001392cfc5121566008",
+    "outputs/morph-showcase/varied-album/inputs/varied-DSC_1096-40.jpg": "ffef41cfeaf832e925b15a29f22c6721f5bdd9ebc92263a34c6a99eb3ef433db",
+    "outputs/morph-showcase/varied-album/inputs/varied-DSC_1100-41.jpg": "1c182d877a4d2efd57bb9f32ca35c839515a1b9e0213bd463b0770362a16b435",
+    "outputs/morph-showcase/varied-album/inputs/varied-DSC_1106-43.jpg": "27cbb9d9b621e2d0db730d71be215e3c4b189d47bfb971a59a344c5fd17c7b95",
+    "outputs/morph-showcase/varied-album/inputs/varied-DSC_1109-44.jpg": "b9c6944904728694f31994e05e6e8004c7d1832d5e70a603e2a4cb9220080c42",
+    "outputs/morph-showcase/varied-album/inputs/varied-DSC_1111-45.jpg": "1a3f7261ba9466803bfccc42608e8ef507d1c10976ce4f0be14e3cdbc6afb240",
+    "outputs/morph-showcase/varied-album/inputs/varied-DSC_1118-48.jpg": "adf2425b1d1fe1369ee2bf026464350337fbb19742b0845bfa60f6ecd60324b1",
+    "outputs/morph-showcase/varied-album/inputs/varied-DSC_1088-38.jpg": "14070a2a18e1e5b59bfcfcfca221ffa5fda26b04a4eb443f834d498081232031",
+    "outputs/morph-showcase/varied-album/inputs/varied-DSC_1090-39.jpg": "74e917ef396cee98c810b7c3c9749667a36a299448b496eb66a6969b3429eedf",
+    "outputs/morph-showcase/varied-album/inputs/varied-DSC_1105-42.jpg": "2bf9cb19cb72a024e421bfdbb959c72a0a695453c2c53866e745a02684012296",
+    "outputs/morph-showcase/varied-album/inputs/varied-DSC_1114-46.jpg": "26ae12640186f5ff6ae0851e7411969447feea9bf91fe4a2b9a1bdbaf28b8d1f",
+    "outputs/morph-showcase/varied-album/inputs/varied-DSC_1116-47.jpg": "1fffbcb13a3e339417c63fcf53eb38b78796585616d85e59dc25858ba9f0b4a0",
+    "outputs/morph-showcase/varied-album/inputs/varied-DSC_1259-49.jpg": "90ecf4742db146a661c898f31a30ac13ef4ff0ddd68f1d5883d12cb46694e161",
+    "outputs/morph-showcase/varied-album/inputs/varied-DSC_1261-50.jpg": "de9213a3cae59cea1738fa42b3d843d69121ddbfa99369c04d3f59199df43e36",
+    "outputs/morph-showcase/varied-album/inputs/varied-DSC_1264-51.jpg": "a93f50e09f53ac86425d31f292b952c7e591459b478cfe5d5623cd2e32306ac0",
+    "outputs/morph-showcase/varied-album/inputs/varied-DSC_1265-52.jpg": "764a61f5c4c6f8e1f7e944cf7b6bb75803eb26c35bc2ba881efe66bd90ca3c21",
+    "outputs/morph-showcase/varied-album/inputs/varied-DSC_1268-53.jpg": "6cda4a3c1bafe5c3ffc32a6563e23089bd80ed4e4311c017039a1635d798beb3",
+    "outputs/morph-showcase/varied-album/inputs/varied-DSC_1273-54.jpg": "66f86e66c9c562e37b2d9af21f0d0b6b30f6cf05142f0bba86d1c2c4e9689777",
+    "outputs/morph-showcase/varied-album/inputs/varied-DSC_1280-55.jpg": "54e74f0a1e6d24b76e02c9ad2f4c354b35ca2e04f69630a5c4ab7a6bea1514b7",
+    "outputs/morph-showcase/varied-album/inputs/varied-DSC_1282-56.jpg": "ac3144cd046eecfaaa866c4533bb5a4d9fbba19c4b30be91b3ee728faa6e3823",
+    "outputs/morph-showcase/varied-album/inputs/varied-DSC_1284-57.jpg": "2064c9b836bdc3b3c9584b9bcc38ab78daf6d8384fb76c50436ceef6411a75c0",
+    "outputs/morph-showcase/varied-album/inputs/varied-DSC_1286-58.jpg": "e0fcf8de467ade3dc9a701fac1d19285b763c7ce92c0a625862b43ec65c10650",
+    "outputs/morph-showcase/varied-album/inputs/varied-DSC_1288-59.jpg": "5c2050910780af5a2a18648ad4d5a528b16b00f9f44f7e31824dd48fe83ebe3a",
+    "outputs/morph-showcase/varied-album/inputs/varied-DSC_1291-60.jpg": "19610252e8eac9e124912cbbb75fd20f96d75a78232f3d0d056887046ba96507",
+    "outputs/morph-showcase/varied-album/inputs/varied-DSC_1292-61.jpg": "5e90ac10a27d97a72c0d51db37d8ea94dcc22acdc7a8f62d0fa4a9cc24ab605e",
+    "outputs/morph-showcase/varied-album/inputs/varied-DSC_1293-62.jpg": "67873e8a1c8d479a5485fb2fe2ebe6fde04f935e6002cb4bbad9b15153d0ab90",
+    "outputs/morph-showcase/varied-album/inputs/varied-DSC_1300-63.jpg": "f34cdd2d4ed62db47e0d20dadc24ce6d123396fdf1f1eceb2fbe49bd3f3a845c",
+    "outputs/morph-showcase/varied-album/inputs/varied-DSC_1302-64.jpg": "7acaf1334f39361b32d4b713d8a1f1646cd3f0a48ccdbefd95da1ad952bf3be0",
+    "outputs/morph-showcase/varied-album/inputs/varied-DSC_1304-65.jpg": "c00e23643a950a6073c97439ee8832ae835c13cc5f410860d6dbbe8c463357f7",
+    "outputs/morph-showcase/varied-album/inputs/varied-DSC_1308-66.jpg": "bbef09b54fa0f0310af8e797bdc81c3e269fffdb3291dbcc1c42e91014c87b14",
+    "outputs/morph-showcase/varied-album/inputs/varied-DSC_1310-67.jpg": "bd00e2d4437f3911b9801b3a14debaacb6532b028fffbfc0d676da4d68b2ab9b",
+    "outputs/morph-showcase/varied-album/inputs/varied-DSC_1312-68.jpg": "a1ac5a8e51219a747f6588827944467a9a412fc2976b1bb425469168a284a077",
+    "outputs/morph-showcase/varied-album/inputs/varied-DSC_1315-69.jpg": "cd76549bbbc07927210aa03d10dcd8840e842f9b9d090351663723b209ca6251",
+    "outputs/morph-showcase/varied-album/inputs/varied-DSC_1320-70.jpg": "1da6f7e48b01c96eaae9cdc18c49cc8a8dfcd8aeb20e0f5e0e5d4f64270fd7b5",
+    "outputs/morph-showcase/varied-album/inputs/varied-DSC_1322-71.jpg": "6b60c7acf81f30e8c49e2fde2651ec626eb83ab3da99212d13b50d8fca0972ba",
+    "outputs/morph-showcase/varied-album/inputs/varied-DSC_1324-72.jpg": "4cb22c263a55654b64e75215d24a926d349f00eec52c7ae6ded087ac66a93e46",
+    "outputs/morph-showcase/varied-album/inputs/varied-DSC_1326-73.jpg": "e69178a2b88a83930fcf5ed132fa22e10677c7321250918a94b8a4df81617e50",
+    "outputs/morph-showcase/varied-album/inputs/varied-DSC_1329-74.jpg": "66cc84c813e900be9799407f1ecc559306067046cf3d819887b71f72d76a0e8d",
+    "outputs/morph-showcase/varied-album/inputs/varied-DSC_1330-75.jpg": "7047c749e6a651a935377876492ee04dfe53c36cef543af6e854ab8c6a024c2c",
+    "outputs/morph-showcase/varied-album/inputs/varied-DSC_1334-76.jpg": "595ae91f66b64a802157b39ced64128fcb3bdd88d1e725c261e4fdfb2ef1d888",
+    "outputs/morph-showcase/varied-album/inputs/varied-DSC_1335-77.jpg": "a1e0fd813b1de3a3251312167fd34b4e2dc538b9248f1289824a9d085050abc4",
+    "outputs/morph-showcase/varied-album/inputs/varied-DSC_1337-78.jpg": "6c9fc2973746bd0b481ae203e67f00dd79354643a25626616670bb49172b1d82",
+    "outputs/morph-showcase/varied-album/inputs/varied-DSC_1339-79.jpg": "2269eb238586f4576c2902e5bdf4c084027405b37ca7c619c6765b42037c8201",
+    "outputs/morph-showcase/varied-album/inputs/varied-DSC_1340-80.jpg": "d776c9a4a1e2a866823a1c3c9f68f56981ed2a5b9b76c9fa6d9b804a2f971707",
+    "outputs/morph-showcase/varied-album/inputs/varied-DSC_1342-81.jpg": "ba60410dc4dfff5001a796ec98574058cbf0e19a8ddf19341957148a25a49c15",
+    "outputs/morph-showcase/varied-album/inputs/varied-DSC_1344-82.jpg": "bd0f4aa4b6a3f53700613c18e636002907aa837ce2c0d9f8fadeaf85692a1f28",
+    "outputs/morph-showcase/varied-album/inputs/varied-DSC_1360-83.jpg": "251289b6670797f1e008c7f4685070dd15fe523739e5bc6fd86f2e048c4d46f9",
+    "outputs/morph-showcase/varied-album/inputs/varied-DSC_1362-84.jpg": "49bd703290d6b3e831f93f1e70b2dbaa24ef3325340d6ac112a2b8225bc3df7e",
+    "outputs/morph-showcase/varied-album/inputs/varied-DSC_1363-85.jpg": "6e694672418cbd7b5f5803c7893346ee2de98a426a18c994b76d20eec5162fa8",
+    "outputs/morph-showcase/varied-album/inputs/varied-DSC_1365-86.jpg": "5fb0111a8b44fbb9a077b6e037be9500262d3ab89987a808d1a4aecb81c09c91",
+    "outputs/morph-showcase/varied-album/inputs/varied-DSC_1367-87.jpg": "9a637d9157978993923f6e04d4bbf7f4ddf78e2196c51b58d195f28738eb1064",
+    "outputs/morph-showcase/varied-album/inputs/varied-DSC_1378-88.jpg": "bce70df2c548ad2a3366d2e9c1c48d873db11f3e5f4608ce2fa2f45e47747c92",
+    "Morph/originals/DSC_0906-4.jpg": "b537d85511aabe821f2476c542516bce46ee7d812e67f43da80cfbe452a478ca",
+    "Morph/originals/DSC_0958-15.jpg": "3929f529a87b72ed8416403d84a3b12c59e7207ce36e40813fd9820987d3ee3a",
+    "Morph/originals/DSC_0995-22.jpg": "e31109eba49d00e8004198ed731fd28545b4b970518d9ad838ec39bf95de1169",
+    "Morph/originals/DSC_1037-31.jpg": "ad3ae9e8a7693fff31bd7e4bba662d1abf46e8163dbf943157d346e844e45e26",
+    "Morph/originals/DSC_1054-33.jpg": "dd8f2dae5f851b25251b1d09a26d51330f3ebf7563385d951d2f7deacd93f2b6",
+    "Morph/originals/DSC_1111-45.jpg": "0c4202103a893c6fd720e0b8901a15eba4a3ddc3889f04552a76e615e485bbe1",
+    "Morph/originals/DSC_1105-42.jpg": "0ff1c29940797edc80f9762168233aa440d078db032580b3073940f9038d9a14",
+    "Morph/originals/DSC_1264-51.jpg": "32619ee4644a9fd9a214032124b1dc19b4ad906c5896843d1b22ef51c5b8de13",
+    "Morph/originals/DSC_1273-54.jpg": "68a88c4bb90ab54dbc45c6ca51eaa67f24d62bb9962459d508c06f9989116656",
+    "Morph/originals/DSC_1286-58.jpg": "6234092255c0ed2967021b23b57a229f4c2f23bebb3285b355a05ce1e67a8e31",
+    "Morph/originals/DSC_1320-70.jpg": "eda818c079aeae0961c2b3d9cd3e09f453885115439df2d331e80655e825a695",
+    "Morph/originals/DSC_1334-76.jpg": "41781ab89de108688ce7f4cfc6a6240840759106983e7322888bc75347f79472",
+    "Morph/originals/DSC_1342-81.jpg": "e92411fb9ac04e4a72e483a8ce2704bdfdf03b1c8407be30d7f3f2c075393389",
+    "Morph/originals/DSC_1363-85.jpg": "b6a7b0bd4c7c631bdd6938b1cce14d3265789dfa8f8e951bdac737059b69a4a8"
+  },
+  "scenes": [
+    {
+      "scene": "scene-01",
+      "reference": "Morph/originals/DSC_0906-4.jpg",
+      "edges": [
+        {
+          "left": "outputs/morph-showcase/varied-album/inputs/varied-DSC_0901-1.jpg",
+          "right": "outputs/morph-showcase/varied-album/inputs/varied-DSC_0904-2.jpg",
+          "matches": 172,
+          "geometric_inliers": 66,
+          "photometric_inliers": 2832,
+          "pair_scale": 0.8964933221694672,
+          "pair_residual": 0.1177132533136596,
+          "sampling": "aligned-overlap",
+          "before_logit_rmse": 0.4781111776828766,
+          "after_logit_rmse": 0.16730909421378853
+        },
+        {
+          "left": "outputs/morph-showcase/varied-album/inputs/varied-DSC_0901-1.jpg",
+          "right": "outputs/morph-showcase/varied-album/inputs/varied-DSC_0905-3.jpg",
+          "matches": 108,
+          "geometric_inliers": 65,
+          "photometric_inliers": 2838,
+          "pair_scale": 0.9372035550334666,
+          "pair_residual": 0.14011509921423787,
+          "sampling": "aligned-overlap",
+          "before_logit_rmse": 0.36986327171325684,
+          "after_logit_rmse": 0.19144665471218894
+        },
+        {
+          "left": "outputs/morph-showcase/varied-album/inputs/varied-DSC_0901-1.jpg",
+          "right": "outputs/morph-showcase/varied-album/inputs/varied-DSC_0906-4.jpg",
+          "matches": 91,
+          "geometric_inliers": 50,
+          "photometric_inliers": 2772,
+          "pair_scale": 0.8351492012648988,
+          "pair_residual": 0.10789924298227843,
+          "sampling": "aligned-overlap",
+          "before_logit_rmse": 0.2942047417163849,
+          "after_logit_rmse": 0.19307552867755823
+        },
+        {
+          "left": "outputs/morph-showcase/varied-album/inputs/varied-DSC_0901-1.jpg",
+          "right": "Morph/originals/DSC_0906-4.jpg",
+          "matches": 76,
+          "geometric_inliers": 46,
+          "photometric_inliers": 2775,
+          "pair_scale": 0.8768624774855539,
+          "pair_residual": 0.11538398851040495,
+          "sampling": "aligned-overlap",
+          "before_logit_rmse": 0.27970439195632935,
+          "after_logit_rmse": 0.20358579367423027
+        },
+        {
+          "left": "outputs/morph-showcase/varied-album/inputs/varied-DSC_0904-2.jpg",
+          "right": "outputs/morph-showcase/varied-album/inputs/varied-DSC_0905-3.jpg",
+          "matches": 499,
+          "geometric_inliers": 344,
+          "photometric_inliers": 2784,
+          "pair_scale": 1.0026860132996247,
+          "pair_residual": 0.03734048613494771,
+          "sampling": "aligned-overlap",
+          "before_logit_rmse": 0.22556942701339722,
+          "after_logit_rmse": 0.043854282072243664
+        },
+        {
+          "left": "outputs/morph-showcase/varied-album/inputs/varied-DSC_0904-2.jpg",
+          "right": "outputs/morph-showcase/varied-album/inputs/varied-DSC_0906-4.jpg",
+          "matches": 448,
+          "geometric_inliers": 346,
+          "photometric_inliers": 2701,
+          "pair_scale": 0.9218948147485988,
+          "pair_residual": 0.020317523990375057,
+          "sampling": "aligned-overlap",
+          "before_logit_rmse": 0.6591688990592957,
+          "after_logit_rmse": 0.031404050320409646
+        },
+        {
+          "left": "outputs/morph-showcase/varied-album/inputs/varied-DSC_0904-2.jpg",
+          "right": "outputs/morph-showcase/varied-album/inputs/varied-DSC_0914-5.jpg",
+          "matches": 312,
+          "geometric_inliers": 216,
+          "photometric_inliers": 2435,
+          "pair_scale": 0.8549312954033205,
+          "pair_residual": 0.02869493325539264,
+          "sampling": "aligned-overlap",
+          "before_logit_rmse": 0.7915939092636108,
+          "after_logit_rmse": 0.05249042731756436
+        },
+        {
+          "left": "outputs/morph-showcase/varied-album/inputs/varied-DSC_0904-2.jpg",
+          "right": "Morph/originals/DSC_0906-4.jpg",
+          "matches": 463,
+          "geometric_inliers": 350,
+          "photometric_inliers": 2679,
+          "pair_scale": 0.9608739621149622,
+          "pair_residual": 0.02000476650387566,
+          "sampling": "aligned-overlap",
+          "before_logit_rmse": 0.6314775347709656,
+          "after_logit_rmse": 0.036175556155774044
+        },
+        {
+          "left": "outputs/morph-showcase/varied-album/inputs/varied-DSC_0905-3.jpg",
+          "right": "outputs/morph-showcase/varied-album/inputs/varied-DSC_0906-4.jpg",
+          "matches": 546,
+          "geometric_inliers": 412,
+          "photometric_inliers": 2939,
+          "pair_scale": 0.897900217261534,
+          "pair_residual": 0.032321571462659654,
+          "sampling": "aligned-overlap",
+          "before_logit_rmse": 0.5032780170440674,
+          "after_logit_rmse": 0.044221174199183366
+        },
+        {
+          "left": "outputs/morph-showcase/varied-album/inputs/varied-DSC_0905-3.jpg",
+          "right": "outputs/morph-showcase/varied-album/inputs/varied-DSC_0914-5.jpg",
+          "matches": 381,
+          "geometric_inliers": 253,
+          "photometric_inliers": 2603,
+          "pair_scale": 0.870874715441191,
+          "pair_residual": 0.028010351667216275,
+          "sampling": "aligned-overlap",
+          "before_logit_rmse": 0.6255961656570435,
+          "after_logit_rmse": 0.044952564762527764
+        },
+        {
+          "left": "outputs/morph-showcase/varied-album/inputs/varied-DSC_0905-3.jpg",
+          "right": "outputs/morph-showcase/varied-album/inputs/varied-DSC_0916-6.jpg",
+          "matches": 296,
+          "geometric_inliers": 240,
+          "photometric_inliers": 2542,
+          "pair_scale": 0.8525009763359555,
+          "pair_residual": 0.0416671161548539,
+          "sampling": "aligned-overlap",
+          "before_logit_rmse": 0.39838907122612,
+          "after_logit_rmse": 0.06071063833356562
+        },
+        {
+          "left": "outputs/morph-showcase/varied-album/inputs/varied-DSC_0905-3.jpg",
+          "right": "Morph/originals/DSC_0906-4.jpg",
+          "matches": 533,
+          "geometric_inliers": 406,
+          "photometric_inliers": 2952,
+          "pair_scale": 0.9356285114743208,
+          "pair_residual": 0.035542825739277556,
+          "sampling": "aligned-overlap",
+          "before_logit_rmse": 0.4738164246082306,
+          "after_logit_rmse": 0.059151262402643595
+        },
+        {
+          "left": "outputs/morph-showcase/varied-album/inputs/varied-DSC_0906-4.jpg",
+          "right": "outputs/morph-showcase/varied-album/inputs/varied-DSC_0914-5.jpg",
+          "matches": 604,
+          "geometric_inliers": 464,
+          "photometric_inliers": 2659,
+          "pair_scale": 0.9378682532278573,
+          "pair_residual": 0.032731812329272345,
+          "sampling": "aligned-overlap",
+          "before_logit_rmse": 0.17241567373275757,
+          "after_logit_rmse": 0.059319957154186455
+        },
+        {
+          "left": "outputs/morph-showcase/varied-album/inputs/varied-DSC_0906-4.jpg",
+          "right": "outputs/morph-showcase/varied-album/inputs/varied-DSC_0916-6.jpg",
+          "matches": 471,
+          "geometric_inliers": 376,
+          "photometric_inliers": 2910,
+          "pair_scale": 0.9370631393959727,
+          "pair_residual": 0.04432465081507289,
+          "sampling": "aligned-overlap",
+          "before_logit_rmse": 0.16033783555030823,
+          "after_logit_rmse": 0.07129499874064792
+        },
+        {
+          "left": "outputs/morph-showcase/varied-album/inputs/varied-DSC_0906-4.jpg",
+          "right": "outputs/morph-showcase/varied-album/inputs/varied-DSC_0919-7.jpg",
+          "matches": 463,
+          "geometric_inliers": 361,
+          "photometric_inliers": 2779,
+          "pair_scale": 0.8750220810543846,
+          "pair_residual": 0.058254047891107726,
+          "sampling": "aligned-overlap",
+          "before_logit_rmse": 0.14196482300758362,
+          "after_logit_rmse": 0.09771792630028313
+        },
+        {
+          "left": "outputs/morph-showcase/varied-album/inputs/varied-DSC_0906-4.jpg",
+          "right": "Morph/originals/DSC_0906-4.jpg",
+          "matches": 2132,
+          "geometric_inliers": 2113,
+          "photometric_inliers": 3856,
+          "pair_scale": 1.0427652550699256,
+          "pair_residual": 0.009926322030654189,
+          "sampling": "aligned-overlap",
+          "before_logit_rmse": 0.07341942191123962,
+          "after_logit_rmse": 0.04593514172841286
+        },
+        {
+          "left": "outputs/morph-showcase/varied-album/inputs/varied-DSC_0914-5.jpg",
+          "right": "outputs/morph-showcase/varied-album/inputs/varied-DSC_0916-6.jpg",
+          "matches": 618,
+          "geometric_inliers": 487,
+          "photometric_inliers": 2999,
+          "pair_scale": 0.9636531931951727,
+          "pair_residual": 0.038368394352288934,
+          "sampling": "aligned-overlap",
+          "before_logit_rmse": 0.25076574087142944,
+          "after_logit_rmse": 0.05124653768240447
+        },
+        {
+          "left": "outputs/morph-showcase/varied-album/inputs/varied-DSC_0914-5.jpg",
+          "right": "outputs/morph-showcase/varied-album/inputs/varied-DSC_0919-7.jpg",
+          "matches": 468,
+          "geometric_inliers": 403,
+          "photometric_inliers": 2956,
+          "pair_scale": 0.929071216750517,
+          "pair_residual": 0.054090029487425015,
+          "sampling": "aligned-overlap",
+          "before_logit_rmse": 0.21372193098068237,
+          "after_logit_rmse": 0.07829056558321686
+        },
+        {
+          "left": "outputs/morph-showcase/varied-album/inputs/varied-DSC_0914-5.jpg",
+          "right": "outputs/morph-showcase/varied-album/inputs/varied-DSC_0921-8.jpg",
+          "matches": 486,
+          "geometric_inliers": 401,
+          "photometric_inliers": 2603,
+          "pair_scale": 0.9219990815634959,
+          "pair_residual": 0.02792854920655428,
+          "sampling": "aligned-overlap",
+          "before_logit_rmse": 0.16760803759098053,
+          "after_logit_rmse": 0.044767198802633544
+        },
+        {
+          "left": "outputs/morph-showcase/varied-album/inputs/varied-DSC_0914-5.jpg",
+          "right": "Morph/originals/DSC_0906-4.jpg",
+          "matches": 584,
+          "geometric_inliers": 450,
+          "photometric_inliers": 2714,
+          "pair_scale": 0.9879167903976072,
+          "pair_residual": 0.028043640449211267,
+          "sampling": "aligned-overlap",
+          "before_logit_rmse": 0.18186797201633453,
+          "after_logit_rmse": 0.04315992349588168
+        },
+        {
+          "left": "outputs/morph-showcase/varied-album/inputs/varied-DSC_0916-6.jpg",
+          "right": "outputs/morph-showcase/varied-album/inputs/varied-DSC_0919-7.jpg",
+          "matches": 537,
+          "geometric_inliers": 466,
+          "photometric_inliers": 2890,
+          "pair_scale": 0.9444766648534192,
+          "pair_residual": 0.03274925320691244,
+          "sampling": "aligned-overlap",
+          "before_logit_rmse": 0.06950093060731888,
+          "after_logit_rmse": 0.050942928049965384
+        },
+        {
+          "left": "outputs/morph-showcase/varied-album/inputs/varied-DSC_0916-6.jpg",
+          "right": "outputs/morph-showcase/varied-album/inputs/varied-DSC_0921-8.jpg",
+          "matches": 513,
+          "geometric_inliers": 445,
+          "photometric_inliers": 2724,
+          "pair_scale": 0.9195499028829982,
+          "pair_residual": 0.029333977485876996,
+          "sampling": "aligned-overlap",
+          "before_logit_rmse": 0.16551604866981506,
+          "after_logit_rmse": 0.05013666483202879
+        },
+        {
+          "left": "outputs/morph-showcase/varied-album/inputs/varied-DSC_0916-6.jpg",
+          "right": "outputs/morph-showcase/varied-album/inputs/varied-DSC_0925-9.jpg",
+          "matches": 156,
+          "geometric_inliers": 96,
+          "photometric_inliers": 2739,
+          "pair_scale": 0.7771179891568496,
+          "pair_residual": 0.14666933771030194,
+          "sampling": "aligned-overlap",
+          "before_logit_rmse": 0.47502219676971436,
+          "after_logit_rmse": 0.2655607999170404
+        },
+        {
+          "left": "outputs/morph-showcase/varied-album/inputs/varied-DSC_0916-6.jpg",
+          "right": "Morph/originals/DSC_0906-4.jpg",
+          "matches": 461,
+          "geometric_inliers": 385,
+          "photometric_inliers": 2895,
+          "pair_scale": 0.9932540383600351,
+          "pair_residual": 0.045600444928848564,
+          "sampling": "aligned-overlap",
+          "before_logit_rmse": 0.11703632026910782,
+          "after_logit_rmse": 0.05854987165338896
+        },
+        {
+          "left": "outputs/morph-showcase/varied-album/inputs/varied-DSC_0919-7.jpg",
+          "right": "outputs/morph-showcase/varied-album/inputs/varied-DSC_0921-8.jpg",
+          "matches": 752,
+          "geometric_inliers": 588,
+          "photometric_inliers": 2986,
+          "pair_scale": 0.9679282956302381,
+          "pair_residual": 0.031147860573631208,
+          "sampling": "aligned-overlap",
+          "before_logit_rmse": 0.11096571385860443,
+          "after_logit_rmse": 0.04450305936368545
+        },
+        {
+          "left": "outputs/morph-showcase/varied-album/inputs/varied-DSC_0919-7.jpg",
+          "right": "outputs/morph-showcase/varied-album/inputs/varied-DSC_0925-9.jpg",
+          "matches": 231,
+          "geometric_inliers": 124,
+          "photometric_inliers": 3132,
+          "pair_scale": 0.8636882804829537,
+          "pair_residual": 0.17768391804474612,
+          "sampling": "aligned-overlap",
+          "before_logit_rmse": 0.4464466869831085,
+          "after_logit_rmse": 0.22075638610259182
+        },
+        {
+          "left": "outputs/morph-showcase/varied-album/inputs/varied-DSC_0919-7.jpg",
+          "right": "outputs/morph-showcase/varied-album/inputs/varied-DSC_0928-10.jpg",
+          "matches": 498,
+          "geometric_inliers": 413,
+          "photometric_inliers": 3067,
+          "pair_scale": 0.8413043972243163,
+          "pair_residual": 0.13345811792524478,
+          "sampling": "aligned-overlap",
+          "before_logit_rmse": 0.5307566523551941,
+          "after_logit_rmse": 0.20271497447186743
+        },
+        {
+          "left": "outputs/morph-showcase/varied-album/inputs/varied-DSC_0919-7.jpg",
+          "right": "Morph/originals/DSC_0906-4.jpg",
+          "matches": 477,
+          "geometric_inliers": 382,
+          "photometric_inliers": 2783,
+          "pair_scale": 0.9717541528237915,
+          "pair_residual": 0.0456053634484277,
+          "sampling": "aligned-overlap",
+          "before_logit_rmse": 0.08142796903848648,
+          "after_logit_rmse": 0.06047239249126565
+        },
+        {
+          "left": "outputs/morph-showcase/varied-album/inputs/varied-DSC_0921-8.jpg",
+          "right": "outputs/morph-showcase/varied-album/inputs/varied-DSC_0925-9.jpg",
+          "matches": 263,
+          "geometric_inliers": 122,
+          "photometric_inliers": 2942,
+          "pair_scale": 0.9437952456364055,
+          "pair_residual": 0.10051185337413586,
+          "sampling": "aligned-overlap",
+          "before_logit_rmse": 0.3246106803417206,
+          "after_logit_rmse": 0.1564969910987808
+        },
+        {
+          "left": "outputs/morph-showcase/varied-album/inputs/varied-DSC_0921-8.jpg",
+          "right": "outputs/morph-showcase/varied-album/inputs/varied-DSC_0928-10.jpg",
+          "matches": 412,
+          "geometric_inliers": 345,
+          "photometric_inliers": 3046,
+          "pair_scale": 0.8257791560152001,
+          "pair_residual": 0.12998948549341133,
+          "sampling": "aligned-overlap",
+          "before_logit_rmse": 0.4554058015346527,
+          "after_logit_rmse": 0.1841648890144953
+        },
+        {
+          "left": "outputs/morph-showcase/varied-album/inputs/varied-DSC_0921-8.jpg",
+          "right": "outputs/morph-showcase/varied-album/inputs/varied-DSC_0930-11.jpg",
+          "matches": 548,
+          "geometric_inliers": 446,
+          "photometric_inliers": 2821,
+          "pair_scale": 0.9321422916460046,
+          "pair_residual": 0.047119567584562025,
+          "sampling": "aligned-overlap",
+          "before_logit_rmse": 0.39993855357170105,
+          "after_logit_rmse": 0.06312071494453565
+        },
+        {
+          "left": "outputs/morph-showcase/varied-album/inputs/varied-DSC_0921-8.jpg",
+          "right": "Morph/originals/DSC_0906-4.jpg",
+          "matches": 485,
+          "geometric_inliers": 401,
+          "photometric_inliers": 2729,
+          "pair_scale": 0.9999565820466177,
+          "pair_residual": 0.039651942135437865,
+          "sampling": "aligned-overlap",
+          "before_logit_rmse": 0.08417602628469467,
+          "after_logit_rmse": 0.0573529020830972
+        },
+        {
+          "left": "outputs/morph-showcase/varied-album/inputs/varied-DSC_0925-9.jpg",
+          "right": "outputs/morph-showcase/varied-album/inputs/varied-DSC_0928-10.jpg",
+          "matches": 228,
+          "geometric_inliers": 140,
+          "photometric_inliers": 3001,
+          "pair_scale": 0.8082762965728401,
+          "pair_residual": 0.10738949246709241,
+          "sampling": "aligned-overlap",
+          "before_logit_rmse": 0.22954349219799042,
+          "after_logit_rmse": 0.1830241594616129
+        },
+        {
+          "left": "outputs/morph-showcase/varied-album/inputs/varied-DSC_0925-9.jpg",
+          "right": "outputs/morph-showcase/varied-album/inputs/varied-DSC_0930-11.jpg",
+          "matches": 168,
+          "geometric_inliers": 103,
+          "photometric_inliers": 2693,
+          "pair_scale": 0.8274307485056626,
+          "pair_residual": 0.1070668327855568,
+          "sampling": "aligned-overlap",
+          "before_logit_rmse": 0.27313557267189026,
+          "after_logit_rmse": 0.19501003539926381
+        },
+        {
+          "left": "outputs/morph-showcase/varied-album/inputs/varied-DSC_0925-9.jpg",
+          "right": "outputs/morph-showcase/varied-album/inputs/varied-DSC_0935-12.jpg",
+          "matches": 169,
+          "geometric_inliers": 71,
+          "photometric_inliers": 2740,
+          "pair_scale": 0.7777605515968424,
+          "pair_residual": 0.1315484951174156,
+          "sampling": "aligned-overlap",
+          "before_logit_rmse": 0.34094569087028503,
+          "after_logit_rmse": 0.2508283258417056
+        },
+        {
+          "left": "outputs/morph-showcase/varied-album/inputs/varied-DSC_0925-9.jpg",
+          "right": "Morph/originals/DSC_0906-4.jpg",
+          "matches": 159,
+          "geometric_inliers": 86,
+          "photometric_inliers": 2823,
+          "pair_scale": 0.8356566469799209,
+          "pair_residual": 0.13478373002908509,
+          "sampling": "aligned-overlap",
+          "before_logit_rmse": 0.4323362112045288,
+          "after_logit_rmse": 0.22494743346593624
+        },
+        {
+          "left": "outputs/morph-showcase/varied-album/inputs/varied-DSC_0928-10.jpg",
+          "right": "outputs/morph-showcase/varied-album/inputs/varied-DSC_0930-11.jpg",
+          "matches": 325,
+          "geometric_inliers": 274,
+          "photometric_inliers": 2737,
+          "pair_scale": 0.6697320177250542,
+          "pair_residual": 0.07604950350139292,
+          "sampling": "aligned-overlap",
+          "before_logit_rmse": 0.18075482547283173,
+          "after_logit_rmse": 0.13317508024385866
+        },
+        {
+          "left": "outputs/morph-showcase/varied-album/inputs/varied-DSC_0928-10.jpg",
+          "right": "outputs/morph-showcase/varied-album/inputs/varied-DSC_0935-12.jpg",
+          "matches": 298,
+          "geometric_inliers": 227,
+          "photometric_inliers": 2742,
+          "pair_scale": 0.9141127787874074,
+          "pair_residual": 0.07566455638285485,
+          "sampling": "aligned-overlap",
+          "before_logit_rmse": 0.35628870129585266,
+          "after_logit_rmse": 0.11449504519433325
+        },
+        {
+          "left": "outputs/morph-showcase/varied-album/inputs/varied-DSC_0928-10.jpg",
+          "right": "Morph/originals/DSC_0906-4.jpg",
+          "matches": 271,
+          "geometric_inliers": 221,
+          "photometric_inliers": 2822,
+          "pair_scale": 0.7835116758473734,
+          "pair_residual": 0.08946023993492248,
+          "sampling": "aligned-overlap",
+          "before_logit_rmse": 0.5201985239982605,
+          "after_logit_rmse": 0.14166671488957705
+        },
+        {
+          "left": "outputs/morph-showcase/varied-album/inputs/varied-DSC_0930-11.jpg",
+          "right": "outputs/morph-showcase/varied-album/inputs/varied-DSC_0935-12.jpg",
+          "matches": 417,
+          "geometric_inliers": 188,
+          "photometric_inliers": 2527,
+          "pair_scale": 0.873134429247444,
+          "pair_residual": 0.04998003886253396,
+          "sampling": "aligned-overlap",
+          "before_logit_rmse": 0.2775610089302063,
+          "after_logit_rmse": 0.10937857029989558
+        },
+        {
+          "left": "outputs/morph-showcase/varied-album/inputs/varied-DSC_0930-11.jpg",
+          "right": "Morph/originals/DSC_0906-4.jpg",
+          "matches": 483,
+          "geometric_inliers": 399,
+          "photometric_inliers": 2799,
+          "pair_scale": 1.0323976424623436,
+          "pair_residual": 0.03745792137038991,
+          "sampling": "aligned-overlap",
+          "before_logit_rmse": 0.4308825135231018,
+          "after_logit_rmse": 0.05338686626422089
+        },
+        {
+          "left": "outputs/morph-showcase/varied-album/inputs/varied-DSC_0935-12.jpg",
+          "right": "Morph/originals/DSC_0906-4.jpg",
+          "matches": 388,
+          "geometric_inliers": 258,
+          "photometric_inliers": 2742,
+          "pair_scale": 0.9658769148277829,
+          "pair_residual": 0.06218491724446794,
+          "sampling": "aligned-overlap",
+          "before_logit_rmse": 0.23210586607456207,
+          "after_logit_rmse": 0.1032885814993105
+        }
+      ]
+    },
+    {
+      "scene": "scene-02-lawn",
+      "reference": "Morph/originals/DSC_0958-15.jpg",
+      "edges": [
+        {
+          "left": "outputs/morph-showcase/varied-album/inputs/varied-DSC_0947-13.jpg",
+          "right": "outputs/morph-showcase/varied-album/inputs/varied-DSC_0948-14.jpg",
+          "matches": 334,
+          "geometric_inliers": 141,
+          "photometric_inliers": 2846,
+          "pair_scale": 0.9522196206583674,
+          "pair_residual": 0.06407985322082574,
+          "sampling": "aligned-overlap",
+          "before_logit_rmse": 0.14885106682777405,
+          "after_logit_rmse": 0.09661312560507512
+        },
+        {
+          "left": "outputs/morph-showcase/varied-album/inputs/varied-DSC_0947-13.jpg",
+          "right": "outputs/morph-showcase/varied-album/inputs/varied-DSC_0958-15.jpg",
+          "matches": 67,
+          "geometric_inliers": 30,
+          "photometric_inliers": 2735,
+          "pair_scale": 0.8742092594035497,
+          "pair_residual": 0.2899394759877152,
+          "sampling": "aligned-overlap",
+          "before_logit_rmse": 0.5808208584785461,
+          "after_logit_rmse": 0.34807803441673835
+        },
+        {
+          "left": "outputs/morph-showcase/varied-album/inputs/varied-DSC_0947-13.jpg",
+          "right": "Morph/originals/DSC_0958-15.jpg",
+          "matches": 67,
+          "geometric_inliers": 27,
+          "photometric_inliers": 2702,
+          "pair_scale": 0.8893739426324342,
+          "pair_residual": 0.24772507064541566,
+          "sampling": "aligned-overlap",
+          "before_logit_rmse": 0.521503210067749,
+          "after_logit_rmse": 0.33040220341159976
+        },
+        {
+          "left": "outputs/morph-showcase/varied-album/inputs/varied-DSC_0948-14.jpg",
+          "right": "outputs/morph-showcase/varied-album/inputs/varied-DSC_0958-15.jpg",
+          "matches": 133,
+          "geometric_inliers": 76,
+          "photometric_inliers": 2874,
+          "pair_scale": 0.9678650782460417,
+          "pair_residual": 0.1627210875008958,
+          "sampling": "aligned-overlap",
+          "before_logit_rmse": 0.3937690556049347,
+          "after_logit_rmse": 0.22870951928959168
+        },
+        {
+          "left": "outputs/morph-showcase/varied-album/inputs/varied-DSC_0948-14.jpg",
+          "right": "Morph/originals/DSC_0958-15.jpg",
+          "matches": 126,
+          "geometric_inliers": 75,
+          "photometric_inliers": 2903,
+          "pair_scale": 0.9582496402797327,
+          "pair_residual": 0.15762316660853298,
+          "sampling": "aligned-overlap",
+          "before_logit_rmse": 0.3494613766670227,
+          "after_logit_rmse": 0.23795291901431084
+        },
+        {
+          "left": "outputs/morph-showcase/varied-album/inputs/varied-DSC_0958-15.jpg",
+          "right": "outputs/morph-showcase/varied-album/inputs/varied-DSC_0970-17.jpg",
+          "matches": 98,
+          "geometric_inliers": 40,
+          "photometric_inliers": 2873,
+          "pair_scale": 0.6511262472709113,
+          "pair_residual": 0.3524472673975292,
+          "sampling": "aligned-overlap",
+          "before_logit_rmse": 0.6154979467391968,
+          "after_logit_rmse": 0.5822302938420846
+        },
+        {
+          "left": "outputs/morph-showcase/varied-album/inputs/varied-DSC_0958-15.jpg",
+          "right": "outputs/morph-showcase/varied-album/inputs/varied-DSC_0974-18.jpg",
+          "matches": 86,
+          "geometric_inliers": 49,
+          "photometric_inliers": 32,
+          "pair_scale": 1.0270012984124735,
+          "pair_residual": 0.3003036561287802,
+          "sampling": "keypoint-patches",
+          "before_logit_rmse": 0.577028214931488,
+          "after_logit_rmse": 0.3294649832290567
+        },
+        {
+          "left": "outputs/morph-showcase/varied-album/inputs/varied-DSC_0958-15.jpg",
+          "right": "outputs/morph-showcase/varied-album/inputs/varied-DSC_0987-19.jpg",
+          "matches": 44,
+          "geometric_inliers": 22,
+          "photometric_inliers": 2677,
+          "pair_scale": 0.6731749142041078,
+          "pair_residual": 0.29663505797659545,
+          "sampling": "aligned-overlap",
+          "before_logit_rmse": 0.6323747038841248,
+          "after_logit_rmse": 0.476567382410803
+        },
+        {
+          "left": "outputs/morph-showcase/varied-album/inputs/varied-DSC_0958-15.jpg",
+          "right": "Morph/originals/DSC_0958-15.jpg",
+          "matches": 2320,
+          "geometric_inliers": 2319,
+          "photometric_inliers": 3650,
+          "pair_scale": 0.9727556657215797,
+          "pair_residual": 0.007734924259342838,
+          "sampling": "aligned-overlap",
+          "before_logit_rmse": 0.07342737913131714,
+          "after_logit_rmse": 0.03847700754255833
+        },
+        {
+          "left": "outputs/morph-showcase/varied-album/inputs/varied-DSC_0970-17.jpg",
+          "right": "outputs/morph-showcase/varied-album/inputs/varied-DSC_0974-18.jpg",
+          "matches": 176,
+          "geometric_inliers": 62,
+          "photometric_inliers": 43,
+          "pair_scale": 0.8925045386788417,
+          "pair_residual": 0.1877684035068138,
+          "sampling": "keypoint-patches",
+          "before_logit_rmse": 0.618927001953125,
+          "after_logit_rmse": 0.23389359411126445
+        },
+        {
+          "left": "outputs/morph-showcase/varied-album/inputs/varied-DSC_0970-17.jpg",
+          "right": "outputs/morph-showcase/varied-album/inputs/varied-DSC_0987-19.jpg",
+          "matches": 29,
+          "geometric_inliers": 16,
+          "photometric_inliers": 2737,
+          "pair_scale": 0.6692390328961673,
+          "pair_residual": 0.4650002660602506,
+          "sampling": "aligned-overlap",
+          "before_logit_rmse": 0.7992920279502869,
+          "after_logit_rmse": 0.6792353389305729
+        },
+        {
+          "left": "outputs/morph-showcase/varied-album/inputs/varied-DSC_0970-17.jpg",
+          "right": "Morph/originals/DSC_0958-15.jpg",
+          "matches": 96,
+          "geometric_inliers": 44,
+          "photometric_inliers": 40,
+          "pair_scale": 0.9060047264073156,
+          "pair_residual": 0.1733556210332418,
+          "sampling": "keypoint-patches",
+          "before_logit_rmse": 0.2599993348121643,
+          "after_logit_rmse": 0.24264000183067386
+        },
+        {
+          "left": "outputs/morph-showcase/varied-album/inputs/varied-DSC_0974-18.jpg",
+          "right": "Morph/originals/DSC_0958-15.jpg",
+          "matches": 86,
+          "geometric_inliers": 44,
+          "photometric_inliers": 30,
+          "pair_scale": 0.7516927617541748,
+          "pair_residual": 0.2388522699912089,
+          "sampling": "keypoint-patches",
+          "before_logit_rmse": 0.528303325176239,
+          "after_logit_rmse": 0.30439827843782385
+        },
+        {
+          "left": "outputs/morph-showcase/varied-album/inputs/varied-DSC_0987-19.jpg",
+          "right": "Morph/originals/DSC_0958-15.jpg",
+          "matches": 54,
+          "geometric_inliers": 25,
+          "photometric_inliers": 2602,
+          "pair_scale": 0.8588928158604366,
+          "pair_residual": 0.28081528676890366,
+          "sampling": "aligned-overlap",
+          "before_logit_rmse": 0.5351771712303162,
+          "after_logit_rmse": 0.4431907349457406
+        }
+      ]
+    },
+    {
+      "scene": "scene-02",
+      "reference": "Morph/originals/DSC_0995-22.jpg",
+      "edges": [
+        {
+          "left": "outputs/morph-showcase/varied-album/inputs/varied-DSC_0965-16.jpg",
+          "right": "outputs/morph-showcase/varied-album/inputs/varied-DSC_0990-20.jpg",
+          "matches": 63,
+          "geometric_inliers": 26,
+          "photometric_inliers": 24,
+          "pair_scale": 1.0624077613484488,
+          "pair_residual": 0.06213694189059839,
+          "sampling": "keypoint-patches",
+          "before_logit_rmse": 0.46872204542160034,
+          "after_logit_rmse": 0.0862456723045829
+        },
+        {
+          "left": "outputs/morph-showcase/varied-album/inputs/varied-DSC_0965-16.jpg",
+          "right": "outputs/morph-showcase/varied-album/inputs/varied-DSC_0993-21.jpg",
+          "matches": 61,
+          "geometric_inliers": 16,
+          "photometric_inliers": 12,
+          "pair_scale": 1.1860255305161327,
+          "pair_residual": 0.20234588334243536,
+          "sampling": "keypoint-patches",
+          "before_logit_rmse": 0.29511401057243347,
+          "after_logit_rmse": 0.22120817664618847
+        },
+        {
+          "left": "outputs/morph-showcase/varied-album/inputs/varied-DSC_0965-16.jpg",
+          "right": "outputs/morph-showcase/varied-album/inputs/varied-DSC_0995-22.jpg",
+          "matches": 56,
+          "geometric_inliers": 27,
+          "photometric_inliers": 19,
+          "pair_scale": 0.9849804027121205,
+          "pair_residual": 0.04393909763195177,
+          "sampling": "keypoint-patches",
+          "before_logit_rmse": 0.2477697879076004,
+          "after_logit_rmse": 0.06848051763664775
+        },
+        {
+          "left": "outputs/morph-showcase/varied-album/inputs/varied-DSC_0965-16.jpg",
+          "right": "Morph/originals/DSC_0995-22.jpg",
+          "matches": 62,
+          "geometric_inliers": 23,
+          "photometric_inliers": 19,
+          "pair_scale": 1.0593890515587052,
+          "pair_residual": 0.06727779530622874,
+          "sampling": "keypoint-patches",
+          "before_logit_rmse": 0.149703711271286,
+          "after_logit_rmse": 0.08631568163142118
+        },
+        {
+          "left": "outputs/morph-showcase/varied-album/inputs/varied-DSC_0990-20.jpg",
+          "right": "outputs/morph-showcase/varied-album/inputs/varied-DSC_0993-21.jpg",
+          "matches": 221,
+          "geometric_inliers": 117,
+          "photometric_inliers": 3026,
+          "pair_scale": 0.7837416824337793,
+          "pair_residual": 0.10977059055758295,
+          "sampling": "aligned-overlap",
+          "before_logit_rmse": 0.7531933784484863,
+          "after_logit_rmse": 0.13141493844545468
+        },
+        {
+          "left": "outputs/morph-showcase/varied-album/inputs/varied-DSC_0990-20.jpg",
+          "right": "outputs/morph-showcase/varied-album/inputs/varied-DSC_0995-22.jpg",
+          "matches": 202,
+          "geometric_inliers": 129,
+          "photometric_inliers": 106,
+          "pair_scale": 0.9018403031472387,
+          "pair_residual": 0.10579142513356886,
+          "sampling": "keypoint-patches",
+          "before_logit_rmse": 0.2797643840312958,
+          "after_logit_rmse": 0.1690853171780689
+        },
+        {
+          "left": "outputs/morph-showcase/varied-album/inputs/varied-DSC_0990-20.jpg",
+          "right": "outputs/morph-showcase/varied-album/inputs/varied-DSC_0997-23.jpg",
+          "matches": 130,
+          "geometric_inliers": 55,
+          "photometric_inliers": 2892,
+          "pair_scale": 0.7957893438796599,
+          "pair_residual": 0.1320170802472748,
+          "sampling": "aligned-overlap",
+          "before_logit_rmse": 0.8578360676765442,
+          "after_logit_rmse": 0.17959518627938587
+        },
+        {
+          "left": "outputs/morph-showcase/varied-album/inputs/varied-DSC_0990-20.jpg",
+          "right": "Morph/originals/DSC_0995-22.jpg",
+          "matches": 203,
+          "geometric_inliers": 124,
+          "photometric_inliers": 103,
+          "pair_scale": 0.9074405959581787,
+          "pair_residual": 0.1021263192138852,
+          "sampling": "keypoint-patches",
+          "before_logit_rmse": 0.4005626440048218,
+          "after_logit_rmse": 0.1632012815130093
+        },
+        {
+          "left": "outputs/morph-showcase/varied-album/inputs/varied-DSC_0993-21.jpg",
+          "right": "outputs/morph-showcase/varied-album/inputs/varied-DSC_0995-22.jpg",
+          "matches": 1052,
+          "geometric_inliers": 969,
+          "photometric_inliers": 3251,
+          "pair_scale": 0.9224561162646758,
+          "pair_residual": 0.06810243010295262,
+          "sampling": "aligned-overlap",
+          "before_logit_rmse": 0.3835259675979614,
+          "after_logit_rmse": 0.08731648287522195
+        },
+        {
+          "left": "outputs/morph-showcase/varied-album/inputs/varied-DSC_0993-21.jpg",
+          "right": "outputs/morph-showcase/varied-album/inputs/varied-DSC_0997-23.jpg",
+          "matches": 458,
+          "geometric_inliers": 277,
+          "photometric_inliers": 3014,
+          "pair_scale": 0.9495623562452574,
+          "pair_residual": 0.1107156454788755,
+          "sampling": "aligned-overlap",
+          "before_logit_rmse": 0.17978256940841675,
+          "after_logit_rmse": 0.15984989126066515
+        },
+        {
+          "left": "outputs/morph-showcase/varied-album/inputs/varied-DSC_0993-21.jpg",
+          "right": "outputs/morph-showcase/varied-album/inputs/varied-DSC_0998-24.jpg",
+          "matches": 308,
+          "geometric_inliers": 226,
+          "photometric_inliers": 202,
+          "pair_scale": 0.7670711011279092,
+          "pair_residual": 0.06350969902349055,
+          "sampling": "keypoint-patches",
+          "before_logit_rmse": 0.5717517137527466,
+          "after_logit_rmse": 0.10964857118878145
+        },
+        {
+          "left": "outputs/morph-showcase/varied-album/inputs/varied-DSC_0993-21.jpg",
+          "right": "Morph/originals/DSC_0995-22.jpg",
+          "matches": 1070,
+          "geometric_inliers": 982,
+          "photometric_inliers": 3277,
+          "pair_scale": 0.9615435028785181,
+          "pair_residual": 0.07285299378421049,
+          "sampling": "aligned-overlap",
+          "before_logit_rmse": 0.25844720005989075,
+          "after_logit_rmse": 0.09981720699186937
+        },
+        {
+          "left": "outputs/morph-showcase/varied-album/inputs/varied-DSC_0995-22.jpg",
+          "right": "outputs/morph-showcase/varied-album/inputs/varied-DSC_0997-23.jpg",
+          "matches": 509,
+          "geometric_inliers": 349,
+          "photometric_inliers": 2927,
+          "pair_scale": 1.0041212836332878,
+          "pair_residual": 0.09195144790601928,
+          "sampling": "aligned-overlap",
+          "before_logit_rmse": 0.5060135722160339,
+          "after_logit_rmse": 0.13145701315836902
+        },
+        {
+          "left": "outputs/morph-showcase/varied-album/inputs/varied-DSC_0995-22.jpg",
+          "right": "outputs/morph-showcase/varied-album/inputs/varied-DSC_0998-24.jpg",
+          "matches": 451,
+          "geometric_inliers": 299,
+          "photometric_inliers": 2923,
+          "pair_scale": 0.8047044678321629,
+          "pair_residual": 0.050672045896106556,
+          "sampling": "aligned-overlap",
+          "before_logit_rmse": 0.22973105311393738,
+          "after_logit_rmse": 0.0794930074265115
+        },
+        {
+          "left": "outputs/morph-showcase/varied-album/inputs/varied-DSC_0995-22.jpg",
+          "right": "outputs/morph-showcase/varied-album/inputs/varied-DSC_1012-25.jpg",
+          "matches": 342,
+          "geometric_inliers": 192,
+          "photometric_inliers": 168,
+          "pair_scale": 1.089963957503248,
+          "pair_residual": 0.05224778644199716,
+          "sampling": "keypoint-patches",
+          "before_logit_rmse": 0.0925501212477684,
+          "after_logit_rmse": 0.05738520789233234
+        },
+        {
+          "left": "outputs/morph-showcase/varied-album/inputs/varied-DSC_0995-22.jpg",
+          "right": "Morph/originals/DSC_0995-22.jpg",
+          "matches": 2232,
+          "geometric_inliers": 2226,
+          "photometric_inliers": 3816,
+          "pair_scale": 1.032974905113265,
+          "pair_residual": 0.007514084600170156,
+          "sampling": "aligned-overlap",
+          "before_logit_rmse": 0.12397318333387375,
+          "after_logit_rmse": 0.030144412909419906
+        },
+        {
+          "left": "outputs/morph-showcase/varied-album/inputs/varied-DSC_0997-23.jpg",
+          "right": "outputs/morph-showcase/varied-album/inputs/varied-DSC_0998-24.jpg",
+          "matches": 194,
+          "geometric_inliers": 138,
+          "photometric_inliers": 110,
+          "pair_scale": 0.86753427987637,
+          "pair_residual": 0.05264400737754078,
+          "sampling": "keypoint-patches",
+          "before_logit_rmse": 0.7020785808563232,
+          "after_logit_rmse": 0.07573626897512707
+        },
+        {
+          "left": "outputs/morph-showcase/varied-album/inputs/varied-DSC_0997-23.jpg",
+          "right": "outputs/morph-showcase/varied-album/inputs/varied-DSC_1012-25.jpg",
+          "matches": 120,
+          "geometric_inliers": 71,
+          "photometric_inliers": 57,
+          "pair_scale": 1.0317955213181293,
+          "pair_residual": 0.06374828301518785,
+          "sampling": "keypoint-patches",
+          "before_logit_rmse": 0.3500065803527832,
+          "after_logit_rmse": 0.11445910066962392
+        },
+        {
+          "left": "outputs/morph-showcase/varied-album/inputs/varied-DSC_0997-23.jpg",
+          "right": "Morph/originals/DSC_0995-22.jpg",
+          "matches": 497,
+          "geometric_inliers": 333,
+          "photometric_inliers": 3002,
+          "pair_scale": 0.979373909096449,
+          "pair_residual": 0.09355954140495878,
+          "sampling": "aligned-overlap",
+          "before_logit_rmse": 0.35781148076057434,
+          "after_logit_rmse": 0.126237716402638
+        },
+        {
+          "left": "outputs/morph-showcase/varied-album/inputs/varied-DSC_0998-24.jpg",
+          "right": "outputs/morph-showcase/varied-album/inputs/varied-DSC_1012-25.jpg",
+          "matches": 491,
+          "geometric_inliers": 293,
+          "photometric_inliers": 2913,
+          "pair_scale": 0.7037186661572932,
+          "pair_residual": 0.11643724411560856,
+          "sampling": "aligned-overlap",
+          "before_logit_rmse": 0.37281662225723267,
+          "after_logit_rmse": 0.18719158493158605
+        },
+        {
+          "left": "outputs/morph-showcase/varied-album/inputs/varied-DSC_0998-24.jpg",
+          "right": "Morph/originals/DSC_0995-22.jpg",
+          "matches": 431,
+          "geometric_inliers": 255,
+          "photometric_inliers": 2795,
+          "pair_scale": 0.9339085194724734,
+          "pair_residual": 0.035703036844850496,
+          "sampling": "aligned-overlap",
+          "before_logit_rmse": 0.36449068784713745,
+          "after_logit_rmse": 0.059913943543550265
+        },
+        {
+          "left": "outputs/morph-showcase/varied-album/inputs/varied-DSC_1012-25.jpg",
+          "right": "Morph/originals/DSC_0995-22.jpg",
+          "matches": 347,
+          "geometric_inliers": 192,
+          "photometric_inliers": 166,
+          "pair_scale": 0.8848977337779206,
+          "pair_residual": 0.04262867362119872,
+          "sampling": "keypoint-patches",
+          "before_logit_rmse": 0.10954584926366806,
+          "after_logit_rmse": 0.05420734292727068
+        }
+      ]
+    },
+    {
+      "scene": "scene-03",
+      "reference": "Morph/originals/DSC_1037-31.jpg",
+      "edges": [
+        {
+          "left": "outputs/morph-showcase/varied-album/inputs/varied-DSC_1021-26.jpg",
+          "right": "outputs/morph-showcase/varied-album/inputs/varied-DSC_1026-27.jpg",
+          "matches": 982,
+          "geometric_inliers": 926,
+          "photometric_inliers": 3030,
+          "pair_scale": 0.8777285006670378,
+          "pair_residual": 0.06634912626513803,
+          "sampling": "aligned-overlap",
+          "before_logit_rmse": 0.9335005283355713,
+          "after_logit_rmse": 0.07760566178898969
+        },
+        {
+          "left": "outputs/morph-showcase/varied-album/inputs/varied-DSC_1021-26.jpg",
+          "right": "outputs/morph-showcase/varied-album/inputs/varied-DSC_1028-28.jpg",
+          "matches": 532,
+          "geometric_inliers": 486,
+          "photometric_inliers": 3128,
+          "pair_scale": 0.8576419355709011,
+          "pair_residual": 0.10792590176798574,
+          "sampling": "aligned-overlap",
+          "before_logit_rmse": 0.9324355721473694,
+          "after_logit_rmse": 0.13367566249897414
+        },
+        {
+          "left": "outputs/morph-showcase/varied-album/inputs/varied-DSC_1021-26.jpg",
+          "right": "outputs/morph-showcase/varied-album/inputs/varied-DSC_1030-29.jpg",
+          "matches": 276,
+          "geometric_inliers": 215,
+          "photometric_inliers": 2677,
+          "pair_scale": 0.8292840247027012,
+          "pair_residual": 0.1876473582038374,
+          "sampling": "aligned-overlap",
+          "before_logit_rmse": 0.47671768069267273,
+          "after_logit_rmse": 0.25297201536368014
+        },
+        {
+          "left": "outputs/morph-showcase/varied-album/inputs/varied-DSC_1021-26.jpg",
+          "right": "Morph/originals/DSC_1037-31.jpg",
+          "matches": 443,
+          "geometric_inliers": 307,
+          "photometric_inliers": 2886,
+          "pair_scale": 0.8227920296135346,
+          "pair_residual": 0.16512146668369432,
+          "sampling": "aligned-overlap",
+          "before_logit_rmse": 0.6261795163154602,
+          "after_logit_rmse": 0.2300128579077759
+        },
+        {
+          "left": "outputs/morph-showcase/varied-album/inputs/varied-DSC_1026-27.jpg",
+          "right": "outputs/morph-showcase/varied-album/inputs/varied-DSC_1028-28.jpg",
+          "matches": 702,
+          "geometric_inliers": 598,
+          "photometric_inliers": 3076,
+          "pair_scale": 0.9719102734670149,
+          "pair_residual": 0.07774926021087233,
+          "sampling": "aligned-overlap",
+          "before_logit_rmse": 0.11318836361169815,
+          "after_logit_rmse": 0.0951207720510145
+        },
+        {
+          "left": "outputs/morph-showcase/varied-album/inputs/varied-DSC_1026-27.jpg",
+          "right": "outputs/morph-showcase/varied-album/inputs/varied-DSC_1030-29.jpg",
+          "matches": 181,
+          "geometric_inliers": 147,
+          "photometric_inliers": 2622,
+          "pair_scale": 0.9450054220329064,
+          "pair_residual": 0.18216978717752036,
+          "sampling": "aligned-overlap",
+          "before_logit_rmse": 0.7211166620254517,
+          "after_logit_rmse": 0.24695123749820933
+        },
+        {
+          "left": "outputs/morph-showcase/varied-album/inputs/varied-DSC_1026-27.jpg",
+          "right": "outputs/morph-showcase/varied-album/inputs/varied-DSC_1033-30.jpg",
+          "matches": 249,
+          "geometric_inliers": 185,
+          "photometric_inliers": 2696,
+          "pair_scale": 0.9966562060076931,
+          "pair_residual": 0.11316163219528724,
+          "sampling": "aligned-overlap",
+          "before_logit_rmse": 0.7295291423797607,
+          "after_logit_rmse": 0.15054780597084927
+        },
+        {
+          "left": "outputs/morph-showcase/varied-album/inputs/varied-DSC_1026-27.jpg",
+          "right": "Morph/originals/DSC_1037-31.jpg",
+          "matches": 297,
+          "geometric_inliers": 205,
+          "photometric_inliers": 2865,
+          "pair_scale": 0.959541043641934,
+          "pair_residual": 0.1508141764421699,
+          "sampling": "aligned-overlap",
+          "before_logit_rmse": 0.42115360498428345,
+          "after_logit_rmse": 0.22313613573179222
+        },
+        {
+          "left": "outputs/morph-showcase/varied-album/inputs/varied-DSC_1028-28.jpg",
+          "right": "outputs/morph-showcase/varied-album/inputs/varied-DSC_1030-29.jpg",
+          "matches": 192,
+          "geometric_inliers": 135,
+          "photometric_inliers": 2856,
+          "pair_scale": 0.962265889595645,
+          "pair_residual": 0.2849532868326379,
+          "sampling": "aligned-overlap",
+          "before_logit_rmse": 0.7454714775085449,
+          "after_logit_rmse": 0.3334876238987699
+        },
+        {
+          "left": "outputs/morph-showcase/varied-album/inputs/varied-DSC_1028-28.jpg",
+          "right": "outputs/morph-showcase/varied-album/inputs/varied-DSC_1033-30.jpg",
+          "matches": 289,
+          "geometric_inliers": 162,
+          "photometric_inliers": 2893,
+          "pair_scale": 1.0416618287503372,
+          "pair_residual": 0.15402651788759014,
+          "sampling": "aligned-overlap",
+          "before_logit_rmse": 0.7513463497161865,
+          "after_logit_rmse": 0.18449406407081037
+        },
+        {
+          "left": "outputs/morph-showcase/varied-album/inputs/varied-DSC_1028-28.jpg",
+          "right": "outputs/morph-showcase/varied-album/inputs/varied-DSC_1037-31.jpg",
+          "matches": 221,
+          "geometric_inliers": 140,
+          "photometric_inliers": 2787,
+          "pair_scale": 1.016360744946256,
+          "pair_residual": 0.14541714686692855,
+          "sampling": "aligned-overlap",
+          "before_logit_rmse": 0.5776941776275635,
+          "after_logit_rmse": 0.23343929829907595
+        },
+        {
+          "left": "outputs/morph-showcase/varied-album/inputs/varied-DSC_1028-28.jpg",
+          "right": "Morph/originals/DSC_1037-31.jpg",
+          "matches": 218,
+          "geometric_inliers": 143,
+          "photometric_inliers": 3048,
+          "pair_scale": 0.9886613860677267,
+          "pair_residual": 0.2232179095086978,
+          "sampling": "aligned-overlap",
+          "before_logit_rmse": 0.497394859790802,
+          "after_logit_rmse": 0.32869842015580986
+        },
+        {
+          "left": "outputs/morph-showcase/varied-album/inputs/varied-DSC_1030-29.jpg",
+          "right": "outputs/morph-showcase/varied-album/inputs/varied-DSC_1033-30.jpg",
+          "matches": 521,
+          "geometric_inliers": 348,
+          "photometric_inliers": 2773,
+          "pair_scale": 0.9269625053963769,
+          "pair_residual": 0.24630538383670894,
+          "sampling": "aligned-overlap",
+          "before_logit_rmse": 0.37647998332977295,
+          "after_logit_rmse": 0.3344564535049971
+        },
+        {
+          "left": "outputs/morph-showcase/varied-album/inputs/varied-DSC_1030-29.jpg",
+          "right": "outputs/morph-showcase/varied-album/inputs/varied-DSC_1037-31.jpg",
+          "matches": 190,
+          "geometric_inliers": 122,
+          "photometric_inliers": 2767,
+          "pair_scale": 0.8624115885577108,
+          "pair_residual": 0.23431471882730975,
+          "sampling": "aligned-overlap",
+          "before_logit_rmse": 0.35468605160713196,
+          "after_logit_rmse": 0.337750998431005
+        },
+        {
+          "left": "outputs/morph-showcase/varied-album/inputs/varied-DSC_1030-29.jpg",
+          "right": "outputs/morph-showcase/varied-album/inputs/varied-DSC_1038-32.jpg",
+          "matches": 198,
+          "geometric_inliers": 118,
+          "photometric_inliers": 2707,
+          "pair_scale": 0.7916999929691346,
+          "pair_residual": 0.23345357811625933,
+          "sampling": "aligned-overlap",
+          "before_logit_rmse": 0.40678563714027405,
+          "after_logit_rmse": 0.34822837136305573
+        },
+        {
+          "left": "outputs/morph-showcase/varied-album/inputs/varied-DSC_1030-29.jpg",
+          "right": "Morph/originals/DSC_1037-31.jpg",
+          "matches": 196,
+          "geometric_inliers": 122,
+          "photometric_inliers": 2711,
+          "pair_scale": 0.8416922245425585,
+          "pair_residual": 0.21617920727653836,
+          "sampling": "aligned-overlap",
+          "before_logit_rmse": 0.36623239517211914,
+          "after_logit_rmse": 0.34039914765674184
+        },
+        {
+          "left": "outputs/morph-showcase/varied-album/inputs/varied-DSC_1033-30.jpg",
+          "right": "outputs/morph-showcase/varied-album/inputs/varied-DSC_1037-31.jpg",
+          "matches": 196,
+          "geometric_inliers": 72,
+          "photometric_inliers": 2887,
+          "pair_scale": 0.6609267686354996,
+          "pair_residual": 0.2923059959724548,
+          "sampling": "aligned-overlap",
+          "before_logit_rmse": 0.6144399046897888,
+          "after_logit_rmse": 0.4907309943823402
+        },
+        {
+          "left": "outputs/morph-showcase/varied-album/inputs/varied-DSC_1033-30.jpg",
+          "right": "outputs/morph-showcase/varied-album/inputs/varied-DSC_1038-32.jpg",
+          "matches": 276,
+          "geometric_inliers": 104,
+          "photometric_inliers": 2605,
+          "pair_scale": 0.9337807931701629,
+          "pair_residual": 0.0401044545254996,
+          "sampling": "aligned-overlap",
+          "before_logit_rmse": 0.1630888283252716,
+          "after_logit_rmse": 0.07127883954563889
+        },
+        {
+          "left": "outputs/morph-showcase/varied-album/inputs/varied-DSC_1033-30.jpg",
+          "right": "Morph/originals/DSC_1037-31.jpg",
+          "matches": 200,
+          "geometric_inliers": 82,
+          "photometric_inliers": 2962,
+          "pair_scale": 0.8540804209485201,
+          "pair_residual": 0.1745827343885764,
+          "sampling": "aligned-overlap",
+          "before_logit_rmse": 0.40068379044532776,
+          "after_logit_rmse": 0.2576729979606568
+        },
+        {
+          "left": "outputs/morph-showcase/varied-album/inputs/varied-DSC_1037-31.jpg",
+          "right": "outputs/morph-showcase/varied-album/inputs/varied-DSC_1038-32.jpg",
+          "matches": 878,
+          "geometric_inliers": 824,
+          "photometric_inliers": 2888,
+          "pair_scale": 0.9621810402213895,
+          "pair_residual": 0.0924373120663835,
+          "sampling": "aligned-overlap",
+          "before_logit_rmse": 0.1605285406112671,
+          "after_logit_rmse": 0.13071165896797382
+        },
+        {
+          "left": "outputs/morph-showcase/varied-album/inputs/varied-DSC_1037-31.jpg",
+          "right": "Morph/originals/DSC_1037-31.jpg",
+          "matches": 2319,
+          "geometric_inliers": 2316,
+          "photometric_inliers": 3637,
+          "pair_scale": 0.9772019469322228,
+          "pair_residual": 0.008103072149704585,
+          "sampling": "aligned-overlap",
+          "before_logit_rmse": 0.10755511373281479,
+          "after_logit_rmse": 0.05254768704015991
+        },
+        {
+          "left": "outputs/morph-showcase/varied-album/inputs/varied-DSC_1038-32.jpg",
+          "right": "Morph/originals/DSC_1037-31.jpg",
+          "matches": 859,
+          "geometric_inliers": 728,
+          "photometric_inliers": 2967,
+          "pair_scale": 0.9725829777296016,
+          "pair_residual": 0.09707779006300447,
+          "sampling": "aligned-overlap",
+          "before_logit_rmse": 0.2270287275314331,
+          "after_logit_rmse": 0.15054582885887166
+        }
+      ]
+    },
+    {
+      "scene": "scene-04",
+      "reference": "Morph/originals/DSC_1054-33.jpg",
+      "edges": [
+        {
+          "left": "outputs/morph-showcase/varied-album/inputs/varied-DSC_1054-33.jpg",
+          "right": "outputs/morph-showcase/varied-album/inputs/varied-DSC_1059-34.jpg",
+          "matches": 662,
+          "geometric_inliers": 569,
+          "photometric_inliers": 2974,
+          "pair_scale": 0.9491194000968038,
+          "pair_residual": 0.06553898117995885,
+          "sampling": "aligned-overlap",
+          "before_logit_rmse": 0.25173479318618774,
+          "after_logit_rmse": 0.0897904829139558
+        },
+        {
+          "left": "outputs/morph-showcase/varied-album/inputs/varied-DSC_1054-33.jpg",
+          "right": "Morph/originals/DSC_1054-33.jpg",
+          "matches": 2232,
+          "geometric_inliers": 2228,
+          "photometric_inliers": 3847,
+          "pair_scale": 0.9658918558360168,
+          "pair_residual": 0.00782648773836811,
+          "sampling": "aligned-overlap",
+          "before_logit_rmse": 0.149033784866333,
+          "after_logit_rmse": 0.017567173441149418
+        },
+        {
+          "left": "outputs/morph-showcase/varied-album/inputs/varied-DSC_1059-34.jpg",
+          "right": "Morph/originals/DSC_1054-33.jpg",
+          "matches": 659,
+          "geometric_inliers": 582,
+          "photometric_inliers": 3020,
+          "pair_scale": 0.9586663395582247,
+          "pair_residual": 0.05086432505046093,
+          "sampling": "aligned-overlap",
+          "before_logit_rmse": 0.10790817439556122,
+          "after_logit_rmse": 0.07359823837597333
+        }
+      ]
+    },
+    {
+      "scene": "scene-05",
+      "reference": "Morph/originals/DSC_1111-45.jpg",
+      "edges": [
+        {
+          "left": "outputs/morph-showcase/varied-album/inputs/varied-DSC_1070-35.jpg",
+          "right": "outputs/morph-showcase/varied-album/inputs/varied-DSC_1074-36.jpg",
+          "matches": 742,
+          "geometric_inliers": 665,
+          "photometric_inliers": 3257,
+          "pair_scale": 0.9584777282722247,
+          "pair_residual": 0.13190470025837134,
+          "sampling": "aligned-overlap",
+          "before_logit_rmse": 0.6892693042755127,
+          "after_logit_rmse": 0.1630882947356659
+        },
+        {
+          "left": "outputs/morph-showcase/varied-album/inputs/varied-DSC_1070-35.jpg",
+          "right": "outputs/morph-showcase/varied-album/inputs/varied-DSC_1083-37.jpg",
+          "matches": 144,
+          "geometric_inliers": 73,
+          "photometric_inliers": 3112,
+          "pair_scale": 0.9296891451688548,
+          "pair_residual": 0.07117434263170813,
+          "sampling": "aligned-overlap",
+          "before_logit_rmse": 0.5529724955558777,
+          "after_logit_rmse": 0.08826398204806772
+        },
+        {
+          "left": "outputs/morph-showcase/varied-album/inputs/varied-DSC_1070-35.jpg",
+          "right": "outputs/morph-showcase/varied-album/inputs/varied-DSC_1096-40.jpg",
+          "matches": 298,
+          "geometric_inliers": 134,
+          "photometric_inliers": 3118,
+          "pair_scale": 0.6699916729494505,
+          "pair_residual": 0.205503243166629,
+          "sampling": "aligned-overlap",
+          "before_logit_rmse": 0.3441399931907654,
+          "after_logit_rmse": 0.2873384154921149
+        },
+        {
+          "left": "outputs/morph-showcase/varied-album/inputs/varied-DSC_1070-35.jpg",
+          "right": "Morph/originals/DSC_1111-45.jpg",
+          "matches": 117,
+          "geometric_inliers": 64,
+          "photometric_inliers": 2933,
+          "pair_scale": 0.8976616858465132,
+          "pair_residual": 0.07798402182568655,
+          "sampling": "aligned-overlap",
+          "before_logit_rmse": 0.37176036834716797,
+          "after_logit_rmse": 0.12089325867332239
+        },
+        {
+          "left": "outputs/morph-showcase/varied-album/inputs/varied-DSC_1074-36.jpg",
+          "right": "outputs/morph-showcase/varied-album/inputs/varied-DSC_1083-37.jpg",
+          "matches": 594,
+          "geometric_inliers": 457,
+          "photometric_inliers": 3326,
+          "pair_scale": 1.0204327740784898,
+          "pair_residual": 0.027992482630719014,
+          "sampling": "aligned-overlap",
+          "before_logit_rmse": 0.13954423367977142,
+          "after_logit_rmse": 0.03386959766080475
+        },
+        {
+          "left": "outputs/morph-showcase/varied-album/inputs/varied-DSC_1074-36.jpg",
+          "right": "outputs/morph-showcase/varied-album/inputs/varied-DSC_1096-40.jpg",
+          "matches": 184,
+          "geometric_inliers": 68,
+          "photometric_inliers": 3003,
+          "pair_scale": 0.9212824323015574,
+          "pair_residual": 0.0891649438075841,
+          "sampling": "aligned-overlap",
+          "before_logit_rmse": 0.7062606811523438,
+          "after_logit_rmse": 0.12029572911545877
+        },
+        {
+          "left": "outputs/morph-showcase/varied-album/inputs/varied-DSC_1074-36.jpg",
+          "right": "outputs/morph-showcase/varied-album/inputs/varied-DSC_1100-41.jpg",
+          "matches": 179,
+          "geometric_inliers": 76,
+          "photometric_inliers": 3008,
+          "pair_scale": 1.0016886046374496,
+          "pair_residual": 0.10539061126755334,
+          "sampling": "aligned-overlap",
+          "before_logit_rmse": 0.38420382142066956,
+          "after_logit_rmse": 0.12459288764856219
+        },
+        {
+          "left": "outputs/morph-showcase/varied-album/inputs/varied-DSC_1074-36.jpg",
+          "right": "Morph/originals/DSC_1111-45.jpg",
+          "matches": 415,
+          "geometric_inliers": 343,
+          "photometric_inliers": 3106,
+          "pair_scale": 0.9856458662200811,
+          "pair_residual": 0.03935817429424597,
+          "sampling": "aligned-overlap",
+          "before_logit_rmse": 0.3269804120063782,
+          "after_logit_rmse": 0.07742085564256534
+        },
+        {
+          "left": "outputs/morph-showcase/varied-album/inputs/varied-DSC_1083-37.jpg",
+          "right": "outputs/morph-showcase/varied-album/inputs/varied-DSC_1096-40.jpg",
+          "matches": 220,
+          "geometric_inliers": 124,
+          "photometric_inliers": 3141,
+          "pair_scale": 0.8702317647920874,
+          "pair_residual": 0.12985113155721312,
+          "sampling": "aligned-overlap",
+          "before_logit_rmse": 0.6193461418151855,
+          "after_logit_rmse": 0.19060679781951184
+        },
+        {
+          "left": "outputs/morph-showcase/varied-album/inputs/varied-DSC_1083-37.jpg",
+          "right": "outputs/morph-showcase/varied-album/inputs/varied-DSC_1100-41.jpg",
+          "matches": 153,
+          "geometric_inliers": 55,
+          "photometric_inliers": 3134,
+          "pair_scale": 1.007451668461912,
+          "pair_residual": 0.13070296813869342,
+          "sampling": "aligned-overlap",
+          "before_logit_rmse": 0.35252001881599426,
+          "after_logit_rmse": 0.15209320022635817
+        },
+        {
+          "left": "outputs/morph-showcase/varied-album/inputs/varied-DSC_1083-37.jpg",
+          "right": "outputs/morph-showcase/varied-album/inputs/varied-DSC_1106-43.jpg",
+          "matches": 113,
+          "geometric_inliers": 37,
+          "photometric_inliers": 3082,
+          "pair_scale": 0.9794132834591377,
+          "pair_residual": 0.1182760793233666,
+          "sampling": "aligned-overlap",
+          "before_logit_rmse": 0.7219665050506592,
+          "after_logit_rmse": 0.1350818251834269
+        },
+        {
+          "left": "outputs/morph-showcase/varied-album/inputs/varied-DSC_1083-37.jpg",
+          "right": "Morph/originals/DSC_1111-45.jpg",
+          "matches": 491,
+          "geometric_inliers": 300,
+          "photometric_inliers": 3113,
+          "pair_scale": 0.9621883030988961,
+          "pair_residual": 0.03863808564427213,
+          "sampling": "aligned-overlap",
+          "before_logit_rmse": 0.20167796313762665,
+          "after_logit_rmse": 0.07309300795169757
+        },
+        {
+          "left": "outputs/morph-showcase/varied-album/inputs/varied-DSC_1096-40.jpg",
+          "right": "outputs/morph-showcase/varied-album/inputs/varied-DSC_1100-41.jpg",
+          "matches": 455,
+          "geometric_inliers": 224,
+          "photometric_inliers": 3037,
+          "pair_scale": 1.01224585218962,
+          "pair_residual": 0.10996138706901269,
+          "sampling": "aligned-overlap",
+          "before_logit_rmse": 0.3061303198337555,
+          "after_logit_rmse": 0.1287129455592458
+        },
+        {
+          "left": "outputs/morph-showcase/varied-album/inputs/varied-DSC_1096-40.jpg",
+          "right": "outputs/morph-showcase/varied-album/inputs/varied-DSC_1106-43.jpg",
+          "matches": 191,
+          "geometric_inliers": 88,
+          "photometric_inliers": 3155,
+          "pair_scale": 0.987613570695255,
+          "pair_residual": 0.0676385604088463,
+          "sampling": "aligned-overlap",
+          "before_logit_rmse": 0.15695735812187195,
+          "after_logit_rmse": 0.08581907924851014
+        },
+        {
+          "left": "outputs/morph-showcase/varied-album/inputs/varied-DSC_1096-40.jpg",
+          "right": "outputs/morph-showcase/varied-album/inputs/varied-DSC_1109-44.jpg",
+          "matches": 136,
+          "geometric_inliers": 62,
+          "photometric_inliers": 3087,
+          "pair_scale": 0.95890606551465,
+          "pair_residual": 0.0820654336779937,
+          "sampling": "aligned-overlap",
+          "before_logit_rmse": 0.15146145224571228,
+          "after_logit_rmse": 0.10236990718927676
+        },
+        {
+          "left": "outputs/morph-showcase/varied-album/inputs/varied-DSC_1096-40.jpg",
+          "right": "Morph/originals/DSC_1111-45.jpg",
+          "matches": 114,
+          "geometric_inliers": 47,
+          "photometric_inliers": 2947,
+          "pair_scale": 0.8849343499020217,
+          "pair_residual": 0.08060328728685384,
+          "sampling": "aligned-overlap",
+          "before_logit_rmse": 0.42724499106407166,
+          "after_logit_rmse": 0.12981482860261817
+        },
+        {
+          "left": "outputs/morph-showcase/varied-album/inputs/varied-DSC_1100-41.jpg",
+          "right": "outputs/morph-showcase/varied-album/inputs/varied-DSC_1106-43.jpg",
+          "matches": 211,
+          "geometric_inliers": 95,
+          "photometric_inliers": 3192,
+          "pair_scale": 0.9413953178930996,
+          "pair_residual": 0.06965052263140784,
+          "sampling": "aligned-overlap",
+          "before_logit_rmse": 0.4659552276134491,
+          "after_logit_rmse": 0.07337253870122719
+        },
+        {
+          "left": "outputs/morph-showcase/varied-album/inputs/varied-DSC_1100-41.jpg",
+          "right": "outputs/morph-showcase/varied-album/inputs/varied-DSC_1109-44.jpg",
+          "matches": 163,
+          "geometric_inliers": 64,
+          "photometric_inliers": 3105,
+          "pair_scale": 0.9320715319228062,
+          "pair_residual": 0.07907540219021789,
+          "sampling": "aligned-overlap",
+          "before_logit_rmse": 0.3148319721221924,
+          "after_logit_rmse": 0.09431472124642352
+        },
+        {
+          "left": "outputs/morph-showcase/varied-album/inputs/varied-DSC_1100-41.jpg",
+          "right": "outputs/morph-showcase/varied-album/inputs/varied-DSC_1111-45.jpg",
+          "matches": 122,
+          "geometric_inliers": 41,
+          "photometric_inliers": 2883,
+          "pair_scale": 0.8141275632207339,
+          "pair_residual": 0.06916965826456592,
+          "sampling": "aligned-overlap",
+          "before_logit_rmse": 0.19815008342266083,
+          "after_logit_rmse": 0.10629502140397816
+        },
+        {
+          "left": "outputs/morph-showcase/varied-album/inputs/varied-DSC_1100-41.jpg",
+          "right": "Morph/originals/DSC_1111-45.jpg",
+          "matches": 134,
+          "geometric_inliers": 47,
+          "photometric_inliers": 2871,
+          "pair_scale": 0.8394327123656442,
+          "pair_residual": 0.07053468844685289,
+          "sampling": "aligned-overlap",
+          "before_logit_rmse": 0.18567787110805511,
+          "after_logit_rmse": 0.11165168407126724
+        },
+        {
+          "left": "outputs/morph-showcase/varied-album/inputs/varied-DSC_1106-43.jpg",
+          "right": "outputs/morph-showcase/varied-album/inputs/varied-DSC_1109-44.jpg",
+          "matches": 194,
+          "geometric_inliers": 84,
+          "photometric_inliers": 3002,
+          "pair_scale": 0.9706375827348096,
+          "pair_residual": 0.029184036042889116,
+          "sampling": "aligned-overlap",
+          "before_logit_rmse": 0.17760320007801056,
+          "after_logit_rmse": 0.03581533037998412
+        },
+        {
+          "left": "outputs/morph-showcase/varied-album/inputs/varied-DSC_1106-43.jpg",
+          "right": "outputs/morph-showcase/varied-album/inputs/varied-DSC_1111-45.jpg",
+          "matches": 111,
+          "geometric_inliers": 40,
+          "photometric_inliers": 2933,
+          "pair_scale": 0.8173167020903861,
+          "pair_residual": 0.08204881279167277,
+          "sampling": "aligned-overlap",
+          "before_logit_rmse": 0.5699833035469055,
+          "after_logit_rmse": 0.12603814767395974
+        },
+        {
+          "left": "outputs/morph-showcase/varied-album/inputs/varied-DSC_1106-43.jpg",
+          "right": "outputs/morph-showcase/varied-album/inputs/varied-DSC_1118-48.jpg",
+          "matches": 186,
+          "geometric_inliers": 107,
+          "photometric_inliers": 2952,
+          "pair_scale": 0.9327179998496276,
+          "pair_residual": 0.026879451029045355,
+          "sampling": "aligned-overlap",
+          "before_logit_rmse": 0.09925558418035507,
+          "after_logit_rmse": 0.03532906375971427
+        },
+        {
+          "left": "outputs/morph-showcase/varied-album/inputs/varied-DSC_1106-43.jpg",
+          "right": "Morph/originals/DSC_1111-45.jpg",
+          "matches": 105,
+          "geometric_inliers": 41,
+          "photometric_inliers": 2961,
+          "pair_scale": 0.8372375016657764,
+          "pair_residual": 0.08689051794236505,
+          "sampling": "aligned-overlap",
+          "before_logit_rmse": 0.573514997959137,
+          "after_logit_rmse": 0.134932127784315
+        },
+        {
+          "left": "outputs/morph-showcase/varied-album/inputs/varied-DSC_1109-44.jpg",
+          "right": "outputs/morph-showcase/varied-album/inputs/varied-DSC_1111-45.jpg",
+          "matches": 517,
+          "geometric_inliers": 456,
+          "photometric_inliers": 3177,
+          "pair_scale": 0.932688604886138,
+          "pair_residual": 0.14515332940488335,
+          "sampling": "aligned-overlap",
+          "before_logit_rmse": 0.42411690950393677,
+          "after_logit_rmse": 0.21440893565615235
+        },
+        {
+          "left": "outputs/morph-showcase/varied-album/inputs/varied-DSC_1109-44.jpg",
+          "right": "outputs/morph-showcase/varied-album/inputs/varied-DSC_1118-48.jpg",
+          "matches": 253,
+          "geometric_inliers": 112,
+          "photometric_inliers": 2833,
+          "pair_scale": 0.814641849531259,
+          "pair_residual": 0.1433023321238869,
+          "sampling": "aligned-overlap",
+          "before_logit_rmse": 0.22044646739959717,
+          "after_logit_rmse": 0.1859688695925802
+        },
+        {
+          "left": "outputs/morph-showcase/varied-album/inputs/varied-DSC_1109-44.jpg",
+          "right": "Morph/originals/DSC_1111-45.jpg",
+          "matches": 501,
+          "geometric_inliers": 430,
+          "photometric_inliers": 3148,
+          "pair_scale": 0.9657919444959662,
+          "pair_residual": 0.14472009646212808,
+          "sampling": "aligned-overlap",
+          "before_logit_rmse": 0.3999091386795044,
+          "after_logit_rmse": 0.23305047719980682
+        },
+        {
+          "left": "outputs/morph-showcase/varied-album/inputs/varied-DSC_1111-45.jpg",
+          "right": "outputs/morph-showcase/varied-album/inputs/varied-DSC_1118-48.jpg",
+          "matches": 165,
+          "geometric_inliers": 54,
+          "photometric_inliers": 2868,
+          "pair_scale": 0.9622962899575691,
+          "pair_residual": 0.08876045328201135,
+          "sampling": "aligned-overlap",
+          "before_logit_rmse": 0.4489448070526123,
+          "after_logit_rmse": 0.1287661376078328
+        },
+        {
+          "left": "outputs/morph-showcase/varied-album/inputs/varied-DSC_1111-45.jpg",
+          "right": "Morph/originals/DSC_1111-45.jpg",
+          "matches": 2272,
+          "geometric_inliers": 2260,
+          "photometric_inliers": 3907,
+          "pair_scale": 1.0290800952283712,
+          "pair_residual": 0.007207399033288393,
+          "sampling": "aligned-overlap",
+          "before_logit_rmse": 0.04490453749895096,
+          "after_logit_rmse": 0.030236176950601643
+        },
+        {
+          "left": "outputs/morph-showcase/varied-album/inputs/varied-DSC_1118-48.jpg",
+          "right": "Morph/originals/DSC_1111-45.jpg",
+          "matches": 130,
+          "geometric_inliers": 49,
+          "photometric_inliers": 2968,
+          "pair_scale": 0.863889758829213,
+          "pair_residual": 0.07812856028619031,
+          "sampling": "aligned-overlap",
+          "before_logit_rmse": 0.4887027144432068,
+          "after_logit_rmse": 0.13194924947539088
+        }
+      ]
+    },
+    {
+      "scene": "scene-05-tower",
+      "reference": "Morph/originals/DSC_1105-42.jpg",
+      "edges": [
+        {
+          "left": "outputs/morph-showcase/varied-album/inputs/varied-DSC_1088-38.jpg",
+          "right": "outputs/morph-showcase/varied-album/inputs/varied-DSC_1090-39.jpg",
+          "matches": 482,
+          "geometric_inliers": 211,
+          "photometric_inliers": 2705,
+          "pair_scale": 0.8786754217217803,
+          "pair_residual": 0.1377659069634662,
+          "sampling": "aligned-overlap",
+          "before_logit_rmse": 0.21598032116889954,
+          "after_logit_rmse": 0.22024462017095803
+        },
+        {
+          "left": "outputs/morph-showcase/varied-album/inputs/varied-DSC_1088-38.jpg",
+          "right": "outputs/morph-showcase/varied-album/inputs/varied-DSC_1105-42.jpg",
+          "matches": 313,
+          "geometric_inliers": 151,
+          "photometric_inliers": 2698,
+          "pair_scale": 0.9673638022138202,
+          "pair_residual": 0.10760911978656922,
+          "sampling": "aligned-overlap",
+          "before_logit_rmse": 0.17089693248271942,
+          "after_logit_rmse": 0.16609621738130162
+        },
+        {
+          "left": "outputs/morph-showcase/varied-album/inputs/varied-DSC_1088-38.jpg",
+          "right": "outputs/morph-showcase/varied-album/inputs/varied-DSC_1114-46.jpg",
+          "matches": 158,
+          "geometric_inliers": 83,
+          "photometric_inliers": 2626,
+          "pair_scale": 1.0544158972239115,
+          "pair_residual": 0.17618499523039463,
+          "sampling": "aligned-overlap",
+          "before_logit_rmse": 0.36801019310951233,
+          "after_logit_rmse": 0.2008922391680201
+        },
+        {
+          "left": "outputs/morph-showcase/varied-album/inputs/varied-DSC_1088-38.jpg",
+          "right": "Morph/originals/DSC_1105-42.jpg",
+          "matches": 305,
+          "geometric_inliers": 156,
+          "photometric_inliers": 2675,
+          "pair_scale": 0.9777959894083252,
+          "pair_residual": 0.08457021931495523,
+          "sampling": "aligned-overlap",
+          "before_logit_rmse": 0.1326424926519394,
+          "after_logit_rmse": 0.12553200267916115
+        },
+        {
+          "left": "outputs/morph-showcase/varied-album/inputs/varied-DSC_1090-39.jpg",
+          "right": "outputs/morph-showcase/varied-album/inputs/varied-DSC_1105-42.jpg",
+          "matches": 452,
+          "geometric_inliers": 224,
+          "photometric_inliers": 2652,
+          "pair_scale": 0.9242514090222161,
+          "pair_residual": 0.035386637079222766,
+          "sampling": "aligned-overlap",
+          "before_logit_rmse": 0.09609818458557129,
+          "after_logit_rmse": 0.055629215609185496
+        },
+        {
+          "left": "outputs/morph-showcase/varied-album/inputs/varied-DSC_1090-39.jpg",
+          "right": "outputs/morph-showcase/varied-album/inputs/varied-DSC_1114-46.jpg",
+          "matches": 234,
+          "geometric_inliers": 124,
+          "photometric_inliers": 2548,
+          "pair_scale": 0.9633490451475946,
+          "pair_residual": 0.08601419523712142,
+          "sampling": "aligned-overlap",
+          "before_logit_rmse": 0.2653762102127075,
+          "after_logit_rmse": 0.1248426027768439
+        },
+        {
+          "left": "outputs/morph-showcase/varied-album/inputs/varied-DSC_1090-39.jpg",
+          "right": "outputs/morph-showcase/varied-album/inputs/varied-DSC_1116-47.jpg",
+          "matches": 237,
+          "geometric_inliers": 129,
+          "photometric_inliers": 2856,
+          "pair_scale": 0.814308060252006,
+          "pair_residual": 0.1846832662043299,
+          "sampling": "aligned-overlap",
+          "before_logit_rmse": 0.29769831895828247,
+          "after_logit_rmse": 0.2579320112337933
+        },
+        {
+          "left": "outputs/morph-showcase/varied-album/inputs/varied-DSC_1090-39.jpg",
+          "right": "Morph/originals/DSC_1105-42.jpg",
+          "matches": 467,
+          "geometric_inliers": 225,
+          "photometric_inliers": 2706,
+          "pair_scale": 0.9113566347969686,
+          "pair_residual": 0.03909832618104066,
+          "sampling": "aligned-overlap",
+          "before_logit_rmse": 0.11331683397293091,
+          "after_logit_rmse": 0.06272088606018578
+        },
+        {
+          "left": "outputs/morph-showcase/varied-album/inputs/varied-DSC_1105-42.jpg",
+          "right": "outputs/morph-showcase/varied-album/inputs/varied-DSC_1114-46.jpg",
+          "matches": 243,
+          "geometric_inliers": 114,
+          "photometric_inliers": 2624,
+          "pair_scale": 1.034602963665284,
+          "pair_residual": 0.09236163443283171,
+          "sampling": "aligned-overlap",
+          "before_logit_rmse": 0.31851139664649963,
+          "after_logit_rmse": 0.1277640813588832
+        },
+        {
+          "left": "outputs/morph-showcase/varied-album/inputs/varied-DSC_1105-42.jpg",
+          "right": "outputs/morph-showcase/varied-album/inputs/varied-DSC_1116-47.jpg",
+          "matches": 249,
+          "geometric_inliers": 138,
+          "photometric_inliers": 2814,
+          "pair_scale": 0.8832936877106767,
+          "pair_residual": 0.18375574712114295,
+          "sampling": "aligned-overlap",
+          "before_logit_rmse": 0.2990921139717102,
+          "after_logit_rmse": 0.26860621762544123
+        },
+        {
+          "left": "outputs/morph-showcase/varied-album/inputs/varied-DSC_1105-42.jpg",
+          "right": "Morph/originals/DSC_1105-42.jpg",
+          "matches": 2220,
+          "geometric_inliers": 2210,
+          "photometric_inliers": 3806,
+          "pair_scale": 0.9856651984024377,
+          "pair_residual": 0.007336478179622168,
+          "sampling": "aligned-overlap",
+          "before_logit_rmse": 0.06808259338140488,
+          "after_logit_rmse": 0.019491374191914556
+        },
+        {
+          "left": "outputs/morph-showcase/varied-album/inputs/varied-DSC_1114-46.jpg",
+          "right": "outputs/morph-showcase/varied-album/inputs/varied-DSC_1116-47.jpg",
+          "matches": 368,
+          "geometric_inliers": 122,
+          "photometric_inliers": 2772,
+          "pair_scale": 0.811163269396865,
+          "pair_residual": 0.2723020944558981,
+          "sampling": "aligned-overlap",
+          "before_logit_rmse": 0.47605231404304504,
+          "after_logit_rmse": 0.39337018393495904
+        },
+        {
+          "left": "outputs/morph-showcase/varied-album/inputs/varied-DSC_1114-46.jpg",
+          "right": "Morph/originals/DSC_1105-42.jpg",
+          "matches": 264,
+          "geometric_inliers": 118,
+          "photometric_inliers": 2659,
+          "pair_scale": 0.8432075780978082,
+          "pair_residual": 0.10145600341381171,
+          "sampling": "aligned-overlap",
+          "before_logit_rmse": 0.27833092212677,
+          "after_logit_rmse": 0.1254327709228151
+        },
+        {
+          "left": "outputs/morph-showcase/varied-album/inputs/varied-DSC_1116-47.jpg",
+          "right": "Morph/originals/DSC_1105-42.jpg",
+          "matches": 249,
+          "geometric_inliers": 135,
+          "photometric_inliers": 2669,
+          "pair_scale": 0.8336109846215339,
+          "pair_residual": 0.10951655420551142,
+          "sampling": "aligned-overlap",
+          "before_logit_rmse": 0.24139177799224854,
+          "after_logit_rmse": 0.1929420914139971
+        }
+      ]
+    },
+    {
+      "scene": "scene-06-walk",
+      "reference": "Morph/originals/DSC_1264-51.jpg",
+      "edges": [
+        {
+          "left": "outputs/morph-showcase/varied-album/inputs/varied-DSC_1259-49.jpg",
+          "right": "outputs/morph-showcase/varied-album/inputs/varied-DSC_1261-50.jpg",
+          "matches": 631,
+          "geometric_inliers": 303,
+          "photometric_inliers": 3077,
+          "pair_scale": 0.8419735462512073,
+          "pair_residual": 0.11472095676992745,
+          "sampling": "aligned-overlap",
+          "before_logit_rmse": 0.2622770071029663,
+          "after_logit_rmse": 0.146894508186527
+        },
+        {
+          "left": "outputs/morph-showcase/varied-album/inputs/varied-DSC_1259-49.jpg",
+          "right": "outputs/morph-showcase/varied-album/inputs/varied-DSC_1264-51.jpg",
+          "matches": 287,
+          "geometric_inliers": 180,
+          "photometric_inliers": 3271,
+          "pair_scale": 0.8366261533250167,
+          "pair_residual": 0.16690299609959636,
+          "sampling": "aligned-overlap",
+          "before_logit_rmse": 0.2714296877384186,
+          "after_logit_rmse": 0.22624387340343294
+        },
+        {
+          "left": "outputs/morph-showcase/varied-album/inputs/varied-DSC_1259-49.jpg",
+          "right": "outputs/morph-showcase/varied-album/inputs/varied-DSC_1265-52.jpg",
+          "matches": 246,
+          "geometric_inliers": 144,
+          "photometric_inliers": 3191,
+          "pair_scale": 0.895344645997193,
+          "pair_residual": 0.2425175699872274,
+          "sampling": "aligned-overlap",
+          "before_logit_rmse": 0.764563262462616,
+          "after_logit_rmse": 0.2912620814845346
+        },
+        {
+          "left": "outputs/morph-showcase/varied-album/inputs/varied-DSC_1259-49.jpg",
+          "right": "Morph/originals/DSC_1264-51.jpg",
+          "matches": 293,
+          "geometric_inliers": 184,
+          "photometric_inliers": 3177,
+          "pair_scale": 0.8445844753094922,
+          "pair_residual": 0.200130907464326,
+          "sampling": "aligned-overlap",
+          "before_logit_rmse": 0.2940685749053955,
+          "after_logit_rmse": 0.27478544865976623
+        },
+        {
+          "left": "outputs/morph-showcase/varied-album/inputs/varied-DSC_1261-50.jpg",
+          "right": "outputs/morph-showcase/varied-album/inputs/varied-DSC_1264-51.jpg",
+          "matches": 465,
+          "geometric_inliers": 383,
+          "photometric_inliers": 3214,
+          "pair_scale": 0.9536826852976962,
+          "pair_residual": 0.11191503794994997,
+          "sampling": "aligned-overlap",
+          "before_logit_rmse": 0.3189398944377899,
+          "after_logit_rmse": 0.1598738562361979
+        },
+        {
+          "left": "outputs/morph-showcase/varied-album/inputs/varied-DSC_1261-50.jpg",
+          "right": "outputs/morph-showcase/varied-album/inputs/varied-DSC_1265-52.jpg",
+          "matches": 307,
+          "geometric_inliers": 225,
+          "photometric_inliers": 3140,
+          "pair_scale": 0.9969853013469661,
+          "pair_residual": 0.18507492612832205,
+          "sampling": "aligned-overlap",
+          "before_logit_rmse": 0.9267235398292542,
+          "after_logit_rmse": 0.23734251334131234
+        },
+        {
+          "left": "outputs/morph-showcase/varied-album/inputs/varied-DSC_1261-50.jpg",
+          "right": "outputs/morph-showcase/varied-album/inputs/varied-DSC_1268-53.jpg",
+          "matches": 295,
+          "geometric_inliers": 234,
+          "photometric_inliers": 3236,
+          "pair_scale": 0.9388530749408367,
+          "pair_residual": 0.16475070539654757,
+          "sampling": "aligned-overlap",
+          "before_logit_rmse": 0.5354006290435791,
+          "after_logit_rmse": 0.22740164050096265
+        },
+        {
+          "left": "outputs/morph-showcase/varied-album/inputs/varied-DSC_1261-50.jpg",
+          "right": "Morph/originals/DSC_1264-51.jpg",
+          "matches": 459,
+          "geometric_inliers": 383,
+          "photometric_inliers": 3243,
+          "pair_scale": 0.9880146565258877,
+          "pair_residual": 0.12061593647714976,
+          "sampling": "aligned-overlap",
+          "before_logit_rmse": 0.26242780685424805,
+          "after_logit_rmse": 0.16985163966771974
+        },
+        {
+          "left": "outputs/morph-showcase/varied-album/inputs/varied-DSC_1264-51.jpg",
+          "right": "outputs/morph-showcase/varied-album/inputs/varied-DSC_1265-52.jpg",
+          "matches": 1026,
+          "geometric_inliers": 899,
+          "photometric_inliers": 3142,
+          "pair_scale": 1.0756592196977044,
+          "pair_residual": 0.09910308044502938,
+          "sampling": "aligned-overlap",
+          "before_logit_rmse": 0.6386107802391052,
+          "after_logit_rmse": 0.1299065206051757
+        },
+        {
+          "left": "outputs/morph-showcase/varied-album/inputs/varied-DSC_1264-51.jpg",
+          "right": "outputs/morph-showcase/varied-album/inputs/varied-DSC_1268-53.jpg",
+          "matches": 914,
+          "geometric_inliers": 831,
+          "photometric_inliers": 3119,
+          "pair_scale": 0.991034209517594,
+          "pair_residual": 0.07164269062353172,
+          "sampling": "aligned-overlap",
+          "before_logit_rmse": 0.20656690001487732,
+          "after_logit_rmse": 0.10417661429876293
+        },
+        {
+          "left": "outputs/morph-showcase/varied-album/inputs/varied-DSC_1264-51.jpg",
+          "right": "Morph/originals/DSC_1264-51.jpg",
+          "matches": 2349,
+          "geometric_inliers": 2348,
+          "photometric_inliers": 3922,
+          "pair_scale": 1.0480020425203558,
+          "pair_residual": 0.006218495513855261,
+          "sampling": "aligned-overlap",
+          "before_logit_rmse": 0.09387700259685516,
+          "after_logit_rmse": 0.03653080838686067
+        },
+        {
+          "left": "outputs/morph-showcase/varied-album/inputs/varied-DSC_1265-52.jpg",
+          "right": "outputs/morph-showcase/varied-album/inputs/varied-DSC_1268-53.jpg",
+          "matches": 1110,
+          "geometric_inliers": 1079,
+          "photometric_inliers": 3454,
+          "pair_scale": 0.916382903488013,
+          "pair_residual": 0.07335289356777121,
+          "sampling": "aligned-overlap",
+          "before_logit_rmse": 0.4319770932197571,
+          "after_logit_rmse": 0.09567577425569083
+        },
+        {
+          "left": "outputs/morph-showcase/varied-album/inputs/varied-DSC_1265-52.jpg",
+          "right": "Morph/originals/DSC_1264-51.jpg",
+          "matches": 995,
+          "geometric_inliers": 898,
+          "photometric_inliers": 3142,
+          "pair_scale": 0.9145707599396808,
+          "pair_residual": 0.08475554535395807,
+          "sampling": "aligned-overlap",
+          "before_logit_rmse": 0.7176434397697449,
+          "after_logit_rmse": 0.11270869700966377
+        },
+        {
+          "left": "outputs/morph-showcase/varied-album/inputs/varied-DSC_1268-53.jpg",
+          "right": "Morph/originals/DSC_1264-51.jpg",
+          "matches": 910,
+          "geometric_inliers": 752,
+          "photometric_inliers": 3267,
+          "pair_scale": 0.9914225382351891,
+          "pair_residual": 0.10250818518856315,
+          "sampling": "aligned-overlap",
+          "before_logit_rmse": 0.3058945834636688,
+          "after_logit_rmse": 0.14204130206247106
+        }
+      ]
+    },
+    {
+      "scene": "scene-06-shade",
+      "reference": "Morph/originals/DSC_1273-54.jpg",
+      "edges": [
+        {
+          "left": "outputs/morph-showcase/varied-album/inputs/varied-DSC_1273-54.jpg",
+          "right": "Morph/originals/DSC_1273-54.jpg",
+          "matches": 2326,
+          "geometric_inliers": 2323,
+          "photometric_inliers": 3777,
+          "pair_scale": 1.0068908301301605,
+          "pair_residual": 0.007357890657688947,
+          "sampling": "aligned-overlap",
+          "before_logit_rmse": 0.10525237023830414,
+          "after_logit_rmse": 0.013157597753754234
+        }
+      ]
+    },
+    {
+      "scene": "scene-06",
+      "reference": "Morph/originals/DSC_1286-58.jpg",
+      "edges": [
+        {
+          "left": "outputs/morph-showcase/varied-album/inputs/varied-DSC_1280-55.jpg",
+          "right": "outputs/morph-showcase/varied-album/inputs/varied-DSC_1282-56.jpg",
+          "matches": 576,
+          "geometric_inliers": 353,
+          "photometric_inliers": 2809,
+          "pair_scale": 0.9513529875663406,
+          "pair_residual": 0.07913542659960816,
+          "sampling": "aligned-overlap",
+          "before_logit_rmse": 0.22598625719547272,
+          "after_logit_rmse": 0.10360944732031456
+        },
+        {
+          "left": "outputs/morph-showcase/varied-album/inputs/varied-DSC_1280-55.jpg",
+          "right": "outputs/morph-showcase/varied-album/inputs/varied-DSC_1284-57.jpg",
+          "matches": 517,
+          "geometric_inliers": 332,
+          "photometric_inliers": 2863,
+          "pair_scale": 0.9223538549172117,
+          "pair_residual": 0.08857242592973147,
+          "sampling": "aligned-overlap",
+          "before_logit_rmse": 0.1757427603006363,
+          "after_logit_rmse": 0.1125249908379759
+        },
+        {
+          "left": "outputs/morph-showcase/varied-album/inputs/varied-DSC_1280-55.jpg",
+          "right": "outputs/morph-showcase/varied-album/inputs/varied-DSC_1286-58.jpg",
+          "matches": 779,
+          "geometric_inliers": 532,
+          "photometric_inliers": 2791,
+          "pair_scale": 0.9203731411163569,
+          "pair_residual": 0.0898866936733148,
+          "sampling": "aligned-overlap",
+          "before_logit_rmse": 0.17976219952106476,
+          "after_logit_rmse": 0.1339171241899553
+        },
+        {
+          "left": "outputs/morph-showcase/varied-album/inputs/varied-DSC_1280-55.jpg",
+          "right": "Morph/originals/DSC_1286-58.jpg",
+          "matches": 779,
+          "geometric_inliers": 551,
+          "photometric_inliers": 2686,
+          "pair_scale": 0.9133985027787624,
+          "pair_residual": 0.05866629981715189,
+          "sampling": "aligned-overlap",
+          "before_logit_rmse": 0.16602438688278198,
+          "after_logit_rmse": 0.09268342478115967
+        },
+        {
+          "left": "outputs/morph-showcase/varied-album/inputs/varied-DSC_1282-56.jpg",
+          "right": "outputs/morph-showcase/varied-album/inputs/varied-DSC_1284-57.jpg",
+          "matches": 843,
+          "geometric_inliers": 694,
+          "photometric_inliers": 2747,
+          "pair_scale": 0.9710101971769677,
+          "pair_residual": 0.028777854583223565,
+          "sampling": "aligned-overlap",
+          "before_logit_rmse": 0.10959934443235397,
+          "after_logit_rmse": 0.03907639878183652
+        },
+        {
+          "left": "outputs/morph-showcase/varied-album/inputs/varied-DSC_1282-56.jpg",
+          "right": "outputs/morph-showcase/varied-album/inputs/varied-DSC_1286-58.jpg",
+          "matches": 685,
+          "geometric_inliers": 497,
+          "photometric_inliers": 2852,
+          "pair_scale": 0.9538198735893938,
+          "pair_residual": 0.0652448899694622,
+          "sampling": "aligned-overlap",
+          "before_logit_rmse": 0.2214701622724533,
+          "after_logit_rmse": 0.08852807813930116
+        },
+        {
+          "left": "outputs/morph-showcase/varied-album/inputs/varied-DSC_1282-56.jpg",
+          "right": "outputs/morph-showcase/varied-album/inputs/varied-DSC_1288-59.jpg",
+          "matches": 53,
+          "geometric_inliers": 23,
+          "photometric_inliers": 3204,
+          "pair_scale": 0.7143461538373772,
+          "pair_residual": 0.5365649481513615,
+          "sampling": "aligned-overlap",
+          "before_logit_rmse": 0.8250848054885864,
+          "after_logit_rmse": 0.752427265270587
+        },
+        {
+          "left": "outputs/morph-showcase/varied-album/inputs/varied-DSC_1282-56.jpg",
+          "right": "Morph/originals/DSC_1286-58.jpg",
+          "matches": 688,
+          "geometric_inliers": 493,
+          "photometric_inliers": 2833,
+          "pair_scale": 0.9421597726864823,
+          "pair_residual": 0.062010722762253,
+          "sampling": "aligned-overlap",
+          "before_logit_rmse": 0.2644440233707428,
+          "after_logit_rmse": 0.09046061408651178
+        },
+        {
+          "left": "outputs/morph-showcase/varied-album/inputs/varied-DSC_1284-57.jpg",
+          "right": "outputs/morph-showcase/varied-album/inputs/varied-DSC_1286-58.jpg",
+          "matches": 800,
+          "geometric_inliers": 551,
+          "photometric_inliers": 2882,
+          "pair_scale": 0.9790115345408117,
+          "pair_residual": 0.0700504332399682,
+          "sampling": "aligned-overlap",
+          "before_logit_rmse": 0.14024709165096283,
+          "after_logit_rmse": 0.09837515256379087
+        },
+        {
+          "left": "outputs/morph-showcase/varied-album/inputs/varied-DSC_1284-57.jpg",
+          "right": "outputs/morph-showcase/varied-album/inputs/varied-DSC_1288-59.jpg",
+          "matches": 56,
+          "geometric_inliers": 19,
+          "photometric_inliers": 3142,
+          "pair_scale": 0.7834002064875311,
+          "pair_residual": 0.42550287410858256,
+          "sampling": "aligned-overlap",
+          "before_logit_rmse": 0.6230677366256714,
+          "after_logit_rmse": 0.6082480909916286
+        },
+        {
+          "left": "outputs/morph-showcase/varied-album/inputs/varied-DSC_1284-57.jpg",
+          "right": "outputs/morph-showcase/varied-album/inputs/varied-DSC_1291-60.jpg",
+          "matches": 49,
+          "geometric_inliers": 19,
+          "photometric_inliers": 3309,
+          "pair_scale": 0.7685577562366638,
+          "pair_residual": 0.5537697489862445,
+          "sampling": "aligned-overlap",
+          "before_logit_rmse": 0.7680330872535706,
+          "after_logit_rmse": 0.728922426210574
+        },
+        {
+          "left": "outputs/morph-showcase/varied-album/inputs/varied-DSC_1284-57.jpg",
+          "right": "Morph/originals/DSC_1286-58.jpg",
+          "matches": 813,
+          "geometric_inliers": 566,
+          "photometric_inliers": 2903,
+          "pair_scale": 0.9662723212209702,
+          "pair_residual": 0.06217291183903768,
+          "sampling": "aligned-overlap",
+          "before_logit_rmse": 0.17842628061771393,
+          "after_logit_rmse": 0.09206530235799876
+        },
+        {
+          "left": "outputs/morph-showcase/varied-album/inputs/varied-DSC_1286-58.jpg",
+          "right": "outputs/morph-showcase/varied-album/inputs/varied-DSC_1288-59.jpg",
+          "matches": 73,
+          "geometric_inliers": 23,
+          "photometric_inliers": 3134,
+          "pair_scale": 0.7745236320617763,
+          "pair_residual": 0.4487232497590593,
+          "sampling": "aligned-overlap",
+          "before_logit_rmse": 0.6355859637260437,
+          "after_logit_rmse": 0.61976167821374
+        },
+        {
+          "left": "outputs/morph-showcase/varied-album/inputs/varied-DSC_1286-58.jpg",
+          "right": "outputs/morph-showcase/varied-album/inputs/varied-DSC_1291-60.jpg",
+          "matches": 46,
+          "geometric_inliers": 20,
+          "photometric_inliers": 3106,
+          "pair_scale": 0.8600226740048464,
+          "pair_residual": 0.3419205380917323,
+          "sampling": "aligned-overlap",
+          "before_logit_rmse": 0.49735769629478455,
+          "after_logit_rmse": 0.49229647760740913
+        },
+        {
+          "left": "outputs/morph-showcase/varied-album/inputs/varied-DSC_1286-58.jpg",
+          "right": "outputs/morph-showcase/varied-album/inputs/varied-DSC_1292-61.jpg",
+          "matches": 47,
+          "geometric_inliers": 15,
+          "photometric_inliers": 3047,
+          "pair_scale": 0.6872255203595325,
+          "pair_residual": 0.499092791194317,
+          "sampling": "aligned-overlap",
+          "before_logit_rmse": 0.7285493016242981,
+          "after_logit_rmse": 0.706019570478388
+        },
+        {
+          "left": "outputs/morph-showcase/varied-album/inputs/varied-DSC_1286-58.jpg",
+          "right": "Morph/originals/DSC_1286-58.jpg",
+          "matches": 2306,
+          "geometric_inliers": 2303,
+          "photometric_inliers": 3819,
+          "pair_scale": 0.9865772511639299,
+          "pair_residual": 0.009988870528823511,
+          "sampling": "aligned-overlap",
+          "before_logit_rmse": 0.051331713795661926,
+          "after_logit_rmse": 0.0315337805224901
+        },
+        {
+          "left": "outputs/morph-showcase/varied-album/inputs/varied-DSC_1288-59.jpg",
+          "right": "outputs/morph-showcase/varied-album/inputs/varied-DSC_1291-60.jpg",
+          "matches": 848,
+          "geometric_inliers": 762,
+          "photometric_inliers": 2617,
+          "pair_scale": 0.9872687044635571,
+          "pair_residual": 0.059297523467507836,
+          "sampling": "aligned-overlap",
+          "before_logit_rmse": 0.09633689373731613,
+          "after_logit_rmse": 0.0795349756741678
+        },
+        {
+          "left": "outputs/morph-showcase/varied-album/inputs/varied-DSC_1288-59.jpg",
+          "right": "outputs/morph-showcase/varied-album/inputs/varied-DSC_1292-61.jpg",
+          "matches": 819,
+          "geometric_inliers": 693,
+          "photometric_inliers": 2562,
+          "pair_scale": 1.0017233757959425,
+          "pair_residual": 0.06678180241671973,
+          "sampling": "aligned-overlap",
+          "before_logit_rmse": 0.2492203563451767,
+          "after_logit_rmse": 0.08733779515793065
+        },
+        {
+          "left": "outputs/morph-showcase/varied-album/inputs/varied-DSC_1288-59.jpg",
+          "right": "outputs/morph-showcase/varied-album/inputs/varied-DSC_1293-62.jpg",
+          "matches": 350,
+          "geometric_inliers": 154,
+          "photometric_inliers": 2856,
+          "pair_scale": 0.771565096100952,
+          "pair_residual": 0.5010747850993094,
+          "sampling": "aligned-overlap",
+          "before_logit_rmse": 0.73098224401474,
+          "after_logit_rmse": 0.5999520595719557
+        },
+        {
+          "left": "outputs/morph-showcase/varied-album/inputs/varied-DSC_1288-59.jpg",
+          "right": "Morph/originals/DSC_1286-58.jpg",
+          "matches": 67,
+          "geometric_inliers": 18,
+          "photometric_inliers": 2989,
+          "pair_scale": 0.9168739740340817,
+          "pair_residual": 0.21627787457578818,
+          "sampling": "aligned-overlap",
+          "before_logit_rmse": 0.323368638753891,
+          "after_logit_rmse": 0.33193804058980864
+        },
+        {
+          "left": "outputs/morph-showcase/varied-album/inputs/varied-DSC_1291-60.jpg",
+          "right": "outputs/morph-showcase/varied-album/inputs/varied-DSC_1292-61.jpg",
+          "matches": 1063,
+          "geometric_inliers": 1027,
+          "photometric_inliers": 2628,
+          "pair_scale": 0.9996853463673187,
+          "pair_residual": 0.041395059983767454,
+          "sampling": "aligned-overlap",
+          "before_logit_rmse": 0.25738802552223206,
+          "after_logit_rmse": 0.0533524118126544
+        },
+        {
+          "left": "outputs/morph-showcase/varied-album/inputs/varied-DSC_1291-60.jpg",
+          "right": "outputs/morph-showcase/varied-album/inputs/varied-DSC_1293-62.jpg",
+          "matches": 244,
+          "geometric_inliers": 91,
+          "photometric_inliers": 2704,
+          "pair_scale": 0.6925334026971498,
+          "pair_residual": 0.5575878068935386,
+          "sampling": "aligned-overlap",
+          "before_logit_rmse": 0.8299271464347839,
+          "after_logit_rmse": 0.6729071261362766
+        },
+        {
+          "left": "outputs/morph-showcase/varied-album/inputs/varied-DSC_1292-61.jpg",
+          "right": "outputs/morph-showcase/varied-album/inputs/varied-DSC_1293-62.jpg",
+          "matches": 300,
+          "geometric_inliers": 95,
+          "photometric_inliers": 2518,
+          "pair_scale": 0.757444161179243,
+          "pair_residual": 0.46905303750409977,
+          "sampling": "aligned-overlap",
+          "before_logit_rmse": 0.6766555309295654,
+          "after_logit_rmse": 0.5777010979549853
+        },
+        {
+          "left": "outputs/morph-showcase/varied-album/inputs/varied-DSC_1292-61.jpg",
+          "right": "outputs/morph-showcase/varied-album/inputs/varied-DSC_1300-63.jpg",
+          "matches": 34,
+          "geometric_inliers": 14,
+          "photometric_inliers": 3104,
+          "pair_scale": 0.716812868401888,
+          "pair_residual": 0.6977020590399958,
+          "sampling": "aligned-overlap",
+          "before_logit_rmse": 0.9496668577194214,
+          "after_logit_rmse": 0.7642682360510987
+        },
+        {
+          "left": "outputs/morph-showcase/varied-album/inputs/varied-DSC_1293-62.jpg",
+          "right": "outputs/morph-showcase/varied-album/inputs/varied-DSC_1300-63.jpg",
+          "matches": 62,
+          "geometric_inliers": 18,
+          "photometric_inliers": 2609,
+          "pair_scale": 0.841173187465053,
+          "pair_residual": 0.287178906760733,
+          "sampling": "aligned-overlap",
+          "before_logit_rmse": 0.43635493516921997,
+          "after_logit_rmse": 0.2964747295729358
+        },
+        {
+          "left": "outputs/morph-showcase/varied-album/inputs/varied-DSC_1293-62.jpg",
+          "right": "outputs/morph-showcase/varied-album/inputs/varied-DSC_1302-64.jpg",
+          "matches": 61,
+          "geometric_inliers": 18,
+          "photometric_inliers": 2598,
+          "pair_scale": 0.852749970462529,
+          "pair_residual": 0.2772832962156638,
+          "sampling": "aligned-overlap",
+          "before_logit_rmse": 0.4520648121833801,
+          "after_logit_rmse": 0.29169765207606224
+        },
+        {
+          "left": "outputs/morph-showcase/varied-album/inputs/varied-DSC_1300-63.jpg",
+          "right": "outputs/morph-showcase/varied-album/inputs/varied-DSC_1302-64.jpg",
+          "matches": 1249,
+          "geometric_inliers": 1099,
+          "photometric_inliers": 2849,
+          "pair_scale": 0.986213654625034,
+          "pair_residual": 0.06391762158373263,
+          "sampling": "aligned-overlap",
+          "before_logit_rmse": 0.1189662292599678,
+          "after_logit_rmse": 0.07159250978918646
+        },
+        {
+          "left": "outputs/morph-showcase/varied-album/inputs/varied-DSC_1300-63.jpg",
+          "right": "outputs/morph-showcase/varied-album/inputs/varied-DSC_1304-65.jpg",
+          "matches": 117,
+          "geometric_inliers": 31,
+          "photometric_inliers": 23,
+          "pair_scale": 1.1855332732605055,
+          "pair_residual": 0.12220047016771453,
+          "sampling": "keypoint-patches",
+          "before_logit_rmse": 0.5088799595832825,
+          "after_logit_rmse": 0.21650855898358484
+        },
+        {
+          "left": "outputs/morph-showcase/varied-album/inputs/varied-DSC_1300-63.jpg",
+          "right": "Morph/originals/DSC_1286-58.jpg",
+          "matches": 152,
+          "geometric_inliers": 49,
+          "photometric_inliers": 43,
+          "pair_scale": 0.9315685381810972,
+          "pair_residual": 0.15751229901748942,
+          "sampling": "keypoint-patches",
+          "before_logit_rmse": 0.28002533316612244,
+          "after_logit_rmse": 0.2804381629411075
+        },
+        {
+          "left": "outputs/morph-showcase/varied-album/inputs/varied-DSC_1302-64.jpg",
+          "right": "outputs/morph-showcase/varied-album/inputs/varied-DSC_1304-65.jpg",
+          "matches": 125,
+          "geometric_inliers": 37,
+          "photometric_inliers": 30,
+          "pair_scale": 1.1084691213759683,
+          "pair_residual": 0.2425609971338245,
+          "sampling": "keypoint-patches",
+          "before_logit_rmse": 0.5823493003845215,
+          "after_logit_rmse": 0.31928549740223466
+        },
+        {
+          "left": "outputs/morph-showcase/varied-album/inputs/varied-DSC_1302-64.jpg",
+          "right": "Morph/originals/DSC_1286-58.jpg",
+          "matches": 150,
+          "geometric_inliers": 51,
+          "photometric_inliers": 3192,
+          "pair_scale": 0.6682809405677238,
+          "pair_residual": 0.5914923968478669,
+          "sampling": "aligned-overlap",
+          "before_logit_rmse": 0.8761402368545532,
+          "after_logit_rmse": 0.7872232273251465
+        },
+        {
+          "left": "outputs/morph-showcase/varied-album/inputs/varied-DSC_1304-65.jpg",
+          "right": "Morph/originals/DSC_1286-58.jpg",
+          "matches": 146,
+          "geometric_inliers": 54,
+          "photometric_inliers": 3134,
+          "pair_scale": 0.7156631656215063,
+          "pair_residual": 0.5346585755107625,
+          "sampling": "aligned-overlap",
+          "before_logit_rmse": 0.7604470252990723,
+          "after_logit_rmse": 0.6864572755942145
+        }
+      ]
+    },
+    {
+      "scene": "scene-07",
+      "reference": "Morph/originals/DSC_1320-70.jpg",
+      "edges": [
+        {
+          "left": "outputs/morph-showcase/varied-album/inputs/varied-DSC_1308-66.jpg",
+          "right": "outputs/morph-showcase/varied-album/inputs/varied-DSC_1310-67.jpg",
+          "matches": 1132,
+          "geometric_inliers": 974,
+          "photometric_inliers": 2882,
+          "pair_scale": 0.9953245316224236,
+          "pair_residual": 0.01829379598407082,
+          "sampling": "aligned-overlap",
+          "before_logit_rmse": 0.10613705962896347,
+          "after_logit_rmse": 0.027221823400200976
+        },
+        {
+          "left": "outputs/morph-showcase/varied-album/inputs/varied-DSC_1308-66.jpg",
+          "right": "outputs/morph-showcase/varied-album/inputs/varied-DSC_1312-68.jpg",
+          "matches": 906,
+          "geometric_inliers": 691,
+          "photometric_inliers": 2664,
+          "pair_scale": 1.0323625677960895,
+          "pair_residual": 0.02293012745776705,
+          "sampling": "aligned-overlap",
+          "before_logit_rmse": 0.2154470533132553,
+          "after_logit_rmse": 0.03314225191310276
+        },
+        {
+          "left": "outputs/morph-showcase/varied-album/inputs/varied-DSC_1308-66.jpg",
+          "right": "outputs/morph-showcase/varied-album/inputs/varied-DSC_1315-69.jpg",
+          "matches": 189,
+          "geometric_inliers": 80,
+          "photometric_inliers": 2836,
+          "pair_scale": 0.9255708328203386,
+          "pair_residual": 0.160986040983211,
+          "sampling": "aligned-overlap",
+          "before_logit_rmse": 0.3222525417804718,
+          "after_logit_rmse": 0.19691819638414185
+        },
+        {
+          "left": "outputs/morph-showcase/varied-album/inputs/varied-DSC_1308-66.jpg",
+          "right": "Morph/originals/DSC_1320-70.jpg",
+          "matches": 187,
+          "geometric_inliers": 80,
+          "photometric_inliers": 2920,
+          "pair_scale": 0.8188467609669985,
+          "pair_residual": 0.23205060780392045,
+          "sampling": "aligned-overlap",
+          "before_logit_rmse": 0.4080280661582947,
+          "after_logit_rmse": 0.34812954511040267
+        },
+        {
+          "left": "outputs/morph-showcase/varied-album/inputs/varied-DSC_1310-67.jpg",
+          "right": "outputs/morph-showcase/varied-album/inputs/varied-DSC_1312-68.jpg",
+          "matches": 1406,
+          "geometric_inliers": 1293,
+          "photometric_inliers": 2686,
+          "pair_scale": 1.0275723662503464,
+          "pair_residual": 0.02143386286833169,
+          "sampling": "aligned-overlap",
+          "before_logit_rmse": 0.11668768525123596,
+          "after_logit_rmse": 0.02849756059427802
+        },
+        {
+          "left": "outputs/morph-showcase/varied-album/inputs/varied-DSC_1310-67.jpg",
+          "right": "outputs/morph-showcase/varied-album/inputs/varied-DSC_1315-69.jpg",
+          "matches": 164,
+          "geometric_inliers": 55,
+          "photometric_inliers": 2924,
+          "pair_scale": 0.9011181376109496,
+          "pair_residual": 0.1886006932811684,
+          "sampling": "aligned-overlap",
+          "before_logit_rmse": 0.41805434226989746,
+          "after_logit_rmse": 0.23357203556045728
+        },
+        {
+          "left": "outputs/morph-showcase/varied-album/inputs/varied-DSC_1310-67.jpg",
+          "right": "outputs/morph-showcase/varied-album/inputs/varied-DSC_1320-70.jpg",
+          "matches": 165,
+          "geometric_inliers": 52,
+          "photometric_inliers": 38,
+          "pair_scale": 0.9927222144724993,
+          "pair_residual": 0.0681642392859851,
+          "sampling": "keypoint-patches",
+          "before_logit_rmse": 0.2168148308992386,
+          "after_logit_rmse": 0.13313247581121274
+        },
+        {
+          "left": "outputs/morph-showcase/varied-album/inputs/varied-DSC_1310-67.jpg",
+          "right": "Morph/originals/DSC_1320-70.jpg",
+          "matches": 166,
+          "geometric_inliers": 54,
+          "photometric_inliers": 2944,
+          "pair_scale": 0.7724478458456661,
+          "pair_residual": 0.22495557804275915,
+          "sampling": "aligned-overlap",
+          "before_logit_rmse": 0.4537643790245056,
+          "after_logit_rmse": 0.32252461244718345
+        },
+        {
+          "left": "outputs/morph-showcase/varied-album/inputs/varied-DSC_1312-68.jpg",
+          "right": "outputs/morph-showcase/varied-album/inputs/varied-DSC_1315-69.jpg",
+          "matches": 167,
+          "geometric_inliers": 65,
+          "photometric_inliers": 2873,
+          "pair_scale": 0.9203105675348656,
+          "pair_residual": 0.13758383956178158,
+          "sampling": "aligned-overlap",
+          "before_logit_rmse": 0.43021276593208313,
+          "after_logit_rmse": 0.17457555041077216
+        },
+        {
+          "left": "outputs/morph-showcase/varied-album/inputs/varied-DSC_1312-68.jpg",
+          "right": "outputs/morph-showcase/varied-album/inputs/varied-DSC_1320-70.jpg",
+          "matches": 165,
+          "geometric_inliers": 65,
+          "photometric_inliers": 2930,
+          "pair_scale": 0.7967684561296133,
+          "pair_residual": 0.05294562447885258,
+          "sampling": "aligned-overlap",
+          "before_logit_rmse": 0.3542238473892212,
+          "after_logit_rmse": 0.07100614506032023
+        },
+        {
+          "left": "outputs/morph-showcase/varied-album/inputs/varied-DSC_1312-68.jpg",
+          "right": "outputs/morph-showcase/varied-album/inputs/varied-DSC_1322-71.jpg",
+          "matches": 273,
+          "geometric_inliers": 125,
+          "photometric_inliers": 124,
+          "pair_scale": 0.9625706211077304,
+          "pair_residual": 0.20433610866270827,
+          "sampling": "keypoint-patches",
+          "before_logit_rmse": 0.36559614539146423,
+          "after_logit_rmse": 0.21223234359334903
+        },
+        {
+          "left": "outputs/morph-showcase/varied-album/inputs/varied-DSC_1312-68.jpg",
+          "right": "Morph/originals/DSC_1320-70.jpg",
+          "matches": 177,
+          "geometric_inliers": 66,
+          "photometric_inliers": 2989,
+          "pair_scale": 0.84646672872949,
+          "pair_residual": 0.05341959126495383,
+          "sampling": "aligned-overlap",
+          "before_logit_rmse": 0.46957284212112427,
+          "after_logit_rmse": 0.07779313557221461
+        },
+        {
+          "left": "outputs/morph-showcase/varied-album/inputs/varied-DSC_1315-69.jpg",
+          "right": "outputs/morph-showcase/varied-album/inputs/varied-DSC_1320-70.jpg",
+          "matches": 173,
+          "geometric_inliers": 81,
+          "photometric_inliers": 2946,
+          "pair_scale": 0.7244569211009861,
+          "pair_residual": 0.3811843427565715,
+          "sampling": "aligned-overlap",
+          "before_logit_rmse": 0.6141687631607056,
+          "after_logit_rmse": 0.5323554511563069
+        },
+        {
+          "left": "outputs/morph-showcase/varied-album/inputs/varied-DSC_1315-69.jpg",
+          "right": "outputs/morph-showcase/varied-album/inputs/varied-DSC_1322-71.jpg",
+          "matches": 84,
+          "geometric_inliers": 40,
+          "photometric_inliers": 2839,
+          "pair_scale": 0.8708794565665298,
+          "pair_residual": 0.2520001318103861,
+          "sampling": "aligned-overlap",
+          "before_logit_rmse": 0.35948416590690613,
+          "after_logit_rmse": 0.3302599451724858
+        },
+        {
+          "left": "outputs/morph-showcase/varied-album/inputs/varied-DSC_1315-69.jpg",
+          "right": "outputs/morph-showcase/varied-album/inputs/varied-DSC_1324-72.jpg",
+          "matches": 124,
+          "geometric_inliers": 45,
+          "photometric_inliers": 2710,
+          "pair_scale": 0.6720904828819793,
+          "pair_residual": 0.39937964677200544,
+          "sampling": "aligned-overlap",
+          "before_logit_rmse": 0.6263049840927124,
+          "after_logit_rmse": 0.5580360959997026
+        },
+        {
+          "left": "outputs/morph-showcase/varied-album/inputs/varied-DSC_1315-69.jpg",
+          "right": "Morph/originals/DSC_1320-70.jpg",
+          "matches": 168,
+          "geometric_inliers": 85,
+          "photometric_inliers": 2938,
+          "pair_scale": 0.7930037168103836,
+          "pair_residual": 0.3627797053612841,
+          "sampling": "aligned-overlap",
+          "before_logit_rmse": 0.5214784145355225,
+          "after_logit_rmse": 0.49556291240431183
+        },
+        {
+          "left": "outputs/morph-showcase/varied-album/inputs/varied-DSC_1320-70.jpg",
+          "right": "outputs/morph-showcase/varied-album/inputs/varied-DSC_1322-71.jpg",
+          "matches": 508,
+          "geometric_inliers": 351,
+          "photometric_inliers": 3076,
+          "pair_scale": 1.0011614774958344,
+          "pair_residual": 0.10533490017381758,
+          "sampling": "aligned-overlap",
+          "before_logit_rmse": 0.16334493458271027,
+          "after_logit_rmse": 0.14490378600970952
+        },
+        {
+          "left": "outputs/morph-showcase/varied-album/inputs/varied-DSC_1320-70.jpg",
+          "right": "outputs/morph-showcase/varied-album/inputs/varied-DSC_1324-72.jpg",
+          "matches": 168,
+          "geometric_inliers": 85,
+          "photometric_inliers": 68,
+          "pair_scale": 1.0596161455265467,
+          "pair_residual": 0.1038778110728977,
+          "sampling": "keypoint-patches",
+          "before_logit_rmse": 0.2735893726348877,
+          "after_logit_rmse": 0.1840525444312209
+        },
+        {
+          "left": "outputs/morph-showcase/varied-album/inputs/varied-DSC_1320-70.jpg",
+          "right": "Morph/originals/DSC_1320-70.jpg",
+          "matches": 2144,
+          "geometric_inliers": 2126,
+          "photometric_inliers": 3797,
+          "pair_scale": 1.0402259088003003,
+          "pair_residual": 0.007899641940296475,
+          "sampling": "aligned-overlap",
+          "before_logit_rmse": 0.13401684165000916,
+          "after_logit_rmse": 0.03656700012519339
+        },
+        {
+          "left": "outputs/morph-showcase/varied-album/inputs/varied-DSC_1322-71.jpg",
+          "right": "outputs/morph-showcase/varied-album/inputs/varied-DSC_1324-72.jpg",
+          "matches": 99,
+          "geometric_inliers": 54,
+          "photometric_inliers": 46,
+          "pair_scale": 1.1098541026443145,
+          "pair_residual": 0.12548511781575336,
+          "sampling": "keypoint-patches",
+          "before_logit_rmse": 0.39751219749450684,
+          "after_logit_rmse": 0.2062867987297229
+        },
+        {
+          "left": "outputs/morph-showcase/varied-album/inputs/varied-DSC_1322-71.jpg",
+          "right": "Morph/originals/DSC_1320-70.jpg",
+          "matches": 497,
+          "geometric_inliers": 291,
+          "photometric_inliers": 3026,
+          "pair_scale": 0.9342595454376043,
+          "pair_residual": 0.11753806482149917,
+          "sampling": "aligned-overlap",
+          "before_logit_rmse": 0.16124995052814484,
+          "after_logit_rmse": 0.15735547388100035
+        },
+        {
+          "left": "outputs/morph-showcase/varied-album/inputs/varied-DSC_1324-72.jpg",
+          "right": "Morph/originals/DSC_1320-70.jpg",
+          "matches": 147,
+          "geometric_inliers": 69,
+          "photometric_inliers": 59,
+          "pair_scale": 0.8151122512361145,
+          "pair_residual": 0.060155336880442944,
+          "sampling": "keypoint-patches",
+          "before_logit_rmse": 0.19528533518314362,
+          "after_logit_rmse": 0.09220216995414957
+        }
+      ]
+    },
+    {
+      "scene": "scene-08",
+      "reference": "Morph/originals/DSC_1334-76.jpg",
+      "edges": [
+        {
+          "left": "outputs/morph-showcase/varied-album/inputs/varied-DSC_1326-73.jpg",
+          "right": "outputs/morph-showcase/varied-album/inputs/varied-DSC_1329-74.jpg",
+          "matches": 621,
+          "geometric_inliers": 504,
+          "photometric_inliers": 2901,
+          "pair_scale": 0.8519798173907722,
+          "pair_residual": 0.09070292403385528,
+          "sampling": "aligned-overlap",
+          "before_logit_rmse": 0.23086094856262207,
+          "after_logit_rmse": 0.1253741776653344
+        },
+        {
+          "left": "outputs/morph-showcase/varied-album/inputs/varied-DSC_1326-73.jpg",
+          "right": "outputs/morph-showcase/varied-album/inputs/varied-DSC_1330-75.jpg",
+          "matches": 584,
+          "geometric_inliers": 467,
+          "photometric_inliers": 2854,
+          "pair_scale": 0.8973747252831351,
+          "pair_residual": 0.08276781598164326,
+          "sampling": "aligned-overlap",
+          "before_logit_rmse": 0.3057153820991516,
+          "after_logit_rmse": 0.11344115035184156
+        },
+        {
+          "left": "outputs/morph-showcase/varied-album/inputs/varied-DSC_1326-73.jpg",
+          "right": "outputs/morph-showcase/varied-album/inputs/varied-DSC_1334-76.jpg",
+          "matches": 274,
+          "geometric_inliers": 173,
+          "photometric_inliers": 2885,
+          "pair_scale": 0.8678408754013877,
+          "pair_residual": 0.121032806223601,
+          "sampling": "aligned-overlap",
+          "before_logit_rmse": 0.32815656065940857,
+          "after_logit_rmse": 0.17049103581261907
+        },
+        {
+          "left": "outputs/morph-showcase/varied-album/inputs/varied-DSC_1326-73.jpg",
+          "right": "Morph/originals/DSC_1334-76.jpg",
+          "matches": 258,
+          "geometric_inliers": 164,
+          "photometric_inliers": 2945,
+          "pair_scale": 0.7666140660039863,
+          "pair_residual": 0.1942922683995685,
+          "sampling": "aligned-overlap",
+          "before_logit_rmse": 0.5381252765655518,
+          "after_logit_rmse": 0.2825670210118243
+        },
+        {
+          "left": "outputs/morph-showcase/varied-album/inputs/varied-DSC_1329-74.jpg",
+          "right": "outputs/morph-showcase/varied-album/inputs/varied-DSC_1330-75.jpg",
+          "matches": 983,
+          "geometric_inliers": 775,
+          "photometric_inliers": 2715,
+          "pair_scale": 0.9922030903828267,
+          "pair_residual": 0.03093760923552923,
+          "sampling": "aligned-overlap",
+          "before_logit_rmse": 0.13447755575180054,
+          "after_logit_rmse": 0.046605542666871454
+        },
+        {
+          "left": "outputs/morph-showcase/varied-album/inputs/varied-DSC_1329-74.jpg",
+          "right": "outputs/morph-showcase/varied-album/inputs/varied-DSC_1334-76.jpg",
+          "matches": 312,
+          "geometric_inliers": 205,
+          "photometric_inliers": 2898,
+          "pair_scale": 0.8788430398873918,
+          "pair_residual": 0.14078036962092028,
+          "sampling": "aligned-overlap",
+          "before_logit_rmse": 0.2397080957889557,
+          "after_logit_rmse": 0.19559424875027784
+        },
+        {
+          "left": "outputs/morph-showcase/varied-album/inputs/varied-DSC_1329-74.jpg",
+          "right": "outputs/morph-showcase/varied-album/inputs/varied-DSC_1335-77.jpg",
+          "matches": 298,
+          "geometric_inliers": 183,
+          "photometric_inliers": 3093,
+          "pair_scale": 0.8870377897286441,
+          "pair_residual": 0.16053102419620158,
+          "sampling": "aligned-overlap",
+          "before_logit_rmse": 0.43183398246765137,
+          "after_logit_rmse": 0.20679767660644247
+        },
+        {
+          "left": "outputs/morph-showcase/varied-album/inputs/varied-DSC_1329-74.jpg",
+          "right": "Morph/originals/DSC_1334-76.jpg",
+          "matches": 289,
+          "geometric_inliers": 185,
+          "photometric_inliers": 2967,
+          "pair_scale": 0.8990492163505003,
+          "pair_residual": 0.14024162987429953,
+          "sampling": "aligned-overlap",
+          "before_logit_rmse": 0.35080403089523315,
+          "after_logit_rmse": 0.19726510370576397
+        },
+        {
+          "left": "outputs/morph-showcase/varied-album/inputs/varied-DSC_1330-75.jpg",
+          "right": "outputs/morph-showcase/varied-album/inputs/varied-DSC_1334-76.jpg",
+          "matches": 315,
+          "geometric_inliers": 228,
+          "photometric_inliers": 3028,
+          "pair_scale": 0.8537357138400619,
+          "pair_residual": 0.1387911244568582,
+          "sampling": "aligned-overlap",
+          "before_logit_rmse": 0.20809414982795715,
+          "after_logit_rmse": 0.1864358036845428
+        },
+        {
+          "left": "outputs/morph-showcase/varied-album/inputs/varied-DSC_1330-75.jpg",
+          "right": "outputs/morph-showcase/varied-album/inputs/varied-DSC_1335-77.jpg",
+          "matches": 313,
+          "geometric_inliers": 217,
+          "photometric_inliers": 3052,
+          "pair_scale": 0.8530141052933917,
+          "pair_residual": 0.15498051797870127,
+          "sampling": "aligned-overlap",
+          "before_logit_rmse": 0.3497750461101532,
+          "after_logit_rmse": 0.20038630191260143
+        },
+        {
+          "left": "outputs/morph-showcase/varied-album/inputs/varied-DSC_1330-75.jpg",
+          "right": "outputs/morph-showcase/varied-album/inputs/varied-DSC_1337-78.jpg",
+          "matches": 323,
+          "geometric_inliers": 233,
+          "photometric_inliers": 3058,
+          "pair_scale": 0.8253146824396064,
+          "pair_residual": 0.14886680511801686,
+          "sampling": "aligned-overlap",
+          "before_logit_rmse": 0.31314393877983093,
+          "after_logit_rmse": 0.1984603014748945
+        },
+        {
+          "left": "outputs/morph-showcase/varied-album/inputs/varied-DSC_1330-75.jpg",
+          "right": "Morph/originals/DSC_1334-76.jpg",
+          "matches": 304,
+          "geometric_inliers": 218,
+          "photometric_inliers": 3000,
+          "pair_scale": 0.867885477236138,
+          "pair_residual": 0.1346537210297331,
+          "sampling": "aligned-overlap",
+          "before_logit_rmse": 0.27647581696510315,
+          "after_logit_rmse": 0.1848297061503016
+        },
+        {
+          "left": "outputs/morph-showcase/varied-album/inputs/varied-DSC_1334-76.jpg",
+          "right": "outputs/morph-showcase/varied-album/inputs/varied-DSC_1335-77.jpg",
+          "matches": 1594,
+          "geometric_inliers": 1547,
+          "photometric_inliers": 3147,
+          "pair_scale": 0.9934005733798014,
+          "pair_residual": 0.025514185833158124,
+          "sampling": "aligned-overlap",
+          "before_logit_rmse": 0.25772979855537415,
+          "after_logit_rmse": 0.034634055046013856
+        },
+        {
+          "left": "outputs/morph-showcase/varied-album/inputs/varied-DSC_1334-76.jpg",
+          "right": "outputs/morph-showcase/varied-album/inputs/varied-DSC_1337-78.jpg",
+          "matches": 1465,
+          "geometric_inliers": 1386,
+          "photometric_inliers": 3296,
+          "pair_scale": 0.9639038284143661,
+          "pair_residual": 0.0211858790012363,
+          "sampling": "aligned-overlap",
+          "before_logit_rmse": 0.21448254585266113,
+          "after_logit_rmse": 0.03179027260260253
+        },
+        {
+          "left": "outputs/morph-showcase/varied-album/inputs/varied-DSC_1334-76.jpg",
+          "right": "Morph/originals/DSC_1334-76.jpg",
+          "matches": 2180,
+          "geometric_inliers": 2174,
+          "photometric_inliers": 3881,
+          "pair_scale": 1.0028494470484348,
+          "pair_residual": 0.006840365457368225,
+          "sampling": "aligned-overlap",
+          "before_logit_rmse": 0.1766815185546875,
+          "after_logit_rmse": 0.0289167397855955
+        },
+        {
+          "left": "outputs/morph-showcase/varied-album/inputs/varied-DSC_1335-77.jpg",
+          "right": "outputs/morph-showcase/varied-album/inputs/varied-DSC_1337-78.jpg",
+          "matches": 1574,
+          "geometric_inliers": 1517,
+          "photometric_inliers": 3508,
+          "pair_scale": 0.966005123883632,
+          "pair_residual": 0.019948418876122524,
+          "sampling": "aligned-overlap",
+          "before_logit_rmse": 0.06586692482233047,
+          "after_logit_rmse": 0.02992706859295314
+        },
+        {
+          "left": "outputs/morph-showcase/varied-album/inputs/varied-DSC_1335-77.jpg",
+          "right": "Morph/originals/DSC_1334-76.jpg",
+          "matches": 1624,
+          "geometric_inliers": 1584,
+          "photometric_inliers": 3300,
+          "pair_scale": 0.9962854108923735,
+          "pair_residual": 0.022497770124636385,
+          "sampling": "aligned-overlap",
+          "before_logit_rmse": 0.08543000370264053,
+          "after_logit_rmse": 0.03553315692138584
+        },
+        {
+          "left": "outputs/morph-showcase/varied-album/inputs/varied-DSC_1337-78.jpg",
+          "right": "Morph/originals/DSC_1334-76.jpg",
+          "matches": 1505,
+          "geometric_inliers": 1432,
+          "photometric_inliers": 3081,
+          "pair_scale": 1.0229475969479824,
+          "pair_residual": 0.029777347539870744,
+          "sampling": "aligned-overlap",
+          "before_logit_rmse": 0.060168009251356125,
+          "after_logit_rmse": 0.04301745997934671
+        }
+      ]
+    },
+    {
+      "scene": "scene-08-tower",
+      "reference": "Morph/originals/DSC_1342-81.jpg",
+      "edges": [
+        {
+          "left": "outputs/morph-showcase/varied-album/inputs/varied-DSC_1339-79.jpg",
+          "right": "outputs/morph-showcase/varied-album/inputs/varied-DSC_1340-80.jpg",
+          "matches": 434,
+          "geometric_inliers": 183,
+          "photometric_inliers": 2818,
+          "pair_scale": 0.8336913557389861,
+          "pair_residual": 0.1589411770071596,
+          "sampling": "aligned-overlap",
+          "before_logit_rmse": 0.27962726354599,
+          "after_logit_rmse": 0.24779993257543412
+        },
+        {
+          "left": "outputs/morph-showcase/varied-album/inputs/varied-DSC_1339-79.jpg",
+          "right": "outputs/morph-showcase/varied-album/inputs/varied-DSC_1342-81.jpg",
+          "matches": 404,
+          "geometric_inliers": 198,
+          "photometric_inliers": 2801,
+          "pair_scale": 0.8177739568259256,
+          "pair_residual": 0.14310648834746492,
+          "sampling": "aligned-overlap",
+          "before_logit_rmse": 0.27418097853660583,
+          "after_logit_rmse": 0.24661915977201535
+        },
+        {
+          "left": "outputs/morph-showcase/varied-album/inputs/varied-DSC_1339-79.jpg",
+          "right": "outputs/morph-showcase/varied-album/inputs/varied-DSC_1344-82.jpg",
+          "matches": 148,
+          "geometric_inliers": 50,
+          "photometric_inliers": 3224,
+          "pair_scale": 0.6841526472491121,
+          "pair_residual": 0.6226288163113483,
+          "sampling": "aligned-overlap",
+          "before_logit_rmse": 0.8758488893508911,
+          "after_logit_rmse": 0.8564438781932868
+        },
+        {
+          "left": "outputs/morph-showcase/varied-album/inputs/varied-DSC_1339-79.jpg",
+          "right": "Morph/originals/DSC_1342-81.jpg",
+          "matches": 429,
+          "geometric_inliers": 224,
+          "photometric_inliers": 2928,
+          "pair_scale": 0.7796157662105485,
+          "pair_residual": 0.21526974464148876,
+          "sampling": "aligned-overlap",
+          "before_logit_rmse": 0.35725054144859314,
+          "after_logit_rmse": 0.3334364611155223
+        },
+        {
+          "left": "outputs/morph-showcase/varied-album/inputs/varied-DSC_1340-80.jpg",
+          "right": "outputs/morph-showcase/varied-album/inputs/varied-DSC_1342-81.jpg",
+          "matches": 1405,
+          "geometric_inliers": 1350,
+          "photometric_inliers": 3379,
+          "pair_scale": 0.98449479488289,
+          "pair_residual": 0.023017030258840773,
+          "sampling": "aligned-overlap",
+          "before_logit_rmse": 0.12452065199613571,
+          "after_logit_rmse": 0.03319417064585508
+        },
+        {
+          "left": "outputs/morph-showcase/varied-album/inputs/varied-DSC_1340-80.jpg",
+          "right": "outputs/morph-showcase/varied-album/inputs/varied-DSC_1344-82.jpg",
+          "matches": 370,
+          "geometric_inliers": 239,
+          "photometric_inliers": 3140,
+          "pair_scale": 0.9687855623316557,
+          "pair_residual": 0.11679954677560264,
+          "sampling": "aligned-overlap",
+          "before_logit_rmse": 0.16803036630153656,
+          "after_logit_rmse": 0.16320426213847847
+        },
+        {
+          "left": "outputs/morph-showcase/varied-album/inputs/varied-DSC_1340-80.jpg",
+          "right": "Morph/originals/DSC_1342-81.jpg",
+          "matches": 1467,
+          "geometric_inliers": 1398,
+          "photometric_inliers": 3444,
+          "pair_scale": 1.016924900505239,
+          "pair_residual": 0.02335275814496138,
+          "sampling": "aligned-overlap",
+          "before_logit_rmse": 0.08122187852859497,
+          "after_logit_rmse": 0.03306359756856855
+        },
+        {
+          "left": "outputs/morph-showcase/varied-album/inputs/varied-DSC_1342-81.jpg",
+          "right": "outputs/morph-showcase/varied-album/inputs/varied-DSC_1344-82.jpg",
+          "matches": 373,
+          "geometric_inliers": 244,
+          "photometric_inliers": 3119,
+          "pair_scale": 0.9743241761457495,
+          "pair_residual": 0.11119511604157278,
+          "sampling": "aligned-overlap",
+          "before_logit_rmse": 0.2138826847076416,
+          "after_logit_rmse": 0.15364094355897823
+        },
+        {
+          "left": "outputs/morph-showcase/varied-album/inputs/varied-DSC_1342-81.jpg",
+          "right": "Morph/originals/DSC_1342-81.jpg",
+          "matches": 2232,
+          "geometric_inliers": 2222,
+          "photometric_inliers": 3855,
+          "pair_scale": 1.0329736143172872,
+          "pair_residual": 0.00912230413560126,
+          "sampling": "aligned-overlap",
+          "before_logit_rmse": 0.09667397290468216,
+          "after_logit_rmse": 0.02056349820459703
+        },
+        {
+          "left": "outputs/morph-showcase/varied-album/inputs/varied-DSC_1344-82.jpg",
+          "right": "Morph/originals/DSC_1342-81.jpg",
+          "matches": 342,
+          "geometric_inliers": 271,
+          "photometric_inliers": 3185,
+          "pair_scale": 1.0023999618879014,
+          "pair_residual": 0.11789596715376263,
+          "sampling": "aligned-overlap",
+          "before_logit_rmse": 0.19384539127349854,
+          "after_logit_rmse": 0.15912729812360912
+        }
+      ]
+    },
+    {
+      "scene": "scene-09",
+      "reference": "Morph/originals/DSC_1363-85.jpg",
+      "edges": [
+        {
+          "left": "outputs/morph-showcase/varied-album/inputs/varied-DSC_1360-83.jpg",
+          "right": "outputs/morph-showcase/varied-album/inputs/varied-DSC_1362-84.jpg",
+          "matches": 1450,
+          "geometric_inliers": 1360,
+          "photometric_inliers": 2953,
+          "pair_scale": 1.0131398064153785,
+          "pair_residual": 0.029551852104566803,
+          "sampling": "aligned-overlap",
+          "before_logit_rmse": 0.05290171876549721,
+          "after_logit_rmse": 0.04262377513110389
+        },
+        {
+          "left": "outputs/morph-showcase/varied-album/inputs/varied-DSC_1360-83.jpg",
+          "right": "outputs/morph-showcase/varied-album/inputs/varied-DSC_1363-85.jpg",
+          "matches": 1344,
+          "geometric_inliers": 1223,
+          "photometric_inliers": 3078,
+          "pair_scale": 0.9982175508620517,
+          "pair_residual": 0.03063344835338834,
+          "sampling": "aligned-overlap",
+          "before_logit_rmse": 0.06914305686950684,
+          "after_logit_rmse": 0.041161559430625584
+        },
+        {
+          "left": "outputs/morph-showcase/varied-album/inputs/varied-DSC_1360-83.jpg",
+          "right": "outputs/morph-showcase/varied-album/inputs/varied-DSC_1365-86.jpg",
+          "matches": 1214,
+          "geometric_inliers": 1110,
+          "photometric_inliers": 3100,
+          "pair_scale": 0.9842494865554755,
+          "pair_residual": 0.06245396479979304,
+          "sampling": "aligned-overlap",
+          "before_logit_rmse": 0.14618349075317383,
+          "after_logit_rmse": 0.0796733383697328
+        },
+        {
+          "left": "outputs/morph-showcase/varied-album/inputs/varied-DSC_1360-83.jpg",
+          "right": "Morph/originals/DSC_1363-85.jpg",
+          "matches": 1342,
+          "geometric_inliers": 1229,
+          "photometric_inliers": 3072,
+          "pair_scale": 0.9854306682143573,
+          "pair_residual": 0.027452037154700418,
+          "sampling": "aligned-overlap",
+          "before_logit_rmse": 0.08673939853906631,
+          "after_logit_rmse": 0.039384628673126525
+        },
+        {
+          "left": "outputs/morph-showcase/varied-album/inputs/varied-DSC_1362-84.jpg",
+          "right": "outputs/morph-showcase/varied-album/inputs/varied-DSC_1363-85.jpg",
+          "matches": 1524,
+          "geometric_inliers": 1381,
+          "photometric_inliers": 3030,
+          "pair_scale": 0.9752927318286869,
+          "pair_residual": 0.027515049756619274,
+          "sampling": "aligned-overlap",
+          "before_logit_rmse": 0.08017820119857788,
+          "after_logit_rmse": 0.0365874390959265
+        },
+        {
+          "left": "outputs/morph-showcase/varied-album/inputs/varied-DSC_1362-84.jpg",
+          "right": "outputs/morph-showcase/varied-album/inputs/varied-DSC_1365-86.jpg",
+          "matches": 1151,
+          "geometric_inliers": 1038,
+          "photometric_inliers": 3126,
+          "pair_scale": 0.9531308846449443,
+          "pair_residual": 0.06453311335398704,
+          "sampling": "aligned-overlap",
+          "before_logit_rmse": 0.15564927458763123,
+          "after_logit_rmse": 0.08457475122275225
+        },
+        {
+          "left": "outputs/morph-showcase/varied-album/inputs/varied-DSC_1362-84.jpg",
+          "right": "outputs/morph-showcase/varied-album/inputs/varied-DSC_1367-87.jpg",
+          "matches": 1133,
+          "geometric_inliers": 1033,
+          "photometric_inliers": 3172,
+          "pair_scale": 0.9511735351857173,
+          "pair_residual": 0.07825209715823407,
+          "sampling": "aligned-overlap",
+          "before_logit_rmse": 0.17678460478782654,
+          "after_logit_rmse": 0.10066814874076187
+        },
+        {
+          "left": "outputs/morph-showcase/varied-album/inputs/varied-DSC_1362-84.jpg",
+          "right": "Morph/originals/DSC_1363-85.jpg",
+          "matches": 1547,
+          "geometric_inliers": 1408,
+          "photometric_inliers": 3047,
+          "pair_scale": 0.9612880605328847,
+          "pair_residual": 0.02520733222051121,
+          "sampling": "aligned-overlap",
+          "before_logit_rmse": 0.08646944910287857,
+          "after_logit_rmse": 0.03485597421290518
+        },
+        {
+          "left": "outputs/morph-showcase/varied-album/inputs/varied-DSC_1363-85.jpg",
+          "right": "outputs/morph-showcase/varied-album/inputs/varied-DSC_1365-86.jpg",
+          "matches": 1237,
+          "geometric_inliers": 1066,
+          "photometric_inliers": 3175,
+          "pair_scale": 0.9592590340512974,
+          "pair_residual": 0.0646942329915874,
+          "sampling": "aligned-overlap",
+          "before_logit_rmse": 0.2009384036064148,
+          "after_logit_rmse": 0.08731703016972109
+        },
+        {
+          "left": "outputs/morph-showcase/varied-album/inputs/varied-DSC_1363-85.jpg",
+          "right": "outputs/morph-showcase/varied-album/inputs/varied-DSC_1367-87.jpg",
+          "matches": 1195,
+          "geometric_inliers": 1116,
+          "photometric_inliers": 3033,
+          "pair_scale": 0.9564530236051478,
+          "pair_residual": 0.06863308447338302,
+          "sampling": "aligned-overlap",
+          "before_logit_rmse": 0.20931489765644073,
+          "after_logit_rmse": 0.0950175601370086
+        },
+        {
+          "left": "outputs/morph-showcase/varied-album/inputs/varied-DSC_1363-85.jpg",
+          "right": "outputs/morph-showcase/varied-album/inputs/varied-DSC_1378-88.jpg",
+          "matches": 787,
+          "geometric_inliers": 444,
+          "photometric_inliers": 2777,
+          "pair_scale": 0.942810784159783,
+          "pair_residual": 0.17624599716254127,
+          "sampling": "aligned-overlap",
+          "before_logit_rmse": 0.36029237508773804,
+          "after_logit_rmse": 0.2607107487707686
+        },
+        {
+          "left": "outputs/morph-showcase/varied-album/inputs/varied-DSC_1363-85.jpg",
+          "right": "Morph/originals/DSC_1363-85.jpg",
+          "matches": 2277,
+          "geometric_inliers": 2269,
+          "photometric_inliers": 3737,
+          "pair_scale": 0.9863405158726873,
+          "pair_residual": 0.007873380612094968,
+          "sampling": "aligned-overlap",
+          "before_logit_rmse": 0.12945812940597534,
+          "after_logit_rmse": 0.02095993092271452
+        },
+        {
+          "left": "outputs/morph-showcase/varied-album/inputs/varied-DSC_1365-86.jpg",
+          "right": "outputs/morph-showcase/varied-album/inputs/varied-DSC_1367-87.jpg",
+          "matches": 1613,
+          "geometric_inliers": 1331,
+          "photometric_inliers": 3055,
+          "pair_scale": 0.9811088258363977,
+          "pair_residual": 0.027354958230613135,
+          "sampling": "aligned-overlap",
+          "before_logit_rmse": 0.05028817802667618,
+          "after_logit_rmse": 0.03906449943270324
+        },
+        {
+          "left": "outputs/morph-showcase/varied-album/inputs/varied-DSC_1365-86.jpg",
+          "right": "outputs/morph-showcase/varied-album/inputs/varied-DSC_1378-88.jpg",
+          "matches": 711,
+          "geometric_inliers": 380,
+          "photometric_inliers": 2638,
+          "pair_scale": 0.9894795358928516,
+          "pair_residual": 0.08781729346396466,
+          "sampling": "aligned-overlap",
+          "before_logit_rmse": 0.3667272627353668,
+          "after_logit_rmse": 0.13154459102324537
+        },
+        {
+          "left": "outputs/morph-showcase/varied-album/inputs/varied-DSC_1365-86.jpg",
+          "right": "Morph/originals/DSC_1363-85.jpg",
+          "matches": 1249,
+          "geometric_inliers": 1094,
+          "photometric_inliers": 3089,
+          "pair_scale": 0.9861666062089471,
+          "pair_residual": 0.05566996787864792,
+          "sampling": "aligned-overlap",
+          "before_logit_rmse": 0.11429588496685028,
+          "after_logit_rmse": 0.07864610466219224
+        },
+        {
+          "left": "outputs/morph-showcase/varied-album/inputs/varied-DSC_1367-87.jpg",
+          "right": "outputs/morph-showcase/varied-album/inputs/varied-DSC_1378-88.jpg",
+          "matches": 780,
+          "geometric_inliers": 440,
+          "photometric_inliers": 2522,
+          "pair_scale": 1.0099512322875481,
+          "pair_residual": 0.06886538270130346,
+          "sampling": "aligned-overlap",
+          "before_logit_rmse": 0.3533596992492676,
+          "after_logit_rmse": 0.0987938842783429
+        },
+        {
+          "left": "outputs/morph-showcase/varied-album/inputs/varied-DSC_1367-87.jpg",
+          "right": "Morph/originals/DSC_1363-85.jpg",
+          "matches": 1207,
+          "geometric_inliers": 1135,
+          "photometric_inliers": 2978,
+          "pair_scale": 0.9941301977271141,
+          "pair_residual": 0.05969888807385838,
+          "sampling": "aligned-overlap",
+          "before_logit_rmse": 0.1297597587108612,
+          "after_logit_rmse": 0.08384353885465111
+        },
+        {
+          "left": "outputs/morph-showcase/varied-album/inputs/varied-DSC_1378-88.jpg",
+          "right": "Morph/originals/DSC_1363-85.jpg",
+          "matches": 753,
+          "geometric_inliers": 393,
+          "photometric_inliers": 2743,
+          "pair_scale": 0.8765279870351255,
+          "pair_residual": 0.06290217983017272,
+          "sampling": "aligned-overlap",
+          "before_logit_rmse": 0.3423823416233063,
+          "after_logit_rmse": 0.10754650971553133
+        }
+      ]
+    }
+  ],
+  "corrections": {
+    "outputs/morph-showcase/varied-album/inputs/varied-DSC_0901-1.jpg": {
+      "scale": 0.8808502062825575,
+      "offset": [
+        -0.2416730170694946,
+        -0.24849461282072388,
+        -0.21582663601103205
+      ],
+      "proposed_scale": 0.8808502062825575,
+      "proposed_offset": [
+        -0.2416730170694946,
+        -0.24849461282072388,
+        -0.21582663601103205
+      ],
+      "status": "estimated"
+    },
+    "outputs/morph-showcase/varied-album/inputs/varied-DSC_0904-2.jpg": {
+      "scale": 0.9304074488268047,
+      "offset": [
+        -0.6308034932788791,
+        -0.60649009278753,
+        -0.6066577281939769
+      ],
+      "proposed_scale": 0.9304074488268047,
+      "proposed_offset": [
+        -0.6308034932788791,
+        -0.60649009278753,
+        -0.6066577281939769
+      ],
+      "status": "estimated"
+    },
+    "outputs/morph-showcase/varied-album/inputs/varied-DSC_0905-3.jpg": {
+      "scale": 0.9001938502055093,
+      "offset": [
+        -0.3316028210269989,
+        -0.4468830546265217,
+        -0.5856814325510342
+      ],
+      "proposed_scale": 0.9001938502055093,
+      "proposed_offset": [
+        -0.3316028210269989,
+        -0.4468830546265217,
+        -0.5856814325510342
+      ],
+      "status": "estimated"
+    },
+    "outputs/morph-showcase/varied-album/inputs/varied-DSC_0906-4.jpg": {
+      "scale": 1.0161955252312385,
+      "offset": [
+        -0.0033215981138681773,
+        0.049014020103611396,
+        0.061476161443713
+      ],
+      "proposed_scale": 1.0161955252312385,
+      "proposed_offset": [
+        -0.0033215981138681773,
+        0.049014020103611396,
+        0.061476161443713
+      ],
+      "status": "estimated"
+    },
+    "outputs/morph-showcase/varied-album/inputs/varied-DSC_0914-5.jpg": {
+      "scale": 0.9966228910185203,
+      "offset": [
+        0.25810062229689906,
+        0.13612610720068474,
+        0.062459723309598855
+      ],
+      "proposed_scale": 0.9966228910185203,
+      "proposed_offset": [
+        0.25810062229689906,
+        0.13612610720068474,
+        0.062459723309598855
+      ],
+      "status": "estimated"
+    },
+    "outputs/morph-showcase/varied-album/inputs/varied-DSC_0916-6.jpg": {
+      "scale": 0.9984785407282671,
+      "offset": [
+        -0.025088345220972953,
+        -0.08870170025541085,
+        -0.14625179699596927
+      ],
+      "proposed_scale": 0.9984785407282671,
+      "proposed_offset": [
+        -0.025088345220972953,
+        -0.08870170025541085,
+        -0.14625179699596927
+      ],
+      "status": "estimated"
+    },
+    "outputs/morph-showcase/varied-album/inputs/varied-DSC_0919-7.jpg": {
+      "scale": 0.9963430783917423,
+      "offset": [
+        0.016803110731648137,
+        -0.0393088374246567,
+        -0.08132580428408506
+      ],
+      "proposed_scale": 0.9963430783917423,
+      "proposed_offset": [
+        0.016803110731648137,
+        -0.0393088374246567,
+        -0.08132580428408506
+      ],
+      "status": "estimated"
+    },
+    "outputs/morph-showcase/varied-album/inputs/varied-DSC_0921-8.jpg": {
+      "scale": 1.018899307826513,
+      "offset": [
+        0.008361509147850705,
+        0.04668680378102306,
+        0.09998261252633403
+      ],
+      "proposed_scale": 1.018899307826513,
+      "proposed_offset": [
+        0.008361509147850705,
+        0.04668680378102306,
+        0.09998261252633403
+      ],
+      "status": "estimated"
+    },
+    "outputs/morph-showcase/varied-album/inputs/varied-DSC_0925-9.jpg": {
+      "scale": 0.9586193926676698,
+      "offset": [
+        0.38914478360252097,
+        0.2600040854413847,
+        0.1506311668765341
+      ],
+      "proposed_scale": 0.9586193926676698,
+      "proposed_offset": [
+        0.38914478360252097,
+        0.2600040854413847,
+        0.1506311668765341
+      ],
+      "status": "estimated"
+    },
+    "outputs/morph-showcase/varied-album/inputs/varied-DSC_0928-10.jpg": {
+      "scale": 0.9155736029339316,
+      "offset": [
+        0.4137888603517165,
+        0.4152561276769686,
+        0.40912761878370296
+      ],
+      "proposed_scale": 0.9155736029339316,
+      "proposed_offset": [
+        0.4137888603517165,
+        0.4152561276769686,
+        0.40912761878370296
+      ],
+      "status": "estimated"
+    },
+    "outputs/morph-showcase/varied-album/inputs/varied-DSC_0930-11.jpg": {
+      "scale": 1.0277113802688493,
+      "offset": [
+        0.5356386295298682,
+        0.434455602686618,
+        0.3586241770815727
+      ],
+      "proposed_scale": 1.0277113802688493,
+      "proposed_offset": [
+        0.5356386295298682,
+        0.434455602686618,
+        0.3586241770815727
+      ],
+      "status": "estimated"
+    },
+    "outputs/morph-showcase/varied-album/inputs/varied-DSC_0935-12.jpg": {
+      "scale": 1.0104627825729766,
+      "offset": [
+        0.18436562640568482,
+        0.18993650514042873,
+        0.19782054536551452
+      ],
+      "proposed_scale": 1.0104627825729766,
+      "proposed_offset": [
+        0.18436562640568482,
+        0.18993650514042873,
+        0.19782054536551452
+      ],
+      "status": "estimated"
+    },
+    "outputs/morph-showcase/varied-album/inputs/varied-DSC_0947-13.jpg": {
+      "scale": 0.9641083889305091,
+      "offset": [
+        0.32990696464174785,
+        0.34519773120068853,
+        0.3824285894193043
+      ],
+      "proposed_scale": 0.9641083889305091,
+      "proposed_offset": [
+        0.32990696464174785,
+        0.34519773120068853,
+        0.3824285894193043
+      ],
+      "status": "estimated"
+    },
+    "outputs/morph-showcase/varied-album/inputs/varied-DSC_0948-14.jpg": {
+      "scale": 0.9945567031252384,
+      "offset": [
+        0.2103453291557678,
+        0.2475232261906656,
+        0.29052708935805527
+      ],
+      "proposed_scale": 0.9945567031252384,
+      "proposed_offset": [
+        0.2103453291557678,
+        0.2475232261906656,
+        0.29052708935805527
+      ],
+      "status": "estimated"
+    },
+    "outputs/morph-showcase/varied-album/inputs/varied-DSC_0958-15.jpg": {
+      "scale": 0.9443851218943091,
+      "offset": [
+        -0.07908001828144404,
+        -0.0837817868138782,
+        -0.10203050774151828
+      ],
+      "proposed_scale": 0.9443851218943091,
+      "proposed_offset": [
+        -0.07908001828144404,
+        -0.0837817868138782,
+        -0.10203050774151828
+      ],
+      "status": "estimated"
+    },
+    "outputs/morph-showcase/varied-album/inputs/varied-DSC_0970-17.jpg": {
+      "scale": 0.8610786594094423,
+      "offset": [
+        -0.08664977585995547,
+        -0.10620708002514666,
+        -0.14415445240499386
+      ],
+      "proposed_scale": 0.8610786594094423,
+      "proposed_offset": [
+        -0.08664977585995547,
+        -0.10620708002514666,
+        -0.14415445240499386
+      ],
+      "status": "estimated"
+    },
+    "outputs/morph-showcase/varied-album/inputs/varied-DSC_0974-18.jpg": {
+      "scale": 0.8139997907721528,
+      "offset": [
+        0.2054236826692391,
+        0.26755648648937147,
+        0.16292198613118383
+      ],
+      "proposed_scale": 0.8139997907721528,
+      "proposed_offset": [
+        0.2054236826692391,
+        0.26755648648937147,
+        0.16292198613118383
+      ],
+      "status": "estimated"
+    },
+    "outputs/morph-showcase/varied-album/inputs/varied-DSC_0987-19.jpg": {
+      "scale": 0.9484888812096474,
+      "offset": [
+        0.1955268733179203,
+        0.22822562302622437,
+        0.3329067896052333
+      ],
+      "proposed_scale": 0.9484888812096474,
+      "proposed_offset": [
+        0.1955268733179203,
+        0.22822562302622437,
+        0.3329067896052333
+      ],
+      "status": "estimated"
+    },
+    "outputs/morph-showcase/varied-album/inputs/varied-DSC_0965-16.jpg": {
+      "scale": 0.9526120750163781,
+      "offset": [
+        0.1357433940743704,
+        -0.052125619030869735,
+        -0.14506917811872136
+      ],
+      "proposed_scale": 0.9526120750163781,
+      "proposed_offset": [
+        0.1357433940743704,
+        -0.052125619030869735,
+        -0.14506917811872136
+      ],
+      "status": "estimated"
+    },
+    "outputs/morph-showcase/varied-album/inputs/varied-DSC_0990-20.jpg": {
+      "scale": 0.8493427749715862,
+      "offset": [
+        0.43257143833354006,
+        0.4274520540681179,
+        0.41201660268465906
+      ],
+      "proposed_scale": 0.8493427749715862,
+      "proposed_offset": [
+        0.43257143833354006,
+        0.4274520540681179,
+        0.41201660268465906
+      ],
+      "status": "estimated"
+    },
+    "outputs/morph-showcase/varied-album/inputs/varied-DSC_0993-21.jpg": {
+      "scale": 0.9198781429099765,
+      "offset": [
+        -0.213313231085083,
+        -0.22397588623821937,
+        -0.2315529551850262
+      ],
+      "proposed_scale": 0.9198781429099765,
+      "proposed_offset": [
+        -0.213313231085083,
+        -0.22397588623821937,
+        -0.2315529551850262
+      ],
+      "status": "estimated"
+    },
+    "outputs/morph-showcase/varied-album/inputs/varied-DSC_0995-22.jpg": {
+      "scale": 1.0080532496728691,
+      "offset": [
+        0.14300087633110117,
+        0.12182090455142255,
+        0.13269804786863723
+      ],
+      "proposed_scale": 1.0080532496728691,
+      "proposed_offset": [
+        0.14300087633110117,
+        0.12182090455142255,
+        0.13269804786863723
+      ],
+      "status": "estimated"
+    },
+    "outputs/morph-showcase/varied-album/inputs/varied-DSC_0997-23.jpg": {
+      "scale": 0.9603223628441623,
+      "offset": [
+        -0.35036039537690855,
+        -0.32611741841884356,
+        -0.2951569085986132
+      ],
+      "proposed_scale": 0.9603223628441623,
+      "proposed_offset": [
+        -0.35036039537690855,
+        -0.32611741841884356,
+        -0.2951569085986132
+      ],
+      "status": "estimated"
+    },
+    "outputs/morph-showcase/varied-album/inputs/varied-DSC_0998-24.jpg": {
+      "scale": 1.0374148586231275,
+      "offset": [
+        0.40095677306408334,
+        0.34765136418637604,
+        0.3043601881500493
+      ],
+      "proposed_scale": 1.0374148586231275,
+      "proposed_offset": [
+        0.40095677306408334,
+        0.34765136418637604,
+        0.3043601881500493
+      ],
+      "status": "estimated"
+    },
+    "outputs/morph-showcase/varied-album/inputs/varied-DSC_1012-25.jpg": {
+      "scale": 0.8967727542274478,
+      "offset": [
+        0.10615370507396084,
+        0.05981651717366242,
+        0.03263886247108441
+      ],
+      "proposed_scale": 0.8967727542274478,
+      "proposed_offset": [
+        0.10615370507396084,
+        0.05981651717366242,
+        0.03263886247108441
+      ],
+      "status": "estimated"
+    },
+    "outputs/morph-showcase/varied-album/inputs/varied-DSC_1021-26.jpg": {
+      "scale": 0.7985570075486169,
+      "offset": [
+        -0.5253084307866235,
+        -0.5317769993099483,
+        -0.6214008708301872
+      ],
+      "proposed_scale": 0.7985570075486169,
+      "proposed_offset": [
+        -0.5253084307866235,
+        -0.5317769993099483,
+        -0.6214008708301872
+      ],
+      "status": "estimated"
+    },
+    "outputs/morph-showcase/varied-album/inputs/varied-DSC_1026-27.jpg": {
+      "scale": 0.9005271236338581,
+      "offset": [
+        0.31639943642032864,
+        0.30154828962161667,
+        0.27964548143342505
+      ],
+      "proposed_scale": 0.9005271236338581,
+      "proposed_offset": [
+        0.31639943642032864,
+        0.30154828962161667,
+        0.27964548143342505
+      ],
+      "status": "estimated"
+    },
+    "outputs/morph-showcase/varied-album/inputs/varied-DSC_1028-28.jpg": {
+      "scale": 0.9302956918633242,
+      "offset": [
+        0.39616458981617714,
+        0.33052697592465885,
+        0.28032982709160664
+      ],
+      "proposed_scale": 0.9302956918633242,
+      "proposed_offset": [
+        0.39616458981617714,
+        0.33052697592465885,
+        0.28032982709160664
+      ],
+      "status": "estimated"
+    },
+    "outputs/morph-showcase/varied-album/inputs/varied-DSC_1030-29.jpg": {
+      "scale": 0.8579457516730118,
+      "offset": [
+        -0.27774591685729677,
+        -0.26588845014662704,
+        -0.29662477471195237
+      ],
+      "proposed_scale": 0.8579457516730118,
+      "proposed_offset": [
+        -0.27774591685729677,
+        -0.26588845014662704,
+        -0.29662477471195237
+      ],
+      "status": "estimated"
+    },
+    "outputs/morph-showcase/varied-album/inputs/varied-DSC_1033-30.jpg": {
+      "scale": 0.8663566662249805,
+      "offset": [
+        -0.3158719547685532,
+        -0.35027984280881164,
+        -0.3878324011480113
+      ],
+      "proposed_scale": 0.8663566662249805,
+      "proposed_offset": [
+        -0.3158719547685532,
+        -0.35027984280881164,
+        -0.3878324011480113
+      ],
+      "status": "estimated"
+    },
+    "outputs/morph-showcase/varied-album/inputs/varied-DSC_1037-31.jpg": {
+      "scale": 0.9382015701036526,
+      "offset": [
+        -0.11272684523217726,
+        -0.13437778899674696,
+        -0.1778208378127799
+      ],
+      "proposed_scale": 0.9382015701036526,
+      "proposed_offset": [
+        -0.11272684523217726,
+        -0.13437778899674696,
+        -0.1778208378127799
+      ],
+      "status": "estimated"
+    },
+    "outputs/morph-showcase/varied-album/inputs/varied-DSC_1038-32.jpg": {
+      "scale": 0.935577634840435,
+      "offset": [
+        -0.18650241332625775,
+        -0.21001740344719447,
+        -0.2357356186848027
+      ],
+      "proposed_scale": 0.935577634840435,
+      "proposed_offset": [
+        -0.18650241332625775,
+        -0.21001740344719447,
+        -0.2357356186848027
+      ],
+      "status": "estimated"
+    },
+    "outputs/morph-showcase/varied-album/inputs/varied-DSC_1054-33.jpg": {
+      "scale": 0.9583647491769738,
+      "offset": [
+        0.10224840885510687,
+        0.11004983590691993,
+        0.12583200134346262
+      ],
+      "proposed_scale": 0.9583647491769738,
+      "proposed_offset": [
+        0.10224840885510687,
+        0.11004983590691993,
+        0.12583200134346262
+      ],
+      "status": "estimated"
+    },
+    "outputs/morph-showcase/varied-album/inputs/varied-DSC_1059-34.jpg": {
+      "scale": 0.9887455218128169,
+      "offset": [
+        -0.07159315871443478,
+        -0.07313669800448672,
+        -0.09646390196994677
+      ],
+      "proposed_scale": 0.9887455218128169,
+      "proposed_offset": [
+        -0.07159315871443478,
+        -0.07313669800448672,
+        -0.09646390196994677
+      ],
+      "status": "estimated"
+    },
+    "outputs/morph-showcase/varied-album/inputs/varied-DSC_1070-35.jpg": {
+      "scale": 0.8569062784722276,
+      "offset": [
+        0.2959590446753268,
+        0.2844119822474804,
+        0.3184179195640263
+      ],
+      "proposed_scale": 0.8569062784722276,
+      "proposed_offset": [
+        0.2959590446753268,
+        0.2844119822474804,
+        0.3184179195640263
+      ],
+      "status": "estimated"
+    },
+    "outputs/morph-showcase/varied-album/inputs/varied-DSC_1074-36.jpg": {
+      "scale": 0.8975011275680986,
+      "offset": [
+        -0.27737666505107733,
+        -0.2855433881311512,
+        -0.27844708480951474
+      ],
+      "proposed_scale": 0.8975011275680986,
+      "proposed_offset": [
+        -0.27737666505107733,
+        -0.2855433881311512,
+        -0.27844708480951474
+      ],
+      "status": "estimated"
+    },
+    "outputs/morph-showcase/varied-album/inputs/varied-DSC_1083-37.jpg": {
+      "scale": 0.8906620891573535,
+      "offset": [
+        -0.13223061089982652,
+        -0.1644820851239445,
+        -0.20672389342347153
+      ],
+      "proposed_scale": 0.8906620891573535,
+      "proposed_offset": [
+        -0.13223061089982652,
+        -0.1644820851239445,
+        -0.20672389342347153
+      ],
+      "status": "estimated"
+    },
+    "outputs/morph-showcase/varied-album/inputs/varied-DSC_1096-40.jpg": {
+      "scale": 0.8849060582188683,
+      "offset": [
+        0.36986541195201084,
+        0.33984496339069176,
+        0.30965317295579076
+      ],
+      "proposed_scale": 0.8849060582188683,
+      "proposed_offset": [
+        0.36986541195201084,
+        0.33984496339069176,
+        0.30965317295579076
+      ],
+      "status": "estimated"
+    },
+    "outputs/morph-showcase/varied-album/inputs/varied-DSC_1100-41.jpg": {
+      "scale": 0.8248080114787576,
+      "offset": [
+        0.022983572236062687,
+        0.048953388423139156,
+        0.10097891235243056
+      ],
+      "proposed_scale": 0.8248080114787576,
+      "proposed_offset": [
+        0.022983572236062687,
+        0.048953388423139156,
+        0.10097891235243056
+      ],
+      "status": "estimated"
+    },
+    "outputs/morph-showcase/varied-album/inputs/varied-DSC_1106-43.jpg": {
+      "scale": 0.8546916841498836,
+      "offset": [
+        0.4445532036228387,
+        0.42471649638421527,
+        0.4700866810297001
+      ],
+      "proposed_scale": 0.8546916841498836,
+      "proposed_offset": [
+        0.4445532036228387,
+        0.42471649638421527,
+        0.4700866810297001
+      ],
+      "status": "estimated"
+    },
+    "outputs/morph-showcase/varied-album/inputs/varied-DSC_1109-44.jpg": {
+      "scale": 0.8833880410490988,
+      "offset": [
+        0.24499288827955817,
+        0.31545190097791875,
+        0.3800846298857899
+      ],
+      "proposed_scale": 0.8833880410490988,
+      "proposed_offset": [
+        0.24499288827955817,
+        0.31545190097791875,
+        0.3800846298857899
+      ],
+      "status": "estimated"
+    },
+    "outputs/morph-showcase/varied-album/inputs/varied-DSC_1111-45.jpg": {
+      "scale": 1.0009433451921967,
+      "offset": [
+        -0.04604126412987732,
+        -0.0055171744744103865,
+        0.02973533293015403
+      ],
+      "proposed_scale": 1.0009433451921967,
+      "proposed_offset": [
+        -0.04604126412987732,
+        -0.0055171744744103865,
+        0.02973533293015403
+      ],
+      "status": "estimated"
+    },
+    "outputs/morph-showcase/varied-album/inputs/varied-DSC_1118-48.jpg": {
+      "scale": 0.9306792296894334,
+      "offset": [
+        0.3639656168792639,
+        0.3956263460441775,
+        0.4614083611614213
+      ],
+      "proposed_scale": 0.9306792296894334,
+      "proposed_offset": [
+        0.3639656168792639,
+        0.3956263460441775,
+        0.4614083611614213
+      ],
+      "status": "estimated"
+    },
+    "outputs/morph-showcase/varied-album/inputs/varied-DSC_1088-38.jpg": {
+      "scale": 0.9840288728125522,
+      "offset": [
+        0.029531572549889223,
+        0.059071185197207984,
+        0.04559679792342975
+      ],
+      "proposed_scale": 0.9840288728125522,
+      "proposed_offset": [
+        0.029531572549889223,
+        0.059071185197207984,
+        0.04559679792342975
+      ],
+      "status": "estimated"
+    },
+    "outputs/morph-showcase/varied-album/inputs/varied-DSC_1090-39.jpg": {
+      "scale": 0.9095261199507547,
+      "offset": [
+        0.033917723144080016,
+        0.02341321149801336,
+        0.02181238848924202
+      ],
+      "proposed_scale": 0.9095261199507547,
+      "proposed_offset": [
+        0.033917723144080016,
+        0.02341321149801336,
+        0.02181238848924202
+      ],
+      "status": "estimated"
+    },
+    "outputs/morph-showcase/varied-album/inputs/varied-DSC_1105-42.jpg": {
+      "scale": 0.9759661279560309,
+      "offset": [
+        0.05852842609629237,
+        0.060348314783627094,
+        0.0450062479777544
+      ],
+      "proposed_scale": 0.9759661279560309,
+      "proposed_offset": [
+        0.05852842609629237,
+        0.060348314783627094,
+        0.0450062479777544
+      ],
+      "status": "estimated"
+    },
+    "outputs/morph-showcase/varied-album/inputs/varied-DSC_1114-46.jpg": {
+      "scale": 0.9037800304458335,
+      "offset": [
+        -0.22986227126408082,
+        -0.187600592699295,
+        -0.12631852296434753
+      ],
+      "proposed_scale": 0.9037800304458335,
+      "proposed_offset": [
+        -0.22986227126408082,
+        -0.187600592699295,
+        -0.12631852296434753
+      ],
+      "status": "estimated"
+    },
+    "outputs/morph-showcase/varied-album/inputs/varied-DSC_1116-47.jpg": {
+      "scale": 0.9152346456539789,
+      "offset": [
+        -0.0646562323474822,
+        -0.02948152243544994,
+        -0.005150728475010628
+      ],
+      "proposed_scale": 0.9152346456539789,
+      "proposed_offset": [
+        -0.0646562323474822,
+        -0.02948152243544994,
+        -0.005150728475010628
+      ],
+      "status": "estimated"
+    },
+    "outputs/morph-showcase/varied-album/inputs/varied-DSC_1259-49.jpg": {
+      "scale": 0.8858909781265717,
+      "offset": [
+        0.00953406679725198,
+        -0.05361496856542946,
+        -0.08279605037543343
+      ],
+      "proposed_scale": 0.8858909781265717,
+      "proposed_offset": [
+        0.00953406679725198,
+        -0.05361496856542946,
+        -0.08279605037543343
+      ],
+      "status": "estimated"
+    },
+    "outputs/morph-showcase/varied-album/inputs/varied-DSC_1261-50.jpg": {
+      "scale": 0.9805160983797001,
+      "offset": [
+        0.22056583612511163,
+        0.1565149574102613,
+        0.14211627959970258
+      ],
+      "proposed_scale": 0.9805160983797001,
+      "proposed_offset": [
+        0.22056583612511163,
+        0.1565149574102613,
+        0.14211627959970258
+      ],
+      "status": "estimated"
+    },
+    "outputs/morph-showcase/varied-album/inputs/varied-DSC_1264-51.jpg": {
+      "scale": 1.0144179000689197,
+      "offset": [
+        -0.08266967875173861,
+        -0.0798560113923843,
+        -0.07400059463502413
+      ],
+      "proposed_scale": 1.0144179000689197,
+      "proposed_offset": [
+        -0.08266967875173861,
+        -0.0798560113923843,
+        -0.07400059463502413
+      ],
+      "status": "estimated"
+    },
+    "outputs/morph-showcase/varied-album/inputs/varied-DSC_1265-52.jpg": {
+      "scale": 0.9008740611384817,
+      "offset": [
+        -0.6292764941306466,
+        -0.6614587529207836,
+        -0.7119718181363102
+      ],
+      "proposed_scale": 0.9008740611384817,
+      "proposed_offset": [
+        -0.6292764941306466,
+        -0.6614587529207836,
+        -0.7119718181363102
+      ],
+      "status": "estimated"
+    },
+    "outputs/morph-showcase/varied-album/inputs/varied-DSC_1268-53.jpg": {
+      "scale": 0.9902462167829932,
+      "offset": [
+        -0.21662656608938902,
+        -0.264053286091682,
+        -0.32514335201535166
+      ],
+      "proposed_scale": 0.9902462167829932,
+      "proposed_offset": [
+        -0.21662656608938902,
+        -0.264053286091682,
+        -0.32514335201535166
+      ],
+      "status": "estimated"
+    },
+    "outputs/morph-showcase/varied-album/inputs/varied-DSC_1273-54.jpg": {
+      "scale": 1.0070868693291295,
+      "offset": [
+        -0.08261726077394775,
+        -0.10195366099469759,
+        -0.12581459210621998
+      ],
+      "proposed_scale": 1.0070868693291295,
+      "proposed_offset": [
+        -0.08261726077394775,
+        -0.10195366099469759,
+        -0.12581459210621998
+      ],
+      "status": "estimated"
+    },
+    "outputs/morph-showcase/varied-album/inputs/varied-DSC_1280-55.jpg": {
+      "scale": 0.9062534170947921,
+      "offset": [
+        -0.08325227199642922,
+        -0.03886227945906727,
+        -0.04503243044524588
+      ],
+      "proposed_scale": 0.9062534170947921,
+      "proposed_offset": [
+        -0.08325227199642922,
+        -0.03886227945906727,
+        -0.04503243044524588
+      ],
+      "status": "estimated"
+    },
+    "outputs/morph-showcase/varied-album/inputs/varied-DSC_1282-56.jpg": {
+      "scale": 0.937734604515482,
+      "offset": [
+        -0.20905363601441518,
+        -0.22213512449475767,
+        -0.24445268047133736
+      ],
+      "proposed_scale": 0.937734604515482,
+      "proposed_offset": [
+        -0.20905363601441518,
+        -0.22213512449475767,
+        -0.24445268047133736
+      ],
+      "status": "estimated"
+    },
+    "outputs/morph-showcase/varied-album/inputs/varied-DSC_1284-57.jpg": {
+      "scale": 0.9615577087565453,
+      "offset": [
+        -0.1804556791369761,
+        -0.1257467162603007,
+        -0.1319307363554184
+      ],
+      "proposed_scale": 0.9615577087565453,
+      "proposed_offset": [
+        -0.1804556791369761,
+        -0.1257467162603007,
+        -0.1319307363554184
+      ],
+      "status": "estimated"
+    },
+    "outputs/morph-showcase/varied-album/inputs/varied-DSC_1286-58.jpg": {
+      "scale": 0.9684653281385487,
+      "offset": [
+        -0.06994734005635476,
+        -0.03526354852757476,
+        -0.03867210682925203
+      ],
+      "proposed_scale": 0.9684653281385487,
+      "proposed_offset": [
+        -0.06994734005635476,
+        -0.03526354852757476,
+        -0.03867210682925203
+      ],
+      "status": "estimated"
+    },
+    "outputs/morph-showcase/varied-album/inputs/varied-DSC_1288-59.jpg": {
+      "scale": 0.8763193069821383,
+      "offset": [
+        -0.02881918823911794,
+        -0.09959737534476322,
+        -0.08401594975699006
+      ],
+      "proposed_scale": 0.8763193069821383,
+      "proposed_offset": [
+        -0.02881918823911794,
+        -0.09959737534476322,
+        -0.08401594975699006
+      ],
+      "status": "estimated"
+    },
+    "outputs/morph-showcase/varied-album/inputs/varied-DSC_1291-60.jpg": {
+      "scale": 0.87215481204677,
+      "offset": [
+        -0.017617609724226355,
+        -0.11631039310406577,
+        -0.13740913516452283
+      ],
+      "proposed_scale": 0.87215481204677,
+      "proposed_offset": [
+        -0.017617609724226355,
+        -0.11631039310406577,
+        -0.13740913516452283
+      ],
+      "status": "estimated"
+    },
+    "outputs/morph-showcase/varied-album/inputs/varied-DSC_1292-61.jpg": {
+      "scale": 0.8642864633776761,
+      "offset": [
+        0.19830282285073447,
+        0.10429026264697465,
+        0.05982667111534224
+      ],
+      "proposed_scale": 0.8642864633776761,
+      "proposed_offset": [
+        0.19830282285073447,
+        0.10429026264697465,
+        0.05982667111534224
+      ],
+      "status": "estimated"
+    },
+    "outputs/morph-showcase/varied-album/inputs/varied-DSC_1293-62.jpg": {
+      "scale": 0.7720488966730794,
+      "offset": [
+        0.2641393880705369,
+        0.10260072668490192,
+        -0.02386915439523895
+      ],
+      "proposed_scale": 0.7720488966730794,
+      "proposed_offset": [
+        0.2641393880705369,
+        0.10260072668490192,
+        -0.02386915439523895
+      ],
+      "status": "estimated"
+    },
+    "outputs/morph-showcase/varied-album/inputs/varied-DSC_1300-63.jpg": {
+      "scale": 0.7712305253817204,
+      "offset": [
+        0.058530863843082155,
+        -0.00013440691884013262,
+        -0.14416760172524695
+      ],
+      "proposed_scale": 0.7712305253817204,
+      "proposed_offset": [
+        0.058530863843082155,
+        -0.00013440691884013262,
+        -0.14416760172524695
+      ],
+      "status": "estimated"
+    },
+    "outputs/morph-showcase/varied-album/inputs/varied-DSC_1302-64.jpg": {
+      "scale": 0.7753478646921339,
+      "offset": [
+        0.040494327858232246,
+        -0.03724754337881325,
+        -0.23005030850003688
+      ],
+      "proposed_scale": 0.7753478646921339,
+      "proposed_offset": [
+        0.040494327858232246,
+        -0.03724754337881325,
+        -0.23005030850003688
+      ],
+      "status": "estimated"
+    },
+    "outputs/morph-showcase/varied-album/inputs/varied-DSC_1304-65.jpg": {
+      "scale": 0.8022538458064963,
+      "offset": [
+        -0.2896245547849792,
+        -0.25322261371599475,
+        -0.2095431070041877
+      ],
+      "proposed_scale": 0.8022538458064963,
+      "proposed_offset": [
+        -0.2896245547849792,
+        -0.25322261371599475,
+        -0.2095431070041877
+      ],
+      "status": "estimated"
+    },
+    "outputs/morph-showcase/varied-album/inputs/varied-DSC_1308-66.jpg": {
+      "scale": 0.8529270935046859,
+      "offset": [
+        -0.19426471179875773,
+        -0.21299492081307303,
+        -0.19695336686280662
+      ],
+      "proposed_scale": 0.8529270935046859,
+      "proposed_offset": [
+        -0.19426471179875773,
+        -0.21299492081307303,
+        -0.19695336686280662
+      ],
+      "status": "estimated"
+    },
+    "outputs/morph-showcase/varied-album/inputs/varied-DSC_1310-67.jpg": {
+      "scale": 0.8528989284755157,
+      "offset": [
+        -0.3106579156653299,
+        -0.28934470398859635,
+        -0.26060057064027087
+      ],
+      "proposed_scale": 0.8528989284755157,
+      "proposed_offset": [
+        -0.3106579156653299,
+        -0.28934470398859635,
+        -0.26060057064027087
+      ],
+      "status": "estimated"
+    },
+    "outputs/morph-showcase/varied-album/inputs/varied-DSC_1312-68.jpg": {
+      "scale": 0.8286222613136871,
+      "offset": [
+        -0.37991241172517426,
+        -0.37993282304638654,
+        -0.36187918816222725
+      ],
+      "proposed_scale": 0.8286222613136871,
+      "proposed_offset": [
+        -0.37991241172517426,
+        -0.37993282304638654,
+        -0.36187918816222725
+      ],
+      "status": "estimated"
+    },
+    "outputs/morph-showcase/varied-album/inputs/varied-DSC_1315-69.jpg": {
+      "scale": 0.860319364154779,
+      "offset": [
+        0.011220403013879537,
+        -0.009674951263811812,
+        -0.022238592109714073
+      ],
+      "proposed_scale": 0.860319364154779,
+      "proposed_offset": [
+        0.011220403013879537,
+        -0.009674951263811812,
+        -0.022238592109714073
+      ],
+      "status": "estimated"
+    },
+    "outputs/morph-showcase/varied-album/inputs/varied-DSC_1320-70.jpg": {
+      "scale": 1.0102587950213195,
+      "offset": [
+        -0.1442084552512433,
+        -0.12512617271956156,
+        -0.09453706451634619
+      ],
+      "proposed_scale": 1.0102587950213195,
+      "proposed_offset": [
+        -0.1442084552512433,
+        -0.12512617271956156,
+        -0.09453706451634619
+      ],
+      "status": "estimated"
+    },
+    "outputs/morph-showcase/varied-album/inputs/varied-DSC_1322-71.jpg": {
+      "scale": 0.93406161635395,
+      "offset": [
+        -0.0780439013343673,
+        -0.05881929013239258,
+        -0.037561730391252206
+      ],
+      "proposed_scale": 0.93406161635395,
+      "proposed_offset": [
+        -0.0780439013343673,
+        -0.05881929013239258,
+        -0.037561730391252206
+      ],
+      "status": "estimated"
+    },
+    "outputs/morph-showcase/varied-album/inputs/varied-DSC_1324-72.jpg": {
+      "scale": 0.8031140361943627,
+      "offset": [
+        0.05367452382799993,
+        0.07320533449146732,
+        0.10579298806175579
+      ],
+      "proposed_scale": 0.8031140361943627,
+      "proposed_offset": [
+        0.05367452382799993,
+        0.07320533449146732,
+        0.10579298806175579
+      ],
+      "status": "estimated"
+    },
+    "outputs/morph-showcase/varied-album/inputs/varied-DSC_1326-73.jpg": {
+      "scale": 0.8835258570532372,
+      "offset": [
+        -0.536878184219167,
+        -0.5229721071681886,
+        -0.49789512181568074
+      ],
+      "proposed_scale": 0.8835258570532372,
+      "proposed_offset": [
+        -0.536878184219167,
+        -0.5229721071681886,
+        -0.49789512181568074
+      ],
+      "status": "estimated"
+    },
+    "outputs/morph-showcase/varied-album/inputs/varied-DSC_1329-74.jpg": {
+      "scale": 0.9348537831003138,
+      "offset": [
+        -0.38777166104859634,
+        -0.3491621762047789,
+        -0.28251781185965935
+      ],
+      "proposed_scale": 0.9348537831003138,
+      "proposed_offset": [
+        -0.38777166104859634,
+        -0.3491621762047789,
+        -0.28251781185965935
+      ],
+      "status": "estimated"
+    },
+    "outputs/morph-showcase/varied-album/inputs/varied-DSC_1330-75.jpg": {
+      "scale": 0.9165333706652229,
+      "offset": [
+        -0.2624989782699594,
+        -0.23636224025684358,
+        -0.2457274340516908
+      ],
+      "proposed_scale": 0.9165333706652229,
+      "proposed_offset": [
+        -0.2624989782699594,
+        -0.23636224025684358,
+        -0.2457274340516908
+      ],
+      "status": "estimated"
+    },
+    "outputs/morph-showcase/varied-album/inputs/varied-DSC_1334-76.jpg": {
+      "scale": 0.9782964434357677,
+      "offset": [
+        -0.19277041091231015,
+        -0.19281939415534188,
+        -0.19460021070074027
+      ],
+      "proposed_scale": 0.9782964434357677,
+      "proposed_offset": [
+        -0.19277041091231015,
+        -0.19281939415534188,
+        -0.19460021070074027
+      ],
+      "status": "estimated"
+    },
+    "outputs/morph-showcase/varied-album/inputs/varied-DSC_1335-77.jpg": {
+      "scale": 0.9813441426808948,
+      "offset": [
+        0.04798148722980666,
+        0.05421909411704894,
+        0.08127451294496339
+      ],
+      "proposed_scale": 0.9813441426808948,
+      "proposed_offset": [
+        0.04798148722980666,
+        0.05421909411704894,
+        0.08127451294496339
+      ],
+      "status": "estimated"
+    },
+    "outputs/morph-showcase/varied-album/inputs/varied-DSC_1337-78.jpg": {
+      "scale": 1.0165371392980314,
+      "offset": [
+        0.015474361048732926,
+        0.04264332605472557,
+        0.07201169933766707
+      ],
+      "proposed_scale": 1.0165371392980314,
+      "proposed_offset": [
+        0.015474361048732926,
+        0.04264332605472557,
+        0.07201169933766707
+      ],
+      "status": "estimated"
+    },
+    "outputs/morph-showcase/varied-album/inputs/varied-DSC_1339-79.jpg": {
+      "scale": 0.9477496571601235,
+      "offset": [
+        -0.16062672625718313,
+        -0.13922043747579343,
+        -0.11583897224540168
+      ],
+      "proposed_scale": 0.9477496571601235,
+      "proposed_offset": [
+        -0.16062672625718313,
+        -0.13922043747579343,
+        -0.11583897224540168
+      ],
+      "status": "estimated"
+    },
+    "outputs/morph-showcase/varied-album/inputs/varied-DSC_1340-80.jpg": {
+      "scale": 1.0119748371915702,
+      "offset": [
+        0.011273031321057924,
+        0.08691341154427684,
+        0.11039407367075225
+      ],
+      "proposed_scale": 1.0119748371915702,
+      "proposed_offset": [
+        0.011273031321057924,
+        0.08691341154427684,
+        0.11039407367075225
+      ],
+      "status": "estimated"
+    },
+    "outputs/morph-showcase/varied-album/inputs/varied-DSC_1342-81.jpg": {
+      "scale": 1.021736672370758,
+      "offset": [
+        -0.11494858559816531,
+        -0.035534291232011975,
+        0.04922565017826103
+      ],
+      "proposed_scale": 1.021736672370758,
+      "proposed_offset": [
+        -0.11494858559816531,
+        -0.035534291232011975,
+        0.04922565017826103
+      ],
+      "status": "estimated"
+    },
+    "outputs/morph-showcase/varied-album/inputs/varied-DSC_1344-82.jpg": {
+      "scale": 1.0042969663061003,
+      "offset": [
+        0.059856859171467214,
+        0.10046985179425243,
+        0.13547638043880922
+      ],
+      "proposed_scale": 1.0042969663061003,
+      "proposed_offset": [
+        0.059856859171467214,
+        0.10046985179425243,
+        0.13547638043880922
+      ],
+      "status": "estimated"
+    },
+    "outputs/morph-showcase/varied-album/inputs/varied-DSC_1360-83.jpg": {
+      "scale": 0.9772456973491799,
+      "offset": [
+        0.06827321763991627,
+        0.06891951610317695,
+        0.0556824566069625
+      ],
+      "proposed_scale": 0.9772456973491799,
+      "proposed_offset": [
+        0.06827321763991627,
+        0.06891951610317695,
+        0.0556824566069625
+      ],
+      "status": "estimated"
+    },
+    "outputs/morph-showcase/varied-album/inputs/varied-DSC_1362-84.jpg": {
+      "scale": 0.9568438166519468,
+      "offset": [
+        0.06695599459617722,
+        0.031451007081352025,
+        0.03045451687214332
+      ],
+      "proposed_scale": 0.9568438166519468,
+      "proposed_offset": [
+        0.06695599459617722,
+        0.031451007081352025,
+        0.03045451687214332
+      ],
+      "status": "estimated"
+    },
+    "outputs/morph-showcase/varied-album/inputs/varied-DSC_1363-85.jpg": {
+      "scale": 0.9758761936624761,
+      "offset": [
+        0.15721640313125407,
+        0.10333353489715737,
+        0.06850501178084785
+      ],
+      "proposed_scale": 0.9758761936624761,
+      "proposed_offset": [
+        0.15721640313125407,
+        0.10333353489715737,
+        0.06850501178084785
+      ],
+      "status": "estimated"
+    },
+    "outputs/morph-showcase/varied-album/inputs/varied-DSC_1365-86.jpg": {
+      "scale": 0.9802660116550944,
+      "offset": [
+        -0.09714738919834413,
+        -0.02597722074768203,
+        0.09473795995587196
+      ],
+      "proposed_scale": 0.9802660116550944,
+      "proposed_offset": [
+        -0.09714738919834413,
+        -0.02597722074768203,
+        0.09473795995587196
+      ],
+      "status": "estimated"
+    },
+    "outputs/morph-showcase/varied-album/inputs/varied-DSC_1367-87.jpg": {
+      "scale": 0.9915409340905903,
+      "offset": [
+        -0.10917622271411469,
+        0.002414661939469344,
+        0.12488451683894579
+      ],
+      "proposed_scale": 0.9915409340905903,
+      "proposed_offset": [
+        -0.10917622271411469,
+        0.002414661939469344,
+        0.12488451683894579
+      ],
+      "status": "estimated"
+    },
+    "outputs/morph-showcase/varied-album/inputs/varied-DSC_1378-88.jpg": {
+      "scale": 0.925876481420133,
+      "offset": [
+        0.3378597791120115,
+        0.26338483220455483,
+        0.10657645377520641
+      ],
+      "proposed_scale": 0.925876481420133,
+      "proposed_offset": [
+        0.3378597791120115,
+        0.26338483220455483,
+        0.10657645377520641
+      ],
+      "status": "estimated"
+    }
+  }
+}

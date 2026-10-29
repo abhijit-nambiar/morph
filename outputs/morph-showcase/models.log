@@ -1,0 +1,45 @@
+scene-01 {'sampled_pixels': 30000, 'initial_mse': 0.0032003675364560688, 'fit_mse': 1.9895416673337765e-05, 'rmse': 0.0044604278576542145, 'regularization': 1e-06}
+scene-02-lawn {'sampled_pixels': 30000, 'initial_mse': 0.004304285896474595, 'fit_mse': 2.661365224626137e-05, 'rmse': 0.005158842142018049, 'regularization': 1e-06}
+scene-02 {'sampled_pixels': 30000, 'initial_mse': 0.0036752887022794894, 'fit_mse': 1.781766478452052e-05, 'rmse': 0.004221097580549462, 'regularization': 1e-06}
+scene-03 {'sampled_pixels': 30000, 'initial_mse': 0.004231601634522684, 'fit_mse': 2.157381968836809e-05, 'rmse': 0.004644762608397558, 'regularization': 1e-06}
+scene-04 {'sampled_pixels': 30000, 'initial_mse': 0.004377823665729529, 'fit_mse': 2.596079434314395e-05, 'rmse': 0.0050951736322861416, 'regularization': 1e-06}
+scene-05 {'sampled_pixels': 30000, 'initial_mse': 0.004325218201661002, 'fit_mse': 2.1359562770042793e-05, 'rmse': 0.004621640701097695, 'regularization': 1e-06}
+scene-05-tower {'sampled_pixels': 30000, 'initial_mse': 0.007661877446025341, 'fit_mse': 1.621016491552393e-05, 'rmse': 0.004026184908262899, 'regularization': 1e-06}
+scene-06-walk {'sampled_pixels': 30000, 'initial_mse': 0.00496808677848402, 'fit_mse': 1.600175915049622e-05, 'rmse': 0.0040002198877681985, 'regularization': 1e-06}
+scene-06-shade {'sampled_pixels': 30000, 'initial_mse': 0.003242336101207507, 'fit_mse': 2.336055763540017e-05, 'rmse': 0.00483327607688617, 'regularization': 1e-06}
+scene-06 {'sampled_pixels': 30000, 'initial_mse': 0.002521579422784447, 'fit_mse': 2.6445806546325785e-05, 'rmse': 0.005142548643068511, 'regularization': 1e-06}
+scene-07 {'sampled_pixels': 30000, 'initial_mse': 0.003360748532088812, 'fit_mse': 1.5412952963160292e-05, 'rmse': 0.003925933387509305, 'regularization': 1e-06}
+scene-08 {'sampled_pixels': 30000, 'initial_mse': 0.004102275262525671, 'fit_mse': 1.936039431837401e-05, 'rmse': 0.004400044808677976, 'regularization': 1e-06}
+scene-08-tower {'sampled_pixels': 30000, 'initial_mse': 0.005668646980368611, 'fit_mse': 1.918632429886105e-05, 'rmse': 0.004380219663311539, 'regularization': 1e-06}
+scene-09 {'sampled_pixels': 30000, 'initial_mse': 0.0031599550457184294, 'fit_mse': 1.7108587511117863e-05, 'rmse': 0.004136252834525214, 'regularization': 1e-06}
+sunlit references and fits saved
+scene-01 {'sampled_pixels': 30000, 'initial_mse': 0.0014894925138925123, 'fit_mse': 1.0830320114708426e-05, 'rmse': 0.003290945170419651, 'regularization': 1e-06}
+scene-02-lawn {'sampled_pixels': 30000, 'initial_mse': 0.0016518381200580471, 'fit_mse': 1.4237404583949802e-05, 'rmse': 0.003773248545212706, 'regularization': 1e-06}
+scene-02 {'sampled_pixels': 30000, 'initial_mse': 0.0016738291559463025, 'fit_mse': 1.459520805726479e-05, 'rmse': 0.0038203675290820896, 'regularization': 1e-06}
+scene-03 {'sampled_pixels': 30000, 'initial_mse': 0.001630201775791156, 'fit_mse': 1.0620291862281764e-05, 'rmse': 0.003258878927220489, 'regularization': 1e-06}
+scene-04 {'sampled_pixels': 30000, 'initial_mse': 0.0018615458512743273, 'fit_mse': 1.2572380014715055e-05, 'rmse': 0.0035457552107717553, 'regularization': 1e-06}
+scene-05 {'sampled_pixels': 30000, 'initial_mse': 0.0019817066813719317, 'fit_mse': 1.017676082485291e-05, 'rmse': 0.003190103575881653, 'regularization': 1e-06}
+scene-05-tower {'sampled_pixels': 30000, 'initial_mse': 0.0030379277278510066, 'fit_mse': 1.1629959275474474e-05, 'rmse': 0.0034102726101404965, 'regularization': 1e-06}
+scene-06-walk {'sampled_pixels': 30000, 'initial_mse': 0.0018275237803034561, 'fit_mse': 1.0190193070791434e-05, 'rmse': 0.003192208180991872, 'regularization': 1e-06}
+scene-06-shade {'sampled_pixels': 30000, 'initial_mse': 0.001350169107462332, 'fit_mse': 1.1482705847466179e-05, 'rmse': 0.003388614148507643, 'regularization': 1e-06}
+scene-06 {'sampled_pixels': 30000, 'initial_mse': 0.0011148932312220906, 'fit_mse': 1.2908156271006519e-05, 'rmse': 0.0035927922666091506, 'regularization': 1e-06}
+scene-07 {'sampled_pixels': 30000, 'initial_mse': 0.0015188805357102104, 'fit_mse': 1.3478574013442415e-05, 'rmse': 0.0036713177489073887, 'regularization': 1e-06}
+scene-08 {'sampled_pixels': 30000, 'initial_mse': 0.0017579106768093396, 'fit_mse': 1.0242572488497901e-05, 'rmse': 0.0032004019260864565, 'regularization': 1e-06}
+scene-08-tower {'sampled_pixels': 30000, 'initial_mse': 0.002453398166596995, 'fit_mse': 1.1814780857670525e-05, 'rmse': 0.0034372635711668264, 'regularization': 1e-06}
+scene-09 {'sampled_pixels': 30000, 'initial_mse': 0.0012136378301036213, 'fit_mse': 1.096572134515544e-05, 'rmse': 0.0033114530564625913, 'regularization': 1e-06}
+coastal references and fits saved
+scene-01 {'sampled_pixels': 30000, 'initial_mse': 0.0028564814850413622, 'fit_mse': 2.7794026762029863e-05, 'rmse': 0.005272004055577904, 'regularization': 1e-06}
+scene-02-lawn {'sampled_pixels': 30000, 'initial_mse': 0.0031625264212119773, 'fit_mse': 4.5196230606670606e-05, 'rmse': 0.0067228141880220525, 'regularization': 1e-06}
+scene-02 {'sampled_pixels': 30000, 'initial_mse': 0.0024324410035597606, 'fit_mse': 2.735148145598348e-05, 'rmse': 0.0052298643821788995, 'regularization': 1e-06}
+scene-03 {'sampled_pixels': 30000, 'initial_mse': 0.004348640702586247, 'fit_mse': 2.9789402801373008e-05, 'rmse': 0.005457966910981873, 'regularization': 1e-06}
+scene-04 {'sampled_pixels': 30000, 'initial_mse': 0.0038411348315643985, 'fit_mse': 3.8836109643704284e-05, 'rmse': 0.0062318624538499155, 'regularization': 1e-06}
+scene-05 {'sampled_pixels': 30000, 'initial_mse': 0.0032303181493614627, 'fit_mse': 2.889709903689226e-05, 'rmse': 0.005375602202255321, 'regularization': 1e-06}
+scene-05-tower {'sampled_pixels': 30000, 'initial_mse': 0.007199335229783645, 'fit_mse': 2.183802003002944e-05, 'rmse': 0.004673116736186829, 'regularization': 1e-06}
+scene-06-walk {'sampled_pixels': 30000, 'initial_mse': 0.003232862795942846, 'fit_mse': 3.03340742841202e-05, 'rmse': 0.005507637813447813, 'regularization': 1e-06}
+scene-06-shade {'sampled_pixels': 30000, 'initial_mse': 0.0025193189997716487, 'fit_mse': 3.9656004372782756e-05, 'rmse': 0.00629730135635756, 'regularization': 1e-06}
+scene-06 {'sampled_pixels': 30000, 'initial_mse': 0.002642119132025239, 'fit_mse': 3.8565903868182294e-05, 'rmse': 0.006210145237285703, 'regularization': 1e-06}
+scene-07 {'sampled_pixels': 30000, 'initial_mse': 0.002158749396519448, 'fit_mse': 2.453541978667497e-05, 'rmse': 0.004953324114841969, 'regularization': 1e-06}
+scene-08 {'sampled_pixels': 30000, 'initial_mse': 0.003871405503550258, 'fit_mse': 3.0110665089032013e-05, 'rmse': 0.005487318570033274, 'regularization': 1e-06}
+scene-08-tower {'sampled_pixels': 30000, 'initial_mse': 0.005970721309333445, 'fit_mse': 3.0596692536118793e-05, 'rmse': 0.005531427712274543, 'regularization': 1e-06}
+scene-09 {'sampled_pixels': 30000, 'initial_mse': 0.0025173390552898412, 'fit_mse': 2.8277722279709682e-05, 'rmse': 0.0053176801595911805, 'regularization': 1e-06}
+soft-film references and fits saved

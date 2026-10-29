@@ -1,0 +1,89 @@
+{
+  "scope": "Independent Pillow tone LUT and HSV composite, authored by the agent. The fitter reads source/target image pairs and receives no target control settings.",
+  "style": {
+    "name": "Sunlit editorial",
+    "description": "Warm light, open shadows, restrained blues.",
+    "prompt": "Warm light, open shadows, restrained blues",
+    "settings": {
+      "tone_exposure": 0.22,
+      "tone_contrast": 0.24,
+      "tone_shadows": 0.3,
+      "tone_highlights": -0.26,
+      "tone_temperature": 0.22,
+      "cool_saturation": -0.28,
+      "warm_saturation": -0.08
+    }
+  },
+  "targets": [
+    {
+      "source": "Morph/originals/DSC_0906-4.jpg",
+      "target": "outputs/morph-showcase/models/sunlit/targets/DSC_0906-4.jpg",
+      "target_sha256": "564d2c2fbe5b52b72989860ee234470522a4d3f09c1ca8f82d2b4085e2af470c"
+    },
+    {
+      "source": "Morph/originals/DSC_0958-15.jpg",
+      "target": "outputs/morph-showcase/models/sunlit/targets/DSC_0958-15.jpg",
+      "target_sha256": "97207ab09b8cd2a02f28ecb673c713185c07389e1370dcb197fad911d6d90ca0"
+    },
+    {
+      "source": "Morph/originals/DSC_0995-22.jpg",
+      "target": "outputs/morph-showcase/models/sunlit/targets/DSC_0995-22.jpg",
+      "target_sha256": "4ecb7150908eb4e9cd8a4cbf17b327f7bf68ef04755d4e4d24f7033761813cec"
+    },
+    {
+      "source": "Morph/originals/DSC_1037-31.jpg",
+      "target": "outputs/morph-showcase/models/sunlit/targets/DSC_1037-31.jpg",
+      "target_sha256": "2b57627d9823c77f9ead3f46ceaee7415263691e6348d99f9fd49cdb290b3e8d"
+    },
+    {
+      "source": "Morph/originals/DSC_1054-33.jpg",
+      "target": "outputs/morph-showcase/models/sunlit/targets/DSC_1054-33.jpg",
+      "target_sha256": "af89881a0971c02c6695290c6762a8278f4455b9d327f51a566b787d70be107c"
+    },
+    {
+      "source": "Morph/originals/DSC_1111-45.jpg",
+      "target": "outputs/morph-showcase/models/sunlit/targets/DSC_1111-45.jpg",
+      "target_sha256": "bf019dd66e60fcfc3c4749518e49cb5184dd9b628081a535f8a4d6e16686a6ad"
+    },
+    {
+      "source": "Morph/originals/DSC_1105-42.jpg",
+      "target": "outputs/morph-showcase/models/sunlit/targets/DSC_1105-42.jpg",
+      "target_sha256": "3afb49797d6644548f11d791aa85dd5b4ca2c2e7f586f22009bf7a4ca768d371"
+    },
+    {
+      "source": "Morph/originals/DSC_1264-51.jpg",
+      "target": "outputs/morph-showcase/models/sunlit/targets/DSC_1264-51.jpg",
+      "target_sha256": "bce923cdf0c967951345ff8bf335180ecd3866be799236558220b28f0a490484"
+    },
+    {
+      "source": "Morph/originals/DSC_1273-54.jpg",
+      "target": "outputs/morph-showcase/models/sunlit/targets/DSC_1273-54.jpg",
+      "target_sha256": "fa83e977360d880dd0dd68d4eaa8c69dd9d78465f9372cf702aba41bc1f0038d"
+    },
+    {
+      "source": "Morph/originals/DSC_1286-58.jpg",
+      "target": "outputs/morph-showcase/models/sunlit/targets/DSC_1286-58.jpg",
+      "target_sha256": "38dfaa16b91dd28d0581b9774652455ddd2dd77d7f9b8a3cd6404e9279b8f2a7"
+    },
+    {
+      "source": "Morph/originals/DSC_1320-70.jpg",
+      "target": "outputs/morph-showcase/models/sunlit/targets/DSC_1320-70.jpg",
+      "target_sha256": "139615d72f0e4ff8da3a5aebeadfc4e0fae9e90cf6935a47c7093b013ff1d0ca"
+    },
+    {
+      "source": "Morph/originals/DSC_1334-76.jpg",
+      "target": "outputs/morph-showcase/models/sunlit/targets/DSC_1334-76.jpg",
+      "target_sha256": "a1f4c5742613c57b0006a06995511dc36288d956c9dcac77892d28c141634993"
+    },
+    {
+      "source": "Morph/originals/DSC_1342-81.jpg",
+      "target": "outputs/morph-showcase/models/sunlit/targets/DSC_1342-81.jpg",
+      "target_sha256": "847d4c31c9a8a1aa9fcd40bbb6327819a7a8a616835c7cad34777f6366d265b2"
+    },
+    {
+      "source": "Morph/originals/DSC_1363-85.jpg",
+      "target": "outputs/morph-showcase/models/sunlit/targets/DSC_1363-85.jpg",
+      "target_sha256": "d474d39845ab20b5e9b6b52ed319d26d6cbe00c2383cc03f3973c35414991acf"
+    }
+  ]
+}

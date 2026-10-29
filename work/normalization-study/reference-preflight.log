@@ -1,0 +1,7 @@
+Traceback (most recent call last):
+  File "/Users/abhijit.nambiar/morph/outputs/morph-starter/photometric_normalization.py", line 190, in <module>
+    if __name__=='__main__':main()
+                            ~~~~^^
+  File "/Users/abhijit.nambiar/morph/outputs/morph-starter/photometric_normalization.py", line 170, in main
+    raise ValueError('Exactly one reference is required per scene')
+ValueError: Exactly one reference is required per scene

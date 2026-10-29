@@ -1,0 +1,96 @@
+{
+  "scope": "Reduced-resolution mask overlays for human review. Blank-mask flag is a heuristic and does not validate mask coverage. Source and masks were checked against the manifest at review time.",
+  "photos": [
+    {
+      "source": "Morph/originals/DSC_0947-13.jpg",
+      "mask": "outputs/morph-resumed/lawn-selected-masks/DSC_0947-13-mask.png",
+      "mean_mask_weight": 0.061161112040281296,
+      "empty_mask_flag": false,
+      "sheet": "comparison-01.jpg"
+    },
+    {
+      "source": "Morph/originals/DSC_0948-14.jpg",
+      "mask": "outputs/morph-resumed/lawn-selected-masks/DSC_0948-14-mask.png",
+      "mean_mask_weight": 0.07753510028123856,
+      "empty_mask_flag": false,
+      "sheet": "comparison-01.jpg"
+    },
+    {
+      "source": "Morph/originals/DSC_0958-15.jpg",
+      "mask": "outputs/morph-resumed/lawn-selected-masks/DSC_0958-15-mask.png",
+      "mean_mask_weight": 0.09202072024345398,
+      "empty_mask_flag": false,
+      "sheet": "comparison-01.jpg"
+    },
+    {
+      "source": "Morph/originals/DSC_0970-17.jpg",
+      "mask": "outputs/morph-resumed/lawn-selected-masks/DSC_0970-17-mask.png",
+      "mean_mask_weight": 0.1505081206560135,
+      "empty_mask_flag": false,
+      "sheet": "comparison-01.jpg"
+    },
+    {
+      "source": "Morph/originals/DSC_0974-18.jpg",
+      "mask": "outputs/morph-resumed/lawn-selected-masks/DSC_0974-18-mask.png",
+      "mean_mask_weight": 0.113839291036129,
+      "empty_mask_flag": false,
+      "sheet": "comparison-01.jpg"
+    },
+    {
+      "source": "Morph/originals/DSC_0987-19.jpg",
+      "mask": "outputs/morph-resumed/lawn-selected-masks/DSC_0987-19-mask.png",
+      "mean_mask_weight": 0.05230405181646347,
+      "empty_mask_flag": false,
+      "sheet": "comparison-02.jpg"
+    },
+    {
+      "source": "Morph/originals/DSC_0965-16.jpg",
+      "mask": "outputs/morph-resumed/building-masks/DSC_0965-16-mask.png",
+      "mean_mask_weight": 0.545291543006897,
+      "empty_mask_flag": false,
+      "sheet": "comparison-02.jpg"
+    },
+    {
+      "source": "Morph/originals/DSC_0990-20.jpg",
+      "mask": "outputs/morph-resumed/building-masks/DSC_0990-20-mask.png",
+      "mean_mask_weight": 0.2594248354434967,
+      "empty_mask_flag": false,
+      "sheet": "comparison-02.jpg"
+    },
+    {
+      "source": "Morph/originals/DSC_0993-21.jpg",
+      "mask": "outputs/morph-resumed/building-masks/DSC_0993-21-mask.png",
+      "mean_mask_weight": 0.30758678913116455,
+      "empty_mask_flag": false,
+      "sheet": "comparison-02.jpg"
+    },
+    {
+      "source": "Morph/originals/DSC_0995-22.jpg",
+      "mask": "outputs/morph-resumed/building-masks/DSC_0995-22-mask.png",
+      "mean_mask_weight": 0.24647201597690582,
+      "empty_mask_flag": false,
+      "sheet": "comparison-02.jpg"
+    },
+    {
+      "source": "Morph/originals/DSC_0997-23.jpg",
+      "mask": "outputs/morph-resumed/building-masks/DSC_0997-23-mask.png",
+      "mean_mask_weight": 0.27771204710006714,
+      "empty_mask_flag": false,
+      "sheet": "comparison-03.jpg"
+    },
+    {
+      "source": "Morph/originals/DSC_0998-24.jpg",
+      "mask": "outputs/morph-resumed/building-masks/DSC_0998-24-mask.png",
+      "mean_mask_weight": 0.18539848923683167,
+      "empty_mask_flag": false,
+      "sheet": "comparison-03.jpg"
+    },
+    {
+      "source": "Morph/originals/DSC_1012-25.jpg",
+      "mask": "outputs/morph-resumed/building-masks/DSC_1012-25-mask.png",
+      "mean_mask_weight": 0.28655698895454407,
+      "empty_mask_flag": false,
+      "sheet": "comparison-03.jpg"
+    }
+  ]
+}

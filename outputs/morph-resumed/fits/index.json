@@ -1,0 +1,9 @@
+{
+  "version": 1,
+  "kind": "experimental-person-album-v1",
+  "scenes": [
+    "scene-02-lawn",
+    "scene-02"
+  ],
+  "prompt": "warm and slightly soft contrast and lift shadows and brighten people"
+}

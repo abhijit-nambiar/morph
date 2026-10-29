@@ -1,0 +1,580 @@
+{
+  "url": "http://127.0.0.1:8765/",
+  "checks": 43,
+  "passed": 43,
+  "failed": 0,
+  "scope": "Manual browser automation on desktop 1280×720 and narrow viewport 390×844. Existing original 20-check report is retained separately. These checks exercise the eight-stage walkthrough, all groups and styles, calibration disclosures, the historical local-edit branch, presentation and gallery/inspector regressions.",
+  "screenshots": [
+    "qa/walkthrough-desktop.jpg",
+    "qa/walkthrough-mobile.jpg",
+    "qa/local-edits-desktop.jpg"
+  ],
+  "items": [
+    {
+      "check": "walkthrough step 1",
+      "state": {
+        "artifact": "groups.json",
+        "following": "DSC_0993-21.jpg · Library steps",
+        "images": 6,
+        "overflow": false,
+        "selected": "walk-step-0",
+        "step": "1 / 8",
+        "title": "Find frames that belong together."
+      },
+      "passed": true
+    },
+    {
+      "check": "walkthrough step 2",
+      "state": {
+        "artifact": "models/sunlit/targets/DSC_0995-22.jpg",
+        "following": "DSC_0993-21.jpg · Library steps",
+        "images": 2,
+        "overflow": false,
+        "selected": "walk-step-1",
+        "step": "2 / 8",
+        "title": "Edit one reference."
+      },
+      "passed": true
+    },
+    {
+      "check": "walkthrough step 3",
+      "state": {
+        "artifact": "models/sunlit/fits/scene-02/fit.json",
+        "following": "DSC_0993-21.jpg · Library steps",
+        "images": 2,
+        "overflow": false,
+        "selected": "walk-step-2",
+        "step": "3 / 8",
+        "title": "Turn the image pair into an edit."
+      },
+      "passed": true
+    },
+    {
+      "check": "walkthrough step 4",
+      "state": {
+        "artifact": "varied-album/inputs/varied-DSC_0993-21.jpg",
+        "following": "DSC_0993-21.jpg · Library steps",
+        "images": 2,
+        "overflow": false,
+        "selected": "walk-step-3",
+        "step": "4 / 8",
+        "title": "Give the pipeline imperfect inputs."
+      },
+      "passed": true
+    },
+    {
+      "check": "walkthrough step 5",
+      "state": {
+        "artifact": "corrections-final.json",
+        "following": "DSC_0993-21.jpg · Library steps",
+        "images": 3,
+        "overflow": false,
+        "selected": "walk-step-4",
+        "step": "5 / 8",
+        "title": "Align the light to its reference."
+      },
+      "passed": true
+    },
+    {
+      "check": "walkthrough step 6",
+      "state": {
+        "artifact": "final-albums/sunlit/scene-02/exports/varied-DSC_0993-21.jpg",
+        "following": "DSC_0993-21.jpg · Library steps",
+        "images": 2,
+        "overflow": false,
+        "selected": "walk-step-5",
+        "step": "6 / 8",
+        "title": "Replay the saved scene edit."
+      },
+      "passed": true
+    },
+    {
+      "check": "walkthrough step 7",
+      "state": {
+        "artifact": "final-albums/sunlit/review.json",
+        "following": "DSC_0993-21.jpg · Library steps",
+        "images": 3,
+        "overflow": false,
+        "selected": "walk-step-6",
+        "step": "7 / 8",
+        "title": "Keep an album’s shared intent."
+      },
+      "passed": true
+    },
+    {
+      "check": "walkthrough step 8",
+      "state": {
+        "artifact": "verification.json",
+        "following": "DSC_0993-21.jpg · Library steps",
+        "images": 2,
+        "overflow": false,
+        "selected": "walk-step-7",
+        "step": "8 / 8",
+        "title": "Check the export and the claim."
+      },
+      "passed": true
+    },
+    {
+      "check": "scene scene-01",
+      "state": {
+        "fitState": {
+          "following": "DSC_0901-1.jpg · South Hall · doorway",
+          "href": "models/sunlit/fits/scene-01/fit.json",
+          "step": "3 / 8"
+        },
+        "normState": {
+          "following": "DSC_0901-1.jpg · South Hall · doorway",
+          "images": 3,
+          "step": "5 / 8"
+        }
+      },
+      "passed": true
+    },
+    {
+      "check": "scene scene-02-lawn",
+      "state": {
+        "fitState": {
+          "following": "DSC_0947-13.jpg · Campanile lawn",
+          "href": "models/sunlit/fits/scene-02-lawn/fit.json",
+          "step": "3 / 8"
+        },
+        "normState": {
+          "following": "DSC_0947-13.jpg · Campanile lawn",
+          "images": 3,
+          "step": "5 / 8"
+        }
+      },
+      "passed": true
+    },
+    {
+      "check": "scene scene-02",
+      "state": {
+        "fitState": {
+          "following": "DSC_0993-21.jpg · Library steps",
+          "href": "models/sunlit/fits/scene-02/fit.json",
+          "step": "3 / 8"
+        },
+        "normState": {
+          "following": "DSC_0993-21.jpg · Library steps",
+          "images": 3,
+          "step": "5 / 8"
+        }
+      },
+      "passed": true
+    },
+    {
+      "check": "scene scene-03",
+      "state": {
+        "fitState": {
+          "following": "DSC_1021-26.jpg · Campanile · terrace",
+          "href": "models/sunlit/fits/scene-03/fit.json",
+          "step": "3 / 8"
+        },
+        "normState": {
+          "following": "DSC_1021-26.jpg · Campanile · terrace",
+          "images": 3,
+          "step": "5 / 8"
+        }
+      },
+      "passed": true
+    },
+    {
+      "check": "scene scene-04",
+      "state": {
+        "fitState": {
+          "following": "DSC_1059-34.jpg · Library · graduating class",
+          "href": "models/sunlit/fits/scene-04/fit.json",
+          "step": "3 / 8"
+        },
+        "normState": {
+          "following": "DSC_1059-34.jpg · Library · graduating class",
+          "images": 3,
+          "step": "5 / 8"
+        }
+      },
+      "passed": true
+    },
+    {
+      "check": "scene scene-05",
+      "state": {
+        "fitState": {
+          "following": "DSC_1070-35.jpg · Library · balustrade",
+          "href": "models/sunlit/fits/scene-05/fit.json",
+          "step": "3 / 8"
+        },
+        "normState": {
+          "following": "DSC_1070-35.jpg · Library · balustrade",
+          "images": 3,
+          "step": "5 / 8"
+        }
+      },
+      "passed": true
+    },
+    {
+      "check": "scene scene-05-tower",
+      "state": {
+        "fitState": {
+          "following": "DSC_1088-38.jpg · Campanile · seated portraits",
+          "href": "models/sunlit/fits/scene-05-tower/fit.json",
+          "step": "3 / 8"
+        },
+        "normState": {
+          "following": "DSC_1088-38.jpg · Campanile · seated portraits",
+          "images": 3,
+          "step": "5 / 8"
+        }
+      },
+      "passed": true
+    },
+    {
+      "check": "scene scene-06-walk",
+      "state": {
+        "fitState": {
+          "following": "DSC_1259-49.jpg · Sather plaza · walkway",
+          "href": "models/sunlit/fits/scene-06-walk/fit.json",
+          "step": "3 / 8"
+        },
+        "normState": {
+          "following": "DSC_1259-49.jpg · Sather plaza · walkway",
+          "images": 3,
+          "step": "5 / 8"
+        }
+      },
+      "passed": true
+    },
+    {
+      "check": "scene scene-06-shade",
+      "state": {
+        "fitState": {
+          "following": "DSC_1273-54.jpg · Sather plaza · shaded close-up",
+          "href": "models/sunlit/fits/scene-06-shade/fit.json",
+          "step": "3 / 8"
+        },
+        "normState": {
+          "following": "DSC_1273-54.jpg · Sather plaza · shaded close-up",
+          "images": 3,
+          "step": "5 / 8"
+        }
+      },
+      "passed": true
+    },
+    {
+      "check": "scene scene-06",
+      "state": {
+        "fitState": {
+          "following": "DSC_1280-55.jpg · Sather plaza · fountain",
+          "href": "models/sunlit/fits/scene-06/fit.json",
+          "step": "3 / 8"
+        },
+        "normState": {
+          "following": "DSC_1280-55.jpg · Sather plaza · fountain",
+          "images": 3,
+          "step": "5 / 8"
+        }
+      },
+      "passed": true
+    },
+    {
+      "check": "scene scene-07",
+      "state": {
+        "fitState": {
+          "following": "DSC_1308-66.jpg · Library colonnade",
+          "href": "models/sunlit/fits/scene-07/fit.json",
+          "step": "3 / 8"
+        },
+        "normState": {
+          "following": "DSC_1308-66.jpg · Library colonnade",
+          "images": 3,
+          "step": "5 / 8"
+        }
+      },
+      "passed": true
+    },
+    {
+      "check": "scene scene-08",
+      "state": {
+        "fitState": {
+          "following": "DSC_1326-73.jpg · Library · couple portraits",
+          "href": "models/sunlit/fits/scene-08/fit.json",
+          "step": "3 / 8"
+        },
+        "normState": {
+          "following": "DSC_1326-73.jpg · Library · couple portraits",
+          "images": 3,
+          "step": "5 / 8"
+        }
+      },
+      "passed": true
+    },
+    {
+      "check": "scene scene-08-tower",
+      "state": {
+        "fitState": {
+          "following": "DSC_1339-79.jpg · Campanile · couple portraits",
+          "href": "models/sunlit/fits/scene-08-tower/fit.json",
+          "step": "3 / 8"
+        },
+        "normState": {
+          "following": "DSC_1339-79.jpg · Campanile · couple portraits",
+          "images": 3,
+          "step": "5 / 8"
+        }
+      },
+      "passed": true
+    },
+    {
+      "check": "scene scene-09",
+      "state": {
+        "fitState": {
+          "following": "DSC_1360-83.jpg · Sather Gate",
+          "href": "models/sunlit/fits/scene-09/fit.json",
+          "step": "3 / 8"
+        },
+        "normState": {
+          "following": "DSC_1360-83.jpg · Sather Gate",
+          "images": 3,
+          "step": "5 / 8"
+        }
+      },
+      "passed": true
+    },
+    {
+      "check": "choose a different transfer photo",
+      "state": {
+        "href": "final-albums/sunlit/scene-02/exports/varied-DSC_0998-24.jpg",
+        "photo": "DSC_0998-24.jpg · Library steps"
+      },
+      "passed": true
+    },
+    {
+      "check": "walkthrough style coastal",
+      "state": {
+        "href": "final-albums/coastal/scene-02/exports/varied-DSC_0998-24.jpg",
+        "image": "assets/DSC_0998-24-normalized.jpg",
+        "reference": "Reference: DSC_0995-22.jpg · Coastal cool",
+        "selected": "coastal"
+      },
+      "passed": true
+    },
+    {
+      "check": "walkthrough style soft-film",
+      "state": {
+        "href": "final-albums/soft-film/scene-02/exports/varied-DSC_0998-24.jpg",
+        "image": "assets/DSC_0998-24-normalized.jpg",
+        "reference": "Reference: DSC_0995-22.jpg · Soft film",
+        "selected": "soft-film"
+      },
+      "passed": true
+    },
+    {
+      "check": "walkthrough style sunlit",
+      "state": {
+        "href": "final-albums/sunlit/scene-02/exports/varied-DSC_0998-24.jpg",
+        "image": "assets/DSC_0998-24-normalized.jpg",
+        "reference": "Reference: DSC_0995-22.jpg · Sunlit editorial",
+        "selected": "sunlit"
+      },
+      "passed": true
+    },
+    {
+      "check": "next and previous pipeline controls",
+      "state": {
+        "nextState": "2 / 8",
+        "prevState": "1 / 8"
+      },
+      "passed": true
+    },
+    {
+      "check": "accessible step tabs and keyboard wrap",
+      "state": {
+        "endState": {
+          "disabled": true,
+          "focus": "walk-step-7",
+          "step": "8 / 8"
+        },
+        "wrapState": {
+          "disabled": true,
+          "focus": "walk-step-0",
+          "step": "1 / 8"
+        }
+      },
+      "passed": true
+    },
+    {
+      "check": "normalization details show actual estimated values",
+      "state": {
+        "expanded": true,
+        "text": "SIFT matches, aligned overlap samples or keypoint patches feed a robust graph solve. Correction in logit RGB: z′ = s·z + b. Estimated s = 0.9199; RGB offsets = -0.2133, -0.2240, -0.2316. These offsets are model units, not physical exposure stops. Geometry is used for measurement only; the output framing is preserved."
+      },
+      "passed": true
+    },
+    {
+      "check": "Desktop stage navigation reveals context and title below sticky tabs",
+      "passed": true,
+      "viewport": [
+        1280,
+        720
+      ],
+      "panel_top": 150.125
+    },
+    {
+      "check": "Singleton group discloses lack of within-scene transfer evidence",
+      "passed": true
+    },
+    {
+      "check": "Reference counterpart shows calibration caveat at Verify",
+      "passed": true
+    },
+    {
+      "check": "390px walkthrough has eight visible tabs without horizontal overflow or title overlap",
+      "passed": true,
+      "layout": {
+        "panel": 185.046875,
+        "scrollWidth": 375,
+        "tabs": [
+          {
+            "left": 23.3984375,
+            "right": 102.4453125
+          },
+          {
+            "left": 106.4453125,
+            "right": 185.5
+          },
+          {
+            "left": 189.5,
+            "right": 268.546875
+          },
+          {
+            "left": 272.546875,
+            "right": 351.6015625
+          },
+          {
+            "left": 23.3984375,
+            "right": 102.4453125
+          },
+          {
+            "left": 106.4453125,
+            "right": 185.5
+          },
+          {
+            "left": 189.5,
+            "right": 268.546875
+          },
+          {
+            "left": 272.546875,
+            "right": 351.6015625
+          }
+        ],
+        "tabsBottom": 182.296875,
+        "width": 390
+      }
+    },
+    {
+      "check": "Mobile next/previous steps update content correctly",
+      "passed": true
+    },
+    {
+      "check": "Mobile photo and style selectors update real export and preview",
+      "passed": true
+    },
+    {
+      "check": "Mobile local branch loads four images and discloses separate historical scope",
+      "passed": true,
+      "images": [
+        {
+          "alt": "Original",
+          "loaded": true
+        },
+        {
+          "alt": "Soft person mask",
+          "loaded": true
+        },
+        {
+          "alt": "Mask overlay",
+          "loaded": true
+        },
+        {
+          "alt": "Person-aware result",
+          "loaded": true
+        }
+      ]
+    },
+    {
+      "check": "Desktop local branch displays original, soft mask, overlay and separate exported result",
+      "passed": true,
+      "evidence": {
+        "images": [
+          {
+            "alt": "Original",
+            "loaded": true
+          },
+          {
+            "alt": "Soft person mask",
+            "loaded": true
+          },
+          {
+            "alt": "Mask overlay",
+            "loaded": true
+          },
+          {
+            "alt": "Person-aware result",
+            "loaded": true
+          }
+        ],
+        "link": "local-experiment/DSC_0995-22.jpg",
+        "scope": "Separate historical person-mask experiment; not part of the three styled albums. Global warm/soft/shadow adjustments plus local person lighting. This mask covers people including clothing, not isolated skin. The 13-photo run uses shared masks for synthetic targets and recovery; low fitting error cannot validate masks."
+      }
+    },
+    {
+      "check": "Presentation has eight chapters; arrow keys on walkthrough tabs change steps without changing chapters",
+      "passed": true
+    },
+    {
+      "check": "Presentation includes local face/person chapter",
+      "passed": true
+    },
+    {
+      "check": "Existing gallery filter and all five inspector stages work after walkthrough changes",
+      "passed": true,
+      "stages": [
+        {
+          "alt": "DSC_0993-21.jpg · Original",
+          "loaded": true,
+          "stage": "Original"
+        },
+        {
+          "alt": "DSC_0993-21.jpg · Varied input",
+          "loaded": true,
+          "stage": "Varied input"
+        },
+        {
+          "alt": "DSC_0993-21.jpg · Normalized",
+          "loaded": true,
+          "stage": "Normalized"
+        },
+        {
+          "alt": "DSC_0993-21.jpg · Styled target",
+          "loaded": true,
+          "stage": "Styled target"
+        },
+        {
+          "alt": "DSC_0993-21.jpg · Final export",
+          "loaded": true,
+          "stage": "Final export"
+        }
+      ]
+    },
+    {
+      "check": "Inspector photo navigation and close work",
+      "passed": true
+    },
+    {
+      "check": "No browser console warnings or errors during final interactions",
+      "passed": true
+    },
+    {
+      "check": "Desktop has no horizontal overflow or broken loaded images",
+      "passed": true
+    }
+  ]
+}

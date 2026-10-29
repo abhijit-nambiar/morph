@@ -1,0 +1,4990 @@
+{
+  "scope": "Controlled same-album research evaluation. The correction stage sees the varied album and one intended reference per lighting group. Clean counterparts and injected settings are reserved for this evaluator. The intended normalization baseline is the same matcher run on the unperturbed album, so these scores establish stability against injected global tone/color variation, not an independent judgment of ideal normalization. Targets then use the independent Pillow style editor. Style weights are fitted only on representatives. Metrics cover decoded full-resolution JPEG exports sampled at the stated evaluation size. Original scenes, styles and algorithm were developed on this album; this is not unseen-album or human-edit validation. Local relighting, clipped-detail recovery and mask quality are outside this test.",
+  "size": 1000,
+  "variance_seed": 20261030,
+  "calibration_photos": 14,
+  "normalization": {
+    "photos": 88,
+    "mean_before": 0.04159348663895137,
+    "mean_after": 0.0043051912983752445,
+    "p95_after": 0.008778656600043172,
+    "improved": 88,
+    "estimated": 88,
+    "review": 0,
+    "scene_bias_before": 0.020462668806778994,
+    "scene_bias_after": 0.001364376452476043,
+    "album_bias_before": 0.02032979420376521,
+    "album_bias_after": 0.0012502916400290423,
+    "noncalibration": {
+      "photos": 74,
+      "mean_before": 0.04588294435745558,
+      "mean_after": 0.004537883469507702,
+      "p95_after": 0.009075045539066195,
+      "improved": 74
+    }
+  },
+  "styles": {
+    "sunlit": {
+      "photos": 88,
+      "mean_before": 0.04076498927806657,
+      "mean_after": 0.007050355663523078,
+      "p95_after": 0.011209479765966535,
+      "improved": 88,
+      "noncalibration": {
+        "photos": 74,
+        "mean_before": 0.045016945581294314,
+        "mean_after": 0.007316914449974492,
+        "p95_after": 0.011345381522551178,
+        "improved": 74
+      }
+    },
+    "coastal": {
+      "photos": 88,
+      "mean_before": 0.04239961595553355,
+      "mean_after": 0.006102070074782453,
+      "p95_after": 0.010100552020594475,
+      "improved": 88,
+      "noncalibration": {
+        "photos": 74,
+        "mean_before": 0.046697843029800366,
+        "mean_after": 0.006342090024436648,
+        "p95_after": 0.010221487190574407,
+        "improved": 74
+      }
+    },
+    "soft-film": {
+      "photos": 88,
+      "mean_before": 0.036815749637610036,
+      "mean_after": 0.00782884640978988,
+      "p95_after": 0.011514160176739096,
+      "improved": 88,
+      "noncalibration": {
+        "photos": 74,
+        "mean_before": 0.040620689276447665,
+        "mean_after": 0.00806245901244315,
+        "p95_after": 0.012368290545418846,
+        "improved": 74
+      }
+    }
+  },
+  "scenes": [
+    {
+      "scene": "scene-01",
+      "photos": 12,
+      "bias_before": [
+        -0.007087306192261167,
+        -0.0019474003929644823,
+        0.002416073577478528
+      ],
+      "bias_after": [
+        6.570486645311273e-05,
+        0.00021789510719827376,
+        6.114405581077638e-05
+      ],
+      "mean_before": 0.04462466839080056,
+      "mean_after": 0.0032788266350204744,
+      "p95_after": 0.00435821902938187,
+      "improved": 12
+    },
+    {
+      "scene": "scene-02-lawn",
+      "photos": 6,
+      "bias_before": [
+        -0.030637243762612343,
+        -0.03416721119234959,
+        -0.029075724848856527
+      ],
+      "bias_after": [
+        -0.00046896385538275354,
+        -0.0014478695217500597,
+        -0.0009645182290114462
+      ],
+      "mean_before": 0.04803273516396681,
+      "mean_after": 0.0048222245726113515,
+      "p95_after": 0.00866853806655854,
+      "improved": 6
+    },
+    {
+      "scene": "scene-02",
+      "photos": 7,
+      "bias_before": [
+        -0.01548927609941789,
+        -0.00925882553149547,
+        -0.0070184699392744476
+      ],
+      "bias_after": [
+        -0.00046915700815069225,
+        -0.00042032274983025024,
+        -0.0004874195728916675
+      ],
+      "mean_before": 0.04647938108869961,
+      "mean_after": 0.0037387391618852106,
+      "p95_after": 0.006152430782094596,
+      "improved": 7
+    },
+    {
+      "scene": "scene-03",
+      "photos": 7,
+      "bias_before": [
+        0.005009848225329604,
+        0.013191972726157733,
+        0.019289756725941385
+      ],
+      "bias_after": [
+        -0.001252179353156992,
+        -0.0011339786973881669,
+        -0.001973278113707368
+      ],
+      "mean_before": 0.05991618015936443,
+      "mean_after": 0.004852081582482372,
+      "p95_after": 0.005999932950362563,
+      "improved": 7
+    },
+    {
+      "scene": "scene-04",
+      "photos": 2,
+      "bias_before": [
+        -0.005248321685940027,
+        -0.00585579127073288,
+        -0.004732787609100342
+      ],
+      "bias_after": [
+        0.0005790619907202199,
+        0.00034577481710584834,
+        0.0008317588071804494
+      ],
+      "mean_before": 0.022037035785615444,
+      "mean_after": 0.0030841989209875464,
+      "p95_after": 0.003124272485729307,
+      "improved": 2
+    },
+    {
+      "scene": "scene-05",
+      "photos": 9,
+      "bias_before": [
+        -0.0322460610833433,
+        -0.0348909449013364,
+        -0.03953361821671327
+      ],
+      "bias_after": [
+        0.0008433746894398711,
+        0.0005585460166912526,
+        0.0005514436731270204
+      ],
+      "mean_before": 0.06244252213380403,
+      "mean_after": 0.003305101922402779,
+      "p95_after": 0.0035726406145840882,
+      "improved": 9
+    },
+    {
+      "scene": "scene-05-tower",
+      "photos": 5,
+      "bias_before": [
+        -0.0005391730228438973,
+        0.0018946812953799963,
+        0.003814289323054254
+      ],
+      "bias_after": [
+        0.0004392333241412416,
+        0.00031015457352623343,
+        0.00018909802656708052
+      ],
+      "mean_before": 0.018256826512515544,
+      "mean_after": 0.002960188640281558,
+      "p95_after": 0.003598619112744927,
+      "improved": 5
+    },
+    {
+      "scene": "scene-06-walk",
+      "photos": 5,
+      "bias_before": [
+        0.02561118397861719,
+        0.03302618854213506,
+        0.03401724454015494
+      ],
+      "bias_after": [
+        -0.002590535266790539,
+        -0.0028759338601958007,
+        -0.0025604241294786335
+      ],
+      "mean_before": 0.05485704652965069,
+      "mean_after": 0.004440706921741366,
+      "p95_after": 0.007252866867929696,
+      "improved": 5
+    },
+    {
+      "scene": "scene-06-shade",
+      "photos": 1,
+      "bias_before": [
+        0.013315202668309212,
+        0.01666839048266411,
+        0.020656811073422432
+      ],
+      "bias_after": [
+        8.882182737579569e-05,
+        0.0003267139254603535,
+        0.0001058614143403247
+      ],
+      "mean_before": 0.019289294257760048,
+      "mean_after": 0.002891724929213524,
+      "p95_after": 0.002891724929213524,
+      "improved": 1
+    },
+    {
+      "scene": "scene-06",
+      "photos": 11,
+      "bias_before": [
+        0.004702584040139548,
+        0.007880723945246164,
+        0.009431447960775007
+      ],
+      "bias_after": [
+        -0.0019943356640975585,
+        -0.0028520205289003734,
+        -0.003949601510116322
+      ],
+      "mean_before": 0.03316534877839414,
+      "mean_after": 0.006883933716876941,
+      "p95_after": 0.010369482450187206,
+      "improved": 11
+    },
+    {
+      "scene": "scene-07",
+      "photos": 7,
+      "bias_before": [
+        0.028886851305807277,
+        0.026917261869779656,
+        0.020588799346504465
+      ],
+      "bias_after": [
+        0.0008842491754746464,
+        0.0017314002418840704,
+        0.001981470563415704
+      ],
+      "mean_before": 0.03965906399701323,
+      "mean_after": 0.0064495999831706285,
+      "p95_after": 0.008808094542473555,
+      "improved": 7
+    },
+    {
+      "scene": "scene-08",
+      "photos": 6,
+      "bias_before": [
+        0.03508713798752675,
+        0.03359274403192103,
+        0.029870101250708103
+      ],
+      "bias_after": [
+        -0.0013582397847737109,
+        -0.0010824960239309196,
+        -0.0011140567609497036
+      ],
+      "mean_before": 0.044451342429965734,
+      "mean_after": 0.00346467566365997,
+      "p95_after": 0.0043889268999919295,
+      "improved": 6
+    },
+    {
+      "scene": "scene-08-tower",
+      "photos": 4,
+      "bias_before": [
+        0.008226288766309153,
+        -0.0008935078512877226,
+        -0.008903717854991555
+      ],
+      "bias_after": [
+        0.00010894738079514354,
+        -0.0006125779182184488,
+        -0.0014084057047512033
+      ],
+      "mean_before": 0.018259926000609994,
+      "mean_after": 0.0037995665334165096,
+      "p95_after": 0.005310562578961253,
+      "improved": 4
+    },
+    {
+      "scene": "scene-09",
+      "photos": 6,
+      "bias_before": [
+        -0.011582590018709501,
+        -0.010904632334131747,
+        -0.010571259694794813
+      ],
+      "bias_after": [
+        -0.0005662400411286702,
+        -0.000626639484835323,
+        -0.0005282608908601105
+      ],
+      "mean_before": 0.019778331741690636,
+      "mean_after": 0.002962418870689968,
+      "p95_after": 0.0032407294493168592,
+      "improved": 6
+    }
+  ],
+  "photos": [
+    {
+      "photo": "DSC_0901-1.jpg",
+      "source": "Morph/originals/DSC_0901-1.jpg",
+      "varied": "outputs/morph-showcase/varied-album/inputs/varied-DSC_0901-1.jpg",
+      "scene": "scene-01",
+      "calibration_counterpart": false,
+      "status": "estimated",
+      "normalization_before": 0.03871917352080345,
+      "normalization_after": 0.0035545961000025272,
+      "bias_before": [
+        0.0275118388235569,
+        0.031002702191472054,
+        0.025456629693508148
+      ],
+      "bias_after": [
+        0.0005792096490040421,
+        0.0012792203342542052,
+        0.0006734413909725845
+      ],
+      "styles": {
+        "sunlit": {
+          "before": 0.03514669738068596,
+          "after": 0.0058964830823242664,
+          "export": "outputs/morph-showcase/final-albums/sunlit/scene-01/exports/varied-DSC_0901-1.jpg"
+        },
+        "coastal": {
+          "before": 0.03956327377412115,
+          "after": 0.005574605893343687,
+          "export": "outputs/morph-showcase/final-albums/coastal/scene-01/exports/varied-DSC_0901-1.jpg"
+        },
+        "soft-film": {
+          "before": 0.03165049006363875,
+          "after": 0.006572730839252472,
+          "export": "outputs/morph-showcase/final-albums/soft-film/scene-01/exports/varied-DSC_0901-1.jpg"
+        }
+      },
+      "expected_correction": {
+        "scale": 0.8937001714197172,
+        "offset": [
+          -0.2407751565426372,
+          -0.2506033997954175,
+          -0.21670806079688018
+        ]
+      },
+      "estimated_correction": {
+        "scale": 0.8808502062825575,
+        "offset": [
+          -0.2416730170694946,
+          -0.24849461282072388,
+          -0.21582663601103205
+        ]
+      }
+    },
+    {
+      "photo": "DSC_0904-2.jpg",
+      "source": "Morph/originals/DSC_0904-2.jpg",
+      "varied": "outputs/morph-showcase/varied-album/inputs/varied-DSC_0904-2.jpg",
+      "scene": "scene-01",
+      "calibration_counterpart": false,
+      "status": "estimated",
+      "normalization_before": 0.10946350544691086,
+      "normalization_after": 0.0029447218403220177,
+      "bias_before": [
+        0.09565643966197968,
+        0.09444157034158707,
+        0.09507780522108078
+      ],
+      "bias_after": [
+        0.0002716186863835901,
+        0.000241096640820615,
+        -0.00023928737209644169
+      ],
+      "styles": {
+        "sunlit": {
+          "before": 0.10589620404800032,
+          "after": 0.005560868885368109,
+          "export": "outputs/morph-showcase/final-albums/sunlit/scene-01/exports/varied-DSC_0904-2.jpg"
+        },
+        "coastal": {
+          "before": 0.11029400196844825,
+          "after": 0.0074042207561433315,
+          "export": "outputs/morph-showcase/final-albums/coastal/scene-01/exports/varied-DSC_0904-2.jpg"
+        },
+        "soft-film": {
+          "before": 0.09197946556693519,
+          "after": 0.007651281077414751,
+          "export": "outputs/morph-showcase/final-albums/soft-film/scene-01/exports/varied-DSC_0904-2.jpg"
+        }
+      },
+      "expected_correction": {
+        "scale": 0.9361627035407385,
+        "offset": [
+          -0.6350654770039549,
+          -0.6092896174695556,
+          -0.6090568752834925
+        ]
+      },
+      "estimated_correction": {
+        "scale": 0.9304074488268047,
+        "offset": [
+          -0.6308034932788791,
+          -0.60649009278753,
+          -0.6066577281939769
+        ]
+      }
+    },
+    {
+      "photo": "DSC_0905-3.jpg",
+      "source": "Morph/originals/DSC_0905-3.jpg",
+      "varied": "outputs/morph-showcase/varied-album/inputs/varied-DSC_0905-3.jpg",
+      "scene": "scene-01",
+      "calibration_counterpart": false,
+      "status": "estimated",
+      "normalization_before": 0.0821593850851059,
+      "normalization_after": 0.00306248408742249,
+      "bias_before": [
+        0.04394213855266571,
+        0.06561629474163055,
+        0.08958548307418823
+      ],
+      "bias_after": [
+        0.0005031208274886012,
+        0.0004822245391551405,
+        0.0002721504424698651
+      ],
+      "styles": {
+        "sunlit": {
+          "before": 0.07706731283212784,
+          "after": 0.005733010824769735,
+          "export": "outputs/morph-showcase/final-albums/sunlit/scene-01/exports/varied-DSC_0905-3.jpg"
+        },
+        "coastal": {
+          "before": 0.08106151420480105,
+          "after": 0.00690670870244503,
+          "export": "outputs/morph-showcase/final-albums/coastal/scene-01/exports/varied-DSC_0905-3.jpg"
+        },
+        "soft-film": {
+          "before": 0.06918671472385338,
+          "after": 0.007520992774516344,
+          "export": "outputs/morph-showcase/final-albums/soft-film/scene-01/exports/varied-DSC_0905-3.jpg"
+        }
+      },
+      "expected_correction": {
+        "scale": 0.9074233624211254,
+        "offset": [
+          -0.330682228752109,
+          -0.452357751720485,
+          -0.5931177176924846
+        ]
+      },
+      "estimated_correction": {
+        "scale": 0.9001938502055093,
+        "offset": [
+          -0.3316028210269989,
+          -0.4468830546265217,
+          -0.5856814325510342
+        ]
+      }
+    },
+    {
+      "photo": "DSC_0906-4.jpg",
+      "source": "Morph/originals/DSC_0906-4.jpg",
+      "varied": "outputs/morph-showcase/varied-album/inputs/varied-DSC_0906-4.jpg",
+      "scene": "scene-01",
+      "calibration_counterpart": true,
+      "status": "estimated",
+      "normalization_before": 0.008486362174153328,
+      "normalization_after": 0.002945472951978445,
+      "bias_before": [
+        0.0019478301983326674,
+        -0.00606737844645977,
+        -0.008585565723478794
+      ],
+      "bias_after": [
+        6.64307372062467e-05,
+        0.00019546230032574385,
+        -2.09762183658313e-05
+      ],
+      "styles": {
+        "sunlit": {
+          "before": 0.00865025797950543,
+          "after": 0.0056071095168590546,
+          "export": "outputs/morph-showcase/final-albums/sunlit/scene-01/exports/varied-DSC_0906-4.jpg"
+        },
+        "coastal": {
+          "before": 0.009014819491286739,
+          "after": 0.004567628726363182,
+          "export": "outputs/morph-showcase/final-albums/coastal/scene-01/exports/varied-DSC_0906-4.jpg"
+        },
+        "soft-film": {
+          "before": 0.007789569110095421,
+          "after": 0.005963832605630159,
+          "export": "outputs/morph-showcase/final-albums/soft-film/scene-01/exports/varied-DSC_0906-4.jpg"
+        }
+      },
+      "expected_correction": {
+        "scale": 1.0215001611207297,
+        "offset": [
+          -0.0006259877923142053,
+          0.05153628512167822,
+          0.06611912668290554
+        ]
+      },
+      "estimated_correction": {
+        "scale": 1.0161955252312385,
+        "offset": [
+          -0.0033215981138681773,
+          0.049014020103611396,
+          0.061476161443713
+        ]
+      }
+    },
+    {
+      "photo": "DSC_0914-5.jpg",
+      "source": "Morph/originals/DSC_0914-5.jpg",
+      "varied": "outputs/morph-showcase/varied-album/inputs/varied-DSC_0914-5.jpg",
+      "scene": "scene-01",
+      "calibration_counterpart": false,
+      "status": "estimated",
+      "normalization_before": 0.027336200699210167,
+      "normalization_after": 0.0026336766313761473,
+      "bias_before": [
+        -0.03439980745315552,
+        -0.01905808411538601,
+        -0.009055300615727901
+      ],
+      "bias_after": [
+        0.000487922050524503,
+        0.0005506158922798932,
+        0.00029537573573179543
+      ],
+      "styles": {
+        "sunlit": {
+          "before": 0.029056196857040372,
+          "after": 0.007333050947636366,
+          "export": "outputs/morph-showcase/final-albums/sunlit/scene-01/exports/varied-DSC_0914-5.jpg"
+        },
+        "coastal": {
+          "before": 0.02909073074451796,
+          "after": 0.004640085622668266,
+          "export": "outputs/morph-showcase/final-albums/coastal/scene-01/exports/varied-DSC_0914-5.jpg"
+        },
+        "soft-film": {
+          "before": 0.02357139805747713,
+          "after": 0.0070228963159024715,
+          "export": "outputs/morph-showcase/final-albums/soft-film/scene-01/exports/varied-DSC_0914-5.jpg"
+        }
+      },
+      "expected_correction": {
+        "scale": 0.995874477338513,
+        "offset": [
+          0.25611130573665103,
+          0.13458599232750382,
+          0.06359253942011865
+        ]
+      },
+      "estimated_correction": {
+        "scale": 0.9966228910185203,
+        "offset": [
+          0.25810062229689906,
+          0.13612610720068474,
+          0.062459723309598855
+        ]
+      }
+    },
+    {
+      "photo": "DSC_0916-6.jpg",
+      "source": "Morph/originals/DSC_0916-6.jpg",
+      "varied": "outputs/morph-showcase/varied-album/inputs/varied-DSC_0916-6.jpg",
+      "scene": "scene-01",
+      "calibration_counterpart": false,
+      "status": "estimated",
+      "normalization_before": 0.017382914200425148,
+      "normalization_after": 0.0029505726415663958,
+      "bias_before": [
+        0.003471551463007927,
+        0.012905466370284557,
+        0.022107591852545738
+      ],
+      "bias_after": [
+        0.00013324750761967152,
+        0.0001898166665341705,
+        0.0005224079359322786
+      ],
+      "styles": {
+        "sunlit": {
+          "before": 0.016411603207913548,
+          "after": 0.006201779469847679,
+          "export": "outputs/morph-showcase/final-albums/sunlit/scene-01/exports/varied-DSC_0916-6.jpg"
+        },
+        "coastal": {
+          "before": 0.018002293790851533,
+          "after": 0.004631235729902983,
+          "export": "outputs/morph-showcase/final-albums/coastal/scene-01/exports/varied-DSC_0916-6.jpg"
+        },
+        "soft-film": {
+          "before": 0.015480561873045461,
+          "after": 0.0065469141118228436,
+          "export": "outputs/morph-showcase/final-albums/soft-film/scene-01/exports/varied-DSC_0916-6.jpg"
+        }
+      },
+      "expected_correction": {
+        "scale": 1.0034433591902536,
+        "offset": [
+          -0.026008430150528283,
+          -0.08872551284849226,
+          -0.14743447504824328
+        ]
+      },
+      "estimated_correction": {
+        "scale": 0.9984785407282671,
+        "offset": [
+          -0.025088345220972953,
+          -0.08870170025541085,
+          -0.14625179699596927
+        ]
+      }
+    },
+    {
+      "photo": "DSC_0919-7.jpg",
+      "source": "Morph/originals/DSC_0919-7.jpg",
+      "varied": "outputs/morph-showcase/varied-album/inputs/varied-DSC_0919-7.jpg",
+      "scene": "scene-01",
+      "calibration_counterpart": false,
+      "status": "estimated",
+      "normalization_before": 0.009549718350172043,
+      "normalization_after": 0.0028477953746914864,
+      "bias_before": [
+        -0.002450419357046485,
+        0.005945909768342972,
+        0.012038949877023697
+      ],
+      "bias_after": [
+        0.00035867109545506537,
+        0.0003764138964470476,
+        4.976424315827899e-05
+      ],
+      "styles": {
+        "sunlit": {
+          "before": 0.009167898984895255,
+          "after": 0.005908357910811901,
+          "export": "outputs/morph-showcase/final-albums/sunlit/scene-01/exports/varied-DSC_0919-7.jpg"
+        },
+        "coastal": {
+          "before": 0.010520217707814273,
+          "after": 0.004628750029951334,
+          "export": "outputs/morph-showcase/final-albums/coastal/scene-01/exports/varied-DSC_0919-7.jpg"
+        },
+        "soft-film": {
+          "before": 0.008621013101103636,
+          "after": 0.006139484234154224,
+          "export": "outputs/morph-showcase/final-albums/soft-film/scene-01/exports/varied-DSC_0919-7.jpg"
+        }
+      },
+      "expected_correction": {
+        "scale": 0.9980608805479253,
+        "offset": [
+          0.01887264736813392,
+          -0.03849529395773543,
+          -0.07777992742050333
+        ]
+      },
+      "estimated_correction": {
+        "scale": 0.9963430783917423,
+        "offset": [
+          0.016803110731648137,
+          -0.0393088374246567,
+          -0.08132580428408506
+        ]
+      }
+    },
+    {
+      "photo": "DSC_0921-8.jpg",
+      "source": "Morph/originals/DSC_0921-8.jpg",
+      "varied": "outputs/morph-showcase/varied-album/inputs/varied-DSC_0921-8.jpg",
+      "scene": "scene-01",
+      "calibration_counterpart": false,
+      "status": "estimated",
+      "normalization_before": 0.010857049375772476,
+      "normalization_after": 0.0029430172871798277,
+      "bias_before": [
+        0.00044680951396003366,
+        -0.005134453997015953,
+        -0.014102769084274769
+      ],
+      "bias_after": [
+        -2.958733239211142e-05,
+        6.3130515627563e-05,
+        -0.0006222774391062558
+      ],
+      "styles": {
+        "sunlit": {
+          "before": 0.011044246471532319,
+          "after": 0.006552492268383503,
+          "export": "outputs/morph-showcase/final-albums/sunlit/scene-01/exports/varied-DSC_0921-8.jpg"
+        },
+        "coastal": {
+          "before": 0.011273705404609136,
+          "after": 0.0049144611693918705,
+          "export": "outputs/morph-showcase/final-albums/coastal/scene-01/exports/varied-DSC_0921-8.jpg"
+        },
+        "soft-film": {
+          "before": 0.010560338792313306,
+          "after": 0.006603078451007605,
+          "export": "outputs/morph-showcase/final-albums/soft-film/scene-01/exports/varied-DSC_0921-8.jpg"
+        }
+      },
+      "expected_correction": {
+        "scale": 1.0201736575849387,
+        "offset": [
+          0.009797537097582729,
+          0.047827730384418454,
+          0.1084299001736564
+        ]
+      },
+      "estimated_correction": {
+        "scale": 1.018899307826513,
+        "offset": [
+          0.008361509147850705,
+          0.04668680378102306,
+          0.09998261252633403
+        ]
+      }
+    },
+    {
+      "photo": "DSC_0925-9.jpg",
+      "source": "Morph/originals/DSC_0925-9.jpg",
+      "varied": "outputs/morph-showcase/varied-album/inputs/varied-DSC_0925-9.jpg",
+      "scene": "scene-01",
+      "calibration_counterpart": false,
+      "status": "estimated",
+      "normalization_before": 0.0459272563457489,
+      "normalization_after": 0.0032452906016260386,
+      "bias_before": [
+        -0.052584510296583176,
+        -0.038770999759435654,
+        -0.024114931002259254
+      ],
+      "bias_after": [
+        0.000247690622927621,
+        -0.00017700302123557776,
+        -2.284346192027442e-05
+      ],
+      "styles": {
+        "sunlit": {
+          "before": 0.04975998376740694,
+          "after": 0.00732744624838233,
+          "export": "outputs/morph-showcase/final-albums/sunlit/scene-01/exports/varied-DSC_0925-9.jpg"
+        },
+        "coastal": {
+          "before": 0.04787292481129669,
+          "after": 0.004890239331871271,
+          "export": "outputs/morph-showcase/final-albums/coastal/scene-01/exports/varied-DSC_0925-9.jpg"
+        },
+        "soft-film": {
+          "before": 0.0436134013944557,
+          "after": 0.007572535425424576,
+          "export": "outputs/morph-showcase/final-albums/soft-film/scene-01/exports/varied-DSC_0925-9.jpg"
+        }
+      },
+      "expected_correction": {
+        "scale": 0.9516520291882223,
+        "offset": [
+          0.382490801337615,
+          0.2568668368673323,
+          0.15201791259454508
+        ]
+      },
+      "estimated_correction": {
+        "scale": 0.9586193926676698,
+        "offset": [
+          0.38914478360252097,
+          0.2600040854413847,
+          0.1506311668765341
+        ]
+      }
+    },
+    {
+      "photo": "DSC_0928-10.jpg",
+      "source": "Morph/originals/DSC_0928-10.jpg",
+      "varied": "outputs/morph-showcase/varied-album/inputs/varied-DSC_0928-10.jpg",
+      "scene": "scene-01",
+      "calibration_counterpart": false,
+      "status": "estimated",
+      "normalization_before": 0.0797414481639862,
+      "normalization_after": 0.005340424831956625,
+      "bias_before": [
+        -0.07003438472747803,
+        -0.07272296398878098,
+        -0.07234485447406769
+      ],
+      "bias_after": [
+        0.0005694995634257793,
+        0.0012887208722531796,
+        0.0026549817994236946
+      ],
+      "styles": {
+        "sunlit": {
+          "before": 0.0841057622165988,
+          "after": 0.009309431537985802,
+          "export": "outputs/morph-showcase/final-albums/sunlit/scene-01/exports/varied-DSC_0928-10.jpg"
+        },
+        "coastal": {
+          "before": 0.08052306380918708,
+          "after": 0.007074341643601656,
+          "export": "outputs/morph-showcase/final-albums/coastal/scene-01/exports/varied-DSC_0928-10.jpg"
+        },
+        "soft-film": {
+          "before": 0.07567030242961827,
+          "after": 0.008575806394219398,
+          "export": "outputs/morph-showcase/final-albums/soft-film/scene-01/exports/varied-DSC_0928-10.jpg"
+        }
+      },
+      "expected_correction": {
+        "scale": 0.9451138898073692,
+        "offset": [
+          0.44426852761129587,
+          0.4378129110629939,
+          0.42490003923135333
+        ]
+      },
+      "estimated_correction": {
+        "scale": 0.9155736029339316,
+        "offset": [
+          0.4137888603517165,
+          0.4152561276769686,
+          0.40912761878370296
+        ]
+      }
+    },
+    {
+      "photo": "DSC_0930-11.jpg",
+      "source": "Morph/originals/DSC_0930-11.jpg",
+      "varied": "outputs/morph-showcase/varied-album/inputs/varied-DSC_0930-11.jpg",
+      "scene": "scene-01",
+      "calibration_counterpart": false,
+      "status": "estimated",
+      "normalization_before": 0.07133777439594269,
+      "normalization_after": 0.003390803700312972,
+      "bias_before": [
+        -0.07035820931196213,
+        -0.06128160282969475,
+        -0.05401533842086792
+      ],
+      "bias_after": [
+        -0.0009737471700645983,
+        -0.0008524466538801789,
+        -0.0014863311080262065
+      ],
+      "styles": {
+        "sunlit": {
+          "before": 0.07174578173964523,
+          "after": 0.00812529120594263,
+          "export": "outputs/morph-showcase/final-albums/sunlit/scene-01/exports/varied-DSC_0930-11.jpg"
+        },
+        "coastal": {
+          "before": 0.07272554946180934,
+          "after": 0.005995148792862892,
+          "export": "outputs/morph-showcase/final-albums/coastal/scene-01/exports/varied-DSC_0930-11.jpg"
+        },
+        "soft-film": {
+          "before": 0.06359490626054266,
+          "after": 0.007598900701850653,
+          "export": "outputs/morph-showcase/final-albums/soft-film/scene-01/exports/varied-DSC_0930-11.jpg"
+        }
+      },
+      "expected_correction": {
+        "scale": 1.027255973406386,
+        "offset": [
+          0.5410633586088318,
+          0.43958799856419273,
+          0.3669378199084447
+        ]
+      },
+      "estimated_correction": {
+        "scale": 1.0277113802688493,
+        "offset": [
+          0.5356386295298682,
+          0.434455602686618,
+          0.3586241770815727
+        ]
+      }
+    },
+    {
+      "photo": "DSC_0935-12.jpg",
+      "source": "Morph/originals/DSC_0935-12.jpg",
+      "varied": "outputs/morph-showcase/varied-album/inputs/varied-DSC_0935-12.jpg",
+      "scene": "scene-01",
+      "calibration_counterpart": false,
+      "status": "estimated",
+      "normalization_before": 0.034535232931375504,
+      "normalization_after": 0.0034870635718107224,
+      "bias_before": [
+        -0.028196951374411583,
+        -0.030245264992117882,
+        -0.03305481746792793
+      ],
+      "bias_after": [
+        -0.001425617840141058,
+        -0.0010225106962025166,
+        -0.001342677278444171
+      ],
+      "styles": {
+        "sunlit": {
+          "before": 0.035330234947686695,
+          "after": 0.007336231879889965,
+          "export": "outputs/morph-showcase/final-albums/sunlit/scene-01/exports/varied-DSC_0935-12.jpg"
+        },
+        "coastal": {
+          "before": 0.034484753308313215,
+          "after": 0.005300808697938919,
+          "export": "outputs/morph-showcase/final-albums/coastal/scene-01/exports/varied-DSC_0935-12.jpg"
+        },
+        "soft-film": {
+          "before": 0.030628967667393436,
+          "after": 0.006764991208910942,
+          "export": "outputs/morph-showcase/final-albums/soft-film/scene-01/exports/varied-DSC_0935-12.jpg"
+        }
+      },
+      "expected_correction": {
+        "scale": 1.0150700980453677,
+        "offset": [
+          0.19408053448392204,
+          0.1993989951389069,
+          0.21032830883103368
+        ]
+      },
+      "estimated_correction": {
+        "scale": 1.0104627825729766,
+        "offset": [
+          0.18436562640568482,
+          0.18993650514042873,
+          0.19782054536551452
+        ]
+      }
+    },
+    {
+      "photo": "DSC_0947-13.jpg",
+      "source": "Morph/originals/DSC_0947-13.jpg",
+      "varied": "outputs/morph-showcase/varied-album/inputs/varied-DSC_0947-13.jpg",
+      "scene": "scene-02-lawn",
+      "calibration_counterpart": false,
+      "status": "estimated",
+      "normalization_before": 0.07307993620634079,
+      "normalization_after": 0.00411459244787693,
+      "bias_before": [
+        -0.06634297966957092,
+        -0.07416389137506485,
+        -0.06418546289205551
+      ],
+      "bias_after": [
+        -0.0008281979244202375,
+        -0.0024102767929434776,
+        -0.002574132988229394
+      ],
+      "styles": {
+        "sunlit": {
+          "before": 0.06692435352859193,
+          "after": 0.01881272718310356,
+          "export": "outputs/morph-showcase/final-albums/sunlit/scene-02-lawn/exports/varied-DSC_0947-13.jpg"
+        },
+        "coastal": {
+          "before": 0.07716819766135719,
+          "after": 0.010206043720245361,
+          "export": "outputs/morph-showcase/final-albums/coastal/scene-02-lawn/exports/varied-DSC_0947-13.jpg"
+        },
+        "soft-film": {
+          "before": 0.056522353268979704,
+          "after": 0.021327830851078033,
+          "export": "outputs/morph-showcase/final-albums/soft-film/scene-02-lawn/exports/varied-DSC_0947-13.jpg"
+        }
+      },
+      "expected_correction": {
+        "scale": 0.9515167077090683,
+        "offset": [
+          0.3237302213742044,
+          0.35235469616264176,
+          0.3958912829994939
+        ]
+      },
+      "estimated_correction": {
+        "scale": 0.9641083889305091,
+        "offset": [
+          0.32990696464174785,
+          0.34519773120068853,
+          0.3824285894193043
+        ]
+      }
+    },
+    {
+      "photo": "DSC_0948-14.jpg",
+      "source": "Morph/originals/DSC_0948-14.jpg",
+      "varied": "outputs/morph-showcase/varied-album/inputs/varied-DSC_0948-14.jpg",
+      "scene": "scene-02-lawn",
+      "calibration_counterpart": false,
+      "status": "estimated",
+      "normalization_before": 0.04887467995285988,
+      "normalization_after": 0.0031871888786554337,
+      "bias_before": [
+        -0.038888465613126755,
+        -0.04986260086297989,
+        -0.04730665683746338
+      ],
+      "bias_after": [
+        0.0017279294552281499,
+        0.00022201095998752862,
+        -0.0009615473099984229
+      ],
+      "styles": {
+        "sunlit": {
+          "before": 0.04533314355969186,
+          "after": 0.01574593223631382,
+          "export": "outputs/morph-showcase/final-albums/sunlit/scene-02-lawn/exports/varied-DSC_0948-14.jpg"
+        },
+        "coastal": {
+          "before": 0.051209989147227485,
+          "after": 0.0073327673599123955,
+          "export": "outputs/morph-showcase/final-albums/coastal/scene-02-lawn/exports/varied-DSC_0948-14.jpg"
+        },
+        "soft-film": {
+          "before": 0.0387710686428935,
+          "after": 0.01822827197611332,
+          "export": "outputs/morph-showcase/final-albums/soft-film/scene-02-lawn/exports/varied-DSC_0948-14.jpg"
+        }
+      },
+      "expected_correction": {
+        "scale": 0.991206567337656,
+        "offset": [
+          0.19748161745926673,
+          0.24544630572442191,
+          0.2937626926989568
+        ]
+      },
+      "estimated_correction": {
+        "scale": 0.9945567031252384,
+        "offset": [
+          0.2103453291557678,
+          0.2475232261906656,
+          0.29052708935805527
+        ]
+      }
+    },
+    {
+      "photo": "DSC_0958-15.jpg",
+      "source": "Morph/originals/DSC_0958-15.jpg",
+      "varied": "outputs/morph-showcase/varied-album/inputs/varied-DSC_0958-15.jpg",
+      "scene": "scene-02-lawn",
+      "calibration_counterpart": true,
+      "status": "estimated",
+      "normalization_before": 0.018107889220118523,
+      "normalization_after": 0.003329874249175191,
+      "bias_before": [
+        0.011485506780445576,
+        0.014309460297226906,
+        0.01249659713357687
+      ],
+      "bias_after": [
+        -0.0004708804772235453,
+        6.414943345589563e-05,
+        -0.0008195972186513245
+      ],
+      "styles": {
+        "sunlit": {
+          "before": 0.015928228434878112,
+          "after": 0.008733661845326424,
+          "export": "outputs/morph-showcase/final-albums/sunlit/scene-02-lawn/exports/varied-DSC_0958-15.jpg"
+        },
+        "coastal": {
+          "before": 0.018854307999371458,
+          "after": 0.006003655027598143,
+          "export": "outputs/morph-showcase/final-albums/coastal/scene-02-lawn/exports/varied-DSC_0958-15.jpg"
+        },
+        "soft-film": {
+          "before": 0.017319394429995773,
+          "after": 0.011450888589024544,
+          "export": "outputs/morph-showcase/final-albums/soft-film/scene-02-lawn/exports/varied-DSC_0958-15.jpg"
+        }
+      },
+      "expected_correction": {
+        "scale": 0.932062077396932,
+        "offset": [
+          -0.07912833769549832,
+          -0.08671864012671447,
+          -0.09817962115846984
+        ]
+      },
+      "estimated_correction": {
+        "scale": 0.9443851218943091,
+        "offset": [
+          -0.07908001828144404,
+          -0.0837817868138782,
+          -0.10203050774151828
+        ]
+      }
+    },
+    {
+      "photo": "DSC_0970-17.jpg",
+      "source": "Morph/originals/DSC_0970-17.jpg",
+      "varied": "outputs/morph-showcase/varied-album/inputs/varied-DSC_0970-17.jpg",
+      "scene": "scene-02-lawn",
+      "calibration_counterpart": false,
+      "status": "estimated",
+      "normalization_before": 0.0286759901791811,
+      "normalization_after": 0.003729748073965311,
+      "bias_before": [
+        0.009823824279010296,
+        0.01901419460773468,
+        0.014021383598446846
+      ],
+      "bias_after": [
+        -0.00197422644123435,
+        -0.0017983464058488607,
+        -0.002722935052588582
+      ],
+      "styles": {
+        "sunlit": {
+          "before": 0.028874649378661188,
+          "after": 0.009239076636731625,
+          "export": "outputs/morph-showcase/final-albums/sunlit/scene-02-lawn/exports/varied-DSC_0970-17.jpg"
+        },
+        "coastal": {
+          "before": 0.0292832336960362,
+          "after": 0.006424942519515753,
+          "export": "outputs/morph-showcase/final-albums/coastal/scene-02-lawn/exports/varied-DSC_0970-17.jpg"
+        },
+        "soft-film": {
+          "before": 0.03169332035511617,
+          "after": 0.011548229493200779,
+          "export": "outputs/morph-showcase/final-albums/soft-film/scene-02-lawn/exports/varied-DSC_0970-17.jpg"
+        }
+      },
+      "expected_correction": {
+        "scale": 0.8586939217550417,
+        "offset": [
+          -0.0755096482314365,
+          -0.09681755331469144,
+          -0.1276911278547106
+        ]
+      },
+      "estimated_correction": {
+        "scale": 0.8610786594094423,
+        "offset": [
+          -0.08664977585995547,
+          -0.10620708002514666,
+          -0.14415445240499386
+        ]
+      }
+    },
+    {
+      "photo": "DSC_0974-18.jpg",
+      "source": "Morph/originals/DSC_0974-18.jpg",
+      "varied": "outputs/morph-showcase/varied-album/inputs/varied-DSC_0974-18.jpg",
+      "scene": "scene-02-lawn",
+      "calibration_counterpart": false,
+      "status": "estimated",
+      "normalization_before": 0.06445688754320145,
+      "normalization_after": 0.010051104240119457,
+      "bias_before": [
+        -0.05570775642991066,
+        -0.06418836116790771,
+        -0.03326529636979103
+      ],
+      "bias_after": [
+        8.576496475143358e-05,
+        -0.0018040507566183805,
+        0.005639690440148115
+      ],
+      "styles": {
+        "sunlit": {
+          "before": 0.07091602328178694,
+          "after": 0.0162199754267931,
+          "export": "outputs/morph-showcase/final-albums/sunlit/scene-02-lawn/exports/varied-DSC_0974-18.jpg"
+        },
+        "coastal": {
+          "before": 0.06711231093329034,
+          "after": 0.011828976683318615,
+          "export": "outputs/morph-showcase/final-albums/coastal/scene-02-lawn/exports/varied-DSC_0974-18.jpg"
+        },
+        "soft-film": {
+          "before": 0.06682667071247948,
+          "after": 0.019435888156294823,
+          "export": "outputs/morph-showcase/final-albums/soft-film/scene-02-lawn/exports/varied-DSC_0974-18.jpg"
+        }
+      },
+      "expected_correction": {
+        "scale": 0.7651666466120141,
+        "offset": [
+          0.1719544803156981,
+          0.25516280689615467,
+          0.10589492892423275
+        ]
+      },
+      "estimated_correction": {
+        "scale": 0.8139997907721528,
+        "offset": [
+          0.2054236826692391,
+          0.26755648648937147,
+          0.16292198613118383
+        ]
+      }
+    },
+    {
+      "photo": "DSC_0987-19.jpg",
+      "source": "Morph/originals/DSC_0987-19.jpg",
+      "varied": "outputs/morph-showcase/varied-album/inputs/varied-DSC_0987-19.jpg",
+      "scene": "scene-02-lawn",
+      "calibration_counterpart": false,
+      "status": "estimated",
+      "normalization_before": 0.05500102788209915,
+      "normalization_after": 0.004520839545875788,
+      "bias_before": [
+        -0.04419359192252159,
+        -0.05011206865310669,
+        -0.056214913725852966
+      ],
+      "bias_after": [
+        -0.0013541727093979716,
+        -0.002960703568533063,
+        -0.004348587244749069
+      ],
+      "styles": {
+        "sunlit": {
+          "before": 0.05111347781147222,
+          "after": 0.011236581951379776,
+          "export": "outputs/morph-showcase/final-albums/sunlit/scene-02-lawn/exports/varied-DSC_0987-19.jpg"
+        },
+        "coastal": {
+          "before": 0.05615822017753326,
+          "after": 0.007087821140885353,
+          "export": "outputs/morph-showcase/final-albums/coastal/scene-02-lawn/exports/varied-DSC_0987-19.jpg"
+        },
+        "soft-film": {
+          "before": 0.043703203599282224,
+          "after": 0.01389126107096672,
+          "export": "outputs/morph-showcase/final-albums/soft-film/scene-02-lawn/exports/varied-DSC_0987-19.jpg"
+        }
+      },
+      "expected_correction": {
+        "scale": 0.9436797740590189,
+        "offset": [
+          0.19909868200273326,
+          0.24122791862061055,
+          0.35973575924995427
+        ]
+      },
+      "estimated_correction": {
+        "scale": 0.9484888812096474,
+        "offset": [
+          0.1955268733179203,
+          0.22822562302622437,
+          0.3329067896052333
+        ]
+      }
+    },
+    {
+      "photo": "DSC_0965-16.jpg",
+      "source": "Morph/originals/DSC_0965-16.jpg",
+      "varied": "outputs/morph-showcase/varied-album/inputs/varied-DSC_0965-16.jpg",
+      "scene": "scene-02",
+      "calibration_counterpart": false,
+      "status": "estimated",
+      "normalization_before": 0.02197621576488018,
+      "normalization_after": 0.007052911911159754,
+      "bias_before": [
+        -0.023029619827866554,
+        0.005178290884941816,
+        0.015188467688858509
+      ],
+      "bias_after": [
+        -0.005227840039879084,
+        -0.0036553898826241493,
+        -0.004159404896199703
+      ],
+      "styles": {
+        "sunlit": {
+          "before": 0.02076575010964836,
+          "after": 0.008612802252173424,
+          "export": "outputs/morph-showcase/final-albums/sunlit/scene-02/exports/varied-DSC_0965-16.jpg"
+        },
+        "coastal": {
+          "before": 0.023161173498755128,
+          "after": 0.007845568470656872,
+          "export": "outputs/morph-showcase/final-albums/coastal/scene-02/exports/varied-DSC_0965-16.jpg"
+        },
+        "soft-film": {
+          "before": 0.01830476266711651,
+          "after": 0.008980515412986279,
+          "export": "outputs/morph-showcase/final-albums/soft-film/scene-02/exports/varied-DSC_0965-16.jpg"
+        }
+      },
+      "expected_correction": {
+        "scale": 0.929229193116985,
+        "offset": [
+          0.17847124850154783,
+          -0.017440488125434597,
+          -0.10328205390278399
+        ]
+      },
+      "estimated_correction": {
+        "scale": 0.9526120750163781,
+        "offset": [
+          0.1357433940743704,
+          -0.052125619030869735,
+          -0.14506917811872136
+        ]
+      }
+    },
+    {
+      "photo": "DSC_0990-20.jpg",
+      "source": "Morph/originals/DSC_0990-20.jpg",
+      "varied": "outputs/morph-showcase/varied-album/inputs/varied-DSC_0990-20.jpg",
+      "scene": "scene-02",
+      "calibration_counterpart": false,
+      "status": "estimated",
+      "normalization_before": 0.09275142848491669,
+      "normalization_after": 0.004051308147609234,
+      "bias_before": [
+        -0.07905693352222443,
+        -0.08054447174072266,
+        -0.07824758440256119
+      ],
+      "bias_after": [
+        -0.0015653959708288312,
+        -0.0012271481100469828,
+        -0.0010145481210201979
+      ],
+      "styles": {
+        "sunlit": {
+          "before": 0.09343324865477788,
+          "after": 0.007047129794955254,
+          "export": "outputs/morph-showcase/final-albums/sunlit/scene-02/exports/varied-DSC_0990-20.jpg"
+        },
+        "coastal": {
+          "before": 0.094470811121327,
+          "after": 0.005985909607261419,
+          "export": "outputs/morph-showcase/final-albums/coastal/scene-02/exports/varied-DSC_0990-20.jpg"
+        },
+        "soft-film": {
+          "before": 0.08176297162198937,
+          "after": 0.007424121722579002,
+          "export": "outputs/morph-showcase/final-albums/soft-film/scene-02/exports/varied-DSC_0990-20.jpg"
+        }
+      },
+      "expected_correction": {
+        "scale": 0.8356976192839384,
+        "offset": [
+          0.435813395304702,
+          0.4267201020042267,
+          0.41017546900581964
+        ]
+      },
+      "estimated_correction": {
+        "scale": 0.8493427749715862,
+        "offset": [
+          0.43257143833354006,
+          0.4274520540681179,
+          0.41201660268465906
+        ]
+      }
+    },
+    {
+      "photo": "DSC_0993-21.jpg",
+      "source": "Morph/originals/DSC_0993-21.jpg",
+      "varied": "outputs/morph-showcase/varied-album/inputs/varied-DSC_0993-21.jpg",
+      "scene": "scene-02",
+      "calibration_counterpart": false,
+      "status": "estimated",
+      "normalization_before": 0.04643682762980461,
+      "normalization_after": 0.0028690940234810114,
+      "bias_before": [
+        0.03621603548526764,
+        0.03899206593632698,
+        0.03939152881503105
+      ],
+      "bias_after": [
+        -0.00019597283971961588,
+        -0.0002516937383916229,
+        -0.0006078756414353848
+      ],
+      "styles": {
+        "sunlit": {
+          "before": 0.041820252009700486,
+          "after": 0.00491810729727149,
+          "export": "outputs/morph-showcase/final-albums/sunlit/scene-02/exports/varied-DSC_0993-21.jpg"
+        },
+        "coastal": {
+          "before": 0.046636193659257794,
+          "after": 0.005509139504283667,
+          "export": "outputs/morph-showcase/final-albums/coastal/scene-02/exports/varied-DSC_0993-21.jpg"
+        },
+        "soft-film": {
+          "before": 0.03660391865940401,
+          "after": 0.006211290135979652,
+          "export": "outputs/morph-showcase/final-albums/soft-film/scene-02/exports/varied-DSC_0993-21.jpg"
+        }
+      },
+      "expected_correction": {
+        "scale": 0.9187521199500538,
+        "offset": [
+          -0.21092925745023547,
+          -0.22102954573634676,
+          -0.22524811934206512
+        ]
+      },
+      "estimated_correction": {
+        "scale": 0.9198781429099765,
+        "offset": [
+          -0.213313231085083,
+          -0.22397588623821937,
+          -0.2315529551850262
+        ]
+      }
+    },
+    {
+      "photo": "DSC_0995-22.jpg",
+      "source": "Morph/originals/DSC_0995-22.jpg",
+      "varied": "outputs/morph-showcase/varied-album/inputs/varied-DSC_0995-22.jpg",
+      "scene": "scene-02",
+      "calibration_counterpart": true,
+      "status": "estimated",
+      "normalization_before": 0.025386249646544456,
+      "normalization_after": 0.002890976145863533,
+      "bias_before": [
+        -0.023313162848353386,
+        -0.02005542628467083,
+        -0.021622495725750923
+      ],
+      "bias_after": [
+        3.3857028029160574e-05,
+        0.00027137401048094034,
+        0.00028202825342305005
+      ],
+      "styles": {
+        "sunlit": {
+          "before": 0.024969498763253092,
+          "after": 0.004956618882715702,
+          "export": "outputs/morph-showcase/final-albums/sunlit/scene-02/exports/varied-DSC_0995-22.jpg"
+        },
+        "coastal": {
+          "before": 0.02585193616866405,
+          "after": 0.0048195659182965755,
+          "export": "outputs/morph-showcase/final-albums/coastal/scene-02/exports/varied-DSC_0995-22.jpg"
+        },
+        "soft-film": {
+          "before": 0.02161783566099924,
+          "after": 0.00570711400359869,
+          "export": "outputs/morph-showcase/final-albums/soft-film/scene-02/exports/varied-DSC_0995-22.jpg"
+        }
+      },
+      "expected_correction": {
+        "scale": 1.0132700426969365,
+        "offset": [
+          0.14502512806068818,
+          0.12216149174533963,
+          0.13870984395140495
+        ]
+      },
+      "estimated_correction": {
+        "scale": 1.0080532496728691,
+        "offset": [
+          0.14300087633110117,
+          0.12182090455142255,
+          0.13269804786863723
+        ]
+      }
+    },
+    {
+      "photo": "DSC_0997-23.jpg",
+      "source": "Morph/originals/DSC_0997-23.jpg",
+      "varied": "outputs/morph-showcase/varied-album/inputs/varied-DSC_0997-23.jpg",
+      "scene": "scene-02",
+      "calibration_counterpart": false,
+      "status": "estimated",
+      "normalization_before": 0.05959029495716095,
+      "normalization_after": 0.002562182489782572,
+      "bias_before": [
+        0.05261382460594177,
+        0.05063240975141525,
+        0.04299788922071457
+      ],
+      "bias_after": [
+        0.0008658408187329769,
+        0.0006491398671641946,
+        0.0009483119356445968
+      ],
+      "styles": {
+        "sunlit": {
+          "before": 0.054267889938377514,
+          "after": 0.004846591968089342,
+          "export": "outputs/morph-showcase/final-albums/sunlit/scene-02/exports/varied-DSC_0997-23.jpg"
+        },
+        "coastal": {
+          "before": 0.06124759699150636,
+          "after": 0.005657537840306759,
+          "export": "outputs/morph-showcase/final-albums/coastal/scene-02/exports/varied-DSC_0997-23.jpg"
+        },
+        "soft-film": {
+          "before": 0.04773725214672525,
+          "after": 0.0066643208265304565,
+          "export": "outputs/morph-showcase/final-albums/soft-film/scene-02/exports/varied-DSC_0997-23.jpg"
+        }
+      },
+      "expected_correction": {
+        "scale": 0.9641760238167008,
+        "offset": [
+          -0.35494206431036357,
+          -0.32919636750644654,
+          -0.29991186200912817
+        ]
+      },
+      "estimated_correction": {
+        "scale": 0.9603223628441623,
+        "offset": [
+          -0.35036039537690855,
+          -0.32611741841884356,
+          -0.2951569085986132
+        ]
+      }
+    },
+    {
+      "photo": "DSC_0998-24.jpg",
+      "source": "Morph/originals/DSC_0998-24.jpg",
+      "varied": "outputs/morph-showcase/varied-album/inputs/varied-DSC_0998-24.jpg",
+      "scene": "scene-02",
+      "calibration_counterpart": false,
+      "status": "estimated",
+      "normalization_before": 0.061408355832099915,
+      "normalization_after": 0.003247623797506094,
+      "bias_before": [
+        -0.05674883350729942,
+        -0.05053473636507988,
+        -0.04325229674577713
+      ],
+      "bias_after": [
+        9.739924280438572e-05,
+        -0.0003427036281209439,
+        -0.0005271742702461779
+      ],
+      "styles": {
+        "sunlit": {
+          "before": 0.05913932662642398,
+          "after": 0.0054327682591974735,
+          "export": "outputs/morph-showcase/final-albums/sunlit/scene-02/exports/varied-DSC_0998-24.jpg"
+        },
+        "coastal": {
+          "before": 0.06307535848706791,
+          "after": 0.00475390674546361,
+          "export": "outputs/morph-showcase/final-albums/coastal/scene-02/exports/varied-DSC_0998-24.jpg"
+        },
+        "soft-film": {
+          "before": 0.04997722633698306,
+          "after": 0.00597766786813736,
+          "export": "outputs/morph-showcase/final-albums/soft-film/scene-02/exports/varied-DSC_0998-24.jpg"
+        }
+      },
+      "expected_correction": {
+        "scale": 1.0341097952801055,
+        "offset": [
+          0.3976251471326203,
+          0.3488278972124835,
+          0.30956938135387624
+        ]
+      },
+      "estimated_correction": {
+        "scale": 1.0374148586231275,
+        "offset": [
+          0.40095677306408334,
+          0.34765136418637604,
+          0.3043601881500493
+        ]
+      }
+    },
+    {
+      "photo": "DSC_1012-25.jpg",
+      "source": "Morph/originals/DSC_1012-25.jpg",
+      "varied": "outputs/morph-showcase/varied-album/inputs/varied-DSC_1012-25.jpg",
+      "scene": "scene-02",
+      "calibration_counterpart": false,
+      "status": "estimated",
+      "normalization_before": 0.017806295305490494,
+      "normalization_after": 0.0034970776177942753,
+      "bias_before": [
+        -0.015106243081390858,
+        -0.008479910902678967,
+        -0.00358479842543602
+      ],
+      "bias_after": [
+        0.002708012703806162,
+        0.0016141622327268124,
+        0.0016667257295921445
+      ],
+      "styles": {
+        "sunlit": {
+          "before": 0.019798855670014763,
+          "after": 0.005415166728198528,
+          "export": "outputs/morph-showcase/final-albums/sunlit/scene-02/exports/varied-DSC_1012-25.jpg"
+        },
+        "coastal": {
+          "before": 0.01861328146181319,
+          "after": 0.00531565397977829,
+          "export": "outputs/morph-showcase/final-albums/coastal/scene-02/exports/varied-DSC_1012-25.jpg"
+        },
+        "soft-film": {
+          "before": 0.018823484643120756,
+          "after": 0.006680032704025507,
+          "export": "outputs/morph-showcase/final-albums/soft-film/scene-02/exports/varied-DSC_1012-25.jpg"
+        }
+      },
+      "expected_correction": {
+        "scale": 0.8977247778393564,
+        "offset": [
+          0.09248417594731766,
+          0.049458056431298386,
+          0.023087036298303387
+        ]
+      },
+      "estimated_correction": {
+        "scale": 0.8967727542274478,
+        "offset": [
+          0.10615370507396084,
+          0.05981651717366242,
+          0.03263886247108441
+        ]
+      }
+    },
+    {
+      "photo": "DSC_1021-26.jpg",
+      "source": "Morph/originals/DSC_1021-26.jpg",
+      "varied": "outputs/morph-showcase/varied-album/inputs/varied-DSC_1021-26.jpg",
+      "scene": "scene-03",
+      "calibration_counterpart": false,
+      "status": "estimated",
+      "normalization_before": 0.10780777782201767,
+      "normalization_after": 0.005900854244828224,
+      "bias_before": [
+        0.08243750780820847,
+        0.09777171164751053,
+        0.10309448838233948
+      ],
+      "bias_after": [
+        -0.00034895140561275184,
+        0.0005008901352994144,
+        -0.0017822141526266932
+      ],
+      "styles": {
+        "sunlit": {
+          "before": 0.10468334885460609,
+          "after": 0.007611894980072975,
+          "export": "outputs/morph-showcase/final-albums/sunlit/scene-03/exports/varied-DSC_1021-26.jpg"
+        },
+        "coastal": {
+          "before": 0.10693601157601744,
+          "after": 0.007430326659232378,
+          "export": "outputs/morph-showcase/final-albums/coastal/scene-03/exports/varied-DSC_1021-26.jpg"
+        },
+        "soft-film": {
+          "before": 0.09262149598891146,
+          "after": 0.008054560050368309,
+          "export": "outputs/morph-showcase/final-albums/soft-film/scene-03/exports/varied-DSC_1021-26.jpg"
+        }
+      },
+      "expected_correction": {
+        "scale": 0.8269689245694315,
+        "offset": [
+          -0.5162175274440911,
+          -0.5348535896257687,
+          -0.6145302730525858
+        ]
+      },
+      "estimated_correction": {
+        "scale": 0.7985570075486169,
+        "offset": [
+          -0.5253084307866235,
+          -0.5317769993099483,
+          -0.6214008708301872
+        ]
+      }
+    },
+    {
+      "photo": "DSC_1026-27.jpg",
+      "source": "Morph/originals/DSC_1026-27.jpg",
+      "varied": "outputs/morph-showcase/varied-album/inputs/varied-DSC_1026-27.jpg",
+      "scene": "scene-03",
+      "calibration_counterpart": false,
+      "status": "estimated",
+      "normalization_before": 0.07184182852506638,
+      "normalization_after": 0.00539659196510911,
+      "bias_before": [
+        -0.07177818566560745,
+        -0.0707515999674797,
+        -0.05920001119375229
+      ],
+      "bias_after": [
+        -0.0015393059002235532,
+        -0.0003846295876428485,
+        -0.0015137166483327746
+      ],
+      "styles": {
+        "sunlit": {
+          "before": 0.07718413265199418,
+          "after": 0.007986310869455338,
+          "export": "outputs/morph-showcase/final-albums/sunlit/scene-03/exports/varied-DSC_1026-27.jpg"
+        },
+        "coastal": {
+          "before": 0.07251825257192075,
+          "after": 0.00670994445681572,
+          "export": "outputs/morph-showcase/final-albums/coastal/scene-03/exports/varied-DSC_1026-27.jpg"
+        },
+        "soft-film": {
+          "before": 0.06833320917678454,
+          "after": 0.008061378262937069,
+          "export": "outputs/morph-showcase/final-albums/soft-film/scene-03/exports/varied-DSC_1026-27.jpg"
+        }
+      },
+      "expected_correction": {
+        "scale": 0.9246805609882249,
+        "offset": [
+          0.35502624911310265,
+          0.3256670400389274,
+          0.31020967225303175
+        ]
+      },
+      "estimated_correction": {
+        "scale": 0.9005271236338581,
+        "offset": [
+          0.31639943642032864,
+          0.30154828962161667,
+          0.27964548143342505
+        ]
+      }
+    },
+    {
+      "photo": "DSC_1028-28.jpg",
+      "source": "Morph/originals/DSC_1028-28.jpg",
+      "varied": "outputs/morph-showcase/varied-album/inputs/varied-DSC_1028-28.jpg",
+      "scene": "scene-03",
+      "calibration_counterpart": false,
+      "status": "estimated",
+      "normalization_before": 0.07622265070676804,
+      "normalization_after": 0.006042395252734423,
+      "bias_before": [
+        -0.08055250346660614,
+        -0.0770365372300148,
+        -0.05681599676609039
+      ],
+      "bias_after": [
+        -0.0017904859269037843,
+        -0.003420591354370117,
+        -0.003552496898919344
+      ],
+      "styles": {
+        "sunlit": {
+          "before": 0.0793802894942902,
+          "after": 0.008512931875884533,
+          "export": "outputs/morph-showcase/final-albums/sunlit/scene-03/exports/varied-DSC_1028-28.jpg"
+        },
+        "coastal": {
+          "before": 0.07744648396398704,
+          "after": 0.007459971588104963,
+          "export": "outputs/morph-showcase/final-albums/coastal/scene-03/exports/varied-DSC_1028-28.jpg"
+        },
+        "soft-film": {
+          "before": 0.0676975324074513,
+          "after": 0.008385198190808296,
+          "export": "outputs/morph-showcase/final-albums/soft-film/scene-03/exports/varied-DSC_1028-28.jpg"
+        }
+      },
+      "expected_correction": {
+        "scale": 0.9521005656978686,
+        "offset": [
+          0.43315223649527235,
+          0.3641747609922126,
+          0.31038117652536856
+        ]
+      },
+      "estimated_correction": {
+        "scale": 0.9302956918633242,
+        "offset": [
+          0.39616458981617714,
+          0.33052697592465885,
+          0.28032982709160664
+        ]
+      }
+    },
+    {
+      "photo": "DSC_1030-29.jpg",
+      "source": "Morph/originals/DSC_1030-29.jpg",
+      "varied": "outputs/morph-showcase/varied-album/inputs/varied-DSC_1030-29.jpg",
+      "scene": "scene-03",
+      "calibration_counterpart": false,
+      "status": "estimated",
+      "normalization_before": 0.039865631610155106,
+      "normalization_after": 0.005350195802748203,
+      "bias_before": [
+        0.027080966159701347,
+        0.02944379858672619,
+        0.02917649783194065
+      ],
+      "bias_after": [
+        -0.0022689527831971645,
+        -0.0013422009069472551,
+        -0.0015439394628629088
+      ],
+      "styles": {
+        "sunlit": {
+          "before": 0.037207880678485156,
+          "after": 0.007736197207123041,
+          "export": "outputs/morph-showcase/final-albums/sunlit/scene-03/exports/varied-DSC_1030-29.jpg"
+        },
+        "coastal": {
+          "before": 0.04004455850418785,
+          "after": 0.00632728636264801,
+          "export": "outputs/morph-showcase/final-albums/coastal/scene-03/exports/varied-DSC_1030-29.jpg"
+        },
+        "soft-film": {
+          "before": 0.03493911475048862,
+          "after": 0.008523412980139256,
+          "export": "outputs/morph-showcase/final-albums/soft-film/scene-03/exports/varied-DSC_1030-29.jpg"
+        }
+      },
+      "expected_correction": {
+        "scale": 0.8783435154225093,
+        "offset": [
+          -0.2552328460911431,
+          -0.2494451863320029,
+          -0.2757625826090505
+        ]
+      },
+      "estimated_correction": {
+        "scale": 0.8579457516730118,
+        "offset": [
+          -0.27774591685729677,
+          -0.26588845014662704,
+          -0.29662477471195237
+        ]
+      }
+    },
+    {
+      "photo": "DSC_1033-30.jpg",
+      "source": "Morph/originals/DSC_1033-30.jpg",
+      "varied": "outputs/morph-showcase/varied-album/inputs/varied-DSC_1033-30.jpg",
+      "scene": "scene-03",
+      "calibration_counterpart": false,
+      "status": "estimated",
+      "normalization_before": 0.06390859931707382,
+      "normalization_after": 0.0043825614266097546,
+      "bias_before": [
+        0.040957141667604446,
+        0.059226300567388535,
+        0.060597989708185196
+      ],
+      "bias_after": [
+        -0.0030732236336916685,
+        -0.0030396408401429653,
+        -0.002842583926394582
+      ],
+      "styles": {
+        "sunlit": {
+          "before": 0.06238601571491851,
+          "after": 0.007185221649706364,
+          "export": "outputs/morph-showcase/final-albums/sunlit/scene-03/exports/varied-DSC_1033-30.jpg"
+        },
+        "coastal": {
+          "before": 0.06291689286382636,
+          "after": 0.006859636399894953,
+          "export": "outputs/morph-showcase/final-albums/coastal/scene-03/exports/varied-DSC_1033-30.jpg"
+        },
+        "soft-film": {
+          "before": 0.0570704547617823,
+          "after": 0.007879375480115414,
+          "export": "outputs/morph-showcase/final-albums/soft-film/scene-03/exports/varied-DSC_1033-30.jpg"
+        }
+      },
+      "expected_correction": {
+        "scale": 0.8717986361347467,
+        "offset": [
+          -0.2983720833311239,
+          -0.3350452424243707,
+          -0.37338284675714595
+        ]
+      },
+      "estimated_correction": {
+        "scale": 0.8663566662249805,
+        "offset": [
+          -0.3158719547685532,
+          -0.35027984280881164,
+          -0.3878324011480113
+        ]
+      }
+    },
+    {
+      "photo": "DSC_1037-31.jpg",
+      "source": "Morph/originals/DSC_1037-31.jpg",
+      "varied": "outputs/morph-showcase/varied-album/inputs/varied-DSC_1037-31.jpg",
+      "scene": "scene-03",
+      "calibration_counterpart": true,
+      "status": "estimated",
+      "normalization_before": 0.022752750664949417,
+      "normalization_after": 0.003024242352694273,
+      "bias_before": [
+        0.011717823334038258,
+        0.01750347763299942,
+        0.02289622649550438
+      ],
+      "bias_after": [
+        8.549089398002252e-05,
+        -0.0004869395343121141,
+        -0.0009355969377793372
+      ],
+      "styles": {
+        "sunlit": {
+          "before": 0.022200729966480804,
+          "after": 0.005663092713803053,
+          "export": "outputs/morph-showcase/final-albums/sunlit/scene-03/exports/varied-DSC_1037-31.jpg"
+        },
+        "coastal": {
+          "before": 0.02262240236638779,
+          "after": 0.004639114253222942,
+          "export": "outputs/morph-showcase/final-albums/coastal/scene-03/exports/varied-DSC_1037-31.jpg"
+        },
+        "soft-film": {
+          "before": 0.02073061230194501,
+          "after": 0.006404065527021885,
+          "export": "outputs/morph-showcase/final-albums/soft-film/scene-03/exports/varied-DSC_1037-31.jpg"
+        }
+      },
+      "expected_correction": {
+        "scale": 0.9423360644382472,
+        "offset": [
+          -0.10742267866924413,
+          -0.13028134407391093,
+          -0.17023540284835498
+        ]
+      },
+      "estimated_correction": {
+        "scale": 0.9382015701036526,
+        "offset": [
+          -0.11272684523217726,
+          -0.13437778899674696,
+          -0.1778208378127799
+        ]
+      }
+    },
+    {
+      "photo": "DSC_1038-32.jpg",
+      "source": "Morph/originals/DSC_1038-32.jpg",
+      "varied": "outputs/morph-showcase/varied-album/inputs/varied-DSC_1038-32.jpg",
+      "scene": "scene-03",
+      "calibration_counterpart": false,
+      "status": "estimated",
+      "normalization_before": 0.03701402246952057,
+      "normalization_after": 0.0038677300326526165,
+      "bias_before": [
+        0.0252061877399683,
+        0.03618665784597397,
+        0.03527910262346268
+      ],
+      "bias_after": [
+        0.00017017328354995698,
+        0.00023526120639871806,
+        -0.0016423987690359354
+      ],
+      "styles": {
+        "sunlit": {
+          "before": 0.03676848291913316,
+          "after": 0.00581266637891531,
+          "export": "outputs/morph-showcase/final-albums/sunlit/scene-03/exports/varied-DSC_1038-32.jpg"
+        },
+        "coastal": {
+          "before": 0.03667543937332278,
+          "after": 0.005359198898077011,
+          "export": "outputs/morph-showcase/final-albums/coastal/scene-03/exports/varied-DSC_1038-32.jpg"
+        },
+        "soft-film": {
+          "before": 0.033712040263440456,
+          "after": 0.006818229332566261,
+          "export": "outputs/morph-showcase/final-albums/soft-film/scene-03/exports/varied-DSC_1038-32.jpg"
+        }
+      },
+      "expected_correction": {
+        "scale": 0.9509938808247707,
+        "offset": [
+          -0.17685836101216842,
+          -0.20770224653100638,
+          -0.22600883581575065
+        ]
+      },
+      "estimated_correction": {
+        "scale": 0.935577634840435,
+        "offset": [
+          -0.18650241332625775,
+          -0.21001740344719447,
+          -0.2357356186848027
+        ]
+      }
+    },
+    {
+      "photo": "DSC_1054-33.jpg",
+      "source": "Morph/originals/DSC_1054-33.jpg",
+      "varied": "outputs/morph-showcase/varied-album/inputs/varied-DSC_1054-33.jpg",
+      "scene": "scene-04",
+      "calibration_counterpart": true,
+      "status": "estimated",
+      "normalization_before": 0.027016934007406235,
+      "normalization_after": 0.003039672737941146,
+      "bias_before": [
+        -0.023380527272820473,
+        -0.025365035980939865,
+        -0.02725112810730934
+      ],
+      "bias_after": [
+        -0.000159235525643453,
+        -0.0002157341077690944,
+        -4.3841253500431776e-05
+      ],
+      "styles": {
+        "sunlit": {
+          "before": 0.02898845612299471,
+          "after": 0.005765472538769245,
+          "export": "outputs/morph-showcase/final-albums/sunlit/scene-04/exports/varied-DSC_1054-33.jpg"
+        },
+        "coastal": {
+          "before": 0.027249166150280682,
+          "after": 0.00457997340708971,
+          "export": "outputs/morph-showcase/final-albums/coastal/scene-04/exports/varied-DSC_1054-33.jpg"
+        },
+        "soft-film": {
+          "before": 0.02630037631535933,
+          "after": 0.006742063444107771,
+          "export": "outputs/morph-showcase/final-albums/soft-film/scene-04/exports/varied-DSC_1054-33.jpg"
+        }
+      },
+      "expected_correction": {
+        "scale": 0.9621923016758599,
+        "offset": [
+          0.10485853332702631,
+          0.11341216038737434,
+          0.13123012248919766
+        ]
+      },
+      "estimated_correction": {
+        "scale": 0.9583647491769738,
+        "offset": [
+          0.10224840885510687,
+          0.11004983590691993,
+          0.12583200134346262
+        ]
+      }
+    },
+    {
+      "photo": "DSC_1059-34.jpg",
+      "source": "Morph/originals/DSC_1059-34.jpg",
+      "varied": "outputs/morph-showcase/varied-album/inputs/varied-DSC_1059-34.jpg",
+      "scene": "scene-04",
+      "calibration_counterpart": false,
+      "status": "estimated",
+      "normalization_before": 0.017057137563824654,
+      "normalization_after": 0.003128725104033947,
+      "bias_before": [
+        0.012883883900940418,
+        0.013653453439474106,
+        0.017785552889108658
+      ],
+      "bias_after": [
+        0.0013173595070838928,
+        0.0009072837419807911,
+        0.0017073588678613305
+      ],
+      "styles": {
+        "sunlit": {
+          "before": 0.01645590999255718,
+          "after": 0.005579070653766394,
+          "export": "outputs/morph-showcase/final-albums/sunlit/scene-04/exports/varied-DSC_1059-34.jpg"
+        },
+        "coastal": {
+          "before": 0.017220401275835667,
+          "after": 0.005071873310953379,
+          "export": "outputs/morph-showcase/final-albums/coastal/scene-04/exports/varied-DSC_1059-34.jpg"
+        },
+        "soft-film": {
+          "before": 0.01483226890180991,
+          "after": 0.007332947570830584,
+          "export": "outputs/morph-showcase/final-albums/soft-film/scene-04/exports/varied-DSC_1059-34.jpg"
+        }
+      },
+      "expected_correction": {
+        "scale": 0.9812021160356073,
+        "offset": [
+          -0.08242112585545068,
+          -0.08277767260417203,
+          -0.10867052003380082
+        ]
+      },
+      "estimated_correction": {
+        "scale": 0.9887455218128169,
+        "offset": [
+          -0.07159315871443478,
+          -0.07313669800448672,
+          -0.09646390196994677
+        ]
+      }
+    },
+    {
+      "photo": "DSC_1070-35.jpg",
+      "source": "Morph/originals/DSC_1070-35.jpg",
+      "varied": "outputs/morph-showcase/varied-album/inputs/varied-DSC_1070-35.jpg",
+      "scene": "scene-05",
+      "calibration_counterpart": false,
+      "status": "estimated",
+      "normalization_before": 0.07520585507154465,
+      "normalization_after": 0.003265729174017906,
+      "bias_before": [
+        -0.06915611028671265,
+        -0.06949206441640854,
+        -0.07680939882993698
+      ],
+      "bias_after": [
+        -4.882747361989459e-06,
+        -0.0005538458935916424,
+        -0.0011248369701206684
+      ],
+      "styles": {
+        "sunlit": {
+          "before": 0.07855957844272438,
+          "after": 0.0065378970466554165,
+          "export": "outputs/morph-showcase/final-albums/sunlit/scene-05/exports/varied-DSC_1070-35.jpg"
+        },
+        "coastal": {
+          "before": 0.07562686734421391,
+          "after": 0.00532494904473424,
+          "export": "outputs/morph-showcase/final-albums/coastal/scene-05/exports/varied-DSC_1070-35.jpg"
+        },
+        "soft-film": {
+          "before": 0.07048510620716716,
+          "after": 0.0069545540027320385,
+          "export": "outputs/morph-showcase/final-albums/soft-film/scene-05/exports/varied-DSC_1070-35.jpg"
+        }
+      },
+      "expected_correction": {
+        "scale": 0.8490606381782334,
+        "offset": [
+          0.29301558794413723,
+          0.2818751928383547,
+          0.3191795062465392
+        ]
+      },
+      "estimated_correction": {
+        "scale": 0.8569062784722276,
+        "offset": [
+          0.2959590446753268,
+          0.2844119822474804,
+          0.3184179195640263
+        ]
+      }
+    },
+    {
+      "photo": "DSC_1074-36.jpg",
+      "source": "Morph/originals/DSC_1074-36.jpg",
+      "varied": "outputs/morph-showcase/varied-album/inputs/varied-DSC_1074-36.jpg",
+      "scene": "scene-05",
+      "calibration_counterpart": false,
+      "status": "estimated",
+      "normalization_before": 0.0642615258693695,
+      "normalization_after": 0.0030186204239726067,
+      "bias_before": [
+        0.05613971874117851,
+        0.06028832867741585,
+        0.059501081705093384
+      ],
+      "bias_after": [
+        -0.0008157464908435941,
+        -0.0009038422722369432,
+        -0.0007703786250203848
+      ],
+      "styles": {
+        "sunlit": {
+          "before": 0.05819937679007826,
+          "after": 0.005193519406020641,
+          "export": "outputs/morph-showcase/final-albums/sunlit/scene-05/exports/varied-DSC_1074-36.jpg"
+        },
+        "coastal": {
+          "before": 0.06501920472233877,
+          "after": 0.004616256337612867,
+          "export": "outputs/morph-showcase/final-albums/coastal/scene-05/exports/varied-DSC_1074-36.jpg"
+        },
+        "soft-film": {
+          "before": 0.05010806328160398,
+          "after": 0.005909614264965057,
+          "export": "outputs/morph-showcase/final-albums/soft-film/scene-05/exports/varied-DSC_1074-36.jpg"
+        }
+      },
+      "expected_correction": {
+        "scale": 0.8978492108046583,
+        "offset": [
+          -0.27160621124681444,
+          -0.28119310801663466,
+          -0.27431677219468154
+        ]
+      },
+      "estimated_correction": {
+        "scale": 0.8975011275680986,
+        "offset": [
+          -0.27737666505107733,
+          -0.2855433881311512,
+          -0.27844708480951474
+        ]
+      }
+    },
+    {
+      "photo": "DSC_1083-37.jpg",
+      "source": "Morph/originals/DSC_1083-37.jpg",
+      "varied": "outputs/morph-showcase/varied-album/inputs/varied-DSC_1083-37.jpg",
+      "scene": "scene-05",
+      "calibration_counterpart": false,
+      "status": "estimated",
+      "normalization_before": 0.04086736589670181,
+      "normalization_after": 0.0030187335796654224,
+      "bias_before": [
+        0.024337442591786385,
+        0.033820223063230515,
+        0.04491112381219864
+      ],
+      "bias_after": [
+        0.0007023877697065473,
+        0.0007452291320078075,
+        0.0007222380372695625
+      ],
+      "styles": {
+        "sunlit": {
+          "before": 0.03702163922403715,
+          "after": 0.005003518890589476,
+          "export": "outputs/morph-showcase/final-albums/sunlit/scene-05/exports/varied-DSC_1083-37.jpg"
+        },
+        "coastal": {
+          "before": 0.04011424780888933,
+          "after": 0.004751238040626049,
+          "export": "outputs/morph-showcase/final-albums/coastal/scene-05/exports/varied-DSC_1083-37.jpg"
+        },
+        "soft-film": {
+          "before": 0.03227192578218121,
+          "after": 0.005774682387709618,
+          "export": "outputs/morph-showcase/final-albums/soft-film/scene-05/exports/varied-DSC_1083-37.jpg"
+        }
+      },
+      "expected_correction": {
+        "scale": 0.898237851022239,
+        "offset": [
+          -0.13641381854888526,
+          -0.168214374649941,
+          -0.21427008581683643
+        ]
+      },
+      "estimated_correction": {
+        "scale": 0.8906620891573535,
+        "offset": [
+          -0.13223061089982652,
+          -0.1644820851239445,
+          -0.20672389342347153
+        ]
+      }
+    },
+    {
+      "photo": "DSC_1096-40.jpg",
+      "source": "Morph/originals/DSC_1096-40.jpg",
+      "varied": "outputs/morph-showcase/varied-album/inputs/varied-DSC_1096-40.jpg",
+      "scene": "scene-05",
+      "calibration_counterpart": false,
+      "status": "estimated",
+      "normalization_before": 0.08020448684692383,
+      "normalization_after": 0.0032279109582304955,
+      "bias_before": [
+        -0.08129650354385376,
+        -0.0784427672624588,
+        -0.07150977849960327
+      ],
+      "bias_after": [
+        0.0014872043393552303,
+        0.000781345646828413,
+        0.0007890881970524788
+      ],
+      "styles": {
+        "sunlit": {
+          "before": 0.08297615090773793,
+          "after": 0.005738923791795969,
+          "export": "outputs/morph-showcase/final-albums/sunlit/scene-05/exports/varied-DSC_1096-40.jpg"
+        },
+        "coastal": {
+          "before": 0.08143625340908903,
+          "after": 0.005245999898761511,
+          "export": "outputs/morph-showcase/final-albums/coastal/scene-05/exports/varied-DSC_1096-40.jpg"
+        },
+        "soft-film": {
+          "before": 0.07232960244859735,
+          "after": 0.0060273720882833,
+          "export": "outputs/morph-showcase/final-albums/soft-film/scene-05/exports/varied-DSC_1096-40.jpg"
+        }
+      },
+      "expected_correction": {
+        "scale": 0.8900983174629741,
+        "offset": [
+          0.3651763416601501,
+          0.3399941902940093,
+          0.30537677303155564
+        ]
+      },
+      "estimated_correction": {
+        "scale": 0.8849060582188683,
+        "offset": [
+          0.36986541195201084,
+          0.33984496339069176,
+          0.30965317295579076
+        ]
+      }
+    },
+    {
+      "photo": "DSC_1100-41.jpg",
+      "source": "Morph/originals/DSC_1100-41.jpg",
+      "varied": "outputs/morph-showcase/varied-album/inputs/varied-DSC_1100-41.jpg",
+      "scene": "scene-05",
+      "calibration_counterpart": false,
+      "status": "estimated",
+      "normalization_before": 0.03274103254079819,
+      "normalization_after": 0.0034826721530407667,
+      "bias_before": [
+        -0.011483157984912395,
+        -0.018457412719726562,
+        -0.028814740478992462
+      ],
+      "bias_after": [
+        0.002251051366329193,
+        0.0015466127078980207,
+        0.0015552178956568241
+      ],
+      "styles": {
+        "sunlit": {
+          "before": 0.036635771764115636,
+          "after": 0.005631048697978258,
+          "export": "outputs/morph-showcase/final-albums/sunlit/scene-05/exports/varied-DSC_1100-41.jpg"
+        },
+        "coastal": {
+          "before": 0.033561002467688665,
+          "after": 0.0053264121524989605,
+          "export": "outputs/morph-showcase/final-albums/coastal/scene-05/exports/varied-DSC_1100-41.jpg"
+        },
+        "soft-film": {
+          "before": 0.03615843406943036,
+          "after": 0.006311393342912197,
+          "export": "outputs/morph-showcase/final-albums/soft-film/scene-05/exports/varied-DSC_1100-41.jpg"
+        }
+      },
+      "expected_correction": {
+        "scale": 0.8297684760658722,
+        "offset": [
+          0.009813454620798079,
+          0.04299142126382127,
+          0.09480924110773292
+        ]
+      },
+      "estimated_correction": {
+        "scale": 0.8248080114787576,
+        "offset": [
+          0.022983572236062687,
+          0.048953388423139156,
+          0.10097891235243056
+        ]
+      }
+    },
+    {
+      "photo": "DSC_1106-43.jpg",
+      "source": "Morph/originals/DSC_1106-43.jpg",
+      "varied": "outputs/morph-showcase/varied-album/inputs/varied-DSC_1106-43.jpg",
+      "scene": "scene-05",
+      "calibration_counterpart": false,
+      "status": "estimated",
+      "normalization_before": 0.10250406712293625,
+      "normalization_after": 0.003610234474763274,
+      "bias_before": [
+        -0.09507008641958237,
+        -0.09439099580049515,
+        -0.10285796970129013
+      ],
+      "bias_after": [
+        0.0014225369086489081,
+        0.0012127682566642761,
+        0.0013026405358687043
+      ],
+      "styles": {
+        "sunlit": {
+          "before": 0.10389628652591619,
+          "after": 0.0064383018761873245,
+          "export": "outputs/morph-showcase/final-albums/sunlit/scene-05/exports/varied-DSC_1106-43.jpg"
+        },
+        "coastal": {
+          "before": 0.10291893524563764,
+          "after": 0.00584909413009882,
+          "export": "outputs/morph-showcase/final-albums/coastal/scene-05/exports/varied-DSC_1106-43.jpg"
+        },
+        "soft-film": {
+          "before": 0.09129119146021496,
+          "after": 0.006863861344754696,
+          "export": "outputs/morph-showcase/final-albums/soft-film/scene-05/exports/varied-DSC_1106-43.jpg"
+        }
+      },
+      "expected_correction": {
+        "scale": 0.8565734247122465,
+        "offset": [
+          0.43818746352969906,
+          0.4209452628864443,
+          0.46568562032300215
+        ]
+      },
+      "estimated_correction": {
+        "scale": 0.8546916841498836,
+        "offset": [
+          0.4445532036228387,
+          0.42471649638421527,
+          0.4700866810297001
+        ]
+      }
+    },
+    {
+      "photo": "DSC_1109-44.jpg",
+      "source": "Morph/originals/DSC_1109-44.jpg",
+      "varied": "outputs/morph-showcase/varied-album/inputs/varied-DSC_1109-44.jpg",
+      "scene": "scene-05",
+      "calibration_counterpart": false,
+      "status": "estimated",
+      "normalization_before": 0.0720926970243454,
+      "normalization_after": 0.0034704862628132105,
+      "bias_before": [
+        -0.05189654603600502,
+        -0.06880097091197968,
+        -0.0818793997168541
+      ],
+      "bias_after": [
+        0.00045354090980254114,
+        0.00039692947757430375,
+        0.00038790240068919957
+      ],
+      "styles": {
+        "sunlit": {
+          "before": 0.07347594769998361,
+          "after": 0.007167305797338486,
+          "export": "outputs/morph-showcase/final-albums/sunlit/scene-05/exports/varied-DSC_1109-44.jpg"
+        },
+        "coastal": {
+          "before": 0.07182559521744156,
+          "after": 0.005868291947990656,
+          "export": "outputs/morph-showcase/final-albums/coastal/scene-05/exports/varied-DSC_1109-44.jpg"
+        },
+        "soft-film": {
+          "before": 0.06590189914592286,
+          "after": 0.007484080735594034,
+          "export": "outputs/morph-showcase/final-albums/soft-film/scene-05/exports/varied-DSC_1109-44.jpg"
+        }
+      },
+      "expected_correction": {
+        "scale": 0.8785762474934544,
+        "offset": [
+          0.23896534174677922,
+          0.30792964688258906,
+          0.3758518631269012
+        ]
+      },
+      "estimated_correction": {
+        "scale": 0.8833880410490988,
+        "offset": [
+          0.24499288827955817,
+          0.31545190097791875,
+          0.3800846298857899
+        ]
+      }
+    },
+    {
+      "photo": "DSC_1111-45.jpg",
+      "source": "Morph/originals/DSC_1111-45.jpg",
+      "varied": "outputs/morph-showcase/varied-album/inputs/varied-DSC_1111-45.jpg",
+      "scene": "scene-05",
+      "calibration_counterpart": true,
+      "status": "estimated",
+      "normalization_before": 0.007511437404900789,
+      "normalization_after": 0.0031352804508060217,
+      "bias_before": [
+        0.009808843024075031,
+        0.0018007369944825768,
+        -0.0051734428852796555
+      ],
+      "bias_after": [
+        0.0008113848161883652,
+        0.0006359996041283011,
+        0.0007844531210139394
+      ],
+      "styles": {
+        "sunlit": {
+          "before": 0.007045550899602326,
+          "after": 0.00535959517583251,
+          "export": "outputs/morph-showcase/final-albums/sunlit/scene-05/exports/varied-DSC_1111-45.jpg"
+        },
+        "coastal": {
+          "before": 0.009149739797019172,
+          "after": 0.0047960421070456505,
+          "export": "outputs/morph-showcase/final-albums/coastal/scene-05/exports/varied-DSC_1111-45.jpg"
+        },
+        "soft-film": {
+          "before": 0.0065466089876038205,
+          "after": 0.005992098245769739,
+          "export": "outputs/morph-showcase/final-albums/soft-film/scene-05/exports/varied-DSC_1111-45.jpg"
+        }
+      },
+      "expected_correction": {
+        "scale": 0.9960728715246229,
+        "offset": [
+          -0.051145679309762056,
+          -0.01003176166711851,
+          0.02596969527971328
+        ]
+      },
+      "estimated_correction": {
+        "scale": 1.0009433451921967,
+        "offset": [
+          -0.04604126412987732,
+          -0.0055171744744103865,
+          0.02973533293015403
+        ]
+      }
+    },
+    {
+      "photo": "DSC_1118-48.jpg",
+      "source": "Morph/originals/DSC_1118-48.jpg",
+      "varied": "outputs/morph-showcase/varied-album/inputs/varied-DSC_1118-48.jpg",
+      "scene": "scene-05",
+      "calibration_counterpart": false,
+      "status": "estimated",
+      "normalization_before": 0.08659423142671585,
+      "normalization_after": 0.0035162498243153095,
+      "bias_before": [
+        -0.07159814983606339,
+        -0.0803435817360878,
+        -0.09317003935575485
+      ],
+      "bias_after": [
+        0.001282895333133638,
+        0.0011657174909487367,
+        0.0013166684657335281
+      ],
+      "styles": {
+        "sunlit": {
+          "before": 0.08601205964452849,
+          "after": 0.0067515503615140915,
+          "export": "outputs/morph-showcase/final-albums/sunlit/scene-05/exports/varied-DSC_1118-48.jpg"
+        },
+        "coastal": {
+          "before": 0.08625625004155714,
+          "after": 0.006029934156686068,
+          "export": "outputs/morph-showcase/final-albums/coastal/scene-05/exports/varied-DSC_1118-48.jpg"
+        },
+        "soft-film": {
+          "before": 0.07503974930087706,
+          "after": 0.00728920754045248,
+          "export": "outputs/morph-showcase/final-albums/soft-film/scene-05/exports/varied-DSC_1118-48.jpg"
+        }
+      },
+      "expected_correction": {
+        "scale": 0.931967115985749,
+        "offset": [
+          0.3590295030969863,
+          0.3912954200801477,
+          0.4578503484618225
+        ]
+      },
+      "estimated_correction": {
+        "scale": 0.9306792296894334,
+        "offset": [
+          0.3639656168792639,
+          0.3956263460441775,
+          0.4614083611614213
+        ]
+      }
+    },
+    {
+      "photo": "DSC_1088-38.jpg",
+      "source": "Morph/originals/DSC_1088-38.jpg",
+      "varied": "outputs/morph-showcase/varied-album/inputs/varied-DSC_1088-38.jpg",
+      "scene": "scene-05-tower",
+      "calibration_counterpart": false,
+      "status": "estimated",
+      "normalization_before": 0.009205642156302929,
+      "normalization_after": 0.0037850888911634684,
+      "bias_before": [
+        -0.005409101955592632,
+        -0.010220510885119438,
+        -0.005711886566132307
+      ],
+      "bias_after": [
+        0.0016144915716722608,
+        0.0018307779682800174,
+        0.0018387683667242527
+      ],
+      "styles": {
+        "sunlit": {
+          "before": 0.009678185904963266,
+          "after": 0.005645849741995335,
+          "export": "outputs/morph-showcase/final-albums/sunlit/scene-05-tower/exports/varied-DSC_1088-38.jpg"
+        },
+        "coastal": {
+          "before": 0.010262029203004456,
+          "after": 0.005315064452588558,
+          "export": "outputs/morph-showcase/final-albums/coastal/scene-05-tower/exports/varied-DSC_1088-38.jpg"
+        },
+        "soft-film": {
+          "before": 0.009504091397338524,
+          "after": 0.006362488027662039,
+          "export": "outputs/morph-showcase/final-albums/soft-film/scene-05-tower/exports/varied-DSC_1088-38.jpg"
+        }
+      },
+      "expected_correction": {
+        "scale": 0.9731566828068576,
+        "offset": [
+          0.017842795571099905,
+          0.048218666816925104,
+          0.04362146391360669
+        ]
+      },
+      "estimated_correction": {
+        "scale": 0.9840288728125522,
+        "offset": [
+          0.029531572549889223,
+          0.059071185197207984,
+          0.04559679792342975
+        ]
+      }
+    },
+    {
+      "photo": "DSC_1090-39.jpg",
+      "source": "Morph/originals/DSC_1090-39.jpg",
+      "varied": "outputs/morph-showcase/varied-album/inputs/varied-DSC_1090-39.jpg",
+      "scene": "scene-05-tower",
+      "calibration_counterpart": false,
+      "status": "estimated",
+      "normalization_before": 0.017466647550463676,
+      "normalization_after": 0.0028079755138605833,
+      "bias_before": [
+        -0.016859786584973335,
+        -0.006137655582278967,
+        0.0018823359860107303
+      ],
+      "bias_after": [
+        0.00018222258950117975,
+        0.0001351861865259707,
+        5.531927854462992e-06
+      ],
+      "styles": {
+        "sunlit": {
+          "before": 0.01788355233253855,
+          "after": 0.004975763615220785,
+          "export": "outputs/morph-showcase/final-albums/sunlit/scene-05-tower/exports/varied-DSC_1090-39.jpg"
+        },
+        "coastal": {
+          "before": 0.01802389638518825,
+          "after": 0.004876033402979374,
+          "export": "outputs/morph-showcase/final-albums/coastal/scene-05-tower/exports/varied-DSC_1090-39.jpg"
+        },
+        "soft-film": {
+          "before": 0.017176619801363882,
+          "after": 0.005602537654340267,
+          "export": "outputs/morph-showcase/final-albums/soft-film/scene-05-tower/exports/varied-DSC_1090-39.jpg"
+        }
+      },
+      "expected_correction": {
+        "scale": 0.9081921501695259,
+        "offset": [
+          0.03270097788854624,
+          0.02306741858382909,
+          0.02642895938120965
+        ]
+      },
+      "estimated_correction": {
+        "scale": 0.9095261199507547,
+        "offset": [
+          0.033917723144080016,
+          0.02341321149801336,
+          0.02181238848924202
+        ]
+      }
+    },
+    {
+      "photo": "DSC_1105-42.jpg",
+      "source": "Morph/originals/DSC_1105-42.jpg",
+      "varied": "outputs/morph-showcase/varied-album/inputs/varied-DSC_1105-42.jpg",
+      "scene": "scene-05-tower",
+      "calibration_counterpart": true,
+      "status": "estimated",
+      "normalization_before": 0.012449074536561966,
+      "normalization_after": 0.0026410629507154226,
+      "bias_before": [
+        -0.012642955407500267,
+        -0.012693782337009907,
+        -0.006845967378467321
+      ],
+      "bias_after": [
+        0.0004149724845774472,
+        -0.00038407108513638377,
+        -0.00034273663186468184
+      ],
+      "styles": {
+        "sunlit": {
+          "before": 0.012295416240947066,
+          "after": 0.005094296298921108,
+          "export": "outputs/morph-showcase/final-albums/sunlit/scene-05-tower/exports/varied-DSC_1105-42.jpg"
+        },
+        "coastal": {
+          "before": 0.0134411965786107,
+          "after": 0.004794993903487921,
+          "export": "outputs/morph-showcase/final-albums/coastal/scene-05-tower/exports/varied-DSC_1105-42.jpg"
+        },
+        "soft-film": {
+          "before": 0.011219321297218702,
+          "after": 0.005579653661698103,
+          "export": "outputs/morph-showcase/final-albums/soft-film/scene-05-tower/exports/varied-DSC_1105-42.jpg"
+        }
+      },
+      "expected_correction": {
+        "scale": 0.9771929934669861,
+        "offset": [
+          0.05769055307674483,
+          0.06232407609405607,
+          0.04295114006972156
+        ]
+      },
+      "estimated_correction": {
+        "scale": 0.9759661279560309,
+        "offset": [
+          0.05852842609629237,
+          0.060348314783627094,
+          0.0450062479777544
+        ]
+      }
+    },
+    {
+      "photo": "DSC_1114-46.jpg",
+      "source": "Morph/originals/DSC_1114-46.jpg",
+      "varied": "outputs/morph-showcase/varied-album/inputs/varied-DSC_1114-46.jpg",
+      "scene": "scene-05-tower",
+      "calibration_counterpart": false,
+      "status": "estimated",
+      "normalization_before": 0.03816772624850273,
+      "normalization_after": 0.0027140758465975523,
+      "bias_before": [
+        0.03054749220609665,
+        0.035312164574861526,
+        0.025782698765397072
+      ],
+      "bias_after": [
+        0.0002884593850467354,
+        0.0006397230317816138,
+        0.0002641625760588795
+      ],
+      "styles": {
+        "sunlit": {
+          "before": 0.03521764917264385,
+          "after": 0.004894061479717493,
+          "export": "outputs/morph-showcase/final-albums/sunlit/scene-05-tower/exports/varied-DSC_1114-46.jpg"
+        },
+        "coastal": {
+          "before": 0.03926426908676926,
+          "after": 0.005092816427350044,
+          "export": "outputs/morph-showcase/final-albums/coastal/scene-05-tower/exports/varied-DSC_1114-46.jpg"
+        },
+        "soft-film": {
+          "before": 0.03221707740575491,
+          "after": 0.006011664867401123,
+          "export": "outputs/morph-showcase/final-albums/soft-film/scene-05-tower/exports/varied-DSC_1114-46.jpg"
+        }
+      },
+      "expected_correction": {
+        "scale": 0.8995427890135009,
+        "offset": [
+          -0.23176791739209562,
+          -0.19102591244089007,
+          -0.1261078489306714
+        ]
+      },
+      "estimated_correction": {
+        "scale": 0.9037800304458335,
+        "offset": [
+          -0.22986227126408082,
+          -0.187600592699295,
+          -0.12631852296434753
+        ]
+      }
+    },
+    {
+      "photo": "DSC_1116-47.jpg",
+      "source": "Morph/originals/DSC_1116-47.jpg",
+      "varied": "outputs/morph-showcase/varied-album/inputs/varied-DSC_1116-47.jpg",
+      "scene": "scene-05-tower",
+      "calibration_counterpart": false,
+      "status": "estimated",
+      "normalization_before": 0.013995042070746422,
+      "normalization_after": 0.0028527399990707636,
+      "bias_before": [
+        0.0016684866277500987,
+        0.003213190706446767,
+        0.003964265808463097
+      ],
+      "bias_after": [
+        -0.00030397941009141505,
+        -0.000670843233820051,
+        -0.0008202361059375107
+      ],
+      "styles": {
+        "sunlit": {
+          "before": 0.014212883071064664,
+          "after": 0.005129053257405758,
+          "export": "outputs/morph-showcase/final-albums/sunlit/scene-05-tower/exports/varied-DSC_1116-47.jpg"
+        },
+        "coastal": {
+          "before": 0.01408723923397646,
+          "after": 0.005023806355893612,
+          "export": "outputs/morph-showcase/final-albums/coastal/scene-05-tower/exports/varied-DSC_1116-47.jpg"
+        },
+        "soft-film": {
+          "before": 0.015202329831934298,
+          "after": 0.006183575838804245,
+          "export": "outputs/morph-showcase/final-albums/soft-film/scene-05-tower/exports/varied-DSC_1116-47.jpg"
+        }
+      },
+      "expected_correction": {
+        "scale": 0.9126874394790633,
+        "offset": [
+          -0.06373052990732056,
+          -0.02462208579784793,
+          0.001349870487580701
+        ]
+      },
+      "estimated_correction": {
+        "scale": 0.9152346456539789,
+        "offset": [
+          -0.0646562323474822,
+          -0.02948152243544994,
+          -0.005150728475010628
+        ]
+      }
+    },
+    {
+      "photo": "DSC_1259-49.jpg",
+      "source": "Morph/originals/DSC_1259-49.jpg",
+      "varied": "outputs/morph-showcase/varied-album/inputs/varied-DSC_1259-49.jpg",
+      "scene": "scene-06-walk",
+      "calibration_counterpart": false,
+      "status": "estimated",
+      "normalization_before": 0.019354194402694702,
+      "normalization_after": 0.004823517519980669,
+      "bias_before": [
+        -0.009055577218532562,
+        0.0010929281124845147,
+        0.0048311930149793625
+      ],
+      "bias_after": [
+        -0.0032560997642576694,
+        -0.003982031252235174,
+        -0.00363721139729023
+      ],
+      "styles": {
+        "sunlit": {
+          "before": 0.02057708104252511,
+          "after": 0.007138584740459919,
+          "export": "outputs/morph-showcase/final-albums/sunlit/scene-06-walk/exports/varied-DSC_1259-49.jpg"
+        },
+        "coastal": {
+          "before": 0.01943005564170355,
+          "after": 0.006027312017977238,
+          "export": "outputs/morph-showcase/final-albums/coastal/scene-06-walk/exports/varied-DSC_1259-49.jpg"
+        },
+        "soft-film": {
+          "before": 0.02012131594670344,
+          "after": 0.008062292821705341,
+          "export": "outputs/morph-showcase/final-albums/soft-film/scene-06-walk/exports/varied-DSC_1259-49.jpg"
+        }
+      },
+      "expected_correction": {
+        "scale": 0.8777221288963182,
+        "offset": [
+          0.02433122974117303,
+          -0.03549185620494186,
+          -0.06666476829913762
+        ]
+      },
+      "estimated_correction": {
+        "scale": 0.8858909781265717,
+        "offset": [
+          0.00953406679725198,
+          -0.05361496856542946,
+          -0.08279605037543343
+        ]
+      }
+    },
+    {
+      "photo": "DSC_1261-50.jpg",
+      "source": "Morph/originals/DSC_1261-50.jpg",
+      "varied": "outputs/morph-showcase/varied-album/inputs/varied-DSC_1261-50.jpg",
+      "scene": "scene-06-walk",
+      "calibration_counterpart": false,
+      "status": "estimated",
+      "normalization_before": 0.04426484927535057,
+      "normalization_after": 0.007860204204916954,
+      "bias_before": [
+        -0.0500117763876915,
+        -0.03895257040858269,
+        -0.0326380580663681
+      ],
+      "bias_after": [
+        -0.006664864253252745,
+        -0.00711018918082118,
+        -0.0059487177059054375
+      ],
+      "styles": {
+        "sunlit": {
+          "before": 0.04397032428627078,
+          "after": 0.009659984149038792,
+          "export": "outputs/morph-showcase/final-albums/sunlit/scene-06-walk/exports/varied-DSC_1261-50.jpg"
+        },
+        "coastal": {
+          "before": 0.04556788694755581,
+          "after": 0.008834891952574253,
+          "export": "outputs/morph-showcase/final-albums/coastal/scene-06-walk/exports/varied-DSC_1261-50.jpg"
+        },
+        "soft-film": {
+          "before": 0.038463862678556865,
+          "after": 0.00981741864234209,
+          "export": "outputs/morph-showcase/final-albums/soft-film/scene-06-walk/exports/varied-DSC_1261-50.jpg"
+        }
+      },
+      "expected_correction": {
+        "scale": 0.9846531739050858,
+        "offset": [
+          0.2545052996083075,
+          0.19244883443808475,
+          0.17713457205029348
+        ]
+      },
+      "estimated_correction": {
+        "scale": 0.9805160983797001,
+        "offset": [
+          0.22056583612511163,
+          0.1565149574102613,
+          0.14211627959970258
+        ]
+      }
+    },
+    {
+      "photo": "DSC_1264-51.jpg",
+      "source": "Morph/originals/DSC_1264-51.jpg",
+      "varied": "outputs/morph-showcase/varied-album/inputs/varied-DSC_1264-51.jpg",
+      "scene": "scene-06-walk",
+      "calibration_counterpart": true,
+      "status": "estimated",
+      "normalization_before": 0.015107234939932823,
+      "normalization_after": 0.0032364341896027327,
+      "bias_before": [
+        0.015435216017067432,
+        0.014688719995319843,
+        0.01175015140324831
+      ],
+      "bias_after": [
+        -0.0014069989556446671,
+        -0.001533199567347765,
+        -0.0015156884910538793
+      ],
+      "styles": {
+        "sunlit": {
+          "before": 0.014321768017485503,
+          "after": 0.005343370605260134,
+          "export": "outputs/morph-showcase/final-albums/sunlit/scene-06-walk/exports/varied-DSC_1264-51.jpg"
+        },
+        "coastal": {
+          "before": 0.015772263660838906,
+          "after": 0.004811566323041916,
+          "export": "outputs/morph-showcase/final-albums/coastal/scene-06-walk/exports/varied-DSC_1264-51.jpg"
+        },
+        "soft-film": {
+          "before": 0.012771101852764338,
+          "after": 0.006355177611112595,
+          "export": "outputs/morph-showcase/final-albums/soft-film/scene-06-walk/exports/varied-DSC_1264-51.jpg"
+        }
+      },
+      "expected_correction": {
+        "scale": 1.0174332851143941,
+        "offset": [
+          -0.07691051848026761,
+          -0.07168495966550777,
+          -0.06470709275146061
+        ]
+      },
+      "estimated_correction": {
+        "scale": 1.0144179000689197,
+        "offset": [
+          -0.08266967875173861,
+          -0.0798560113923843,
+          -0.07400059463502413
+        ]
+      }
+    },
+    {
+      "photo": "DSC_1265-52.jpg",
+      "source": "Morph/originals/DSC_1265-52.jpg",
+      "varied": "outputs/morph-showcase/varied-album/inputs/varied-DSC_1265-52.jpg",
+      "scene": "scene-06-walk",
+      "calibration_counterpart": false,
+      "status": "estimated",
+      "normalization_before": 0.14135542511940002,
+      "normalization_after": 0.0031433580443263054,
+      "bias_before": [
+        0.12887558341026306,
+        0.1364440768957138,
+        0.12934930622577667
+      ],
+      "bias_after": [
+        -0.0005913881468586624,
+        -0.0002889792376663536,
+        -0.0005101683782413602
+      ],
+      "styles": {
+        "sunlit": {
+          "before": 0.12906063761548756,
+          "after": 0.005176387261599302,
+          "export": "outputs/morph-showcase/final-albums/sunlit/scene-06-walk/exports/varied-DSC_1265-52.jpg"
+        },
+        "coastal": {
+          "before": 0.14336964480700373,
+          "after": 0.005674861837178469,
+          "export": "outputs/morph-showcase/final-albums/coastal/scene-06-walk/exports/varied-DSC_1265-52.jpg"
+        },
+        "soft-film": {
+          "before": 0.11291807749447638,
+          "after": 0.006391012575477362,
+          "export": "outputs/morph-showcase/final-albums/soft-film/scene-06-walk/exports/varied-DSC_1265-52.jpg"
+        }
+      },
+      "expected_correction": {
+        "scale": 0.9026556996346631,
+        "offset": [
+          -0.6256784890408318,
+          -0.6608431741961701,
+          -0.7108298977523139
+        ]
+      },
+      "estimated_correction": {
+        "scale": 0.9008740611384817,
+        "offset": [
+          -0.6292764941306466,
+          -0.6614587529207836,
+          -0.7119718181363102
+        ]
+      }
+    },
+    {
+      "photo": "DSC_1268-53.jpg",
+      "source": "Morph/originals/DSC_1268-53.jpg",
+      "varied": "outputs/morph-showcase/varied-album/inputs/varied-DSC_1268-53.jpg",
+      "scene": "scene-06-walk",
+      "calibration_counterpart": false,
+      "status": "estimated",
+      "normalization_before": 0.05420352891087532,
+      "normalization_after": 0.003140020649880171,
+      "bias_before": [
+        0.04281247407197952,
+        0.05185778811573982,
+        0.05679363012313843
+      ],
+      "bias_after": [
+        -0.0010333252139389515,
+        -0.0014652700629085302,
+        -0.0011903346749022603
+      ],
+      "styles": {
+        "sunlit": {
+          "before": 0.050020568366721876,
+          "after": 0.00514462124556303,
+          "export": "outputs/morph-showcase/final-albums/sunlit/scene-06-walk/exports/varied-DSC_1268-53.jpg"
+        },
+        "coastal": {
+          "before": 0.054318362393435925,
+          "after": 0.004739841911941767,
+          "export": "outputs/morph-showcase/final-albums/coastal/scene-06-walk/exports/varied-DSC_1268-53.jpg"
+        },
+        "soft-film": {
+          "before": 0.04287008955294758,
+          "after": 0.006140970624983311,
+          "export": "outputs/morph-showcase/final-albums/soft-film/scene-06-walk/exports/varied-DSC_1268-53.jpg"
+        }
+      },
+      "expected_correction": {
+        "scale": 0.9862434572366999,
+        "offset": [
+          -0.21169169500244592,
+          -0.2564688188817352,
+          -0.31850062964503695
+        ]
+      },
+      "estimated_correction": {
+        "scale": 0.9902462167829932,
+        "offset": [
+          -0.21662656608938902,
+          -0.264053286091682,
+          -0.32514335201535166
+        ]
+      }
+    },
+    {
+      "photo": "DSC_1273-54.jpg",
+      "source": "Morph/originals/DSC_1273-54.jpg",
+      "varied": "outputs/morph-showcase/varied-album/inputs/varied-DSC_1273-54.jpg",
+      "scene": "scene-06-shade",
+      "calibration_counterpart": true,
+      "status": "estimated",
+      "normalization_before": 0.019289294257760048,
+      "normalization_after": 0.002891724929213524,
+      "bias_before": [
+        0.013315202668309212,
+        0.01666839048266411,
+        0.020656811073422432
+      ],
+      "bias_after": [
+        8.882182737579569e-05,
+        0.0003267139254603535,
+        0.0001058614143403247
+      ],
+      "styles": {
+        "sunlit": {
+          "before": 0.018120378989939855,
+          "after": 0.005523594096302986,
+          "export": "outputs/morph-showcase/final-albums/sunlit/scene-06-shade/exports/varied-DSC_1273-54.jpg"
+        },
+        "coastal": {
+          "before": 0.019581935909164787,
+          "after": 0.0044843051582574844,
+          "export": "outputs/morph-showcase/final-albums/coastal/scene-06-shade/exports/varied-DSC_1273-54.jpg"
+        },
+        "soft-film": {
+          "before": 0.016643250117386987,
+          "after": 0.00687878392636776,
+          "export": "outputs/morph-showcase/final-albums/soft-film/scene-06-shade/exports/varied-DSC_1273-54.jpg"
+        }
+      },
+      "expected_correction": {
+        "scale": 1.0078871198860029,
+        "offset": [
+          -0.08418926858005957,
+          -0.10368606277586757,
+          -0.12517069108892154
+        ]
+      },
+      "estimated_correction": {
+        "scale": 1.0070868693291295,
+        "offset": [
+          -0.08261726077394775,
+          -0.10195366099469759,
+          -0.12581459210621998
+        ]
+      }
+    },
+    {
+      "photo": "DSC_1280-55.jpg",
+      "source": "Morph/originals/DSC_1280-55.jpg",
+      "varied": "outputs/morph-showcase/varied-album/inputs/varied-DSC_1280-55.jpg",
+      "scene": "scene-06",
+      "calibration_counterpart": false,
+      "status": "estimated",
+      "normalization_before": 0.02365615963935852,
+      "normalization_after": 0.004498884081840515,
+      "bias_before": [
+        0.013973353430628777,
+        0.006982706021517515,
+        0.006563344970345497
+      ],
+      "bias_after": [
+        0.00036703026853501797,
+        0.0004285789327695966,
+        0.0014838093193247914
+      ],
+      "styles": {
+        "sunlit": {
+          "before": 0.021812038371998774,
+          "after": 0.006778918206691742,
+          "export": "outputs/morph-showcase/final-albums/sunlit/scene-06/exports/varied-DSC_1280-55.jpg"
+        },
+        "coastal": {
+          "before": 0.024312011107402498,
+          "after": 0.005725792609155178,
+          "export": "outputs/morph-showcase/final-albums/coastal/scene-06/exports/varied-DSC_1280-55.jpg"
+        },
+        "soft-film": {
+          "before": 0.023877943284813512,
+          "after": 0.007881180383265018,
+          "export": "outputs/morph-showcase/final-albums/soft-film/scene-06/exports/varied-DSC_1280-55.jpg"
+        }
+      },
+      "expected_correction": {
+        "scale": 0.8906240048472693,
+        "offset": [
+          -0.08652429509163864,
+          -0.04205473249490623,
+          -0.060309239731890424
+        ]
+      },
+      "estimated_correction": {
+        "scale": 0.9062534170947921,
+        "offset": [
+          -0.08325227199642922,
+          -0.03886227945906727,
+          -0.04503243044524588
+        ]
+      }
+    },
+    {
+      "photo": "DSC_1282-56.jpg",
+      "source": "Morph/originals/DSC_1282-56.jpg",
+      "varied": "outputs/morph-showcase/varied-album/inputs/varied-DSC_1282-56.jpg",
+      "scene": "scene-06",
+      "calibration_counterpart": false,
+      "status": "estimated",
+      "normalization_before": 0.04246854409575462,
+      "normalization_after": 0.005587832536548376,
+      "bias_before": [
+        0.03127434477210045,
+        0.03454257920384407,
+        0.03522426635026932
+      ],
+      "bias_after": [
+        0.00048210163367912173,
+        0.00069837347837165,
+        0.002440276090055704
+      ],
+      "styles": {
+        "sunlit": {
+          "before": 0.037266252492517866,
+          "after": 0.007100471295416355,
+          "export": "outputs/morph-showcase/final-albums/sunlit/scene-06/exports/varied-DSC_1282-56.jpg"
+        },
+        "coastal": {
+          "before": 0.04252263233420104,
+          "after": 0.006793367676436901,
+          "export": "outputs/morph-showcase/final-albums/coastal/scene-06/exports/varied-DSC_1282-56.jpg"
+        },
+        "soft-film": {
+          "before": 0.03736988934386345,
+          "after": 0.008338025771081448,
+          "export": "outputs/morph-showcase/final-albums/soft-film/scene-06/exports/varied-DSC_1282-56.jpg"
+        }
+      },
+      "expected_correction": {
+        "scale": 0.9147800884104532,
+        "offset": [
+          -0.2039523966899851,
+          -0.21983933427102156,
+          -0.25739138567225234
+        ]
+      },
+      "estimated_correction": {
+        "scale": 0.937734604515482,
+        "offset": [
+          -0.20905363601441518,
+          -0.22213512449475767,
+          -0.24445268047133736
+        ]
+      }
+    },
+    {
+      "photo": "DSC_1284-57.jpg",
+      "source": "Morph/originals/DSC_1284-57.jpg",
+      "varied": "outputs/morph-showcase/varied-album/inputs/varied-DSC_1284-57.jpg",
+      "scene": "scene-06",
+      "calibration_counterpart": false,
+      "status": "estimated",
+      "normalization_before": 0.027603846043348312,
+      "normalization_after": 0.005950084421783686,
+      "bias_before": [
+        0.024871477857232094,
+        0.018570827320218086,
+        0.018220867961645126
+      ],
+      "bias_after": [
+        -0.0005048412131145597,
+        1.5500667359447107e-05,
+        0.00129547412507236
+      ],
+      "styles": {
+        "sunlit": {
+          "before": 0.023769021927405515,
+          "after": 0.007868464104831219,
+          "export": "outputs/morph-showcase/final-albums/sunlit/scene-06/exports/varied-DSC_1284-57.jpg"
+        },
+        "coastal": {
+          "before": 0.028539897228096498,
+          "after": 0.00694155553355813,
+          "export": "outputs/morph-showcase/final-albums/coastal/scene-06/exports/varied-DSC_1284-57.jpg"
+        },
+        "soft-film": {
+          "before": 0.02484783419768584,
+          "after": 0.009035415016114712,
+          "export": "outputs/morph-showcase/final-albums/soft-film/scene-06/exports/varied-DSC_1284-57.jpg"
+        }
+      },
+      "expected_correction": {
+        "scale": 0.933234566355484,
+        "offset": [
+          -0.1720883733921082,
+          -0.12247320867336178,
+          -0.13849494610186053
+        ]
+      },
+      "estimated_correction": {
+        "scale": 0.9615577087565453,
+        "offset": [
+          -0.1804556791369761,
+          -0.1257467162603007,
+          -0.1319307363554184
+        ]
+      }
+    },
+    {
+      "photo": "DSC_1286-58.jpg",
+      "source": "Morph/originals/DSC_1286-58.jpg",
+      "varied": "outputs/morph-showcase/varied-album/inputs/varied-DSC_1286-58.jpg",
+      "scene": "scene-06",
+      "calibration_counterpart": true,
+      "status": "estimated",
+      "normalization_before": 0.013696310110390186,
+      "normalization_after": 0.004416098818182945,
+      "bias_before": [
+        0.011204338632524014,
+        0.006748212967067957,
+        0.006719066761434078
+      ],
+      "bias_after": [
+        0.0006311947363428771,
+        0.0011726046213880181,
+        0.0018942905589938164
+      ],
+      "styles": {
+        "sunlit": {
+          "before": 0.01203793546783842,
+          "after": 0.0065861293114721775,
+          "export": "outputs/morph-showcase/final-albums/sunlit/scene-06/exports/varied-DSC_1286-58.jpg"
+        },
+        "coastal": {
+          "before": 0.014253636742373418,
+          "after": 0.00561406509950757,
+          "export": "outputs/morph-showcase/final-albums/coastal/scene-06/exports/varied-DSC_1286-58.jpg"
+        },
+        "soft-film": {
+          "before": 0.013460177377387545,
+          "after": 0.00775677477940917,
+          "export": "outputs/morph-showcase/final-albums/soft-film/scene-06/exports/varied-DSC_1286-58.jpg"
+        }
+      },
+      "expected_correction": {
+        "scale": 0.9534351214917002,
+        "offset": [
+          -0.07478225855231799,
+          -0.043782168312850214,
+          -0.05218345187596293
+        ]
+      },
+      "estimated_correction": {
+        "scale": 0.9684653281385487,
+        "offset": [
+          -0.06994734005635476,
+          -0.03526354852757476,
+          -0.03867210682925203
+        ]
+      }
+    },
+    {
+      "photo": "DSC_1288-59.jpg",
+      "source": "Morph/originals/DSC_1288-59.jpg",
+      "varied": "outputs/morph-showcase/varied-album/inputs/varied-DSC_1288-59.jpg",
+      "scene": "scene-06",
+      "calibration_counterpart": false,
+      "status": "estimated",
+      "normalization_before": 0.01963838003575802,
+      "normalization_after": 0.0060727414675056934,
+      "bias_before": [
+        0.002179558854550123,
+        0.009317235089838505,
+        0.004238543100655079
+      ],
+      "bias_after": [
+        -0.002612728625535965,
+        -0.0040635657496750355,
+        -0.003692406928166747
+      ],
+      "styles": {
+        "sunlit": {
+          "before": 0.01939342451795751,
+          "after": 0.007866810075938702,
+          "export": "outputs/morph-showcase/final-albums/sunlit/scene-06/exports/varied-DSC_1288-59.jpg"
+        },
+        "coastal": {
+          "before": 0.019504288321273575,
+          "after": 0.00640388298779726,
+          "export": "outputs/morph-showcase/final-albums/coastal/scene-06/exports/varied-DSC_1288-59.jpg"
+        },
+        "soft-film": {
+          "before": 0.020497721924177068,
+          "after": 0.008966492488980293,
+          "export": "outputs/morph-showcase/final-albums/soft-film/scene-06/exports/varied-DSC_1288-59.jpg"
+        }
+      },
+      "expected_correction": {
+        "scale": 0.8857237206145627,
+        "offset": [
+          -0.013086165095435143,
+          -0.07450583863493618,
+          -0.05748293828138645
+        ]
+      },
+      "estimated_correction": {
+        "scale": 0.8763193069821383,
+        "offset": [
+          -0.02881918823911794,
+          -0.09959737534476322,
+          -0.08401594975699006
+        ]
+      }
+    },
+    {
+      "photo": "DSC_1291-60.jpg",
+      "source": "Morph/originals/DSC_1291-60.jpg",
+      "varied": "outputs/morph-showcase/varied-album/inputs/varied-DSC_1291-60.jpg",
+      "scene": "scene-06",
+      "calibration_counterpart": false,
+      "status": "estimated",
+      "normalization_before": 0.021486937999725342,
+      "normalization_after": 0.006578594446182251,
+      "bias_before": [
+        0.00038880232023075223,
+        0.011405931785702705,
+        0.01037578284740448
+      ],
+      "bias_after": [
+        -0.0028438789304345846,
+        -0.004348221700638533,
+        -0.0038893043529242277
+      ],
+      "styles": {
+        "sunlit": {
+          "before": 0.0208622809033805,
+          "after": 0.00821301992982626,
+          "export": "outputs/morph-showcase/final-albums/sunlit/scene-06/exports/varied-DSC_1291-60.jpg"
+        },
+        "coastal": {
+          "before": 0.020724914581853573,
+          "after": 0.006787730380892754,
+          "export": "outputs/morph-showcase/final-albums/coastal/scene-06/exports/varied-DSC_1291-60.jpg"
+        },
+        "soft-film": {
+          "before": 0.021432526716147926,
+          "after": 0.00907379761338234,
+          "export": "outputs/morph-showcase/final-albums/soft-film/scene-06/exports/varied-DSC_1291-60.jpg"
+        }
+      },
+      "expected_correction": {
+        "scale": 0.8858654383314251,
+        "offset": [
+          -0.0006652813506430599,
+          -0.0885780430030677,
+          -0.10855992315708018
+        ]
+      },
+      "estimated_correction": {
+        "scale": 0.87215481204677,
+        "offset": [
+          -0.017617609724226355,
+          -0.11631039310406577,
+          -0.13740913516452283
+        ]
+      }
+    },
+    {
+      "photo": "DSC_1292-61.jpg",
+      "source": "Morph/originals/DSC_1292-61.jpg",
+      "varied": "outputs/morph-showcase/varied-album/inputs/varied-DSC_1292-61.jpg",
+      "scene": "scene-06",
+      "calibration_counterpart": false,
+      "status": "estimated",
+      "normalization_before": 0.03348425030708313,
+      "normalization_after": 0.006932919844985008,
+      "bias_before": [
+        -0.029544582590460777,
+        -0.019630545750260353,
+        -0.014521541073918343
+      ],
+      "bias_after": [
+        -0.004615072160959244,
+        -0.0052023944444954395,
+        -0.0048177302815020084
+      ],
+      "styles": {
+        "sunlit": {
+          "before": 0.03812353834245929,
+          "after": 0.00946893822401762,
+          "export": "outputs/morph-showcase/final-albums/sunlit/scene-06/exports/varied-DSC_1292-61.jpg"
+        },
+        "coastal": {
+          "before": 0.03413589783621418,
+          "after": 0.008036604151129723,
+          "export": "outputs/morph-showcase/final-albums/coastal/scene-06/exports/varied-DSC_1292-61.jpg"
+        },
+        "soft-film": {
+          "before": 0.03587384098294362,
+          "after": 0.009825148619711399,
+          "export": "outputs/morph-showcase/final-albums/soft-film/scene-06/exports/varied-DSC_1292-61.jpg"
+        }
+      },
+      "expected_correction": {
+        "scale": 0.8764556565328115,
+        "offset": [
+          0.23308290094805387,
+          0.14259444483168518,
+          0.10631494505374235
+        ]
+      },
+      "estimated_correction": {
+        "scale": 0.8642864633776761,
+        "offset": [
+          0.19830282285073447,
+          0.10429026264697465,
+          0.05982667111534224
+        ]
+      }
+    },
+    {
+      "photo": "DSC_1293-62.jpg",
+      "source": "Morph/originals/DSC_1293-62.jpg",
+      "varied": "outputs/morph-showcase/varied-album/inputs/varied-DSC_1293-62.jpg",
+      "scene": "scene-06",
+      "calibration_counterpart": false,
+      "status": "estimated",
+      "normalization_before": 0.04469628259539604,
+      "normalization_after": 0.005704361479729414,
+      "bias_before": [
+        -0.034910112619400024,
+        -0.017113106325268745,
+        -0.005292564630508423
+      ],
+      "bias_after": [
+        -0.0012133135460317135,
+        -0.0029676284175366163,
+        -0.004259941168129444
+      ],
+      "styles": {
+        "sunlit": {
+          "before": 0.050990803634472996,
+          "after": 0.008637438528239727,
+          "export": "outputs/morph-showcase/final-albums/sunlit/scene-06/exports/varied-DSC_1293-62.jpg"
+        },
+        "coastal": {
+          "before": 0.04496591069924991,
+          "after": 0.006723138503730297,
+          "export": "outputs/morph-showcase/final-albums/coastal/scene-06/exports/varied-DSC_1293-62.jpg"
+        },
+        "soft-film": {
+          "before": 0.04859735250994889,
+          "after": 0.009618233889341354,
+          "export": "outputs/morph-showcase/final-albums/soft-film/scene-06/exports/varied-DSC_1293-62.jpg"
+        }
+      },
+      "expected_correction": {
+        "scale": 0.7878897208008386,
+        "offset": [
+          0.2763702783848353,
+          0.1232618013978663,
+          0.01382048132019234
+        ]
+      },
+      "estimated_correction": {
+        "scale": 0.7720488966730794,
+        "offset": [
+          0.2641393880705369,
+          0.10260072668490192,
+          -0.02386915439523895
+        ]
+      }
+    },
+    {
+      "photo": "DSC_1300-63.jpg",
+      "source": "Morph/originals/DSC_1300-63.jpg",
+      "varied": "outputs/morph-showcase/varied-album/inputs/varied-DSC_1300-63.jpg",
+      "scene": "scene-06",
+      "calibration_counterpart": false,
+      "status": "estimated",
+      "normalization_before": 0.039438679814338684,
+      "normalization_after": 0.009260736405849457,
+      "bias_before": [
+        -0.010051818564534187,
+        -0.006406889297068119,
+        0.005140536930412054
+      ],
+      "bias_after": [
+        -0.004131706897169352,
+        -0.005513962358236313,
+        -0.009301506914198399
+      ],
+      "styles": {
+        "sunlit": {
+          "before": 0.043329710316185106,
+          "after": 0.010808202438056469,
+          "export": "outputs/morph-showcase/final-albums/sunlit/scene-06/exports/varied-DSC_1300-63.jpg"
+        },
+        "coastal": {
+          "before": 0.03842607181066631,
+          "after": 0.009349334985017776,
+          "export": "outputs/morph-showcase/final-albums/coastal/scene-06/exports/varied-DSC_1300-63.jpg"
+        },
+        "soft-film": {
+          "before": 0.043724698358791614,
+          "after": 0.010670889168977737,
+          "export": "outputs/morph-showcase/final-albums/soft-film/scene-06/exports/varied-DSC_1300-63.jpg"
+        }
+      },
+      "expected_correction": {
+        "scale": 0.7886946654230389,
+        "offset": [
+          0.08157715278386046,
+          0.0366263249528875,
+          -0.07603516559948206
+        ]
+      },
+      "estimated_correction": {
+        "scale": 0.7712305253817204,
+        "offset": [
+          0.058530863843082155,
+          -0.00013440691884013262,
+          -0.14416760172524695
+        ]
+      }
+    },
+    {
+      "photo": "DSC_1302-64.jpg",
+      "source": "Morph/originals/DSC_1302-64.jpg",
+      "varied": "outputs/morph-showcase/varied-album/inputs/varied-DSC_1302-64.jpg",
+      "scene": "scene-06",
+      "calibration_counterpart": false,
+      "status": "estimated",
+      "normalization_before": 0.04195243492722511,
+      "normalization_after": 0.009242788888514042,
+      "bias_before": [
+        -0.007292735390365124,
+        -0.0008927789167501032,
+        0.01768042892217636
+      ],
+      "bias_after": [
+        -0.0043134852312505245,
+        -0.006449286825954914,
+        -0.00980502087622881
+      ],
+      "styles": {
+        "sunlit": {
+          "before": 0.043977193057228706,
+          "after": 0.011159147135913372,
+          "export": "outputs/morph-showcase/final-albums/sunlit/scene-06/exports/varied-DSC_1302-64.jpg"
+        },
+        "coastal": {
+          "before": 0.04021924780936765,
+          "after": 0.009527752175927162,
+          "export": "outputs/morph-showcase/final-albums/coastal/scene-06/exports/varied-DSC_1302-64.jpg"
+        },
+        "soft-film": {
+          "before": 0.04398023307227354,
+          "after": 0.01090306881815195,
+          "export": "outputs/morph-showcase/final-albums/soft-film/scene-06/exports/varied-DSC_1302-64.jpg"
+        }
+      },
+      "expected_correction": {
+        "scale": 0.7860442200905678,
+        "offset": [
+          0.06873959166257337,
+          0.0029695922826378507,
+          -0.160402193667162
+        ]
+      },
+      "estimated_correction": {
+        "scale": 0.7753478646921339,
+        "offset": [
+          0.040494327858232246,
+          -0.03724754337881325,
+          -0.23005030850003688
+        ]
+      }
+    },
+    {
+      "photo": "DSC_1304-65.jpg",
+      "source": "Morph/originals/DSC_1304-65.jpg",
+      "varied": "outputs/morph-showcase/varied-album/inputs/varied-DSC_1304-65.jpg",
+      "scene": "scene-06",
+      "calibration_counterpart": false,
+      "status": "estimated",
+      "normalization_before": 0.05669701099395752,
+      "normalization_after": 0.011478228494524956,
+      "bias_before": [
+        0.04963579773902893,
+        0.04316379129886627,
+        0.019397195428609848
+      ],
+      "bias_after": [
+        -0.0031829923391342163,
+        -0.00514222402125597,
+        -0.014793556183576584
+      ],
+      "styles": {
+        "sunlit": {
+          "before": 0.048489822766968727,
+          "after": 0.011547437869012356,
+          "export": "outputs/morph-showcase/final-albums/sunlit/scene-06/exports/varied-DSC_1304-65.jpg"
+        },
+        "coastal": {
+          "before": 0.060515833549892394,
+          "after": 0.01133139617741108,
+          "export": "outputs/morph-showcase/final-albums/coastal/scene-06/exports/varied-DSC_1304-65.jpg"
+        },
+        "soft-film": {
+          "before": 0.05000632446080143,
+          "after": 0.011182824149727821,
+          "export": "outputs/morph-showcase/final-albums/soft-film/scene-06/exports/varied-DSC_1304-65.jpg"
+        }
+      },
+      "expected_correction": {
+        "scale": 0.8198423738196459,
+        "offset": [
+          -0.27958749357294105,
+          -0.22937007337170012,
+          -0.11741573172053946
+        ]
+      },
+      "estimated_correction": {
+        "scale": 0.8022538458064963,
+        "offset": [
+          -0.2896245547849792,
+          -0.25322261371599475,
+          -0.2095431070041877
+        ]
+      }
+    },
+    {
+      "photo": "DSC_1308-66.jpg",
+      "source": "Morph/originals/DSC_1308-66.jpg",
+      "varied": "outputs/morph-showcase/varied-album/inputs/varied-DSC_1308-66.jpg",
+      "scene": "scene-07",
+      "calibration_counterpart": false,
+      "status": "estimated",
+      "normalization_before": 0.04505655914545059,
+      "normalization_after": 0.008984722197055817,
+      "bias_before": [
+        0.03804372251033783,
+        0.040804002434015274,
+        0.033745527267456055
+      ],
+      "bias_after": [
+        0.0018990361131727695,
+        0.0031416111160069704,
+        0.0035447736736387014
+      ],
+      "styles": {
+        "sunlit": {
+          "before": 0.04040011933103608,
+          "after": 0.009571556001901627,
+          "export": "outputs/morph-showcase/final-albums/sunlit/scene-07/exports/varied-DSC_1308-66.jpg"
+        },
+        "coastal": {
+          "before": 0.04639615911705938,
+          "after": 0.01049362774938345,
+          "export": "outputs/morph-showcase/final-albums/coastal/scene-07/exports/varied-DSC_1308-66.jpg"
+        },
+        "soft-film": {
+          "before": 0.03560759061591591,
+          "after": 0.009593791328370571,
+          "export": "outputs/morph-showcase/final-albums/soft-film/scene-07/exports/varied-DSC_1308-66.jpg"
+        }
+      },
+      "expected_correction": {
+        "scale": 0.9122010276474226,
+        "offset": [
+          -0.2147225764794122,
+          -0.24046989650263306,
+          -0.21406893311151978
+        ]
+      },
+      "estimated_correction": {
+        "scale": 0.8529270935046859,
+        "offset": [
+          -0.19426471179875773,
+          -0.21299492081307303,
+          -0.19695336686280662
+        ]
+      }
+    },
+    {
+      "photo": "DSC_1310-67.jpg",
+      "source": "Morph/originals/DSC_1310-67.jpg",
+      "varied": "outputs/morph-showcase/varied-album/inputs/varied-DSC_1310-67.jpg",
+      "scene": "scene-07",
+      "calibration_counterpart": false,
+      "status": "estimated",
+      "normalization_before": 0.0629722848534584,
+      "normalization_after": 0.008395963348448277,
+      "bias_before": [
+        0.058999594300985336,
+        0.05458909273147583,
+        0.04448876902461052
+      ],
+      "bias_after": [
+        0.0018549792002886534,
+        0.003305675694718957,
+        0.0032867975533008575
+      ],
+      "styles": {
+        "sunlit": {
+          "before": 0.057003554009145856,
+          "after": 0.008963236585259438,
+          "export": "outputs/morph-showcase/final-albums/sunlit/scene-07/exports/varied-DSC_1310-67.jpg"
+        },
+        "coastal": {
+          "before": 0.06509049413009951,
+          "after": 0.010250167921185493,
+          "export": "outputs/morph-showcase/final-albums/coastal/scene-07/exports/varied-DSC_1310-67.jpg"
+        },
+        "soft-film": {
+          "before": 0.04979650252323652,
+          "after": 0.009088262915611267,
+          "export": "outputs/morph-showcase/final-albums/soft-film/scene-07/exports/varied-DSC_1310-67.jpg"
+        }
+      },
+      "expected_correction": {
+        "scale": 0.9063598366267891,
+        "offset": [
+          -0.3443186418024444,
+          -0.32220956997158445,
+          -0.28443319202313166
+        ]
+      },
+      "estimated_correction": {
+        "scale": 0.8528989284755157,
+        "offset": [
+          -0.3106579156653299,
+          -0.28934470398859635,
+          -0.26060057064027087
+        ]
+      }
+    },
+    {
+      "photo": "DSC_1312-68.jpg",
+      "source": "Morph/originals/DSC_1312-68.jpg",
+      "varied": "outputs/morph-showcase/varied-album/inputs/varied-DSC_1312-68.jpg",
+      "scene": "scene-07",
+      "calibration_counterpart": false,
+      "status": "estimated",
+      "normalization_before": 0.08059044182300568,
+      "normalization_after": 0.007596621755510569,
+      "bias_before": [
+        0.0698949322104454,
+        0.06939070671796799,
+        0.061195868998765945
+      ],
+      "bias_after": [
+        0.0005064070574007928,
+        0.001733645098283887,
+        0.002700485521927476
+      ],
+      "styles": {
+        "sunlit": {
+          "before": 0.07301024237060962,
+          "after": 0.008269297890365124,
+          "export": "outputs/morph-showcase/final-albums/sunlit/scene-07/exports/varied-DSC_1312-68.jpg"
+        },
+        "coastal": {
+          "before": 0.08248957266226355,
+          "after": 0.00990463886409998,
+          "export": "outputs/morph-showcase/final-albums/coastal/scene-07/exports/varied-DSC_1312-68.jpg"
+        },
+        "soft-film": {
+          "before": 0.06393625649953724,
+          "after": 0.008542136289179325,
+          "export": "outputs/morph-showcase/final-albums/soft-film/scene-07/exports/varied-DSC_1312-68.jpg"
+        }
+      },
+      "expected_correction": {
+        "scale": 0.8741530389498411,
+        "offset": [
+          -0.40554082252017243,
+          -0.4084130904139482,
+          -0.38640665385877915
+        ]
+      },
+      "estimated_correction": {
+        "scale": 0.8286222613136871,
+        "offset": [
+          -0.37991241172517426,
+          -0.37993282304638654,
+          -0.36187918816222725
+        ]
+      }
+    },
+    {
+      "photo": "DSC_1315-69.jpg",
+      "source": "Morph/originals/DSC_1315-69.jpg",
+      "varied": "outputs/morph-showcase/varied-album/inputs/varied-DSC_1315-69.jpg",
+      "scene": "scene-07",
+      "calibration_counterpart": false,
+      "status": "estimated",
+      "normalization_before": 0.018306134268641472,
+      "normalization_after": 0.007869923487305641,
+      "bias_before": [
+        0.003615340916439891,
+        0.00529066426679492,
+        0.004985925741493702
+      ],
+      "bias_after": [
+        0.003906682133674622,
+        0.006326459348201752,
+        0.00692522618919611
+      ],
+      "styles": {
+        "sunlit": {
+          "before": 0.018523933633235255,
+          "after": 0.008732573129236698,
+          "export": "outputs/morph-showcase/final-albums/sunlit/scene-07/exports/varied-DSC_1315-69.jpg"
+        },
+        "coastal": {
+          "before": 0.018735097573285096,
+          "after": 0.009410467930138111,
+          "export": "outputs/morph-showcase/final-albums/coastal/scene-07/exports/varied-DSC_1315-69.jpg"
+        },
+        "soft-film": {
+          "before": 0.019277917319977578,
+          "after": 0.008712599985301495,
+          "export": "outputs/morph-showcase/final-albums/soft-film/scene-07/exports/varied-DSC_1315-69.jpg"
+        }
+      },
+      "expected_correction": {
+        "scale": 0.8848248421444345,
+        "offset": [
+          -0.017205855516677186,
+          -0.04815892454019564,
+          -0.06242981031874516
+        ]
+      },
+      "estimated_correction": {
+        "scale": 0.860319364154779,
+        "offset": [
+          0.011220403013879537,
+          -0.009674951263811812,
+          -0.022238592109714073
+        ]
+      }
+    },
+    {
+      "photo": "DSC_1320-70.jpg",
+      "source": "Morph/originals/DSC_1320-70.jpg",
+      "varied": "outputs/morph-showcase/varied-album/inputs/varied-DSC_1320-70.jpg",
+      "scene": "scene-07",
+      "calibration_counterpart": true,
+      "status": "estimated",
+      "normalization_before": 0.02278866618871689,
+      "normalization_after": 0.0027779426891356707,
+      "bias_before": [
+        0.022481897845864296,
+        0.019825251772999763,
+        0.014637376181781292
+      ],
+      "bias_after": [
+        0.00010174973431276157,
+        0.00010010369442170486,
+        -0.00014455089694820344
+      ],
+      "styles": {
+        "sunlit": {
+          "before": 0.021257064893554955,
+          "after": 0.0050094169564545155,
+          "export": "outputs/morph-showcase/final-albums/sunlit/scene-07/exports/varied-DSC_1320-70.jpg"
+        },
+        "coastal": {
+          "before": 0.024130874072492925,
+          "after": 0.004853932652622461,
+          "export": "outputs/morph-showcase/final-albums/coastal/scene-07/exports/varied-DSC_1320-70.jpg"
+        },
+        "soft-film": {
+          "before": 0.018659456948706656,
+          "after": 0.005806353408843279,
+          "export": "outputs/morph-showcase/final-albums/soft-film/scene-07/exports/varied-DSC_1320-70.jpg"
+        }
+      },
+      "expected_correction": {
+        "scale": 1.0160403930390514,
+        "offset": [
+          -0.14789067287570987,
+          -0.12606469487112942,
+          -0.0908800638333004
+        ]
+      },
+      "estimated_correction": {
+        "scale": 1.0102587950213195,
+        "offset": [
+          -0.1442084552512433,
+          -0.12512617271956156,
+          -0.09453706451634619
+        ]
+      }
+    },
+    {
+      "photo": "DSC_1322-71.jpg",
+      "source": "Morph/originals/DSC_1322-71.jpg",
+      "varied": "outputs/morph-showcase/varied-album/inputs/varied-DSC_1322-71.jpg",
+      "scene": "scene-07",
+      "calibration_counterpart": false,
+      "status": "estimated",
+      "normalization_before": 0.011951997876167297,
+      "normalization_after": 0.004320294596254826,
+      "bias_before": [
+        0.010576441884040833,
+        0.007539823185652494,
+        0.0022414091508835554
+      ],
+      "bias_after": [
+        -0.003641014453023672,
+        -0.0027129906229674816,
+        -0.003218455007299781
+      ],
+      "styles": {
+        "sunlit": {
+          "before": 0.010819422169710944,
+          "after": 0.006996101699769497,
+          "export": "outputs/morph-showcase/final-albums/sunlit/scene-07/exports/varied-DSC_1322-71.jpg"
+        },
+        "coastal": {
+          "before": 0.013090202542604502,
+          "after": 0.005621812772005796,
+          "export": "outputs/morph-showcase/final-albums/coastal/scene-07/exports/varied-DSC_1322-71.jpg"
+        },
+        "soft-film": {
+          "before": 0.011363395486296656,
+          "after": 0.007003956474363804,
+          "export": "outputs/morph-showcase/final-albums/soft-film/scene-07/exports/varied-DSC_1322-71.jpg"
+        }
+      },
+      "expected_correction": {
+        "scale": 0.9367502660672542,
+        "offset": [
+          -0.061474741223285015,
+          -0.04290427694041733,
+          -0.016903791728227945
+        ]
+      },
+      "estimated_correction": {
+        "scale": 0.93406161635395,
+        "offset": [
+          -0.0780439013343673,
+          -0.05881929013239258,
+          -0.037561730391252206
+        ]
+      }
+    },
+    {
+      "photo": "DSC_1324-72.jpg",
+      "source": "Morph/originals/DSC_1324-72.jpg",
+      "varied": "outputs/morph-showcase/varied-album/inputs/varied-DSC_1324-72.jpg",
+      "scene": "scene-07",
+      "calibration_counterpart": false,
+      "status": "estimated",
+      "normalization_before": 0.03594736382365227,
+      "normalization_after": 0.005201731808483601,
+      "bias_before": [
+        -0.0014039705274626613,
+        -0.009018708020448685,
+        -0.0171732809394598
+      ],
+      "bias_after": [
+        0.0015619044424965978,
+        0.000225297364522703,
+        0.0007760169100947678
+      ],
+      "styles": {
+        "sunlit": {
+          "before": 0.038085655124705006,
+          "after": 0.006998815108090639,
+          "export": "outputs/morph-showcase/final-albums/sunlit/scene-07/exports/varied-DSC_1324-72.jpg"
+        },
+        "coastal": {
+          "before": 0.03708003583251125,
+          "after": 0.006933693308383226,
+          "export": "outputs/morph-showcase/final-albums/coastal/scene-07/exports/varied-DSC_1324-72.jpg"
+        },
+        "soft-film": {
+          "before": 0.038969070690930384,
+          "after": 0.00872939545661211,
+          "export": "outputs/morph-showcase/final-albums/soft-film/scene-07/exports/varied-DSC_1324-72.jpg"
+        }
+      },
+      "expected_correction": {
+        "scale": 0.7784985947174635,
+        "offset": [
+          0.053233478952900246,
+          0.07508620694875517,
+          0.09949839637186626
+        ]
+      },
+      "estimated_correction": {
+        "scale": 0.8031140361943627,
+        "offset": [
+          0.05367452382799993,
+          0.07320533449146732,
+          0.10579298806175579
+        ]
+      }
+    },
+    {
+      "photo": "DSC_1326-73.jpg",
+      "source": "Morph/originals/DSC_1326-73.jpg",
+      "varied": "outputs/morph-showcase/varied-album/inputs/varied-DSC_1326-73.jpg",
+      "scene": "scene-08",
+      "calibration_counterpart": false,
+      "status": "estimated",
+      "normalization_before": 0.09852032363414764,
+      "normalization_after": 0.0034644699189811945,
+      "bias_before": [
+        0.08621527999639511,
+        0.08930011093616486,
+        0.0863688737154007
+      ],
+      "bias_after": [
+        -0.0017976931994780898,
+        -0.0012192499125376344,
+        -0.0009919198928400874
+      ],
+      "styles": {
+        "sunlit": {
+          "before": 0.09385904657944726,
+          "after": 0.005392734427005053,
+          "export": "outputs/morph-showcase/final-albums/sunlit/scene-08/exports/varied-DSC_1326-73.jpg"
+        },
+        "coastal": {
+          "before": 0.09973937784943315,
+          "after": 0.004990020766854286,
+          "export": "outputs/morph-showcase/final-albums/coastal/scene-08/exports/varied-DSC_1326-73.jpg"
+        },
+        "soft-film": {
+          "before": 0.08071406916501066,
+          "after": 0.006155568175017834,
+          "export": "outputs/morph-showcase/final-albums/soft-film/scene-08/exports/varied-DSC_1326-73.jpg"
+        }
+      },
+      "expected_correction": {
+        "scale": 0.8919900671720826,
+        "offset": [
+          -0.5268769865116906,
+          -0.5161424976755244,
+          -0.48965285851298024
+        ]
+      },
+      "estimated_correction": {
+        "scale": 0.8835258570532372,
+        "offset": [
+          -0.536878184219167,
+          -0.5229721071681886,
+          -0.49789512181568074
+        ]
+      }
+    },
+    {
+      "photo": "DSC_1329-74.jpg",
+      "source": "Morph/originals/DSC_1329-74.jpg",
+      "varied": "outputs/morph-showcase/varied-album/inputs/varied-DSC_1329-74.jpg",
+      "scene": "scene-08",
+      "calibration_counterpart": false,
+      "status": "estimated",
+      "normalization_before": 0.06399213522672653,
+      "normalization_after": 0.004203088581562042,
+      "bias_before": [
+        0.06581804901361465,
+        0.060688648372888565,
+        0.0484454371035099
+      ],
+      "bias_after": [
+        -0.0020947721786797047,
+        -0.0021336141508072615,
+        -0.001786269131116569
+      ],
+      "styles": {
+        "sunlit": {
+          "before": 0.061836302454060604,
+          "after": 0.005893548484891653,
+          "export": "outputs/morph-showcase/final-albums/sunlit/scene-08/exports/varied-DSC_1329-74.jpg"
+        },
+        "coastal": {
+          "before": 0.06593933813915391,
+          "after": 0.0053337933495640755,
+          "export": "outputs/morph-showcase/final-albums/coastal/scene-08/exports/varied-DSC_1329-74.jpg"
+        },
+        "soft-film": {
+          "before": 0.052768780634591374,
+          "after": 0.006221704185009003,
+          "export": "outputs/morph-showcase/final-albums/soft-film/scene-08/exports/varied-DSC_1329-74.jpg"
+        }
+      },
+      "expected_correction": {
+        "scale": 0.9495332222328344,
+        "offset": [
+          -0.37312453494531755,
+          -0.3340142795578471,
+          -0.2681336288927615
+        ]
+      },
+      "estimated_correction": {
+        "scale": 0.9348537831003138,
+        "offset": [
+          -0.38777166104859634,
+          -0.3491621762047789,
+          -0.28251781185965935
+        ]
+      }
+    },
+    {
+      "photo": "DSC_1330-75.jpg",
+      "source": "Morph/originals/DSC_1330-75.jpg",
+      "varied": "outputs/morph-showcase/varied-album/inputs/varied-DSC_1330-75.jpg",
+      "scene": "scene-08",
+      "calibration_counterpart": false,
+      "status": "estimated",
+      "normalization_before": 0.043393202126026154,
+      "normalization_after": 0.004450873006135225,
+      "bias_before": [
+        0.038161542266607285,
+        0.03613715246319771,
+        0.03915514424443245
+      ],
+      "bias_after": [
+        -0.0033552227541804314,
+        -0.0022461696062237024,
+        -0.0024649326223880053
+      ],
+      "styles": {
+        "sunlit": {
+          "before": 0.040801715409349786,
+          "after": 0.006428051274269819,
+          "export": "outputs/morph-showcase/final-albums/sunlit/scene-08/exports/varied-DSC_1330-75.jpg"
+        },
+        "coastal": {
+          "before": 0.04386405526618614,
+          "after": 0.005796678829938173,
+          "export": "outputs/morph-showcase/final-albums/coastal/scene-08/exports/varied-DSC_1330-75.jpg"
+        },
+        "soft-film": {
+          "before": 0.03553669964639566,
+          "after": 0.006652786862105131,
+          "export": "outputs/morph-showcase/final-albums/soft-film/scene-08/exports/varied-DSC_1330-75.jpg"
+        }
+      },
+      "expected_correction": {
+        "scale": 0.9319191166098844,
+        "offset": [
+          -0.2382588903959046,
+          -0.22257927554189708,
+          -0.22981156635384903
+        ]
+      },
+      "estimated_correction": {
+        "scale": 0.9165333706652229,
+        "offset": [
+          -0.2624989782699594,
+          -0.23636224025684358,
+          -0.2457274340516908
+        ]
+      }
+    },
+    {
+      "photo": "DSC_1334-76.jpg",
+      "source": "Morph/originals/DSC_1334-76.jpg",
+      "varied": "outputs/morph-showcase/varied-album/inputs/varied-DSC_1334-76.jpg",
+      "scene": "scene-08",
+      "calibration_counterpart": true,
+      "status": "estimated",
+      "normalization_before": 0.03634233400225639,
+      "normalization_after": 0.0028650963213294744,
+      "bias_before": [
+        0.032105717808008194,
+        0.03357711434364319,
+        0.03440575674176216
+      ],
+      "bias_after": [
+        -0.0005141285364516079,
+        -0.000596153549849987,
+        -0.0005864201812073588
+      ],
+      "styles": {
+        "sunlit": {
+          "before": 0.03517766712472547,
+          "after": 0.005200419574975967,
+          "export": "outputs/morph-showcase/final-albums/sunlit/scene-08/exports/varied-DSC_1334-76.jpg"
+        },
+        "coastal": {
+          "before": 0.03677010830737558,
+          "after": 0.004375144373625517,
+          "export": "outputs/morph-showcase/final-albums/coastal/scene-08/exports/varied-DSC_1334-76.jpg"
+        },
+        "soft-film": {
+          "before": 0.030388968021408648,
+          "after": 0.005875573959201574,
+          "export": "outputs/morph-showcase/final-albums/soft-film/scene-08/exports/varied-DSC_1334-76.jpg"
+        }
+      },
+      "expected_correction": {
+        "scale": 0.9826851388773198,
+        "offset": [
+          -0.18733340636503176,
+          -0.19013425826006897,
+          -0.19077426079157542
+        ]
+      },
+      "estimated_correction": {
+        "scale": 0.9782964434357677,
+        "offset": [
+          -0.19277041091231015,
+          -0.19281939415534188,
+          -0.19460021070074027
+        ]
+      }
+    },
+    {
+      "photo": "DSC_1335-77.jpg",
+      "source": "Morph/originals/DSC_1335-77.jpg",
+      "varied": "outputs/morph-showcase/varied-album/inputs/varied-DSC_1335-77.jpg",
+      "scene": "scene-08",
+      "calibration_counterpart": false,
+      "status": "estimated",
+      "normalization_before": 0.01483666431158781,
+      "normalization_after": 0.0028820550069212914,
+      "bias_before": [
+        -0.010935209691524506,
+        -0.012077134102582932,
+        -0.01744638755917549
+      ],
+      "bias_after": [
+        -0.0004051757568959147,
+        -0.00013159797526896,
+        -0.0006072468240745366
+      ],
+      "styles": {
+        "sunlit": {
+          "before": 0.01634243041539486,
+          "after": 0.0057553392834961414,
+          "export": "outputs/morph-showcase/final-albums/sunlit/scene-08/exports/varied-DSC_1335-77.jpg"
+        },
+        "coastal": {
+          "before": 0.015260409806921909,
+          "after": 0.00467733945697546,
+          "export": "outputs/morph-showcase/final-albums/coastal/scene-08/exports/varied-DSC_1335-77.jpg"
+        },
+        "soft-film": {
+          "before": 0.014897191234609294,
+          "after": 0.006217243615537882,
+          "export": "outputs/morph-showcase/final-albums/soft-film/scene-08/exports/varied-DSC_1335-77.jpg"
+        }
+      },
+      "expected_correction": {
+        "scale": 0.9922643146499109,
+        "offset": [
+          0.054444844685116525,
+          0.06615772948269041,
+          0.09339658302359928
+        ]
+      },
+      "estimated_correction": {
+        "scale": 0.9813441426808948,
+        "offset": [
+          0.04798148722980666,
+          0.05421909411704894,
+          0.08127451294496339
+        ]
+      }
+    },
+    {
+      "photo": "DSC_1337-78.jpg",
+      "source": "Morph/originals/DSC_1337-78.jpg",
+      "varied": "outputs/morph-showcase/varied-album/inputs/varied-DSC_1337-78.jpg",
+      "scene": "scene-08",
+      "calibration_counterpart": false,
+      "status": "estimated",
+      "normalization_before": 0.009623395279049873,
+      "normalization_after": 0.002922471147030592,
+      "bias_before": [
+        -0.0008425514679402113,
+        -0.0060694278217852116,
+        -0.011708216741681099
+      ],
+      "bias_after": [
+        1.755371704348363e-05,
+        -0.0001681909488979727,
+        -0.0002475519140716642
+      ],
+      "styles": {
+        "sunlit": {
+          "before": 0.009253640998276857,
+          "after": 0.005182141438126564,
+          "export": "outputs/morph-showcase/final-albums/sunlit/scene-08/exports/varied-DSC_1337-78.jpg"
+        },
+        "coastal": {
+          "before": 0.00954081368946902,
+          "after": 0.004532425198704004,
+          "export": "outputs/morph-showcase/final-albums/coastal/scene-08/exports/varied-DSC_1337-78.jpg"
+        },
+        "soft-film": {
+          "before": 0.00833882719610731,
+          "after": 0.005879803095012903,
+          "export": "outputs/morph-showcase/final-albums/soft-film/scene-08/exports/varied-DSC_1337-78.jpg"
+        }
+      },
+      "expected_correction": {
+        "scale": 1.0229019852747503,
+        "offset": [
+          0.01803995180439125,
+          0.048030831960155076,
+          0.07965047648820835
+        ]
+      },
+      "estimated_correction": {
+        "scale": 1.0165371392980314,
+        "offset": [
+          0.015474361048732926,
+          0.04264332605472557,
+          0.07201169933766707
+        ]
+      }
+    },
+    {
+      "photo": "DSC_1339-79.jpg",
+      "source": "Morph/originals/DSC_1339-79.jpg",
+      "varied": "outputs/morph-showcase/varied-album/inputs/varied-DSC_1339-79.jpg",
+      "scene": "scene-08-tower",
+      "calibration_counterpart": false,
+      "status": "estimated",
+      "normalization_before": 0.021470457315444946,
+      "normalization_after": 0.005566355772316456,
+      "bias_before": [
+        0.018622061237692833,
+        0.019395021721720695,
+        0.017209596931934357
+      ],
+      "bias_after": [
+        -0.001635262742638588,
+        -0.0032039957586675882,
+        -0.004331132862716913
+      ],
+      "styles": {
+        "sunlit": {
+          "before": 0.020361734106627217,
+          "after": 0.006968253757804632,
+          "export": "outputs/morph-showcase/final-albums/sunlit/scene-08-tower/exports/varied-DSC_1339-79.jpg"
+        },
+        "coastal": {
+          "before": 0.021750002275603537,
+          "after": 0.0063331834971904755,
+          "export": "outputs/morph-showcase/final-albums/coastal/scene-08-tower/exports/varied-DSC_1339-79.jpg"
+        },
+        "soft-film": {
+          "before": 0.016349310750404772,
+          "after": 0.007160675711929798,
+          "export": "outputs/morph-showcase/final-albums/soft-film/scene-08-tower/exports/varied-DSC_1339-79.jpg"
+        }
+      },
+      "expected_correction": {
+        "scale": 0.9671699938007343,
+        "offset": [
+          -0.13540139229512071,
+          -0.11389717487645626,
+          -0.09341876479851127
+        ]
+      },
+      "estimated_correction": {
+        "scale": 0.9477496571601235,
+        "offset": [
+          -0.16062672625718313,
+          -0.13922043747579343,
+          -0.11583897224540168
+        ]
+      }
+    },
+    {
+      "photo": "DSC_1340-80.jpg",
+      "source": "Morph/originals/DSC_1340-80.jpg",
+      "varied": "outputs/morph-showcase/varied-album/inputs/varied-DSC_1340-80.jpg",
+      "scene": "scene-08-tower",
+      "calibration_counterpart": false,
+      "status": "estimated",
+      "normalization_before": 0.015167429111897945,
+      "normalization_after": 0.0028885563369840384,
+      "bias_before": [
+        0.0003258010547142476,
+        -0.013450829312205315,
+        -0.0192024577409029
+      ],
+      "bias_after": [
+        0.00042997326818294823,
+        0.0008500082767568529,
+        -2.4020238925004378e-05
+      ],
+      "styles": {
+        "sunlit": {
+          "before": 0.015205825412322915,
+          "after": 0.005139348097145557,
+          "export": "outputs/morph-showcase/final-albums/sunlit/scene-08-tower/exports/varied-DSC_1340-80.jpg"
+        },
+        "coastal": {
+          "before": 0.015444233100196112,
+          "after": 0.004669708199799061,
+          "export": "outputs/morph-showcase/final-albums/coastal/scene-08-tower/exports/varied-DSC_1340-80.jpg"
+        },
+        "soft-film": {
+          "before": 0.013501230431925318,
+          "after": 0.005902497563511133,
+          "export": "outputs/morph-showcase/final-albums/soft-film/scene-08-tower/exports/varied-DSC_1340-80.jpg"
+        }
+      },
+      "expected_correction": {
+        "scale": 1.0110757257612106,
+        "offset": [
+          0.006871640543707903,
+          0.08370606981916705,
+          0.11110340045245372
+        ]
+      },
+      "estimated_correction": {
+        "scale": 1.0119748371915702,
+        "offset": [
+          0.011273031321057924,
+          0.08691341154427684,
+          0.11039407367075225
+        ]
+      }
+    },
+    {
+      "photo": "DSC_1342-81.jpg",
+      "source": "Morph/originals/DSC_1342-81.jpg",
+      "varied": "outputs/morph-showcase/varied-album/inputs/varied-DSC_1342-81.jpg",
+      "scene": "scene-08-tower",
+      "calibration_counterpart": true,
+      "status": "estimated",
+      "normalization_before": 0.015755545347929,
+      "normalization_after": 0.0028822862077504396,
+      "bias_before": [
+        0.021497264504432678,
+        0.008146957494318485,
+        -0.008482093922793865
+      ],
+      "bias_after": [
+        0.0003490398230496794,
+        -0.00019467977108433843,
+        -0.0004554640909191221
+      ],
+      "styles": {
+        "sunlit": {
+          "before": 0.014657268730053083,
+          "after": 0.005033914465457201,
+          "export": "outputs/morph-showcase/final-albums/sunlit/scene-08-tower/exports/varied-DSC_1342-81.jpg"
+        },
+        "coastal": {
+          "before": 0.017447398734961178,
+          "after": 0.004544614348560572,
+          "export": "outputs/morph-showcase/final-albums/coastal/scene-08-tower/exports/varied-DSC_1342-81.jpg"
+        },
+        "soft-film": {
+          "before": 0.01194567791489731,
+          "after": 0.005730738863348961,
+          "export": "outputs/morph-showcase/final-albums/soft-film/scene-08-tower/exports/varied-DSC_1342-81.jpg"
+        }
+      },
+      "expected_correction": {
+        "scale": 1.0277111489368458,
+        "offset": [
+          -0.11349894700581828,
+          -0.029458720945990016,
+          0.05352761333255747
+        ]
+      },
+      "estimated_correction": {
+        "scale": 1.021736672370758,
+        "offset": [
+          -0.11494858559816531,
+          -0.035534291232011975,
+          0.04922565017826103
+        ]
+      }
+    },
+    {
+      "photo": "DSC_1344-82.jpg",
+      "source": "Morph/originals/DSC_1344-82.jpg",
+      "varied": "outputs/morph-showcase/varied-album/inputs/varied-DSC_1344-82.jpg",
+      "scene": "scene-08-tower",
+      "calibration_counterpart": false,
+      "status": "estimated",
+      "normalization_before": 0.020646272227168083,
+      "normalization_after": 0.0038610678166151047,
+      "bias_before": [
+        -0.007539971731603146,
+        -0.017665181308984756,
+        -0.02513991668820381
+      ],
+      "bias_after": [
+        0.0012920391745865345,
+        9.835558012127876e-05,
+        -0.0008230056264437735
+      ],
+      "styles": {
+        "sunlit": {
+          "before": 0.021035736037835557,
+          "after": 0.006124501116573811,
+          "export": "outputs/morph-showcase/final-albums/sunlit/scene-08-tower/exports/varied-DSC_1344-82.jpg"
+        },
+        "coastal": {
+          "before": 0.020542857221257142,
+          "after": 0.005646379664540291,
+          "export": "outputs/morph-showcase/final-albums/coastal/scene-08-tower/exports/varied-DSC_1344-82.jpg"
+        },
+        "soft-film": {
+          "before": 0.018460916541246777,
+          "after": 0.006730508059263229,
+          "export": "outputs/morph-showcase/final-albums/soft-film/scene-08-tower/exports/varied-DSC_1344-82.jpg"
+        }
+      },
+      "expected_correction": {
+        "scale": 1.019833199398425,
+        "offset": [
+          0.061692064079285985,
+          0.10458185608571062,
+          0.14524807266267997
+        ]
+      },
+      "estimated_correction": {
+        "scale": 1.0042969663061003,
+        "offset": [
+          0.059856859171467214,
+          0.10046985179425243,
+          0.13547638043880922
+        ]
+      }
+    },
+    {
+      "photo": "DSC_1360-83.jpg",
+      "source": "Morph/originals/DSC_1360-83.jpg",
+      "varied": "outputs/morph-showcase/varied-album/inputs/varied-DSC_1360-83.jpg",
+      "scene": "scene-09",
+      "calibration_counterpart": false,
+      "status": "estimated",
+      "normalization_before": 0.011605603620409966,
+      "normalization_after": 0.002768071601167321,
+      "bias_before": [
+        -0.010483099147677422,
+        -0.009585709311068058,
+        -0.006540077272802591
+      ],
+      "bias_after": [
+        -0.0003195219615008682,
+        -0.00021988818480167538,
+        0.00014035167987458408
+      ],
+      "styles": {
+        "sunlit": {
+          "before": 0.01278767814045878,
+          "after": 0.004983324091881514,
+          "export": "outputs/morph-showcase/final-albums/sunlit/scene-09/exports/varied-DSC_1360-83.jpg"
+        },
+        "coastal": {
+          "before": 0.012484709810125796,
+          "after": 0.004392474889755249,
+          "export": "outputs/morph-showcase/final-albums/coastal/scene-09/exports/varied-DSC_1360-83.jpg"
+        },
+        "soft-film": {
+          "before": 0.011993678560062377,
+          "after": 0.005970004480332136,
+          "export": "outputs/morph-showcase/final-albums/soft-film/scene-09/exports/varied-DSC_1360-83.jpg"
+        }
+      },
+      "expected_correction": {
+        "scale": 0.9810323351549292,
+        "offset": [
+          0.0708164254206783,
+          0.07181954018532641,
+          0.05813687155971811
+        ]
+      },
+      "estimated_correction": {
+        "scale": 0.9772456973491799,
+        "offset": [
+          0.06827321763991627,
+          0.06891951610317695,
+          0.0556824566069625
+        ]
+      }
+    },
+    {
+      "photo": "DSC_1362-84.jpg",
+      "source": "Morph/originals/DSC_1362-84.jpg",
+      "varied": "outputs/morph-showcase/varied-album/inputs/varied-DSC_1362-84.jpg",
+      "scene": "scene-09",
+      "calibration_counterpart": false,
+      "status": "estimated",
+      "normalization_before": 0.011112316511571407,
+      "normalization_after": 0.002843650756403804,
+      "bias_before": [
+        -0.010000013746321201,
+        -0.004156740382313728,
+        -0.004520793911069632
+      ],
+      "bias_after": [
+        -0.0003920454764738679,
+        -0.0005701413028873503,
+        -0.0005491753690876067
+      ],
+      "styles": {
+        "sunlit": {
+          "before": 0.012946566669369948,
+          "after": 0.004993336275219917,
+          "export": "outputs/morph-showcase/final-albums/sunlit/scene-09/exports/varied-DSC_1362-84.jpg"
+        },
+        "coastal": {
+          "before": 0.011505622823496287,
+          "after": 0.004529671277850866,
+          "export": "outputs/morph-showcase/final-albums/coastal/scene-09/exports/varied-DSC_1362-84.jpg"
+        },
+        "soft-film": {
+          "before": 0.012561314284378228,
+          "after": 0.006060148123651743,
+          "export": "outputs/morph-showcase/final-albums/soft-film/scene-09/exports/varied-DSC_1362-84.jpg"
+        }
+      },
+      "expected_correction": {
+        "scale": 0.9580948904620877,
+        "offset": [
+          0.06863861124546133,
+          0.03469370782926012,
+          0.030424426138097673
+        ]
+      },
+      "estimated_correction": {
+        "scale": 0.9568438166519468,
+        "offset": [
+          0.06695599459617722,
+          0.031451007081352025,
+          0.03045451687214332
+        ]
+      }
+    },
+    {
+      "photo": "DSC_1363-85.jpg",
+      "source": "Morph/originals/DSC_1363-85.jpg",
+      "varied": "outputs/morph-showcase/varied-album/inputs/varied-DSC_1363-85.jpg",
+      "scene": "scene-09",
+      "calibration_counterpart": true,
+      "status": "estimated",
+      "normalization_before": 0.02019885927438736,
+      "normalization_after": 0.0029772925190627575,
+      "bias_before": [
+        -0.024430792778730392,
+        -0.01476490031927824,
+        -0.008583922870457172
+      ],
+      "bias_after": [
+        -0.0007441791240125895,
+        -0.0005757112521678209,
+        -0.0003005374746862799
+      ],
+      "styles": {
+        "sunlit": {
+          "before": 0.020414861822820114,
+          "after": 0.005102937109768391,
+          "export": "outputs/morph-showcase/final-albums/sunlit/scene-09/exports/varied-DSC_1363-85.jpg"
+        },
+        "coastal": {
+          "before": 0.021386033902898657,
+          "after": 0.004782903473824263,
+          "export": "outputs/morph-showcase/final-albums/coastal/scene-09/exports/varied-DSC_1363-85.jpg"
+        },
+        "soft-film": {
+          "before": 0.018462611316787177,
+          "after": 0.006073398515582085,
+          "export": "outputs/morph-showcase/final-albums/soft-film/scene-09/exports/varied-DSC_1363-85.jpg"
+        }
+      },
+      "expected_correction": {
+        "scale": 0.9797229436940483,
+        "offset": [
+          0.16202505094080435,
+          0.10745759960792682,
+          0.07264764712702572
+        ]
+      },
+      "estimated_correction": {
+        "scale": 0.9758761936624761,
+        "offset": [
+          0.15721640313125407,
+          0.10333353489715737,
+          0.06850501178084785
+        ]
+      }
+    },
+    {
+      "photo": "DSC_1365-86.jpg",
+      "source": "Morph/originals/DSC_1365-86.jpg",
+      "varied": "outputs/morph-showcase/varied-album/inputs/varied-DSC_1365-86.jpg",
+      "scene": "scene-09",
+      "calibration_counterpart": false,
+      "status": "estimated",
+      "normalization_before": 0.013729576952755451,
+      "normalization_after": 0.002936250763013959,
+      "bias_before": [
+        0.01445611473172903,
+        0.0031535790767520666,
+        -0.012909389100968838
+      ],
+      "bias_after": [
+        -0.00025742905563674867,
+        -0.0005899292882531881,
+        -0.0004858864704146981
+      ],
+      "styles": {
+        "sunlit": {
+          "before": 0.012226234141139304,
+          "after": 0.005090935155749321,
+          "export": "outputs/morph-showcase/final-albums/sunlit/scene-09/exports/varied-DSC_1365-86.jpg"
+        },
+        "coastal": {
+          "before": 0.016002768781399546,
+          "after": 0.004879463464021683,
+          "export": "outputs/morph-showcase/final-albums/coastal/scene-09/exports/varied-DSC_1365-86.jpg"
+        },
+        "soft-film": {
+          "before": 0.01162992121082663,
+          "after": 0.006284660659730434,
+          "export": "outputs/morph-showcase/final-albums/soft-film/scene-09/exports/varied-DSC_1365-86.jpg"
+        }
+      },
+      "expected_correction": {
+        "scale": 0.9806506099051966,
+        "offset": [
+          -0.09459939510217005,
+          -0.021873116064347935,
+          0.09643640303928677
+        ]
+      },
+      "estimated_correction": {
+        "scale": 0.9802660116550944,
+        "offset": [
+          -0.09714738919834413,
+          -0.02597722074768203,
+          0.09473795995587196
+        ]
+      }
+    },
+    {
+      "photo": "DSC_1367-87.jpg",
+      "source": "Morph/originals/DSC_1367-87.jpg",
+      "varied": "outputs/morph-showcase/varied-album/inputs/varied-DSC_1367-87.jpg",
+      "scene": "scene-09",
+      "calibration_counterpart": false,
+      "status": "estimated",
+      "normalization_before": 0.015486868098378181,
+      "normalization_after": 0.0029207058250904083,
+      "bias_before": [
+        0.015746042132377625,
+        -0.0014150390634313226,
+        -0.016865557059645653
+      ],
+      "bias_after": [
+        -0.0007051387801766396,
+        -0.001066211611032486,
+        -0.000894834054633975
+      ],
+      "styles": {
+        "sunlit": {
+          "before": 0.013985485065177406,
+          "after": 0.005228993017226458,
+          "export": "outputs/morph-showcase/final-albums/sunlit/scene-09/exports/varied-DSC_1367-87.jpg"
+        },
+        "coastal": {
+          "before": 0.017483207859834603,
+          "after": 0.004835361614823341,
+          "export": "outputs/morph-showcase/final-albums/coastal/scene-09/exports/varied-DSC_1367-87.jpg"
+        },
+        "soft-film": {
+          "before": 0.012923541432144416,
+          "after": 0.006447932682931423,
+          "export": "outputs/morph-showcase/final-albums/soft-film/scene-09/exports/varied-DSC_1367-87.jpg"
+        }
+      },
+      "expected_correction": {
+        "scale": 0.9921517778516564,
+        "offset": [
+          -0.1012599339263423,
+          0.011956347575136375,
+          0.13734414282252327
+        ]
+      },
+      "estimated_correction": {
+        "scale": 0.9915409340905903,
+        "offset": [
+          -0.10917622271411469,
+          0.002414661939469344,
+          0.12488451683894579
+        ]
+      }
+    },
+    {
+      "photo": "DSC_1378-88.jpg",
+      "source": "Morph/originals/DSC_1378-88.jpg",
+      "varied": "outputs/morph-showcase/varied-album/inputs/varied-DSC_1378-88.jpg",
+      "scene": "scene-09",
+      "calibration_counterpart": false,
+      "status": "estimated",
+      "normalization_before": 0.04653676599264145,
+      "normalization_after": 0.00332854175940156,
+      "bias_before": [
+        -0.054783791303634644,
+        -0.0386589840054512,
+        -0.014007817953824997
+      ],
+      "bias_after": [
+        -0.0009791258489713073,
+        -0.000737955269869417,
+        -0.0010794836562126875
+      ],
+      "styles": {
+        "sunlit": {
+          "before": 0.04617191849729871,
+          "after": 0.0058287656866014,
+          "export": "outputs/morph-showcase/final-albums/sunlit/scene-09/exports/varied-DSC_1378-88.jpg"
+        },
+        "coastal": {
+          "before": 0.05094654454057528,
+          "after": 0.004739282187074423,
+          "export": "outputs/morph-showcase/final-albums/coastal/scene-09/exports/varied-DSC_1378-88.jpg"
+        },
+        "soft-film": {
+          "before": 0.04054708274187711,
+          "after": 0.006592344958335161,
+          "export": "outputs/morph-showcase/final-albums/soft-film/scene-09/exports/varied-DSC_1378-88.jpg"
+        }
+      },
+      "expected_correction": {
+        "scale": 0.9247245692596753,
+        "offset": [
+          0.344740844543923,
+          0.2672919648113439,
+          0.11867119707910624
+        ]
+      },
+      "estimated_correction": {
+        "scale": 0.925876481420133,
+        "offset": [
+          0.3378597791120115,
+          0.26338483220455483,
+          0.10657645377520641
+        ]
+      }
+    }
+  ]
+}

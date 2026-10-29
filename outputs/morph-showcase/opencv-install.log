@@ -1,0 +1,10 @@
+Collecting opencv-python-headless
+  Downloading opencv_python_headless-5.0.0.93-cp37-abi3-macosx_13_0_arm64.whl.metadata (19 kB)
+Requirement already satisfied: numpy>=2 in ./.venv/lib/python3.14/site-packages (from opencv-python-headless) (2.5.4)
+Downloading opencv_python_headless-5.0.0.93-cp37-abi3-macosx_13_0_arm64.whl (48.3 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 48.3/48.3 MB 23.6 MB/s  0:00:02
+Installing collected packages: opencv-python-headless
+Successfully installed opencv-python-headless-5.0.0.93
+
+[notice] A new release of pip is available: 26.2.1 -> 26.2.2
+[notice] To update, run: .venv/bin/python -m pip install --upgrade pip

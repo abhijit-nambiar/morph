@@ -1,0 +1,214 @@
+{
+  "scope": "Local in-app Chromium browser checks at default desktop 1280x720 and a temporary 390x844 viewport. DOM states, screenshots and manual visual inspection; not device-hardware or cross-browser validation.",
+  "checks": [
+    {
+      "check": "style coastal",
+      "pass": true,
+      "state": {
+        "gallery": "88 photographs · Coastal cool",
+        "hero": "assets/DSC_0995-22-coastal-result.jpg",
+        "selected": "coastal"
+      }
+    },
+    {
+      "check": "style soft-film",
+      "pass": true,
+      "state": {
+        "gallery": "88 photographs · Soft film",
+        "hero": "assets/DSC_0995-22-soft-film-result.jpg",
+        "selected": "soft-film"
+      }
+    },
+    {
+      "check": "style sunlit",
+      "pass": true,
+      "state": {
+        "gallery": "88 photographs · Sunlit editorial",
+        "hero": "assets/DSC_0995-22-sunlit-result.jpg",
+        "selected": "sunlit"
+      }
+    },
+    {
+      "check": "comparison slider keyboard",
+      "pass": true,
+      "state": {
+        "split": "100%",
+        "value": "100"
+      }
+    },
+    {
+      "check": "scene transfer selector",
+      "pass": true,
+      "state": {
+        "images": [
+          "assets/DSC_0947-13-varied.jpg",
+          "assets/DSC_0947-13-sunlit-result.jpg",
+          "assets/DSC_0958-15-varied.jpg",
+          "assets/DSC_0958-15-sunlit-result.jpg",
+          "assets/DSC_0987-19-varied.jpg",
+          "assets/DSC_0987-19-sunlit-result.jpg"
+        ],
+        "photos": [
+          "DSC_0947-13.jpgTransferred",
+          "DSC_0958-15.jpgFitting reference",
+          "DSC_0987-19.jpgTransferred"
+        ],
+        "scene": "scene-02-lawn"
+      }
+    },
+    {
+      "check": "gallery scene filter",
+      "pass": true,
+      "state": {
+        "count": 6,
+        "label": "6 photographs · Sunlit editorial"
+      }
+    },
+    {
+      "check": "inspector Original",
+      "pass": true,
+      "state": {
+        "open": true,
+        "selected": "Original",
+        "src": "assets/DSC_0947-13-source.jpg"
+      }
+    },
+    {
+      "check": "inspector Varied input",
+      "pass": true,
+      "state": {
+        "open": true,
+        "selected": "Varied input",
+        "src": "assets/DSC_0947-13-varied.jpg"
+      }
+    },
+    {
+      "check": "inspector Normalized",
+      "pass": true,
+      "state": {
+        "open": true,
+        "selected": "Normalized",
+        "src": "assets/DSC_0947-13-normalized.jpg"
+      }
+    },
+    {
+      "check": "inspector Styled target",
+      "pass": true,
+      "state": {
+        "open": true,
+        "selected": "Styled target",
+        "src": "assets/DSC_0947-13-sunlit-target.jpg"
+      }
+    },
+    {
+      "check": "inspector Final export",
+      "pass": true,
+      "state": {
+        "open": true,
+        "selected": "Final export",
+        "src": "assets/DSC_0947-13-sunlit-result.jpg"
+      }
+    },
+    {
+      "check": "next photo",
+      "pass": true,
+      "state": "DSC_0948-14.jpg · Campanile lawn"
+    },
+    {
+      "check": "previous photo",
+      "pass": true,
+      "state": "DSC_0947-13.jpg · Campanile lawn"
+    },
+    {
+      "check": "full-resolution JPEG reachable from inspector href",
+      "pass": true,
+      "state": {
+        "height": 6048,
+        "loaded": true,
+        "title": "varied-DSC_0947-13.jpg (4032×6048)",
+        "width": 4032
+      }
+    },
+    {
+      "check": "inspector Escape closes",
+      "pass": true
+    },
+    {
+      "check": "presentation section controls and Escape",
+      "pass": true,
+      "state": {
+        "startPresentation": {
+          "active": true,
+          "position": "7 / 7"
+        },
+        "backPresentation": "6 / 7",
+        "forwardPresentation": "7 / 7",
+        "endPresentation": false
+      }
+    },
+    {
+      "check": "390px layout without horizontal overflow",
+      "pass": true,
+      "state": {
+        "heroColumns": "328.203px",
+        "scrollWidth": 375,
+        "width": 390
+      }
+    },
+    {
+      "check": "presentation keyboard arrows",
+      "pass": true,
+      "state": {
+        "rightPosition": "6 / 7",
+        "leftPosition": "5 / 7"
+      }
+    },
+    {
+      "check": "mobile inspector fits and loads",
+      "pass": true,
+      "state": {
+        "dialog": {
+          "bottom": 787.9140625,
+          "height": 731.8359375,
+          "left": 18,
+          "right": 357,
+          "top": 56.078125,
+          "width": 339,
+          "x": 18,
+          "y": 56.078125
+        },
+        "imageLoaded": true,
+        "imageWidth": 1067,
+        "width": 390
+      }
+    },
+    {
+      "check": "desktop layout and loaded images",
+      "pass": true,
+      "state": {
+        "brokenImages": [],
+        "coverChildren": 2,
+        "heroLoaded": true,
+        "overflow": false,
+        "viewport": {
+          "height": 720,
+          "width": 1280
+        }
+      }
+    }
+  ],
+  "problems": 0,
+  "console": [],
+  "notes": [
+    "Fixed the missing hero text-column closing tag in both template and generated HTML, then repeated layout checks.",
+    "Inspector full-resolution href opened directly and decoded at 4032x6048. The in-app browser did not expose a new tab from the target-blank click.",
+    "All dynamic preview and full-resolution paths are also checked by the independent artifact verifier.",
+    "Viewed one exported preview per lighting group in all three styles, the largest residual example, and selected strongest clamping cases. Full-resolution pixels were not visually inspected for every export."
+  ],
+  "screenshots": [
+    "qa/desktop-cover.jpg",
+    "qa/desktop-inspector.jpg",
+    "qa/mobile-cover.jpg",
+    "qa/mobile-inspector.jpg"
+  ]
+}

@@ -1,0 +1,44 @@
+{
+  "sunlit": {
+    "name": "Sunlit editorial",
+    "description": "Warm light, open shadows, restrained blues.",
+    "prompt": "Warm light, open shadows, restrained blues",
+    "settings": {
+      "tone_exposure": 0.22,
+      "tone_contrast": 0.24,
+      "tone_shadows": 0.3,
+      "tone_highlights": -0.26,
+      "tone_temperature": 0.22,
+      "cool_saturation": -0.28,
+      "warm_saturation": -0.08
+    }
+  },
+  "coastal": {
+    "name": "Coastal cool",
+    "description": "Cooler color, crisp contrast and deep blue skies.",
+    "prompt": "Cool color, crisp contrast, vivid blues",
+    "settings": {
+      "tone_exposure": 0.08,
+      "tone_contrast": 0.38,
+      "tone_shadows": 0.12,
+      "tone_highlights": -0.22,
+      "tone_temperature": -0.22,
+      "cool_saturation": 0.18,
+      "warm_saturation": -0.12
+    }
+  },
+  "soft-film": {
+    "name": "Soft film",
+    "description": "Soft contrast, lifted shadows and muted color.",
+    "prompt": "Soft contrast, lifted shadows, muted color",
+    "settings": {
+      "tone_exposure": 0.12,
+      "tone_contrast": -0.4,
+      "tone_shadows": 0.36,
+      "tone_highlights": -0.32,
+      "tone_temperature": 0.07,
+      "cool_saturation": -0.35,
+      "warm_saturation": -0.22
+    }
+  }
+}

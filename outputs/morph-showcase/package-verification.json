@@ -1,0 +1,7 @@
+{
+  "files": 80,
+  "bytes": 173179,
+  "sha256": "0157e5c62856ff6e8718503c426effc4405ae24bf53991f6d42548684ed7fa29",
+  "problems": 0,
+  "scope": "Code-only ZIP: CRC checked; every entry matches current source, including relative-path replay and walkthrough evidence handling. Hidden files and Python caches excluded."
+}

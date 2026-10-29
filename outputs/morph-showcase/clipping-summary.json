@@ -1,0 +1,23 @@
+{
+  "scope": "Sampled pre-JPEG heuristic diagnostics from replay. Clamping may occur; flags do not establish photographic quality.",
+  "styles": [
+    {
+      "style": "coastal",
+      "photos": 102,
+      "near_limit_flags": [],
+      "maximum_sampled_out_of_gamut_fraction": 0.15076541986623732
+    },
+    {
+      "style": "sunlit",
+      "photos": 102,
+      "near_limit_flags": [],
+      "maximum_sampled_out_of_gamut_fraction": 0.09748327966311618
+    },
+    {
+      "style": "soft-film",
+      "photos": 102,
+      "near_limit_flags": [],
+      "maximum_sampled_out_of_gamut_fraction": 0.1298290810007431
+    }
+  ]
+}

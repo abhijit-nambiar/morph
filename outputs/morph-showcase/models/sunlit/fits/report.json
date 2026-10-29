@@ -1,0 +1,201 @@
+{
+  "mode": "preview",
+  "target_engine": "file",
+  "prompt": null,
+  "interpreted_prompt": null,
+  "renderer": "cubic",
+  "regularization": 1e-06,
+  "strength": 1.0,
+  "scenes": [
+    {
+      "scene": "scene-01",
+      "representative": "Morph/originals/DSC_0906-4.jpg",
+      "photos": 12,
+      "sample_photos": [],
+      "metrics": {
+        "sampled_pixels": 30000,
+        "initial_mse": 0.0032003675364560688,
+        "fit_mse": 1.9895416673337765e-05,
+        "rmse": 0.0044604278576542145,
+        "regularization": 1e-06
+      }
+    },
+    {
+      "scene": "scene-02-lawn",
+      "representative": "Morph/originals/DSC_0958-15.jpg",
+      "photos": 6,
+      "sample_photos": [],
+      "metrics": {
+        "sampled_pixels": 30000,
+        "initial_mse": 0.004304285896474595,
+        "fit_mse": 2.661365224626137e-05,
+        "rmse": 0.005158842142018049,
+        "regularization": 1e-06
+      }
+    },
+    {
+      "scene": "scene-02",
+      "representative": "Morph/originals/DSC_0995-22.jpg",
+      "photos": 7,
+      "sample_photos": [],
+      "metrics": {
+        "sampled_pixels": 30000,
+        "initial_mse": 0.0036752887022794894,
+        "fit_mse": 1.781766478452052e-05,
+        "rmse": 0.004221097580549462,
+        "regularization": 1e-06
+      }
+    },
+    {
+      "scene": "scene-03",
+      "representative": "Morph/originals/DSC_1037-31.jpg",
+      "photos": 7,
+      "sample_photos": [],
+      "metrics": {
+        "sampled_pixels": 30000,
+        "initial_mse": 0.004231601634522684,
+        "fit_mse": 2.157381968836809e-05,
+        "rmse": 0.004644762608397558,
+        "regularization": 1e-06
+      }
+    },
+    {
+      "scene": "scene-04",
+      "representative": "Morph/originals/DSC_1054-33.jpg",
+      "photos": 2,
+      "sample_photos": [],
+      "metrics": {
+        "sampled_pixels": 30000,
+        "initial_mse": 0.004377823665729529,
+        "fit_mse": 2.596079434314395e-05,
+        "rmse": 0.0050951736322861416,
+        "regularization": 1e-06
+      }
+    },
+    {
+      "scene": "scene-05",
+      "representative": "Morph/originals/DSC_1111-45.jpg",
+      "photos": 9,
+      "sample_photos": [],
+      "metrics": {
+        "sampled_pixels": 30000,
+        "initial_mse": 0.004325218201661002,
+        "fit_mse": 2.1359562770042793e-05,
+        "rmse": 0.004621640701097695,
+        "regularization": 1e-06
+      }
+    },
+    {
+      "scene": "scene-05-tower",
+      "representative": "Morph/originals/DSC_1105-42.jpg",
+      "photos": 5,
+      "sample_photos": [],
+      "metrics": {
+        "sampled_pixels": 30000,
+        "initial_mse": 0.007661877446025341,
+        "fit_mse": 1.621016491552393e-05,
+        "rmse": 0.004026184908262899,
+        "regularization": 1e-06
+      }
+    },
+    {
+      "scene": "scene-06-walk",
+      "representative": "Morph/originals/DSC_1264-51.jpg",
+      "photos": 5,
+      "sample_photos": [],
+      "metrics": {
+        "sampled_pixels": 30000,
+        "initial_mse": 0.00496808677848402,
+        "fit_mse": 1.600175915049622e-05,
+        "rmse": 0.0040002198877681985,
+        "regularization": 1e-06
+      }
+    },
+    {
+      "scene": "scene-06-shade",
+      "representative": "Morph/originals/DSC_1273-54.jpg",
+      "photos": 1,
+      "sample_photos": [],
+      "metrics": {
+        "sampled_pixels": 30000,
+        "initial_mse": 0.003242336101207507,
+        "fit_mse": 2.336055763540017e-05,
+        "rmse": 0.00483327607688617,
+        "regularization": 1e-06
+      }
+    },
+    {
+      "scene": "scene-06",
+      "representative": "Morph/originals/DSC_1286-58.jpg",
+      "photos": 11,
+      "sample_photos": [],
+      "metrics": {
+        "sampled_pixels": 30000,
+        "initial_mse": 0.002521579422784447,
+        "fit_mse": 2.6445806546325785e-05,
+        "rmse": 0.005142548643068511,
+        "regularization": 1e-06
+      }
+    },
+    {
+      "scene": "scene-07",
+      "representative": "Morph/originals/DSC_1320-70.jpg",
+      "photos": 7,
+      "sample_photos": [],
+      "metrics": {
+        "sampled_pixels": 30000,
+        "initial_mse": 0.003360748532088812,
+        "fit_mse": 1.5412952963160292e-05,
+        "rmse": 0.003925933387509305,
+        "regularization": 1e-06
+      }
+    },
+    {
+      "scene": "scene-08",
+      "representative": "Morph/originals/DSC_1334-76.jpg",
+      "photos": 6,
+      "sample_photos": [],
+      "metrics": {
+        "sampled_pixels": 30000,
+        "initial_mse": 0.004102275262525671,
+        "fit_mse": 1.936039431837401e-05,
+        "rmse": 0.004400044808677976,
+        "regularization": 1e-06
+      }
+    },
+    {
+      "scene": "scene-08-tower",
+      "representative": "Morph/originals/DSC_1342-81.jpg",
+      "photos": 4,
+      "sample_photos": [],
+      "metrics": {
+        "sampled_pixels": 30000,
+        "initial_mse": 0.005668646980368611,
+        "fit_mse": 1.918632429886105e-05,
+        "rmse": 0.004380219663311539,
+        "regularization": 1e-06
+      }
+    },
+    {
+      "scene": "scene-09",
+      "representative": "Morph/originals/DSC_1363-85.jpg",
+      "photos": 6,
+      "sample_photos": [],
+      "metrics": {
+        "sampled_pixels": 30000,
+        "initial_mse": 0.0031599550457184294,
+        "fit_mse": 1.7108587511117863e-05,
+        "rmse": 0.004136252834525214,
+        "regularization": 1e-06
+      }
+    }
+  ],
+  "export_count": 0,
+  "sample_count": 0,
+  "clipping_flags": null,
+  "transfer_check": {
+    "enabled": false,
+    "other_photos_evaluated": 0,
+    "worse_than_source": 0
+  }
+}

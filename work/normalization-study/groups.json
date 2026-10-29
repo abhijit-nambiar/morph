@@ -1,0 +1,170 @@
+{
+  "groups": [
+    {
+      "id": "scene-01",
+      "representative": "/Users/abhijit.nambiar/morph/work/normalization-study/DSC_0906-4.png",
+      "photos": [
+        "/Users/abhijit.nambiar/morph/work/normalization-study/DSC_0901-1.png",
+        "/Users/abhijit.nambiar/morph/work/normalization-study/DSC_0904-2.png",
+        "/Users/abhijit.nambiar/morph/work/normalization-study/DSC_0905-3.png",
+        "/Users/abhijit.nambiar/morph/work/normalization-study/DSC_0906-4.png",
+        "/Users/abhijit.nambiar/morph/work/normalization-study/DSC_0914-5.png",
+        "/Users/abhijit.nambiar/morph/work/normalization-study/DSC_0916-6.png",
+        "/Users/abhijit.nambiar/morph/work/normalization-study/DSC_0919-7.png",
+        "/Users/abhijit.nambiar/morph/work/normalization-study/DSC_0921-8.png",
+        "/Users/abhijit.nambiar/morph/work/normalization-study/DSC_0925-9.png",
+        "/Users/abhijit.nambiar/morph/work/normalization-study/DSC_0928-10.png",
+        "/Users/abhijit.nambiar/morph/work/normalization-study/DSC_0930-11.png",
+        "/Users/abhijit.nambiar/morph/work/normalization-study/DSC_0935-12.png"
+      ]
+    },
+    {
+      "id": "scene-02-lawn",
+      "representative": "/Users/abhijit.nambiar/morph/work/normalization-study/DSC_0958-15.png",
+      "photos": [
+        "/Users/abhijit.nambiar/morph/work/normalization-study/DSC_0947-13.png",
+        "/Users/abhijit.nambiar/morph/work/normalization-study/DSC_0948-14.png",
+        "/Users/abhijit.nambiar/morph/work/normalization-study/DSC_0958-15.png",
+        "/Users/abhijit.nambiar/morph/work/normalization-study/DSC_0970-17.png",
+        "/Users/abhijit.nambiar/morph/work/normalization-study/DSC_0974-18.png",
+        "/Users/abhijit.nambiar/morph/work/normalization-study/DSC_0987-19.png"
+      ]
+    },
+    {
+      "id": "scene-02",
+      "representative": "/Users/abhijit.nambiar/morph/work/normalization-study/DSC_0995-22.png",
+      "photos": [
+        "/Users/abhijit.nambiar/morph/work/normalization-study/DSC_0965-16.png",
+        "/Users/abhijit.nambiar/morph/work/normalization-study/DSC_0990-20.png",
+        "/Users/abhijit.nambiar/morph/work/normalization-study/DSC_0993-21.png",
+        "/Users/abhijit.nambiar/morph/work/normalization-study/DSC_0995-22.png",
+        "/Users/abhijit.nambiar/morph/work/normalization-study/DSC_0997-23.png",
+        "/Users/abhijit.nambiar/morph/work/normalization-study/DSC_0998-24.png",
+        "/Users/abhijit.nambiar/morph/work/normalization-study/DSC_1012-25.png"
+      ]
+    },
+    {
+      "id": "scene-03",
+      "representative": "/Users/abhijit.nambiar/morph/work/normalization-study/DSC_1037-31.png",
+      "photos": [
+        "/Users/abhijit.nambiar/morph/work/normalization-study/DSC_1021-26.png",
+        "/Users/abhijit.nambiar/morph/work/normalization-study/DSC_1026-27.png",
+        "/Users/abhijit.nambiar/morph/work/normalization-study/DSC_1028-28.png",
+        "/Users/abhijit.nambiar/morph/work/normalization-study/DSC_1030-29.png",
+        "/Users/abhijit.nambiar/morph/work/normalization-study/DSC_1033-30.png",
+        "/Users/abhijit.nambiar/morph/work/normalization-study/DSC_1037-31.png",
+        "/Users/abhijit.nambiar/morph/work/normalization-study/DSC_1038-32.png"
+      ]
+    },
+    {
+      "id": "scene-04",
+      "representative": "/Users/abhijit.nambiar/morph/work/normalization-study/DSC_1054-33.png",
+      "photos": [
+        "/Users/abhijit.nambiar/morph/work/normalization-study/DSC_1054-33.png",
+        "/Users/abhijit.nambiar/morph/work/normalization-study/DSC_1059-34.png"
+      ]
+    },
+    {
+      "id": "scene-05",
+      "representative": "/Users/abhijit.nambiar/morph/work/normalization-study/DSC_1111-45.png",
+      "photos": [
+        "/Users/abhijit.nambiar/morph/work/normalization-study/DSC_1070-35.png",
+        "/Users/abhijit.nambiar/morph/work/normalization-study/DSC_1074-36.png",
+        "/Users/abhijit.nambiar/morph/work/normalization-study/DSC_1083-37.png",
+        "/Users/abhijit.nambiar/morph/work/normalization-study/DSC_1096-40.png",
+        "/Users/abhijit.nambiar/morph/work/normalization-study/DSC_1100-41.png",
+        "/Users/abhijit.nambiar/morph/work/normalization-study/DSC_1106-43.png",
+        "/Users/abhijit.nambiar/morph/work/normalization-study/DSC_1109-44.png",
+        "/Users/abhijit.nambiar/morph/work/normalization-study/DSC_1111-45.png",
+        "/Users/abhijit.nambiar/morph/work/normalization-study/DSC_1118-48.png"
+      ]
+    },
+    {
+      "id": "scene-05-tower",
+      "representative": "/Users/abhijit.nambiar/morph/work/normalization-study/DSC_1105-42.png",
+      "photos": [
+        "/Users/abhijit.nambiar/morph/work/normalization-study/DSC_1088-38.png",
+        "/Users/abhijit.nambiar/morph/work/normalization-study/DSC_1090-39.png",
+        "/Users/abhijit.nambiar/morph/work/normalization-study/DSC_1105-42.png",
+        "/Users/abhijit.nambiar/morph/work/normalization-study/DSC_1114-46.png",
+        "/Users/abhijit.nambiar/morph/work/normalization-study/DSC_1116-47.png"
+      ]
+    },
+    {
+      "id": "scene-06-walk",
+      "representative": "/Users/abhijit.nambiar/morph/work/normalization-study/DSC_1264-51.png",
+      "photos": [
+        "/Users/abhijit.nambiar/morph/work/normalization-study/DSC_1259-49.png",
+        "/Users/abhijit.nambiar/morph/work/normalization-study/DSC_1261-50.png",
+        "/Users/abhijit.nambiar/morph/work/normalization-study/DSC_1264-51.png",
+        "/Users/abhijit.nambiar/morph/work/normalization-study/DSC_1265-52.png",
+        "/Users/abhijit.nambiar/morph/work/normalization-study/DSC_1268-53.png",
+        "/Users/abhijit.nambiar/morph/work/normalization-study/DSC_1273-54.png"
+      ]
+    },
+    {
+      "id": "scene-06",
+      "representative": "/Users/abhijit.nambiar/morph/work/normalization-study/DSC_1286-58.png",
+      "photos": [
+        "/Users/abhijit.nambiar/morph/work/normalization-study/DSC_1280-55.png",
+        "/Users/abhijit.nambiar/morph/work/normalization-study/DSC_1282-56.png",
+        "/Users/abhijit.nambiar/morph/work/normalization-study/DSC_1284-57.png",
+        "/Users/abhijit.nambiar/morph/work/normalization-study/DSC_1286-58.png",
+        "/Users/abhijit.nambiar/morph/work/normalization-study/DSC_1288-59.png",
+        "/Users/abhijit.nambiar/morph/work/normalization-study/DSC_1291-60.png",
+        "/Users/abhijit.nambiar/morph/work/normalization-study/DSC_1292-61.png",
+        "/Users/abhijit.nambiar/morph/work/normalization-study/DSC_1293-62.png",
+        "/Users/abhijit.nambiar/morph/work/normalization-study/DSC_1300-63.png",
+        "/Users/abhijit.nambiar/morph/work/normalization-study/DSC_1302-64.png",
+        "/Users/abhijit.nambiar/morph/work/normalization-study/DSC_1304-65.png"
+      ]
+    },
+    {
+      "id": "scene-07",
+      "representative": "/Users/abhijit.nambiar/morph/work/normalization-study/DSC_1320-70.png",
+      "photos": [
+        "/Users/abhijit.nambiar/morph/work/normalization-study/DSC_1308-66.png",
+        "/Users/abhijit.nambiar/morph/work/normalization-study/DSC_1310-67.png",
+        "/Users/abhijit.nambiar/morph/work/normalization-study/DSC_1312-68.png",
+        "/Users/abhijit.nambiar/morph/work/normalization-study/DSC_1315-69.png",
+        "/Users/abhijit.nambiar/morph/work/normalization-study/DSC_1320-70.png",
+        "/Users/abhijit.nambiar/morph/work/normalization-study/DSC_1322-71.png",
+        "/Users/abhijit.nambiar/morph/work/normalization-study/DSC_1324-72.png"
+      ]
+    },
+    {
+      "id": "scene-08",
+      "representative": "/Users/abhijit.nambiar/morph/work/normalization-study/DSC_1334-76.png",
+      "photos": [
+        "/Users/abhijit.nambiar/morph/work/normalization-study/DSC_1326-73.png",
+        "/Users/abhijit.nambiar/morph/work/normalization-study/DSC_1329-74.png",
+        "/Users/abhijit.nambiar/morph/work/normalization-study/DSC_1330-75.png",
+        "/Users/abhijit.nambiar/morph/work/normalization-study/DSC_1334-76.png",
+        "/Users/abhijit.nambiar/morph/work/normalization-study/DSC_1335-77.png",
+        "/Users/abhijit.nambiar/morph/work/normalization-study/DSC_1337-78.png"
+      ]
+    },
+    {
+      "id": "scene-08-tower",
+      "representative": "/Users/abhijit.nambiar/morph/work/normalization-study/DSC_1342-81.png",
+      "photos": [
+        "/Users/abhijit.nambiar/morph/work/normalization-study/DSC_1339-79.png",
+        "/Users/abhijit.nambiar/morph/work/normalization-study/DSC_1340-80.png",
+        "/Users/abhijit.nambiar/morph/work/normalization-study/DSC_1342-81.png",
+        "/Users/abhijit.nambiar/morph/work/normalization-study/DSC_1344-82.png"
+      ]
+    },
+    {
+      "id": "scene-09",
+      "representative": "/Users/abhijit.nambiar/morph/work/normalization-study/DSC_1363-85.png",
+      "photos": [
+        "/Users/abhijit.nambiar/morph/work/normalization-study/DSC_1360-83.png",
+        "/Users/abhijit.nambiar/morph/work/normalization-study/DSC_1362-84.png",
+        "/Users/abhijit.nambiar/morph/work/normalization-study/DSC_1363-85.png",
+        "/Users/abhijit.nambiar/morph/work/normalization-study/DSC_1365-86.png",
+        "/Users/abhijit.nambiar/morph/work/normalization-study/DSC_1367-87.png",
+        "/Users/abhijit.nambiar/morph/work/normalization-study/DSC_1378-88.png"
+      ]
+    }
+  ]
+}

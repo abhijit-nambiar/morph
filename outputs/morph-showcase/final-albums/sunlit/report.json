@@ -1,0 +1,121 @@
+{
+  "mode": "album",
+  "source_fits": "outputs/morph-showcase/models/sunlit/fits",
+  "scenes": [
+    {
+      "scene": "scene-01",
+      "photos": 13,
+      "sample_photos": null,
+      "renderer": "cubic",
+      "source_validation": "changed-inputs-allowed",
+      "strength": 1.0
+    },
+    {
+      "scene": "scene-02-lawn",
+      "photos": 7,
+      "sample_photos": null,
+      "renderer": "cubic",
+      "source_validation": "changed-inputs-allowed",
+      "strength": 1.0
+    },
+    {
+      "scene": "scene-02",
+      "photos": 8,
+      "sample_photos": null,
+      "renderer": "cubic",
+      "source_validation": "changed-inputs-allowed",
+      "strength": 1.0
+    },
+    {
+      "scene": "scene-03",
+      "photos": 8,
+      "sample_photos": null,
+      "renderer": "cubic",
+      "source_validation": "changed-inputs-allowed",
+      "strength": 1.0
+    },
+    {
+      "scene": "scene-04",
+      "photos": 3,
+      "sample_photos": null,
+      "renderer": "cubic",
+      "source_validation": "changed-inputs-allowed",
+      "strength": 1.0
+    },
+    {
+      "scene": "scene-05",
+      "photos": 10,
+      "sample_photos": null,
+      "renderer": "cubic",
+      "source_validation": "changed-inputs-allowed",
+      "strength": 1.0
+    },
+    {
+      "scene": "scene-05-tower",
+      "photos": 6,
+      "sample_photos": null,
+      "renderer": "cubic",
+      "source_validation": "changed-inputs-allowed",
+      "strength": 1.0
+    },
+    {
+      "scene": "scene-06-walk",
+      "photos": 6,
+      "sample_photos": null,
+      "renderer": "cubic",
+      "source_validation": "changed-inputs-allowed",
+      "strength": 1.0
+    },
+    {
+      "scene": "scene-06-shade",
+      "photos": 2,
+      "sample_photos": null,
+      "renderer": "cubic",
+      "source_validation": "changed-inputs-allowed",
+      "strength": 1.0
+    },
+    {
+      "scene": "scene-06",
+      "photos": 12,
+      "sample_photos": null,
+      "renderer": "cubic",
+      "source_validation": "changed-inputs-allowed",
+      "strength": 1.0
+    },
+    {
+      "scene": "scene-07",
+      "photos": 8,
+      "sample_photos": null,
+      "renderer": "cubic",
+      "source_validation": "changed-inputs-allowed",
+      "strength": 1.0
+    },
+    {
+      "scene": "scene-08",
+      "photos": 7,
+      "sample_photos": null,
+      "renderer": "cubic",
+      "source_validation": "changed-inputs-allowed",
+      "strength": 1.0
+    },
+    {
+      "scene": "scene-08-tower",
+      "photos": 5,
+      "sample_photos": null,
+      "renderer": "cubic",
+      "source_validation": "changed-inputs-allowed",
+      "strength": 1.0
+    },
+    {
+      "scene": "scene-09",
+      "photos": 7,
+      "sample_photos": null,
+      "renderer": "cubic",
+      "source_validation": "changed-inputs-allowed",
+      "strength": 1.0
+    }
+  ],
+  "export_count": 102,
+  "sample_count": 0,
+  "clipping_flags": 0
+}

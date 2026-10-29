@@ -1,0 +1,9 @@
+{
+  "scope": "Scene coverage, all dynamic preview images, all full-resolution links, static HTML links and local portability checked. Browser interactions and visual layout require separate QA.",
+  "photos": 88,
+  "preview_images": 886,
+  "full_resolution_links": 264,
+  "separate_local_exports": 1,
+  "files_checked": 1332,
+  "problems": 0
+}

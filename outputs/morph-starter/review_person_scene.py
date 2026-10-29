@@ -8,8 +8,8 @@ from PIL import Image,ImageDraw
 import morph
 
 
-def main():
- p=argparse.ArgumentParser(description=__doc__);p.add_argument('report');p.add_argument('--out',required=True);p.add_argument('--per-page',type=int,default=5);a=p.parse_args()
+def build_review(report_path,out,per_page=5):
+ a=argparse.Namespace(report=report_path,out=out,per_page=per_page)
  if not 1<=a.per_page<=10:raise ValueError('per-page must be 1–10')
  report=json.loads(Path(a.report).read_text());rows=report['photos']
  if not rows:raise ValueError('Report contains no photos')
@@ -20,6 +20,7 @@ def main():
   seen.add(source)
   with Image.open(source) as original,Image.open(output) as edited:
    if morph.oriented_size(original)!=morph.oriented_size(edited):raise ValueError('Export dimensions differ from source: '+source)
+   edited.load()
    has_icc=bool(edited.info.get('icc_profile'))
   inputs.extend([source,output]);entries.append({'source':source,'output':output,'review_flag':bool(row.get('review_flag')),'icc_profile_present':has_icc})
  out=Path(a.out);pages=math.ceil(len(entries)/a.per_page);outputs=[out/'index.html',out/'index.json']+[out/f'comparison-{i+1:02d}.jpg' for i in range(pages)];morph.protect_inputs(inputs,outputs);morph.protect_existing(outputs,False)
@@ -37,4 +38,8 @@ def main():
    href=html.escape(quote(os.path.relpath(row['output'],out.resolve()),safe='/'),quote=True);label=html.escape(Path(row['output']).name);parts.append(f'<li><a href="{href}">{label} — full-resolution export</a></li>')
   parts.append('</ul></article>')
  parts.append('</html>');(out/'index.html').write_text(''.join(parts),encoding='utf-8');morph.dump({'scope':'Thumbnail comparisons and links to full-resolution scene exports; dimensions checked, ICC presence reported. Does not verify perceptual quality, correct masks, or clipping.','scene':report['scene'],'photos':entries},out/'index.json');print(len(entries),'photos reviewed; missing ICC:',sum(not e['icc_profile_present'] for e in entries))
+def main():
+ p=argparse.ArgumentParser(description=__doc__);p.add_argument('report');p.add_argument('--out',required=True);p.add_argument('--per-page',type=int,default=5);a=p.parse_args()
+ build_review(a.report,a.out,a.per_page)
+
 if __name__=='__main__':main()

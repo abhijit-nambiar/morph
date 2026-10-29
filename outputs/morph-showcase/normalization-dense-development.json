@@ -1,0 +1,4111 @@
+{
+  "kind": "matched-scene-normalization-v1",
+  "scope": "Geometrically verified SIFT patch matches and robust logit-color fitting to one intended reference per scene. No other clean counterparts, perturbation parameters or evaluation targets are used. Weakly connected photos require review. Reference exposure/color defines the desired scene baseline; shared style fitting provides the subsequent album look. This does not recover clipped detail or local illumination changes.",
+  "size": 1000,
+  "source_manifest": {
+    "outputs/morph-showcase/variances/inputs/DSC_0901-1.jpg": "c49194361f02217c799b3d9f10152b22e28ad24121e402b74079c4f8c74407e3",
+    "outputs/morph-showcase/variances/inputs/DSC_0904-2.jpg": "307a9900f0c2643bd5fdc0e409fa854178e95cb4eb941e3ef083e5c411016a03",
+    "outputs/morph-showcase/variances/inputs/DSC_0905-3.jpg": "ccc98728e01d4fa01b9e48b12f2198274d85e3684656b47e9f33efb8ba579ffc",
+    "outputs/morph-showcase/variances/inputs/DSC_0906-4.jpg": "a1f21e30700c6ec973cb3b3d7a254f5d3215d204e9beb37b4b3c6608a6dae809",
+    "outputs/morph-showcase/variances/inputs/DSC_0914-5.jpg": "6454d5520968ff83166d456109f2a9c3d6cceb0c9ded7ef45d49acc21498cec4",
+    "outputs/morph-showcase/variances/inputs/DSC_0916-6.jpg": "1cd6565301e555ade5ef3a1e670f6a7c6525c28f4c2e6ae77c7dec5e7e386292",
+    "outputs/morph-showcase/variances/inputs/DSC_0919-7.jpg": "c3fcc04fa3cac7d2a3d51952267eda36b217b02eeeba60815c6aef5fa7f59aad",
+    "outputs/morph-showcase/variances/inputs/DSC_0921-8.jpg": "9613c344b0287f7939888df68b02ee48396fde9cfb597c4276a7a3038f0f0b84",
+    "outputs/morph-showcase/variances/inputs/DSC_0925-9.jpg": "d9440ab917fac7c5a92c3a273594c0873f1a81b195a8ec696ac8e03c54d08424",
+    "outputs/morph-showcase/variances/inputs/DSC_0928-10.jpg": "c119fa0136fd4e1d896898986a41de1d767fe4e4833bc4ed8d55d4bc9e8d2780",
+    "outputs/morph-showcase/variances/inputs/DSC_0930-11.jpg": "75807ca25b5c7d2df59e7d2fb066457bd66d6da8507c4a66dfe888b6763ffea6",
+    "outputs/morph-showcase/variances/inputs/DSC_0935-12.jpg": "b5fb37de42bd1414675586ca6d0cc1ac71c72384fd413f7fcb199716893a1462",
+    "outputs/morph-showcase/variances/inputs/DSC_0947-13.jpg": "e5109c67d14db02d7dccde9daaf7e30c96b2b4fc1ad3c11cd96af50c24665f5e",
+    "outputs/morph-showcase/variances/inputs/DSC_0948-14.jpg": "20af5ddab8e6032018508aa48c7e9fe5c026fb8618ee2c8989ac15c32302ff6e",
+    "outputs/morph-showcase/variances/inputs/DSC_0958-15.jpg": "0ee5e254b7980b2613a069627851b397a0f25a93383c4e16879b0e6af12a84c6",
+    "outputs/morph-showcase/variances/inputs/DSC_0970-17.jpg": "4aa17723e038a6c47c9ec888bb570311d6ea8e0f872793bcec46117d05d73c62",
+    "outputs/morph-showcase/variances/inputs/DSC_0974-18.jpg": "7f1003b4125756ea8b2a7694be2d8dc379ccb442c2cee058d91080b9b594f55c",
+    "outputs/morph-showcase/variances/inputs/DSC_0987-19.jpg": "df653379cc9731ef890b5442e112f14444c612e6755900781f475bf6325bb8f2",
+    "outputs/morph-showcase/variances/inputs/DSC_0965-16.jpg": "b8312d749b88dbfb24ed9265b744626b5e26566de104dab106628db8055d9afc",
+    "outputs/morph-showcase/variances/inputs/DSC_0990-20.jpg": "e3f4fab1484b70666f1fb953778185f84b4510977d425db23b5124631b64ff65",
+    "outputs/morph-showcase/variances/inputs/DSC_0993-21.jpg": "9a3e8492d6e57bc948b0c7f1f51442c5ad0a4a698e1c4ac7dee7c6c84ba9677f",
+    "outputs/morph-showcase/variances/inputs/DSC_0995-22.jpg": "bb3d2b01bb7985d61ecebe441cafcb28c8eabd3d103f75db5ae7ca63aacdb6b3",
+    "outputs/morph-showcase/variances/inputs/DSC_0997-23.jpg": "ebb425d0fcb06354905255bed355e60a03f8249143ced6657dcdf28b5ffbeb4d",
+    "outputs/morph-showcase/variances/inputs/DSC_0998-24.jpg": "849a0fc79e9a7a4a261d429e0fd95d262ce58547027aa0b299942c9e79deae57",
+    "outputs/morph-showcase/variances/inputs/DSC_1012-25.jpg": "deb4988640396a8dea0a7d216a2c7ed1c850807956bd68584d8950d6eae495ec",
+    "outputs/morph-showcase/variances/inputs/DSC_1021-26.jpg": "f14782e2705bf39e950f2bbc62c6157b1ad47335f808c337b52ebd46bf25e915",
+    "outputs/morph-showcase/variances/inputs/DSC_1026-27.jpg": "5751c1b75d30595ebd2647c716ef92b49c4c7e58c87341b2d98e2cf2317f2797",
+    "outputs/morph-showcase/variances/inputs/DSC_1028-28.jpg": "1427dbd631f944335ca47ef5e31d932891a83c7c1b969f8c2ac954148b4a1999",
+    "outputs/morph-showcase/variances/inputs/DSC_1030-29.jpg": "b2fde7078a2ea51f211c8ed123fcd5210b31d0cb742ff3a48fad4ef206c7da1c",
+    "outputs/morph-showcase/variances/inputs/DSC_1033-30.jpg": "b2d165b4be7ca1f9094c4165d6f1868342adf93d2638941df96229ad1458992f",
+    "outputs/morph-showcase/variances/inputs/DSC_1037-31.jpg": "b195394ebd24f2b4f431ba768981cbbfc2bd69449ae82becb935e601bf2fcd50",
+    "outputs/morph-showcase/variances/inputs/DSC_1038-32.jpg": "214b87138cb2936c24ebac042f8a0d1c03f42946826066cbad5430af8f4b1de2",
+    "outputs/morph-showcase/variances/inputs/DSC_1054-33.jpg": "ceeca5921bc67e925d2745c13dd654c5fe7313dd9def0a7a45cd1a7163c97d36",
+    "outputs/morph-showcase/variances/inputs/DSC_1059-34.jpg": "8511626b98fa42e389b11fe8be3ff96df7275e1fd616d51433d108cd3ffe4f38",
+    "outputs/morph-showcase/variances/inputs/DSC_1070-35.jpg": "c18bbd664babc80a2044c6181d7ea0d7ba04198a9bef276c1341b5e90d95a1e9",
+    "outputs/morph-showcase/variances/inputs/DSC_1074-36.jpg": "c68f79891db8d6a54f4cb5950daebcf4c67137594e39a14a548c24dc81740237",
+    "outputs/morph-showcase/variances/inputs/DSC_1083-37.jpg": "8cd336e74fd8d5527fcdeaf67bf99955e079bcf6100d66af4aaa68ab906fa01f",
+    "outputs/morph-showcase/variances/inputs/DSC_1096-40.jpg": "75ed9dded296bec7f17616003bb3c41e54bd061a226171ef37f04f8ce6909367",
+    "outputs/morph-showcase/variances/inputs/DSC_1100-41.jpg": "6a120cc3f80aa3ab03654873a26460c4453bfa75aeef47e89062bb2fd33eb188",
+    "outputs/morph-showcase/variances/inputs/DSC_1106-43.jpg": "d6e23cce5e1dbd7c1c904327f274a28ae65a685636f37e73524dde5ef4520799",
+    "outputs/morph-showcase/variances/inputs/DSC_1109-44.jpg": "549481f7d39c7df95d4ed2e71a5875246e3f9698976aba35be084c253d48c9cf",
+    "outputs/morph-showcase/variances/inputs/DSC_1111-45.jpg": "54d8d24190d8888634fa46937311f57aab3067e28a87ff53fabd1e9702951784",
+    "outputs/morph-showcase/variances/inputs/DSC_1118-48.jpg": "a717b73162ea4b79bb3e5fff11e30bbcc3fc13993b02c455d27f0bd44ac0d6b4",
+    "outputs/morph-showcase/variances/inputs/DSC_1088-38.jpg": "eada1dde0d5e0780641daa8cc09027f4106d2cee39cb4d2c6efece6ab5a0436c",
+    "outputs/morph-showcase/variances/inputs/DSC_1090-39.jpg": "c95bfdae217d6e6edc7f0699a22d6916c793c3f80ebc7c324596e39f10b1a6ab",
+    "outputs/morph-showcase/variances/inputs/DSC_1105-42.jpg": "96bb901fa0bd2d40d01fb4a901093ec80a5c99cf308f8f249623c2eeb406a207",
+    "outputs/morph-showcase/variances/inputs/DSC_1114-46.jpg": "f372bf7532a55e5f57fb4aa01f29b7224fa104cbae8aae65ae65ff19d9971758",
+    "outputs/morph-showcase/variances/inputs/DSC_1116-47.jpg": "722dda0905ef3e093eb5979e38435d2e8a35afb3eec3c39c9143567d051a1738",
+    "outputs/morph-showcase/variances/inputs/DSC_1259-49.jpg": "d3d32f86ad77e2cfeaa1a18018425ffc2cf39e27469bd065149d496cedd054b1",
+    "outputs/morph-showcase/variances/inputs/DSC_1261-50.jpg": "a50cd4dfd7202b8220148f2438aaeb2532430cbde67863f315787f40e9c55686",
+    "outputs/morph-showcase/variances/inputs/DSC_1264-51.jpg": "760b95e49782bf8f6df4e82b3d6e1bd2a35890423a9c9fd9f62911d3e52d44ae",
+    "outputs/morph-showcase/variances/inputs/DSC_1265-52.jpg": "fd40d2bb6cffd0e88123d3eaaeefb2a18b996e74359837e6bbd03288e7a14f16",
+    "outputs/morph-showcase/variances/inputs/DSC_1268-53.jpg": "1ee8d14b06c45a7dbd39766b322e9ff9ffe5f88e2ad039be5360e4b4c41b5119",
+    "outputs/morph-showcase/variances/inputs/DSC_1273-54.jpg": "a68bd22beeef7a36b773a2a396c6f58648db50c94ac93c8d2e98be58ad972766",
+    "outputs/morph-showcase/variances/inputs/DSC_1280-55.jpg": "a7928596255726fba6db88b5b8d3e108e0737b65a7d0c816155adc75db910f3d",
+    "outputs/morph-showcase/variances/inputs/DSC_1282-56.jpg": "29215686ebd300ba8bb85190dc2510085fc2b437c89043b4198639ab76be68e0",
+    "outputs/morph-showcase/variances/inputs/DSC_1284-57.jpg": "03ff30dad6c1aee8466c62fba2397df682d74b7520a472d53620cc7d81409547",
+    "outputs/morph-showcase/variances/inputs/DSC_1286-58.jpg": "f951603f8947c57e9f82c4dac3b2c304f28bacc8fafb4710c2d4cb485dc714a3",
+    "outputs/morph-showcase/variances/inputs/DSC_1288-59.jpg": "d208b54640deb672b6a4ca739bb665ccd0192a551c4e397f00808591d1c36ad0",
+    "outputs/morph-showcase/variances/inputs/DSC_1291-60.jpg": "b5b38382067eee88557be3c4422888b934e0f5d6ab23da6f08e0bfc8ce9b5371",
+    "outputs/morph-showcase/variances/inputs/DSC_1292-61.jpg": "d04e3387ad23a2c84774139b15a0b3c6887d5d92d49f42df6c7210a27562a560",
+    "outputs/morph-showcase/variances/inputs/DSC_1293-62.jpg": "d508bbbe95c6b788258417364f13874774689acb203c073f2c8099cdb1761311",
+    "outputs/morph-showcase/variances/inputs/DSC_1300-63.jpg": "14ed8d904965f8d6f6fe59b2762cf2bb13b87ab831aa45fec2f7a41e114678bd",
+    "outputs/morph-showcase/variances/inputs/DSC_1302-64.jpg": "f47d980387c7a75b4a778d77b9f322dcafcf99597054cdb0ebc78b2396161c93",
+    "outputs/morph-showcase/variances/inputs/DSC_1304-65.jpg": "913e5d288823f9dae9210e88051a68ec8dbc914f7c7ec061553b4fed419b664d",
+    "outputs/morph-showcase/variances/inputs/DSC_1308-66.jpg": "dbde0a5a84ddc1d6854f0e1bdaf4bdd96f7af96a95586460ddcae350b5a7e992",
+    "outputs/morph-showcase/variances/inputs/DSC_1310-67.jpg": "fb6025c10ebad454113f9402638f868031ff1a8dcd2e3147fb49a6b43921d7c3",
+    "outputs/morph-showcase/variances/inputs/DSC_1312-68.jpg": "6d0800ce26cf9811af2edd0a4b58e39430575177c1ddc6683a282de47234db19",
+    "outputs/morph-showcase/variances/inputs/DSC_1315-69.jpg": "2b9301a383f2608e5a425a081f866baba3e1248222d71e2d87e16defc079cfb4",
+    "outputs/morph-showcase/variances/inputs/DSC_1320-70.jpg": "7f42be5771d4529c325bfe76d4fffcf0513215b7460e549e377749de98abc687",
+    "outputs/morph-showcase/variances/inputs/DSC_1322-71.jpg": "7bfe8364c1c237f618911ab73681bb1c3d482852f853f67a320134303716b791",
+    "outputs/morph-showcase/variances/inputs/DSC_1324-72.jpg": "5fef782e5972ef0735678894bb725ed8b5991263e2c8768c9aa39d58e75530af",
+    "outputs/morph-showcase/variances/inputs/DSC_1326-73.jpg": "5e46b0f0f8edb57391b13597c36e22958ab7807c0bf512d73ecbb8d5e7332b4d",
+    "outputs/morph-showcase/variances/inputs/DSC_1329-74.jpg": "29834a961c3a6cf14a8acf477536080dc2f208cdc80dca16c30c11b206202afe",
+    "outputs/morph-showcase/variances/inputs/DSC_1330-75.jpg": "c0144e9e787c2f891596eae7fbed7942c1772bc24c7035bc7e7d128ee9dadb7f",
+    "outputs/morph-showcase/variances/inputs/DSC_1334-76.jpg": "6319f44e59efcb0386a0048e56bcfe74c1d4a45ecae9639068e1999912ad0c37",
+    "outputs/morph-showcase/variances/inputs/DSC_1335-77.jpg": "eef73649857224b954327943b561ea572631b511adbffce547ae62d22baec12d",
+    "outputs/morph-showcase/variances/inputs/DSC_1337-78.jpg": "ffea67d10fe554819ba7c3269990e257a57f6c0711c05b060864e9950604eed7",
+    "outputs/morph-showcase/variances/inputs/DSC_1339-79.jpg": "84b9a7bfb230bb9cb282eaf0798550c25eb00f2ef71a926da45d6c6c58832430",
+    "outputs/morph-showcase/variances/inputs/DSC_1340-80.jpg": "04fa1c395dc32fdc464afd5929bc7c855f430d8cdb983dc2a7ae63c20e70d657",
+    "outputs/morph-showcase/variances/inputs/DSC_1342-81.jpg": "3a9b91fdb6b6e7de6337f8d7e7d3d969d16867490cb3010f540184297db31817",
+    "outputs/morph-showcase/variances/inputs/DSC_1344-82.jpg": "ab71006f57deb7a7de863dbf4d95d3f277e2ab541c78bafd2196873f1410a420",
+    "outputs/morph-showcase/variances/inputs/DSC_1360-83.jpg": "ac732d896c0eecb6c3da2cb2aae2a24541da80983ddffa2ebbc563ae1934e2cd",
+    "outputs/morph-showcase/variances/inputs/DSC_1362-84.jpg": "bfeab14c0a5e9d6368b0fc950a612d20a671574d29b0ffaf61989e35e64be5d4",
+    "outputs/morph-showcase/variances/inputs/DSC_1363-85.jpg": "f78f9e4485abd12660f40b752da7a7802713203acb3d70eb42936aa16feee4b8",
+    "outputs/morph-showcase/variances/inputs/DSC_1365-86.jpg": "02fcaa71e84e0cde962143f02f73fec821ba03ede5da6e41a5b0449ccbc59a99",
+    "outputs/morph-showcase/variances/inputs/DSC_1367-87.jpg": "42bc1648d55e5c4b378a6d953e10e28606dd279d257e95e3b03a0144b0e48ebd",
+    "outputs/morph-showcase/variances/inputs/DSC_1378-88.jpg": "36ab532c6b26bfd728bf64a017e6610df0efccd80e08cbe87b1f4142cda865ed",
+    "Morph/originals/DSC_0906-4.jpg": "b537d85511aabe821f2476c542516bce46ee7d812e67f43da80cfbe452a478ca",
+    "Morph/originals/DSC_0958-15.jpg": "3929f529a87b72ed8416403d84a3b12c59e7207ce36e40813fd9820987d3ee3a",
+    "Morph/originals/DSC_0995-22.jpg": "e31109eba49d00e8004198ed731fd28545b4b970518d9ad838ec39bf95de1169",
+    "Morph/originals/DSC_1037-31.jpg": "ad3ae9e8a7693fff31bd7e4bba662d1abf46e8163dbf943157d346e844e45e26",
+    "Morph/originals/DSC_1054-33.jpg": "dd8f2dae5f851b25251b1d09a26d51330f3ebf7563385d951d2f7deacd93f2b6",
+    "Morph/originals/DSC_1111-45.jpg": "0c4202103a893c6fd720e0b8901a15eba4a3ddc3889f04552a76e615e485bbe1",
+    "Morph/originals/DSC_1105-42.jpg": "0ff1c29940797edc80f9762168233aa440d078db032580b3073940f9038d9a14",
+    "Morph/originals/DSC_1264-51.jpg": "32619ee4644a9fd9a214032124b1dc19b4ad906c5896843d1b22ef51c5b8de13",
+    "Morph/originals/DSC_1273-54.jpg": "68a88c4bb90ab54dbc45c6ca51eaa67f24d62bb9962459d508c06f9989116656",
+    "Morph/originals/DSC_1286-58.jpg": "6234092255c0ed2967021b23b57a229f4c2f23bebb3285b355a05ce1e67a8e31",
+    "Morph/originals/DSC_1320-70.jpg": "eda818c079aeae0961c2b3d9cd3e09f453885115439df2d331e80655e825a695",
+    "Morph/originals/DSC_1334-76.jpg": "41781ab89de108688ce7f4cfc6a6240840759106983e7322888bc75347f79472",
+    "Morph/originals/DSC_1342-81.jpg": "e92411fb9ac04e4a72e483a8ce2704bdfdf03b1c8407be30d7f3f2c075393389",
+    "Morph/originals/DSC_1363-85.jpg": "b6a7b0bd4c7c631bdd6938b1cce14d3265789dfa8f8e951bdac737059b69a4a8"
+  },
+  "scenes": [
+    {
+      "scene": "scene-01",
+      "reference": "Morph/originals/DSC_0906-4.jpg",
+      "edges": [
+        {
+          "left": "outputs/morph-showcase/variances/inputs/DSC_0901-1.jpg",
+          "right": "outputs/morph-showcase/variances/inputs/DSC_0904-2.jpg",
+          "matches": 171,
+          "geometric_inliers": 55,
+          "photometric_inliers": 2796,
+          "pair_scale": 0.8851267401174944,
+          "pair_residual": 0.11656697580834477,
+          "before_logit_rmse": 0.4672187566757202,
+          "after_logit_rmse": 0.1560738786493205
+        },
+        {
+          "left": "outputs/morph-showcase/variances/inputs/DSC_0901-1.jpg",
+          "right": "outputs/morph-showcase/variances/inputs/DSC_0905-3.jpg",
+          "matches": 120,
+          "geometric_inliers": 71,
+          "photometric_inliers": 2864,
+          "pair_scale": 0.9244403611693893,
+          "pair_residual": 0.14160785935545878,
+          "before_logit_rmse": 0.3119910955429077,
+          "after_logit_rmse": 0.1911195591602957
+        },
+        {
+          "left": "outputs/morph-showcase/variances/inputs/DSC_0901-1.jpg",
+          "right": "outputs/morph-showcase/variances/inputs/DSC_0906-4.jpg",
+          "matches": 76,
+          "geometric_inliers": 42,
+          "photometric_inliers": 2731,
+          "pair_scale": 0.8650671958756676,
+          "pair_residual": 0.11836705811342164,
+          "before_logit_rmse": 0.32846248149871826,
+          "after_logit_rmse": 0.19025404651248898
+        },
+        {
+          "left": "outputs/morph-showcase/variances/inputs/DSC_0901-1.jpg",
+          "right": "Morph/originals/DSC_0906-4.jpg",
+          "matches": 80,
+          "geometric_inliers": 46,
+          "photometric_inliers": 2782,
+          "pair_scale": 0.8314438772587238,
+          "pair_residual": 0.11095995650378902,
+          "before_logit_rmse": 0.3249858617782593,
+          "after_logit_rmse": 0.20664770786994233
+        },
+        {
+          "left": "outputs/morph-showcase/variances/inputs/DSC_0904-2.jpg",
+          "right": "outputs/morph-showcase/variances/inputs/DSC_0905-3.jpg",
+          "matches": 505,
+          "geometric_inliers": 350,
+          "photometric_inliers": 2776,
+          "pair_scale": 0.9820506129282625,
+          "pair_residual": 0.0367576498420272,
+          "before_logit_rmse": 0.25481078028678894,
+          "after_logit_rmse": 0.04502248051595418
+        },
+        {
+          "left": "outputs/morph-showcase/variances/inputs/DSC_0904-2.jpg",
+          "right": "outputs/morph-showcase/variances/inputs/DSC_0906-4.jpg",
+          "matches": 474,
+          "geometric_inliers": 370,
+          "photometric_inliers": 2690,
+          "pair_scale": 0.9464921539530015,
+          "pair_residual": 0.022506062446688648,
+          "before_logit_rmse": 0.6899286508560181,
+          "after_logit_rmse": 0.030133641407977762
+        },
+        {
+          "left": "outputs/morph-showcase/variances/inputs/DSC_0904-2.jpg",
+          "right": "outputs/morph-showcase/variances/inputs/DSC_0914-5.jpg",
+          "matches": 324,
+          "geometric_inliers": 229,
+          "photometric_inliers": 2443,
+          "pair_scale": 0.8302927329273734,
+          "pair_residual": 0.03827626681912284,
+          "before_logit_rmse": 0.9269996881484985,
+          "after_logit_rmse": 0.060410118073115686
+        },
+        {
+          "left": "outputs/morph-showcase/variances/inputs/DSC_0904-2.jpg",
+          "right": "Morph/originals/DSC_0906-4.jpg",
+          "matches": 481,
+          "geometric_inliers": 363,
+          "photometric_inliers": 2717,
+          "pair_scale": 0.9143485986077786,
+          "pair_residual": 0.021034732244983225,
+          "before_logit_rmse": 0.6749954223632812,
+          "after_logit_rmse": 0.03724979395668081
+        },
+        {
+          "left": "outputs/morph-showcase/variances/inputs/DSC_0905-3.jpg",
+          "right": "outputs/morph-showcase/variances/inputs/DSC_0906-4.jpg",
+          "matches": 546,
+          "geometric_inliers": 424,
+          "photometric_inliers": 2959,
+          "pair_scale": 0.9378276156476808,
+          "pair_residual": 0.03523323049134132,
+          "before_logit_rmse": 0.46631112694740295,
+          "after_logit_rmse": 0.04382030092335409
+        },
+        {
+          "left": "outputs/morph-showcase/variances/inputs/DSC_0905-3.jpg",
+          "right": "outputs/morph-showcase/variances/inputs/DSC_0914-5.jpg",
+          "matches": 401,
+          "geometric_inliers": 304,
+          "photometric_inliers": 2549,
+          "pair_scale": 0.876992092148695,
+          "pair_residual": 0.027597114490058382,
+          "before_logit_rmse": 0.6984080076217651,
+          "after_logit_rmse": 0.0451316143668703
+        },
+        {
+          "left": "outputs/morph-showcase/variances/inputs/DSC_0905-3.jpg",
+          "right": "outputs/morph-showcase/variances/inputs/DSC_0916-6.jpg",
+          "matches": 323,
+          "geometric_inliers": 250,
+          "photometric_inliers": 2604,
+          "pair_scale": 0.8609822438672339,
+          "pair_residual": 0.03724461128739031,
+          "before_logit_rmse": 0.5300060510635376,
+          "after_logit_rmse": 0.05468807246120646
+        },
+        {
+          "left": "outputs/morph-showcase/variances/inputs/DSC_0905-3.jpg",
+          "right": "Morph/originals/DSC_0906-4.jpg",
+          "matches": 546,
+          "geometric_inliers": 421,
+          "photometric_inliers": 2950,
+          "pair_scale": 0.9037612573385337,
+          "pair_residual": 0.03395451225408454,
+          "before_logit_rmse": 0.44396311044692993,
+          "after_logit_rmse": 0.05273392762387169
+        },
+        {
+          "left": "outputs/morph-showcase/variances/inputs/DSC_0906-4.jpg",
+          "right": "outputs/morph-showcase/variances/inputs/DSC_0914-5.jpg",
+          "matches": 637,
+          "geometric_inliers": 498,
+          "photometric_inliers": 2691,
+          "pair_scale": 0.9309525286904655,
+          "pair_residual": 0.02561028635845524,
+          "before_logit_rmse": 0.23599660396575928,
+          "after_logit_rmse": 0.039458783488562604
+        },
+        {
+          "left": "outputs/morph-showcase/variances/inputs/DSC_0906-4.jpg",
+          "right": "outputs/morph-showcase/variances/inputs/DSC_0916-6.jpg",
+          "matches": 542,
+          "geometric_inliers": 449,
+          "photometric_inliers": 2893,
+          "pair_scale": 0.9143586803951785,
+          "pair_residual": 0.04462657621446633,
+          "before_logit_rmse": 0.08998921513557434,
+          "after_logit_rmse": 0.06521296267641442
+        },
+        {
+          "left": "outputs/morph-showcase/variances/inputs/DSC_0906-4.jpg",
+          "right": "outputs/morph-showcase/variances/inputs/DSC_0919-7.jpg",
+          "matches": 517,
+          "geometric_inliers": 409,
+          "photometric_inliers": 2765,
+          "pair_scale": 0.8435190117656169,
+          "pair_residual": 0.05659570669785797,
+          "before_logit_rmse": 0.20889613032341003,
+          "after_logit_rmse": 0.09069001888933667
+        },
+        {
+          "left": "outputs/morph-showcase/variances/inputs/DSC_0906-4.jpg",
+          "right": "Morph/originals/DSC_0906-4.jpg",
+          "matches": 2124,
+          "geometric_inliers": 2101,
+          "photometric_inliers": 3790,
+          "pair_scale": 0.9645839422312322,
+          "pair_residual": 0.010011789061342998,
+          "before_logit_rmse": 0.0661405622959137,
+          "after_logit_rmse": 0.03989436865615238
+        },
+        {
+          "left": "outputs/morph-showcase/variances/inputs/DSC_0914-5.jpg",
+          "right": "outputs/morph-showcase/variances/inputs/DSC_0916-6.jpg",
+          "matches": 673,
+          "geometric_inliers": 539,
+          "photometric_inliers": 2985,
+          "pair_scale": 0.9800626014232929,
+          "pair_residual": 0.03859488696533721,
+          "before_logit_rmse": 0.18068702518939972,
+          "after_logit_rmse": 0.046856949453209916
+        },
+        {
+          "left": "outputs/morph-showcase/variances/inputs/DSC_0914-5.jpg",
+          "right": "outputs/morph-showcase/variances/inputs/DSC_0919-7.jpg",
+          "matches": 505,
+          "geometric_inliers": 421,
+          "photometric_inliers": 2902,
+          "pair_scale": 0.9105906185494674,
+          "pair_residual": 0.05349587975738872,
+          "before_logit_rmse": 0.12548993527889252,
+          "after_logit_rmse": 0.07503976166407267
+        },
+        {
+          "left": "outputs/morph-showcase/variances/inputs/DSC_0914-5.jpg",
+          "right": "outputs/morph-showcase/variances/inputs/DSC_0921-8.jpg",
+          "matches": 537,
+          "geometric_inliers": 450,
+          "photometric_inliers": 2563,
+          "pair_scale": 0.9187046402365058,
+          "pair_residual": 0.02603299821089298,
+          "before_logit_rmse": 0.1390630602836609,
+          "after_logit_rmse": 0.04062575921563678
+        },
+        {
+          "left": "outputs/morph-showcase/variances/inputs/DSC_0914-5.jpg",
+          "right": "Morph/originals/DSC_0906-4.jpg",
+          "matches": 588,
+          "geometric_inliers": 456,
+          "photometric_inliers": 2761,
+          "pair_scale": 0.9468913093833624,
+          "pair_residual": 0.027055417212027776,
+          "before_logit_rmse": 0.2526557147502899,
+          "after_logit_rmse": 0.039184352844791846
+        },
+        {
+          "left": "outputs/morph-showcase/variances/inputs/DSC_0916-6.jpg",
+          "right": "outputs/morph-showcase/variances/inputs/DSC_0919-7.jpg",
+          "matches": 581,
+          "geometric_inliers": 522,
+          "photometric_inliers": 2847,
+          "pair_scale": 0.9091437504563663,
+          "pair_residual": 0.03826867134905275,
+          "before_logit_rmse": 0.16330558061599731,
+          "after_logit_rmse": 0.05430412446363726
+        },
+        {
+          "left": "outputs/morph-showcase/variances/inputs/DSC_0916-6.jpg",
+          "right": "outputs/morph-showcase/variances/inputs/DSC_0921-8.jpg",
+          "matches": 575,
+          "geometric_inliers": 496,
+          "photometric_inliers": 2732,
+          "pair_scale": 0.9101497049354228,
+          "pair_residual": 0.03304873404740132,
+          "before_logit_rmse": 0.1856241077184677,
+          "after_logit_rmse": 0.049067324208528176
+        },
+        {
+          "left": "outputs/morph-showcase/variances/inputs/DSC_0916-6.jpg",
+          "right": "outputs/morph-showcase/variances/inputs/DSC_0925-9.jpg",
+          "matches": 173,
+          "geometric_inliers": 99,
+          "photometric_inliers": 2722,
+          "pair_scale": 0.7807450398179993,
+          "pair_residual": 0.15153143711864142,
+          "before_logit_rmse": 0.3848320245742798,
+          "after_logit_rmse": 0.2501401109026719
+        },
+        {
+          "left": "outputs/morph-showcase/variances/inputs/DSC_0916-6.jpg",
+          "right": "Morph/originals/DSC_0906-4.jpg",
+          "matches": 486,
+          "geometric_inliers": 410,
+          "photometric_inliers": 2857,
+          "pair_scale": 0.9334774536786284,
+          "pair_residual": 0.04614192564474092,
+          "before_logit_rmse": 0.09944110363721848,
+          "after_logit_rmse": 0.05650810354683526
+        },
+        {
+          "left": "outputs/morph-showcase/variances/inputs/DSC_0919-7.jpg",
+          "right": "outputs/morph-showcase/variances/inputs/DSC_0921-8.jpg",
+          "matches": 811,
+          "geometric_inliers": 656,
+          "photometric_inliers": 2991,
+          "pair_scale": 0.9875661258935237,
+          "pair_residual": 0.03242344787480529,
+          "before_logit_rmse": 0.06348629295825958,
+          "after_logit_rmse": 0.04726855483927085
+        },
+        {
+          "left": "outputs/morph-showcase/variances/inputs/DSC_0919-7.jpg",
+          "right": "outputs/morph-showcase/variances/inputs/DSC_0925-9.jpg",
+          "matches": 247,
+          "geometric_inliers": 140,
+          "photometric_inliers": 3056,
+          "pair_scale": 0.8844180433245374,
+          "pair_residual": 0.1791669799466672,
+          "before_logit_rmse": 0.29373160004615784,
+          "after_logit_rmse": 0.2138697709600783
+        },
+        {
+          "left": "outputs/morph-showcase/variances/inputs/DSC_0919-7.jpg",
+          "right": "outputs/morph-showcase/variances/inputs/DSC_0928-10.jpg",
+          "matches": 471,
+          "geometric_inliers": 401,
+          "photometric_inliers": 3040,
+          "pair_scale": 0.8661184252940224,
+          "pair_residual": 0.14336667841164724,
+          "before_logit_rmse": 0.359130322933197,
+          "after_logit_rmse": 0.19292496007180643
+        },
+        {
+          "left": "outputs/morph-showcase/variances/inputs/DSC_0919-7.jpg",
+          "right": "Morph/originals/DSC_0906-4.jpg",
+          "matches": 496,
+          "geometric_inliers": 397,
+          "photometric_inliers": 2765,
+          "pair_scale": 0.9506395780255065,
+          "pair_residual": 0.0410661092252639,
+          "before_logit_rmse": 0.22936032712459564,
+          "after_logit_rmse": 0.05678473627389124
+        },
+        {
+          "left": "outputs/morph-showcase/variances/inputs/DSC_0921-8.jpg",
+          "right": "outputs/morph-showcase/variances/inputs/DSC_0925-9.jpg",
+          "matches": 284,
+          "geometric_inliers": 125,
+          "photometric_inliers": 2838,
+          "pair_scale": 0.9454620271660472,
+          "pair_residual": 0.10421442533906644,
+          "before_logit_rmse": 0.2345459908246994,
+          "after_logit_rmse": 0.14533932468564428
+        },
+        {
+          "left": "outputs/morph-showcase/variances/inputs/DSC_0921-8.jpg",
+          "right": "outputs/morph-showcase/variances/inputs/DSC_0928-10.jpg",
+          "matches": 479,
+          "geometric_inliers": 388,
+          "photometric_inliers": 3033,
+          "pair_scale": 0.8323677502792568,
+          "pair_residual": 0.13778336394525942,
+          "before_logit_rmse": 0.35581332445144653,
+          "after_logit_rmse": 0.1650419062938931
+        },
+        {
+          "left": "outputs/morph-showcase/variances/inputs/DSC_0921-8.jpg",
+          "right": "outputs/morph-showcase/variances/inputs/DSC_0930-11.jpg",
+          "matches": 582,
+          "geometric_inliers": 477,
+          "photometric_inliers": 2745,
+          "pair_scale": 0.919095117304535,
+          "pair_residual": 0.04730963571581156,
+          "before_logit_rmse": 0.3987061083316803,
+          "after_logit_rmse": 0.05669751032644562
+        },
+        {
+          "left": "outputs/morph-showcase/variances/inputs/DSC_0921-8.jpg",
+          "right": "Morph/originals/DSC_0906-4.jpg",
+          "matches": 482,
+          "geometric_inliers": 407,
+          "photometric_inliers": 2762,
+          "pair_scale": 0.9422347824433517,
+          "pair_residual": 0.03740857071503415,
+          "before_logit_rmse": 0.24510060250759125,
+          "after_logit_rmse": 0.05368196499219645
+        },
+        {
+          "left": "outputs/morph-showcase/variances/inputs/DSC_0925-9.jpg",
+          "right": "outputs/morph-showcase/variances/inputs/DSC_0928-10.jpg",
+          "matches": 251,
+          "geometric_inliers": 166,
+          "photometric_inliers": 2931,
+          "pair_scale": 0.8138088764960975,
+          "pair_residual": 0.11463800449981973,
+          "before_logit_rmse": 0.2389611005783081,
+          "after_logit_rmse": 0.17401843479597348
+        },
+        {
+          "left": "outputs/morph-showcase/variances/inputs/DSC_0925-9.jpg",
+          "right": "outputs/morph-showcase/variances/inputs/DSC_0930-11.jpg",
+          "matches": 167,
+          "geometric_inliers": 101,
+          "photometric_inliers": 2641,
+          "pair_scale": 0.8195201006632901,
+          "pair_residual": 0.11410344246684154,
+          "before_logit_rmse": 0.36173030734062195,
+          "after_logit_rmse": 0.1852946860384807
+        },
+        {
+          "left": "outputs/morph-showcase/variances/inputs/DSC_0925-9.jpg",
+          "right": "outputs/morph-showcase/variances/inputs/DSC_0935-12.jpg",
+          "matches": 154,
+          "geometric_inliers": 80,
+          "photometric_inliers": 2656,
+          "pair_scale": 0.7421767886539519,
+          "pair_residual": 0.14025189617432318,
+          "before_logit_rmse": 0.2914544343948364,
+          "after_logit_rmse": 0.24569288251617075
+        },
+        {
+          "left": "outputs/morph-showcase/variances/inputs/DSC_0925-9.jpg",
+          "right": "Morph/originals/DSC_0906-4.jpg",
+          "matches": 150,
+          "geometric_inliers": 84,
+          "photometric_inliers": 2764,
+          "pair_scale": 0.7857769874054623,
+          "pair_residual": 0.13230204695068937,
+          "before_logit_rmse": 0.4693930447101593,
+          "after_logit_rmse": 0.21795360022240826
+        },
+        {
+          "left": "outputs/morph-showcase/variances/inputs/DSC_0928-10.jpg",
+          "right": "outputs/morph-showcase/variances/inputs/DSC_0935-12.jpg",
+          "matches": 306,
+          "geometric_inliers": 238,
+          "photometric_inliers": 2819,
+          "pair_scale": 0.8388336407036803,
+          "pair_residual": 0.07237427749125018,
+          "before_logit_rmse": 0.2990052402019501,
+          "after_logit_rmse": 0.11393211527560786
+        },
+        {
+          "left": "outputs/morph-showcase/variances/inputs/DSC_0928-10.jpg",
+          "right": "Morph/originals/DSC_0906-4.jpg",
+          "matches": 274,
+          "geometric_inliers": 229,
+          "photometric_inliers": 2820,
+          "pair_scale": 0.7331491347985031,
+          "pair_residual": 0.09087793821806742,
+          "before_logit_rmse": 0.5730765461921692,
+          "after_logit_rmse": 0.14021850883159503
+        },
+        {
+          "left": "outputs/morph-showcase/variances/inputs/DSC_0930-11.jpg",
+          "right": "outputs/morph-showcase/variances/inputs/DSC_0935-12.jpg",
+          "matches": 432,
+          "geometric_inliers": 213,
+          "photometric_inliers": 2487,
+          "pair_scale": 0.8779286304548666,
+          "pair_residual": 0.0461547804943701,
+          "before_logit_rmse": 0.2967270016670227,
+          "after_logit_rmse": 0.08571218728508034
+        },
+        {
+          "left": "outputs/morph-showcase/variances/inputs/DSC_0930-11.jpg",
+          "right": "Morph/originals/DSC_0906-4.jpg",
+          "matches": 486,
+          "geometric_inliers": 393,
+          "photometric_inliers": 2797,
+          "pair_scale": 0.9733879063603418,
+          "pair_residual": 0.03754014704051001,
+          "before_logit_rmse": 0.5959494709968567,
+          "after_logit_rmse": 0.05145799934327082
+        },
+        {
+          "left": "outputs/morph-showcase/variances/inputs/DSC_0935-12.jpg",
+          "right": "Morph/originals/DSC_0906-4.jpg",
+          "matches": 402,
+          "geometric_inliers": 280,
+          "photometric_inliers": 2717,
+          "pair_scale": 0.9565938965301758,
+          "pair_residual": 0.05916451395891004,
+          "before_logit_rmse": 0.35884103178977966,
+          "after_logit_rmse": 0.09993755528962657
+        }
+      ]
+    },
+    {
+      "scene": "scene-02-lawn",
+      "reference": "Morph/originals/DSC_0958-15.jpg",
+      "edges": [
+        {
+          "left": "outputs/morph-showcase/variances/inputs/DSC_0947-13.jpg",
+          "right": "outputs/morph-showcase/variances/inputs/DSC_0948-14.jpg",
+          "matches": 343,
+          "geometric_inliers": 148,
+          "photometric_inliers": 2867,
+          "pair_scale": 0.9615042099897646,
+          "pair_residual": 0.0658998570131858,
+          "before_logit_rmse": 0.22634674608707428,
+          "after_logit_rmse": 0.1025801249552229
+        },
+        {
+          "left": "outputs/morph-showcase/variances/inputs/DSC_0947-13.jpg",
+          "right": "outputs/morph-showcase/variances/inputs/DSC_0958-15.jpg",
+          "matches": 76,
+          "geometric_inliers": 32,
+          "photometric_inliers": 2804,
+          "pair_scale": 0.9716792729353149,
+          "pair_residual": 0.23682596683702944,
+          "before_logit_rmse": 0.4827639162540436,
+          "after_logit_rmse": 0.2941582333654541
+        },
+        {
+          "left": "outputs/morph-showcase/variances/inputs/DSC_0947-13.jpg",
+          "right": "Morph/originals/DSC_0958-15.jpg",
+          "matches": 67,
+          "geometric_inliers": 31,
+          "photometric_inliers": 2809,
+          "pair_scale": 0.9007353642121289,
+          "pair_residual": 0.27352509695063804,
+          "before_logit_rmse": 0.6486405730247498,
+          "after_logit_rmse": 0.3494757669881035
+        },
+        {
+          "left": "outputs/morph-showcase/variances/inputs/DSC_0948-14.jpg",
+          "right": "outputs/morph-showcase/variances/inputs/DSC_0958-15.jpg",
+          "matches": 125,
+          "geometric_inliers": 61,
+          "photometric_inliers": 2917,
+          "pair_scale": 0.998056592463813,
+          "pair_residual": 0.16417067897020923,
+          "before_logit_rmse": 0.28344112634658813,
+          "after_logit_rmse": 0.22693523676996158
+        },
+        {
+          "left": "outputs/morph-showcase/variances/inputs/DSC_0948-14.jpg",
+          "right": "Morph/originals/DSC_0958-15.jpg",
+          "matches": 127,
+          "geometric_inliers": 69,
+          "photometric_inliers": 2889,
+          "pair_scale": 0.9485222470343126,
+          "pair_residual": 0.15958975213931084,
+          "before_logit_rmse": 0.3934600055217743,
+          "after_logit_rmse": 0.23347311518054076
+        },
+        {
+          "left": "outputs/morph-showcase/variances/inputs/DSC_0958-15.jpg",
+          "right": "Morph/originals/DSC_0958-15.jpg",
+          "matches": 2178,
+          "geometric_inliers": 2177,
+          "photometric_inliers": 3568,
+          "pair_scale": 0.9620436399953952,
+          "pair_residual": 0.01265625736582783,
+          "before_logit_rmse": 0.18079330027103424,
+          "after_logit_rmse": 0.025470132127025084
+        },
+        {
+          "left": "outputs/morph-showcase/variances/inputs/DSC_0987-19.jpg",
+          "right": "Morph/originals/DSC_0958-15.jpg",
+          "matches": 58,
+          "geometric_inliers": 21,
+          "photometric_inliers": 2502,
+          "pair_scale": 0.8160823329008106,
+          "pair_residual": 0.26076357107854253,
+          "before_logit_rmse": 0.6526674628257751,
+          "after_logit_rmse": 0.4228030134335919
+        }
+      ]
+    },
+    {
+      "scene": "scene-02",
+      "reference": "Morph/originals/DSC_0995-22.jpg",
+      "edges": [
+        {
+          "left": "outputs/morph-showcase/variances/inputs/DSC_0990-20.jpg",
+          "right": "outputs/morph-showcase/variances/inputs/DSC_0993-21.jpg",
+          "matches": 205,
+          "geometric_inliers": 105,
+          "photometric_inliers": 2915,
+          "pair_scale": 0.7376469482624967,
+          "pair_residual": 0.11201298915187256,
+          "before_logit_rmse": 0.8655027747154236,
+          "after_logit_rmse": 0.15877685332734848
+        },
+        {
+          "left": "outputs/morph-showcase/variances/inputs/DSC_0990-20.jpg",
+          "right": "outputs/morph-showcase/variances/inputs/DSC_0997-23.jpg",
+          "matches": 134,
+          "geometric_inliers": 62,
+          "photometric_inliers": 2837,
+          "pair_scale": 0.7242335640713544,
+          "pair_residual": 0.1254855528505376,
+          "before_logit_rmse": 0.7309409379959106,
+          "after_logit_rmse": 0.17641745279664148
+        },
+        {
+          "left": "outputs/morph-showcase/variances/inputs/DSC_0993-21.jpg",
+          "right": "outputs/morph-showcase/variances/inputs/DSC_0995-22.jpg",
+          "matches": 1029,
+          "geometric_inliers": 944,
+          "photometric_inliers": 3279,
+          "pair_scale": 0.9437582720372799,
+          "pair_residual": 0.07102092747312697,
+          "before_logit_rmse": 0.5039991140365601,
+          "after_logit_rmse": 0.09082675620152927
+        },
+        {
+          "left": "outputs/morph-showcase/variances/inputs/DSC_0993-21.jpg",
+          "right": "outputs/morph-showcase/variances/inputs/DSC_0997-23.jpg",
+          "matches": 452,
+          "geometric_inliers": 292,
+          "photometric_inliers": 2852,
+          "pair_scale": 0.9869152739944393,
+          "pair_residual": 0.09146879553953381,
+          "before_logit_rmse": 0.24045760929584503,
+          "after_logit_rmse": 0.12802144692793863
+        },
+        {
+          "left": "outputs/morph-showcase/variances/inputs/DSC_0993-21.jpg",
+          "right": "Morph/originals/DSC_0995-22.jpg",
+          "matches": 1050,
+          "geometric_inliers": 956,
+          "photometric_inliers": 3197,
+          "pair_scale": 0.976272591352444,
+          "pair_residual": 0.06919589607453967,
+          "before_logit_rmse": 0.43734824657440186,
+          "after_logit_rmse": 0.08805867947090425
+        },
+        {
+          "left": "outputs/morph-showcase/variances/inputs/DSC_0995-22.jpg",
+          "right": "outputs/morph-showcase/variances/inputs/DSC_0997-23.jpg",
+          "matches": 517,
+          "geometric_inliers": 335,
+          "photometric_inliers": 3000,
+          "pair_scale": 1.0372714651529469,
+          "pair_residual": 0.11028830180219945,
+          "before_logit_rmse": 0.3850823938846588,
+          "after_logit_rmse": 0.14528357657556554
+        },
+        {
+          "left": "outputs/morph-showcase/variances/inputs/DSC_0995-22.jpg",
+          "right": "outputs/morph-showcase/variances/inputs/DSC_0998-24.jpg",
+          "matches": 426,
+          "geometric_inliers": 278,
+          "photometric_inliers": 2908,
+          "pair_scale": 0.7620597514326837,
+          "pair_residual": 0.05322638346552458,
+          "before_logit_rmse": 0.2291787713766098,
+          "after_logit_rmse": 0.10082860320796617
+        },
+        {
+          "left": "outputs/morph-showcase/variances/inputs/DSC_0995-22.jpg",
+          "right": "Morph/originals/DSC_0995-22.jpg",
+          "matches": 2262,
+          "geometric_inliers": 2258,
+          "photometric_inliers": 3820,
+          "pair_scale": 1.0428293166798688,
+          "pair_residual": 0.00729290797183702,
+          "before_logit_rmse": 0.07013839483261108,
+          "after_logit_rmse": 0.02381872041807626
+        },
+        {
+          "left": "outputs/morph-showcase/variances/inputs/DSC_0997-23.jpg",
+          "right": "Morph/originals/DSC_0995-22.jpg",
+          "matches": 505,
+          "geometric_inliers": 316,
+          "photometric_inliers": 3006,
+          "pair_scale": 0.9676792098875714,
+          "pair_residual": 0.10439347951199943,
+          "before_logit_rmse": 0.301297128200531,
+          "after_logit_rmse": 0.1432217323725322
+        },
+        {
+          "left": "outputs/morph-showcase/variances/inputs/DSC_0998-24.jpg",
+          "right": "Morph/originals/DSC_0995-22.jpg",
+          "matches": 422,
+          "geometric_inliers": 263,
+          "photometric_inliers": 2762,
+          "pair_scale": 0.8751462029733998,
+          "pair_residual": 0.04881776368547611,
+          "before_logit_rmse": 0.3049594461917877,
+          "after_logit_rmse": 0.0772519503382164
+        }
+      ]
+    },
+    {
+      "scene": "scene-03",
+      "reference": "Morph/originals/DSC_1037-31.jpg",
+      "edges": [
+        {
+          "left": "outputs/morph-showcase/variances/inputs/DSC_1021-26.jpg",
+          "right": "outputs/morph-showcase/variances/inputs/DSC_1026-27.jpg",
+          "matches": 926,
+          "geometric_inliers": 869,
+          "photometric_inliers": 2923,
+          "pair_scale": 0.9040735918403016,
+          "pair_residual": 0.061501311458202396,
+          "before_logit_rmse": 1.085311770439148,
+          "after_logit_rmse": 0.07330383785958078
+        },
+        {
+          "left": "outputs/morph-showcase/variances/inputs/DSC_1021-26.jpg",
+          "right": "outputs/morph-showcase/variances/inputs/DSC_1028-28.jpg",
+          "matches": 523,
+          "geometric_inliers": 480,
+          "photometric_inliers": 3180,
+          "pair_scale": 0.8925776084476352,
+          "pair_residual": 0.10710306788997667,
+          "before_logit_rmse": 0.8144250512123108,
+          "after_logit_rmse": 0.13114366835321806
+        },
+        {
+          "left": "outputs/morph-showcase/variances/inputs/DSC_1021-26.jpg",
+          "right": "outputs/morph-showcase/variances/inputs/DSC_1030-29.jpg",
+          "matches": 273,
+          "geometric_inliers": 220,
+          "photometric_inliers": 2632,
+          "pair_scale": 0.8638742359882583,
+          "pair_residual": 0.17080762155490242,
+          "before_logit_rmse": 0.5308848023414612,
+          "after_logit_rmse": 0.22895160240341927
+        },
+        {
+          "left": "outputs/morph-showcase/variances/inputs/DSC_1021-26.jpg",
+          "right": "Morph/originals/DSC_1037-31.jpg",
+          "matches": 441,
+          "geometric_inliers": 301,
+          "photometric_inliers": 2898,
+          "pair_scale": 0.8720910344261367,
+          "pair_residual": 0.1255165016558369,
+          "before_logit_rmse": 0.6292216777801514,
+          "after_logit_rmse": 0.18432483051621593
+        },
+        {
+          "left": "outputs/morph-showcase/variances/inputs/DSC_1026-27.jpg",
+          "right": "outputs/morph-showcase/variances/inputs/DSC_1028-28.jpg",
+          "matches": 680,
+          "geometric_inliers": 577,
+          "photometric_inliers": 2955,
+          "pair_scale": 0.9795543952920402,
+          "pair_residual": 0.07170650908769836,
+          "before_logit_rmse": 0.27669280767440796,
+          "after_logit_rmse": 0.09088819924571737
+        },
+        {
+          "left": "outputs/morph-showcase/variances/inputs/DSC_1026-27.jpg",
+          "right": "outputs/morph-showcase/variances/inputs/DSC_1030-29.jpg",
+          "matches": 195,
+          "geometric_inliers": 155,
+          "photometric_inliers": 2561,
+          "pair_scale": 0.980147793050824,
+          "pair_residual": 0.17336805872114053,
+          "before_logit_rmse": 0.7574456334114075,
+          "after_logit_rmse": 0.23416295897210357
+        },
+        {
+          "left": "outputs/morph-showcase/variances/inputs/DSC_1026-27.jpg",
+          "right": "outputs/morph-showcase/variances/inputs/DSC_1033-30.jpg",
+          "matches": 241,
+          "geometric_inliers": 170,
+          "photometric_inliers": 2757,
+          "pair_scale": 0.9659703430450535,
+          "pair_residual": 0.14041278927608686,
+          "before_logit_rmse": 0.8831478357315063,
+          "after_logit_rmse": 0.19298873511863232
+        },
+        {
+          "left": "outputs/morph-showcase/variances/inputs/DSC_1026-27.jpg",
+          "right": "Morph/originals/DSC_1037-31.jpg",
+          "matches": 289,
+          "geometric_inliers": 194,
+          "photometric_inliers": 2817,
+          "pair_scale": 0.974292788194441,
+          "pair_residual": 0.1562719203960008,
+          "before_logit_rmse": 0.5728214383125305,
+          "after_logit_rmse": 0.2388591266383658
+        },
+        {
+          "left": "outputs/morph-showcase/variances/inputs/DSC_1028-28.jpg",
+          "right": "outputs/morph-showcase/variances/inputs/DSC_1030-29.jpg",
+          "matches": 176,
+          "geometric_inliers": 122,
+          "photometric_inliers": 2883,
+          "pair_scale": 1.0042857934341072,
+          "pair_residual": 0.26603078249959383,
+          "before_logit_rmse": 0.518582820892334,
+          "after_logit_rmse": 0.3281648809031847
+        },
+        {
+          "left": "outputs/morph-showcase/variances/inputs/DSC_1028-28.jpg",
+          "right": "outputs/morph-showcase/variances/inputs/DSC_1033-30.jpg",
+          "matches": 292,
+          "geometric_inliers": 183,
+          "photometric_inliers": 2923,
+          "pair_scale": 1.0042675948613098,
+          "pair_residual": 0.16118589822708726,
+          "before_logit_rmse": 0.6097513437271118,
+          "after_logit_rmse": 0.20162765454104417
+        },
+        {
+          "left": "outputs/morph-showcase/variances/inputs/DSC_1028-28.jpg",
+          "right": "outputs/morph-showcase/variances/inputs/DSC_1037-31.jpg",
+          "matches": 223,
+          "geometric_inliers": 141,
+          "photometric_inliers": 3108,
+          "pair_scale": 0.9852626489312312,
+          "pair_residual": 0.2289540385634572,
+          "before_logit_rmse": 0.4760803282260895,
+          "after_logit_rmse": 0.318194728922612
+        },
+        {
+          "left": "outputs/morph-showcase/variances/inputs/DSC_1028-28.jpg",
+          "right": "Morph/originals/DSC_1037-31.jpg",
+          "matches": 212,
+          "geometric_inliers": 139,
+          "photometric_inliers": 3095,
+          "pair_scale": 0.9802510594171375,
+          "pair_residual": 0.23697623483756344,
+          "before_logit_rmse": 0.43205562233924866,
+          "after_logit_rmse": 0.36038732201605744
+        },
+        {
+          "left": "outputs/morph-showcase/variances/inputs/DSC_1030-29.jpg",
+          "right": "outputs/morph-showcase/variances/inputs/DSC_1033-30.jpg",
+          "matches": 532,
+          "geometric_inliers": 347,
+          "photometric_inliers": 2675,
+          "pair_scale": 0.9195245309278417,
+          "pair_residual": 0.23201441800517206,
+          "before_logit_rmse": 0.37164345383644104,
+          "after_logit_rmse": 0.31758080030865105
+        },
+        {
+          "left": "outputs/morph-showcase/variances/inputs/DSC_1030-29.jpg",
+          "right": "outputs/morph-showcase/variances/inputs/DSC_1037-31.jpg",
+          "matches": 205,
+          "geometric_inliers": 126,
+          "photometric_inliers": 2746,
+          "pair_scale": 0.8334622735882796,
+          "pair_residual": 0.21329623675850062,
+          "before_logit_rmse": 0.3462035357952118,
+          "after_logit_rmse": 0.3162850652660893
+        },
+        {
+          "left": "outputs/morph-showcase/variances/inputs/DSC_1030-29.jpg",
+          "right": "outputs/morph-showcase/variances/inputs/DSC_1038-32.jpg",
+          "matches": 190,
+          "geometric_inliers": 114,
+          "photometric_inliers": 2716,
+          "pair_scale": 0.8004611714350802,
+          "pair_residual": 0.23495194247517062,
+          "before_logit_rmse": 0.39550191164016724,
+          "after_logit_rmse": 0.3376769827360253
+        },
+        {
+          "left": "outputs/morph-showcase/variances/inputs/DSC_1030-29.jpg",
+          "right": "Morph/originals/DSC_1037-31.jpg",
+          "matches": 198,
+          "geometric_inliers": 131,
+          "photometric_inliers": 2716,
+          "pair_scale": 0.8512312180265068,
+          "pair_residual": 0.1914911152189,
+          "before_logit_rmse": 0.3210223317146301,
+          "after_logit_rmse": 0.3247657475160482
+        },
+        {
+          "left": "outputs/morph-showcase/variances/inputs/DSC_1033-30.jpg",
+          "right": "outputs/morph-showcase/variances/inputs/DSC_1037-31.jpg",
+          "matches": 205,
+          "geometric_inliers": 83,
+          "photometric_inliers": 3112,
+          "pair_scale": 0.8032577546860277,
+          "pair_residual": 0.2517094039120196,
+          "before_logit_rmse": 0.45007404685020447,
+          "after_logit_rmse": 0.3278687670808359
+        },
+        {
+          "left": "outputs/morph-showcase/variances/inputs/DSC_1033-30.jpg",
+          "right": "outputs/morph-showcase/variances/inputs/DSC_1038-32.jpg",
+          "matches": 259,
+          "geometric_inliers": 110,
+          "photometric_inliers": 2683,
+          "pair_scale": 0.9029850326111072,
+          "pair_residual": 0.08563095651886064,
+          "before_logit_rmse": 0.23434054851531982,
+          "after_logit_rmse": 0.12337786690140205
+        },
+        {
+          "left": "outputs/morph-showcase/variances/inputs/DSC_1033-30.jpg",
+          "right": "Morph/originals/DSC_1037-31.jpg",
+          "matches": 196,
+          "geometric_inliers": 78,
+          "photometric_inliers": 3058,
+          "pair_scale": 0.8132096686502843,
+          "pair_residual": 0.2315487436850959,
+          "before_logit_rmse": 0.4823894202709198,
+          "after_logit_rmse": 0.30951652812943414
+        },
+        {
+          "left": "outputs/morph-showcase/variances/inputs/DSC_1037-31.jpg",
+          "right": "outputs/morph-showcase/variances/inputs/DSC_1038-32.jpg",
+          "matches": 876,
+          "geometric_inliers": 753,
+          "photometric_inliers": 3020,
+          "pair_scale": 0.9818859587349376,
+          "pair_residual": 0.10319037459297478,
+          "before_logit_rmse": 0.16041192412376404,
+          "after_logit_rmse": 0.14891053154580947
+        },
+        {
+          "left": "outputs/morph-showcase/variances/inputs/DSC_1037-31.jpg",
+          "right": "Morph/originals/DSC_1037-31.jpg",
+          "matches": 2320,
+          "geometric_inliers": 2318,
+          "photometric_inliers": 3653,
+          "pair_scale": 1.0115200746390882,
+          "pair_residual": 0.008353306592738386,
+          "before_logit_rmse": 0.09108204394578934,
+          "after_logit_rmse": 0.05894505370154474
+        },
+        {
+          "left": "outputs/morph-showcase/variances/inputs/DSC_1038-32.jpg",
+          "right": "Morph/originals/DSC_1037-31.jpg",
+          "matches": 843,
+          "geometric_inliers": 765,
+          "photometric_inliers": 2838,
+          "pair_scale": 0.970133076649355,
+          "pair_residual": 0.08632757799138507,
+          "before_logit_rmse": 0.17888133227825165,
+          "after_logit_rmse": 0.13473875505670782
+        }
+      ]
+    },
+    {
+      "scene": "scene-04",
+      "reference": "Morph/originals/DSC_1054-33.jpg",
+      "edges": [
+        {
+          "left": "outputs/morph-showcase/variances/inputs/DSC_1054-33.jpg",
+          "right": "outputs/morph-showcase/variances/inputs/DSC_1059-34.jpg",
+          "matches": 669,
+          "geometric_inliers": 597,
+          "photometric_inliers": 3103,
+          "pair_scale": 0.9352478246507484,
+          "pair_residual": 0.06883034892627224,
+          "before_logit_rmse": 0.11270464956760406,
+          "after_logit_rmse": 0.09871701835541363
+        },
+        {
+          "left": "outputs/morph-showcase/variances/inputs/DSC_1054-33.jpg",
+          "right": "Morph/originals/DSC_1054-33.jpg",
+          "matches": 2312,
+          "geometric_inliers": 2308,
+          "photometric_inliers": 3863,
+          "pair_scale": 0.9723829064610895,
+          "pair_residual": 0.007275642780401777,
+          "before_logit_rmse": 0.05284690856933594,
+          "after_logit_rmse": 0.01461479547111617
+        },
+        {
+          "left": "outputs/morph-showcase/variances/inputs/DSC_1059-34.jpg",
+          "right": "Morph/originals/DSC_1054-33.jpg",
+          "matches": 664,
+          "geometric_inliers": 602,
+          "photometric_inliers": 2970,
+          "pair_scale": 0.9816571177898071,
+          "pair_residual": 0.043537146198601495,
+          "before_logit_rmse": 0.06593213230371475,
+          "after_logit_rmse": 0.06324859571863747
+        }
+      ]
+    },
+    {
+      "scene": "scene-05",
+      "reference": "Morph/originals/DSC_1111-45.jpg",
+      "edges": [
+        {
+          "left": "outputs/morph-showcase/variances/inputs/DSC_1070-35.jpg",
+          "right": "outputs/morph-showcase/variances/inputs/DSC_1074-36.jpg",
+          "matches": 784,
+          "geometric_inliers": 686,
+          "photometric_inliers": 3212,
+          "pair_scale": 0.9731373190182261,
+          "pair_residual": 0.12362171241058695,
+          "before_logit_rmse": 0.4012508988380432,
+          "after_logit_rmse": 0.15373549250006688
+        },
+        {
+          "left": "outputs/morph-showcase/variances/inputs/DSC_1070-35.jpg",
+          "right": "outputs/morph-showcase/variances/inputs/DSC_1083-37.jpg",
+          "matches": 139,
+          "geometric_inliers": 77,
+          "photometric_inliers": 3110,
+          "pair_scale": 0.9153432709137954,
+          "pair_residual": 0.07182494730242507,
+          "before_logit_rmse": 0.4243745803833008,
+          "after_logit_rmse": 0.09065763760869244
+        },
+        {
+          "left": "outputs/morph-showcase/variances/inputs/DSC_1070-35.jpg",
+          "right": "outputs/morph-showcase/variances/inputs/DSC_1096-40.jpg",
+          "matches": 313,
+          "geometric_inliers": 135,
+          "photometric_inliers": 3141,
+          "pair_scale": 0.6804627745611511,
+          "pair_residual": 0.22167273590033026,
+          "before_logit_rmse": 0.3542783558368683,
+          "after_logit_rmse": 0.28831759495077985
+        },
+        {
+          "left": "outputs/morph-showcase/variances/inputs/DSC_1070-35.jpg",
+          "right": "Morph/originals/DSC_1111-45.jpg",
+          "matches": 112,
+          "geometric_inliers": 65,
+          "photometric_inliers": 2915,
+          "pair_scale": 0.887969884917702,
+          "pair_residual": 0.0726008485763233,
+          "before_logit_rmse": 0.3524893522262573,
+          "after_logit_rmse": 0.12093141303651712
+        },
+        {
+          "left": "outputs/morph-showcase/variances/inputs/DSC_1074-36.jpg",
+          "right": "outputs/morph-showcase/variances/inputs/DSC_1083-37.jpg",
+          "matches": 585,
+          "geometric_inliers": 453,
+          "photometric_inliers": 3317,
+          "pair_scale": 0.9882494720947174,
+          "pair_residual": 0.027200865208255504,
+          "before_logit_rmse": 0.05466778203845024,
+          "after_logit_rmse": 0.030367594334784198
+        },
+        {
+          "left": "outputs/morph-showcase/variances/inputs/DSC_1074-36.jpg",
+          "right": "outputs/morph-showcase/variances/inputs/DSC_1096-40.jpg",
+          "matches": 197,
+          "geometric_inliers": 87,
+          "photometric_inliers": 3010,
+          "pair_scale": 0.9327513670782006,
+          "pair_residual": 0.0898716225903752,
+          "before_logit_rmse": 0.41439175605773926,
+          "after_logit_rmse": 0.11893735119401332
+        },
+        {
+          "left": "outputs/morph-showcase/variances/inputs/DSC_1074-36.jpg",
+          "right": "outputs/morph-showcase/variances/inputs/DSC_1100-41.jpg",
+          "matches": 170,
+          "geometric_inliers": 76,
+          "photometric_inliers": 3029,
+          "pair_scale": 0.9722136442890296,
+          "pair_residual": 0.10334049098672236,
+          "before_logit_rmse": 0.33195236325263977,
+          "after_logit_rmse": 0.12184109206532863
+        },
+        {
+          "left": "outputs/morph-showcase/variances/inputs/DSC_1074-36.jpg",
+          "right": "Morph/originals/DSC_1111-45.jpg",
+          "matches": 415,
+          "geometric_inliers": 337,
+          "photometric_inliers": 3099,
+          "pair_scale": 0.9427781014662091,
+          "pair_residual": 0.03857385300782639,
+          "before_logit_rmse": 0.0855574905872345,
+          "after_logit_rmse": 0.07441003915916004
+        },
+        {
+          "left": "outputs/morph-showcase/variances/inputs/DSC_1083-37.jpg",
+          "right": "outputs/morph-showcase/variances/inputs/DSC_1096-40.jpg",
+          "matches": 224,
+          "geometric_inliers": 124,
+          "photometric_inliers": 3150,
+          "pair_scale": 0.9018388079192413,
+          "pair_residual": 0.1305420381682697,
+          "before_logit_rmse": 0.5156503915786743,
+          "after_logit_rmse": 0.1859578327866207
+        },
+        {
+          "left": "outputs/morph-showcase/variances/inputs/DSC_1083-37.jpg",
+          "right": "outputs/morph-showcase/variances/inputs/DSC_1100-41.jpg",
+          "matches": 158,
+          "geometric_inliers": 65,
+          "photometric_inliers": 3092,
+          "pair_scale": 1.0047287900947106,
+          "pair_residual": 0.1160505561773238,
+          "before_logit_rmse": 0.4296756982803345,
+          "after_logit_rmse": 0.13730244932973504
+        },
+        {
+          "left": "outputs/morph-showcase/variances/inputs/DSC_1083-37.jpg",
+          "right": "outputs/morph-showcase/variances/inputs/DSC_1106-43.jpg",
+          "matches": 104,
+          "geometric_inliers": 34,
+          "photometric_inliers": 2996,
+          "pair_scale": 0.9644889742522048,
+          "pair_residual": 0.12097618691620804,
+          "before_logit_rmse": 0.8587955236434937,
+          "after_logit_rmse": 0.1361227661754586
+        },
+        {
+          "left": "outputs/morph-showcase/variances/inputs/DSC_1083-37.jpg",
+          "right": "Morph/originals/DSC_1111-45.jpg",
+          "matches": 502,
+          "geometric_inliers": 315,
+          "photometric_inliers": 3051,
+          "pair_scale": 0.9533065634615315,
+          "pair_residual": 0.037268397727606636,
+          "before_logit_rmse": 0.10092072188854218,
+          "after_logit_rmse": 0.07264591056587309
+        },
+        {
+          "left": "outputs/morph-showcase/variances/inputs/DSC_1096-40.jpg",
+          "right": "outputs/morph-showcase/variances/inputs/DSC_1100-41.jpg",
+          "matches": 459,
+          "geometric_inliers": 210,
+          "photometric_inliers": 3050,
+          "pair_scale": 0.9850091751180626,
+          "pair_residual": 0.11064712130968926,
+          "before_logit_rmse": 0.16683030128479004,
+          "after_logit_rmse": 0.13059604330729715
+        },
+        {
+          "left": "outputs/morph-showcase/variances/inputs/DSC_1096-40.jpg",
+          "right": "outputs/morph-showcase/variances/inputs/DSC_1106-43.jpg",
+          "matches": 188,
+          "geometric_inliers": 87,
+          "photometric_inliers": 3119,
+          "pair_scale": 0.9618306726057472,
+          "pair_residual": 0.06984483222034708,
+          "before_logit_rmse": 0.3913709819316864,
+          "after_logit_rmse": 0.08975600045793662
+        },
+        {
+          "left": "outputs/morph-showcase/variances/inputs/DSC_1096-40.jpg",
+          "right": "outputs/morph-showcase/variances/inputs/DSC_1109-44.jpg",
+          "matches": 130,
+          "geometric_inliers": 61,
+          "photometric_inliers": 3094,
+          "pair_scale": 0.9279327387894335,
+          "pair_residual": 0.08258367346673728,
+          "before_logit_rmse": 0.2543889284133911,
+          "after_logit_rmse": 0.10020856113874747
+        },
+        {
+          "left": "outputs/morph-showcase/variances/inputs/DSC_1096-40.jpg",
+          "right": "Morph/originals/DSC_1111-45.jpg",
+          "matches": 112,
+          "geometric_inliers": 47,
+          "photometric_inliers": 2945,
+          "pair_scale": 0.8506260786166827,
+          "pair_residual": 0.08389674810813222,
+          "before_logit_rmse": 0.42927443981170654,
+          "after_logit_rmse": 0.12990826850645443
+        },
+        {
+          "left": "outputs/morph-showcase/variances/inputs/DSC_1100-41.jpg",
+          "right": "outputs/morph-showcase/variances/inputs/DSC_1106-43.jpg",
+          "matches": 190,
+          "geometric_inliers": 98,
+          "photometric_inliers": 3210,
+          "pair_scale": 0.9658538085390583,
+          "pair_residual": 0.06982892129090153,
+          "before_logit_rmse": 0.4858659505844116,
+          "after_logit_rmse": 0.0723997701921058
+        },
+        {
+          "left": "outputs/morph-showcase/variances/inputs/DSC_1100-41.jpg",
+          "right": "outputs/morph-showcase/variances/inputs/DSC_1109-44.jpg",
+          "matches": 164,
+          "geometric_inliers": 72,
+          "photometric_inliers": 3135,
+          "pair_scale": 0.9346063259558187,
+          "pair_residual": 0.08076593077021006,
+          "before_logit_rmse": 0.3450677990913391,
+          "after_logit_rmse": 0.09207882106710688
+        },
+        {
+          "left": "outputs/morph-showcase/variances/inputs/DSC_1100-41.jpg",
+          "right": "outputs/morph-showcase/variances/inputs/DSC_1111-45.jpg",
+          "matches": 127,
+          "geometric_inliers": 50,
+          "photometric_inliers": 2915,
+          "pair_scale": 0.8526372947114973,
+          "pair_residual": 0.07682932910672052,
+          "before_logit_rmse": 0.26025986671447754,
+          "after_logit_rmse": 0.1128555356042724
+        },
+        {
+          "left": "outputs/morph-showcase/variances/inputs/DSC_1100-41.jpg",
+          "right": "Morph/originals/DSC_1111-45.jpg",
+          "matches": 134,
+          "geometric_inliers": 47,
+          "photometric_inliers": 2888,
+          "pair_scale": 0.8413630509859833,
+          "pair_residual": 0.07267689048222345,
+          "before_logit_rmse": 0.3434709310531616,
+          "after_logit_rmse": 0.11339472207043808
+        },
+        {
+          "left": "outputs/morph-showcase/variances/inputs/DSC_1106-43.jpg",
+          "right": "outputs/morph-showcase/variances/inputs/DSC_1109-44.jpg",
+          "matches": 199,
+          "geometric_inliers": 87,
+          "photometric_inliers": 3107,
+          "pair_scale": 0.9658669818567707,
+          "pair_residual": 0.031420636379552475,
+          "before_logit_rmse": 0.16603824496269226,
+          "after_logit_rmse": 0.03658642570041364
+        },
+        {
+          "left": "outputs/morph-showcase/variances/inputs/DSC_1106-43.jpg",
+          "right": "outputs/morph-showcase/variances/inputs/DSC_1111-45.jpg",
+          "matches": 114,
+          "geometric_inliers": 40,
+          "photometric_inliers": 2973,
+          "pair_scale": 0.8166273853190189,
+          "pair_residual": 0.08594260417338048,
+          "before_logit_rmse": 0.7069064974784851,
+          "after_logit_rmse": 0.12744770104809647
+        },
+        {
+          "left": "outputs/morph-showcase/variances/inputs/DSC_1106-43.jpg",
+          "right": "outputs/morph-showcase/variances/inputs/DSC_1118-48.jpg",
+          "matches": 194,
+          "geometric_inliers": 110,
+          "photometric_inliers": 2940,
+          "pair_scale": 0.9782904527544354,
+          "pair_residual": 0.027080213086274986,
+          "before_logit_rmse": 0.22671018540859222,
+          "after_logit_rmse": 0.032677837099394036
+        },
+        {
+          "left": "outputs/morph-showcase/variances/inputs/DSC_1106-43.jpg",
+          "right": "Morph/originals/DSC_1111-45.jpg",
+          "matches": 115,
+          "geometric_inliers": 39,
+          "photometric_inliers": 2954,
+          "pair_scale": 0.791045729303341,
+          "pair_residual": 0.08463987020875642,
+          "before_logit_rmse": 0.8116862773895264,
+          "after_logit_rmse": 0.13109231958757422
+        },
+        {
+          "left": "outputs/morph-showcase/variances/inputs/DSC_1109-44.jpg",
+          "right": "outputs/morph-showcase/variances/inputs/DSC_1111-45.jpg",
+          "matches": 474,
+          "geometric_inliers": 416,
+          "photometric_inliers": 3094,
+          "pair_scale": 0.9501520313043986,
+          "pair_residual": 0.14595289294211403,
+          "before_logit_rmse": 0.5407691597938538,
+          "after_logit_rmse": 0.20368292471370464
+        },
+        {
+          "left": "outputs/morph-showcase/variances/inputs/DSC_1109-44.jpg",
+          "right": "outputs/morph-showcase/variances/inputs/DSC_1118-48.jpg",
+          "matches": 234,
+          "geometric_inliers": 87,
+          "photometric_inliers": 2786,
+          "pair_scale": 0.8793291625812226,
+          "pair_residual": 0.14044222382707566,
+          "before_logit_rmse": 0.22442154586315155,
+          "after_logit_rmse": 0.1760394085752788
+        },
+        {
+          "left": "outputs/morph-showcase/variances/inputs/DSC_1109-44.jpg",
+          "right": "Morph/originals/DSC_1111-45.jpg",
+          "matches": 473,
+          "geometric_inliers": 424,
+          "photometric_inliers": 3123,
+          "pair_scale": 0.9396511002371114,
+          "pair_residual": 0.13791829699888486,
+          "before_logit_rmse": 0.6332205533981323,
+          "after_logit_rmse": 0.21850301585405998
+        },
+        {
+          "left": "outputs/morph-showcase/variances/inputs/DSC_1111-45.jpg",
+          "right": "outputs/morph-showcase/variances/inputs/DSC_1118-48.jpg",
+          "matches": 171,
+          "geometric_inliers": 59,
+          "photometric_inliers": 2862,
+          "pair_scale": 0.9926243410384752,
+          "pair_residual": 0.08889500138859616,
+          "before_logit_rmse": 0.4374825060367584,
+          "after_logit_rmse": 0.11868949959860572
+        },
+        {
+          "left": "outputs/morph-showcase/variances/inputs/DSC_1111-45.jpg",
+          "right": "Morph/originals/DSC_1111-45.jpg",
+          "matches": 2234,
+          "geometric_inliers": 2219,
+          "photometric_inliers": 3902,
+          "pair_scale": 0.9788957451874027,
+          "pair_residual": 0.0065813295889600885,
+          "before_logit_rmse": 0.11295635998249054,
+          "after_logit_rmse": 0.02830371283370137
+        },
+        {
+          "left": "outputs/morph-showcase/variances/inputs/DSC_1118-48.jpg",
+          "right": "Morph/originals/DSC_1111-45.jpg",
+          "matches": 127,
+          "geometric_inliers": 48,
+          "photometric_inliers": 2951,
+          "pair_scale": 0.8071098060941703,
+          "pair_residual": 0.0825102699197681,
+          "before_logit_rmse": 0.5932888388633728,
+          "after_logit_rmse": 0.13250046635748278
+        }
+      ]
+    },
+    {
+      "scene": "scene-05-tower",
+      "reference": "Morph/originals/DSC_1105-42.jpg",
+      "edges": [
+        {
+          "left": "outputs/morph-showcase/variances/inputs/DSC_1088-38.jpg",
+          "right": "outputs/morph-showcase/variances/inputs/DSC_1090-39.jpg",
+          "matches": 498,
+          "geometric_inliers": 203,
+          "photometric_inliers": 2739,
+          "pair_scale": 0.9452451990728972,
+          "pair_residual": 0.11590039977054611,
+          "before_logit_rmse": 0.23316292464733124,
+          "after_logit_rmse": 0.16985256016065808
+        },
+        {
+          "left": "outputs/morph-showcase/variances/inputs/DSC_1088-38.jpg",
+          "right": "outputs/morph-showcase/variances/inputs/DSC_1105-42.jpg",
+          "matches": 319,
+          "geometric_inliers": 162,
+          "photometric_inliers": 2666,
+          "pair_scale": 0.9829126421397724,
+          "pair_residual": 0.10061995080833462,
+          "before_logit_rmse": 0.1612694263458252,
+          "after_logit_rmse": 0.1550280852223691
+        },
+        {
+          "left": "outputs/morph-showcase/variances/inputs/DSC_1088-38.jpg",
+          "right": "outputs/morph-showcase/variances/inputs/DSC_1114-46.jpg",
+          "matches": 173,
+          "geometric_inliers": 95,
+          "photometric_inliers": 2612,
+          "pair_scale": 1.0490374732864838,
+          "pair_residual": 0.22285182157378414,
+          "before_logit_rmse": 0.4476736783981323,
+          "after_logit_rmse": 0.24743473526490697
+        },
+        {
+          "left": "outputs/morph-showcase/variances/inputs/DSC_1088-38.jpg",
+          "right": "Morph/originals/DSC_1105-42.jpg",
+          "matches": 305,
+          "geometric_inliers": 154,
+          "photometric_inliers": 2682,
+          "pair_scale": 0.9808786794984228,
+          "pair_residual": 0.09450015935889886,
+          "before_logit_rmse": 0.13911737501621246,
+          "after_logit_rmse": 0.13966126668889042
+        },
+        {
+          "left": "outputs/morph-showcase/variances/inputs/DSC_1090-39.jpg",
+          "right": "outputs/morph-showcase/variances/inputs/DSC_1105-42.jpg",
+          "matches": 448,
+          "geometric_inliers": 225,
+          "photometric_inliers": 2667,
+          "pair_scale": 0.9130011421122546,
+          "pair_residual": 0.03812030366995501,
+          "before_logit_rmse": 0.17693988978862762,
+          "after_logit_rmse": 0.06430854435159264
+        },
+        {
+          "left": "outputs/morph-showcase/variances/inputs/DSC_1090-39.jpg",
+          "right": "outputs/morph-showcase/variances/inputs/DSC_1114-46.jpg",
+          "matches": 259,
+          "geometric_inliers": 132,
+          "photometric_inliers": 2490,
+          "pair_scale": 0.971484358523523,
+          "pair_residual": 0.08579791831507738,
+          "before_logit_rmse": 0.20555372536182404,
+          "after_logit_rmse": 0.12957425446722587
+        },
+        {
+          "left": "outputs/morph-showcase/variances/inputs/DSC_1090-39.jpg",
+          "right": "outputs/morph-showcase/variances/inputs/DSC_1116-47.jpg",
+          "matches": 216,
+          "geometric_inliers": 123,
+          "photometric_inliers": 2817,
+          "pair_scale": 0.8023778493843676,
+          "pair_residual": 0.17883439470933518,
+          "before_logit_rmse": 0.36056265234947205,
+          "after_logit_rmse": 0.25617389863817874
+        },
+        {
+          "left": "outputs/morph-showcase/variances/inputs/DSC_1090-39.jpg",
+          "right": "Morph/originals/DSC_1105-42.jpg",
+          "matches": 459,
+          "geometric_inliers": 222,
+          "photometric_inliers": 2647,
+          "pair_scale": 0.8943073991712742,
+          "pair_residual": 0.036885508913093674,
+          "before_logit_rmse": 0.21857807040214539,
+          "after_logit_rmse": 0.059658707745941175
+        },
+        {
+          "left": "outputs/morph-showcase/variances/inputs/DSC_1105-42.jpg",
+          "right": "outputs/morph-showcase/variances/inputs/DSC_1114-46.jpg",
+          "matches": 250,
+          "geometric_inliers": 126,
+          "photometric_inliers": 2500,
+          "pair_scale": 1.0510031130070345,
+          "pair_residual": 0.10671941174064825,
+          "before_logit_rmse": 0.34761932492256165,
+          "after_logit_rmse": 0.15083153672440236
+        },
+        {
+          "left": "outputs/morph-showcase/variances/inputs/DSC_1105-42.jpg",
+          "right": "outputs/morph-showcase/variances/inputs/DSC_1116-47.jpg",
+          "matches": 229,
+          "geometric_inliers": 140,
+          "photometric_inliers": 2802,
+          "pair_scale": 0.895017831246317,
+          "pair_residual": 0.16448252411206066,
+          "before_logit_rmse": 0.4144625663757324,
+          "after_logit_rmse": 0.21613361679711818
+        },
+        {
+          "left": "outputs/morph-showcase/variances/inputs/DSC_1105-42.jpg",
+          "right": "Morph/originals/DSC_1105-42.jpg",
+          "matches": 2233,
+          "geometric_inliers": 2225,
+          "photometric_inliers": 3817,
+          "pair_scale": 0.9869881722698042,
+          "pair_residual": 0.008124684376730534,
+          "before_logit_rmse": 0.04869399592280388,
+          "after_logit_rmse": 0.021147235319453606
+        },
+        {
+          "left": "outputs/morph-showcase/variances/inputs/DSC_1114-46.jpg",
+          "right": "outputs/morph-showcase/variances/inputs/DSC_1116-47.jpg",
+          "matches": 401,
+          "geometric_inliers": 131,
+          "photometric_inliers": 2789,
+          "pair_scale": 0.7416730867363196,
+          "pair_residual": 0.3642802171098874,
+          "before_logit_rmse": 0.5840834379196167,
+          "after_logit_rmse": 0.5168831777568536
+        },
+        {
+          "left": "outputs/morph-showcase/variances/inputs/DSC_1114-46.jpg",
+          "right": "Morph/originals/DSC_1105-42.jpg",
+          "matches": 270,
+          "geometric_inliers": 118,
+          "photometric_inliers": 2569,
+          "pair_scale": 0.7964625511680239,
+          "pair_residual": 0.12103983943607567,
+          "before_logit_rmse": 0.4136454164981842,
+          "after_logit_rmse": 0.16237275936128848
+        },
+        {
+          "left": "outputs/morph-showcase/variances/inputs/DSC_1116-47.jpg",
+          "right": "Morph/originals/DSC_1105-42.jpg",
+          "matches": 238,
+          "geometric_inliers": 128,
+          "photometric_inliers": 2751,
+          "pair_scale": 0.8021506498632635,
+          "pair_residual": 0.15127790508917235,
+          "before_logit_rmse": 0.47697070240974426,
+          "after_logit_rmse": 0.2410075340362423
+        }
+      ]
+    },
+    {
+      "scene": "scene-06-walk",
+      "reference": "Morph/originals/DSC_1264-51.jpg",
+      "edges": [
+        {
+          "left": "outputs/morph-showcase/variances/inputs/DSC_1259-49.jpg",
+          "right": "outputs/morph-showcase/variances/inputs/DSC_1261-50.jpg",
+          "matches": 632,
+          "geometric_inliers": 335,
+          "photometric_inliers": 3048,
+          "pair_scale": 0.8756250014875336,
+          "pair_residual": 0.12027930301594156,
+          "before_logit_rmse": 0.1782369464635849,
+          "after_logit_rmse": 0.15118198916179945
+        },
+        {
+          "left": "outputs/morph-showcase/variances/inputs/DSC_1259-49.jpg",
+          "right": "outputs/morph-showcase/variances/inputs/DSC_1264-51.jpg",
+          "matches": 288,
+          "geometric_inliers": 200,
+          "photometric_inliers": 3242,
+          "pair_scale": 0.8443885645003572,
+          "pair_residual": 0.17629977660714902,
+          "before_logit_rmse": 0.3503853678703308,
+          "after_logit_rmse": 0.24493745012281337
+        },
+        {
+          "left": "outputs/morph-showcase/variances/inputs/DSC_1259-49.jpg",
+          "right": "outputs/morph-showcase/variances/inputs/DSC_1265-52.jpg",
+          "matches": 240,
+          "geometric_inliers": 149,
+          "photometric_inliers": 3190,
+          "pair_scale": 0.9105396563599019,
+          "pair_residual": 0.21078019326237024,
+          "before_logit_rmse": 0.9362908601760864,
+          "after_logit_rmse": 0.26154224160108464
+        },
+        {
+          "left": "outputs/morph-showcase/variances/inputs/DSC_1259-49.jpg",
+          "right": "Morph/originals/DSC_1264-51.jpg",
+          "matches": 300,
+          "geometric_inliers": 204,
+          "photometric_inliers": 3241,
+          "pair_scale": 0.8865470778235932,
+          "pair_residual": 0.1755813308795384,
+          "before_logit_rmse": 0.2804558277130127,
+          "after_logit_rmse": 0.24873126754611036
+        },
+        {
+          "left": "outputs/morph-showcase/variances/inputs/DSC_1261-50.jpg",
+          "right": "outputs/morph-showcase/variances/inputs/DSC_1264-51.jpg",
+          "matches": 429,
+          "geometric_inliers": 359,
+          "photometric_inliers": 3221,
+          "pair_scale": 0.9562121288985754,
+          "pair_residual": 0.11043679489590806,
+          "before_logit_rmse": 0.32122913002967834,
+          "after_logit_rmse": 0.15598276652801474
+        },
+        {
+          "left": "outputs/morph-showcase/variances/inputs/DSC_1261-50.jpg",
+          "right": "outputs/morph-showcase/variances/inputs/DSC_1265-52.jpg",
+          "matches": 307,
+          "geometric_inliers": 258,
+          "photometric_inliers": 3224,
+          "pair_scale": 1.02125745071198,
+          "pair_residual": 0.15255843324365564,
+          "before_logit_rmse": 0.9940844774246216,
+          "after_logit_rmse": 0.2017202618106279
+        },
+        {
+          "left": "outputs/morph-showcase/variances/inputs/DSC_1261-50.jpg",
+          "right": "outputs/morph-showcase/variances/inputs/DSC_1268-53.jpg",
+          "matches": 283,
+          "geometric_inliers": 226,
+          "photometric_inliers": 3307,
+          "pair_scale": 1.0057276435541045,
+          "pair_residual": 0.1800789324443219,
+          "before_logit_rmse": 0.5569040179252625,
+          "after_logit_rmse": 0.23314804923257743
+        },
+        {
+          "left": "outputs/morph-showcase/variances/inputs/DSC_1261-50.jpg",
+          "right": "Morph/originals/DSC_1264-51.jpg",
+          "matches": 443,
+          "geometric_inliers": 362,
+          "photometric_inliers": 3200,
+          "pair_scale": 1.0073057172379125,
+          "pair_residual": 0.12008943975099776,
+          "before_logit_rmse": 0.22718743979930878,
+          "after_logit_rmse": 0.17647506707124314
+        },
+        {
+          "left": "outputs/morph-showcase/variances/inputs/DSC_1264-51.jpg",
+          "right": "outputs/morph-showcase/variances/inputs/DSC_1265-52.jpg",
+          "matches": 1030,
+          "geometric_inliers": 919,
+          "photometric_inliers": 3070,
+          "pair_scale": 1.0534454200347219,
+          "pair_residual": 0.07380588786342653,
+          "before_logit_rmse": 0.684267520904541,
+          "after_logit_rmse": 0.10384119318185214
+        },
+        {
+          "left": "outputs/morph-showcase/variances/inputs/DSC_1264-51.jpg",
+          "right": "outputs/morph-showcase/variances/inputs/DSC_1268-53.jpg",
+          "matches": 901,
+          "geometric_inliers": 815,
+          "photometric_inliers": 3111,
+          "pair_scale": 1.0306831191743453,
+          "pair_residual": 0.07797165007803566,
+          "before_logit_rmse": 0.23313739895820618,
+          "after_logit_rmse": 0.11146956970295063
+        },
+        {
+          "left": "outputs/morph-showcase/variances/inputs/DSC_1264-51.jpg",
+          "right": "Morph/originals/DSC_1264-51.jpg",
+          "matches": 2319,
+          "geometric_inliers": 2318,
+          "photometric_inliers": 3902,
+          "pair_scale": 1.0493678839901728,
+          "pair_residual": 0.007131502249735376,
+          "before_logit_rmse": 0.12008456885814667,
+          "after_logit_rmse": 0.04036610894871748
+        },
+        {
+          "left": "outputs/morph-showcase/variances/inputs/DSC_1265-52.jpg",
+          "right": "outputs/morph-showcase/variances/inputs/DSC_1268-53.jpg",
+          "matches": 1121,
+          "geometric_inliers": 1083,
+          "photometric_inliers": 3476,
+          "pair_scale": 0.9679776228415352,
+          "pair_residual": 0.07520424600260761,
+          "before_logit_rmse": 0.46112796664237976,
+          "after_logit_rmse": 0.0954821575705452
+        },
+        {
+          "left": "outputs/morph-showcase/variances/inputs/DSC_1265-52.jpg",
+          "right": "Morph/originals/DSC_1264-51.jpg",
+          "matches": 986,
+          "geometric_inliers": 898,
+          "photometric_inliers": 3192,
+          "pair_scale": 0.921685548000962,
+          "pair_residual": 0.0915269762097566,
+          "before_logit_rmse": 0.8042718172073364,
+          "after_logit_rmse": 0.11925703462756304
+        },
+        {
+          "left": "outputs/morph-showcase/variances/inputs/DSC_1268-53.jpg",
+          "right": "Morph/originals/DSC_1264-51.jpg",
+          "matches": 886,
+          "geometric_inliers": 765,
+          "photometric_inliers": 3226,
+          "pair_scale": 0.9540404626348431,
+          "pair_residual": 0.09523230165125891,
+          "before_logit_rmse": 0.33786100149154663,
+          "after_logit_rmse": 0.12972904840773472
+        }
+      ]
+    },
+    {
+      "scene": "scene-06-shade",
+      "reference": "Morph/originals/DSC_1273-54.jpg",
+      "edges": [
+        {
+          "left": "outputs/morph-showcase/variances/inputs/DSC_1273-54.jpg",
+          "right": "Morph/originals/DSC_1273-54.jpg",
+          "matches": 2320,
+          "geometric_inliers": 2319,
+          "photometric_inliers": 3739,
+          "pair_scale": 1.0003936394314155,
+          "pair_residual": 0.007242491229393769,
+          "before_logit_rmse": 0.07143715023994446,
+          "after_logit_rmse": 0.014279504458065835
+        }
+      ]
+    },
+    {
+      "scene": "scene-06",
+      "reference": "Morph/originals/DSC_1286-58.jpg",
+      "edges": [
+        {
+          "left": "outputs/morph-showcase/variances/inputs/DSC_1280-55.jpg",
+          "right": "outputs/morph-showcase/variances/inputs/DSC_1282-56.jpg",
+          "matches": 564,
+          "geometric_inliers": 339,
+          "photometric_inliers": 2857,
+          "pair_scale": 0.9352574598244968,
+          "pair_residual": 0.09830306298404001,
+          "before_logit_rmse": 0.19503287971019745,
+          "after_logit_rmse": 0.12593064292113784
+        },
+        {
+          "left": "outputs/morph-showcase/variances/inputs/DSC_1280-55.jpg",
+          "right": "outputs/morph-showcase/variances/inputs/DSC_1284-57.jpg",
+          "matches": 523,
+          "geometric_inliers": 340,
+          "photometric_inliers": 2929,
+          "pair_scale": 0.9459978318618858,
+          "pair_residual": 0.09332768336456268,
+          "before_logit_rmse": 0.1358586847782135,
+          "after_logit_rmse": 0.11593225067819807
+        },
+        {
+          "left": "outputs/morph-showcase/variances/inputs/DSC_1280-55.jpg",
+          "right": "outputs/morph-showcase/variances/inputs/DSC_1286-58.jpg",
+          "matches": 755,
+          "geometric_inliers": 527,
+          "photometric_inliers": 2789,
+          "pair_scale": 0.9349613846519395,
+          "pair_residual": 0.07032079566696478,
+          "before_logit_rmse": 0.16669006645679474,
+          "after_logit_rmse": 0.10546894084437809
+        },
+        {
+          "left": "outputs/morph-showcase/variances/inputs/DSC_1280-55.jpg",
+          "right": "Morph/originals/DSC_1286-58.jpg",
+          "matches": 782,
+          "geometric_inliers": 548,
+          "photometric_inliers": 2792,
+          "pair_scale": 0.9321977996155625,
+          "pair_residual": 0.06584279381906583,
+          "before_logit_rmse": 0.14216697216033936,
+          "after_logit_rmse": 0.1018502682303399
+        },
+        {
+          "left": "outputs/morph-showcase/variances/inputs/DSC_1282-56.jpg",
+          "right": "outputs/morph-showcase/variances/inputs/DSC_1284-57.jpg",
+          "matches": 827,
+          "geometric_inliers": 692,
+          "photometric_inliers": 2706,
+          "pair_scale": 1.0091713177533042,
+          "pair_residual": 0.03209670786469106,
+          "before_logit_rmse": 0.10784462839365005,
+          "after_logit_rmse": 0.042981702683411484
+        },
+        {
+          "left": "outputs/morph-showcase/variances/inputs/DSC_1282-56.jpg",
+          "right": "outputs/morph-showcase/variances/inputs/DSC_1286-58.jpg",
+          "matches": 651,
+          "geometric_inliers": 470,
+          "photometric_inliers": 2814,
+          "pair_scale": 0.9763703667808177,
+          "pair_residual": 0.06343058030247092,
+          "before_logit_rmse": 0.20954859256744385,
+          "after_logit_rmse": 0.08738820435000372
+        },
+        {
+          "left": "outputs/morph-showcase/variances/inputs/DSC_1282-56.jpg",
+          "right": "outputs/morph-showcase/variances/inputs/DSC_1288-59.jpg",
+          "matches": 43,
+          "geometric_inliers": 17,
+          "photometric_inliers": 3192,
+          "pair_scale": 0.7028143508194431,
+          "pair_residual": 0.5868038047562163,
+          "before_logit_rmse": 0.9327880144119263,
+          "after_logit_rmse": 0.8138277727299119
+        },
+        {
+          "left": "outputs/morph-showcase/variances/inputs/DSC_1282-56.jpg",
+          "right": "Morph/originals/DSC_1286-58.jpg",
+          "matches": 681,
+          "geometric_inliers": 493,
+          "photometric_inliers": 2849,
+          "pair_scale": 0.9751790679731002,
+          "pair_residual": 0.06229673649637133,
+          "before_logit_rmse": 0.17729489505290985,
+          "after_logit_rmse": 0.09263314896625229
+        },
+        {
+          "left": "outputs/morph-showcase/variances/inputs/DSC_1284-57.jpg",
+          "right": "outputs/morph-showcase/variances/inputs/DSC_1286-58.jpg",
+          "matches": 802,
+          "geometric_inliers": 448,
+          "photometric_inliers": 2848,
+          "pair_scale": 0.9488788919134605,
+          "pair_residual": 0.15094765265743565,
+          "before_logit_rmse": 0.2486153542995453,
+          "after_logit_rmse": 0.22782130579330784
+        },
+        {
+          "left": "outputs/morph-showcase/variances/inputs/DSC_1284-57.jpg",
+          "right": "outputs/morph-showcase/variances/inputs/DSC_1288-59.jpg",
+          "matches": 44,
+          "geometric_inliers": 16,
+          "photometric_inliers": 3105,
+          "pair_scale": 0.8151060014761451,
+          "pair_residual": 0.38757190745895,
+          "before_logit_rmse": 0.621607780456543,
+          "after_logit_rmse": 0.547650030559064
+        },
+        {
+          "left": "outputs/morph-showcase/variances/inputs/DSC_1284-57.jpg",
+          "right": "outputs/morph-showcase/variances/inputs/DSC_1291-60.jpg",
+          "matches": 44,
+          "geometric_inliers": 15,
+          "photometric_inliers": 3153,
+          "pair_scale": 0.7142590288840319,
+          "pair_residual": 0.5084458907806746,
+          "before_logit_rmse": 0.7604882121086121,
+          "after_logit_rmse": 0.7286009037681358
+        },
+        {
+          "left": "outputs/morph-showcase/variances/inputs/DSC_1284-57.jpg",
+          "right": "Morph/originals/DSC_1286-58.jpg",
+          "matches": 826,
+          "geometric_inliers": 578,
+          "photometric_inliers": 2873,
+          "pair_scale": 0.9607399211240336,
+          "pair_residual": 0.06435970463864554,
+          "before_logit_rmse": 0.11687272787094116,
+          "after_logit_rmse": 0.09760273817562867
+        },
+        {
+          "left": "outputs/morph-showcase/variances/inputs/DSC_1286-58.jpg",
+          "right": "outputs/morph-showcase/variances/inputs/DSC_1288-59.jpg",
+          "matches": 68,
+          "geometric_inliers": 20,
+          "photometric_inliers": 2998,
+          "pair_scale": 0.8597439092228835,
+          "pair_residual": 0.2978693737068201,
+          "before_logit_rmse": 0.4769996106624603,
+          "after_logit_rmse": 0.44120460044911036
+        },
+        {
+          "left": "outputs/morph-showcase/variances/inputs/DSC_1286-58.jpg",
+          "right": "outputs/morph-showcase/variances/inputs/DSC_1291-60.jpg",
+          "matches": 43,
+          "geometric_inliers": 18,
+          "photometric_inliers": 3175,
+          "pair_scale": 0.7360041335704887,
+          "pair_residual": 0.5262855149682827,
+          "before_logit_rmse": 0.767705500125885,
+          "after_logit_rmse": 0.7319843051069235
+        },
+        {
+          "left": "outputs/morph-showcase/variances/inputs/DSC_1286-58.jpg",
+          "right": "outputs/morph-showcase/variances/inputs/DSC_1292-61.jpg",
+          "matches": 44,
+          "geometric_inliers": 18,
+          "photometric_inliers": 3166,
+          "pair_scale": 0.71608948021585,
+          "pair_residual": 0.45640164791375026,
+          "before_logit_rmse": 0.7339662313461304,
+          "after_logit_rmse": 0.6743342527713867
+        },
+        {
+          "left": "outputs/morph-showcase/variances/inputs/DSC_1286-58.jpg",
+          "right": "Morph/originals/DSC_1286-58.jpg",
+          "matches": 2307,
+          "geometric_inliers": 2302,
+          "photometric_inliers": 3804,
+          "pair_scale": 0.9964141293965461,
+          "pair_residual": 0.009194415328672146,
+          "before_logit_rmse": 0.06137099862098694,
+          "after_logit_rmse": 0.04245745723908129
+        },
+        {
+          "left": "outputs/morph-showcase/variances/inputs/DSC_1288-59.jpg",
+          "right": "outputs/morph-showcase/variances/inputs/DSC_1291-60.jpg",
+          "matches": 834,
+          "geometric_inliers": 753,
+          "photometric_inliers": 2553,
+          "pair_scale": 0.9767875445246027,
+          "pair_residual": 0.06217764662053887,
+          "before_logit_rmse": 0.26007896661758423,
+          "after_logit_rmse": 0.08257290345922047
+        },
+        {
+          "left": "outputs/morph-showcase/variances/inputs/DSC_1288-59.jpg",
+          "right": "outputs/morph-showcase/variances/inputs/DSC_1292-61.jpg",
+          "matches": 863,
+          "geometric_inliers": 740,
+          "photometric_inliers": 2601,
+          "pair_scale": 0.9595002954966613,
+          "pair_residual": 0.06173844999564386,
+          "before_logit_rmse": 0.12842723727226257,
+          "after_logit_rmse": 0.08537754778728256
+        },
+        {
+          "left": "outputs/morph-showcase/variances/inputs/DSC_1288-59.jpg",
+          "right": "outputs/morph-showcase/variances/inputs/DSC_1293-62.jpg",
+          "matches": 370,
+          "geometric_inliers": 151,
+          "photometric_inliers": 2790,
+          "pair_scale": 0.7346765566499454,
+          "pair_residual": 0.48621977362574353,
+          "before_logit_rmse": 0.6814852356910706,
+          "after_logit_rmse": 0.5897881458860482
+        },
+        {
+          "left": "outputs/morph-showcase/variances/inputs/DSC_1288-59.jpg",
+          "right": "Morph/originals/DSC_1286-58.jpg",
+          "matches": 66,
+          "geometric_inliers": 17,
+          "photometric_inliers": 3017,
+          "pair_scale": 0.8905958208236645,
+          "pair_residual": 0.3039595050544723,
+          "before_logit_rmse": 0.5019040107727051,
+          "after_logit_rmse": 0.4301093391128421
+        },
+        {
+          "left": "outputs/morph-showcase/variances/inputs/DSC_1291-60.jpg",
+          "right": "outputs/morph-showcase/variances/inputs/DSC_1292-61.jpg",
+          "matches": 1059,
+          "geometric_inliers": 1020,
+          "photometric_inliers": 2655,
+          "pair_scale": 0.9669262463786478,
+          "pair_residual": 0.04397646450855236,
+          "before_logit_rmse": 0.28848835825920105,
+          "after_logit_rmse": 0.05862538509392181
+        },
+        {
+          "left": "outputs/morph-showcase/variances/inputs/DSC_1291-60.jpg",
+          "right": "outputs/morph-showcase/variances/inputs/DSC_1293-62.jpg",
+          "matches": 238,
+          "geometric_inliers": 100,
+          "photometric_inliers": 2535,
+          "pair_scale": 0.7145560239315815,
+          "pair_residual": 0.5057219934436287,
+          "before_logit_rmse": 0.8202581405639648,
+          "after_logit_rmse": 0.6777388439432522
+        },
+        {
+          "left": "outputs/morph-showcase/variances/inputs/DSC_1291-60.jpg",
+          "right": "Morph/originals/DSC_1286-58.jpg",
+          "matches": 39,
+          "geometric_inliers": 15,
+          "photometric_inliers": 3091,
+          "pair_scale": 0.8630620780214361,
+          "pair_residual": 0.36289888508168255,
+          "before_logit_rmse": 0.49121853709220886,
+          "after_logit_rmse": 0.48170212962886705
+        },
+        {
+          "left": "outputs/morph-showcase/variances/inputs/DSC_1292-61.jpg",
+          "right": "outputs/morph-showcase/variances/inputs/DSC_1293-62.jpg",
+          "matches": 294,
+          "geometric_inliers": 100,
+          "photometric_inliers": 2598,
+          "pair_scale": 0.7881705650415479,
+          "pair_residual": 0.4938904964631302,
+          "before_logit_rmse": 0.6869592070579529,
+          "after_logit_rmse": 0.6090750647002546
+        },
+        {
+          "left": "outputs/morph-showcase/variances/inputs/DSC_1292-61.jpg",
+          "right": "outputs/morph-showcase/variances/inputs/DSC_1300-63.jpg",
+          "matches": 36,
+          "geometric_inliers": 15,
+          "photometric_inliers": 2943,
+          "pair_scale": 0.8276066510133965,
+          "pair_residual": 0.4345147437961318,
+          "before_logit_rmse": 0.6675711274147034,
+          "after_logit_rmse": 0.4952922081282422
+        },
+        {
+          "left": "outputs/morph-showcase/variances/inputs/DSC_1292-61.jpg",
+          "right": "outputs/morph-showcase/variances/inputs/DSC_1302-64.jpg",
+          "matches": 32,
+          "geometric_inliers": 15,
+          "photometric_inliers": 2767,
+          "pair_scale": 0.8738690656599737,
+          "pair_residual": 0.43762884733711416,
+          "before_logit_rmse": 0.6242620348930359,
+          "after_logit_rmse": 0.48323876420878514
+        },
+        {
+          "left": "outputs/morph-showcase/variances/inputs/DSC_1292-61.jpg",
+          "right": "Morph/originals/DSC_1286-58.jpg",
+          "matches": 43,
+          "geometric_inliers": 14,
+          "photometric_inliers": 3179,
+          "pair_scale": 0.8667103201879197,
+          "pair_residual": 0.42838854671619947,
+          "before_logit_rmse": 0.6697471141815186,
+          "after_logit_rmse": 0.5839935477603537
+        },
+        {
+          "left": "outputs/morph-showcase/variances/inputs/DSC_1293-62.jpg",
+          "right": "outputs/morph-showcase/variances/inputs/DSC_1300-63.jpg",
+          "matches": 57,
+          "geometric_inliers": 23,
+          "photometric_inliers": 2626,
+          "pair_scale": 0.8287918775248563,
+          "pair_residual": 0.23890743350650084,
+          "before_logit_rmse": 0.5007844567298889,
+          "after_logit_rmse": 0.2604489672056775
+        },
+        {
+          "left": "outputs/morph-showcase/variances/inputs/DSC_1293-62.jpg",
+          "right": "outputs/morph-showcase/variances/inputs/DSC_1302-64.jpg",
+          "matches": 53,
+          "geometric_inliers": 19,
+          "photometric_inliers": 2628,
+          "pair_scale": 0.8191665921890919,
+          "pair_residual": 0.3123250607965397,
+          "before_logit_rmse": 0.49612489342689514,
+          "after_logit_rmse": 0.3163161298350885
+        },
+        {
+          "left": "outputs/morph-showcase/variances/inputs/DSC_1300-63.jpg",
+          "right": "outputs/morph-showcase/variances/inputs/DSC_1302-64.jpg",
+          "matches": 1218,
+          "geometric_inliers": 1104,
+          "photometric_inliers": 2804,
+          "pair_scale": 1.0370474954100086,
+          "pair_residual": 0.05156073269156507,
+          "before_logit_rmse": 0.1677210032939911,
+          "after_logit_rmse": 0.0568137140410273
+        },
+        {
+          "left": "outputs/morph-showcase/variances/inputs/DSC_1302-64.jpg",
+          "right": "Morph/originals/DSC_1286-58.jpg",
+          "matches": 161,
+          "geometric_inliers": 55,
+          "photometric_inliers": 3228,
+          "pair_scale": 0.681195590368448,
+          "pair_residual": 0.6079635442808733,
+          "before_logit_rmse": 0.8950484395027161,
+          "after_logit_rmse": 0.8196664807751651
+        },
+        {
+          "left": "outputs/morph-showcase/variances/inputs/DSC_1304-65.jpg",
+          "right": "Morph/originals/DSC_1286-58.jpg",
+          "matches": 144,
+          "geometric_inliers": 56,
+          "photometric_inliers": 3152,
+          "pair_scale": 0.7598279123347064,
+          "pair_residual": 0.496591142371977,
+          "before_logit_rmse": 0.6848322153091431,
+          "after_logit_rmse": 0.6571654671665943
+        }
+      ]
+    },
+    {
+      "scene": "scene-07",
+      "reference": "Morph/originals/DSC_1320-70.jpg",
+      "edges": [
+        {
+          "left": "outputs/morph-showcase/variances/inputs/DSC_1308-66.jpg",
+          "right": "outputs/morph-showcase/variances/inputs/DSC_1310-67.jpg",
+          "matches": 1140,
+          "geometric_inliers": 998,
+          "photometric_inliers": 2796,
+          "pair_scale": 0.959634285616249,
+          "pair_residual": 0.019144615402380997,
+          "before_logit_rmse": 0.14026540517807007,
+          "after_logit_rmse": 0.02780232225537658
+        },
+        {
+          "left": "outputs/morph-showcase/variances/inputs/DSC_1308-66.jpg",
+          "right": "outputs/morph-showcase/variances/inputs/DSC_1312-68.jpg",
+          "matches": 905,
+          "geometric_inliers": 670,
+          "photometric_inliers": 2761,
+          "pair_scale": 0.9898998528663762,
+          "pair_residual": 0.027035933129207948,
+          "before_logit_rmse": 0.13618873059749603,
+          "after_logit_rmse": 0.03702332764432088
+        },
+        {
+          "left": "outputs/morph-showcase/variances/inputs/DSC_1308-66.jpg",
+          "right": "outputs/morph-showcase/variances/inputs/DSC_1315-69.jpg",
+          "matches": 179,
+          "geometric_inliers": 66,
+          "photometric_inliers": 2870,
+          "pair_scale": 0.8725048674820469,
+          "pair_residual": 0.164502136097797,
+          "before_logit_rmse": 0.34677430987358093,
+          "after_logit_rmse": 0.20809367720993213
+        },
+        {
+          "left": "outputs/morph-showcase/variances/inputs/DSC_1308-66.jpg",
+          "right": "Morph/originals/DSC_1320-70.jpg",
+          "matches": 189,
+          "geometric_inliers": 81,
+          "photometric_inliers": 2935,
+          "pair_scale": 0.7348484169226285,
+          "pair_residual": 0.24423146324367687,
+          "before_logit_rmse": 0.5170735120773315,
+          "after_logit_rmse": 0.36331321679083617
+        },
+        {
+          "left": "outputs/morph-showcase/variances/inputs/DSC_1310-67.jpg",
+          "right": "outputs/morph-showcase/variances/inputs/DSC_1312-68.jpg",
+          "matches": 1390,
+          "geometric_inliers": 1293,
+          "photometric_inliers": 2745,
+          "pair_scale": 1.0187901909823203,
+          "pair_residual": 0.024828884354431743,
+          "before_logit_rmse": 0.25097110867500305,
+          "after_logit_rmse": 0.03298169957211319
+        },
+        {
+          "left": "outputs/morph-showcase/variances/inputs/DSC_1310-67.jpg",
+          "right": "outputs/morph-showcase/variances/inputs/DSC_1315-69.jpg",
+          "matches": 173,
+          "geometric_inliers": 58,
+          "photometric_inliers": 2888,
+          "pair_scale": 0.9137243715142239,
+          "pair_residual": 0.18213304131082877,
+          "before_logit_rmse": 0.2682950794696808,
+          "after_logit_rmse": 0.22243610394433705
+        },
+        {
+          "left": "outputs/morph-showcase/variances/inputs/DSC_1310-67.jpg",
+          "right": "outputs/morph-showcase/variances/inputs/DSC_1320-70.jpg",
+          "matches": 173,
+          "geometric_inliers": 61,
+          "photometric_inliers": 2974,
+          "pair_scale": 0.8852491959899519,
+          "pair_residual": 0.05119455587369537,
+          "before_logit_rmse": 0.13999731838703156,
+          "after_logit_rmse": 0.06252968570639114
+        },
+        {
+          "left": "outputs/morph-showcase/variances/inputs/DSC_1310-67.jpg",
+          "right": "Morph/originals/DSC_1320-70.jpg",
+          "matches": 171,
+          "geometric_inliers": 59,
+          "photometric_inliers": 2977,
+          "pair_scale": 0.8880153453410263,
+          "pair_residual": 0.0449130864072631,
+          "before_logit_rmse": 0.2686070203781128,
+          "after_logit_rmse": 0.0650252943525136
+        },
+        {
+          "left": "outputs/morph-showcase/variances/inputs/DSC_1312-68.jpg",
+          "right": "outputs/morph-showcase/variances/inputs/DSC_1315-69.jpg",
+          "matches": 168,
+          "geometric_inliers": 65,
+          "photometric_inliers": 2861,
+          "pair_scale": 0.9258985494137759,
+          "pair_residual": 0.1287540338233623,
+          "before_logit_rmse": 0.35540977120399475,
+          "after_logit_rmse": 0.1680311471586756
+        },
+        {
+          "left": "outputs/morph-showcase/variances/inputs/DSC_1312-68.jpg",
+          "right": "outputs/morph-showcase/variances/inputs/DSC_1320-70.jpg",
+          "matches": 162,
+          "geometric_inliers": 61,
+          "photometric_inliers": 3035,
+          "pair_scale": 0.71615887046725,
+          "pair_residual": 0.301187559615874,
+          "before_logit_rmse": 0.5880316495895386,
+          "after_logit_rmse": 0.4276978140862624
+        },
+        {
+          "left": "outputs/morph-showcase/variances/inputs/DSC_1312-68.jpg",
+          "right": "Morph/originals/DSC_1320-70.jpg",
+          "matches": 163,
+          "geometric_inliers": 62,
+          "photometric_inliers": 2970,
+          "pair_scale": 0.8372896494945211,
+          "pair_residual": 0.04883915867780232,
+          "before_logit_rmse": 0.5184596180915833,
+          "after_logit_rmse": 0.0667692251136413
+        },
+        {
+          "left": "outputs/morph-showcase/variances/inputs/DSC_1315-69.jpg",
+          "right": "outputs/morph-showcase/variances/inputs/DSC_1320-70.jpg",
+          "matches": 175,
+          "geometric_inliers": 86,
+          "photometric_inliers": 2910,
+          "pair_scale": 0.8134207134859196,
+          "pair_residual": 0.3478374646338209,
+          "before_logit_rmse": 0.5160847306251526,
+          "after_logit_rmse": 0.4799700356481808
+        },
+        {
+          "left": "outputs/morph-showcase/variances/inputs/DSC_1315-69.jpg",
+          "right": "outputs/morph-showcase/variances/inputs/DSC_1322-71.jpg",
+          "matches": 87,
+          "geometric_inliers": 35,
+          "photometric_inliers": 3021,
+          "pair_scale": 0.8485434494993704,
+          "pair_residual": 0.2925879514462811,
+          "before_logit_rmse": 0.42196109890937805,
+          "after_logit_rmse": 0.3896768067024658
+        },
+        {
+          "left": "outputs/morph-showcase/variances/inputs/DSC_1315-69.jpg",
+          "right": "outputs/morph-showcase/variances/inputs/DSC_1324-72.jpg",
+          "matches": 157,
+          "geometric_inliers": 57,
+          "photometric_inliers": 2605,
+          "pair_scale": 0.6725789403914125,
+          "pair_residual": 0.3838461054331876,
+          "before_logit_rmse": 0.6828107833862305,
+          "after_logit_rmse": 0.5281270990108836
+        },
+        {
+          "left": "outputs/morph-showcase/variances/inputs/DSC_1315-69.jpg",
+          "right": "Morph/originals/DSC_1320-70.jpg",
+          "matches": 176,
+          "geometric_inliers": 75,
+          "photometric_inliers": 2916,
+          "pair_scale": 0.7745560253805516,
+          "pair_residual": 0.3710210962316782,
+          "before_logit_rmse": 0.5310742855072021,
+          "after_logit_rmse": 0.509069621559042
+        },
+        {
+          "left": "outputs/morph-showcase/variances/inputs/DSC_1320-70.jpg",
+          "right": "outputs/morph-showcase/variances/inputs/DSC_1322-71.jpg",
+          "matches": 529,
+          "geometric_inliers": 330,
+          "photometric_inliers": 2925,
+          "pair_scale": 0.9552025524345472,
+          "pair_residual": 0.09040221547178912,
+          "before_logit_rmse": 0.1357671171426773,
+          "after_logit_rmse": 0.13139926936521082
+        },
+        {
+          "left": "outputs/morph-showcase/variances/inputs/DSC_1320-70.jpg",
+          "right": "Morph/originals/DSC_1320-70.jpg",
+          "matches": 2154,
+          "geometric_inliers": 2139,
+          "photometric_inliers": 3799,
+          "pair_scale": 0.9820087636066631,
+          "pair_residual": 0.009124261487447313,
+          "before_logit_rmse": 0.13878072798252106,
+          "after_logit_rmse": 0.027381241864417736
+        },
+        {
+          "left": "outputs/morph-showcase/variances/inputs/DSC_1322-71.jpg",
+          "right": "Morph/originals/DSC_1320-70.jpg",
+          "matches": 506,
+          "geometric_inliers": 311,
+          "photometric_inliers": 3057,
+          "pair_scale": 0.9576100629032148,
+          "pair_residual": 0.09902350311126723,
+          "before_logit_rmse": 0.19454123079776764,
+          "after_logit_rmse": 0.13347736524545714
+        }
+      ]
+    },
+    {
+      "scene": "scene-08",
+      "reference": "Morph/originals/DSC_1334-76.jpg",
+      "edges": [
+        {
+          "left": "outputs/morph-showcase/variances/inputs/DSC_1326-73.jpg",
+          "right": "outputs/morph-showcase/variances/inputs/DSC_1329-74.jpg",
+          "matches": 633,
+          "geometric_inliers": 512,
+          "photometric_inliers": 2835,
+          "pair_scale": 0.8939394478072606,
+          "pair_residual": 0.07979592734789377,
+          "before_logit_rmse": 0.1492520421743393,
+          "after_logit_rmse": 0.10926780626895169
+        },
+        {
+          "left": "outputs/morph-showcase/variances/inputs/DSC_1326-73.jpg",
+          "right": "outputs/morph-showcase/variances/inputs/DSC_1330-75.jpg",
+          "matches": 599,
+          "geometric_inliers": 476,
+          "photometric_inliers": 2909,
+          "pair_scale": 0.886625106272106,
+          "pair_residual": 0.08440001454931043,
+          "before_logit_rmse": 0.31042197346687317,
+          "after_logit_rmse": 0.11670362826554406
+        },
+        {
+          "left": "outputs/morph-showcase/variances/inputs/DSC_1326-73.jpg",
+          "right": "outputs/morph-showcase/variances/inputs/DSC_1334-76.jpg",
+          "matches": 272,
+          "geometric_inliers": 162,
+          "photometric_inliers": 2890,
+          "pair_scale": 0.8604728388965878,
+          "pair_residual": 0.14456866985245803,
+          "before_logit_rmse": 0.4438953399658203,
+          "after_logit_rmse": 0.19647225160843493
+        },
+        {
+          "left": "outputs/morph-showcase/variances/inputs/DSC_1326-73.jpg",
+          "right": "Morph/originals/DSC_1334-76.jpg",
+          "matches": 268,
+          "geometric_inliers": 166,
+          "photometric_inliers": 2902,
+          "pair_scale": 0.9022331543293958,
+          "pair_residual": 0.1180525507642104,
+          "before_logit_rmse": 0.2903706729412079,
+          "after_logit_rmse": 0.17102818761705926
+        },
+        {
+          "left": "outputs/morph-showcase/variances/inputs/DSC_1329-74.jpg",
+          "right": "outputs/morph-showcase/variances/inputs/DSC_1330-75.jpg",
+          "matches": 979,
+          "geometric_inliers": 764,
+          "photometric_inliers": 2775,
+          "pair_scale": 1.0068054890457274,
+          "pair_residual": 0.03351341876698348,
+          "before_logit_rmse": 0.21438224613666534,
+          "after_logit_rmse": 0.04832761190262693
+        },
+        {
+          "left": "outputs/morph-showcase/variances/inputs/DSC_1329-74.jpg",
+          "right": "outputs/morph-showcase/variances/inputs/DSC_1334-76.jpg",
+          "matches": 298,
+          "geometric_inliers": 176,
+          "photometric_inliers": 3023,
+          "pair_scale": 0.8995102601006761,
+          "pair_residual": 0.14718727450061095,
+          "before_logit_rmse": 0.3826737701892853,
+          "after_logit_rmse": 0.19228634128373243
+        },
+        {
+          "left": "outputs/morph-showcase/variances/inputs/DSC_1329-74.jpg",
+          "right": "outputs/morph-showcase/variances/inputs/DSC_1335-77.jpg",
+          "matches": 296,
+          "geometric_inliers": 177,
+          "photometric_inliers": 2932,
+          "pair_scale": 0.8202501844264832,
+          "pair_residual": 0.18169022122430067,
+          "before_logit_rmse": 0.4332084655761719,
+          "after_logit_rmse": 0.25390360191730804
+        },
+        {
+          "left": "outputs/morph-showcase/variances/inputs/DSC_1329-74.jpg",
+          "right": "Morph/originals/DSC_1334-76.jpg",
+          "matches": 287,
+          "geometric_inliers": 185,
+          "photometric_inliers": 2925,
+          "pair_scale": 0.8833592644224747,
+          "pair_residual": 0.14561357079725634,
+          "before_logit_rmse": 0.2651062607765198,
+          "after_logit_rmse": 0.1998160129917163
+        },
+        {
+          "left": "outputs/morph-showcase/variances/inputs/DSC_1330-75.jpg",
+          "right": "outputs/morph-showcase/variances/inputs/DSC_1334-76.jpg",
+          "matches": 307,
+          "geometric_inliers": 210,
+          "photometric_inliers": 2988,
+          "pair_scale": 0.8202145356181386,
+          "pair_residual": 0.15156503928685877,
+          "before_logit_rmse": 0.27005279064178467,
+          "after_logit_rmse": 0.2110019477846297
+        },
+        {
+          "left": "outputs/morph-showcase/variances/inputs/DSC_1330-75.jpg",
+          "right": "outputs/morph-showcase/variances/inputs/DSC_1335-77.jpg",
+          "matches": 308,
+          "geometric_inliers": 207,
+          "photometric_inliers": 3123,
+          "pair_scale": 0.8539364675924105,
+          "pair_residual": 0.14960455813180437,
+          "before_logit_rmse": 0.2933719754219055,
+          "after_logit_rmse": 0.19748622945542674
+        },
+        {
+          "left": "outputs/morph-showcase/variances/inputs/DSC_1330-75.jpg",
+          "right": "outputs/morph-showcase/variances/inputs/DSC_1337-78.jpg",
+          "matches": 303,
+          "geometric_inliers": 208,
+          "photometric_inliers": 3032,
+          "pair_scale": 0.8479068980224711,
+          "pair_residual": 0.15160982322287597,
+          "before_logit_rmse": 0.2544082701206207,
+          "after_logit_rmse": 0.20545121271105712
+        },
+        {
+          "left": "outputs/morph-showcase/variances/inputs/DSC_1330-75.jpg",
+          "right": "Morph/originals/DSC_1334-76.jpg",
+          "matches": 297,
+          "geometric_inliers": 214,
+          "photometric_inliers": 3012,
+          "pair_scale": 0.8347279888210041,
+          "pair_residual": 0.1490280735067362,
+          "before_logit_rmse": 0.23554730415344238,
+          "after_logit_rmse": 0.20332475775172906
+        },
+        {
+          "left": "outputs/morph-showcase/variances/inputs/DSC_1334-76.jpg",
+          "right": "outputs/morph-showcase/variances/inputs/DSC_1335-77.jpg",
+          "matches": 1609,
+          "geometric_inliers": 1575,
+          "photometric_inliers": 3277,
+          "pair_scale": 0.9823582152356511,
+          "pair_residual": 0.023330930305383996,
+          "before_logit_rmse": 0.07742749899625778,
+          "after_logit_rmse": 0.032616271003006805
+        },
+        {
+          "left": "outputs/morph-showcase/variances/inputs/DSC_1334-76.jpg",
+          "right": "outputs/morph-showcase/variances/inputs/DSC_1337-78.jpg",
+          "matches": 1481,
+          "geometric_inliers": 1408,
+          "photometric_inliers": 3094,
+          "pair_scale": 0.9853381854293294,
+          "pair_residual": 0.02864497317288102,
+          "before_logit_rmse": 0.04441143199801445,
+          "after_logit_rmse": 0.04035402255245853
+        },
+        {
+          "left": "outputs/morph-showcase/variances/inputs/DSC_1334-76.jpg",
+          "right": "Morph/originals/DSC_1334-76.jpg",
+          "matches": 2197,
+          "geometric_inliers": 2192,
+          "photometric_inliers": 3848,
+          "pair_scale": 0.9957596932782444,
+          "pair_residual": 0.008031597171422761,
+          "before_logit_rmse": 0.16642217338085175,
+          "after_logit_rmse": 0.02303384847598752
+        },
+        {
+          "left": "outputs/morph-showcase/variances/inputs/DSC_1335-77.jpg",
+          "right": "outputs/morph-showcase/variances/inputs/DSC_1337-78.jpg",
+          "matches": 1552,
+          "geometric_inliers": 1501,
+          "photometric_inliers": 3354,
+          "pair_scale": 1.0003473989768237,
+          "pair_residual": 0.02085740311131227,
+          "before_logit_rmse": 0.08430776745080948,
+          "after_logit_rmse": 0.02985450346521834
+        },
+        {
+          "left": "outputs/morph-showcase/variances/inputs/DSC_1335-77.jpg",
+          "right": "Morph/originals/DSC_1334-76.jpg",
+          "matches": 1611,
+          "geometric_inliers": 1567,
+          "photometric_inliers": 3279,
+          "pair_scale": 1.0024831386332496,
+          "pair_residual": 0.023154713924532794,
+          "before_logit_rmse": 0.22429578006267548,
+          "after_logit_rmse": 0.03512286089545938
+        },
+        {
+          "left": "outputs/morph-showcase/variances/inputs/DSC_1337-78.jpg",
+          "right": "Morph/originals/DSC_1334-76.jpg",
+          "matches": 1480,
+          "geometric_inliers": 1411,
+          "photometric_inliers": 3053,
+          "pair_scale": 0.9945593235625277,
+          "pair_residual": 0.029256909135836628,
+          "before_logit_rmse": 0.15962053835391998,
+          "after_logit_rmse": 0.042622938926544104
+        }
+      ]
+    },
+    {
+      "scene": "scene-08-tower",
+      "reference": "Morph/originals/DSC_1342-81.jpg",
+      "edges": [
+        {
+          "left": "outputs/morph-showcase/variances/inputs/DSC_1339-79.jpg",
+          "right": "outputs/morph-showcase/variances/inputs/DSC_1340-80.jpg",
+          "matches": 428,
+          "geometric_inliers": 203,
+          "photometric_inliers": 2719,
+          "pair_scale": 0.7987556566951496,
+          "pair_residual": 0.15418594081720566,
+          "before_logit_rmse": 0.2937527298927307,
+          "after_logit_rmse": 0.26272629326828284
+        },
+        {
+          "left": "outputs/morph-showcase/variances/inputs/DSC_1339-79.jpg",
+          "right": "outputs/morph-showcase/variances/inputs/DSC_1342-81.jpg",
+          "matches": 441,
+          "geometric_inliers": 221,
+          "photometric_inliers": 2727,
+          "pair_scale": 0.8064145190595985,
+          "pair_residual": 0.1566594281489615,
+          "before_logit_rmse": 0.3593297302722931,
+          "after_logit_rmse": 0.2635475462338399
+        },
+        {
+          "left": "outputs/morph-showcase/variances/inputs/DSC_1339-79.jpg",
+          "right": "outputs/morph-showcase/variances/inputs/DSC_1344-82.jpg",
+          "matches": 141,
+          "geometric_inliers": 41,
+          "photometric_inliers": 2942,
+          "pair_scale": 0.7101806435885065,
+          "pair_residual": 0.6004588903239689,
+          "before_logit_rmse": 0.8454141616821289,
+          "after_logit_rmse": 0.7930670695686656
+        },
+        {
+          "left": "outputs/morph-showcase/variances/inputs/DSC_1339-79.jpg",
+          "right": "Morph/originals/DSC_1342-81.jpg",
+          "matches": 447,
+          "geometric_inliers": 215,
+          "photometric_inliers": 2691,
+          "pair_scale": 0.8430164554529564,
+          "pair_residual": 0.1306061493783547,
+          "before_logit_rmse": 0.35363882780075073,
+          "after_logit_rmse": 0.2102187239771929
+        },
+        {
+          "left": "outputs/morph-showcase/variances/inputs/DSC_1340-80.jpg",
+          "right": "outputs/morph-showcase/variances/inputs/DSC_1342-81.jpg",
+          "matches": 1396,
+          "geometric_inliers": 1322,
+          "photometric_inliers": 3330,
+          "pair_scale": 0.9949808516652601,
+          "pair_residual": 0.02530044733531756,
+          "before_logit_rmse": 0.21082934737205505,
+          "after_logit_rmse": 0.0327259742111629
+        },
+        {
+          "left": "outputs/morph-showcase/variances/inputs/DSC_1340-80.jpg",
+          "right": "outputs/morph-showcase/variances/inputs/DSC_1344-82.jpg",
+          "matches": 345,
+          "geometric_inliers": 238,
+          "photometric_inliers": 2907,
+          "pair_scale": 0.9593188570432996,
+          "pair_residual": 0.09695334939282037,
+          "before_logit_rmse": 0.2935595214366913,
+          "after_logit_rmse": 0.1325467267773813
+        },
+        {
+          "left": "outputs/morph-showcase/variances/inputs/DSC_1340-80.jpg",
+          "right": "Morph/originals/DSC_1342-81.jpg",
+          "matches": 1382,
+          "geometric_inliers": 1308,
+          "photometric_inliers": 3352,
+          "pair_scale": 0.98614364318304,
+          "pair_residual": 0.022858717293038816,
+          "before_logit_rmse": 0.2370138019323349,
+          "after_logit_rmse": 0.0326081902353315
+        },
+        {
+          "left": "outputs/morph-showcase/variances/inputs/DSC_1342-81.jpg",
+          "right": "outputs/morph-showcase/variances/inputs/DSC_1344-82.jpg",
+          "matches": 343,
+          "geometric_inliers": 210,
+          "photometric_inliers": 2776,
+          "pair_scale": 0.9609487169708667,
+          "pair_residual": 0.0840758702709185,
+          "before_logit_rmse": 0.4637930393218994,
+          "after_logit_rmse": 0.12251160457463875
+        },
+        {
+          "left": "outputs/morph-showcase/variances/inputs/DSC_1342-81.jpg",
+          "right": "Morph/originals/DSC_1342-81.jpg",
+          "matches": 2275,
+          "geometric_inliers": 2268,
+          "photometric_inliers": 3867,
+          "pair_scale": 0.9897378410679473,
+          "pair_residual": 0.009264790169252886,
+          "before_logit_rmse": 0.06253612041473389,
+          "after_logit_rmse": 0.01775588670586141
+        },
+        {
+          "left": "outputs/morph-showcase/variances/inputs/DSC_1344-82.jpg",
+          "right": "Morph/originals/DSC_1342-81.jpg",
+          "matches": 320,
+          "geometric_inliers": 243,
+          "photometric_inliers": 2842,
+          "pair_scale": 0.9704599712536909,
+          "pair_residual": 0.09528465462624655,
+          "before_logit_rmse": 0.5107752084732056,
+          "after_logit_rmse": 0.13126314863439634
+        }
+      ]
+    },
+    {
+      "scene": "scene-09",
+      "reference": "Morph/originals/DSC_1363-85.jpg",
+      "edges": [
+        {
+          "left": "outputs/morph-showcase/variances/inputs/DSC_1360-83.jpg",
+          "right": "outputs/morph-showcase/variances/inputs/DSC_1362-84.jpg",
+          "matches": 1453,
+          "geometric_inliers": 1356,
+          "photometric_inliers": 3000,
+          "pair_scale": 0.9608714378539543,
+          "pair_residual": 0.023876352513300343,
+          "before_logit_rmse": 0.060590799897909164,
+          "after_logit_rmse": 0.03624019635909211
+        },
+        {
+          "left": "outputs/morph-showcase/variances/inputs/DSC_1360-83.jpg",
+          "right": "outputs/morph-showcase/variances/inputs/DSC_1363-85.jpg",
+          "matches": 1384,
+          "geometric_inliers": 1256,
+          "photometric_inliers": 3069,
+          "pair_scale": 0.9498330207605082,
+          "pair_residual": 0.02626628990196881,
+          "before_logit_rmse": 0.0722198337316513,
+          "after_logit_rmse": 0.03673472858242504
+        },
+        {
+          "left": "outputs/morph-showcase/variances/inputs/DSC_1360-83.jpg",
+          "right": "outputs/morph-showcase/variances/inputs/DSC_1365-86.jpg",
+          "matches": 1248,
+          "geometric_inliers": 1142,
+          "photometric_inliers": 3062,
+          "pair_scale": 0.9257164204070871,
+          "pair_residual": 0.05722472234046515,
+          "before_logit_rmse": 0.22994208335876465,
+          "after_logit_rmse": 0.07894144924557167
+        },
+        {
+          "left": "outputs/morph-showcase/variances/inputs/DSC_1360-83.jpg",
+          "right": "Morph/originals/DSC_1363-85.jpg",
+          "matches": 1353,
+          "geometric_inliers": 1236,
+          "photometric_inliers": 3051,
+          "pair_scale": 0.9767222324951469,
+          "pair_residual": 0.025802134910109936,
+          "before_logit_rmse": 0.22485025227069855,
+          "after_logit_rmse": 0.03777394823432786
+        },
+        {
+          "left": "outputs/morph-showcase/variances/inputs/DSC_1362-84.jpg",
+          "right": "outputs/morph-showcase/variances/inputs/DSC_1363-85.jpg",
+          "matches": 1530,
+          "geometric_inliers": 1390,
+          "photometric_inliers": 3076,
+          "pair_scale": 0.9777304381435377,
+          "pair_residual": 0.025928892992250787,
+          "before_logit_rmse": 0.04558509960770607,
+          "after_logit_rmse": 0.037294963706644986
+        },
+        {
+          "left": "outputs/morph-showcase/variances/inputs/DSC_1362-84.jpg",
+          "right": "outputs/morph-showcase/variances/inputs/DSC_1365-86.jpg",
+          "matches": 1157,
+          "geometric_inliers": 1038,
+          "photometric_inliers": 3150,
+          "pair_scale": 0.9404059853248972,
+          "pair_residual": 0.06442552019220749,
+          "before_logit_rmse": 0.23003919422626495,
+          "after_logit_rmse": 0.09335880024119171
+        },
+        {
+          "left": "outputs/morph-showcase/variances/inputs/DSC_1362-84.jpg",
+          "right": "outputs/morph-showcase/variances/inputs/DSC_1367-87.jpg",
+          "matches": 1136,
+          "geometric_inliers": 1027,
+          "photometric_inliers": 3199,
+          "pair_scale": 0.9640662774209091,
+          "pair_residual": 0.07652692701470888,
+          "before_logit_rmse": 0.20585830509662628,
+          "after_logit_rmse": 0.10201571135766209
+        },
+        {
+          "left": "outputs/morph-showcase/variances/inputs/DSC_1362-84.jpg",
+          "right": "Morph/originals/DSC_1363-85.jpg",
+          "matches": 1528,
+          "geometric_inliers": 1383,
+          "photometric_inliers": 3058,
+          "pair_scale": 1.005695355525414,
+          "pair_residual": 0.025715707120166777,
+          "before_logit_rmse": 0.21675212681293488,
+          "after_logit_rmse": 0.034166948351734894
+        },
+        {
+          "left": "outputs/morph-showcase/variances/inputs/DSC_1363-85.jpg",
+          "right": "outputs/morph-showcase/variances/inputs/DSC_1365-86.jpg",
+          "matches": 1227,
+          "geometric_inliers": 1072,
+          "photometric_inliers": 3209,
+          "pair_scale": 0.9519608080653245,
+          "pair_residual": 0.05969640509198328,
+          "before_logit_rmse": 0.21605916321277618,
+          "after_logit_rmse": 0.08777611057509341
+        },
+        {
+          "left": "outputs/morph-showcase/variances/inputs/DSC_1363-85.jpg",
+          "right": "outputs/morph-showcase/variances/inputs/DSC_1367-87.jpg",
+          "matches": 1194,
+          "geometric_inliers": 1098,
+          "photometric_inliers": 3129,
+          "pair_scale": 0.9688893480315957,
+          "pair_residual": 0.06766988630971188,
+          "before_logit_rmse": 0.19264288246631622,
+          "after_logit_rmse": 0.09594419939189934
+        },
+        {
+          "left": "outputs/morph-showcase/variances/inputs/DSC_1363-85.jpg",
+          "right": "outputs/morph-showcase/variances/inputs/DSC_1378-88.jpg",
+          "matches": 778,
+          "geometric_inliers": 396,
+          "photometric_inliers": 2793,
+          "pair_scale": 1.0201939860820288,
+          "pair_residual": 0.07431575160434693,
+          "before_logit_rmse": 0.18413160741329193,
+          "after_logit_rmse": 0.11907179235840931
+        },
+        {
+          "left": "outputs/morph-showcase/variances/inputs/DSC_1363-85.jpg",
+          "right": "Morph/originals/DSC_1363-85.jpg",
+          "matches": 2233,
+          "geometric_inliers": 2224,
+          "photometric_inliers": 3775,
+          "pair_scale": 1.0281969116029153,
+          "pair_residual": 0.008585701597655357,
+          "before_logit_rmse": 0.2041151374578476,
+          "after_logit_rmse": 0.02237499598065251
+        },
+        {
+          "left": "outputs/morph-showcase/variances/inputs/DSC_1365-86.jpg",
+          "right": "outputs/morph-showcase/variances/inputs/DSC_1367-87.jpg",
+          "matches": 1593,
+          "geometric_inliers": 1307,
+          "photometric_inliers": 3057,
+          "pair_scale": 1.0115736542276648,
+          "pair_residual": 0.026079748545309225,
+          "before_logit_rmse": 0.09931390732526779,
+          "after_logit_rmse": 0.03709805458286304
+        },
+        {
+          "left": "outputs/morph-showcase/variances/inputs/DSC_1365-86.jpg",
+          "right": "outputs/morph-showcase/variances/inputs/DSC_1378-88.jpg",
+          "matches": 752,
+          "geometric_inliers": 416,
+          "photometric_inliers": 2802,
+          "pair_scale": 0.9642769521300334,
+          "pair_residual": 0.13341928571980077,
+          "before_logit_rmse": 0.3730776011943817,
+          "after_logit_rmse": 0.2155464366717171
+        },
+        {
+          "left": "outputs/morph-showcase/variances/inputs/DSC_1365-86.jpg",
+          "right": "Morph/originals/DSC_1363-85.jpg",
+          "matches": 1233,
+          "geometric_inliers": 1078,
+          "photometric_inliers": 2949,
+          "pair_scale": 1.0339268354144144,
+          "pair_residual": 0.05218452306989901,
+          "before_logit_rmse": 0.13899116218090057,
+          "after_logit_rmse": 0.07360553509171221
+        },
+        {
+          "left": "outputs/morph-showcase/variances/inputs/DSC_1367-87.jpg",
+          "right": "outputs/morph-showcase/variances/inputs/DSC_1378-88.jpg",
+          "matches": 800,
+          "geometric_inliers": 452,
+          "photometric_inliers": 2564,
+          "pair_scale": 0.9956493512962914,
+          "pair_residual": 0.06220481380466311,
+          "before_logit_rmse": 0.29007282853126526,
+          "after_logit_rmse": 0.11351825709280429
+        },
+        {
+          "left": "outputs/morph-showcase/variances/inputs/DSC_1367-87.jpg",
+          "right": "Morph/originals/DSC_1363-85.jpg",
+          "matches": 1186,
+          "geometric_inliers": 1103,
+          "photometric_inliers": 2950,
+          "pair_scale": 1.0187419806844604,
+          "pair_residual": 0.05908918128196137,
+          "before_logit_rmse": 0.1988837867975235,
+          "after_logit_rmse": 0.08095403573630526
+        },
+        {
+          "left": "outputs/morph-showcase/variances/inputs/DSC_1378-88.jpg",
+          "right": "Morph/originals/DSC_1363-85.jpg",
+          "matches": 748,
+          "geometric_inliers": 406,
+          "photometric_inliers": 2719,
+          "pair_scale": 0.8661446042932706,
+          "pair_residual": 0.1372432230893571,
+          "before_logit_rmse": 0.40526914596557617,
+          "after_logit_rmse": 0.23034261938380898
+        }
+      ]
+    }
+  ],
+  "corrections": {
+    "outputs/morph-showcase/variances/inputs/DSC_0901-1.jpg": {
+      "scale": 0.8196210322216102,
+      "offset": [
+        -0.3274988713305555,
+        -0.287637995598928,
+        -0.2595817971424728
+      ],
+      "proposed_scale": 0.8196210322216102,
+      "proposed_offset": [
+        -0.3274988713305555,
+        -0.287637995598928,
+        -0.2595817971424728
+      ],
+      "status": "estimated"
+    },
+    "outputs/morph-showcase/variances/inputs/DSC_0904-2.jpg": {
+      "scale": 0.8782600751525156,
+      "offset": [
+        -0.6921175711178664,
+        -0.6421095415619512,
+        -0.5813725341421964
+      ],
+      "proposed_scale": 0.8782600751525156,
+      "proposed_offset": [
+        -0.6921175711178664,
+        -0.6421095415619512,
+        -0.5813725341421964
+      ],
+      "status": "estimated"
+    },
+    "outputs/morph-showcase/variances/inputs/DSC_0905-3.jpg": {
+      "scale": 0.8717287437428889,
+      "offset": [
+        -0.3851784806223493,
+        -0.45227702258808794,
+        -0.48120434508297605
+      ],
+      "proposed_scale": 0.8717287437428889,
+      "proposed_offset": [
+        -0.3851784806223493,
+        -0.45227702258808794,
+        -0.48120434508297605
+      ],
+      "status": "estimated"
+    },
+    "outputs/morph-showcase/variances/inputs/DSC_0906-4.jpg": {
+      "scale": 0.9419402954419127,
+      "offset": [
+        -0.02921232399804172,
+        0.0016980129121665487,
+        0.014356093468526735
+      ],
+      "proposed_scale": 0.9419402954419127,
+      "proposed_offset": [
+        -0.02921232399804172,
+        0.0016980129121665487,
+        0.014356093468526735
+      ],
+      "status": "estimated"
+    },
+    "outputs/morph-showcase/variances/inputs/DSC_0914-5.jpg": {
+      "scale": 0.9527606359830503,
+      "offset": [
+        0.2791682133379885,
+        0.198961876537534,
+        0.16501255152893207
+      ],
+      "proposed_scale": 0.9527606359830503,
+      "proposed_offset": [
+        0.2791682133379885,
+        0.198961876537534,
+        0.16501255152893207
+      ],
+      "status": "estimated"
+    },
+    "outputs/morph-showcase/variances/inputs/DSC_0916-6.jpg": {
+      "scale": 0.9447503079847048,
+      "offset": [
+        0.05912613198687831,
+        0.051948682697109706,
+        0.03539766577876627
+      ],
+      "proposed_scale": 0.9447503079847048,
+      "proposed_offset": [
+        0.05912613198687831,
+        0.051948682697109706,
+        0.03539766577876627
+      ],
+      "status": "estimated"
+    },
+    "outputs/morph-showcase/variances/inputs/DSC_0919-7.jpg": {
+      "scale": 0.9649017413624579,
+      "offset": [
+        0.16216371722293885,
+        0.18614824267974664,
+        0.25600409016305775
+      ],
+      "proposed_scale": 0.9649017413624579,
+      "proposed_offset": [
+        0.16216371722293885,
+        0.18614824267974664,
+        0.25600409016305775
+      ],
+      "status": "estimated"
+    },
+    "outputs/morph-showcase/variances/inputs/DSC_0921-8.jpg": {
+      "scale": 0.9636435035554823,
+      "offset": [
+        0.10966841467499897,
+        0.21638479987827483,
+        0.2974349751898746
+      ],
+      "proposed_scale": 0.9636435035554823,
+      "proposed_offset": [
+        0.10966841467499897,
+        0.21638479987827483,
+        0.2974349751898746
+      ],
+      "status": "estimated"
+    },
+    "outputs/morph-showcase/variances/inputs/DSC_0925-9.jpg": {
+      "scale": 0.909605999164155,
+      "offset": [
+        0.3411175753304137,
+        0.2776424207140088,
+        0.1873265474389842
+      ],
+      "proposed_scale": 0.909605999164155,
+      "proposed_offset": [
+        0.3411175753304137,
+        0.2776424207140088,
+        0.1873265474389842
+      ],
+      "status": "estimated"
+    },
+    "outputs/morph-showcase/variances/inputs/DSC_0928-10.jpg": {
+      "scale": 0.8595053703830728,
+      "offset": [
+        0.42356437033205596,
+        0.40347811268462397,
+        0.4107240524386988
+      ],
+      "proposed_scale": 0.8595053703830728,
+      "proposed_offset": [
+        0.42356437033205596,
+        0.40347811268462397,
+        0.4107240524386988
+      ],
+      "status": "estimated"
+    },
+    "outputs/morph-showcase/variances/inputs/DSC_0930-11.jpg": {
+      "scale": 0.962590682601371,
+      "offset": [
+        0.6643960860927594,
+        0.5317553087078616,
+        0.46104229893956017
+      ],
+      "proposed_scale": 0.962590682601371,
+      "proposed_offset": [
+        0.6643960860927594,
+        0.5317553087078616,
+        0.46104229893956017
+      ],
+      "status": "estimated"
+    },
+    "outputs/morph-showcase/variances/inputs/DSC_0935-12.jpg": {
+      "scale": 1.0035170000438365,
+      "offset": [
+        0.34039442286842825,
+        0.31691513900311075,
+        0.2962738103854851
+      ],
+      "proposed_scale": 1.0035170000438365,
+      "proposed_offset": [
+        0.34039442286842825,
+        0.31691513900311075,
+        0.2962738103854851
+      ],
+      "status": "estimated"
+    },
+    "outputs/morph-showcase/variances/inputs/DSC_0947-13.jpg": {
+      "scale": 0.990613235816727,
+      "offset": [
+        0.4943117427760731,
+        0.5056742838441997,
+        0.5685656390405835
+      ],
+      "proposed_scale": 0.990613235816727,
+      "proposed_offset": [
+        0.4943117427760731,
+        0.5056742838441997,
+        0.5685656390405835
+      ],
+      "status": "estimated"
+    },
+    "outputs/morph-showcase/variances/inputs/DSC_0948-14.jpg": {
+      "scale": 1.0054611218701894,
+      "offset": [
+        0.30318792099026864,
+        0.3100771120109965,
+        0.3766526820001815
+      ],
+      "proposed_scale": 1.0054611218701894,
+      "proposed_offset": [
+        0.30318792099026864,
+        0.3100771120109965,
+        0.3766526820001815
+      ],
+      "status": "estimated"
+    },
+    "outputs/morph-showcase/variances/inputs/DSC_0958-15.jpg": {
+      "scale": 0.9508268713761472,
+      "offset": [
+        0.10462760343500532,
+        0.15213499166340583,
+        0.16667351733139482
+      ],
+      "proposed_scale": 0.9508268713761472,
+      "proposed_offset": [
+        0.10462760343500532,
+        0.15213499166340583,
+        0.16667351733139482
+      ],
+      "status": "estimated"
+    },
+    "outputs/morph-showcase/variances/inputs/DSC_0970-17.jpg": {
+      "scale": 1.0,
+      "offset": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "status": "review-unconnected"
+    },
+    "outputs/morph-showcase/variances/inputs/DSC_0974-18.jpg": {
+      "scale": 1.0,
+      "offset": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "status": "review-unconnected"
+    },
+    "outputs/morph-showcase/variances/inputs/DSC_0987-19.jpg": {
+      "scale": 0.9405367870953525,
+      "offset": [
+        0.33980669763549565,
+        0.4006894311409115,
+        0.5191958203401025
+      ],
+      "proposed_scale": 0.9405367870953525,
+      "proposed_offset": [
+        0.33980669763549565,
+        0.4006894311409115,
+        0.5191958203401025
+      ],
+      "status": "estimated"
+    },
+    "outputs/morph-showcase/variances/inputs/DSC_0965-16.jpg": {
+      "scale": 1.0,
+      "offset": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "status": "review-unconnected"
+    },
+    "outputs/morph-showcase/variances/inputs/DSC_0990-20.jpg": {
+      "scale": 0.788543947235965,
+      "offset": [
+        0.37760898359870165,
+        0.38831528464522713,
+        0.3542113617021627
+      ],
+      "proposed_scale": 0.788543947235965,
+      "proposed_offset": [
+        0.37760898359870165,
+        0.38831528464522713,
+        0.3542113617021627
+      ],
+      "status": "estimated"
+    },
+    "outputs/morph-showcase/variances/inputs/DSC_0993-21.jpg": {
+      "scale": 0.9604897364654187,
+      "offset": [
+        -0.41264202776856224,
+        -0.4218521584351795,
+        -0.44133933631693445
+      ],
+      "proposed_scale": 0.9604897364654187,
+      "proposed_offset": [
+        -0.41264202776856224,
+        -0.4218521584351795,
+        -0.44133933631693445
+      ],
+      "status": "estimated"
+    },
+    "outputs/morph-showcase/variances/inputs/DSC_0995-22.jpg": {
+      "scale": 1.023573337434696,
+      "offset": [
+        0.04922195145139265,
+        0.07174815264398356,
+        0.07773355771878226
+      ],
+      "proposed_scale": 1.023573337434696,
+      "proposed_offset": [
+        0.04922195145139265,
+        0.07174815264398356,
+        0.07773355771878226
+      ],
+      "status": "estimated"
+    },
+    "outputs/morph-showcase/variances/inputs/DSC_0997-23.jpg": {
+      "scale": 0.9421465128126767,
+      "offset": [
+        -0.2882203626685826,
+        -0.26270196893391196,
+        -0.23482854243415247
+      ],
+      "proposed_scale": 0.9421465128126767,
+      "proposed_offset": [
+        -0.2882203626685826,
+        -0.26270196893391196,
+        -0.23482854243415247
+      ],
+      "status": "estimated"
+    },
+    "outputs/morph-showcase/variances/inputs/DSC_0998-24.jpg": {
+      "scale": 1.0282170167251155,
+      "offset": [
+        0.21975583219104713,
+        0.2771015103762849,
+        0.35192376823483107
+      ],
+      "proposed_scale": 1.0282170167251155,
+      "proposed_offset": [
+        0.21975583219104713,
+        0.2771015103762849,
+        0.35192376823483107
+      ],
+      "status": "estimated"
+    },
+    "outputs/morph-showcase/variances/inputs/DSC_1012-25.jpg": {
+      "scale": 1.0,
+      "offset": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "status": "review-unconnected"
+    },
+    "outputs/morph-showcase/variances/inputs/DSC_1021-26.jpg": {
+      "scale": 0.8379536785541244,
+      "offset": [
+        -0.5802277499343548,
+        -0.5520496367873267,
+        -0.5855753244345117
+      ],
+      "proposed_scale": 0.8379536785541244,
+      "proposed_offset": [
+        -0.5802277499343548,
+        -0.5520496367873267,
+        -0.5855753244345117
+      ],
+      "status": "estimated"
+    },
+    "outputs/morph-showcase/variances/inputs/DSC_1026-27.jpg": {
+      "scale": 0.9080023611999612,
+      "offset": [
+        0.46791094168810565,
+        0.42499698035692907,
+        0.3785939779035035
+      ],
+      "proposed_scale": 0.9080023611999612,
+      "proposed_offset": [
+        0.46791094168810565,
+        0.42499698035692907,
+        0.3785939779035035
+      ],
+      "status": "estimated"
+    },
+    "outputs/morph-showcase/variances/inputs/DSC_1028-28.jpg": {
+      "scale": 0.9281392889841646,
+      "offset": [
+        0.23376710751937566,
+        0.2046720609803586,
+        0.14600412467240795
+      ],
+      "proposed_scale": 0.9281392889841646,
+      "proposed_offset": [
+        0.23376710751937566,
+        0.2046720609803586,
+        0.14600412467240795
+      ],
+      "status": "estimated"
+    },
+    "outputs/morph-showcase/variances/inputs/DSC_1030-29.jpg": {
+      "scale": 0.860949183877239,
+      "offset": [
+        -0.14506893703424512,
+        -0.1664812357339654,
+        -0.216298948175615
+      ],
+      "proposed_scale": 0.860949183877239,
+      "proposed_offset": [
+        -0.14506893703424512,
+        -0.1664812357339654,
+        -0.216298948175615
+      ],
+      "status": "estimated"
+    },
+    "outputs/morph-showcase/variances/inputs/DSC_1033-30.jpg": {
+      "scale": 0.8713856040205349,
+      "offset": [
+        -0.32300845483791085,
+        -0.3447528738296104,
+        -0.3678481570639459
+      ],
+      "proposed_scale": 0.8713856040205349,
+      "proposed_offset": [
+        -0.32300845483791085,
+        -0.3447528738296104,
+        -0.3678481570639459
+      ],
+      "status": "estimated"
+    },
+    "outputs/morph-showcase/variances/inputs/DSC_1037-31.jpg": {
+      "scale": 0.9657436632754444,
+      "offset": [
+        -0.07813862927007519,
+        -0.11517833765729726,
+        -0.13662484819693177
+      ],
+      "proposed_scale": 0.9657436632754444,
+      "proposed_offset": [
+        -0.07813862927007519,
+        -0.11517833765729726,
+        -0.13662484819693177
+      ],
+      "status": "estimated"
+    },
+    "outputs/morph-showcase/variances/inputs/DSC_1038-32.jpg": {
+      "scale": 0.9433339842103038,
+      "offset": [
+        -0.101727499464766,
+        -0.13841741783947653,
+        -0.21785724294149802
+      ],
+      "proposed_scale": 0.9433339842103038,
+      "proposed_offset": [
+        -0.101727499464766,
+        -0.13841741783947653,
+        -0.21785724294149802
+      ],
+      "status": "estimated"
+    },
+    "outputs/morph-showcase/variances/inputs/DSC_1054-33.jpg": {
+      "scale": 0.9700463274871113,
+      "offset": [
+        -0.002403893831162137,
+        -0.04065626950564449,
+        -0.08352248812997362
+      ],
+      "proposed_scale": 0.9700463274871113,
+      "proposed_offset": [
+        -0.002403893831162137,
+        -0.04065626950564449,
+        -0.08352248812997362
+      ],
+      "status": "estimated"
+    },
+    "outputs/morph-showcase/variances/inputs/DSC_1059-34.jpg": {
+      "scale": 1.0032900329230674,
+      "offset": [
+        -0.015305123019921086,
+        -0.014311740478024717,
+        -0.03415493075865782
+      ],
+      "proposed_scale": 1.0032900329230674,
+      "proposed_offset": [
+        -0.015305123019921086,
+        -0.014311740478024717,
+        -0.03415493075865782
+      ],
+      "status": "estimated"
+    },
+    "outputs/morph-showcase/variances/inputs/DSC_1070-35.jpg": {
+      "scale": 0.8373989137318215,
+      "offset": [
+        0.22637857260122657,
+        0.2632777144876118,
+        0.3477062143938854
+      ],
+      "proposed_scale": 0.8373989137318215,
+      "proposed_offset": [
+        0.22637857260122657,
+        0.2632777144876118,
+        0.3477062143938854
+      ],
+      "status": "estimated"
+    },
+    "outputs/morph-showcase/variances/inputs/DSC_1074-36.jpg": {
+      "scale": 0.8638570396164037,
+      "offset": [
+        -0.0649311686501595,
+        -0.03189987378694122,
+        0.01429262571926703
+      ],
+      "proposed_scale": 0.8638570396164037,
+      "proposed_offset": [
+        -0.0649311686501595,
+        -0.03189987378694122,
+        0.01429262571926703
+      ],
+      "status": "estimated"
+    },
+    "outputs/morph-showcase/variances/inputs/DSC_1083-37.jpg": {
+      "scale": 0.8754988491991988,
+      "offset": [
+        -0.0909471828407782,
+        -0.07232253424634462,
+        -0.03821182549947983
+      ],
+      "proposed_scale": 0.8754988491991988,
+      "proposed_offset": [
+        -0.0909471828407782,
+        -0.07232253424634462,
+        -0.03821182549947983
+      ],
+      "status": "estimated"
+    },
+    "outputs/morph-showcase/variances/inputs/DSC_1096-40.jpg": {
+      "scale": 0.852660193775417,
+      "offset": [
+        0.31413477204680434,
+        0.32565367930822064,
+        0.31897634971711974
+      ],
+      "proposed_scale": 0.852660193775417,
+      "proposed_offset": [
+        0.31413477204680434,
+        0.32565367930822064,
+        0.31897634971711974
+      ],
+      "status": "estimated"
+    },
+    "outputs/morph-showcase/variances/inputs/DSC_1100-41.jpg": {
+      "scale": 0.8181252769716543,
+      "offset": [
+        0.18149352706441524,
+        0.23269019191390164,
+        0.29211397358540864
+      ],
+      "proposed_scale": 0.8181252769716543,
+      "proposed_offset": [
+        0.18149352706441524,
+        0.23269019191390164,
+        0.29211397358540864
+      ],
+      "status": "estimated"
+    },
+    "outputs/morph-showcase/variances/inputs/DSC_1106-43.jpg": {
+      "scale": 0.8343941930019807,
+      "offset": [
+        0.5572224827021952,
+        0.627794327499225,
+        0.7292719417157175
+      ],
+      "proposed_scale": 0.8343941930019807,
+      "proposed_offset": [
+        0.5572224827021952,
+        0.627794327499225,
+        0.7292719417157175
+      ],
+      "status": "estimated"
+    },
+    "outputs/morph-showcase/variances/inputs/DSC_1109-44.jpg": {
+      "scale": 0.866547711539619,
+      "offset": [
+        0.4794277746875616,
+        0.5213662086487482,
+        0.5727284137691403
+      ],
+      "proposed_scale": 0.866547711539619,
+      "proposed_offset": [
+        0.4794277746875616,
+        0.5213662086487482,
+        0.5727284137691403
+      ],
+      "status": "estimated"
+    },
+    "outputs/morph-showcase/variances/inputs/DSC_1111-45.jpg": {
+      "scale": 0.9532852112804661,
+      "offset": [
+        0.08637503676014487,
+        0.08020980339824069,
+        0.11107959788086762
+      ],
+      "proposed_scale": 0.9532852112804661,
+      "proposed_offset": [
+        0.08637503676014487,
+        0.08020980339824069,
+        0.11107959788086762
+      ],
+      "status": "estimated"
+    },
+    "outputs/morph-showcase/variances/inputs/DSC_1118-48.jpg": {
+      "scale": 0.8623786383597584,
+      "offset": [
+        0.40703769998762773,
+        0.447922066221199,
+        0.5346968880111452
+      ],
+      "proposed_scale": 0.8623786383597584,
+      "proposed_offset": [
+        0.40703769998762773,
+        0.447922066221199,
+        0.5346968880111452
+      ],
+      "status": "estimated"
+    },
+    "outputs/morph-showcase/variances/inputs/DSC_1088-38.jpg": {
+      "scale": 0.9843066380359334,
+      "offset": [
+        -0.022914934576484604,
+        -0.012710712707099111,
+        -0.0192182182027796
+      ],
+      "proposed_scale": 0.9843066380359334,
+      "proposed_offset": [
+        -0.022914934576484604,
+        -0.012710712707099111,
+        -0.0192182182027796
+      ],
+      "status": "estimated"
+    },
+    "outputs/morph-showcase/variances/inputs/DSC_1090-39.jpg": {
+      "scale": 0.9027217380690955,
+      "offset": [
+        -0.1660445198874824,
+        -0.15847186665249002,
+        -0.17600425826093657
+      ],
+      "proposed_scale": 0.9027217380690955,
+      "proposed_offset": [
+        -0.1660445198874824,
+        -0.15847186665249002,
+        -0.17600425826093657
+      ],
+      "status": "estimated"
+    },
+    "outputs/morph-showcase/variances/inputs/DSC_1105-42.jpg": {
+      "scale": 0.9760743127618341,
+      "offset": [
+        -0.039977602717879236,
+        -0.04683829128255289,
+        -0.05618259446859058
+      ],
+      "proposed_scale": 0.9760743127618341,
+      "proposed_offset": [
+        -0.039977602717879236,
+        -0.04683829128255289,
+        -0.05618259446859058
+      ],
+      "status": "estimated"
+    },
+    "outputs/morph-showcase/variances/inputs/DSC_1114-46.jpg": {
+      "scale": 0.8779921246273285,
+      "offset": [
+        -0.3168971915662759,
+        -0.3028058539313896,
+        -0.25838904501136284
+      ],
+      "proposed_scale": 0.8779921246273285,
+      "proposed_offset": [
+        -0.3168971915662759,
+        -0.3028058539313896,
+        -0.25838904501136284
+      ],
+      "status": "estimated"
+    },
+    "outputs/morph-showcase/variances/inputs/DSC_1116-47.jpg": {
+      "scale": 0.9158072340025167,
+      "offset": [
+        -0.3613811194706161,
+        -0.35360695038510925,
+        -0.34156534537516436
+      ],
+      "proposed_scale": 0.9158072340025167,
+      "proposed_offset": [
+        -0.3613811194706161,
+        -0.35360695038510925,
+        -0.34156534537516436
+      ],
+      "status": "estimated"
+    },
+    "outputs/morph-showcase/variances/inputs/DSC_1259-49.jpg": {
+      "scale": 0.9010873123401563,
+      "offset": [
+        0.05830200176664466,
+        0.06732189073147703,
+        0.07333984642287737
+      ],
+      "proposed_scale": 0.9010873123401563,
+      "proposed_offset": [
+        0.05830200176664466,
+        0.06732189073147703,
+        0.07333984642287737
+      ],
+      "status": "estimated"
+    },
+    "outputs/morph-showcase/variances/inputs/DSC_1261-50.jpg": {
+      "scale": 0.9862603429845852,
+      "offset": [
+        0.16936304058049037,
+        0.16310642027694794,
+        0.1441909885596261
+      ],
+      "proposed_scale": 0.9862603429845852,
+      "proposed_offset": [
+        0.16936304058049037,
+        0.16310642027694794,
+        0.1441909885596261
+      ],
+      "status": "estimated"
+    },
+    "outputs/morph-showcase/variances/inputs/DSC_1264-51.jpg": {
+      "scale": 1.0131254132564784,
+      "offset": [
+        -0.07709787840383162,
+        -0.1173402659951416,
+        -0.12456731516088743
+      ],
+      "proposed_scale": 1.0131254132564784,
+      "proposed_offset": [
+        -0.07709787840383162,
+        -0.1173402659951416,
+        -0.12456731516088743
+      ],
+      "status": "estimated"
+    },
+    "outputs/morph-showcase/variances/inputs/DSC_1265-52.jpg": {
+      "scale": 0.9253531685282489,
+      "offset": [
+        -0.7188289615987883,
+        -0.7409899996808562,
+        -0.811793659736286
+      ],
+      "proposed_scale": 0.9253531685282489,
+      "proposed_offset": [
+        -0.7188289615987883,
+        -0.7409899996808562,
+        -0.811793659736286
+      ],
+      "status": "estimated"
+    },
+    "outputs/morph-showcase/variances/inputs/DSC_1268-53.jpg": {
+      "scale": 0.9492029602641268,
+      "offset": [
+        -0.3407714265888665,
+        -0.32531460374774596,
+        -0.30316429402512846
+      ],
+      "proposed_scale": 0.9492029602641268,
+      "proposed_offset": [
+        -0.3407714265888665,
+        -0.32531460374774596,
+        -0.30316429402512846
+      ],
+      "status": "estimated"
+    },
+    "outputs/morph-showcase/variances/inputs/DSC_1273-54.jpg": {
+      "scale": 1.0007120194653847,
+      "offset": [
+        0.11002027933558761,
+        0.04541770521647084,
+        -0.01787313875460636
+      ],
+      "proposed_scale": 1.0007120194653847,
+      "proposed_offset": [
+        0.11002027933558761,
+        0.04541770521647084,
+        -0.01787313875460636
+      ],
+      "status": "estimated"
+    },
+    "outputs/morph-showcase/variances/inputs/DSC_1280-55.jpg": {
+      "scale": 0.9228993402057393,
+      "offset": [
+        -0.06292427999310357,
+        -0.02906026508977516,
+        -0.049366304658798064
+      ],
+      "proposed_scale": 0.9228993402057393,
+      "proposed_offset": [
+        -0.06292427999310357,
+        -0.02906026508977516,
+        -0.049366304658798064
+      ],
+      "status": "estimated"
+    },
+    "outputs/morph-showcase/variances/inputs/DSC_1282-56.jpg": {
+      "scale": 0.9649619976570002,
+      "offset": [
+        -0.21198164442933556,
+        -0.13149772836865178,
+        -0.07824610467109001
+      ],
+      "proposed_scale": 0.9649619976570002,
+      "proposed_offset": [
+        -0.21198164442933556,
+        -0.13149772836865178,
+        -0.07824610467109001
+      ],
+      "status": "estimated"
+    },
+    "outputs/morph-showcase/variances/inputs/DSC_1284-57.jpg": {
+      "scale": 0.9515533781581522,
+      "offset": [
+        -0.08469129369738777,
+        -0.03796035338557713,
+        -0.05205032971990701
+      ],
+      "proposed_scale": 0.9515533781581522,
+      "proposed_offset": [
+        -0.08469129369738777,
+        -0.03796035338557713,
+        -0.05205032971990701
+      ],
+      "status": "estimated"
+    },
+    "outputs/morph-showcase/variances/inputs/DSC_1286-58.jpg": {
+      "scale": 0.9700742735115041,
+      "offset": [
+        -0.006150239730687952,
+        0.047511225624237305,
+        0.0674219712625552
+      ],
+      "proposed_scale": 0.9700742735115041,
+      "proposed_offset": [
+        -0.006150239730687952,
+        0.047511225624237305,
+        0.0674219712625552
+      ],
+      "status": "estimated"
+    },
+    "outputs/morph-showcase/variances/inputs/DSC_1288-59.jpg": {
+      "scale": 0.8779404174708895,
+      "offset": [
+        0.23260167958815856,
+        0.20857938795517955,
+        0.21737640579047124
+      ],
+      "proposed_scale": 0.8779404174708895,
+      "proposed_offset": [
+        0.23260167958815856,
+        0.20857938795517955,
+        0.21737640579047124
+      ],
+      "status": "estimated"
+    },
+    "outputs/morph-showcase/variances/inputs/DSC_1291-60.jpg": {
+      "scale": 0.8869074374457546,
+      "offset": [
+        0.07697263466324535,
+        -0.006417701777725157,
+        -0.030521298867238214
+      ],
+      "proposed_scale": 0.8869074374457546,
+      "proposed_offset": [
+        0.07697263466324535,
+        -0.006417701777725157,
+        -0.030521298867238214
+      ],
+      "status": "estimated"
+    },
+    "outputs/morph-showcase/variances/inputs/DSC_1292-61.jpg": {
+      "scale": 0.9060920023007384,
+      "offset": [
+        0.33474096632177613,
+        0.23340582773967233,
+        0.21527591677387334
+      ],
+      "proposed_scale": 0.9060920023007384,
+      "proposed_offset": [
+        0.33474096632177613,
+        0.23340582773967233,
+        0.21527591677387334
+      ],
+      "status": "estimated"
+    },
+    "outputs/morph-showcase/variances/inputs/DSC_1293-62.jpg": {
+      "scale": 0.7572646513228355,
+      "offset": [
+        0.3604133249522691,
+        0.2580637255655843,
+        0.1444189606033109
+      ],
+      "proposed_scale": 0.7572646513228355,
+      "proposed_offset": [
+        0.3604133249522691,
+        0.2580637255655843,
+        0.1444189606033109
+      ],
+      "status": "estimated"
+    },
+    "outputs/morph-showcase/variances/inputs/DSC_1300-63.jpg": {
+      "scale": 0.7683743324551698,
+      "offset": [
+        0.043500220678668995,
+        0.04114162219047525,
+        -0.08962538872855728
+      ],
+      "proposed_scale": 0.7683743324551698,
+      "proposed_offset": [
+        0.043500220678668995,
+        0.04114162219047525,
+        -0.08962538872855728
+      ],
+      "status": "estimated"
+    },
+    "outputs/morph-showcase/variances/inputs/DSC_1302-64.jpg": {
+      "scale": 0.7355871255008327,
+      "offset": [
+        0.15812949871443538,
+        0.13465340059094094,
+        0.0035692157048058276
+      ],
+      "proposed_scale": 0.7355871255008327,
+      "proposed_offset": [
+        0.15812949871443538,
+        0.13465340059094094,
+        0.0035692157048058276
+      ],
+      "status": "estimated"
+    },
+    "outputs/morph-showcase/variances/inputs/DSC_1304-65.jpg": {
+      "scale": 0.9530657123272472,
+      "offset": [
+        -0.1142798496507508,
+        -0.057792285666518006,
+        -0.01000484577452079
+      ],
+      "proposed_scale": 0.9530657123272472,
+      "proposed_offset": [
+        -0.1142798496507508,
+        -0.057792285666518006,
+        -0.01000484577452079
+      ],
+      "status": "estimated"
+    },
+    "outputs/morph-showcase/variances/inputs/DSC_1308-66.jpg": {
+      "scale": 0.8357955709107503,
+      "offset": [
+        -0.3904522418457555,
+        -0.33347861391834327,
+        -0.26283578585677736
+      ],
+      "proposed_scale": 0.8357955709107503,
+      "proposed_offset": [
+        -0.3904522418457555,
+        -0.33347861391834327,
+        -0.26283578585677736
+      ],
+      "status": "estimated"
+    },
+    "outputs/morph-showcase/variances/inputs/DSC_1310-67.jpg": {
+      "scale": 0.8738771233451619,
+      "offset": [
+        -0.25709315641532837,
+        -0.2321891040875755,
+        -0.19296237964066534
+      ],
+      "proposed_scale": 0.8738771233451619,
+      "proposed_offset": [
+        -0.25709315641532837,
+        -0.2321891040875755,
+        -0.19296237964066534
+      ],
+      "status": "estimated"
+    },
+    "outputs/morph-showcase/variances/inputs/DSC_1312-68.jpg": {
+      "scale": 0.8429685694959889,
+      "offset": [
+        -0.4388687860565119,
+        -0.4439126682332909,
+        -0.4087345850674829
+      ],
+      "proposed_scale": 0.8429685694959889,
+      "proposed_offset": [
+        -0.4388687860565119,
+        -0.4439126682332909,
+        -0.4087345850674829
+      ],
+      "status": "estimated"
+    },
+    "outputs/morph-showcase/variances/inputs/DSC_1315-69.jpg": {
+      "scale": 0.8779469124237221,
+      "offset": [
+        -0.14208590065382115,
+        -0.17321485627616526,
+        -0.1379241589145676
+      ],
+      "proposed_scale": 0.8779469124237221,
+      "proposed_offset": [
+        -0.14208590065382115,
+        -0.17321485627616526,
+        -0.1379241589145676
+      ],
+      "status": "estimated"
+    },
+    "outputs/morph-showcase/variances/inputs/DSC_1320-70.jpg": {
+      "scale": 0.9620788115297328,
+      "offset": [
+        -0.16963463444082527,
+        -0.12943203434887746,
+        -0.10306233221192346
+      ],
+      "proposed_scale": 0.9620788115297328,
+      "proposed_offset": [
+        -0.16963463444082527,
+        -0.12943203434887746,
+        -0.10306233221192346
+      ],
+      "status": "estimated"
+    },
+    "outputs/morph-showcase/variances/inputs/DSC_1322-71.jpg": {
+      "scale": 0.9563569341858312,
+      "offset": [
+        -0.14978499922430086,
+        -0.1351471000902442,
+        -0.09586732183342
+      ],
+      "proposed_scale": 0.9563569341858312,
+      "proposed_offset": [
+        -0.14978499922430086,
+        -0.1351471000902442,
+        -0.09586732183342
+      ],
+      "status": "estimated"
+    },
+    "outputs/morph-showcase/variances/inputs/DSC_1324-72.jpg": {
+      "scale": 0.7574095970394515,
+      "offset": [
+        -0.3381955426727662,
+        -0.34753639717067203,
+        -0.35772385609989477
+      ],
+      "proposed_scale": 0.7574095970394515,
+      "proposed_offset": [
+        -0.3381955426727662,
+        -0.34753639717067203,
+        -0.35772385609989477
+      ],
+      "status": "estimated"
+    },
+    "outputs/morph-showcase/variances/inputs/DSC_1326-73.jpg": {
+      "scale": 0.9012795325558942,
+      "offset": [
+        -0.3080025951128214,
+        -0.3029944931324644,
+        -0.2794701166297486
+      ],
+      "proposed_scale": 0.9012795325558942,
+      "proposed_offset": [
+        -0.3080025951128214,
+        -0.3029944931324644,
+        -0.2794701166297486
+      ],
+      "status": "estimated"
+    },
+    "outputs/morph-showcase/variances/inputs/DSC_1329-74.jpg": {
+      "scale": 0.9378936724551298,
+      "offset": [
+        -0.23796040768328447,
+        -0.19816544391333976,
+        -0.160711384369916
+      ],
+      "proposed_scale": 0.9378936724551298,
+      "proposed_offset": [
+        -0.23796040768328447,
+        -0.19816544391333976,
+        -0.160711384369916
+      ],
+      "status": "estimated"
+    },
+    "outputs/morph-showcase/variances/inputs/DSC_1330-75.jpg": {
+      "scale": 0.9192706222502494,
+      "offset": [
+        -0.1118801317430185,
+        -0.021370328862469732,
+        0.043086995459622565
+      ],
+      "proposed_scale": 0.9192706222502494,
+      "proposed_offset": [
+        -0.1118801317430185,
+        -0.021370328862469732,
+        0.043086995459622565
+      ],
+      "status": "estimated"
+    },
+    "outputs/morph-showcase/variances/inputs/DSC_1334-76.jpg": {
+      "scale": 0.9778177911318512,
+      "offset": [
+        0.06492317888969548,
+        0.1467575003441755,
+        0.1896170112616354
+      ],
+      "proposed_scale": 0.9778177911318512,
+      "proposed_offset": [
+        0.06492317888969548,
+        0.1467575003441755,
+        0.1896170112616354
+      ],
+      "status": "estimated"
+    },
+    "outputs/morph-showcase/variances/inputs/DSC_1335-77.jpg": {
+      "scale": 0.9917346931428501,
+      "offset": [
+        0.17921325718573508,
+        0.20840061484911745,
+        0.23452656098878846
+      ],
+      "proposed_scale": 0.9917346931428501,
+      "proposed_offset": [
+        0.17921325718573508,
+        0.20840061484911745,
+        0.23452656098878846
+      ],
+      "status": "estimated"
+    },
+    "outputs/morph-showcase/variances/inputs/DSC_1337-78.jpg": {
+      "scale": 0.9884883898489965,
+      "offset": [
+        0.07273145663567986,
+        0.13847749268216678,
+        0.18775860889676427
+      ],
+      "proposed_scale": 0.9884883898489965,
+      "proposed_offset": [
+        0.07273145663567986,
+        0.13847749268216678,
+        0.18775860889676427
+      ],
+      "status": "estimated"
+    },
+    "outputs/morph-showcase/variances/inputs/DSC_1339-79.jpg": {
+      "scale": 0.9186509780096535,
+      "offset": [
+        0.1746572267525749,
+        0.12780781593995977,
+        0.06079595095511213
+      ],
+      "proposed_scale": 0.9186509780096535,
+      "proposed_offset": [
+        0.1746572267525749,
+        0.12780781593995977,
+        0.06079595095511213
+      ],
+      "status": "estimated"
+    },
+    "outputs/morph-showcase/variances/inputs/DSC_1340-80.jpg": {
+      "scale": 0.9808498529818146,
+      "offset": [
+        0.22221934073566027,
+        0.2228157442512789,
+        0.18112070713289607
+      ],
+      "proposed_scale": 0.9808498529818146,
+      "proposed_offset": [
+        0.22221934073566027,
+        0.2228157442512789,
+        0.18112070713289607
+      ],
+      "status": "estimated"
+    },
+    "outputs/morph-showcase/variances/inputs/DSC_1342-81.jpg": {
+      "scale": 0.9836245577214761,
+      "offset": [
+        0.0686511951771239,
+        0.02358310479868956,
+        -0.05439806230184154
+      ],
+      "proposed_scale": 0.9836245577214761,
+      "proposed_offset": [
+        0.0686511951771239,
+        0.02358310479868956,
+        -0.05439806230184154
+      ],
+      "status": "estimated"
+    },
+    "outputs/morph-showcase/variances/inputs/DSC_1344-82.jpg": {
+      "scale": 0.9899960763804094,
+      "offset": [
+        0.4970253458066244,
+        0.4554731018737977,
+        0.4079592968353846
+      ],
+      "proposed_scale": 0.9899960763804094,
+      "proposed_offset": [
+        0.4970253458066244,
+        0.4554731018737977,
+        0.4079592968353846
+      ],
+      "status": "estimated"
+    },
+    "outputs/morph-showcase/variances/inputs/DSC_1360-83.jpg": {
+      "scale": 0.9692929688466706,
+      "offset": [
+        0.19157990720617987,
+        0.19690903412098582,
+        0.219206269110045
+      ],
+      "proposed_scale": 0.9692929688466706,
+      "proposed_offset": [
+        0.19157990720617987,
+        0.19690903412098582,
+        0.219206269110045
+      ],
+      "status": "estimated"
+    },
+    "outputs/morph-showcase/variances/inputs/DSC_1362-84.jpg": {
+      "scale": 1.0017571998925947,
+      "offset": [
+        0.2195694202520948,
+        0.21321133731842887,
+        0.21294851366785186
+      ],
+      "proposed_scale": 1.0017571998925947,
+      "proposed_offset": [
+        0.2195694202520948,
+        0.21321133731842887,
+        0.21294851366785186
+      ],
+      "status": "estimated"
+    },
+    "outputs/morph-showcase/variances/inputs/DSC_1363-85.jpg": {
+      "scale": 1.016968252945061,
+      "offset": [
+        0.21613274127688867,
+        0.20304682482361142,
+        0.2030143411751954
+      ],
+      "proposed_scale": 1.016968252945061,
+      "proposed_offset": [
+        0.21613274127688867,
+        0.20304682482361142,
+        0.2030143411751954
+      ],
+      "status": "estimated"
+    },
+    "outputs/morph-showcase/variances/inputs/DSC_1365-86.jpg": {
+      "scale": 1.0340969716434398,
+      "offset": [
+        -0.06521889307388502,
+        0.05250833634473444,
+        0.19341890405675663
+      ],
+      "proposed_scale": 1.0340969716434398,
+      "proposed_offset": [
+        -0.06521889307388502,
+        0.05250833634473444,
+        0.19341890405675663
+      ],
+      "status": "estimated"
+    },
+    "outputs/morph-showcase/variances/inputs/DSC_1367-87.jpg": {
+      "scale": 1.014936629712632,
+      "offset": [
+        -0.031028977703374254,
+        0.12485515581835124,
+        0.308054516733336
+      ],
+      "proposed_scale": 1.014936629712632,
+      "proposed_offset": [
+        -0.031028977703374254,
+        0.12485515581835124,
+        0.308054516733336
+      ],
+      "status": "estimated"
+    },
+    "outputs/morph-showcase/variances/inputs/DSC_1378-88.jpg": {
+      "scale": 0.963889539914191,
+      "offset": [
+        0.3375908797738874,
+        0.29037309620198276,
+        0.15371112013955643
+      ],
+      "proposed_scale": 0.963889539914191,
+      "proposed_offset": [
+        0.3375908797738874,
+        0.29037309620198276,
+        0.15371112013955643
+      ],
+      "status": "estimated"
+    }
+  }
+}

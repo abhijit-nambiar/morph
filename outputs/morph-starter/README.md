@@ -1,6 +1,30 @@
 # Morph: scene edit reconstruction starter
 
-This is a local command-line research prototype. It proposes photo groups, generates deterministic color-and-tone targets, fits a reproducible transformation, and transfers it to each group. It does not need an API key or alter image geometry. It does not yet understand free-form text, automatically normalize scenes, or establish professional quality. Review the outputs and proposed groups.
+This is a local command-line research prototype. It proposes photo groups, generates deterministic color-and-tone targets, fits a reproducible transformation, and transfers it to each group. It does not need an API key or alter image geometry. An optional experimental path estimates global photo corrections from matched scene content and designated references. It does not yet understand free-form text or establish professional quality. Review the outputs and proposed groups.
+
+## Styled album and normalization showcase
+
+`showcase_workflow.py` reproduces an offline showcase with three agent-authored looks, simulated settings differences, reference-based normalization, full-resolution styled JPEGs, evaluation and file verification. From the repository root:
+
+```bash
+.venv/bin/python -m pip install -r outputs/morph-starter/requirements-normalization.txt
+.venv/bin/python outputs/morph-starter/showcase_workflow.py Morph/originals \
+  --scenes outputs/morph-starter/showcase-scenes.json \
+  --styles outputs/morph-starter/showcase-styles.json \
+  --seed 20261030 --jobs 3 --out outputs/morph-showcase-reproduction
+```
+
+Use a fresh output folder. The supplied scene plan covers this 88-photo album; replace it with reviewed groups for another album. The command checks exact photo coverage, records stages in `run.json`, and writes logs under `logs/`. Three concurrent full-resolution style renders require substantial memory; use `--jobs 1` on smaller machines. Open the resulting `index.html` locally. It includes an eight-stage guided pipeline with scene/photo/style selection, real fitting previews and correction values, style switches, scene filters, processing-stage inspection, presentation controls and full-resolution links, with no external assets. The local-light section distinguishes global album processing from the separate experimental face/person paths. Add `--person-experiment outputs/morph-resumed` to include a labeled mask/overlay/result example from an existing verified person run; it does not apply that local edit to the styled album.
+
+The independent target editor uses Pillow tone curves and HSV color adjustments. A benchmark compares existing renderers with an optional cubic RGB mapping, selects by validation frames, and fits one representative per lighting group. This showcase expects cubic to win; if another renderer wins, it stops for inspection. Cubic is also available through `morph.py fit` and `album` with `--renderer cubic --solver least-squares --regularization .000001`. Existing renderer defaults are unchanged.
+
+`make_variances.py` saves new copies with bounded scene-wide and per-photo exposure-like, white-balance and contrast shifts. These are global logit tone curves, not physical camera exposure stops or local relighting. `photometric_normalization.py` receives only those copies and one designated intended reference per group. It finds SIFT correspondences, verifies geometry, and robustly estimates global tone/color corrections across a graph of overlapping frames. Geometric alignment is used only for measurement; exported framing is unchanged. Unconnected or out-of-bounds estimates are flagged for review and receive identity corrections. The resulting photo recipes use the existing correction mechanism before the saved scene style.
+
+Each reference defines its scene's absolute exposure/color. A shared style recipe provides album intent, but the pipeline does not independently choose an ideal relationship between disconnected scenes. Select references with that intent in mind. The single shaded close-up has its own reference and supplies no within-scene transfer evidence.
+
+`evaluate_style_showcase.py` separately reads withheld clean counterparts and injected settings. Its intended baseline is the same normalizer run on the unperturbed album; this tests stability under injected differences, not independent aesthetic correctness. It reports photo error, per-scene residual bias and across-scene bias spread, plus decoded styled JPEG error and a separate noncalibration summary. The synthetic variance family matches the corrector's global model, making this a favorable controlled test. Human-edited counterparts, unseen albums, clipping recovery and local illumination require separate validation.
+
+`verify_style_showcase.py` checks source hashes, coverage, decoding, original oriented dimensions and ICC/EXIF presence for all 264 album exports plus 42 fitting-reference exports. `verify_showcase_artifact.py` checks every preview and local link. Browser layout and interaction QA remain a separate check. For the actual album's measurements and verification, see `../morph-showcase/RESULTS.md`.
 
 ## Setup
 
@@ -52,6 +76,17 @@ If distant people are missed, an experimental multi-scale pass can combine whole
 To use a manually corrected mask or select a different generated mask for specific photos, save the replacements as separate 8-bit grayscale PNGs without modifying the originals. Run `python3 replace_person_masks.py person-masks/manifest.json --replace example.jpg /path/to/replacement.png --out selected-masks`; repeat `--replace` for additional photos. The command copies all masks into a new directory and writes a new checksum manifest. It does not verify that a replacement is aligned with the named photo, so inspect `selected-masks/manifest.json` with `review_person_masks.py` before fitting. It rejects changed source files, changed original masks, duplicate choices, and unknown filenames. Run `python3 test_replace_person_masks.py` to exercise these checks.
 
 The person-scene `apply` command also accepts `--corrections corrections.json` using the album, scene, and photo structure in the manual corrections example below. For example, `{"photos":{"scene-01":{"example.jpg":{"exposure":0.2}}}}` adjusts just that photo. Corrections are applied in order: photo correction, fitted person-aware look, scene correction, album correction. Use the current scene ID in the file and preview full-resolution outputs before rendering the entire scene; this is manual adjustment, not automatic normalization. A per-scene apply rejects correction entries for other scenes.
+
+For several scenes, combine their mask manifest lists into one JSON list, then fit and preview one mapping per scene:
+
+```bash
+python3 person_album.py fit reviewed-groups.json all-masks.json \
+  --prompt 'warm and slightly soft contrast and lift shadows and brighten people' --out person-album-fits
+python3 person_album.py apply person-album-fits --preview-samples 2 --out person-album-preview
+python3 review_person_album.py person-album-preview --out person-album-review
+```
+
+Open `person-album-review/index.html` for comparisons grouped by scene and links to full-resolution exports. Omit `--preview-samples` to render every photo into a new output folder. Album replay accepts the same `--corrections` file and validates its scene/photo assignments. The review checks reported export coverage, image decodability and oriented dimensions, reports ICC presence, and rejects incomplete output. It does not validate mask accuracy, professional quality or automatic normalization. Run `python3 test_person_album.py` for multi-scene preview, replay, correction routing, review links and failure checks. All saved input paths must exist on the current machine; moved albums require regenerated path manifests and refitting.
 
 On macOS, an experimental content-aware grouping proposal is also available. It splits chronological groups using local Vision image-feature distances; it does not perform segmentation, cannot reunite scenes across chronological boundaries, and the default threshold is unvalidated. It can split similar photos too finely. Compile the helper once, then run:
 

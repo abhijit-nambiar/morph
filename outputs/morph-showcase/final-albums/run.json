@@ -1,0 +1,9 @@
+{
+  "status": "complete",
+  "completed_styles": [
+    "sunlit",
+    "soft-film",
+    "coastal"
+  ],
+  "scope": "New copies of the same album intentionally replay clean-reference style fits. The existing explicit input-change option permits these copies; their current checksums are verified against the normalization manifest before rendering."
+}

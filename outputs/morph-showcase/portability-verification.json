@@ -1,0 +1,31 @@
+{
+  "scope": "Saved showcase copied to a different repository location; no original checkout paths are used by site requests or saved input references. Archived research folders and session logs are outside this check.",
+  "path_base": "Repository root for saved manifests; showcase folder for website URLs.",
+  "checks": [
+    "All preview/link checks and 306 full-resolution export checks pass from relocated repository root.",
+    "Walkthrough evidence helper and optional historical person example resolve after relocation.",
+    "README static-server command works from relocated repo; every saved image, full-resolution link and pipeline artifact returns HTTP 200 with expected size.",
+    "No image-processing installation is required for the static HTTP server."
+  ],
+  "problems": 0,
+  "artifact": {
+    "scope": "Scene coverage, all dynamic preview images, all full-resolution links, static HTML links and local portability checked. Browser interactions and visual layout require separate QA.",
+    "photos": 88,
+    "preview_images": 886,
+    "full_resolution_links": 264,
+    "separate_local_exports": 1,
+    "files_checked": 1332,
+    "problems": 0
+  },
+  "exports": {
+    "scope": "Input checksums, recorded coverage, complete image decoding, original oriented dimensions, ICC and EXIF presence checked. No perceptual-quality claim.",
+    "exports": 306,
+    "album_exports": 264,
+    "problems": 0,
+    "issues": []
+  },
+  "http_files_checked": 1334,
+  "platform": "macOS; Windows launch command documented but not executed",
+  "affected_tests": 4,
+  "readme_local_links": 15
+}

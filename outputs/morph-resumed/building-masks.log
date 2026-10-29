@@ -1,0 +1,8 @@
+mask 384x512; oriented input 683x1024
+mask 384x512; oriented input 683x1024
+mask 512x384; oriented input 1024x683
+mask 512x384; oriented input 1024x683
+mask 384x512; oriented input 683x1024
+mask 512x384; oriented input 1024x683
+mask 512x384; oriented input 1024x683
+Generated 7 masks; inspect before fitting: outputs/morph-resumed/building-masks

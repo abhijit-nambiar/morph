@@ -1,0 +1,192 @@
+{
+  "version": 1,
+  "method": "Controlled varied copies; scene IDs inherited from reviewed clean groups",
+  "groups": [
+    {
+      "id": "scene-01",
+      "label": "South Hall \u00b7 doorway",
+      "representative": "outputs/morph-showcase/varied-album/inputs/varied-DSC_0906-4.jpg",
+      "photos": [
+        "outputs/morph-showcase/varied-album/inputs/varied-DSC_0901-1.jpg",
+        "outputs/morph-showcase/varied-album/inputs/varied-DSC_0904-2.jpg",
+        "outputs/morph-showcase/varied-album/inputs/varied-DSC_0905-3.jpg",
+        "outputs/morph-showcase/varied-album/inputs/varied-DSC_0906-4.jpg",
+        "outputs/morph-showcase/varied-album/inputs/varied-DSC_0914-5.jpg",
+        "outputs/morph-showcase/varied-album/inputs/varied-DSC_0916-6.jpg",
+        "outputs/morph-showcase/varied-album/inputs/varied-DSC_0919-7.jpg",
+        "outputs/morph-showcase/varied-album/inputs/varied-DSC_0921-8.jpg",
+        "outputs/morph-showcase/varied-album/inputs/varied-DSC_0925-9.jpg",
+        "outputs/morph-showcase/varied-album/inputs/varied-DSC_0928-10.jpg",
+        "outputs/morph-showcase/varied-album/inputs/varied-DSC_0930-11.jpg",
+        "outputs/morph-showcase/varied-album/inputs/varied-DSC_0935-12.jpg"
+      ]
+    },
+    {
+      "id": "scene-02-lawn",
+      "label": "Campanile lawn",
+      "representative": "outputs/morph-showcase/varied-album/inputs/varied-DSC_0958-15.jpg",
+      "photos": [
+        "outputs/morph-showcase/varied-album/inputs/varied-DSC_0947-13.jpg",
+        "outputs/morph-showcase/varied-album/inputs/varied-DSC_0948-14.jpg",
+        "outputs/morph-showcase/varied-album/inputs/varied-DSC_0958-15.jpg",
+        "outputs/morph-showcase/varied-album/inputs/varied-DSC_0970-17.jpg",
+        "outputs/morph-showcase/varied-album/inputs/varied-DSC_0974-18.jpg",
+        "outputs/morph-showcase/varied-album/inputs/varied-DSC_0987-19.jpg"
+      ]
+    },
+    {
+      "id": "scene-02",
+      "label": "Library steps",
+      "representative": "outputs/morph-showcase/varied-album/inputs/varied-DSC_0995-22.jpg",
+      "photos": [
+        "outputs/morph-showcase/varied-album/inputs/varied-DSC_0965-16.jpg",
+        "outputs/morph-showcase/varied-album/inputs/varied-DSC_0990-20.jpg",
+        "outputs/morph-showcase/varied-album/inputs/varied-DSC_0993-21.jpg",
+        "outputs/morph-showcase/varied-album/inputs/varied-DSC_0995-22.jpg",
+        "outputs/morph-showcase/varied-album/inputs/varied-DSC_0997-23.jpg",
+        "outputs/morph-showcase/varied-album/inputs/varied-DSC_0998-24.jpg",
+        "outputs/morph-showcase/varied-album/inputs/varied-DSC_1012-25.jpg"
+      ]
+    },
+    {
+      "id": "scene-03",
+      "label": "Campanile \u00b7 terrace",
+      "representative": "outputs/morph-showcase/varied-album/inputs/varied-DSC_1037-31.jpg",
+      "photos": [
+        "outputs/morph-showcase/varied-album/inputs/varied-DSC_1021-26.jpg",
+        "outputs/morph-showcase/varied-album/inputs/varied-DSC_1026-27.jpg",
+        "outputs/morph-showcase/varied-album/inputs/varied-DSC_1028-28.jpg",
+        "outputs/morph-showcase/varied-album/inputs/varied-DSC_1030-29.jpg",
+        "outputs/morph-showcase/varied-album/inputs/varied-DSC_1033-30.jpg",
+        "outputs/morph-showcase/varied-album/inputs/varied-DSC_1037-31.jpg",
+        "outputs/morph-showcase/varied-album/inputs/varied-DSC_1038-32.jpg"
+      ]
+    },
+    {
+      "id": "scene-04",
+      "label": "Library \u00b7 graduating class",
+      "representative": "outputs/morph-showcase/varied-album/inputs/varied-DSC_1054-33.jpg",
+      "photos": [
+        "outputs/morph-showcase/varied-album/inputs/varied-DSC_1054-33.jpg",
+        "outputs/morph-showcase/varied-album/inputs/varied-DSC_1059-34.jpg"
+      ]
+    },
+    {
+      "id": "scene-05",
+      "label": "Library \u00b7 balustrade",
+      "representative": "outputs/morph-showcase/varied-album/inputs/varied-DSC_1111-45.jpg",
+      "photos": [
+        "outputs/morph-showcase/varied-album/inputs/varied-DSC_1070-35.jpg",
+        "outputs/morph-showcase/varied-album/inputs/varied-DSC_1074-36.jpg",
+        "outputs/morph-showcase/varied-album/inputs/varied-DSC_1083-37.jpg",
+        "outputs/morph-showcase/varied-album/inputs/varied-DSC_1096-40.jpg",
+        "outputs/morph-showcase/varied-album/inputs/varied-DSC_1100-41.jpg",
+        "outputs/morph-showcase/varied-album/inputs/varied-DSC_1106-43.jpg",
+        "outputs/morph-showcase/varied-album/inputs/varied-DSC_1109-44.jpg",
+        "outputs/morph-showcase/varied-album/inputs/varied-DSC_1111-45.jpg",
+        "outputs/morph-showcase/varied-album/inputs/varied-DSC_1118-48.jpg"
+      ]
+    },
+    {
+      "id": "scene-05-tower",
+      "label": "Campanile \u00b7 seated portraits",
+      "representative": "outputs/morph-showcase/varied-album/inputs/varied-DSC_1105-42.jpg",
+      "photos": [
+        "outputs/morph-showcase/varied-album/inputs/varied-DSC_1088-38.jpg",
+        "outputs/morph-showcase/varied-album/inputs/varied-DSC_1090-39.jpg",
+        "outputs/morph-showcase/varied-album/inputs/varied-DSC_1105-42.jpg",
+        "outputs/morph-showcase/varied-album/inputs/varied-DSC_1114-46.jpg",
+        "outputs/morph-showcase/varied-album/inputs/varied-DSC_1116-47.jpg"
+      ]
+    },
+    {
+      "id": "scene-06-walk",
+      "label": "Sather plaza \u00b7 walkway",
+      "representative": "outputs/morph-showcase/varied-album/inputs/varied-DSC_1264-51.jpg",
+      "photos": [
+        "outputs/morph-showcase/varied-album/inputs/varied-DSC_1259-49.jpg",
+        "outputs/morph-showcase/varied-album/inputs/varied-DSC_1261-50.jpg",
+        "outputs/morph-showcase/varied-album/inputs/varied-DSC_1264-51.jpg",
+        "outputs/morph-showcase/varied-album/inputs/varied-DSC_1265-52.jpg",
+        "outputs/morph-showcase/varied-album/inputs/varied-DSC_1268-53.jpg"
+      ]
+    },
+    {
+      "id": "scene-06-shade",
+      "label": "Sather plaza \u00b7 shaded close-up",
+      "representative": "outputs/morph-showcase/varied-album/inputs/varied-DSC_1273-54.jpg",
+      "photos": [
+        "outputs/morph-showcase/varied-album/inputs/varied-DSC_1273-54.jpg"
+      ]
+    },
+    {
+      "id": "scene-06",
+      "label": "Sather plaza \u00b7 fountain",
+      "representative": "outputs/morph-showcase/varied-album/inputs/varied-DSC_1286-58.jpg",
+      "photos": [
+        "outputs/morph-showcase/varied-album/inputs/varied-DSC_1280-55.jpg",
+        "outputs/morph-showcase/varied-album/inputs/varied-DSC_1282-56.jpg",
+        "outputs/morph-showcase/varied-album/inputs/varied-DSC_1284-57.jpg",
+        "outputs/morph-showcase/varied-album/inputs/varied-DSC_1286-58.jpg",
+        "outputs/morph-showcase/varied-album/inputs/varied-DSC_1288-59.jpg",
+        "outputs/morph-showcase/varied-album/inputs/varied-DSC_1291-60.jpg",
+        "outputs/morph-showcase/varied-album/inputs/varied-DSC_1292-61.jpg",
+        "outputs/morph-showcase/varied-album/inputs/varied-DSC_1293-62.jpg",
+        "outputs/morph-showcase/varied-album/inputs/varied-DSC_1300-63.jpg",
+        "outputs/morph-showcase/varied-album/inputs/varied-DSC_1302-64.jpg",
+        "outputs/morph-showcase/varied-album/inputs/varied-DSC_1304-65.jpg"
+      ]
+    },
+    {
+      "id": "scene-07",
+      "label": "Library colonnade",
+      "representative": "outputs/morph-showcase/varied-album/inputs/varied-DSC_1320-70.jpg",
+      "photos": [
+        "outputs/morph-showcase/varied-album/inputs/varied-DSC_1308-66.jpg",
+        "outputs/morph-showcase/varied-album/inputs/varied-DSC_1310-67.jpg",
+        "outputs/morph-showcase/varied-album/inputs/varied-DSC_1312-68.jpg",
+        "outputs/morph-showcase/varied-album/inputs/varied-DSC_1315-69.jpg",
+        "outputs/morph-showcase/varied-album/inputs/varied-DSC_1320-70.jpg",
+        "outputs/morph-showcase/varied-album/inputs/varied-DSC_1322-71.jpg",
+        "outputs/morph-showcase/varied-album/inputs/varied-DSC_1324-72.jpg"
+      ]
+    },
+    {
+      "id": "scene-08",
+      "label": "Library \u00b7 couple portraits",
+      "representative": "outputs/morph-showcase/varied-album/inputs/varied-DSC_1334-76.jpg",
+      "photos": [
+        "outputs/morph-showcase/varied-album/inputs/varied-DSC_1326-73.jpg",
+        "outputs/morph-showcase/varied-album/inputs/varied-DSC_1329-74.jpg",
+        "outputs/morph-showcase/varied-album/inputs/varied-DSC_1330-75.jpg",
+        "outputs/morph-showcase/varied-album/inputs/varied-DSC_1334-76.jpg",
+        "outputs/morph-showcase/varied-album/inputs/varied-DSC_1335-77.jpg",
+        "outputs/morph-showcase/varied-album/inputs/varied-DSC_1337-78.jpg"
+      ]
+    },
+    {
+      "id": "scene-08-tower",
+      "label": "Campanile \u00b7 couple portraits",
+      "representative": "outputs/morph-showcase/varied-album/inputs/varied-DSC_1342-81.jpg",
+      "photos": [
+        "outputs/morph-showcase/varied-album/inputs/varied-DSC_1339-79.jpg",
+        "outputs/morph-showcase/varied-album/inputs/varied-DSC_1340-80.jpg",
+        "outputs/morph-showcase/varied-album/inputs/varied-DSC_1342-81.jpg",
+        "outputs/morph-showcase/varied-album/inputs/varied-DSC_1344-82.jpg"
+      ]
+    },
+    {
+      "id": "scene-09",
+      "label": "Sather Gate",
+      "representative": "outputs/morph-showcase/varied-album/inputs/varied-DSC_1363-85.jpg",
+      "photos": [
+        "outputs/morph-showcase/varied-album/inputs/varied-DSC_1360-83.jpg",
+        "outputs/morph-showcase/varied-album/inputs/varied-DSC_1362-84.jpg",
+        "outputs/morph-showcase/varied-album/inputs/varied-DSC_1363-85.jpg",
+        "outputs/morph-showcase/varied-album/inputs/varied-DSC_1365-86.jpg",
+        "outputs/morph-showcase/varied-album/inputs/varied-DSC_1367-87.jpg",
+        "outputs/morph-showcase/varied-album/inputs/varied-DSC_1378-88.jpg"
+      ]
+    }
+  ]
+}

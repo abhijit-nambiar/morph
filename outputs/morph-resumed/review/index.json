@@ -1,0 +1,99 @@
+{
+  "scope": "Export coverage, decodability and oriented dimensions checked; ICC presence reported. Thumbnail comparisons do not validate masks, artistic quality or automatic normalization.",
+  "mode": "album",
+  "photos": 13,
+  "missing_icc_profiles": 0,
+  "nearly_empty_masks": 0,
+  "scenes": [
+    {
+      "scene": "scene-02-lawn",
+      "review": "scene-02-lawn/index.html",
+      "photos": [
+        {
+          "source": "Morph/originals/DSC_0947-13.jpg",
+          "output": "outputs/morph-resumed/full/scene-02-lawn/exports/DSC_0947-13.jpg",
+          "review_flag": false,
+          "icc_profile_present": true
+        },
+        {
+          "source": "Morph/originals/DSC_0948-14.jpg",
+          "output": "outputs/morph-resumed/full/scene-02-lawn/exports/DSC_0948-14.jpg",
+          "review_flag": false,
+          "icc_profile_present": true
+        },
+        {
+          "source": "Morph/originals/DSC_0958-15.jpg",
+          "output": "outputs/morph-resumed/full/scene-02-lawn/exports/DSC_0958-15.jpg",
+          "review_flag": false,
+          "icc_profile_present": true
+        },
+        {
+          "source": "Morph/originals/DSC_0970-17.jpg",
+          "output": "outputs/morph-resumed/full/scene-02-lawn/exports/DSC_0970-17.jpg",
+          "review_flag": false,
+          "icc_profile_present": true
+        },
+        {
+          "source": "Morph/originals/DSC_0974-18.jpg",
+          "output": "outputs/morph-resumed/full/scene-02-lawn/exports/DSC_0974-18.jpg",
+          "review_flag": false,
+          "icc_profile_present": true
+        },
+        {
+          "source": "Morph/originals/DSC_0987-19.jpg",
+          "output": "outputs/morph-resumed/full/scene-02-lawn/exports/DSC_0987-19.jpg",
+          "review_flag": false,
+          "icc_profile_present": true
+        }
+      ]
+    },
+    {
+      "scene": "scene-02",
+      "review": "scene-02/index.html",
+      "photos": [
+        {
+          "source": "Morph/originals/DSC_0965-16.jpg",
+          "output": "outputs/morph-resumed/full/scene-02/exports/DSC_0965-16.jpg",
+          "review_flag": false,
+          "icc_profile_present": true
+        },
+        {
+          "source": "Morph/originals/DSC_0990-20.jpg",
+          "output": "outputs/morph-resumed/full/scene-02/exports/DSC_0990-20.jpg",
+          "review_flag": false,
+          "icc_profile_present": true
+        },
+        {
+          "source": "Morph/originals/DSC_0993-21.jpg",
+          "output": "outputs/morph-resumed/full/scene-02/exports/DSC_0993-21.jpg",
+          "review_flag": false,
+          "icc_profile_present": true
+        },
+        {
+          "source": "Morph/originals/DSC_0995-22.jpg",
+          "output": "outputs/morph-resumed/full/scene-02/exports/DSC_0995-22.jpg",
+          "review_flag": false,
+          "icc_profile_present": true
+        },
+        {
+          "source": "Morph/originals/DSC_0997-23.jpg",
+          "output": "outputs/morph-resumed/full/scene-02/exports/DSC_0997-23.jpg",
+          "review_flag": false,
+          "icc_profile_present": true
+        },
+        {
+          "source": "Morph/originals/DSC_0998-24.jpg",
+          "output": "outputs/morph-resumed/full/scene-02/exports/DSC_0998-24.jpg",
+          "review_flag": false,
+          "icc_profile_present": true
+        },
+        {
+          "source": "Morph/originals/DSC_1012-25.jpg",
+          "output": "outputs/morph-resumed/full/scene-02/exports/DSC_1012-25.jpg",
+          "review_flag": false,
+          "icc_profile_present": true
+        }
+      ]
+    }
+  ]
+}

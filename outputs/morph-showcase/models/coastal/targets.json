@@ -1,0 +1,89 @@
+{
+  "scope": "Independent Pillow tone LUT and HSV composite, authored by the agent. The fitter reads source/target image pairs and receives no target control settings.",
+  "style": {
+    "name": "Coastal cool",
+    "description": "Cooler color, crisp contrast and deep blue skies.",
+    "prompt": "Cool color, crisp contrast, vivid blues",
+    "settings": {
+      "tone_exposure": 0.08,
+      "tone_contrast": 0.38,
+      "tone_shadows": 0.12,
+      "tone_highlights": -0.22,
+      "tone_temperature": -0.22,
+      "cool_saturation": 0.18,
+      "warm_saturation": -0.12
+    }
+  },
+  "targets": [
+    {
+      "source": "Morph/originals/DSC_0906-4.jpg",
+      "target": "outputs/morph-showcase/models/coastal/targets/DSC_0906-4.jpg",
+      "target_sha256": "492d4a341b002f4d02c4a5428bc6f917acf5bb4aab0a9f14144f3de018900db9"
+    },
+    {
+      "source": "Morph/originals/DSC_0958-15.jpg",
+      "target": "outputs/morph-showcase/models/coastal/targets/DSC_0958-15.jpg",
+      "target_sha256": "c767c20143e8570bb381028168dc14b657ec6a1fdebb246a76a2ef64a1122e62"
+    },
+    {
+      "source": "Morph/originals/DSC_0995-22.jpg",
+      "target": "outputs/morph-showcase/models/coastal/targets/DSC_0995-22.jpg",
+      "target_sha256": "528933789100452b6e61ed006c809a0342badb2a80050adbe6dbd62634a24c08"
+    },
+    {
+      "source": "Morph/originals/DSC_1037-31.jpg",
+      "target": "outputs/morph-showcase/models/coastal/targets/DSC_1037-31.jpg",
+      "target_sha256": "ffb9e9e7eeebcfcd287615db0a00acf527f35c7363c145e4b6adc89ace5f1fc9"
+    },
+    {
+      "source": "Morph/originals/DSC_1054-33.jpg",
+      "target": "outputs/morph-showcase/models/coastal/targets/DSC_1054-33.jpg",
+      "target_sha256": "d6d17a9aca5c37d5513a1e658bd27f785898fe554171fd83b05d32ae28940230"
+    },
+    {
+      "source": "Morph/originals/DSC_1111-45.jpg",
+      "target": "outputs/morph-showcase/models/coastal/targets/DSC_1111-45.jpg",
+      "target_sha256": "c7c3c611e5ab5ad7f710edd07910e8aede2fcaee53ad253c09c241679d1c6a2c"
+    },
+    {
+      "source": "Morph/originals/DSC_1105-42.jpg",
+      "target": "outputs/morph-showcase/models/coastal/targets/DSC_1105-42.jpg",
+      "target_sha256": "dbab75e3f3218da197fdfaa575d6058aeed7d0fefca23f84b5aa4487030338d3"
+    },
+    {
+      "source": "Morph/originals/DSC_1264-51.jpg",
+      "target": "outputs/morph-showcase/models/coastal/targets/DSC_1264-51.jpg",
+      "target_sha256": "395b7c6e083830496a52d6270d5c416577ab0034234182cf88d566f621366cba"
+    },
+    {
+      "source": "Morph/originals/DSC_1273-54.jpg",
+      "target": "outputs/morph-showcase/models/coastal/targets/DSC_1273-54.jpg",
+      "target_sha256": "6f59f2585682ec99c168e34b4f747eb56b6244f737c090f7b83c154d26df3041"
+    },
+    {
+      "source": "Morph/originals/DSC_1286-58.jpg",
+      "target": "outputs/morph-showcase/models/coastal/targets/DSC_1286-58.jpg",
+      "target_sha256": "bcd6125e0d235aafbf29f08d1e6cf5f620853046f1df4b5cbf21de44af65dc48"
+    },
+    {
+      "source": "Morph/originals/DSC_1320-70.jpg",
+      "target": "outputs/morph-showcase/models/coastal/targets/DSC_1320-70.jpg",
+      "target_sha256": "e0029a6ac3494eb0cf59b470011ce54d1863a2b3d0c42546cebef40e11fcfcea"
+    },
+    {
+      "source": "Morph/originals/DSC_1334-76.jpg",
+      "target": "outputs/morph-showcase/models/coastal/targets/DSC_1334-76.jpg",
+      "target_sha256": "41692d370e025df02318c82365b10c29959b8e007315dd64042d811ce17a69a7"
+    },
+    {
+      "source": "Morph/originals/DSC_1342-81.jpg",
+      "target": "outputs/morph-showcase/models/coastal/targets/DSC_1342-81.jpg",
+      "target_sha256": "f54527a7e24a0eb12c43721d0953facb454d9cc36c606eb8e88a9b79cfeddbda"
+    },
+    {
+      "source": "Morph/originals/DSC_1363-85.jpg",
+      "target": "outputs/morph-showcase/models/coastal/targets/DSC_1363-85.jpg",
+      "target_sha256": "fa1a8e674f6623f6b5976bd557e6ea7bca52cd9c7c264149224cbf57ce1cd2cc"
+    }
+  ]
+}

@@ -1,0 +1,7 @@
+mask 384x512; oriented input 683x1024
+mask 384x512; oriented input 683x1024
+mask 512x384; oriented input 1024x683
+mask 384x512; oriented input 683x1024
+mask 512x384; oriented input 1024x683
+mask 384x512; oriented input 683x1024
+Generated 6 masks; inspect before fitting: outputs/morph-resumed/lawn-masks
