@@ -1,5 +1,68 @@
 # Morph
 
+Morph edits a whole album to match one or a few **reference edits**, consistently across every scene, and only touches **light, colour, tone, detail and noise** — it never crops, warps, moves, adds or removes anything.
+
+You make the reference(s) one of two ways:
+
+* **Your own edit** – spend your time on the one or few photos you like most (Lightroom, Capture One, anything) and hand Morph the exported JPEGs. Crops/straightening in your edit are fine; Morph registers it back onto the original.
+* **Prompted** – describe the look in words, get several candidates from a generator (built-in local stand-in today; any image API drops in), pick one, then fine-tune global and per-region sliders (subject, background, sky, greenery, hair, face skin, body skin, eyes, lips, clothes) with a live preview.
+
+Morph then reverse-engineers each reference into a deterministic recipe of Lightroom-style sliders, adapts it to every other photo's lighting, harmonizes within each scene and (more softly) across scenes, and exports full-resolution files with EXIF/ICC preserved.
+
+## Install
+
+```bash
+python3 -m venv .venv && . .venv/bin/activate
+pip install -e '.[dev]'          # CPU-only is fine; models download from Hugging Face on first run
+```
+
+## Use
+
+```bash
+morph init  proj  path/to/album             # analyse photos (regions, faces, embeddings) + group into scenes
+morph suggest proj                          # which photos make the best references, and why
+morph studio  proj                          # web UI: prompt -> candidates -> pick -> region tweaks -> apply
+```
+
+Or entirely from the command line:
+
+```bash
+morph reference proj DSC_0906-4.jpg --edit my_edits/DSC_0906-4.jpg       # your own edit as a reference
+morph generate  proj DSC_1280-55.jpg --prompt "warm golden hour, soft glowing skin, slightly darker background"
+morph pick      proj DSC_1280-55.jpg 0                                     # choose candidate 0
+morph adjust    proj DSC_1280-55.jpg face_skin.texture=-0.3 background.saturation=-0.2 eyes.exposure=0.15
+morph apply     proj --out edited/                                         # whole album -> edited/photos, recipes, review page
+
+# one shot
+morph edit path/to/album --look "airy, lifted shadows, clean skin" --out edited/
+morph edit path/to/album --edit-dir my_edits/ --out edited/               # use whichever photos you edited
+```
+
+`--generator` accepts `local`, `openai` (uses `OPENAI_API_KEY`, sends the original + prompt), any `https://…` endpoint that takes `{"image": b64png, "prompt", "n"}` and returns `{"images": [b64png…]}`, or `files:DIR` for candidates you made elsewhere.
+
+## How it works
+
+| Stage | Module | What it does |
+|---|---|---|
+| Analyse | `album.py`, `segment.py` | Working-res copy; soft masks for subject, background, sky, greenery, hair, face skin, body skin, eyes, lips, clothes (SegFormer human + face parsing + ADE scene parsing, edge-snapped with a guided filter); DINOv2 embeddings of the whole frame and of the background only; per-region Lab statistics, sharpness, clipping. Cached by file hash. |
+| Scenes | `scenes.py` | Agglomerative clustering on background embedding + colour + capture time. |
+| Suggest | `scenes.py` | Greedy coverage (facility location) over setting/lighting similarity, weighted by reference quality (sharp subject, faces, no clipping). |
+| Generate | `generate.py`, `look.py` | Pluggable generators. The local one parses photographic vocabulary with region targeting and intensity modifiers ("slightly darker background", "very soft skin", "no grain") and renders variations on top of an auto-tone baseline. |
+| Guard | `guard.py` | Every candidate is registered to the original (SIFT homography / ECC), then checked for edge overlap, local structure correlation, region-mask IoU and face count. Verdict: pass / repairable (changed pixels are excluded from fitting) / reject. |
+| Fit | `fit.py`, `render.py` | A differentiable PyTorch renderer of global + per-region sliders (exposure, contrast, highlights, shadows, whites, blacks, WB, vibrance/saturation, HSL ×8, colour grading, curves, clarity, texture, dehaze, noise reduction, sharpening, grain, vignette); Adam fits it to the target in Lab, confidence-weighted and region-balanced. |
+| Propagate | `propagate.py` | Blends reference recipes by similarity; predicts where each region should land (reference result + damped share of this photo's difference); harmonizes those targets within a scene and across scenes; solves a small per-photo correction so rendered region statistics hit them. |
+| Export | `export.py` | Full-res render with guided-upsampled masks, EXIF/ICC/XMP kept, geometry + edge check on every file, per-photo recipe JSON, before/after review page. |
+
+Benchmark against a hand-edited album (use K of your edits as references, predict the rest):
+
+```bash
+morph evaluate Morph/originals Morph/edits --out runs/eval -k 3
+```
+
+## Research archive
+
+Everything below documents the earlier research prototype and static showcase, kept for reference.
+
 Morph learns a look from one edited reference photo, corrects small lighting/settings differences, and reuses the saved look across a scene. The showcase contains 88 photos, 14 reviewed lighting groups and three styles, with an eight-stage interactive pipeline walkthrough.
 
 ## Run the showcase after cloning
