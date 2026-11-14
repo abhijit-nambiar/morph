@@ -34,6 +34,10 @@ _TAG_EXPOSURE_TIME = 0x829A
 _TAG_FNUMBER = 0x829D
 _TAG_ISO = 0x8827
 _TAG_ORIENTATION = 0x0112
+# TIFF layout tags that Pillow's getexif() returns for TIFF sources; copying them into another file's
+# EXIF (strip offsets, bit depth, compression, ...) corrupts the written image.
+_TIFF_LAYOUT_TAGS = {254, 255, 256, 257, 258, 259, 262, 266, 273, 277, 278, 279, 280, 281, 284, 317, 320,
+                     322, 323, 324, 325, 338, 339, 340, 341, 347, 530, 531, 532}
 
 
 @dataclass
@@ -276,6 +280,8 @@ def save_image(img: np.ndarray, out: str | Path, source: str | Path | None = Non
         with Image.open(source) as src:
             icc = src.info.get("icc_profile")
             exif = src.getexif()
+            for tag in _TIFF_LAYOUT_TAGS & set(exif):
+                del exif[tag]
             if exif:
                 exif[_TAG_ORIENTATION] = 1
                 kwargs["exif"] = exif.tobytes()

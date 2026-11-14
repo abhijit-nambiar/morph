@@ -298,14 +298,27 @@ def render(
         x = x + params.G("sharpen") * 0.8 * (L - blur(L, max(0.7, 0.0004 * scale)))
     x = _soft_clip(x)
     if "grain" in ag and float(params.G("grain").detach()) > 1e-3:
-        gen = torch.Generator().manual_seed(seed)
-        h, w = x.shape[-2:]
-        size = max(1, int(round(0.0005 * scale)))
-        n = torch.randn((1, 1, (h + size - 1) // size, (w + size - 1) // size), generator=gen)
-        n = F.interpolate(n, size=(h, w), mode="bilinear", align_corners=False)
-        L = _luma(x).clamp(0, 1)
-        x = (x + params.G("grain") * 0.05 * n * (4 * L * (1 - L)).clamp(min=0.15)).clamp(0, 1)
+        x = apply_grain(x, params.G("grain"), seed, scale)
     return x
+
+
+def apply_grain(x: torch.Tensor, amount, seed: int, scale: float) -> torch.Tensor:
+    """Film grain, the last step of :func:`render`: seeded per-pixel noise, never structural."""
+    gen = torch.Generator().manual_seed(seed)
+    h, w = x.shape[-2:]
+    size = max(1, int(round(0.0005 * scale)))
+    n = torch.randn((1, 1, (h + size - 1) // size, (w + size - 1) // size), generator=gen)
+    n = F.interpolate(n, size=(h, w), mode="bilinear", align_corners=False)
+    L = _luma(x).clamp(0, 1)
+    return (x + amount * 0.05 * n * (4 * L * (1 - L)).clamp(min=0.15)).clamp(0, 1)
+
+
+def add_grain(img: np.ndarray, amount: float, seed: int = 0) -> np.ndarray:
+    """Numpy :func:`apply_grain`; ``add_grain(render_recipe(img, m, r without grain), g, seed)`` equals the full render."""
+    if amount <= 1e-3:
+        return img
+    with torch.no_grad():
+        return to_numpy(apply_grain(to_tensor(img), torch.tensor(float(amount)), seed, float(max(img.shape[:2]))))
 
 
 def render_recipe(img: np.ndarray, masks: dict[str, np.ndarray] | None, recipe: Recipe, seed: int = 0) -> np.ndarray:

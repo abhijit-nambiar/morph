@@ -11,10 +11,10 @@ import numpy as np
 
 from .album import Album
 from .filters import upsample_mask
-from .guard import edge_f1
+from .guard import edge_f1, structure_ncc
 from .imageio import WRITABLE_SUFFIXES, is_raw, load_rgb, save_image
 from .recipe import Recipe
-from .render import render_recipe
+from .render import add_grain, render_recipe
 
 
 def full_res_masks(album: Album, name: str, img: np.ndarray, recipe: Recipe) -> dict[str, np.ndarray] | None:
@@ -26,20 +26,30 @@ def full_res_masks(album: Album, name: str, img: np.ndarray, recipe: Recipe) -> 
     return {r: upsample_mask(rm.masks[r], guide) for r in regions if r in rm.masks}
 
 
-def render_photo(album: Album, name: str, recipe: Recipe, max_side: int | None = None) -> np.ndarray:
+def render_photo(album: Album, name: str, recipe: Recipe, max_side: int | None = None,
+                 with_grain: bool = True) -> tuple[np.ndarray, np.ndarray]:
     rec = album.get(name)
     img = load_rgb(rec.path, max_side=max_side)
     masks = full_res_masks(album, name, img, recipe)
-    return img, render_recipe(img, masks, recipe, seed=int(rec.sha256[:8], 16) % (2**31))
+    seed = int(rec.sha256[:8], 16) % (2**31)
+    if with_grain:
+        return img, render_recipe(img, masks, recipe, seed=seed)
+    r = Recipe(dict(recipe.global_), recipe.local, dict(recipe.meta))
+    r.global_.pop("grain", None)
+    return img, render_recipe(img, masks, r, seed=seed)
 
 
 def verify(orig: np.ndarray, out: np.ndarray) -> dict:
-    """Non-structural check: same geometry, edges in the same places."""
+    """Non-structural check: same geometry, and local detail still lines up (tone-invariant).
+
+    Run on the grain-free render: grain is seeded per-pixel noise and would only blur the signal."""
     s = 768 / max(orig.shape[:2])
     small = lambda a: cv2.resize(a, None, fx=s, fy=s, interpolation=cv2.INTER_AREA) if s < 1 else a
     ok_shape = orig.shape == out.shape
-    ef = edge_f1(small(orig), small(out)) if ok_shape else 0.0
-    return {"same_geometry": bool(ok_shape), "edge_f1": round(ef, 4), "ok": bool(ok_shape and ef > 0.8)}
+    a, b = (small(orig), small(out)) if ok_shape else (None, None)
+    st = structure_ncc(a, b) if ok_shape else 0.0
+    ef = edge_f1(a, b) if ok_shape else 0.0
+    return {"same_geometry": bool(ok_shape), "structure": round(st, 4), "edge_f1": round(ef, 4), "ok": bool(ok_shape and st > 0.6)}
 
 
 def output_name(name: str, fmt: str | None = None) -> str:
@@ -90,10 +100,11 @@ def export_album(album: Album, recipes: dict[str, Recipe], out_dir: str | Path, 
     files = output_names([p.name for p in album.photos], fmt)
     for i, p in enumerate(album.photos):
         r = recipes[p.name]
-        img, out = render_photo(album, p.name, r, max_side)
+        img, out = render_photo(album, p.name, r, max_side, with_grain=False)
         v = verify(img, out)
         if not v["ok"]:
             raise RuntimeError(f"{p.name}: export failed the structure check {v}")
+        out = add_grain(out, r.g("grain"), int(album.get(p.name).sha256[:8], 16) % (2**31))
         save_image(out, out_dir / "photos" / files[p.name], source=p.path, quality=quality)
         r.save(out_dir / "recipes" / f"{Path(p.name).stem}.json")
         for tag, a in (("before", img), ("after", out)):

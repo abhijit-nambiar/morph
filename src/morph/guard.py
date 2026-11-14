@@ -58,6 +58,26 @@ def edge_f1(a: np.ndarray, b: np.ndarray, tol: int | None = None) -> float:
     return float(2 * prec * rec / max(prec + rec, 1e-6))
 
 
+def structure_ncc(a: np.ndarray, b: np.ndarray) -> float:
+    """Median local NCC of luminance detail over the textured half of ``a``.
+
+    Invariant to per-pixel tone and colour changes (~0.98 for heavy grades) but collapses for any
+    geometric change (< 0.5 for a 0.5 degree rotation, 1% shift or 1% scale)."""
+    win = max(5, round(max(a.shape[:2]) / 48) | 1)
+
+    def hp(img):
+        g = cv2.cvtColor(np.clip(img, 0, 1).astype(np.float32), cv2.COLOR_RGB2GRAY)
+        return g - cv2.GaussianBlur(g, (0, 0), 2.0)
+
+    da, db = hp(a), hp(b)
+    va, vb = cv2.blur(da * da, (win, win)), cv2.blur(db * db, (win, win))
+    eps = 1e-6 * float(va.mean() * vb.mean()) + 1e-24  # relative, so darkening/flattening the image doesn't bias it
+    ncc = cv2.blur(da * db, (win, win)) / np.sqrt(va * vb + eps)
+    # textured in the original, and not crushed flat by the edit (a crush is tonal, not geometric)
+    tex = (va > max(float(np.quantile(va, 0.5)), 1e-5)) & (vb > 1e-4 * va)
+    return float(np.median(ncc[tex])) if tex.sum() >= 100 else 1.0
+
+
 def _iou(a: np.ndarray, b: np.ndarray) -> float:
     a, b = a > 0.5, b > 0.5
     u = (a | b).sum()
