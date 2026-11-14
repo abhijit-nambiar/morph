@@ -342,7 +342,7 @@ $("cullgrid").onclick=e=>{const t=e.target.closest(".frame");if(!t)return;const 
 function openFull(i){const f=shown()[i];if(!f)return;$("modal").querySelector("img").src=`/img/cullfull/${enc(f.name)}`;$("modal").style.display="flex"}
 $("cullgrid").ondblclick=e=>{const t=e.target.closest(".frame");if(t&&!e.target.closest(".flag"))openFull(+t.dataset.i)};
 $("buildbtn").onclick=async()=>{const d=$("albumdir").value.trim();if(!d)return toast("Choose an album folder");const r=await api("/api/cull/build",{out:d,mode:$("cullmode").value});if(r.error)return toast(r.error,"bad",6000);toast(`Album created with ${r.kept} photos. Analysing…`,"ok");S.job=r.job;job(r.job)};
-document.addEventListener("keydown",e=>{if(view!="cull"||/INPUT|TEXTAREA|SELECT/.test(document.activeElement.tagName))return;const n=shown().length;
+document.addEventListener("keydown",e=>{if(view!="cull"||/INPUT|TEXTAREA|SELECT|BUTTON|^A$/.test(document.activeElement.tagName))return;const n=shown().length;
  if(e.key=="ArrowRight"){csel=Math.min(n-1,csel+1);renderCull()}else if(e.key=="ArrowLeft"){csel=Math.max(0,csel-1);renderCull()}
  else if(e.key=="p"||e.key=="P")override(csel,true);else if(e.key=="x"||e.key=="X")override(csel,false);else if(e.key=="u"||e.key=="U")override(csel,null);else if(e.key=="Enter"||e.key==" "){e.preventDefault();openFull(csel)}else return;
  const el=document.querySelector(".frame.sel");if(el)el.scrollIntoView({block:"nearest"})});
