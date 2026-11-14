@@ -49,7 +49,8 @@ class PropagationConfig:
     steps: int = 80
     refine_steps: int = 8
     side: int = 256
-    clip_weight: float = 60.0  # penalty on highlights newly pushed past white by the correction
+    clip_weight: float = 60.0  # penalty on highlights pushed past white beyond what the reference edit itself clips
+    clip_margin: float = 0.01
 
 
 @dataclass
@@ -59,13 +60,33 @@ class Reference:
     scene: str = ""
     orig_stats: dict = field(default_factory=dict)
     edit_stats: dict = field(default_factory=dict)
+    clip_added: float = 0.0  # share of pixels the edit pushes to white on the reference itself
 
 
 def make_reference(album: Album, name: str, recipe: Recipe, scene: str = "") -> Reference:
     img = album.work_image(name)
     m = album.masks(name).masks
     out = render_recipe(img, m, recipe)
-    return Reference(album.get(name).name, recipe, scene, region_stats(img, m), region_stats(out, m))
+    return Reference(album.get(name).name, recipe, scene, region_stats(img, m), region_stats(out, m), clip_added(img, m, recipe))
+
+
+def _prep(img: np.ndarray, masks: dict[str, np.ndarray], side: int) -> tuple[torch.Tensor, torch.Tensor]:
+    h, w = img.shape[:2]
+    s = side / max(h, w)
+    size = (max(8, round(w * s)), max(8, round(h * s)))
+    x = to_tensor(cv2.resize(img, size, interpolation=cv2.INTER_AREA))
+    mt = torch.zeros((1, len(LOCAL_REGIONS), size[1], size[0]))
+    for k, r in enumerate(LOCAL_REGIONS):
+        if r in masks:
+            mt[0, k] = torch.from_numpy(cv2.resize(masks[r], size, interpolation=cv2.INTER_AREA))
+    return x, mt
+
+
+def clip_added(img: np.ndarray, masks: dict[str, np.ndarray], recipe: Recipe, side: int = 256) -> float:
+    x, mt = _prep(img, masks, side)
+    with torch.no_grad():
+        raw = render(x, mt, Params.from_recipe(recipe), gamut_map=False)
+        return max(0.0, float(_overshoot(raw) - _overshoot(x)))
 
 
 def _mean(stats: dict, r: str) -> np.ndarray | None:
@@ -146,15 +167,10 @@ def _overshoot(raw: torch.Tensor) -> torch.Tensor:
     return torch.sigmoid((raw.amax(1) - 1.0) / 0.02).mean()
 
 
-def _correct(img: np.ndarray, masks: dict[str, np.ndarray], base: Recipe, targets: dict, cfg: PropagationConfig, gain: float = 1.0) -> Recipe:
-    h, w = img.shape[:2]
-    s = cfg.side / max(h, w)
-    size = (max(8, round(w * s)), max(8, round(h * s)))
-    x = to_tensor(cv2.resize(img, size, interpolation=cv2.INTER_AREA))
-    mt = torch.zeros((1, len(LOCAL_REGIONS), size[1], size[0]))
-    for k, r in enumerate(LOCAL_REGIONS):
-        if r in masks:
-            mt[0, k] = torch.from_numpy(cv2.resize(masks[r], size, interpolation=cv2.INTER_AREA))
+def _correct(img: np.ndarray, masks: dict[str, np.ndarray], base: Recipe, targets: dict, cfg: PropagationConfig, gain: float = 1.0,
+             clip_budget: float | None = None) -> Recipe:
+    """``clip_budget``: how much clipping the references' own edits add; the photo may keep at most that much on top of its own."""
+    x, mt = _prep(img, masks, cfg.side)
     stat_w = {}
     for r in targets:
         if r == "global":
@@ -185,6 +201,8 @@ def _correct(img: np.ndarray, masks: dict[str, np.ndarray], base: Recipe, target
     with torch.no_grad():
         xb_raw = render(x, mt, p0, active_global=ag, active_local=al, gamut_map=False)
         clip0 = _overshoot(xb_raw)
+        if clip_budget is not None:
+            clip0 = torch.minimum(clip0, _overshoot(x) + clip_budget + cfg.clip_margin)
         xb = _soft_clip(xb_raw)
         lab_b = srgb_to_lab(xb.clamp(0, 1).permute(0, 2, 3, 1))[0]
         for r, m in stat_w.items():  # only pursue part of the way from the plain recipe copy toward the target
@@ -215,7 +233,7 @@ def _correct(img: np.ndarray, masks: dict[str, np.ndarray], base: Recipe, target
     for step in range(cfg.steps + cfg.refine_steps):
         opt.zero_grad()
         if step < cfg.steps:
-            out = render(xb, mt, params(pz), active_global=set(CORR_GLOBAL), active_local=corr_local, gamut_map=False)
+            out = render(xb_raw, mt, params(pz), active_global=set(CORR_GLOBAL), active_local=corr_local, gamut_map=False)
         else:
             out = render(x, mt, params(p0), active_global=ag, active_local=al, gamut_map=False)
         loss_of(out).backward()
@@ -242,7 +260,8 @@ def propagate(album: Album, refs: list[Reference], scenes: list[Scene], cfg: Pro
             base.meta = {"weights": {r.name: round(float(W[i, j]), 4) for j, r in enumerate(refs) if W[i, j] > 1e-3}}
             same = np.array([scene_of.get(p.name) == r.scene for r in refs], float)
             gain = float(W[i] @ (same * cfg.pursue_within + (1 - same) * cfg.pursue_across))
-            rec = _correct(album.work_image(p.name), album.masks(p.name).masks, base, targets[i], cfg, gain)
+            budget = float(W[i] @ np.array([r.clip_added for r in refs]))
+            rec = _correct(album.work_image(p.name), album.masks(p.name).masks, base, targets[i], cfg, gain, budget)
         out[p.name] = rec
         if progress:
             progress(i + 1, len(album.photos), p.name)

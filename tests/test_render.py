@@ -61,3 +61,29 @@ def test_adjustment_delta_beyond_slider_range_survives_save():
     ref = ReferenceEdit("a.jpg", Recipe({"contrast": 0.8}), Recipe({"contrast": -1.8}))
     back = ReferenceEdit.from_json(ref.to_json())
     assert back.adjust.g("contrast") == -1.8 and back.final.g("contrast") == -1.0
+
+
+def test_clip_budget_holds_target_to_reference_clipping():
+    import torch
+    from morph.propagate import PropagationConfig, _correct, _overshoot, _prep, clip_added
+    from morph.recipe import Recipe
+    from morph.render import Params, render
+    from morph.colorspace import srgb_to_lab
+
+    rng = np.random.default_rng(0)
+    img = np.clip(0.55 + 0.25 * rng.random((96, 128, 3)), 0, 1).astype(np.float32)
+    hot = Recipe({"exposure": 1.2})
+    assert clip_added(img, {}, Recipe({"contrast": 0.1})) < 0.01 < clip_added(img, {}, hot)
+
+    x, mt = _prep(img, {}, 128)
+    with torch.no_grad():
+        base_lab = srgb_to_lab(render(x, mt, Params.from_recipe(hot)).clamp(0, 1).permute(0, 2, 3, 1))[0].mean((0, 1))
+    cfg = PropagationConfig(steps=40, refine_steps=2, side=128)
+
+    def clipped(rec):
+        with torch.no_grad():
+            return float(_overshoot(render(x, mt, Params.from_recipe(rec), gamut_map=False)))
+
+    free = _correct(img, {}, hot, {"global": base_lab.tolist()}, cfg)
+    held = _correct(img, {}, hot, {"global": base_lab.tolist()}, cfg, clip_budget=0.0)
+    assert clipped(held) < clipped(free) - 0.05
