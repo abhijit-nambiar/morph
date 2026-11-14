@@ -1,66 +1,357 @@
 <!doctype html>
-<html><head><meta charset="utf-8"><title>Morph Studio</title>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Morph Studio</title>
 <style>
-*{box-sizing:border-box}body{margin:0;font:13px system-ui,sans-serif;background:#121212;color:#ddd;display:grid;grid-template-columns:300px 1fr 330px;height:100vh}
-aside,main,section{overflow:auto;padding:12px}aside{background:#181818;border-right:1px solid #262626}section{background:#181818;border-left:1px solid #262626}
-h1{font-size:16px;margin:0 0 8px}h2{font-size:12px;text-transform:uppercase;letter-spacing:.06em;color:#999;margin:16px 0 6px}
-.thumbs{display:grid;grid-template-columns:repeat(3,1fr);gap:4px}.thumbs img{width:100%;aspect-ratio:1;object-fit:cover;border-radius:3px;cursor:pointer;border:2px solid transparent}
-.thumbs img.sel{border-color:#4aa3ff}.thumbs .t{position:relative}.badge{position:absolute;top:3px;left:3px;font-size:10px;padding:1px 4px;border-radius:3px;background:#e8b04a;color:#000;font-weight:600}
-.badge.s{background:#4aa3ff}button{background:#2a2a2a;color:#ddd;border:1px solid #3a3a3a;border-radius:5px;padding:6px 10px;cursor:pointer}button:hover{background:#333}
-button.primary{background:#2f6fe0;border-color:#2f6fe0;color:#fff}input,select,textarea{background:#202020;color:#ddd;border:1px solid #3a3a3a;border-radius:5px;padding:6px;width:100%}
-.views{display:grid;grid-template-columns:1fr 1fr;gap:8px}.views figure{margin:0}.views img{width:100%;border-radius:4px;background:#000}figcaption{color:#888;font-size:11px;margin:3px 0}
-.cands{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:8px}.cand{background:#1c1c1c;border-radius:6px;padding:6px;border:1px solid #2a2a2a}.cand img{width:100%;border-radius:4px}
-.v-pass{color:#6c6}.v-repairable{color:#e8b04a}.v-reject{color:#e55}.row{display:flex;gap:6px;align-items:center;margin:4px 0}.row label{flex:0 0 120px;color:#aaa;font-size:12px}.row input[type=range]{flex:1;padding:0}
-.row span{flex:0 0 38px;text-align:right;font-variant-numeric:tabular-nums}.muted{color:#888}.chips span{display:inline-block;background:#262626;border-radius:10px;padding:1px 7px;margin:2px;font-size:11px}
-#job{margin-top:8px}a{color:#4aa3ff}
-</style></head><body>
-<aside><h1>Morph Studio</h1><div class="muted">Gold = reference, blue = suggested reference.</div>
-<h2>Suggested references</h2><div id="sugg"></div><h2>Scenes</h2><div id="scenes"></div></aside>
-<main><div class="row" style="justify-content:space-between"><b id="title">Select a photo</b><span><button onclick="toggleMasks()">Masks</button></span></div>
-<div class="views"><figure><figcaption>Original</figcaption><img id="orig"></figure><figure><figcaption id="editcap">Reference edit (live)</figcaption><img id="edit"></figure></div>
-<h2>Create a reference</h2>
-<div class="row"><textarea id="prompt" rows="2" placeholder="Describe the look, e.g. warm golden hour, soft glowing skin, slightly darker background, richer hair"></textarea></div>
-<div class="row"><select id="gen" style="flex:0 0 220px"><option value="local">local (built-in)</option><option value="openai">openai (OPENAI_API_KEY)</option></select>
-<input id="genurl" placeholder="or https://your-generator endpoint / files:DIR"><button class="primary" onclick="generate()">Generate</button></div>
-<div class="row"><label>…or upload your edit</label><input type="file" id="upload" accept="image/*" onchange="upload(this)"></div>
-<div id="cands" class="cands"></div><div id="msg" class="muted"></div></main>
-<section><h2>Fine-tune reference</h2><div class="row"><label>Region</label><select id="region" onchange="drawSliders()"></select></div>
-<div id="sliders"></div><div class="row"><button onclick="resetAdjust()">Reset region</button><button class="primary" onclick="saveAdjust()">Save tweaks</button><button onclick="removeRef()">Remove</button></div>
-<div id="refinfo" class="muted"></div>
-<h2>Album</h2><div class="row"><label>Preview size</label><select id="maxside"><option value="1600">1600px (fast)</option><option value="">full resolution</option></select></div>
-<button class="primary" onclick="applyAlbum()">Apply look to album</button><div id="job" class="muted"></div></section>
+:root{--bg:#0e0f11;--panel:#15171a;--panel2:#1b1e22;--line:#262a30;--line2:#30353c;--text:#e6e8eb;--dim:#9aa1ab;--faint:#6b727c;
+--accent:#7c9cff;--accent2:#5b7cf0;--ok:#4cc38a;--warn:#e5b454;--bad:#ef6b6b;--r:8px;--font:-apple-system,BlinkMacSystemFont,"Inter","Segoe UI",Roboto,sans-serif}
+*{box-sizing:border-box}html,body{height:100%}body{margin:0;background:var(--bg);color:var(--text);font:13px/1.45 var(--font);-webkit-font-smoothing:antialiased;display:flex;flex-direction:column;overflow:hidden}
+button,input,select,textarea{font:inherit;color:inherit}
+::-webkit-scrollbar{width:10px;height:10px}::-webkit-scrollbar-thumb{background:#2a2e34;border-radius:10px;border:3px solid var(--panel)}::-webkit-scrollbar-track{background:transparent}
+/* top bar */
+header{height:52px;flex:0 0 52px;display:flex;align-items:center;gap:20px;padding:0 16px;border-bottom:1px solid var(--line);background:var(--panel)}
+.brand{display:flex;align-items:center;gap:9px;font-weight:600;letter-spacing:.01em;font-size:14px}.brand i{width:20px;height:20px;border-radius:6px;background:conic-gradient(from 200deg,#7c9cff,#c48bff,#ff9f7a,#ffd36e,#7c9cff);display:inline-block}
+.brand small{color:var(--faint);font-weight:400;margin-left:4px;font-size:12px}
+nav.steps{display:flex;gap:2px;background:var(--bg);border:1px solid var(--line);padding:3px;border-radius:10px;margin:0 auto}
+nav.steps button{background:none;border:0;padding:6px 14px;border-radius:7px;color:var(--dim);cursor:pointer;display:flex;gap:8px;align-items:center}
+nav.steps button b{display:inline-grid;place-items:center;width:18px;height:18px;border-radius:50%;border:1px solid var(--line2);font-size:10.5px;font-weight:600}
+nav.steps button.on{background:var(--panel2);color:var(--text);box-shadow:0 1px 0 rgba(255,255,255,.03) inset}nav.steps button.on b{background:var(--accent);border-color:var(--accent);color:#0b1020}
+nav.steps button:disabled{opacity:.35;cursor:default}
+.jobpill{display:flex;align-items:center;gap:8px;color:var(--dim);font-size:12px;min-width:180px;justify-content:flex-end}
+.jobpill .bar{width:90px;height:4px;background:var(--line);border-radius:4px;overflow:hidden}.jobpill .bar i{display:block;height:100%;background:var(--accent);width:0;transition:width .3s}
+/* layout */
+.view{flex:1;display:none;min-height:0}.view.on{display:grid}
+#v-refs{grid-template-columns:272px 1fr 320px}#v-cull{grid-template-columns:1fr 300px}#v-apply{grid-template-columns:1fr 360px}#v-start{place-items:center}
+.side{background:var(--panel);overflow:auto;min-height:0}.side.l{border-right:1px solid var(--line)}.side.r{border-left:1px solid var(--line)}
+.sec{padding:14px 16px;border-bottom:1px solid var(--line)}.sec:last-child{border-bottom:0}
+.sec h3{margin:0 0 10px;font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.08em;color:var(--faint);display:flex;justify-content:space-between;align-items:center}
+.sec h3 span{text-transform:none;letter-spacing:0;font-weight:400}
+.center{display:flex;flex-direction:column;min-height:0;min-width:0;overflow:auto}
+/* controls */
+.btn{background:var(--panel2);border:1px solid var(--line2);border-radius:7px;padding:7px 12px;cursor:pointer;display:inline-flex;gap:6px;align-items:center;justify-content:center;white-space:nowrap;transition:background .12s,border-color .12s}
+.btn:hover{background:#22262b;border-color:#3a4048}.btn:disabled{opacity:.45;cursor:default}
+.btn.pri{background:var(--accent);border-color:var(--accent);color:#0b1020;font-weight:600}.btn.pri:hover{background:#93adff}
+.btn.ghost{background:none;border-color:transparent;color:var(--dim)}.btn.ghost:hover{color:var(--text);background:var(--panel2)}
+.btn.sm{padding:4px 9px;font-size:12px}.btn.danger:hover{color:var(--bad);border-color:#5a2a2a}
+.seg{display:inline-flex;background:var(--bg);border:1px solid var(--line);border-radius:8px;padding:2px}.seg button{background:none;border:0;padding:4px 10px;border-radius:6px;color:var(--dim);cursor:pointer;font-size:12px}.seg button.on{background:var(--panel2);color:var(--text)}
+input[type=text],select,textarea{background:var(--bg);border:1px solid var(--line2);border-radius:7px;padding:8px 10px;width:100%;outline:none;transition:border-color .12s}
+input[type=text]:focus,select:focus,textarea:focus{border-color:var(--accent2)}textarea{resize:vertical;min-height:62px}
+.field{margin:0 0 10px}.field>label{display:block;color:var(--dim);font-size:12px;margin-bottom:5px}
+.muted{color:var(--dim)}.faint{color:var(--faint)}.row{display:flex;gap:8px;align-items:center}.grow{flex:1}.sp{justify-content:space-between}
+.tag{display:inline-flex;align-items:center;gap:4px;font-size:11px;padding:2px 7px;border-radius:20px;background:var(--panel2);border:1px solid var(--line2);color:var(--dim)}
+.tag.ok{color:var(--ok);border-color:#24493a;background:#13241d}.tag.warn{color:var(--warn);border-color:#4d3d1d;background:#241e12}.tag.bad{color:var(--bad);border-color:#532727;background:#261415}.tag.acc{color:var(--accent);border-color:#2f3b66;background:#161c33}
+.tag.strike{text-decoration:line-through;opacity:.6}
+/* sliders */
+.sl{display:grid;grid-template-columns:96px 1fr 40px;gap:8px;align-items:center;margin:5px 0}.sl label{color:var(--dim);font-size:12px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.sl output{text-align:right;font-variant-numeric:tabular-nums;font-size:12px;color:var(--faint)}.sl.set output{color:var(--accent)}.sl.set label{color:var(--text)}
+input[type=range]{-webkit-appearance:none;appearance:none;width:100%;height:18px;background:transparent;margin:0;cursor:pointer}
+input[type=range]::-webkit-slider-runnable-track{height:3px;border-radius:3px;background:linear-gradient(90deg,var(--line2),var(--line2))}
+input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:13px;height:13px;border-radius:50%;background:#d9dde3;margin-top:-5px;box-shadow:0 0 0 3px var(--panel)}
+input[type=range]::-moz-range-track{height:3px;background:var(--line2);border-radius:3px}input[type=range]::-moz-range-thumb{width:12px;height:12px;border:0;border-radius:50%;background:#d9dde3}
+.grp{margin-top:12px}.grp:first-child{margin-top:0}.grp h4{margin:0 0 4px;font-size:11.5px;color:var(--faint);font-weight:500}
+.regions{display:flex;flex-wrap:wrap;gap:4px;margin-bottom:12px}.regions button{background:var(--bg);border:1px solid var(--line);border-radius:6px;padding:4px 8px;color:var(--dim);font-size:12px;cursor:pointer;position:relative}
+.regions button.on{border-color:var(--accent);color:var(--text);background:#161c33}.regions button.mod::after{content:"";position:absolute;top:3px;right:3px;width:5px;height:5px;border-radius:50%;background:var(--accent)}
+/* photo lists */
+.sugg{display:flex;gap:10px;padding:7px;border-radius:8px;cursor:pointer;border:1px solid transparent;align-items:flex-start}.sugg:hover{background:var(--panel2)}.sugg.on{background:var(--panel2);border-color:var(--line2)}
+.sugg img{width:56px;height:56px;object-fit:cover;border-radius:6px;flex:0 0 56px;background:#000}.sugg .t{min-width:0;flex:1}.sugg .n{font-weight:500;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;display:flex;gap:6px;align-items:center}
+.sugg .why{color:var(--faint);font-size:11.5px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.meter{height:3px;background:var(--line);border-radius:3px;margin:5px 0 4px;overflow:hidden}.meter i{display:block;height:100%;background:var(--accent)}
+.scene{margin-bottom:12px}.scene .hd{display:flex;justify-content:space-between;color:var(--dim);font-size:12px;margin-bottom:6px}
+.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:4px}.th{position:relative;aspect-ratio:1;border-radius:5px;overflow:hidden;cursor:pointer;background:#000;outline:2px solid transparent;outline-offset:-2px}
+.th img{width:100%;height:100%;object-fit:cover;display:block;transition:opacity .15s}.th:hover img{opacity:.85}.th.on{outline-color:var(--accent)}
+.th .b{position:absolute;left:3px;top:3px;font-size:9.5px;font-weight:700;padding:1px 4px;border-radius:4px;background:var(--warn);color:#1b1404;letter-spacing:.02em}.th .b.s{background:var(--accent);color:#0b1020}
+/* viewer */
+.viewer{flex:1;min-height:340px;display:flex;flex-direction:column;padding:14px 18px 0}
+.vbar{display:flex;align-items:center;gap:10px;margin-bottom:10px}.vbar .title{font-weight:600;font-size:14px}.vbar .meta{color:var(--faint);font-size:12px}
+.stage{flex:1;position:relative;background:#08090a;border:1px solid var(--line);border-radius:10px;overflow:hidden;min-height:300px;display:flex;align-items:center;justify-content:center}
+.stage .pair{display:grid;grid-template-columns:1fr 1fr;gap:2px;width:100%;height:100%}.stage .pair>div{position:relative;display:flex;align-items:center;justify-content:center;min-width:0}
+.stage img{max-width:100%;max-height:100%;object-fit:contain;display:block;user-select:none;-webkit-user-drag:none}
+.stage .lbl{position:absolute;left:10px;top:10px;font-size:11px;padding:3px 8px;border-radius:20px;background:rgba(10,11,13,.72);color:var(--dim);backdrop-filter:blur(6px);pointer-events:none}
+.split{position:relative;max-width:100%;max-height:100%;display:inline-block}.split img{max-height:calc(100vh - 360px)}
+.split .after{position:absolute;inset:0;overflow:hidden}.split .after img{position:absolute;left:0;top:0;width:100%;height:100%;max-height:none}
+.split .handle{position:absolute;top:0;bottom:0;width:2px;background:#fff;box-shadow:0 0 0 1px rgba(0,0,0,.3);cursor:ew-resize}.split .handle::after{content:"";position:absolute;top:50%;left:-11px;width:24px;height:24px;margin-top:-12px;border-radius:50%;background:#fff;box-shadow:0 2px 8px rgba(0,0,0,.4)}
+.spinner{position:absolute;right:12px;top:12px;width:16px;height:16px;border:2px solid rgba(255,255,255,.2);border-top-color:#fff;border-radius:50%;animation:spin .8s linear infinite;display:none}.busy .spinner{display:block}
+@keyframes spin{to{transform:rotate(360deg)}}
+.empty{color:var(--faint);text-align:center;padding:30px}
+/* composer */
+.composer{padding:14px 18px 18px}.card{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:14px}
+.cands{display:grid;grid-template-columns:repeat(auto-fill,minmax(190px,1fr));gap:10px;margin-top:12px}
+.cand{background:var(--panel2);border:1px solid var(--line);border-radius:10px;overflow:hidden;display:flex;flex-direction:column}.cand img{width:100%;aspect-ratio:3/2;object-fit:cover;display:block;background:#000;cursor:zoom-in}
+.cand .body{padding:9px 10px;display:flex;flex-direction:column;gap:6px;flex:1}.cand .stats{display:flex;gap:10px;font-size:11.5px;color:var(--faint);font-variant-numeric:tabular-nums}.cand .why{font-size:11.5px;color:var(--faint)}
+.cand.rej{opacity:.6}.chips{display:flex;flex-wrap:wrap;gap:4px}
+.skeleton{background:linear-gradient(90deg,#1a1d21 0,#22262b 50%,#1a1d21 100%);background-size:200% 100%;animation:sh 1.2s infinite;border-radius:10px;aspect-ratio:3/2.6}@keyframes sh{to{background-position:-200% 0}}
+/* info card */
+.kv{display:grid;grid-template-columns:auto 1fr;gap:4px 12px;font-size:12px}.kv dt{color:var(--faint)}.kv dd{margin:0;text-align:right;font-variant-numeric:tabular-nums}
+.note{font-size:12px;color:var(--faint);margin-top:8px}
+/* cull */
+.cullbar{display:flex;align-items:center;gap:12px;padding:12px 18px;border-bottom:1px solid var(--line);background:var(--panel)}
+.cullgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:12px;padding:16px 18px;overflow:auto;align-content:start}
+.frame{background:var(--panel);border:1px solid var(--line);border-radius:10px;overflow:hidden;cursor:pointer;position:relative;transition:border-color .12s,opacity .12s}
+.frame img{width:100%;aspect-ratio:3/2;object-fit:cover;display:block;background:#000}.frame .fb{padding:8px 10px}.frame .fn{font-size:12px;display:flex;justify-content:space-between;gap:6px}
+.frame .fn span:first-child{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.frame .reasons{font-size:11px;color:var(--faint);margin-top:4px;min-height:16px}
+.frame.rej{opacity:.45}.frame.rej:hover{opacity:.8}.frame.sel{border-color:var(--accent)}.frame .flag{position:absolute;right:8px;top:8px;width:24px;height:24px;border-radius:50%;display:grid;place-items:center;font-size:13px;font-weight:700}
+.frame .flag.k{background:var(--ok);color:#06180f}.frame .flag.x{background:rgba(10,11,13,.8);color:var(--bad);border:1px solid #532727}.frame .ov{position:absolute;left:8px;top:8px}
+.bars{display:grid;grid-template-columns:repeat(3,1fr);gap:6px;margin-top:6px}.bars div{font-size:10px;color:var(--faint)}.bars .meter{margin:2px 0 0}
+.bars .meter i.lo{background:var(--bad)}.bars .meter i.mid{background:var(--warn)}.bars .meter i.hi{background:var(--ok)}
+.stat{display:flex;justify-content:space-between;font-size:12px;padding:3px 0}.stat b{font-variant-numeric:tabular-nums}
+/* apply */
+.applymain{padding:22px 26px;overflow:auto}.refcards{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:12px}.refcard{background:var(--panel);border:1px solid var(--line);border-radius:10px;overflow:hidden}
+.refcard img{width:100%;aspect-ratio:3/2;object-fit:cover;display:block}.refcard .body{padding:9px 11px;font-size:12px}
+.progress{height:6px;background:var(--line);border-radius:6px;overflow:hidden;margin:10px 0 6px}.progress i{display:block;height:100%;background:var(--accent);width:0;transition:width .3s}
+iframe.review{width:100%;height:calc(100vh - 230px);border:1px solid var(--line);border-radius:10px;background:#fff;margin-top:14px}
+/* start */
+.startcard{width:520px;max-width:92vw;background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:28px}
+.startcard h1{margin:0 0 6px;font-size:20px}.startcard p{margin:0 0 20px;color:var(--dim)}
+.toggle{display:flex;gap:10px;align-items:flex-start;padding:12px;border:1px solid var(--line);border-radius:10px;cursor:pointer;margin-bottom:16px}.toggle input{margin-top:3px;accent-color:var(--accent)}
+/* toast, modal */
+#toasts{position:fixed;bottom:18px;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;gap:8px;z-index:50;align-items:center}
+.toast{background:#22262c;border:1px solid var(--line2);padding:9px 14px;border-radius:9px;box-shadow:0 8px 30px rgba(0,0,0,.4);font-size:12.5px;max-width:560px;animation:in .18s ease-out}.toast.bad{border-color:#5a2a2a;color:#ffb3b3}.toast.ok{border-color:#24493a}
+@keyframes in{from{opacity:0;transform:translateY(6px)}}
+#modal{position:fixed;inset:0;background:rgba(0,0,0,.82);display:none;align-items:center;justify-content:center;z-index:40;cursor:zoom-out}#modal img{max-width:94vw;max-height:92vh;border-radius:6px}
+kbd{font:11px var(--font);background:var(--bg);border:1px solid var(--line2);border-bottom-width:2px;border-radius:4px;padding:0 5px;color:var(--dim)}
+</style></head>
+<body>
+<header>
+  <div class="brand"><i></i>Morph Studio<small id="projname"></small></div>
+  <nav class="steps" id="steps">
+    <button data-v="cull" id="st-cull"><b>1</b>Cull</button>
+    <button data-v="refs" id="st-refs"><b>2</b>References</button>
+    <button data-v="apply" id="st-apply"><b>3</b>Apply &amp; review</button>
+  </nav>
+  <div class="jobpill" id="jobpill"></div>
+</header>
+
+<!-- Start -->
+<div class="view" id="v-start"><div class="startcard">
+  <h1>New album</h1><p>Point Morph at a folder of photos. Camera dumps (RAW or JPEG) can be culled first.</p>
+  <div class="field"><label>Photo folder</label><input type="text" id="srcdir" placeholder="/path/to/camera-dump"></div>
+  <label class="toggle"><input type="checkbox" id="docull" checked><div><b>Cull first</b><div class="muted">Score focus, blur, exposure, closed eyes and bursts, then choose what goes into the album.</div></div></label>
+  <div class="row" style="justify-content:flex-end"><button class="btn pri" id="startbtn">Continue</button></div>
+</div></div>
+
+<!-- Cull -->
+<div class="view" id="v-cull">
+  <div class="center">
+    <div class="cullbar">
+      <div class="seg" id="cullfilter"><button data-f="all" class="on">All</button><button data-f="keep">Kept</button><button data-f="reject">Rejected</button></div>
+      <span class="muted" id="cullcount"></span><span class="grow"></span>
+      <span class="faint" style="font-size:12px"><kbd>P</kbd> keep <kbd>X</kbd> reject <kbd>U</kbd> auto <kbd>←</kbd><kbd>→</kbd> move</span>
+    </div>
+    <div class="cullgrid" id="cullgrid"><div class="empty">Scoring frames…</div></div>
+  </div>
+  <aside class="side r">
+    <div class="sec"><h3>Thresholds</h3><div id="cullsettings"></div><button class="btn sm ghost" id="cullreset" style="margin-top:6px">Restore defaults</button></div>
+    <div class="sec"><h3>Summary</h3><div id="cullsummary"></div></div>
+    <div class="sec"><div class="field"><label>Album folder</label><input type="text" id="albumdir"></div>
+      <div class="field"><label>Files</label><select id="cullmode"><option value="link">Link to originals (no copies)</option><option value="copy">Copy files</option></select></div>
+      <button class="btn pri" style="width:100%" id="buildbtn">Create album</button></div>
+  </aside>
+</div>
+
+<!-- References -->
+<div class="view" id="v-refs">
+  <aside class="side l">
+    <div class="sec"><h3>Suggested references <span class="faint" id="refcount"></span></h3><div id="sugg"></div></div>
+    <div class="sec"><h3>Scenes <span class="faint" id="scenecount"></span></h3><div id="scenes"></div></div>
+  </aside>
+  <main class="center">
+    <div class="viewer">
+      <div class="vbar"><span class="title" id="title">Select a photo</span><span class="meta" id="meta"></span><span class="grow"></span>
+        <div class="seg" id="vmode"><button data-m="split" class="on">Split</button><button data-m="side">Side by side</button><button data-m="masks">Regions</button></div></div>
+      <div class="stage" id="stage"><div class="empty">Pick a suggested photo on the left to start a reference.</div><div class="spinner"></div></div>
+    </div>
+    <div class="composer"><div class="card">
+      <div class="row sp" style="margin-bottom:8px"><b>Create a reference</b><span class="faint" style="font-size:12px">Describe a look, or upload your own edit of this photo</span></div>
+      <textarea id="prompt" placeholder="e.g. warm golden hour, soft glowing skin, slightly darker background, richer hair"></textarea>
+      <div class="row" style="margin-top:8px">
+        <select id="gen" style="width:auto"><option value="local">Built-in generator</option><option value="openai">OpenAI (OPENAI_API_KEY)</option><option value="custom">Custom endpoint…</option></select>
+        <input type="text" id="genurl" placeholder="https://your-generator or files:/dir" style="display:none">
+        <span class="grow"></span>
+        <label class="btn" for="upload">Upload edit</label><input type="file" id="upload" accept="image/*" hidden>
+        <button class="btn pri" id="genbtn">Generate</button>
+      </div>
+      <div id="cands" class="cands"></div>
+    </div></div>
+  </main>
+  <aside class="side r">
+    <div class="sec" id="refstatus"></div>
+    <div class="sec"><h3>Adjust <span class="faint" id="regionname"></span></h3><div class="regions" id="regions"></div><div id="sliders"></div>
+      <div class="row" style="margin-top:12px"><button class="btn sm ghost" id="resetreg">Reset region</button><span class="grow"></span><button class="btn sm pri" id="savebtn" disabled>Save</button></div>
+      <div class="note">Double-click a slider to reset it. Changes preview live and are saved into this reference.</div></div>
+  </aside>
+</div>
+
+<!-- Apply -->
+<div class="view" id="v-apply">
+  <main class="applymain">
+    <div class="row sp" style="margin-bottom:12px"><h2 style="margin:0;font-size:16px">References</h2><span class="muted" id="applyhint"></span></div>
+    <div class="refcards" id="refcards"></div>
+    <div id="reviewwrap"></div>
+  </main>
+  <aside class="side r">
+    <div class="sec"><h3>Export</h3>
+      <div class="field"><label>Size</label><select id="maxside"><option value="">Full resolution</option><option value="2048">2048 px long edge</option><option value="1600">1600 px (quick proof)</option></select></div>
+      <div class="field"><label>Output folder</label><input type="text" id="outdir" placeholder="project/export"></div>
+      <button class="btn pri" style="width:100%" id="applybtn">Apply look to album</button>
+      <div id="applyprog"></div></div>
+    <div class="sec"><h3>How it works</h3><div class="muted" style="font-size:12px">Each reference becomes a set of deterministic tone, colour and detail controls. They are carried to every photo, adapted to its lighting, then evened out within each scene and gently across scenes. Pixels are never moved: every export is checked for identical geometry and edges.</div></div>
+  </aside>
+</div>
+
+<div id="toasts"></div><div id="modal"><img></div>
 <script>
-const SL={global:["exposure","contrast","highlights","shadows","whites","blacks","temperature","tint","vibrance","saturation","texture","clarity","dehaze","noise_reduction","sharpen","grain","vignette","curve_shadows","curve_highlights","grade_shadows_x","grade_shadows_y","grade_highlights_x","grade_highlights_y"],
-local:["exposure","contrast","highlights","shadows","whites","blacks","temperature","tint","saturation","hue","texture","clarity","noise_reduction"]};
-let S=null,cur=null,adj={global:{},local:{}},masks=false,timer=null;
-const $=id=>document.getElementById(id), J={'Content-Type':'application/json'},api=(p,b)=>fetch(p,b?{method:'POST',headers:J,body:JSON.stringify(b)}:{}).then(r=>r.json()),
-esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
-async function load(){S=await api('/api/state');const reg=$('region').value||'global';$('region').innerHTML=S.regions.map(r=>`<option>${r}</option>`).join('');$('region').value=reg;renderLists();if(!cur&&S.suggestions.length)select(S.suggestions[0].name);}
-function thumb(n){const ref=S.references[n],sg=S.suggestions.findIndex(s=>s.name==n);return `<div class=t><img src="/img/thumb/${encodeURIComponent(n)}" class="${n==cur?'sel':''}" title="${esc(n)}" data-n="${esc(n)}" onclick="select(this.dataset.n)">${ref?'<span class=badge>REF</span>':sg>=0?`<span class="badge s">#${sg+1}</span>`:''}</div>`}
-function renderLists(){$('sugg').innerHTML=S.suggestions.map((s,i)=>`<div style="margin:4px 0;cursor:pointer" data-n="${esc(s.name)}" onclick="select(this.dataset.n)"><b>#${i+1}</b> ${esc(s.name)} <span class=muted>score ${(+s.score).toFixed(2)}</span><br><span class=muted>${esc(s.reasons.join('; '))}</span></div>`).join('');
-$('scenes').innerHTML=S.scenes.map(s=>`<div class=muted>${esc(s.id)} · ${s.photos.length}</div><div class=thumbs>${s.photos.map(thumb).join('')}</div>`).join('');}
-function select(n){cur=n;const r=S.references[n];adj=r?JSON.parse(JSON.stringify(r.adjust)):{global:{},local:{}};adj.global=adj.global||{};adj.local=adj.local||{};
-$('title').textContent=n+' · '+S.photos[n].scene+' · '+S.photos[n].faces+' face(s)';$('orig').src=`/img/${masks?'masks':'orig'}/${encodeURIComponent(n)}`;$('cands').innerHTML='';msg('');refresh();renderLists();drawSliders();info();}
-function info(){const r=S.references[cur];$('refinfo').innerHTML=r?`Source: ${esc(r.source)}<br>${r.fit&&r.fit.de_after!==undefined?`fit ΔE ${r.fit.de_before} → ${r.fit.de_after}<br>`:''}${r.guard?`guard: <span class="v-${esc(r.guard.verdict)}">${esc(r.guard.verdict)}</span> ${esc(r.guard.reasons.join('; '))}`:''}`:'No reference yet for this photo.';}
-function toggleMasks(){masks=!masks;if(cur)$('orig').src=`/img/${masks?'masks':'orig'}/${encodeURIComponent(cur)}`;}
-function drawSliders(){const reg=$('region').value,keys=reg=='global'?SL.global:SL.local,vals=reg=='global'?adj.global:(adj.local[reg]||{});
-$('sliders').innerHTML=keys.map(k=>`<div class=row><label>${k}</label><input type=range min=-1 max=1 step=0.01 value="${vals[k]||0}" oninput="setv('${reg}','${k}',this.value,this)"><span>${(+(vals[k]||0)).toFixed(2)}</span></div>`).join('');}
-function setv(reg,k,v,el){v=+v;el.nextElementSibling.textContent=v.toFixed(2);if(reg=='global')adj.global[k]=v;else{(adj.local[reg]=adj.local[reg]||{})[k]=v;}clearTimeout(timer);timer=setTimeout(refresh,120);}
-async function refresh(){if(!cur)return;const r=await fetch('/api/preview',{method:'POST',headers:J,body:JSON.stringify({photo:cur,adjust:adj})});$('edit').src=URL.createObjectURL(await r.blob());}
-function resetAdjust(){const reg=$('region').value;if(reg=='global')adj.global={};else delete adj.local[reg];drawSliders();refresh();}
-async function saveAdjust(){await api('/api/adjust',{photo:cur,adjust:adj});await load();info();msg('Saved tweaks as part of the reference.');}
-async function removeRef(){await api('/api/remove',{photo:cur});await load();select(cur);}
-function msg(t){$('msg').innerHTML=t}
-async function generate(){const p=$('prompt').value.trim();if(!p)return msg('Type a look first.');const g=$('genurl').value.trim()||$('gen').value;msg('Generating…');
-const r=await api('/api/generate',{photo:cur,prompt:p,generator:g,n:4});if(r.error)return msg('<span class=v-reject>'+esc(r.error)+'</span>');msg('');
-$('cands').innerHTML=r.candidates.map((c,i)=>`<div class=cand><img src="/img/cand/${encodeURIComponent(cur)}/${i}?t=${Date.now()}"><div><b>${esc(c.label)}</b> <span class="v-${esc(c.guard.verdict)}">${esc(c.guard.verdict)}</span></div>
-<div class=muted>edges ${c.guard.edge_f1.toFixed(2)} · structure ${c.guard.structure_ok.toFixed(2)}</div><div class=muted>${esc(c.guard.reasons.join('; '))}</div>
-${c.info.matched?`<div class=chips>${c.info.matched.map(m=>`<span>${esc(m)}</span>`).join('')}${(c.info.unknown||[]).map(m=>`<span style="opacity:.5;text-decoration:line-through">${esc(m)}</span>`).join('')}</div>`:''}
-<button ${c.guard.verdict=='reject'?'disabled':''} onclick="pick(${i})">Use as reference</button></div>`).join('');}
-async function pick(i){msg('Fitting…');const r=await api('/api/pick',{photo:cur,index:i});if(r.error)return msg('<span class=v-reject>'+esc(r.error)+'</span>');await load();select(cur);msg('Reference set from '+esc(r.source));}
-function upload(el){const f=el.files[0];if(!f)return;const rd=new FileReader();rd.onload=async()=>{msg('Checking & fitting your edit…');const r=await api('/api/upload',{photo:cur,data:rd.result,filename:f.name});
-if(r.error)return msg('<span class=v-reject>'+esc(r.error)+'</span>');await load();select(cur);msg(`Reference fitted: ΔE ${r.fit.de_before} → ${r.fit.de_after}`);};rd.readAsDataURL(f);}
-async function applyAlbum(){const r=await api('/api/apply',{max_side:$('maxside').value||null});if(r.error)return $('job').textContent=r.error;poll();}
-async function poll(){const s=await api('/api/state');const j=s.job;$('job').innerHTML=j.state=='running'?`${esc(j.stage)} ${j.i}/${j.n} ${esc(j.photo||'')}`:j.state=='done'?`Done. <a href="${j.review}" target=_blank>Open review</a>`:j.state=='error'?`<span class=v-reject>${esc(j.error)}</span>`:'';if(j.state=='running')setTimeout(poll,1500);}
-load();
+"use strict";
+const $=id=>document.getElementById(id),J={"Content-Type":"application/json"};
+const esc=s=>String(s??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+const api=(p,b)=>fetch(p,b?{method:"POST",headers:J,body:JSON.stringify(b)}:{}).then(async r=>{const j=await r.json().catch(()=>({error:r.statusText}));if(!r.ok&&!j.error)j.error=r.statusText;return j});
+const enc=encodeURIComponent,pretty=k=>k.replace(/_/g," ").replace(/^\w/,c=>c.toUpperCase());
+function toast(t,kind="",ms=3200){const d=document.createElement("div");d.className="toast "+kind;d.textContent=t;$("toasts").append(d);setTimeout(()=>d.remove(),ms)}
+const GROUPS={Light:["exposure","contrast","highlights","shadows","whites","blacks"],Color:["temperature","tint","vibrance","saturation","hue"],
+ Detail:["texture","clarity","dehaze","sharpen","noise_reduction","grain"],"Tone curve":["curve_shadows","curve_highlights"],
+ "Color grading":["grade_shadows_x","grade_shadows_y","grade_highlights_x","grade_highlights_y"],Effects:["vignette"]};
+const RLABEL={global:"Global",subject:"Subject",background:"Background",sky:"Sky",vegetation:"Vegetation",hair:"Hair",face_skin:"Face skin",body_skin:"Body skin",eyes:"Eyes",lips:"Lips",clothes:"Clothes"};
+let S=null,view=null,cur=null,region="global",adj={global:{},local:{}},dirty=false,vmode="split",timer=null,previewURL=null,polling=false;
+
+/* ---------- navigation ---------- */
+function show(v){view=v;document.querySelectorAll(".view").forEach(e=>e.classList.toggle("on",e.id=="v-"+v));
+ document.querySelectorAll("#steps button").forEach(b=>b.classList.toggle("on",b.dataset.v==v));
+ if(v=="apply")renderApply();if(v=="cull")renderCull()}
+$("steps").onclick=e=>{const b=e.target.closest("button");if(b&&!b.disabled)show(b.dataset.v)};
+async function load(){S=await api("/api/state");$("projname").textContent=S.project?"· "+S.project:"";
+ $("st-cull").disabled=!S.cull;$("st-refs").disabled=$("st-apply").disabled=!S.scenes;
+ if(S.scenes){renderLists();if(!cur&&S.suggestions.length)select(S.suggestions[0].name);else if(cur)renderStatus()}
+ job(S.job);return S}
+
+/* ---------- references: lists ---------- */
+const isRef=n=>!!(S.references||{})[n];
+function thumb(n){const sg=S.suggestions.findIndex(s=>s.name==n);
+ return `<div class="th${n==cur?" on":""}" data-n="${esc(n)}" title="${esc(n)}"><img loading="lazy" src="/img/thumb/${enc(n)}">${isRef(n)?'<span class="b">REF</span>':sg>=0?`<span class="b s">#${sg+1}</span>`:""}</div>`}
+function renderLists(){const mx=Math.max(...S.suggestions.map(s=>s.score),1e-6);
+ $("sugg").innerHTML=S.suggestions.map((s,i)=>`<div class="sugg${s.name==cur?" on":""}" data-n="${esc(s.name)}"><img src="/img/thumb/${enc(s.name)}"><div class="t">
+  <div class="n">#${i+1} ${esc(s.name)} ${isRef(s.name)?'<span class="tag acc">ref</span>':""}</div><div class="meter"><i style="width:${(100*s.score/mx).toFixed(0)}%"></i></div>
+  <div class="why" title="${esc(s.reasons.join("; "))}">Score ${(+s.score).toFixed(2)} · ${esc(s.reasons.join("; "))}</div></div></div>`).join("");
+ $("refcount").textContent=Object.keys(S.references).length+" set";$("scenecount").textContent=S.scenes.length+" · "+Object.keys(S.photos).length+" photos";
+ $("scenes").innerHTML=S.scenes.map(s=>`<div class="scene"><div class="hd"><span>${esc(s.id)}</span><span class="faint">${s.photos.length}</span></div><div class="grid">${s.photos.map(thumb).join("")}</div></div>`).join("")}
+$("sugg").onclick=$("scenes").onclick=e=>{const t=e.target.closest("[data-n]");if(t)select(t.dataset.n)};
+
+/* ---------- references: viewer ---------- */
+function select(n){if(dirty&&n!==cur&&!confirm("Discard unsaved adjustments?"))return;cur=n;dirty=false;
+ const r=S.references[n];adj=r?JSON.parse(JSON.stringify(r.adjust)):{global:{},local:{}};adj.global=adj.global||{};adj.local=adj.local||{};
+ const p=S.photos[n];$("title").textContent=n;$("meta").textContent=`${p.scene} · ${p.size[0]}×${p.size[1]} · ${p.faces} face${p.faces==1?"":"s"}`;
+ $("cands").innerHTML="";renderLists();renderStage();renderRegions();renderSliders();renderStatus();refresh()}
+function renderStage(){const st=$("stage");if(!cur)return;const o=`/img/orig/${enc(cur)}`;
+ if(vmode=="masks")st.innerHTML=`<div class="pair"><div><img src="${o}"><span class="lbl">Original</span></div><div><img src="/img/masks/${enc(cur)}"><span class="lbl">Detected regions</span></div></div>`;
+ else if(vmode=="side")st.innerHTML=`<div class="pair"><div><img src="${o}"><span class="lbl">Original</span></div><div><img id="after" src="${previewURL||o}"><span class="lbl">Edited</span></div></div>`;
+ else{st.innerHTML=`<div class="split" id="split"><img src="${o}"><div class="after" id="aw"><img id="after" src="${previewURL||o}"></div><div class="handle" id="hdl"></div><span class="lbl">Original | Edited</span></div>`;splitAt(.5);
+  const sp=$("split");let drag=false;const mv=e=>{if(!drag)return;const r=sp.getBoundingClientRect();splitAt(Math.min(1,Math.max(0,(e.clientX-r.left)/r.width)))};
+  sp.onpointerdown=e=>{drag=true;sp.setPointerCapture(e.pointerId);mv(e)};sp.onpointermove=mv;sp.onpointerup=()=>drag=false}
+ st.insertAdjacentHTML("beforeend",'<div class="spinner"></div>')}
+function splitAt(f){const aw=$("aw"),h=$("hdl");if(!aw)return;aw.style.clipPath=`inset(0 0 0 ${f*100}%)`;h.style.left=`calc(${f*100}% - 1px)`}
+$("vmode").onclick=e=>{const b=e.target.closest("button");if(!b)return;vmode=b.dataset.m;$("vmode").querySelectorAll("button").forEach(x=>x.classList.toggle("on",x==b));renderStage()};
+async function refresh(){if(!cur)return;const n=cur;$("stage").classList.add("busy");
+ const r=await fetch("/api/preview",{method:"POST",headers:J,body:JSON.stringify({photo:n,adjust:adj})});$("stage").classList.remove("busy");if(n!==cur||!r.ok)return;
+ if(previewURL)URL.revokeObjectURL(previewURL);previewURL=URL.createObjectURL(await r.blob());const a=$("after");if(a)a.src=previewURL}
+
+/* ---------- references: inspector ---------- */
+function renderStatus(){const r=S.references[cur],el=$("refstatus");
+ if(!r){el.innerHTML=`<h3>Reference</h3><div class="muted">No reference for this photo yet. Generate candidates or upload your edit.</div>`;$("savebtn").disabled=!dirty;return}
+ const g=r.guard,v=g&&g.verdict,cls=v=="pass"?"ok":v=="repairable"?"warn":"bad";
+ el.innerHTML=`<h3>Reference <button class="btn sm ghost danger" id="rmref">Remove</button></h3>
+ <div class="row" style="margin-bottom:8px;flex-wrap:wrap"><span class="tag acc">${esc(r.source.split(":")[0])}</span>${g?`<span class="tag ${cls}">${esc(v)}</span>`:""}</div>
+ <dl class="kv">${r.prompt?`<dt>Prompt</dt><dd>${esc(r.prompt)}</dd>`:""}${r.fit&&r.fit.de_after!==undefined?`<dt>Fit error</dt><dd>ΔE ${(+r.fit.de_before).toFixed(1)} → ${(+r.fit.de_after).toFixed(1)}</dd>`:""}
+ ${g&&g.edge_f1!==undefined?`<dt>Edge overlap</dt><dd>${(+g.edge_f1).toFixed(2)}</dd><dt>Structure</dt><dd>${(+g.structure_ok).toFixed(2)}</dd>`:""}</dl>
+ ${g&&g.reasons&&g.reasons.length?`<div class="note">${esc(g.reasons.join("; "))}</div>`:""}`;
+ $("rmref").onclick=removeRef;$("savebtn").disabled=!dirty}
+const vals=reg=>reg=="global"?adj.global:(adj.local[reg]||{});
+const modified=reg=>Object.values(vals(reg)).some(v=>Math.abs(v)>1e-3);
+function renderRegions(){$("regions").innerHTML=S.regions.map(r=>`<button data-r="${esc(r)}" class="${r==region?"on":""} ${modified(r)?"mod":""}">${esc(RLABEL[r]||pretty(r))}</button>`).join("");$("regionname").textContent=RLABEL[region]||region}
+$("regions").onclick=e=>{const b=e.target.closest("button");if(!b)return;region=b.dataset.r;renderRegions();renderSliders()};
+function renderSliders(){const keys=new Set(region=="global"?S.global_keys:S.local_keys),v=vals(region);
+ $("sliders").innerHTML=Object.entries(GROUPS).map(([g,ks])=>{ks=ks.filter(k=>keys.has(k));if(!ks.length)return"";
+  return `<div class="grp"><h4>${g}</h4>${ks.map(k=>{const x=+(v[k]||0);return `<div class="sl${Math.abs(x)>1e-3?" set":""}"><label title="${k}">${pretty(k).replace(/^Grade /,"").replace(/^Curve /,"")}</label><input type="range" min="-1" max="1" step="0.01" value="${x}" data-k="${k}"><output>${x.toFixed(2)}</output></div>`}).join("")}</div>`}).join("")}
+function setv(k,x){if(region=="global")adj.global[k]=x;else(adj.local[region]=adj.local[region]||{})[k]=x;dirty=true;$("savebtn").disabled=false;renderRegions();clearTimeout(timer);timer=setTimeout(refresh,120)}
+$("sliders").oninput=e=>{const i=e.target;if(i.type!="range")return;const x=+i.value;i.nextElementSibling.textContent=x.toFixed(2);i.parentNode.classList.toggle("set",Math.abs(x)>1e-3);setv(i.dataset.k,x)};
+$("sliders").ondblclick=e=>{const i=e.target;if(i.type!="range")return;i.value=0;i.dispatchEvent(new Event("input",{bubbles:true}))};
+$("resetreg").onclick=()=>{if(region=="global")adj.global={};else delete adj.local[region];dirty=true;$("savebtn").disabled=false;renderRegions();renderSliders();refresh()};
+$("savebtn").onclick=async()=>{const r=await api("/api/adjust",{photo:cur,adjust:adj});if(r.error)return toast(r.error,"bad");dirty=false;await load();renderRegions();renderSliders();toast("Adjustments saved to the reference","ok")};
+async function removeRef(){if(!confirm("Remove this reference?"))return;await api("/api/remove",{photo:cur});dirty=false;await load();select(cur);toast("Reference removed")}
+
+/* ---------- references: generate / upload ---------- */
+$("gen").onchange=()=>{$("genurl").style.display=$("gen").value=="custom"?"":"none"};
+$("genbtn").onclick=async()=>{const p=$("prompt").value.trim();if(!cur)return;if(!p)return toast("Describe a look first");
+ const g=$("gen").value=="custom"?$("genurl").value.trim():$("gen").value;if(!g)return toast("Enter a generator endpoint");
+ const btn=$("genbtn");btn.disabled=true;btn.textContent="Generating…";$("cands").innerHTML='<div class="skeleton"></div>'.repeat(4);
+ const n=cur,r=await api("/api/generate",{photo:n,prompt:p,generator:g,n:4});btn.disabled=false;btn.textContent="Generate";if(n!==cur)return;
+ if(r.error){$("cands").innerHTML="";return toast(r.error,"bad",6000)}
+ $("cands").innerHTML=r.candidates.map((c,i)=>{const v=c.guard.verdict,cls=v=="pass"?"ok":v=="repairable"?"warn":"bad";
+  return `<div class="cand${v=="reject"?" rej":""}"><img src="/img/cand/${enc(n)}/${i}?t=${Date.now()}" data-zoom><div class="body">
+  <div class="row sp"><b>${esc(c.label)}</b><span class="tag ${cls}">${esc(v)}</span></div>
+  <div class="stats"><span>edges ${(+c.guard.edge_f1).toFixed(2)}</span><span>structure ${(+c.guard.structure_ok).toFixed(2)}</span></div>
+  ${c.info.matched||c.info.unknown?`<div class="chips">${(c.info.matched||[]).map(m=>`<span class="tag">${esc(m)}</span>`).join("")}${(c.info.unknown||[]).map(m=>`<span class="tag strike" title="not understood">${esc(m)}</span>`).join("")}</div>`:""}
+  ${c.guard.reasons.length?`<div class="why">${esc(c.guard.reasons.join("; "))}</div>`:""}<span class="grow"></span>
+  <button class="btn sm${v=="reject"?"":" pri"}" data-pick="${i}" ${v=="reject"?"disabled":""}>Use as reference</button></div></div>`}).join("")};
+$("cands").onclick=async e=>{const z=e.target.closest("[data-zoom]");if(z){$("modal").querySelector("img").src=z.src;$("modal").style.display="flex";return}
+ const b=e.target.closest("[data-pick]");if(!b)return;b.disabled=true;const r=await api("/api/pick",{photo:cur,index:+b.dataset.pick});if(r.error){b.disabled=false;return toast(r.error,"bad")}
+ dirty=false;await load();select(cur);toast("Reference set","ok")};
+$("modal").onclick=()=>$("modal").style.display="none";
+$("upload").onchange=e=>{const f=e.target.files[0];if(!f||!cur)return;const rd=new FileReader(),n=cur;toast("Aligning and checking your edit…");
+ rd.onload=async()=>{const r=await api("/api/upload",{photo:n,data:rd.result,filename:f.name});e.target.value="";if(r.error)return toast(r.error,"bad",6000);
+  dirty=false;await load();if(n==cur)select(n);const v=r.guard&&r.guard.verdict;toast(v=="reject"?"Edit rejected: "+r.guard.reasons.join("; "):"Reference set from your edit",v=="reject"?"bad":"ok",5000)};rd.readAsDataURL(f)};
+
+/* ---------- apply ---------- */
+function renderApply(){if(!S||!S.scenes)return;const refs=Object.entries(S.references);
+ $("applyhint").textContent=refs.length?`${refs.length} reference${refs.length>1?"s":""} → ${Object.keys(S.photos).length} photos in ${S.scenes.length} scenes`:"";
+ $("refcards").innerHTML=refs.length?refs.map(([n,r])=>`<div class="refcard"><img src="/img/ref/${enc(n)}?t=${Date.now()}"><div class="body"><div class="row sp"><b>${esc(n)}</b><span class="faint">${esc(S.photos[n].scene)}</span></div><div class="faint">${esc(r.source)}</div></div></div>`).join(""):'<div class="empty">No references yet. Create at least one in step 2.</div>';
+ $("applybtn").disabled=!refs.length||S.job.state=="running";if(!$("outdir").value&&S.export_default)$("outdir").value=S.export_default}
+$("applybtn").onclick=async()=>{const r=await api("/api/apply",{max_side:$("maxside").value||null,out:$("outdir").value.trim()||null});if(r.error)return toast(r.error,"bad");$("reviewwrap").innerHTML="";job(r)};
+function job(j){if(!j)return;const pct=j.n?Math.round(100*j.i/j.n):0,pill=$("jobpill"),run=j.state=="running";
+ const label={propagate:"Matching looks",export:"Exporting",analyse:"Analysing",score:"Scoring frames",starting:"Starting"}[j.stage]||esc(j.stage||"");
+ pill.innerHTML=run?`<span>${label} ${j.i}/${j.n}</span><span class="bar"><i style="width:${pct}%"></i></span>`:j.state=="done"&&j.review?`<a class="btn sm" href="${esc(j.review)}" target="_blank">Open review ↗</a>`:"";
+ $("applyprog").innerHTML=j.kind=="apply"||j.review||j.stage=="propagate"||j.stage=="export"?(run?`<div class="progress"><i style="width:${pct}%"></i></div><div class="faint" style="font-size:12px">${label} · ${j.i}/${j.n} ${esc(j.photo||"")}</div>`:
+  j.state=="error"?`<div class="note" style="color:var(--bad)">${esc(j.error)}</div>`:j.state=="done"?`<div class="note" style="color:var(--ok)">Done — ${j.n} photos exported to ${esc(j.out||"")}</div>`:""):"";
+ if(j.state=="done"&&j.review&&view=="apply"&&!$("reviewwrap").innerHTML)$("reviewwrap").innerHTML=`<div class="row sp" style="margin-top:22px"><h2 style="margin:0;font-size:16px">Review</h2><a class="btn sm" href="${esc(j.review)}" target="_blank">Open in new tab ↗</a></div><iframe class="review" src="${esc(j.review)}"></iframe>`;
+ if(j.state=="done"&&j.kind=="analyse"&&polling===false){load().then(()=>show("refs"))}
+ $("applybtn").disabled=run||!S||!Object.keys(S.references||{}).length;
+ if(run&&!polling){polling=true;setTimeout(poll,1200)}}
+async function poll(){const s=await api("/api/job");polling=false;const was=S.job&&S.job.state;S.job=s;job(s);
+ if(s.state!="running"&&was=="running"){if(s.kind=="analyse"){await load();show("refs")}else if(s.kind=="score"){await loadCull()}}}
+
+/* ---------- cull ---------- */
+let C=null,cfilter="all",csel=0,ctimer=null;
+async function loadCull(){C=await api("/api/cull");renderCull();return C}
+function bar(x,lbl){x=Math.max(0,Math.min(1,+x||0));const c=x<.35?"lo":x<.6?"mid":"hi";return `<div>${lbl}<div class="meter"><i class="${c}" style="width:${(x*100).toFixed(0)}%"></i></div></div>`}
+function shown(){return C&&C.frames?C.frames.filter(f=>cfilter=="all"||(cfilter=="keep")==f.keep):[]}
+function renderCull(){if(!C)return;if(C.state=="scoring"||!C.frames){$("cullgrid").innerHTML='<div class="empty">Scoring frames…</div>';return}
+ const fr=shown(),k=C.frames.filter(f=>f.keep).length;csel=Math.min(csel,Math.max(0,fr.length-1));
+ $("cullcount").textContent=`${k} kept · ${C.frames.length-k} rejected · ${C.frames.length} frames`;
+ $("cullgrid").innerHTML=fr.length?fr.map((f,i)=>`<div class="frame${f.keep?"":" rej"}${i==csel?" sel":""}" data-i="${i}"><img loading="lazy" src="/img/cull/${enc(f.name)}">
+  <span class="flag ${f.keep?"k":"x"}">${f.keep?"✓":"✕"}</span>${f.override?'<span class="ov tag acc">manual</span>':f.burst_size>1?`<span class="ov tag">burst ${f.burst_rank}/${f.burst_size}</span>`:""}
+  <div class="fb"><div class="fn"><span>${esc(f.name)}</span><span class="faint">${(+f.quality).toFixed(2)}</span></div>
+  <div class="bars">${bar(f.focus,"Focus")}${bar(f.exposure,"Exposure")}${bar(f.stability,"Steadiness")}</div>
+  <div class="reasons">${esc((f.reasons||[]).join(" · "))}</div></div></div>`).join(""):'<div class="empty">Nothing here.</div>';
+ const s=C.settings,sch=C.schema||[];
+ if(!$("cullsettings").dataset.built){$("cullsettings").dataset.built=1;$("cullsettings").innerHTML=sch.map(o=>o.type=="bool"?
+  `<label class="row" style="margin:8px 0;cursor:pointer"><input type="checkbox" data-k="${esc(o.key)}" ${s[o.key]?"checked":""} style="accent-color:var(--accent)"><span>${esc(o.label)}</span></label>`:
+  `<div class="field"><div class="row sp"><label class="muted" style="font-size:12px">${esc(o.label)}</label><output class="faint" style="font-size:12px">${s[o.key]}</output></div><input type="range" min="${o.min}" max="${o.max}" step="${o.step}" value="${s[o.key]}" data-k="${esc(o.key)}">${o.help?`<div class="faint" style="font-size:11px">${esc(o.help)}</div>`:""}</div>`).join("")}
+ $("cullsummary").innerHTML=(C.summary||[]).map(([a,b])=>`<div class="stat"><span class="muted">${esc(a)}</span><b>${esc(b)}</b></div>`).join("");
+ if(!$("albumdir").value&&C.album_default)$("albumdir").value=C.album_default}
+function cullSettings(){const o={};$("cullsettings").querySelectorAll("[data-k]").forEach(i=>o[i.dataset.k]=i.type=="checkbox"?i.checked:+i.value);return o}
+$("cullsettings").oninput=e=>{const i=e.target;if(i.type=="range")i.parentNode.querySelector("output").textContent=i.value;clearTimeout(ctimer);ctimer=setTimeout(async()=>{C=await api("/api/cull/decide",{settings:cullSettings()});renderCull()},150)};
+$("cullreset").onclick=async()=>{$("cullsettings").dataset.built="";C=await api("/api/cull/decide",{settings:null});renderCull()};
+$("cullfilter").onclick=e=>{const b=e.target.closest("button");if(!b)return;cfilter=b.dataset.f;$("cullfilter").querySelectorAll("button").forEach(x=>x.classList.toggle("on",x==b));csel=0;renderCull()};
+async function override(i,v){const f=shown()[i];if(!f)return;C=await api("/api/cull/override",{name:f.name,keep:v});renderCull()}
+$("cullgrid").onclick=e=>{const t=e.target.closest(".frame");if(!t)return;const i=+t.dataset.i;if(e.target.closest(".flag")){override(i,!shown()[i].keep);return}csel=i;renderCull()};
+$("cullgrid").ondblclick=e=>{const t=e.target.closest(".frame");if(t){$("modal").querySelector("img").src=`/img/cullfull/${enc(shown()[+t.dataset.i].name)}`;$("modal").style.display="flex"}};
+$("buildbtn").onclick=async()=>{const d=$("albumdir").value.trim();if(!d)return toast("Choose an album folder");const r=await api("/api/cull/build",{out:d,mode:$("cullmode").value});if(r.error)return toast(r.error,"bad",6000);toast(`Album created with ${r.kept} photos. Analysing…`,"ok");S.job=r.job;job(r.job)};
+document.addEventListener("keydown",e=>{if(view!="cull"||/INPUT|TEXTAREA|SELECT/.test(document.activeElement.tagName))return;const n=shown().length;
+ if(e.key=="ArrowRight"){csel=Math.min(n-1,csel+1);renderCull()}else if(e.key=="ArrowLeft"){csel=Math.max(0,csel-1);renderCull()}
+ else if(e.key=="p"||e.key=="P")override(csel,true);else if(e.key=="x"||e.key=="X")override(csel,false);else if(e.key=="u"||e.key=="U")override(csel,null);else return;
+ const el=document.querySelector(".frame.sel");if(el)el.scrollIntoView({block:"nearest"})});
+
+/* ---------- start ---------- */
+$("startbtn").onclick=async()=>{const d=$("srcdir").value.trim();if(!d)return toast("Enter a folder");const r=await api("/api/start",{folder:d,cull:$("docull").checked});if(r.error)return toast(r.error,"bad",6000);
+ S.job=r.job;job(r.job);await load();if($("docull").checked){show("cull");loadCull()}};
+
+/* ---------- boot ---------- */
+window.addEventListener("beforeunload",e=>{if(dirty){e.preventDefault();e.returnValue=""}});
+(async()=>{await load();if(S.scenes)show("refs");else if(S.cull){show("cull");loadCull()}else show("start")})();
 </script></body></html>
