@@ -40,6 +40,8 @@ morph edit path/to/album --edit-dir my_edits/ --out edited/               # use 
 
 `--generator` accepts `local`, `openai` (uses `OPENAI_API_KEY`, sends the original + prompt), any `https://…` endpoint that takes `{"image": b64png, "prompt", "n"}` and returns `{"images": [b64png…]}`, or `files:DIR` for candidates you made elsewhere.
 
+Candidates from external generators (and uploaded hand edits) are re-segmented so the distortion guard can compare regions and face counts against the original; the built-in `local` generator only renders slider recipes, so it skips that step. Set `MORPH_THREADS=N` to cap CPU threads when several morph jobs share a machine.
+
 ## How it works
 
 | Stage | Module | What it does |
@@ -58,6 +60,13 @@ Benchmark against a hand-edited album (use K of your edits as references, predic
 ```bash
 morph evaluate Morph/originals Morph/edits --out runs/eval -k 3
 ```
+
+On the bundled 88-photo album (mean CIEDE2000 to the hand edit on held-out photos; lower is better):
+
+| references | untouched original | copy nearest reference's recipe | morph |
+|---|---|---|---|
+| 3 | 8.72 | 5.93 | **5.23** |
+| 6 | 8.73 | 4.72 | **4.55** |
 
 ## Research archive
 

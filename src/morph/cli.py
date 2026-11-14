@@ -4,6 +4,7 @@ from __future__ import annotations
 
 import argparse
 import json
+import os
 import sys
 import time
 from pathlib import Path
@@ -143,7 +144,7 @@ def main(argv=None):
 
     s = sub.add_parser("init", help="analyse an album and group it into scenes")
     s.add_argument("project", type=Path); s.add_argument("album", type=Path)
-    s.add_argument("--cache", type=Path); s.add_argument("--threshold", type=float, default=0.55)
+    s.add_argument("--cache", type=Path); s.add_argument("--threshold", type=float, default=0.4)
     s.set_defaults(fn=cmd_init)
 
     s = sub.add_parser("scenes", help="show / re-cluster scenes")
@@ -196,6 +197,10 @@ def main(argv=None):
     s.set_defaults(fn=cmd_evaluate)
 
     a = ap.parse_args(argv)
+    if os.environ.get("MORPH_THREADS"):  # avoid CPU oversubscription when several morph jobs share a machine
+        import torch
+
+        torch.set_num_threads(int(os.environ["MORPH_THREADS"]))
     a.fn(a)
 
 

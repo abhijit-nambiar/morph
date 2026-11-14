@@ -206,6 +206,7 @@ def _apply_job(S: State, out: str, max_side):
         def prog(stage):
             return lambda i, n, name: S.job.update(stage=stage, i=i, n=n, photo=name)
 
+        S.job.update(stage="propagate")
         recipes = propagate(P.album, R, P.scenes, progress=prog("propagate"))
         export_album(P.album, recipes, out, int(max_side) if max_side else None, progress=prog("export"))
         review_page(P.album, P.scenes, recipes, [r.name for r in refs], out)

@@ -144,7 +144,7 @@ def fit_recipe(
     rs = lambda a, interp=cv2.INTER_AREA: cv2.resize(a, size, interpolation=interp) if s < 1 else a
     x = to_tensor(rs(orig).astype(np.float32))
     t = to_tensor(rs(target).astype(np.float32))
-    w = torch.from_numpy(rs(weight if weight is not None else np.ones((H, W), np.float32)).astype(np.float32))[None, None]
+    w = torch.from_numpy(rs(np.asarray(weight if weight is not None else np.ones((H, W)), np.float32)))[None, None]
     regions = tuple(r for r in (regions or LOCAL_REGIONS) if masks is not None and r in masks)
     m = torch.zeros((1, len(LOCAL_REGIONS)) + x.shape[-2:])
     cover = {}
@@ -156,7 +156,7 @@ def fit_recipe(
     gkeys = set(FIT_GLOBAL) - (set() if fit_detail else DETAIL)
     lkeys = set(FIT_LOCAL) - (set() if fit_detail else DETAIL)
     al = {LOCAL_REGIONS.index(r): lkeys for r in regions}
-    scale = float(max(H, W))
+    scale = None  # spatial filters scale with the rendered grid (resolution independent)
 
     p = Params.from_recipe(init or Recipe(), requires_grad=True)
     gmask = torch.tensor([k in gkeys for k in GLOBAL_KEYS], dtype=torch.float32)

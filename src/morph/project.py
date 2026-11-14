@@ -63,7 +63,7 @@ class Project:
 
     # -- creation ------------------------------------------------------------------------------
     @classmethod
-    def create(cls, root: str | Path, album_dir: str | Path, cache: str | Path | None = None, progress=None, threshold: float = 0.55) -> "Project":
+    def create(cls, root: str | Path, album_dir: str | Path, cache: str | Path | None = None, progress=None, threshold: float = 0.4) -> "Project":
         root = Path(root)
         root.mkdir(parents=True, exist_ok=True)
         album = Album(album_dir, cache or root / "cache").analyze(progress=progress)
@@ -114,15 +114,27 @@ class Project:
         for p in self.ref_dir.glob(f"{stem}.*"):
             p.unlink()
 
+    def candidate_semantics(self, cand: np.ndarray) -> tuple[dict, int]:
+        """Re-segment a candidate so the guard can compare regions/faces (catches added/removed/moved objects)."""
+        from . import album as album_mod
+
+        if getattr(self, "_segmenter", None) is None:
+            self._segmenter = album_mod.Segmenter()
+        rm = self._segmenter.segment((np.clip(cand, 0, 1) * 255 + 0.5).astype(np.uint8))
+        return rm.masks, len(rm.faces)
+
     def _inputs(self, name: str):
         img = self.album.work_image(name)
         rm = self.album.masks(name)
         return img, rm
 
     def reference_from_target(self, name: str, target: np.ndarray, source: str, prompt: str = "",
-                              candidate_masks: dict | None = None, faces_cand: int | None = None, allow: tuple = ("pass", "repairable")) -> ReferenceEdit:
+                              candidate_masks: dict | None = None, faces_cand: int | None = None, allow: tuple = ("pass", "repairable"),
+                              semantic: bool = True) -> ReferenceEdit:
         """Guard + fit: turn any target image (hand edit, AI output) into a deterministic recipe."""
         img, rm = self._inputs(name)
+        if candidate_masks is None and semantic:
+            candidate_masks, faces_cand = self.candidate_semantics(target)
         rep, aligned, conf = check(img, target, rm.masks, candidate_masks, (len(rm.faces), faces_cand) if faces_cand is not None else None)
         if rep.verdict not in allow:
             raise ValueError(f"target rejected by distortion guard: {'; '.join(rep.reasons)}")
@@ -137,7 +149,9 @@ class Project:
         target = load_rgb(edit_path, max_side=int(max(img.shape[:2]) * 1.25))
         return self.reference_from_target(name, target, f"hand-edit:{edit_path}")
 
-    def generate(self, name: str, prompt: str, generator: str = "local", n: int = 4) -> list[tuple[Candidate, GuardReport]]:
+    def generate(self, name: str, prompt: str, generator: str = "local", n: int = 4, semantic: bool | None = None) -> list[tuple[Candidate, GuardReport]]:
+        # The local generator only renders slider recipes, so it cannot move pixels; anything else gets re-segmented.
+        semantic = generator != "local" if semantic is None else semantic
         img, rm = self._inputs(name)
         gen = get_generator(generator)
         cands = gen.generate(img, prompt, rm.masks, n=n, stem=Path(self.album.get(name).name).stem)
@@ -147,7 +161,8 @@ class Project:
         for p in cdir.glob("*"):
             p.unlink()
         for i, c in enumerate(cands):
-            rep, aligned, _ = check(img, c.image, rm.masks)
+            cm, cf = self.candidate_semantics(c.image) if semantic else (None, None)
+            rep, aligned, _ = check(img, c.image, rm.masks, cm, (len(rm.faces), cf) if cf is not None else None)
             c.info["guard"] = rep.to_json()
             c.info["generator"] = generator
             save_png_u8(aligned if rep.verdict != "reject" else c.image, cdir / f"{i:02d}.png")

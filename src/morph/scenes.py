@@ -46,7 +46,7 @@ def distance_matrix(album: Album, w_bg: float = 0.55, w_glob: float = 0.2, w_col
     return (w_bg * d_bg + w_glob * d_gl + w_color * d_col + w_time * d_t * 2).astype(np.float64)
 
 
-def cluster(album: Album, threshold: float = 0.55, min_size: int = 1) -> list[Scene]:
+def cluster(album: Album, threshold: float = 0.4, min_size: int = 1) -> list[Scene]:
     n = len(album.photos)
     if n == 1:
         return [Scene("scene-01", album.names, album.names[0])]
@@ -108,7 +108,7 @@ def suggest(album: Album, scenes: list[Scene], k: int | None = None) -> list[Sug
         j = int(np.argmax(score))
         chosen.append(j)
         p = album.photos[j]
-        reasons = [f"covers {gains[j]:.1f} photos' worth of setting/lighting"]
+        reasons = [f"represents the setting/lighting of ~{max(1, round(gains[j]))} photo(s) not yet covered"]
         if p.faces:
             reasons.append(f"{len(p.faces)} face(s) visible")
         if q[j] > 0.5:

@@ -37,12 +37,17 @@ CORR_REGIONS = ("face_skin", "body_skin", "hair", "clothes", "background", "sky"
 
 @dataclass
 class PropagationConfig:
-    # share of the original photo-to-reference difference that survives editing (0 = identical output)
-    keep_within: dict = field(default_factory=lambda: {"L": 0.30, "ab": 0.15, "skin_L": 0.15, "skin_ab": 0.08})
-    keep_across: dict = field(default_factory=lambda: {"L": 0.55, "ab": 0.40, "skin_L": 0.30, "skin_ab": 0.15})
-    harmonize_within: float = 0.5  # pull of each photo's targets toward its scene consensus
+    # share of the original photo-to-reference difference that survives editing (0 = identical output).
+    # Defaults tuned by leave-out evaluation on the bundled hand-edited album (see evaluate.py).
+    keep_within: dict = field(default_factory=lambda: {"L": 0.15, "ab": 0.09, "skin_L": 0.09, "skin_ab": 0.05})
+    keep_across: dict = field(default_factory=lambda: {"L": 0.30, "ab": 0.21, "skin_L": 0.17, "skin_ab": 0.09})
+    harmonize_within: float = 0.6  # pull of each photo's targets toward its scene consensus
     harmonize_across: float = 0.35  # pull of skin / global key toward the album consensus
-    steps: int = 70
+    # how far each photo moves from the plain (similarity-blended) reference recipe toward its predicted target
+    pursue_within: float = 0.5
+    pursue_across: float = 0.5
+    steps: int = 80
+    refine_steps: int = 8
     side: int = 256
 
 
@@ -135,7 +140,7 @@ def _targets(album: Album, refs: list[Reference], W: np.ndarray, scenes: list[Sc
     return out
 
 
-def _correct(img: np.ndarray, masks: dict[str, np.ndarray], base: Recipe, targets: dict, cfg: PropagationConfig) -> Recipe:
+def _correct(img: np.ndarray, masks: dict[str, np.ndarray], base: Recipe, targets: dict, cfg: PropagationConfig, gain: float = 1.0) -> Recipe:
     h, w = img.shape[:2]
     s = cfg.side / max(h, w)
     size = (max(8, round(w * s)), max(8, round(h * s)))
@@ -168,20 +173,26 @@ def _correct(img: np.ndarray, masks: dict[str, np.ndarray], base: Recipe, target
     for k in ri:
         al[k] = al[k] | set(CORR_LOCAL)
     al = {k: v for k, v in al.items() if v}
-    scale = float(max(h, w))
     opt = torch.optim.Adam([gd, ld], lr=0.04)
+    pz = Params.from_recipe(Recipe())
+    corr_local = {k: set(CORR_LOCAL) for k in ri}
+    with torch.no_grad():
+        xb = render(x, mt, p0, active_global=ag, active_local=al)
+        lab_b = srgb_to_lab(xb.clamp(0, 1).permute(0, 2, 3, 1))[0]
+        for r, m in stat_w.items():  # only pursue part of the way from the plain recipe copy toward the target
+            mm = m[0, 0][..., None]
+            mu_b = (lab_b * mm).sum((0, 1)) / mm.sum()
+            tg[r] = mu_b + gain * (tg[r] - mu_b)
 
-    def params():
-        g = p0.gv.clone()
+    def params(p):
+        g = p.gv.clone()
         g[gi] = g[gi] + gd
-        l = p0.lv.clone()
+        l = p.lv.clone()
         for a, k in enumerate(ri):
             l[k, li] = l[k, li] + ld[a]
         return Params(g, l)
 
-    for _ in range(cfg.steps):
-        opt.zero_grad()
-        out = render(x, mt, params(), scale=scale, active_global=ag, active_local=al)
+    def loss_of(out):
         lab = srgb_to_lab(out.clamp(0, 1).permute(0, 2, 3, 1))[0]
         loss = 0
         for r, m in stat_w.items():
@@ -189,10 +200,18 @@ def _correct(img: np.ndarray, masks: dict[str, np.ndarray], base: Recipe, target
             mu = (lab * mm).sum((0, 1)) / mm.sum()
             d = (mu - tg[r]) / torch.tensor([4.0, 3.0, 3.0])
             loss = loss + importance.get(r, 1.0) * (d**2).sum()
-        loss = loss + 0.6 * (gd**2).sum() + 0.3 * (ld**2).sum()
-        loss.backward()
+        return loss + 0.6 * (gd**2).sum() + 0.3 * (ld**2).sum()
+
+    # Stage 1: solve the correction cheaply on top of the base render; stage 2: refine through the full recipe.
+    for step in range(cfg.steps + cfg.refine_steps):
+        opt.zero_grad()
+        if step < cfg.steps:
+            out = render(xb, mt, params(pz), active_global=set(CORR_GLOBAL), active_local=corr_local)
+        else:
+            out = render(x, mt, params(p0), active_global=ag, active_local=al)
+        loss_of(out).backward()
         opt.step()
-    rec = params().to_recipe(dict(base.meta)).clamped().pruned()
+    rec = params(p0).to_recipe(dict(base.meta)).clamped().pruned()
     rec.meta["correction"] = {"global": dict(zip(CORR_GLOBAL, gd.detach().numpy().round(4).tolist())),
                               "local": {r: dict(zip(CORR_LOCAL, ld[a].detach().numpy().round(4).tolist())) for a, r in enumerate(regs)}}
     return rec
@@ -203,6 +222,7 @@ def propagate(album: Album, refs: list[Reference], scenes: list[Scene], cfg: Pro
     W = reference_weights(album, refs, scenes)
     targets = _targets(album, refs, W, scenes, cfg)
     ref_names = {r.name: r for r in refs}
+    scene_of = {n: s.id for s in scenes for n in s.photos}
     out = {}
     for i, p in enumerate(album.photos):
         if p.name in ref_names:
@@ -211,7 +231,9 @@ def propagate(album: Album, refs: list[Reference], scenes: list[Scene], cfg: Pro
         else:
             base = average([r.recipe for r in refs], W[i].tolist())
             base.meta = {"weights": {r.name: round(float(W[i, j]), 4) for j, r in enumerate(refs) if W[i, j] > 1e-3}}
-            rec = _correct(album.work_image(p.name), album.masks(p.name).masks, base, targets[i], cfg)
+            same = np.array([scene_of.get(p.name) == r.scene for r in refs], float)
+            gain = float(W[i] @ (same * cfg.pursue_within + (1 - same) * cfg.pursue_across))
+            rec = _correct(album.work_image(p.name), album.masks(p.name).masks, base, targets[i], cfg, gain)
         out[p.name] = rec
         if progress:
             progress(i + 1, len(album.photos), p.name)

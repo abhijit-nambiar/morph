@@ -240,6 +240,17 @@ def _soft_clip(x: torch.Tensor) -> torch.Tensor:
     return (Y + t * (x - Y)).clamp(0.0, 1.0)
 
 
+def _mask_box(m: torch.Tensor, margin: int, eps: float = 1e-3):
+    """Bounding box (with margin for spatial filters) of a 1x1xHxW mask, or None if empty."""
+    with torch.no_grad():
+        on = m[0, 0] > eps
+        rows, cols = on.any(1).nonzero(), on.any(0).nonzero()
+    if rows.numel() == 0:
+        return None
+    H, W = m.shape[-2:]
+    return (max(0, int(rows[0]) - margin), min(H, int(rows[-1]) + 1 + margin), max(0, int(cols[0]) - margin), min(W, int(cols[-1]) + 1 + margin))
+
+
 def _active(values: dict[str, float], eps: float = 1e-4) -> set[str]:
     return {k for k, v in values.items() if abs(v) > eps}
 
@@ -266,8 +277,16 @@ def render(
             if not keys:
                 continue
             m = masks[:, ri : ri + 1]
-            y = _adjust(x, lambda k, ri=ri: params.L(ri, k), scale, keys)
-            x = x + m * (y - x)
+            box = _mask_box(m, int(0.07 * scale) + 4)
+            if box is None:
+                continue
+            y0, y1, x0, x1 = box
+            xc, mc = x[..., y0:y1, x0:x1], m[..., y0:y1, x0:x1]
+            yc = _adjust(xc, lambda k, ri=ri: params.L(ri, k), scale, keys)
+            if x.shape[-2:] == yc.shape[-2:]:
+                x = x + mc * (yc - xc)
+            else:
+                x = torch.cat([x[..., :y0, :], torch.cat([x[..., y0:y1, :x0], xc + mc * (yc - xc), x[..., y0:y1, x1:]], -1), x[..., y1:, :]], -2)
     if "vignette" in ag:
         h, w = x.shape[-2:]
         yy, xx = torch.meshgrid(torch.linspace(-1, 1, h, device=x.device), torch.linspace(-1, 1, w, device=x.device), indexing="ij")

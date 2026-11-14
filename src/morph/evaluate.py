@@ -37,7 +37,7 @@ def _aligned_edits(album: Album, edits_dir: Path, cache: Path) -> dict[str, tupl
             continue
         ft, fw = cache / f"{p.stem}.png", cache / f"{p.stem}.w.npy"
         if ft.exists() and fw.exists():
-            out[p.name] = (load_rgb(ft), np.load(fw))
+            out[p.name] = (load_rgb(ft), np.load(fw).astype(np.float32))
             continue
         img = album.work_image(p.name)
         al = align(img, load_rgb(e, max_side=int(max(img.shape[:2]) * 1.25)))
@@ -68,7 +68,7 @@ def evaluate(originals: str | Path, edits: str | Path, out: str | Path, k: int =
         t, w = targets[n]
         res = fit_recipe(img, t, album.masks(n).masks, w)
         references.append(make_reference(album, n, res.recipe, next(s.id for s in scenes if n in s.photos)))
-    recipes = propagate(album, references, scenes, PropagationConfig())
+    recipes = propagate(album, references, scenes, PropagationConfig(), progress=progress)
     W = reference_weights(album, references, scenes)
     rows = []
     for i, p in enumerate(album.photos):
