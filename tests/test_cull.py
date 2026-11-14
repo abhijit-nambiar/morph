@@ -286,3 +286,11 @@ def test_failed_frame_does_not_split_a_burst():
     cull.group_bursts(frames, CullSettings())
     ids = [f.burst_id for f in frames]
     assert ids[0] == ids[2] != ids[1] and ids[3] not in (ids[0], ids[1])
+
+
+def test_build_album_refuses_to_cull_in_place(dump):
+    decisions = decide(score_folder(dump, people=False))
+    before = {f.name: f.read_bytes() for f in dump.iterdir() if f.is_file()}
+    with pytest.raises(ValueError):
+        build_album(decisions, dump, mode="link")
+    assert all((dump / n).read_bytes() == b and not (dump / n).is_symlink() for n, b in before.items())

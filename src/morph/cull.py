@@ -782,6 +782,8 @@ def build_album(decisions: list[Decision], out_dir: str | Path, overrides: dict[
         if not keep:
             continue
         src, dst = Path(d.path), out_dir / d.name
+        if src.resolve().parent == out_dir.resolve():
+            raise ValueError(f"the album folder {out_dir} must differ from the folder being culled")
         if dst.is_symlink() or dst.exists():
             ours = d.name in previous
             linked = dst.is_symlink() and Path(os.readlink(dst)) == src.resolve()
