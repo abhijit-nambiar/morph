@@ -96,7 +96,9 @@ class Project:
     def references(self) -> list[ReferenceEdit]:
         if not self.ref_dir.exists():
             return []
-        return [ReferenceEdit.from_json(json.loads(p.read_text())) for p in sorted(self.ref_dir.glob("*.json"))]
+        refs = [ReferenceEdit.from_json(json.loads(p.read_text())) for p in sorted(self.ref_dir.glob("*.json"))]
+        names = set(self.album.names)
+        return [r for r in refs if r.name in names]
 
     def reference(self, name: str) -> ReferenceEdit | None:
         p = self.ref_dir / f"{Path(self.album.get(name).name).stem}.json"
