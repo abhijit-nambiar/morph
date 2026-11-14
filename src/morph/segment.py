@@ -37,7 +37,7 @@ REGIONS = (
 HUMAN_MODEL = "mattmdjaga/segformer_b2_clothes"
 FACE_MODEL = "jonathandinu/face-parsing"
 SCENE_MODEL = "nvidia/segformer-b0-finetuned-ade-512-512"
-SEGMENTER_VERSION = "seg-v1"
+SEGMENTER_VERSION = "seg-v2"
 
 _HUMAN_GROUPS = {
     "background": ["background"],
@@ -58,6 +58,19 @@ _FACE_GROUPS = {
 }
 _SKY = ["sky"]
 _VEGETATION = ["tree", "grass", "plant", "flower", "palm", "field"]
+
+
+def _gate_people(human: dict[str, np.ndarray], scene_person: np.ndarray) -> dict[str, np.ndarray]:
+    """The human parser labels any costume-like object (carousel horses, balloons) as clothing; keep people parts
+    only near what the scene model also calls a person. Skipped when the scene model misses most of the people."""
+    person = 1.0 - human["background"]
+    k = max(3, round(max(person.shape) * 0.03)) | 1
+    gate = np.clip(cv2.dilate(scene_person.astype(np.float32), np.ones((k, k), np.uint8)) * 2.0, 0, 1)
+    if float((person * gate).sum()) < 0.25 * float(person.sum()):
+        return human
+    out = {n: (v if n == "background" else v * gate) for n, v in human.items()}
+    out["background"] = 1.0 - person * gate
+    return out
 
 
 @dataclass
@@ -158,6 +171,8 @@ class Segmenter:
         probs, labels = self._probs(HUMAN_MODEL, small)
         human = _group_probs(probs, labels, _HUMAN_GROUPS)
         human = self._refine_people(full_u8, small, human, s)
+        sprobs, slabels = self._probs(SCENE_MODEL, small, resize_to=640)
+        human = _gate_people(human, sprobs[[i for i, n in slabels.items() if n == "person"]].sum(0))
 
         person = np.clip(1.0 - human["background"], 0, 1)
         maps = {
@@ -170,7 +185,6 @@ class Segmenter:
         }
         faces = self._parse_faces(full_u8, small, human, person, maps, s)
 
-        sprobs, slabels = self._probs(SCENE_MODEL, small, resize_to=640)
         scene = _group_probs(sprobs, slabels, {"sky": _SKY, "vegetation": _VEGETATION})
 
         guide = cv2.cvtColor(small, cv2.COLOR_RGB2GRAY).astype(np.float32) / 255.0

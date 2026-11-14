@@ -122,3 +122,18 @@ def test_flat_coloured_reference_turned_bw_still_desaturates():
     st = lambda m, sd: {"global": {"mean": m, "std": sd, "pct": [0, 50, 100], "coverage": 1.0}}
     ref = Reference("f", Recipe({"saturation": -1}), "", st([50, -16, -20], [20, 0.5, 0.5]), st([50, 0, 0], [20, 0.01, 0.01]))
     assert np.all(_chroma_gain(ref, "global")[1:] < 0.05)
+||||||| parent of 1011cf3 (Segmentation: gate people parts by the scene model's person map (drops costume-like objects labelled clothes))
+
+
+
+
+def test_people_gate_drops_parts_the_scene_model_does_not_call_people():
+    from morph.segment import _gate_people
+
+    z = np.zeros((100, 100), np.float32)
+    clothes = z.copy(); clothes[10:40, 10:40] = 1; clothes[60:90, 60:90] = 1  # a person and a carousel horse
+    human = {"background": 1 - clothes, "hair": z, "face": z, "glasses": z, "body_skin": z, "clothes": clothes}
+    scene_person = z.copy(); scene_person[10:40, 10:40] = 0.9
+    g = _gate_people(human, scene_person)
+    assert g["clothes"][25, 25] > 0.9 and g["clothes"][75, 75] < 0.05 and g["background"][75, 75] > 0.95
+    assert _gate_people(human, z)["clothes"][75, 75] == 1  # scene model sees nobody: leave the parser alone
