@@ -800,7 +800,7 @@ def build_album(decisions: list[Decision], out_dir: str | Path, overrides: dict[
             if not (ours or linked):
                 raise FileExistsError(f"{dst} exists and was not created by morph cull")
             dst.unlink()  # switch link <-> copy, or the source changed
-        if mode == "link":
+        if mode == "link" and src.resolve().parent != out_dir.resolve():  # never link to files we may remove
             try:
                 dst.symlink_to(src.resolve())
             except OSError:

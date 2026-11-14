@@ -303,4 +303,5 @@ def test_build_album_accepts_a_dump_of_links_into_the_album(dump, tmp_path):
     for f in sorted(album.glob("*.jpg")):
         (links / ("L_" + f.name)).symlink_to(f)
     placed = build_album(decide(score_folder(links, people=False)), album, mode="link")
-    assert placed and all(p.name.startswith("L_") or p.exists() for p in placed)
+    assert placed and all(p.name.startswith("L_") and p.exists() for p in placed)
+    assert all(f.exists() for f in album.iterdir())  # no dangling links
