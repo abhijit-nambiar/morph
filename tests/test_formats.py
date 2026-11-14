@@ -5,7 +5,7 @@ from PIL import Image
 
 from dngwriter import write_dng
 from morph.export import output_name
-from morph.imageio import list_images, load_rgb, load_rgb_bytes, read_info
+from morph.imageio import list_images, load_rgb, load_rgb_bytes, read_info, save_image
 
 
 def gradient(h=60, w=90):
@@ -93,10 +93,12 @@ def test_16_bit_rgb_orientation(tmp_path, monkeypatch):
 
 
 def test_output_formats():
-    assert output_name("a.webp") == "a.webp"
-    assert output_name("a.png") == "a.png"
-    assert output_name("a.bmp") == "a.jpg"
-    assert output_name("a.avif") == "a.jpg"
+    assert output_name("a.webp") == output_name("a.png") == output_name("a.tif") == "a.jpg"
+    assert output_name("a.webp", "same") == "a.webp"
+    assert output_name("a.png", "same") == "a.png"
+    assert output_name("a.bmp", "same") == "a.jpg"
+    assert output_name("a.avif", "same") == "a.jpg"
+    assert output_name("a.jpg", "tif") == "a.tif"
 
 
 def test_upload_bytes(tmp_path):
@@ -141,3 +143,64 @@ def test_save_keeps_metadata_without_copying_tiff_layout(tmp_path, src_name, dst
     back = load_rgb(out)
     assert back.shape == img.shape
     assert np.abs(back - img).max() < 0.03
+
+
+def test_jpeg_save_survives_high_entropy(tmp_path):
+    noise = np.random.default_rng(0).random((3000, 4000, 3)).astype(np.float32)
+    out = save_image(noise, tmp_path / "noise.jpg")
+    assert Image.open(out).size == (4000, 3000)
+
+
+def test_jpeg_max_bytes_keeps_resolution(tmp_path):
+    rng = np.random.default_rng(1)
+    img = cv2.GaussianBlur(rng.random((1200, 1800, 3)).astype(np.float32), (0, 0), 2)
+    full = save_image(img, tmp_path / "full.jpg").stat().st_size
+    capped = save_image(img, tmp_path / "cap.jpg", max_bytes=full // 3)
+    assert capped.stat().st_size <= full // 3 and Image.open(capped).size == (1800, 1200)
+    tiny = save_image(img, tmp_path / "tiny.jpg", max_bytes=1000)  # unreachable: smallest file, same size
+    assert Image.open(tiny).size == (1800, 1200) and tiny.stat().st_size < capped.stat().st_size
+
+
+@pytest.mark.parametrize("name", ["rgb16.png", "rgb16.tif"])
+def test_16_bit_source_exports_16_bit(tmp_path, name):
+    g = gradient()
+    src = tmp_path / name
+    cv2.imwrite(str(src), (g[..., ::-1] * 65535).astype(np.uint16))
+    out = save_image(load_rgb(src), tmp_path / "out" / name, source=src)
+    back = cv2.imread(str(out), cv2.IMREAD_UNCHANGED)
+    assert back.dtype == np.uint16 and back.shape == (60, 90, 3)
+    assert np.abs(load_rgb(out) - g).max() < 1e-4
+
+
+def test_raw_to_tiff_is_16_bit_with_profile(tmp_path):
+    lin = np.tile(np.linspace(0.02, 0.9, 64, dtype=np.float32)[None, :, None], (48, 1, 3))
+    raw = write_dng(tmp_path / "P.NEF", lin)
+    img = load_rgb(raw)
+    tif = save_image(img, tmp_path / "P.tif", source=raw)
+    png = save_image(img, tmp_path / "P.png", source=raw)
+    for f in (tif, png):
+        assert cv2.imread(str(f), cv2.IMREAD_UNCHANGED).dtype == np.uint16
+        with Image.open(f) as im:
+            assert im.info.get("icc_profile")
+        assert np.abs(load_rgb(f) - img).max() < 1e-4
+    with Image.open(tif) as im:
+        assert im.getexif().get(306) == "2024:05:01 10:00:00"
+    with Image.open(png) as im:
+        assert im.getexif().get_ifd(0x8769).get(0x9003) == "2024:05:01 10:00:00"
+    assert Image.open(save_image(img, tmp_path / "P.jpg", source=raw)).mode == "RGB"
+    src8 = save_image(img, tmp_path / "s.jpg")
+    assert cv2.imread(str(save_image(img, tmp_path / "from8.tif", source=src8)), cv2.IMREAD_UNCHANGED).dtype == np.uint16
+
+
+def test_tiff_export_drops_source_ifd_offsets(tmp_path):
+    import tifffile
+
+    exif = Image.Exif()
+    exif[0x010F] = "NIKON CORPORATION"
+    exif.get_ifd(0x8769).update({0x9003: "2024:05:01 10:00:00", 0xA005: 1234})
+    src = tmp_path / "s.jpg"
+    u8(gradient()).save(src, quality=95, exif=exif.tobytes())
+    out = save_image(gradient(), tmp_path / "o.tif", source=src)
+    with tifffile.TiffFile(out) as t:
+        sub = t.pages[0].tags["ExifTag"].value
+    assert sub["DateTimeOriginal"] == "2024:05:01 10:00:00" and "InteroperabilityTag" not in sub

@@ -265,21 +265,149 @@ def fit_size(width: int, height: int, max_side: int) -> tuple[int, int]:
     return max(1, round(width * scale)), max(1, round(height * scale))
 
 
-def save_image(img: np.ndarray, out: str | Path, source: str | Path | None = None, quality: int = 95) -> Path:
-    """Save float RGB [0,1] keeping the source's EXIF (orientation reset) and ICC profile."""
+def _quality_for_size(pil: Image.Image, fmt: str, kwargs: dict, quality: int, max_bytes: int) -> dict:
+    """Highest quality (<= ``quality``) whose file fits ``max_bytes``; if none does, the smallest file we can make.
+
+    Resolution is never reduced. Below quality 85, JPEG chroma is 4:2:0 as Lightroom does.
+    """
+    def size(q: int) -> tuple[int, dict]:
+        kw = {**kwargs, "quality": q}
+        if fmt == "JPEG":
+            kw["subsampling"] = 0 if q >= 85 else 2
+            kw.pop("optimize", None)
+        buf = io.BytesIO()
+        pil.save(buf, fmt, **{k: v for k, v in kw.items() if k not in ("exif", "icc_profile", "xmp")})
+        return buf.tell() + len(kwargs.get("exif", b"")) + len(kwargs.get("icc_profile", b"") or b"") + len(kwargs.get("xmp", b"") or b""), kw
+
+    lo, hi = 10, quality
+    n, best = size(hi)
+    if n <= max_bytes:
+        return best
+    n, kw = size(lo)
+    if n > max_bytes:
+        return kw
+    best = kw
+    while hi - lo > 1:
+        mid = (lo + hi) // 2
+        n, kw = size(mid)
+        lo, hi, best = (mid, hi, kw) if n <= max_bytes else (lo, mid, best)
+    return best
+
+
+_IFD_POINTERS = {0x8769, 0x8825, 0xA005}  # EXIF, GPS, Interoperability
+_TIFF_ASCII_TAGS = (270, 271, 272, 305, 306, 315, 33432)  # description, make, model, software, datetime, artist, copyright
+
+
+def _png_chunk(kind: bytes, data: bytes) -> bytes:
+    import struct
+    import zlib
+
+    return struct.pack(">I", len(data)) + kind + data + struct.pack(">I", zlib.crc32(kind + data) & 0xFFFFFFFF)
+
+
+def _save_16bit(img: np.ndarray, out: Path, icc: bytes | None, exif: Image.Exif | None, xmp) -> Path:
+    """16-bit RGB PNG/TIFF (Pillow can only write 8-bit RGB), keeping ICC, XMP and EXIF (TIFF: the baseline tags)."""
+    arr = np.rint(np.clip(img, 0.0, 1.0) * 65535.0).astype(np.uint16)
+    xmp = xmp.encode() if isinstance(xmp, str) else xmp
+    if out.suffix.lower() == ".png":
+        import zlib
+
+        import cv2
+
+        ok, buf = cv2.imencode(".png", np.ascontiguousarray(arr[..., ::-1]))
+        if not ok:
+            raise OSError(f"could not encode {out.name}")
+        data = buf.tobytes()
+        extra = b""
+        if icc:
+            extra += _png_chunk(b"iCCP", b"ICC Profile\0\0" + zlib.compress(icc))
+        if exif:
+            raw = exif.tobytes()
+            extra += _png_chunk(b"eXIf", raw[6:] if raw.startswith(b"Exif\0\0") else raw)
+        if xmp:
+            extra += _png_chunk(b"iTXt", b"XML:com.adobe.xmp\0\0\0\0\0" + xmp)
+        ihdr_end = 8 + 4 + 4 + 13 + 4
+        out.write_bytes(data[:ihdr_end] + extra + data[ihdr_end:])
+        return out
+    import tifffile
+
+    tags = []
+    if icc:
+        tags.append((34675, "B", len(icc), icc, True))
+    if xmp:
+        tags.append((700, "B", len(xmp), xmp, True))
+    base = {t: exif.get(t) for t in _TIFF_ASCII_TAGS} if exif else {}
+    if exif and not base.get(306):
+        base[306] = exif.get_ifd(_EXIF_IFD).get(_TAG_DATETIME_ORIGINAL)
+    for t, v in base.items():
+        if isinstance(v, str) and v.strip("\0 ") and t != 305:
+            tags.append((t, "s", 0, v.strip("\0 "), True))
+    subs = {t: dict(exif.get_ifd(t)) for t in (_EXIF_IFD, _GPS_IFD)} if exif else {}
+    subs = {t: d for t, d in subs.items() if d}
+    # tifffile refuses the EXIF/GPS pointer tags: write placeholders one tag number lower (keeps the IFD
+    # sorted), then retag them and fill in the offsets once the sub-IFDs are appended
+    tags += [(t - 1, "I", 1, 0, True) for t in subs]
+    tifffile.imwrite(out, arr, photometric="rgb", compression="zlib", extratags=tags, metadata=None, software="Morph",
+                     byteorder="<")
+    if subs:
+        _append_sub_ifds(out, subs)
+    return out
+
+
+def _append_sub_ifds(path: Path, subs: dict[int, dict]) -> None:
+    """Write EXIF/GPS sub-IFDs (which tifffile cannot) at the end of a TIFF and point IFD0's tags at them."""
+    import struct
+
+    import tifffile
+    from PIL.TiffImagePlugin import ImageFileDirectory_v2
+
+    with tifffile.TiffFile(path) as t:
+        slots = {k: t.pages[0].tags[k - 1].valueoffset for k in subs}
+    data = bytearray(path.read_bytes())
+    for k, at in slots.items():
+        data[at - 8 : at - 6] = struct.pack("<H", k)
+    for k, d in subs.items():
+        data += b"\0" * (-len(data) % 4)
+        ifd = ImageFileDirectory_v2(prefix=b"II")
+        for tag, v in d.items():
+            if tag in _IFD_POINTERS:  # offsets into the source file: meaningless here
+                continue
+            try:
+                ifd[tag] = v
+            except (TypeError, ValueError):
+                continue
+        off = len(data)
+        data += ifd.tobytes(off)
+        data[slots[k] : slots[k] + 4] = struct.pack("<I", off)
+    path.write_bytes(bytes(data))
+
+
+def save_image(img: np.ndarray, out: str | Path, source: str | Path | None = None, quality: int = 95,
+               max_bytes: int | None = None) -> Path:
+    """Save float RGB [0,1] keeping the source's EXIF (orientation reset) and ICC profile.
+
+    TIFF is always 16-bit, PNG is 16-bit from a RAW or 16-bit source; JPEG/WebP are 8-bit.
+
+    ``max_bytes`` (JPEG/WebP): pick the highest quality that keeps the file under that size.
+    """
     out = Path(out)
     out.parent.mkdir(parents=True, exist_ok=True)
     arr = np.clip(np.rint(np.clip(img, 0.0, 1.0) * 255.0), 0, 255).astype(np.uint8)
     pil = Image.fromarray(arr, "RGB")
     kwargs: dict = {}
     xmp = None
+    exif_obj = None
+    deep = False  # source carries more than 8 bits per channel
     if source is not None and is_raw(source):
-        kwargs["exif"] = raw_exif(source).tobytes()
+        exif_obj = raw_exif(source)
+        kwargs["exif"] = exif_obj.tobytes()
         kwargs["icc_profile"] = srgb_icc()
+        deep = True
     elif source is not None:
         with Image.open(source) as src:
+            deep = _high_bit_depth(src)
             icc = src.info.get("icc_profile")
-            exif = src.getexif()
+            exif = exif_obj = src.getexif()
             for tag in _TIFF_LAYOUT_TAGS & set(exif):
                 del exif[tag]
             if exif:
@@ -289,16 +417,25 @@ def save_image(img: np.ndarray, out: str | Path, source: str | Path | None = Non
                 kwargs["icc_profile"] = icc
             xmp = src.info.get("xmp")
     suffix = out.suffix.lower()
+    if suffix in (".tif", ".tiff") or (deep and suffix == ".png"):  # TIFF is the print format: always 16-bit
+        return _save_16bit(img, out, kwargs.get("icc_profile"), exif_obj if kwargs.get("exif") else None, xmp)
     if suffix in (".jpg", ".jpeg"):
-        kwargs.update(quality=quality, subsampling=0, optimize=True)
+        kwargs.update(quality=quality, subsampling=0, optimize=True)  # dropped below if libjpeg overflows
         if xmp:
             kwargs["xmp"] = xmp
     elif suffix in (".tif", ".tiff"):
         kwargs.update(compression="tiff_deflate")
     elif suffix == ".webp":
         kwargs.update(quality=quality, method=4)
+    if max_bytes and suffix in (".jpg", ".jpeg", ".webp"):
+        kwargs = _quality_for_size(pil, "WEBP" if suffix == ".webp" else "JPEG", kwargs, quality, max_bytes)
     try:
-        pil.save(out, **kwargs)
+        try:
+            pil.save(out, **kwargs)
+        except OSError:  # libjpeg's optimize pass can overflow on high-entropy or CMYK-derived images
+            if not kwargs.pop("optimize", False):
+                raise
+            pil.save(out, **kwargs)
     except RuntimeError:  # libtiff (used for compression) cannot write EXIF sub-IFDs: keep the metadata, drop compression
         kwargs.pop("compression", None)
         pil.save(out, **kwargs)
@@ -326,7 +463,8 @@ def jpeg_bytes(img: np.ndarray, quality: int = 85) -> bytes:
 RAW_CURVE_X = (0.0, 0.0025, 0.01, 0.03, 0.09, 0.2, 0.4, 0.7, 1.0)
 RAW_CURVE_Y = (0.0, 0.0035, 0.017, 0.074, 0.272, 0.57, 0.835, 0.962, 1.0)
 RAW_SATURATION = 1.1  # camera-matrix colour is accurate but looks a touch flat next to camera JPEGs
-RAW_RENDER_VERSION = "raw-v1"
+RAW_RENDER_VERSION = "raw-v2"
+RAW_MATCH_EV = 2.0  # most a RAW is brightened or darkened to meet its camera JPEG
 _RAW_LUT: np.ndarray | None = None
 _LUM = np.array([0.2126, 0.7152, 0.0722], np.float32)
 
@@ -363,6 +501,82 @@ def _orient(img: np.ndarray, flip: int) -> np.ndarray:
     return img
 
 
+def _thumb_luma(raw) -> float | None:
+    """Mean sRGB luma of the camera's embedded JPEG: how bright the camera rendered this frame."""
+    import rawpy
+
+    try:
+        th = raw.extract_thumb()
+    except (rawpy.LibRawNoThumbnailError, rawpy.LibRawUnsupportedThumbnailError):
+        return None
+    if th.format != rawpy.ThumbFormat.JPEG:
+        return None
+    try:
+        with Image.open(io.BytesIO(th.data)) as im:
+            if max(im.size) < 320:
+                return None
+            im.draft("RGB", (512, 512))
+            a = np.asarray(im.convert("RGB"), dtype=np.float32) / 255.0
+    except OSError:
+        return None
+    return float((a @ _LUM).mean())
+
+
+def _shoulder16(v: np.ndarray, knee: float = 0.6 * 65535) -> np.ndarray:
+    over = np.maximum(v - knee, 0)
+    return np.where(v > knee, knee + (65535 - knee) * np.tanh(over / (65535 - knee)), v)
+
+
+def _match_exposure(lin: np.ndarray, target: float) -> np.ndarray:
+    """Scale linear sensor data so the rendered mean luma meets the camera JPEG's (within +-RAW_MATCH_EV).
+
+    Camera makers render RAW very differently (Canon/Sony/Nikon Z JPEGs sit ~1 EV above a neutral
+    decode); the camera JPEG is what the photographer saw and exposed for. Pushes roll off into white.
+    """
+    step = max(1, int(np.sqrt(lin.shape[0] * lin.shape[1] / 120_000)))
+    sm = lin[::step, ::step].astype(np.float32)
+    lut = _raw_lut()
+
+    def mean_luma(ev):
+        v = _shoulder16(sm * 2.0**ev) if ev > 0 else sm * 2.0**ev
+        return float((lut[np.clip(v, 0, 65535).astype(np.uint16)] @ _LUM).mean())
+
+    lo, hi = -RAW_MATCH_EV, RAW_MATCH_EV
+    if not mean_luma(lo) < target < mean_luma(hi):
+        ev = lo if target <= mean_luma(lo) else hi
+    else:
+        for _ in range(14):
+            mid = (lo + hi) / 2
+            lo, hi = (mid, hi) if mean_luma(mid) < target else (lo, mid)
+        ev = (lo + hi) / 2
+    if abs(ev) < 0.05:
+        return lin
+    v = lin.astype(np.float32) * np.float32(2.0**ev)
+    if ev > 0:
+        v = _shoulder16(v)
+    return np.clip(v, 0, 65535).astype(np.uint16)
+
+
+def _embedded_full_jpeg(path: str | Path) -> np.ndarray | None:
+    import rawpy
+
+    try:
+        with rawpy.imread(str(path)) as raw:
+            (_, _, h, w), flip = _raw_geometry(raw)
+            th = raw.extract_thumb()
+    except rawpy.LibRawError:
+        return None
+    if th.format != rawpy.ThumbFormat.JPEG:
+        return None
+    with Image.open(io.BytesIO(th.data)) as im:
+        if max(im.size) < 0.9 * max(h, w):
+            return None
+        img = np.asarray(im.convert("RGB"), dtype=np.float32) / 255.0
+    if (img.shape[1] > img.shape[0]) == (w > h):
+        img = np.ascontiguousarray(_orient(img, flip))
+    return img
+
+
 def render_raw(path: str | Path, max_side: int | None = None) -> np.ndarray:
     """Decode a RAW file to oriented sRGB float32 [0, 1].
 
@@ -373,15 +587,27 @@ def render_raw(path: str | Path, max_side: int | None = None) -> np.ndarray:
     """
     import rawpy
 
-    with rawpy.imread(str(path)) as raw:
-        (top, left, h, w), flip = _raw_geometry(raw)
-        half = bool(max_side) and max_side <= max(h, w) // 2
-        lin = raw.postprocess(
-            half_size=half, use_camera_wb=True, no_auto_bright=True, gamma=(1, 1), output_bps=16,
-            output_color=rawpy.ColorSpace.sRGB, highlight_mode=rawpy.HighlightMode.Blend, user_flip=0,
-        )
+    try:
+        with rawpy.imread(str(path)) as raw:
+            (top, left, h, w), flip = _raw_geometry(raw)
+            half = bool(max_side) and max_side <= max(h, w) // 2
+            lin = raw.postprocess(
+                half_size=half, use_camera_wb=True, no_auto_bright=True, gamma=(1, 1), output_bps=16,
+                output_color=rawpy.ColorSpace.sRGB, highlight_mode=rawpy.HighlightMode.Blend, user_flip=0,
+            )
+            preview = _thumb_luma(raw)
+    except (rawpy.LibRawFileUnsupportedError, rawpy.LibRawDataError) as e:
+        # e.g. Nikon High Efficiency NEF, which LibRaw cannot demosaic: use the camera's full-size JPEG instead.
+        img = _embedded_full_jpeg(path)
+        if img is None:
+            raise
+        if max_side and max(img.shape[:2]) > max_side:
+            img = resize(img, fit_size(img.shape[1], img.shape[0], max_side))
+        return img
     k = 2 if half else 1
     lin = lin[top // k : (top + h) // k, left // k : (left + w) // k]
+    if preview is not None:
+        lin = _match_exposure(lin, preview)
     if RAW_SATURATION != 1.0:
         f = lin.astype(np.float32)
         y = f @ _LUM

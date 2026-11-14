@@ -49,7 +49,7 @@ class ReferenceEdit:
 
     @classmethod
     def from_json(cls, d: dict) -> "ReferenceEdit":
-        return cls(d["name"], Recipe.from_json(d["recipe"]), Recipe.from_json(d.get("adjust", {})), d.get("source", ""),
+        return cls(d["name"], Recipe.from_json(d["recipe"]), Recipe.from_json(d.get("adjust", {}), clamp=False), d.get("source", ""),
                    d.get("prompt", ""), d.get("guard"), d.get("fit"))
 
 

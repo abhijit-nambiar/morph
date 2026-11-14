@@ -101,8 +101,10 @@ class Recipe:
         }
 
     @classmethod
-    def from_json(cls, data: dict) -> "Recipe":
-        return cls(dict(data.get("global", {})), {k: dict(v) for k, v in data.get("local", {}).items()}, dict(data.get("meta", {}))).clamped()
+    def from_json(cls, data: dict, clamp: bool = True) -> "Recipe":
+        """``clamp=False`` for adjustment deltas, which may exceed a slider's range (fitted +0.8 to -1 is -1.8)."""
+        r = cls(dict(data.get("global", {})), {k: dict(v) for k, v in data.get("local", {}).items()}, dict(data.get("meta", {})))
+        return r.clamped() if clamp else r
 
     def save(self, path: str | Path) -> None:
         Path(path).parent.mkdir(parents=True, exist_ok=True)

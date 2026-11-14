@@ -12,6 +12,7 @@ import io
 import ipaddress
 import json
 import threading
+import sys
 import traceback
 from dataclasses import asdict
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
@@ -24,7 +25,7 @@ from PIL import Image
 
 from .imageio import load_rgb_bytes
 from .project import Project
-from .recipe import GLOBAL_KEYS, LOCAL_KEYS, Recipe
+from .recipe import BOUNDS, GLOBAL_KEYS, LOCAL_BOUNDS, LOCAL_KEYS, Recipe
 from .render import render_recipe
 from .segment import REGIONS, overlay
 
@@ -46,6 +47,7 @@ class State:
         self.root.mkdir(parents=True, exist_ok=True)
         self.project: Project | None = None
         self.lock = threading.Lock()
+        self._job_lock = threading.Lock()
         self.job: dict = {"state": "idle"}
         self._suggest = None
         self._cache: dict[str, tuple[np.ndarray, dict]] = {}
@@ -70,19 +72,21 @@ class State:
 
     def run(self, kind: str, fn, n: int = 0, **extra) -> dict:
         """Run fn(progress) in the background as the single Studio job."""
-        if self.job.get("state") == "running":
-            raise RuntimeError("another job is still running")
-        self.job = {"state": "running", "kind": kind, "stage": kind, "i": 0, "n": n, **extra}
+        with self._job_lock:
+            if self.job.get("state") == "running":
+                raise RuntimeError("another job is still running")
+            self.job = {"state": "running", "kind": kind, "stage": kind, "i": 0, "n": n, **extra}
 
+        # The job dict is replaced, never mutated, so HTTP threads can serialize it while workers report progress.
         def progress(i, n, name=""):
-            self.job.update(i=i, n=n, photo=Path(str(name)).name)
+            self.job = {**self.job, "i": i, "n": n, "photo": Path(str(name)).name}
 
         def target():
             try:
                 fn(progress)
-                self.job.update(state="done")
+                self.job = {**self.job, "state": "done"}
             except Exception as e:  # noqa: BLE001
-                self.job.update(state="error", error=str(e))
+                self.job = {**self.job, "state": "error", "error": str(e)}
 
         threading.Thread(target=target, daemon=True).start()
         return self.job
@@ -180,6 +184,10 @@ class State:
             rm = self.project.album.masks(name)
             size = (round(img.shape[1] * s), round(img.shape[0] * s))
             self._cache[name] = (cv2.resize(img, size, interpolation=cv2.INTER_AREA), rm.resized(size).masks)
+            while len(self._cache) > 48:  # ~28 MB per photo: keep the most recently used
+                self._cache.pop(next(iter(self._cache)))
+        else:
+            self._cache[name] = self._cache.pop(name)
         return self._cache[name]
 
     def suggestions(self):
@@ -196,11 +204,13 @@ class State:
         return {
             **base,
             "scenes": [s.to_json() for s in p.scenes],
-            "photos": {ph.name: {"faces": len(ph.faces), "scene": p.scene_of(ph.name), "size": [ph.width, ph.height]} for ph in p.album.photos},
+            "photos": {ph.name: {"faces": len(ph.faces), "scene": p.scene_of(ph.name), "size": [ph.width, ph.height],
+                                 "regions": [r for r, c in ph.coverage.items() if c >= 5e-5]} for ph in p.album.photos},
             "suggestions": [s.__dict__ for s in self.suggestions()],
-            "references": {n: {"source": r.source, "prompt": r.prompt, "guard": r.guard, "fit": r.fit, "final": r.final.to_json(), "adjust": r.adjust.to_json()} for n, r in refs.items()},
+            "references": {n: {"source": r.source, "prompt": r.prompt, "guard": r.guard, "fit": r.fit, "final": r.final.to_json(), "recipe": r.recipe.to_json(), "adjust": r.adjust.to_json()} for n, r in refs.items()},
             "regions": ["global"] + list(REGIONS),
             "global_keys": list(GLOBAL_KEYS),
+            "bounds": {"global": BOUNDS, "local": LOCAL_BOUNDS},
             "local_keys": list(LOCAL_KEYS),
         }
 
@@ -244,7 +254,7 @@ class Handler(BaseHTTPRequestHandler):
         try:
             self._get()
         except Exception as e:  # noqa: BLE001
-            self._json({"error": str(e), "trace": traceback.format_exc()}, 500)
+            self._fail(e)
 
     def do_POST(self):
         if not self._trusted(True):
@@ -253,7 +263,15 @@ class Handler(BaseHTTPRequestHandler):
             n = int(self.headers.get("Content-Length", 0))
             self._post(json.loads(self.rfile.read(n) or b"{}"))
         except Exception as e:  # noqa: BLE001
-            self._json({"error": str(e), "trace": traceback.format_exc()}, 500)
+            self._fail(e)
+
+    def _fail(self, e: Exception):
+        """User errors (bad input, rejected edits) are 4xx with a plain message; tracebacks stay in the server log."""
+        if isinstance(e, (RuntimeError, ValueError, KeyError, FileNotFoundError, json.JSONDecodeError)):
+            msg = str(e.args[0]) if isinstance(e, KeyError) and e.args else str(e)
+            return self._json({"error": msg[:1].upper() + msg[1:]}, 404 if isinstance(e, (KeyError, FileNotFoundError)) else 422)
+        sys.stderr.write(traceback.format_exc())
+        self._json({"error": "Internal error: " + str(e)}, 500)
 
     def _get(self):
         S, u = self.S, urlparse(self.path)
@@ -327,7 +345,7 @@ class Handler(BaseHTTPRequestHandler):
         if path == "/api/preview":
             ref = P.reference(b["photo"])
             base = ref.recipe if ref else Recipe()
-            adj = Recipe.from_json(b.get("adjust", {}))
+            adj = Recipe.from_json(b.get("adjust", {}), clamp=False)
             img, m = S.inputs(b["photo"])
             out = render_recipe(img, m, base.plus(adj).clamped())
             return self._send(_jpeg(out), "image/jpeg")
@@ -338,7 +356,7 @@ class Handler(BaseHTTPRequestHandler):
                     ref.adjust = Recipe()
                     P.save_reference(ref)
                 changes = {}
-                adj = Recipe.from_json(b.get("adjust", {}))
+                adj = Recipe.from_json(b.get("adjust", {}), clamp=False)
                 changes.update(adj.global_)
                 for reg, d in adj.local.items():
                     changes.update({f"{reg}.{k}": v for k, v in d.items()})
@@ -348,11 +366,12 @@ class Handler(BaseHTTPRequestHandler):
             P.remove_reference(b["photo"])
             return self._json({"ok": True})
         if path == "/api/apply":
-            if S.job.get("state") == "running":
-                return self._json({"error": "already running"}, 409)
             out = str(Path(b.get("out") or P.root / "export").expanduser().resolve())
-            S.job = {"state": "running", "kind": "apply", "out": out, "stage": "starting", "i": 0, "n": len(P.album.photos)}
-            threading.Thread(target=_apply_job, args=(S, out, b.get("max_side")), daemon=True).start()
+            with S._job_lock:
+                if S.job.get("state") == "running":
+                    return self._json({"error": "already running"}, 409)
+                S.job = {"state": "running", "kind": "apply", "out": out, "stage": "starting", "i": 0, "n": len(P.album.photos)}
+            threading.Thread(target=_apply_job, args=(S, out, b.get("max_side"), b.get("max_mb"), b.get("format") or "jpg"), daemon=True).start()
             return self._json(S.job)
         self._json({"error": "not found"}, 404)
 
@@ -362,7 +381,7 @@ class Handler(BaseHTTPRequestHandler):
         if path == "/api/start":
             folder = Path(str(b.get("folder", ""))).expanduser().resolve()
             if not folder.is_dir():
-                raise RuntimeError(f"not a folder: {folder}")
+                raise ValueError(f"not a folder: {folder}")
             if b.get("cull"):
                 S.dump, S.scores, S.overrides = str(folder), None, {}
                 S.save_session()
@@ -393,7 +412,7 @@ class Handler(BaseHTTPRequestHandler):
         return None
 
 
-def _apply_job(S: State, out: str, max_side):
+def _apply_job(S: State, out: str, max_side, max_mb=None, fmt="jpg"):
     from .export import export_album, review_page
     from .propagate import make_reference, propagate
 
@@ -405,15 +424,19 @@ def _apply_job(S: State, out: str, max_side):
         R = [make_reference(P.album, r.name, r.final, P.scene_of(r.name)) for r in refs]
 
         def prog(stage):
-            return lambda i, n, name: S.job.update(stage=stage, i=i, n=n, photo=name)
+            def report(i, n, name):
+                S.job = {**S.job, "stage": stage, "i": i, "n": n, "photo": name}
 
-        S.job.update(stage="propagate")
+            return report
+
+        S.job = {**S.job, "stage": "propagate"}
         recipes = propagate(P.album, R, P.scenes, progress=prog("propagate"))
-        export_album(P.album, recipes, out, int(max_side) if max_side else None, progress=prog("export"))
+        report = export_album(P.album, recipes, out, int(max_side) if max_side else None, progress=prog("export"), fmt=fmt,
+                              max_bytes=int(float(max_mb) * 1e6) if max_mb else None)
         review_page(P.album, P.scenes, recipes, [r.name for r in refs], out)
-        S.job.update(state="done", review="/out/index.html")
+        S.job = {**S.job, "state": "done", "review": "/out/index.html", "over": sum(bool(v.get("over_limit")) for v in report.values())}
     except Exception as e:  # noqa: BLE001
-        S.job.update(state="error", error=str(e))
+        S.job = {**S.job, "state": "error", "error": str(e)}
 
 
 def serve(root: str | Path, host: str = "127.0.0.1", port: int = 8642, dump: str | Path | None = None) -> None:

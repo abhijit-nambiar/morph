@@ -77,11 +77,12 @@ def test_output_name():
     assert output_name("a.jpg") == "a.jpg"
     assert output_name("a.png", "tif") == "a.tif"
     assert output_names(["portrait.jpg", "portrait.png"], "jpg") == {"portrait.jpg": "portrait.jpg", "portrait.png": "portrait-png.jpg"}
-    assert output_names(["DSC_1.NEF", "DSC_1.JPG"]) == {"DSC_1.NEF": "DSC_1-nef.jpg", "DSC_1.JPG": "DSC_1.JPG"}
-    assert output_names(["portrait.JPG", "portrait.jpg"]) == {"portrait.JPG": "portrait.JPG", "portrait.jpg": "portrait-2.jpg"}
-    assert output_names(["a.JPG", "a.jpg", "a-2.jpg"]) == {"a.JPG": "a.JPG", "a.jpg": "a-3.jpg", "a-2.jpg": "a-2.jpg"}
+    assert output_names(["DSC_1.NEF", "DSC_1.JPG"], "same") == {"DSC_1.NEF": "DSC_1-nef.jpg", "DSC_1.JPG": "DSC_1.JPG"}
+    assert output_names(["portrait.JPG", "portrait.jpg"], "same") == {"portrait.JPG": "portrait.JPG", "portrait.jpg": "portrait-2.jpg"}
+    assert output_names(["a.JPG", "a.jpg", "a-2.jpg"], "same") == {"a.JPG": "a.JPG", "a.jpg": "a-3.jpg", "a-2.jpg": "a-2.jpg"}
     assert output_names(["a.png", "a.tiff"], "jpg") == {"a.png": "a-png.jpg", "a.tiff": "a-tiff.jpg"}
-    assert output_names(["a.jpg", "b.png"]) == {"a.jpg": "a.jpg", "b.png": "b.png"}
+    assert output_names(["a.jpg", "b.png"], "same") == {"a.jpg": "a.jpg", "b.png": "b.png"}
+    assert output_names(["a.jpg", "b.png"]) == {"a.jpg": "a.jpg", "b.png": "b.jpg"}
 
 
 def test_album_and_export_accept_raw(fake_models, tmp_path):
@@ -98,6 +99,9 @@ def test_album_and_export_accept_raw(fake_models, tmp_path):
     rep = export_album(album, {p.name: Recipe() for p in album.photos}, tmp_path / "out")
     assert sorted(p.name for p in (tmp_path / "out" / "photos").iterdir()) == ["R0.jpg", "R1.jpg"]
     assert all(v["file"].endswith(".jpg") for v in rep.values())
+    assert not any(v["over_limit"] for v in rep.values())
+    tiny = export_album(album, {p.name: Recipe() for p in album.photos}, tmp_path / "tiny", max_bytes=500)
+    assert all(v["over_limit"] and v["bytes"] > 500 for v in tiny.values())  # flagged, never downscaled
 
 
 def test_cull_cache_tracks_the_paired_jpeg(tmp_path, monkeypatch):
@@ -122,3 +126,37 @@ def test_cull_cache_tracks_the_paired_jpeg(tmp_path, monkeypatch):
     assert calls and second.frame_blur_px != first.frame_blur_px
     score_folder(tmp_path, people=False)
     assert len(calls) == 1  # unchanged pair: cached
+
+
+def test_raw_exposure_matches_camera_preview():
+    lin = np.full((64, 96, 3), int(0.05 * 65535), np.uint16)
+    lin[:, :48] = int(0.9 * 65535)  # a bright half: pushes must roll off instead of clipping
+    base = float((imageio._raw_lut()[lin] @ imageio._LUM).mean())
+    for target in (base - 0.08, base + 0.08):
+        out = imageio._match_exposure(lin, target)
+        luma = float((imageio._raw_lut()[out] @ imageio._LUM).mean())
+        assert abs(luma - target) < 0.02
+        assert out.max() < 65535
+    assert imageio._match_exposure(lin, 10.0).max() <= 65535  # unreachable target: clamped to +RAW_MATCH_EV
+
+
+def test_unsupported_raw_falls_back_to_embedded_jpeg(tmp_path, dng, monkeypatch):
+    import rawpy
+
+    def unsupported(*a, **k):
+        raise rawpy.LibRawFileUnsupportedError(b"High Efficiency NEF")
+
+    monkeypatch.setattr(rawpy, "imread", unsupported)
+    preview = np.full((120, 180, 3), 0.4, np.float32)
+    monkeypatch.setattr(imageio, "_embedded_full_jpeg", lambda p: preview)
+    assert imageio.render_raw(dng).shape == (120, 180, 3)
+    assert imageio.render_raw(dng, max_side=90).shape == (60, 90, 3)
+    monkeypatch.setattr(imageio, "_embedded_full_jpeg", lambda p: None)
+    with pytest.raises(rawpy.LibRawFileUnsupportedError):
+        imageio.render_raw(dng)
+
+
+def test_cull_cache_tracks_raw_renderer():
+    from morph import cull
+
+    assert imageio.RAW_RENDER_VERSION in cull.SCORE_VERSION

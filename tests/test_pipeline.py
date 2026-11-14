@@ -108,3 +108,11 @@ def test_add_grain_matches_full_render():
     full = render_recipe(img, None, Recipe({"exposure": 0.3, "grain": 0.6}), seed=7)
     split = add_grain(render_recipe(img, None, Recipe({"exposure": 0.3}), seed=7), 0.6, seed=7)
     assert np.abs(full - split).max() < 1e-5
+
+
+def test_corrupt_file_is_skipped_not_fatal(fake_models, tiny_album, tmp_path):
+    from morph.album import Album
+
+    (tiny_album / "broken.jpg").write_bytes(b"\xff\xd8\xff not really a jpeg")
+    a = Album(tiny_album, tmp_path / "cache").analyze()
+    assert len(a.photos) == 7 and [n for n, _ in a.skipped] == ["broken.jpg"]

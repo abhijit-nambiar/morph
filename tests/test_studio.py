@@ -85,3 +85,5 @@ def test_security(server):
     assert call("/api/state", headers={"Origin": "http://evil.example"})[0] == 403
     assert call("/api/start", {"folder": "/"}, headers={"Content-Type": "text/plain"})[0] == 403
     assert call("/api/generate", {"photo": "x", "prompt": "warm"})[1]["error"]
+    code, body = call("/api/start", {"folder": "/nonexistent-folder"})
+    assert code == 422 and body["error"].startswith("Not a folder") and "trace" not in body
