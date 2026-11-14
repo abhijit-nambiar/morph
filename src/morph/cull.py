@@ -32,11 +32,12 @@ from pathlib import Path
 import cv2
 import numpy as np
 
-from .imageio import is_raw, list_images, load_preview, raw_pairs, read_info
+from .imageio import is_raw, list_images, load_preview, raw_pairs, read_info, render_raw
 
-SCORE_VERSION = "cull-v3"
+SCORE_VERSION = "cull-v4"
 MEASURE_SIDE = 2560  # focus is judged as if viewing the photo at this long side (a large screen / A4 print)
 DETECT_SIDE = 512
+EXPOSURE_SIDE = 1024  # RAW exposure is measured on a fast half-size decode
 MAX_FACES = 6
 MAX_PARSED_FACES = 4  # faces run through the face parser (eyes), largest first
 FACE_PARSE_SIDE = 384  # face parser input size
@@ -326,7 +327,7 @@ class FrameScore:
         return cls(**{k: v for k, v in d.items() if k in names})
 
 
-def _score_pixels(img: np.ndarray, detector) -> dict:
+def _score_pixels(img: np.ndarray, detector, tone: np.ndarray | None = None) -> dict:
     H, W = img.shape[:2]
     gray = _gray(img)
     G = _Grad(gray)
@@ -384,7 +385,11 @@ def _score_pixels(img: np.ndarray, detector) -> dict:
             x0, y0, x1, y1 = (round(v * s) for v in f["box"])
             fm[y0:y1, x0:x1] = 2.0
         wmask = wmask + fm
-    ex = exposure_stats(small, wmask)
+    if tone is not None and (tone.shape[0] > tone.shape[1]) == (H > W):
+        tone = cv2.resize(tone, (small.shape[1], small.shape[0]), interpolation=cv2.INTER_AREA)
+    else:
+        tone = small
+    ex = exposure_stats(tone, wmask)
     judged = [f for f in faces if f["openness"] is not None and (f["box"][2] - f["box"][0]) >= 40]
     return {
         "focus_region": region, "focus_blur_px": focus, "frame_blur_px": frame_blur, "subject_blur_px": subject_blur,
@@ -454,7 +459,9 @@ def score_folder(folder: str | Path, cache: str | Path | None = None, progress=N
     def load(f: Path):
         src = sidecars.get(f.stem, f) if is_raw(f) else f
         info = read_info(f, with_hash=False)
-        return f, src, info, load_preview(src, MEASURE_SIDE)
+        # A RAW's embedded / sidecar JPEG clips highlights the RAW still holds: judge exposure on Morph's own RAW rendering.
+        tone = render_raw(f, EXPOSURE_SIDE) if is_raw(f) else None
+        return f, src, info, load_preview(src, MEASURE_SIDE), tone
 
     out: dict[str, dict] = {}
     n, done = len(files), 0
@@ -471,12 +478,12 @@ def score_folder(folder: str | Path, cache: str | Path | None = None, progress=N
         for f in islice(pending, 2 * workers):
             window.append(pool.submit(load, f))
         while window:
-            f, src, info, img = window.popleft().result()
+            f, src, info, img, tone = window.popleft().result()
             nxt = next(pending, None)
             if nxt is not None:
                 window.append(pool.submit(load, nxt))
-            r = _score_pixels(img, detector)
-            del img
+            r = _score_pixels(img, detector, tone)
+            del img, tone
             small = r.pop("_small")
             sig = key(f)
             prev = cache / "previews" / (hashlib.sha1(sig.encode()).hexdigest()[:16] + ".jpg")

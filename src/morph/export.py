@@ -12,7 +12,7 @@ import numpy as np
 from .album import Album
 from .filters import upsample_mask
 from .guard import edge_f1
-from .imageio import RASTER_SUFFIXES, is_raw, load_rgb, save_image
+from .imageio import WRITABLE_SUFFIXES, is_raw, load_rgb, save_image
 from .recipe import Recipe
 from .render import render_recipe
 
@@ -47,7 +47,7 @@ def output_name(name: str, fmt: str | None = None) -> str:
     p = Path(name)
     if fmt:
         return f"{p.stem}.{fmt.lower().lstrip('.')}"
-    if is_raw(p) or p.suffix.lower() not in RASTER_SUFFIXES:
+    if is_raw(p) or p.suffix.lower() not in WRITABLE_SUFFIXES:
         return f"{p.stem}.jpg"
     return p.name
 

@@ -16,7 +16,9 @@ from pathlib import Path
 import numpy as np
 from PIL import Image, ImageOps
 
-RASTER_SUFFIXES = {".jpg", ".jpeg", ".png", ".tif", ".tiff", ".webp"}
+# Formats exports can keep (with EXIF/ICC); other readable rasters export as JPEG.
+WRITABLE_SUFFIXES = {".jpg", ".jpeg", ".png", ".tif", ".tiff", ".webp"}
+RASTER_SUFFIXES = WRITABLE_SUFFIXES | {".bmp", ".avif", ".heic", ".heif"}
 RAW_SUFFIXES = {
     ".nef", ".nrw",  # Nikon
     ".cr2", ".cr3", ".crw", ".arw", ".srf", ".sr2", ".raf", ".orf", ".rw2", ".pef", ".dng",
@@ -128,6 +130,7 @@ def read_info(path: str | Path, with_hash: bool = True) -> PhotoInfo:
         if with_hash:
             info.sha256 = sha256_file(path)
         return info
+    _register_heif(path)
     with Image.open(path) as im:
         exif = im.getexif()
         size = im.size
@@ -168,7 +171,12 @@ def load_rgb(path: str | Path, max_side: int | None = None) -> np.ndarray:
     """
     if is_raw(path):
         return render_raw(path, max_side)
+    _register_heif(path)
     with Image.open(path) as im:
+        if _high_bit_depth(im):
+            img = _load_high_bit_depth(path, im, max_side)
+            if img is not None:
+                return img
         if max_side:
             im.draft("RGB", (max_side, max_side))
         im = ImageOps.exif_transpose(im).convert("RGB")
@@ -176,6 +184,65 @@ def load_rgb(path: str | Path, max_side: int | None = None) -> np.ndarray:
             scale = max_side / max(im.size)
             im = im.resize((max(1, round(im.width * scale)), max(1, round(im.height * scale))), Image.LANCZOS)
         return np.asarray(im, dtype=np.float32) / 255.0
+
+
+def _register_heif(path: str | Path) -> None:
+    if Path(path).suffix.lower() in (".heic", ".heif"):
+        try:
+            from pillow_heif import register_heif_opener
+        except ImportError as e:
+            raise RuntimeError(f"{Path(path).name}: HEIC/HEIF needs the pillow-heif package (pip install pillow-heif)") from e
+        register_heif_opener()
+
+
+def _high_bit_depth(im: Image.Image) -> bool:
+    """16-bit PNG/TIFF: Pillow would truncate RGB to 8 bits and clip greyscale ``I;16`` to white."""
+    if im.mode in ("I", "I;16", "I;16B", "I;16L", "I;16N", "F"):
+        return True
+    raw = im.tile[0][3] if im.tile else None  # decoder args; a plain tuple before Pillow 11
+    raw = raw[0] if isinstance(raw, tuple) else raw
+    return isinstance(raw, str) and ";16" in raw
+
+
+def _load_high_bit_depth(path: str | Path, im: Image.Image, max_side: int | None) -> np.ndarray | None:
+    """Full-precision decode of 16-bit PNG/TIFF; ``None`` when only an 8-bit decode is possible."""
+    import cv2
+
+    orient = im.getexif().get(_TAG_ORIENTATION, 1)  # read before decoding: Pillow drops TIFF tags on load
+    if im.mode.startswith(("I", "F")):  # greyscale: Pillow hands over the raw values
+        arr = np.asarray(im)
+        if im.format == "TIFF":
+            orient = 1  # Pillow's TIFF reader applies the orientation tag itself
+        scale = 65535.0 if im.mode.startswith("I;16") else None
+    else:  # 16-bit RGB: Pillow truncates to 8 bits, so decode with OpenCV and orient from Pillow's tag below
+        arr = cv2.imread(str(path), cv2.IMREAD_ANYDEPTH | cv2.IMREAD_ANYCOLOR | cv2.IMREAD_IGNORE_ORIENTATION)
+        if arr is None:
+            return None
+        arr = arr[..., ::-1] if arr.ndim == 3 else arr  # BGR -> RGB
+        scale = {np.dtype(np.uint16): 65535.0, np.dtype(np.uint8): 255.0}.get(arr.dtype)
+    img = arr.astype(np.float32) / scale if scale else np.clip(arr.astype(np.float32), 0, None)
+    if img.ndim == 2:
+        img = np.repeat(img[..., None], 3, -1)
+    if scale is None and img.max() > 1.0:  # float / 32-bit integer data: normalise to the image's own range
+        img = img / img.max()
+    img = {2: lambda a: a[:, ::-1], 3: lambda a: a[::-1, ::-1], 4: lambda a: a[::-1], 5: lambda a: np.rot90(a, 1)[::-1],
+           6: lambda a: np.rot90(a, -1), 7: lambda a: np.rot90(a, -1)[::-1], 8: lambda a: np.rot90(a, 1)}.get(orient, lambda a: a)(img)
+    img = np.ascontiguousarray(np.clip(img, 0.0, 1.0), dtype=np.float32)
+    if max_side and max(img.shape[:2]) > max_side:
+        img = resize(img, fit_size(img.shape[1], img.shape[0], max_side))
+    return img
+
+
+def load_rgb_bytes(data: bytes, filename: str = "upload.png") -> np.ndarray:
+    """:func:`load_rgb` for an uploaded file (any supported format, decided by the file name's extension)."""
+    import tempfile
+
+    suffix = Path(filename).suffix.lower()
+    suffix = suffix if suffix in IMAGE_SUFFIXES else ".png"
+    with tempfile.TemporaryDirectory() as d:
+        f = Path(d) / f"upload{suffix}"
+        f.write_bytes(data)
+        return load_rgb(f)
 
 
 def resize(img: np.ndarray, size: tuple[int, int]) -> np.ndarray:
@@ -222,6 +289,8 @@ def save_image(img: np.ndarray, out: str | Path, source: str | Path | None = Non
             kwargs["xmp"] = xmp
     elif suffix in (".tif", ".tiff"):
         kwargs.update(compression="tiff_deflate")
+    elif suffix == ".webp":
+        kwargs.update(quality=quality, method=4)
     try:
         pil.save(out, **kwargs)
     except RuntimeError:  # libtiff (used for compression) cannot write EXIF sub-IFDs: keep the metadata, drop compression
