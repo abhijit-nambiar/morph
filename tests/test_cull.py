@@ -294,3 +294,13 @@ def test_build_album_refuses_to_cull_in_place(dump):
     with pytest.raises(ValueError):
         build_album(decisions, dump, mode="link")
     assert all((dump / n).read_bytes() == b and not (dump / n).is_symlink() for n, b in before.items())
+
+
+def test_build_album_accepts_a_dump_of_links_into_the_album(dump, tmp_path):
+    album, links = tmp_path / "album", tmp_path / "links"
+    build_album(decide(score_folder(dump, people=False)), album, mode="copy")
+    links.mkdir()
+    for f in sorted(album.glob("*.jpg")):
+        (links / ("L_" + f.name)).symlink_to(f)
+    placed = build_album(decide(score_folder(links, people=False)), album, mode="link")
+    assert placed and all(p.name.startswith("L_") or p.exists() for p in placed)
