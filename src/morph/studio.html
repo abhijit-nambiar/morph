@@ -1,0 +1,66 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Morph Studio</title>
+<style>
+*{box-sizing:border-box}body{margin:0;font:13px system-ui,sans-serif;background:#121212;color:#ddd;display:grid;grid-template-columns:300px 1fr 330px;height:100vh}
+aside,main,section{overflow:auto;padding:12px}aside{background:#181818;border-right:1px solid #262626}section{background:#181818;border-left:1px solid #262626}
+h1{font-size:16px;margin:0 0 8px}h2{font-size:12px;text-transform:uppercase;letter-spacing:.06em;color:#999;margin:16px 0 6px}
+.thumbs{display:grid;grid-template-columns:repeat(3,1fr);gap:4px}.thumbs img{width:100%;aspect-ratio:1;object-fit:cover;border-radius:3px;cursor:pointer;border:2px solid transparent}
+.thumbs img.sel{border-color:#4aa3ff}.thumbs .t{position:relative}.badge{position:absolute;top:3px;left:3px;font-size:10px;padding:1px 4px;border-radius:3px;background:#e8b04a;color:#000;font-weight:600}
+.badge.s{background:#4aa3ff}button{background:#2a2a2a;color:#ddd;border:1px solid #3a3a3a;border-radius:5px;padding:6px 10px;cursor:pointer}button:hover{background:#333}
+button.primary{background:#2f6fe0;border-color:#2f6fe0;color:#fff}input,select,textarea{background:#202020;color:#ddd;border:1px solid #3a3a3a;border-radius:5px;padding:6px;width:100%}
+.views{display:grid;grid-template-columns:1fr 1fr;gap:8px}.views figure{margin:0}.views img{width:100%;border-radius:4px;background:#000}figcaption{color:#888;font-size:11px;margin:3px 0}
+.cands{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:8px}.cand{background:#1c1c1c;border-radius:6px;padding:6px;border:1px solid #2a2a2a}.cand img{width:100%;border-radius:4px}
+.v-pass{color:#6c6}.v-repairable{color:#e8b04a}.v-reject{color:#e55}.row{display:flex;gap:6px;align-items:center;margin:4px 0}.row label{flex:0 0 120px;color:#aaa;font-size:12px}.row input[type=range]{flex:1;padding:0}
+.row span{flex:0 0 38px;text-align:right;font-variant-numeric:tabular-nums}.muted{color:#888}.chips span{display:inline-block;background:#262626;border-radius:10px;padding:1px 7px;margin:2px;font-size:11px}
+#job{margin-top:8px}a{color:#4aa3ff}
+</style></head><body>
+<aside><h1>Morph Studio</h1><div class="muted">Gold = reference, blue = suggested reference.</div>
+<h2>Suggested references</h2><div id="sugg"></div><h2>Scenes</h2><div id="scenes"></div></aside>
+<main><div class="row" style="justify-content:space-between"><b id="title">Select a photo</b><span><button onclick="toggleMasks()">Masks</button></span></div>
+<div class="views"><figure><figcaption>Original</figcaption><img id="orig"></figure><figure><figcaption id="editcap">Reference edit (live)</figcaption><img id="edit"></figure></div>
+<h2>Create a reference</h2>
+<div class="row"><textarea id="prompt" rows="2" placeholder="Describe the look, e.g. warm golden hour, soft glowing skin, slightly darker background, richer hair"></textarea></div>
+<div class="row"><select id="gen" style="flex:0 0 220px"><option value="local">local (built-in)</option><option value="openai">openai (OPENAI_API_KEY)</option></select>
+<input id="genurl" placeholder="or https://your-generator endpoint / files:DIR"><button class="primary" onclick="generate()">Generate</button></div>
+<div class="row"><label>…or upload your edit</label><input type="file" id="upload" accept="image/*" onchange="upload(this)"></div>
+<div id="cands" class="cands"></div><div id="msg" class="muted"></div></main>
+<section><h2>Fine-tune reference</h2><div class="row"><label>Region</label><select id="region" onchange="drawSliders()"></select></div>
+<div id="sliders"></div><div class="row"><button onclick="resetAdjust()">Reset region</button><button class="primary" onclick="saveAdjust()">Save tweaks</button><button onclick="removeRef()">Remove</button></div>
+<div id="refinfo" class="muted"></div>
+<h2>Album</h2><div class="row"><label>Preview size</label><select id="maxside"><option value="1600">1600px (fast)</option><option value="">full resolution</option></select></div>
+<button class="primary" onclick="applyAlbum()">Apply look to album</button><div id="job" class="muted"></div></section>
+<script>
+const SL={global:["exposure","contrast","highlights","shadows","whites","blacks","temperature","tint","vibrance","saturation","texture","clarity","dehaze","noise_reduction","sharpen","grain","vignette","curve_shadows","curve_highlights","grade_shadows_x","grade_shadows_y","grade_highlights_x","grade_highlights_y"],
+local:["exposure","contrast","highlights","shadows","whites","blacks","temperature","tint","saturation","hue","texture","clarity","noise_reduction"]};
+let S=null,cur=null,adj={global:{},local:{}},masks=false,timer=null;
+const $=id=>document.getElementById(id), J={'Content-Type':'application/json'},api=(p,b)=>fetch(p,b?{method:'POST',headers:J,body:JSON.stringify(b)}:{}).then(r=>r.json()),
+esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+async function load(){S=await api('/api/state');const reg=$('region').value||'global';$('region').innerHTML=S.regions.map(r=>`<option>${r}</option>`).join('');$('region').value=reg;renderLists();if(!cur&&S.suggestions.length)select(S.suggestions[0].name);}
+function thumb(n){const ref=S.references[n],sg=S.suggestions.findIndex(s=>s.name==n);return `<div class=t><img src="/img/thumb/${encodeURIComponent(n)}" class="${n==cur?'sel':''}" title="${esc(n)}" data-n="${esc(n)}" onclick="select(this.dataset.n)">${ref?'<span class=badge>REF</span>':sg>=0?`<span class="badge s">#${sg+1}</span>`:''}</div>`}
+function renderLists(){$('sugg').innerHTML=S.suggestions.map((s,i)=>`<div style="margin:4px 0;cursor:pointer" data-n="${esc(s.name)}" onclick="select(this.dataset.n)"><b>#${i+1}</b> ${esc(s.name)} <span class=muted>score ${(+s.score).toFixed(2)}</span><br><span class=muted>${esc(s.reasons.join('; '))}</span></div>`).join('');
+$('scenes').innerHTML=S.scenes.map(s=>`<div class=muted>${esc(s.id)} · ${s.photos.length}</div><div class=thumbs>${s.photos.map(thumb).join('')}</div>`).join('');}
+function select(n){cur=n;const r=S.references[n];adj=r?JSON.parse(JSON.stringify(r.adjust)):{global:{},local:{}};adj.global=adj.global||{};adj.local=adj.local||{};
+$('title').textContent=n+' · '+S.photos[n].scene+' · '+S.photos[n].faces+' face(s)';$('orig').src=`/img/${masks?'masks':'orig'}/${encodeURIComponent(n)}`;$('cands').innerHTML='';msg('');refresh();renderLists();drawSliders();info();}
+function info(){const r=S.references[cur];$('refinfo').innerHTML=r?`Source: ${esc(r.source)}<br>${r.fit&&r.fit.de_after!==undefined?`fit ΔE ${r.fit.de_before} → ${r.fit.de_after}<br>`:''}${r.guard?`guard: <span class="v-${esc(r.guard.verdict)}">${esc(r.guard.verdict)}</span> ${esc(r.guard.reasons.join('; '))}`:''}`:'No reference yet for this photo.';}
+function toggleMasks(){masks=!masks;if(cur)$('orig').src=`/img/${masks?'masks':'orig'}/${encodeURIComponent(cur)}`;}
+function drawSliders(){const reg=$('region').value,keys=reg=='global'?SL.global:SL.local,vals=reg=='global'?adj.global:(adj.local[reg]||{});
+$('sliders').innerHTML=keys.map(k=>`<div class=row><label>${k}</label><input type=range min=-1 max=1 step=0.01 value="${vals[k]||0}" oninput="setv('${reg}','${k}',this.value,this)"><span>${(+(vals[k]||0)).toFixed(2)}</span></div>`).join('');}
+function setv(reg,k,v,el){v=+v;el.nextElementSibling.textContent=v.toFixed(2);if(reg=='global')adj.global[k]=v;else{(adj.local[reg]=adj.local[reg]||{})[k]=v;}clearTimeout(timer);timer=setTimeout(refresh,120);}
+async function refresh(){if(!cur)return;const r=await fetch('/api/preview',{method:'POST',headers:J,body:JSON.stringify({photo:cur,adjust:adj})});$('edit').src=URL.createObjectURL(await r.blob());}
+function resetAdjust(){const reg=$('region').value;if(reg=='global')adj.global={};else delete adj.local[reg];drawSliders();refresh();}
+async function saveAdjust(){await api('/api/adjust',{photo:cur,adjust:adj});await load();info();msg('Saved tweaks as part of the reference.');}
+async function removeRef(){await api('/api/remove',{photo:cur});await load();select(cur);}
+function msg(t){$('msg').innerHTML=t}
+async function generate(){const p=$('prompt').value.trim();if(!p)return msg('Type a look first.');const g=$('genurl').value.trim()||$('gen').value;msg('Generating…');
+const r=await api('/api/generate',{photo:cur,prompt:p,generator:g,n:4});if(r.error)return msg('<span class=v-reject>'+esc(r.error)+'</span>');msg('');
+$('cands').innerHTML=r.candidates.map((c,i)=>`<div class=cand><img src="/img/cand/${encodeURIComponent(cur)}/${i}?t=${Date.now()}"><div><b>${esc(c.label)}</b> <span class="v-${esc(c.guard.verdict)}">${esc(c.guard.verdict)}</span></div>
+<div class=muted>edges ${c.guard.edge_f1.toFixed(2)} · structure ${c.guard.structure_ok.toFixed(2)}</div><div class=muted>${esc(c.guard.reasons.join('; '))}</div>
+${c.info.matched?`<div class=chips>${c.info.matched.map(m=>`<span>${esc(m)}</span>`).join('')}${(c.info.unknown||[]).map(m=>`<span style="opacity:.5;text-decoration:line-through">${esc(m)}</span>`).join('')}</div>`:''}
+<button ${c.guard.verdict=='reject'?'disabled':''} onclick="pick(${i})">Use as reference</button></div>`).join('');}
+async function pick(i){msg('Fitting…');const r=await api('/api/pick',{photo:cur,index:i});if(r.error)return msg('<span class=v-reject>'+esc(r.error)+'</span>');await load();select(cur);msg('Reference set from '+esc(r.source));}
+function upload(el){const f=el.files[0];if(!f)return;const rd=new FileReader();rd.onload=async()=>{msg('Checking & fitting your edit…');const r=await api('/api/upload',{photo:cur,data:rd.result,filename:f.name});
+if(r.error)return msg('<span class=v-reject>'+esc(r.error)+'</span>');await load();select(cur);msg(`Reference fitted: ΔE ${r.fit.de_before} → ${r.fit.de_after}`);};rd.readAsDataURL(f);}
+async function applyAlbum(){const r=await api('/api/apply',{max_side:$('maxside').value||null});if(r.error)return $('job').textContent=r.error;poll();}
+async function poll(){const s=await api('/api/state');const j=s.job;$('job').innerHTML=j.state=='running'?`${esc(j.stage)} ${j.i}/${j.n} ${esc(j.photo||'')}`:j.state=='done'?`Done. <a href="${j.review}" target=_blank>Open review</a>`:j.state=='error'?`<span class=v-reject>${esc(j.error)}</span>`:'';if(j.state=='running')setTimeout(poll,1500);}
+load();
+</script></body></html>
