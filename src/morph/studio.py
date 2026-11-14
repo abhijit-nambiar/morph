@@ -47,6 +47,7 @@ class State:
         self.root.mkdir(parents=True, exist_ok=True)
         self.project: Project | None = None
         self.lock = threading.Lock()
+        self._job_lock = threading.Lock()
         self.job: dict = {"state": "idle"}
         self._suggest = None
         self._cache: dict[str, tuple[np.ndarray, dict]] = {}
@@ -71,19 +72,21 @@ class State:
 
     def run(self, kind: str, fn, n: int = 0, **extra) -> dict:
         """Run fn(progress) in the background as the single Studio job."""
-        if self.job.get("state") == "running":
-            raise RuntimeError("another job is still running")
-        self.job = {"state": "running", "kind": kind, "stage": kind, "i": 0, "n": n, **extra}
+        with self._job_lock:
+            if self.job.get("state") == "running":
+                raise RuntimeError("another job is still running")
+            self.job = {"state": "running", "kind": kind, "stage": kind, "i": 0, "n": n, **extra}
 
+        # The job dict is replaced, never mutated, so HTTP threads can serialize it while workers report progress.
         def progress(i, n, name=""):
-            self.job.update(i=i, n=n, photo=Path(str(name)).name)
+            self.job = {**self.job, "i": i, "n": n, "photo": Path(str(name)).name}
 
         def target():
             try:
                 fn(progress)
-                self.job.update(state="done")
+                self.job = {**self.job, "state": "done"}
             except Exception as e:  # noqa: BLE001
-                self.job.update(state="error", error=str(e))
+                self.job = {**self.job, "state": "error", "error": str(e)}
 
         threading.Thread(target=target, daemon=True).start()
         return self.job
@@ -181,6 +184,10 @@ class State:
             rm = self.project.album.masks(name)
             size = (round(img.shape[1] * s), round(img.shape[0] * s))
             self._cache[name] = (cv2.resize(img, size, interpolation=cv2.INTER_AREA), rm.resized(size).masks)
+            while len(self._cache) > 48:  # ~28 MB per photo: keep the most recently used
+                self._cache.pop(next(iter(self._cache)))
+        else:
+            self._cache[name] = self._cache.pop(name)
         return self._cache[name]
 
     def suggestions(self):
@@ -357,10 +364,11 @@ class Handler(BaseHTTPRequestHandler):
             P.remove_reference(b["photo"])
             return self._json({"ok": True})
         if path == "/api/apply":
-            if S.job.get("state") == "running":
-                return self._json({"error": "already running"}, 409)
             out = str(Path(b.get("out") or P.root / "export").expanduser().resolve())
-            S.job = {"state": "running", "kind": "apply", "out": out, "stage": "starting", "i": 0, "n": len(P.album.photos)}
+            with S._job_lock:
+                if S.job.get("state") == "running":
+                    return self._json({"error": "already running"}, 409)
+                S.job = {"state": "running", "kind": "apply", "out": out, "stage": "starting", "i": 0, "n": len(P.album.photos)}
             threading.Thread(target=_apply_job, args=(S, out, b.get("max_side")), daemon=True).start()
             return self._json(S.job)
         self._json({"error": "not found"}, 404)
@@ -414,15 +422,18 @@ def _apply_job(S: State, out: str, max_side):
         R = [make_reference(P.album, r.name, r.final, P.scene_of(r.name)) for r in refs]
 
         def prog(stage):
-            return lambda i, n, name: S.job.update(stage=stage, i=i, n=n, photo=name)
+            def report(i, n, name):
+                S.job = {**S.job, "stage": stage, "i": i, "n": n, "photo": name}
 
-        S.job.update(stage="propagate")
+            return report
+
+        S.job = {**S.job, "stage": "propagate"}
         recipes = propagate(P.album, R, P.scenes, progress=prog("propagate"))
         export_album(P.album, recipes, out, int(max_side) if max_side else None, progress=prog("export"))
         review_page(P.album, P.scenes, recipes, [r.name for r in refs], out)
-        S.job.update(state="done", review="/out/index.html")
+        S.job = {**S.job, "state": "done", "review": "/out/index.html"}
     except Exception as e:  # noqa: BLE001
-        S.job.update(state="error", error=str(e))
+        S.job = {**S.job, "state": "error", "error": str(e)}
 
 
 def serve(root: str | Path, host: str = "127.0.0.1", port: int = 8642, dump: str | Path | None = None) -> None:

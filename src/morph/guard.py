@@ -135,7 +135,10 @@ def check(
         elif v < T["mask_iou_pass"] * (0.9 if r != "subject" else 1.0):
             worse("repairable"); reasons.append(f"{r} mask IoU {v:.2f}")
     if faces is not None and faces[0] != faces[1]:
-        worse("reject"); reasons.append(f"face count changed {faces[0]} -> {faces[1]}")
+        # Re-toning makes small or background faces flicker in and out of detection; a lost face only means
+        # hallucination when the pixel-level structure checks also failed.
+        geometry_ok = ef >= T["edge_f1_pass"] and sv >= T["structure_pass"]
+        worse("repairable" if geometry_ok else "reject"); reasons.append(f"face count changed {faces[0]} -> {faces[1]}")
     if verdict == "pass":
         conf = np.maximum(conf, valid * 0.5)  # trust everything a little when nothing is wrong
     rep = GuardReport(verdict, round(ef, 4), round(sv, 4), al.method, ious, faces, reasons)

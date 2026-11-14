@@ -177,8 +177,14 @@ def cmd_edit(a):
         edits = {f.stem: f for f in list_images(a.edit_dir)}
         for ph in p.album.photos:
             if ph.stem in edits:
-                p.reference_from_edit(ph.name, edits[ph.stem])
+                try:
+                    p.reference_from_edit(ph.name, edits[ph.stem])
+                except ValueError as e:  # one rejected edit should not sink the whole album
+                    print(f"skipping edit of {ph.name}: {e}", file=sys.stderr)
+                    continue
                 print(f"reference: {ph.name}")
+        if not p.references():
+            raise SystemExit("no usable reference edits")
     else:
         sugg = p.suggest(a.references or None)
         for s in sugg[: a.references or len(sugg)]:

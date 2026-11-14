@@ -290,7 +290,7 @@ def save_image(img: np.ndarray, out: str | Path, source: str | Path | None = Non
             xmp = src.info.get("xmp")
     suffix = out.suffix.lower()
     if suffix in (".jpg", ".jpeg"):
-        kwargs.update(quality=quality, subsampling=0, optimize=True)
+        kwargs.update(quality=quality, subsampling=0, optimize=True)  # dropped below if libjpeg overflows
         if xmp:
             kwargs["xmp"] = xmp
     elif suffix in (".tif", ".tiff"):
@@ -298,7 +298,12 @@ def save_image(img: np.ndarray, out: str | Path, source: str | Path | None = Non
     elif suffix == ".webp":
         kwargs.update(quality=quality, method=4)
     try:
-        pil.save(out, **kwargs)
+        try:
+            pil.save(out, **kwargs)
+        except OSError:  # libjpeg's optimize pass can overflow on high-entropy or CMYK-derived images
+            if not kwargs.pop("optimize", False):
+                raise
+            pil.save(out, **kwargs)
     except RuntimeError:  # libtiff (used for compression) cannot write EXIF sub-IFDs: keep the metadata, drop compression
         kwargs.pop("compression", None)
         pil.save(out, **kwargs)

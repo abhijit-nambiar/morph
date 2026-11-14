@@ -5,7 +5,7 @@ from PIL import Image
 
 from dngwriter import write_dng
 from morph.export import output_name
-from morph.imageio import list_images, load_rgb, load_rgb_bytes, read_info
+from morph.imageio import list_images, load_rgb, load_rgb_bytes, read_info, save_image
 
 
 def gradient(h=60, w=90):
@@ -141,3 +141,9 @@ def test_save_keeps_metadata_without_copying_tiff_layout(tmp_path, src_name, dst
     back = load_rgb(out)
     assert back.shape == img.shape
     assert np.abs(back - img).max() < 0.03
+
+
+def test_jpeg_save_survives_high_entropy(tmp_path):
+    noise = np.random.default_rng(0).random((3000, 4000, 3)).astype(np.float32)
+    out = save_image(noise, tmp_path / "noise.jpg")
+    assert Image.open(out).size == (4000, 3000)
