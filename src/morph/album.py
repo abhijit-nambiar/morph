@@ -7,7 +7,7 @@ from __future__ import annotations
 
 import json
 import logging
-from dataclasses import asdict, dataclass, field
+from dataclasses import asdict, dataclass, field, replace
 from pathlib import Path
 
 import cv2
@@ -157,7 +157,7 @@ class Album:
     # -- analysis ------------------------------------------------------------------------------
     def analyze(self, segmenter: Segmenter | None = None, embedder: Embedder | None = None, progress=None) -> "Album":
         self.cache.mkdir(parents=True, exist_ok=True)
-        prior = self._load_index()
+        prior = {t[0].sha256: t for t in self._load_index()}
         segmenter = segmenter or Segmenter()
         embedder = embedder or Embedder()
         files = list_images(self.folder)
@@ -168,8 +168,7 @@ class Album:
             info = read_info(f)
             old = prior.get(info.sha256)
             if old is not None and self.mask_path(old[0]).exists() and self.work_path(old[0]).exists():
-                rec, g, b = old
-                rec.name, rec.path = f.name, str(f)
+                rec, g, b = replace(old[0], name=f.name, path=str(f.resolve())), old[1], old[2]
             else:
                 rec, g, b = self._analyze_one(info, segmenter, embedder)
             recs.append(rec)
@@ -195,7 +194,7 @@ class Album:
         L = srgb_to_lab(img)[..., 0]
         rec = PhotoRecord(
             name=info.name,
-            path=str(info.path),
+            path=str(Path(info.path).resolve()),
             width=info.width,
             height=info.height,
             sha256=info.sha256,
@@ -223,20 +222,19 @@ class Album:
         self._index_path().write_text(json.dumps(data, indent=1))
         np.savez(self.cache / "embeddings.npz", glob=self.emb_global, bg=self.emb_background, sha=np.array([p.sha256 for p in self.photos]))
 
-    def _load_index(self) -> dict[str, tuple[PhotoRecord, np.ndarray, np.ndarray]]:
+    def _load_index(self) -> list[tuple[PhotoRecord, np.ndarray, np.ndarray]]:
         try:
             data = json.loads(self._index_path().read_text())
             if data.get("version") != ANALYSIS_VERSION:
-                return {}
+                return []
             emb = np.load(self.cache / "embeddings.npz")
-            out = {}
+            out = []
             for i, p in enumerate(data["photos"]):
                 p["work_size"] = tuple(p["work_size"])
-                rec = PhotoRecord(**p)
-                out[rec.sha256] = (rec, emb["glob"][i], emb["bg"][i])
+                out.append((PhotoRecord(**p), emb["glob"][i], emb["bg"][i]))
             return out
         except (OSError, KeyError, ValueError):
-            return {}
+            return []
 
     @classmethod
     def load(cls, folder: str | Path, cache: str | Path | None = None) -> "Album":
@@ -244,7 +242,7 @@ class Album:
         prior = a._load_index()
         if not prior:
             raise FileNotFoundError(f"album not analysed yet: run `morph analyze {folder}`")
-        items = sorted(prior.values(), key=lambda t: (t[0].captured or "", t[0].name))
+        items = sorted(prior, key=lambda t: (t[0].captured or "", t[0].name))
         a.photos = [t[0] for t in items]
         a.emb_global = np.stack([t[1] for t in items])
         a.emb_background = np.stack([t[2] for t in items])
