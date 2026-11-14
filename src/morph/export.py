@@ -52,6 +52,26 @@ def output_name(name: str, fmt: str | None = None) -> str:
     return p.name
 
 
+def output_names(names: list[str], fmt: str | None = None) -> dict[str, str]:
+    """``output_name`` for a whole album, disambiguating sources that would land on the same file
+    (``a.jpg`` + ``a.png`` with ``fmt="jpg"``, or a RAW+JPEG pair): the one already named like its
+    output keeps it, the others get their source format in the name (``a-png.jpg``)."""
+    out = {n: output_name(n, fmt) for n in names}
+    groups: dict[str, list[str]] = {}
+    for n, o in out.items():
+        groups.setdefault(o.lower(), []).append(n)  # case-insensitive: macOS / Windows file systems
+    for members in groups.values():
+        if len(members) < 2:
+            continue
+        for n in members:
+            if out[n] != n:
+                o = Path(out[n])
+                out[n] = f"{o.stem}-{Path(n).suffix.lstrip('.').lower()}{o.suffix}"
+    if len({o.lower() for o in out.values()}) != len(out):
+        raise ValueError("export file names collide: " + ", ".join(sorted(names)))
+    return out
+
+
 def export_album(album: Album, recipes: dict[str, Recipe], out_dir: str | Path, max_side: int | None = None,
                  quality: int = 95, progress=None, fmt: str | None = None) -> dict:
     out_dir = Path(out_dir)
@@ -59,19 +79,20 @@ def export_album(album: Album, recipes: dict[str, Recipe], out_dir: str | Path, 
     (out_dir / "recipes").mkdir(parents=True, exist_ok=True)
     (out_dir / "preview").mkdir(parents=True, exist_ok=True)
     report = {}
+    files = output_names([p.name for p in album.photos], fmt)
     for i, p in enumerate(album.photos):
         r = recipes[p.name]
         img, out = render_photo(album, p.name, r, max_side)
         v = verify(img, out)
         if not v["ok"]:
             raise RuntimeError(f"{p.name}: export failed the structure check {v}")
-        save_image(out, out_dir / "photos" / output_name(p.name, fmt), source=p.path, quality=quality)
+        save_image(out, out_dir / "photos" / files[p.name], source=p.path, quality=quality)
         r.save(out_dir / "recipes" / f"{Path(p.name).stem}.json")
         for tag, a in (("before", img), ("after", out)):
             s = 640 / max(a.shape[:2])
             th = cv2.resize(a, None, fx=s, fy=s, interpolation=cv2.INTER_AREA)
             cv2.imwrite(str(out_dir / "preview" / f"{Path(p.name).stem}.{tag}.jpg"), cv2.cvtColor((th * 255).astype(np.uint8), cv2.COLOR_RGB2BGR), [cv2.IMWRITE_JPEG_QUALITY, 85])
-        report[p.name] = {**v, "size": [out.shape[1], out.shape[0]], "file": output_name(p.name, fmt)}
+        report[p.name] = {**v, "size": [out.shape[1], out.shape[0]], "file": files[p.name]}
         if progress:
             progress(i + 1, len(album.photos), p.name)
     (out_dir / "verification.json").write_text(json.dumps(report, indent=1))

@@ -1,4 +1,5 @@
 import json
+from pathlib import Path
 
 import cv2
 import numpy as np
@@ -131,7 +132,9 @@ def test_strictness_is_monotone(dump):
 def test_eye_openness():
     assert cull.eye_openness({"box": [0, 0, 100, 100], "eyes": [{"aspect": 0.4}]}) == 1
     assert cull.eye_openness({"box": [0, 0, 100, 100], "eyes": [{"aspect": 0.08}, {"aspect": 0.09}]}) == 0
-    assert cull.eye_openness({"box": [0, 0, 100, 100], "eyes": [], "brows": 2}) < 0.25  # lids shut
+    assert cull.eye_openness({"box": [0, 0, 400, 400], "eyes": [], "brows": 2}) < 0.25  # lids shut
+    assert cull.eye_openness({"box": [0, 0, 200, 200], "eyes": [], "brows": 2}) is None  # too small to infer a blink
+    assert cull.eye_openness({"box": [0, 0, 50, 50], "eyes": [{"aspect": 0.08}]}) is None  # tiny background face
     assert cull.eye_openness({"box": [0, 0, 100, 100], "eyes": [], "brows": 0}) is None  # back of head / profile
 
 
@@ -212,3 +215,74 @@ def test_overrides_schema_and_scores(dump):
         if r["type"] != "bool":
             assert r["min"] <= r["default"] <= r["max"]
     json.dumps(sch)
+
+
+def test_decode_ahead_is_bounded(tmp_path, monkeypatch):
+    import threading
+    for i in range(24):
+        save(texture(i, 120, 160), tmp_path / f"{i:03d}.jpg", i * 10)
+    live, peak, lock = [0], [0], threading.Lock()
+    real_load, real_score = cull.load_preview, cull._score_pixels
+
+    def load(*a, **k):
+        with lock:
+            live[0] += 1
+            peak[0] = max(peak[0], live[0])
+        return real_load(*a, **k)
+
+    def score(*a, **k):
+        with lock:
+            live[0] -= 1
+        return real_score(*a, **k)
+
+    monkeypatch.setattr(cull, "load_preview", load)
+    monkeypatch.setattr(cull, "_score_pixels", score)
+    assert len(score_folder(tmp_path, people=False, workers=2)) == 24
+    assert peak[0] <= 2 * 2 + 1
+
+
+def test_zero_thresholds_do_not_crash(dump):
+    assert cull._ramp(0.0, 0.0, 0.0) == 1 and cull._ramp(0.1, 0.0, 0.0) == 0
+    scores = score_folder(dump, people=False)
+    lo = {r["key"]: r["min"] for r in CullSettings.schema() if r["type"] != "bool"}
+    for d in decide(scores, CullSettings(**lo)):
+        assert 0 <= d.quality <= 1 and 0 <= d.exposure <= 1
+
+
+def test_cache_follows_a_moved_dump(dump, tmp_path, monkeypatch):
+    import shutil
+    first = {s.name: s for s in score_folder(dump, people=False)}
+    moved = shutil.move(str(dump), str(tmp_path / "moved"))
+    monkeypatch.setattr(cull, "_score_pixels", lambda *a, **k: pytest.fail("cache miss after move"))
+    for s in score_folder(moved, people=False):
+        assert s.path == str((Path(moved) / s.name).resolve()) and Path(s.path).exists()
+        assert Path(s.scored_from).exists() and Path(s.preview).exists()
+        assert s.preview.startswith(str(Path(moved).resolve())) and s.focus_blur_px == first[s.name].focus_blur_px
+
+
+def test_build_album_switches_link_and_copy(dump, tmp_path):
+    decisions = decide(score_folder(dump, people=False))
+    album = tmp_path / "album"
+    linked = build_album(decisions, album, mode="link")
+    assert linked and all(p.is_symlink() for p in linked)
+    copied = build_album(decisions, album, mode="copy")
+    assert [p.name for p in copied] == [p.name for p in linked]
+    assert all(p.is_file() and not p.is_symlink() for p in copied)
+    mtimes = {p.name: p.stat().st_mtime_ns for p in copied}
+    again = build_album(decisions, album, mode="copy")  # unchanged copies are left alone
+    assert {p.name: p.stat().st_mtime_ns for p in again} == mtimes
+    assert all(p.is_symlink() for p in build_album(decisions, album, mode="link"))
+
+
+def test_failed_frame_does_not_split_a_burst():
+    rng = np.random.default_rng(0)
+    a = rng.normal(size=32 * 24)
+    a /= np.linalg.norm(a)
+    other = rng.normal(size=32 * 24)
+    other /= np.linalg.norm(other)
+    col = [0.4] * 36
+    frames = [_fake(f"{i}.jpg", 0, 0, descriptor=list(v) + c, captured=f"2026-01-01T10:00:0{i}")
+              for i, (v, c) in enumerate([(a, col), (a, [0.02] * 36), (a * 0.99 + other * 0.05, col), (other, col)])]
+    cull.group_bursts(frames, CullSettings())
+    ids = [f.burst_id for f in frames]
+    assert ids[0] == ids[2] != ids[1] and ids[3] not in (ids[0], ids[1])
