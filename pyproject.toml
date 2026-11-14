@@ -20,6 +20,7 @@ dependencies = [
   "safetensors>=0.4",
   "rawpy>=0.19",
   "pillow-heif>=0.18",
+  "tifffile>=2023.1",
 ]
 
 [project.optional-dependencies]

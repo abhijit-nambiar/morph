@@ -157,3 +157,32 @@ def test_jpeg_max_bytes_keeps_resolution(tmp_path):
     assert capped.stat().st_size <= full // 3 and Image.open(capped).size == (1800, 1200)
     tiny = save_image(img, tmp_path / "tiny.jpg", max_bytes=1000)  # unreachable: smallest file, same size
     assert Image.open(tiny).size == (1800, 1200) and tiny.stat().st_size < capped.stat().st_size
+
+
+@pytest.mark.parametrize("name", ["rgb16.png", "rgb16.tif"])
+def test_16_bit_source_exports_16_bit(tmp_path, name):
+    g = gradient()
+    src = tmp_path / name
+    cv2.imwrite(str(src), (g[..., ::-1] * 65535).astype(np.uint16))
+    out = save_image(load_rgb(src), tmp_path / "out" / name, source=src)
+    back = cv2.imread(str(out), cv2.IMREAD_UNCHANGED)
+    assert back.dtype == np.uint16 and back.shape == (60, 90, 3)
+    assert np.abs(load_rgb(out) - g).max() < 1e-4
+
+
+def test_raw_to_tiff_is_16_bit_with_profile(tmp_path):
+    lin = np.tile(np.linspace(0.02, 0.9, 64, dtype=np.float32)[None, :, None], (48, 1, 3))
+    raw = write_dng(tmp_path / "P.NEF", lin)
+    img = load_rgb(raw)
+    tif = save_image(img, tmp_path / "P.tif", source=raw)
+    png = save_image(img, tmp_path / "P.png", source=raw)
+    for f in (tif, png):
+        assert cv2.imread(str(f), cv2.IMREAD_UNCHANGED).dtype == np.uint16
+        with Image.open(f) as im:
+            assert im.info.get("icc_profile")
+        assert np.abs(load_rgb(f) - img).max() < 1e-4
+    with Image.open(tif) as im:
+        assert im.getexif().get(306) == "2024:05:01 10:00:00"
+    with Image.open(png) as im:
+        assert im.getexif().get_ifd(0x8769).get(0x9003) == "2024:05:01 10:00:00"
+    assert Image.open(save_image(img, tmp_path / "P.jpg", source=raw)).mode == "RGB"

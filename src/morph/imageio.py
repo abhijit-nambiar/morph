@@ -294,9 +294,62 @@ def _quality_for_size(pil: Image.Image, fmt: str, kwargs: dict, quality: int, ma
     return best
 
 
+_TIFF_ASCII_TAGS = (270, 271, 272, 305, 306, 315, 33432)  # description, make, model, software, datetime, artist, copyright
+
+
+def _png_chunk(kind: bytes, data: bytes) -> bytes:
+    import struct
+    import zlib
+
+    return struct.pack(">I", len(data)) + kind + data + struct.pack(">I", zlib.crc32(kind + data) & 0xFFFFFFFF)
+
+
+def _save_16bit(img: np.ndarray, out: Path, icc: bytes | None, exif: Image.Exif | None, xmp) -> Path:
+    """16-bit RGB PNG/TIFF (Pillow can only write 8-bit RGB), keeping ICC, XMP and EXIF (TIFF: the baseline tags)."""
+    arr = np.rint(np.clip(img, 0.0, 1.0) * 65535.0).astype(np.uint16)
+    xmp = xmp.encode() if isinstance(xmp, str) else xmp
+    if out.suffix.lower() == ".png":
+        import zlib
+
+        import cv2
+
+        ok, buf = cv2.imencode(".png", np.ascontiguousarray(arr[..., ::-1]))
+        if not ok:
+            raise OSError(f"could not encode {out.name}")
+        data = buf.tobytes()
+        extra = b""
+        if icc:
+            extra += _png_chunk(b"iCCP", b"ICC Profile\0\0" + zlib.compress(icc))
+        if exif:
+            raw = exif.tobytes()
+            extra += _png_chunk(b"eXIf", raw[6:] if raw.startswith(b"Exif\0\0") else raw)
+        if xmp:
+            extra += _png_chunk(b"iTXt", b"XML:com.adobe.xmp\0\0\0\0\0" + xmp)
+        ihdr_end = 8 + 4 + 4 + 13 + 4
+        out.write_bytes(data[:ihdr_end] + extra + data[ihdr_end:])
+        return out
+    import tifffile
+
+    tags = []
+    if icc:
+        tags.append((34675, "B", len(icc), icc, True))
+    if xmp:
+        tags.append((700, "B", len(xmp), xmp, True))
+    base = {t: exif.get(t) for t in _TIFF_ASCII_TAGS} if exif else {}
+    if exif and not base.get(306):
+        base[306] = exif.get_ifd(_EXIF_IFD).get(_TAG_DATETIME_ORIGINAL)
+    for t, v in base.items():
+        if isinstance(v, str) and v.strip("\0 ") and t != 305:
+            tags.append((t, "s", 0, v.strip("\0 "), True))
+    tifffile.imwrite(out, arr, photometric="rgb", compression="zlib", extratags=tags, metadata=None, software="Morph")
+    return out
+
+
 def save_image(img: np.ndarray, out: str | Path, source: str | Path | None = None, quality: int = 95,
                max_bytes: int | None = None) -> Path:
     """Save float RGB [0,1] keeping the source's EXIF (orientation reset) and ICC profile.
+
+    PNG/TIFF from a RAW or 16-bit source are written 16-bit; everything else (and JPEG always) is 8-bit.
 
     ``max_bytes`` (JPEG/WebP): pick the highest quality that keeps the file under that size.
     """
@@ -306,13 +359,18 @@ def save_image(img: np.ndarray, out: str | Path, source: str | Path | None = Non
     pil = Image.fromarray(arr, "RGB")
     kwargs: dict = {}
     xmp = None
+    exif_obj = None
+    deep = False  # source carries more than 8 bits per channel
     if source is not None and is_raw(source):
-        kwargs["exif"] = raw_exif(source).tobytes()
+        exif_obj = raw_exif(source)
+        kwargs["exif"] = exif_obj.tobytes()
         kwargs["icc_profile"] = srgb_icc()
+        deep = True
     elif source is not None:
         with Image.open(source) as src:
+            deep = _high_bit_depth(src)
             icc = src.info.get("icc_profile")
-            exif = src.getexif()
+            exif = exif_obj = src.getexif()
             for tag in _TIFF_LAYOUT_TAGS & set(exif):
                 del exif[tag]
             if exif:
@@ -322,6 +380,8 @@ def save_image(img: np.ndarray, out: str | Path, source: str | Path | None = Non
                 kwargs["icc_profile"] = icc
             xmp = src.info.get("xmp")
     suffix = out.suffix.lower()
+    if deep and suffix in (".tif", ".tiff", ".png"):
+        return _save_16bit(img, out, kwargs.get("icc_profile"), exif_obj if kwargs.get("exif") else None, xmp)
     if suffix in (".jpg", ".jpeg"):
         kwargs.update(quality=quality, subsampling=0, optimize=True)  # dropped below if libjpeg overflows
         if xmp:
