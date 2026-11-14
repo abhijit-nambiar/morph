@@ -101,6 +101,9 @@ def cmd_apply(a):
     page = review_page(p.album, p.scenes, recipes, [r.name for r in refs], a.out)
     bad = [k for k, v in report.items() if not v["ok"]]
     print(f"exported {len(report)} photos to {a.out}/photos (structure check failures: {len(bad)}); review: {page}")
+    over = [k for k, v in report.items() if v.get("over_limit")]
+    if over:
+        print(f"warning: {len(over)} photos are over --max-mb even at the lowest quality (resolution is never reduced): {', '.join(over[:5])}")
 
 
 def _cull_settings(a):

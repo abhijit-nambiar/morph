@@ -106,13 +106,14 @@ def export_album(album: Album, recipes: dict[str, Recipe], out_dir: str | Path, 
         if not v["ok"]:
             raise RuntimeError(f"{p.name}: export failed the structure check {v}")
         out = add_grain(out, r.g("grain"), int(album.get(p.name).sha256[:8], 16) % (2**31))
-        save_image(out, out_dir / "photos" / files[p.name], source=p.path, quality=quality, max_bytes=max_bytes)
+        path = save_image(out, out_dir / "photos" / files[p.name], source=p.path, quality=quality, max_bytes=max_bytes)
         r.save(out_dir / "recipes" / f"{Path(p.name).stem}.json")
         for tag, a in (("before", img), ("after", out)):
             s = 640 / max(a.shape[:2])
             th = cv2.resize(a, None, fx=s, fy=s, interpolation=cv2.INTER_AREA)
             cv2.imwrite(str(out_dir / "preview" / f"{Path(p.name).stem}.{tag}.jpg"), cv2.cvtColor((th * 255).astype(np.uint8), cv2.COLOR_RGB2BGR), [cv2.IMWRITE_JPEG_QUALITY, 85])
-        report[p.name] = {**v, "size": [out.shape[1], out.shape[0]], "file": files[p.name]}
+        report[p.name] = {**v, "size": [out.shape[1], out.shape[0]], "file": files[p.name], "bytes": path.stat().st_size,
+                          "over_limit": bool(max_bytes and path.suffix.lower() in (".jpg", ".jpeg", ".webp") and path.stat().st_size > max_bytes)}
         if progress:
             progress(i + 1, len(album.photos), p.name)
     (out_dir / "verification.json").write_text(json.dumps(report, indent=1))

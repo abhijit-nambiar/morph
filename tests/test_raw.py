@@ -99,6 +99,9 @@ def test_album_and_export_accept_raw(fake_models, tmp_path):
     rep = export_album(album, {p.name: Recipe() for p in album.photos}, tmp_path / "out")
     assert sorted(p.name for p in (tmp_path / "out" / "photos").iterdir()) == ["R0.jpg", "R1.jpg"]
     assert all(v["file"].endswith(".jpg") for v in rep.values())
+    assert not any(v["over_limit"] for v in rep.values())
+    tiny = export_album(album, {p.name: Recipe() for p in album.photos}, tmp_path / "tiny", max_bytes=500)
+    assert all(v["over_limit"] and v["bytes"] > 500 for v in tiny.values())  # flagged, never downscaled
 
 
 def test_cull_cache_tracks_the_paired_jpeg(tmp_path, monkeypatch):

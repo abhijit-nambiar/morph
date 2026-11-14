@@ -431,10 +431,10 @@ def _apply_job(S: State, out: str, max_side, max_mb=None, fmt="jpg"):
 
         S.job = {**S.job, "stage": "propagate"}
         recipes = propagate(P.album, R, P.scenes, progress=prog("propagate"))
-        export_album(P.album, recipes, out, int(max_side) if max_side else None, progress=prog("export"), fmt=fmt,
-                     max_bytes=int(float(max_mb) * 1e6) if max_mb else None)
+        report = export_album(P.album, recipes, out, int(max_side) if max_side else None, progress=prog("export"), fmt=fmt,
+                              max_bytes=int(float(max_mb) * 1e6) if max_mb else None)
         review_page(P.album, P.scenes, recipes, [r.name for r in refs], out)
-        S.job = {**S.job, "state": "done", "review": "/out/index.html"}
+        S.job = {**S.job, "state": "done", "review": "/out/index.html", "over": sum(bool(v.get("over_limit")) for v in report.values())}
     except Exception as e:  # noqa: BLE001
         S.job = {**S.job, "state": "error", "error": str(e)}
 
