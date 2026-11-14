@@ -301,7 +301,7 @@ $("upload").onchange=e=>{const f=e.target.files[0];if(!f||!cur)return;const rd=n
 function renderApply(){if(!S||!S.scenes)return;const refs=Object.entries(S.references);
  $("applyhint").textContent=refs.length?`${refs.length} reference${refs.length>1?"s":""} → ${Object.keys(S.photos).length} photos in ${S.scenes.length} scenes`:"";
  $("refcards").innerHTML=refs.length?refs.map(([n,r])=>`<div class="refcard"><img src="/img/ref/${enc(n)}?t=${Date.now()}"><div class="body"><div class="row sp"><b>${esc(n)}</b><span class="faint">${esc(S.photos[n].scene)}</span></div><div class="faint">${esc(r.source)}</div></div></div>`).join(""):'<div class="empty">No references yet. Create at least one in step 2.</div>';
- $("applybtn").disabled=!refs.length||S.job.state=="running";if(!$("outdir").value&&S.export_default)$("outdir").value=S.export_default}
+ $("applybtn").disabled=!refs.length||S.job.state=="running";if(!$("outdir").value&&S.export_default)$("outdir").value=S.export_default;if(S.job)job(S.job)}
 $("applybtn").onclick=async()=>{const r=await api("/api/apply",{max_side:$("maxside").value||null,out:$("outdir").value.trim()||null});if(r.error)return toast(r.error,"bad");$("reviewwrap").innerHTML="";job(r)};
 function job(j){if(!j)return;const pct=j.n?Math.round(100*j.i/j.n):0,pill=$("jobpill"),run=j.state=="running";
  const label={propagate:"Matching looks",export:"Exporting",analyse:"Analysing",score:"Scoring frames",starting:"Starting"}[j.stage]||esc(j.stage||"");
