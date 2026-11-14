@@ -294,6 +294,7 @@ def _quality_for_size(pil: Image.Image, fmt: str, kwargs: dict, quality: int, ma
     return best
 
 
+_IFD_POINTERS = {0x8769, 0x8825, 0xA005}  # EXIF, GPS, Interoperability
 _TIFF_ASCII_TAGS = (270, 271, 272, 305, 306, 315, 33432)  # description, make, model, software, datetime, artist, copyright
 
 
@@ -369,6 +370,8 @@ def _append_sub_ifds(path: Path, subs: dict[int, dict]) -> None:
         data += b"\0" * (-len(data) % 4)
         ifd = ImageFileDirectory_v2(prefix=b"II")
         for tag, v in d.items():
+            if tag in _IFD_POINTERS:  # offsets into the source file: meaningless here
+                continue
             try:
                 ifd[tag] = v
             except (TypeError, ValueError):

@@ -190,3 +190,17 @@ def test_raw_to_tiff_is_16_bit_with_profile(tmp_path):
     assert Image.open(save_image(img, tmp_path / "P.jpg", source=raw)).mode == "RGB"
     src8 = save_image(img, tmp_path / "s.jpg")
     assert cv2.imread(str(save_image(img, tmp_path / "from8.tif", source=src8)), cv2.IMREAD_UNCHANGED).dtype == np.uint16
+
+
+def test_tiff_export_drops_source_ifd_offsets(tmp_path):
+    import tifffile
+
+    exif = Image.Exif()
+    exif[0x010F] = "NIKON CORPORATION"
+    exif.get_ifd(0x8769).update({0x9003: "2024:05:01 10:00:00", 0xA005: 1234})
+    src = tmp_path / "s.jpg"
+    u8(gradient()).save(src, quality=95, exif=exif.tobytes())
+    out = save_image(gradient(), tmp_path / "o.tif", source=src)
+    with tifffile.TiffFile(out) as t:
+        sub = t.pages[0].tags["ExifTag"].value
+    assert sub["DateTimeOriginal"] == "2024:05:01 10:00:00" and "InteroperabilityTag" not in sub
