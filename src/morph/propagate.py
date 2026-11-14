@@ -26,7 +26,7 @@ import torch
 from .album import Album, region_stats
 from .colorspace import srgb_to_lab
 from .recipe import GLOBAL_KEYS, LOCAL_KEYS, LOCAL_REGIONS, Recipe, average
-from .render import Params, render, render_recipe, to_tensor
+from .render import Params, _soft_clip, render, render_recipe, to_tensor
 from .scenes import Scene
 
 STAT_REGIONS = ("global", "face_skin", "body_skin", "hair", "clothes", "subject", "background", "sky")
@@ -49,6 +49,7 @@ class PropagationConfig:
     steps: int = 80
     refine_steps: int = 8
     side: int = 256
+    clip_weight: float = 60.0  # penalty on highlights newly pushed past white by the correction
 
 
 @dataclass
@@ -140,6 +141,11 @@ def _targets(album: Album, refs: list[Reference], W: np.ndarray, scenes: list[Sc
     return out
 
 
+def _overshoot(raw: torch.Tensor) -> torch.Tensor:
+    """Soft share of pixels whose brightest channel is pushed to or past white."""
+    return torch.sigmoid((raw.amax(1) - 1.0) / 0.02).mean()
+
+
 def _correct(img: np.ndarray, masks: dict[str, np.ndarray], base: Recipe, targets: dict, cfg: PropagationConfig, gain: float = 1.0) -> Recipe:
     h, w = img.shape[:2]
     s = cfg.side / max(h, w)
@@ -177,7 +183,9 @@ def _correct(img: np.ndarray, masks: dict[str, np.ndarray], base: Recipe, target
     pz = Params.from_recipe(Recipe())
     corr_local = {k: set(CORR_LOCAL) for k in ri}
     with torch.no_grad():
-        xb = render(x, mt, p0, active_global=ag, active_local=al)
+        xb_raw = render(x, mt, p0, active_global=ag, active_local=al, gamut_map=False)
+        clip0 = _overshoot(xb_raw)
+        xb = _soft_clip(xb_raw)
         lab_b = srgb_to_lab(xb.clamp(0, 1).permute(0, 2, 3, 1))[0]
         for r, m in stat_w.items():  # only pursue part of the way from the plain recipe copy toward the target
             mm = m[0, 0][..., None]
@@ -192,9 +200,10 @@ def _correct(img: np.ndarray, masks: dict[str, np.ndarray], base: Recipe, target
             l[k, li] = l[k, li] + ld[a]
         return Params(g, l)
 
-    def loss_of(out):
+    def loss_of(raw):
+        out = _soft_clip(raw)
         lab = srgb_to_lab(out.clamp(0, 1).permute(0, 2, 3, 1))[0]
-        loss = 0
+        loss = cfg.clip_weight * (_overshoot(raw) - clip0).clamp(min=0)
         for r, m in stat_w.items():
             mm = m[0, 0][..., None]
             mu = (lab * mm).sum((0, 1)) / mm.sum()
@@ -206,9 +215,9 @@ def _correct(img: np.ndarray, masks: dict[str, np.ndarray], base: Recipe, target
     for step in range(cfg.steps + cfg.refine_steps):
         opt.zero_grad()
         if step < cfg.steps:
-            out = render(xb, mt, params(pz), active_global=set(CORR_GLOBAL), active_local=corr_local)
+            out = render(xb, mt, params(pz), active_global=set(CORR_GLOBAL), active_local=corr_local, gamut_map=False)
         else:
-            out = render(x, mt, params(p0), active_global=ag, active_local=al)
+            out = render(x, mt, params(p0), active_global=ag, active_local=al, gamut_map=False)
         loss_of(out).backward()
         opt.step()
     rec = params(p0).to_recipe(dict(base.meta)).clamped().pruned()

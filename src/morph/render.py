@@ -156,6 +156,14 @@ class Params:
         return self.lv[ri, i] if i is not None else self.lv.new_zeros(())
 
 
+def _shoulder(lin: torch.Tensor, ev: torch.Tensor, knee: float = 0.6) -> torch.Tensor:
+    """Roll highlights off toward white as exposure is pushed up, like a raw converter; identity at ev <= 0."""
+    w = ev.clamp(0, 1)
+    over = (lin - knee).clamp(min=0)
+    rolled = knee + (1 - knee) * torch.tanh(over / (1 - knee))
+    return lin + w * (torch.where(lin > knee, rolled, lin) - lin)
+
+
 def _adjust(x: torch.Tensor, get, scale: float, active: set[str]) -> torch.Tensor:
     """Apply one block of sliders. ``get(key)`` returns a scalar tensor; ``scale`` = image long side."""
     # White balance + exposure in linear light.
@@ -164,7 +172,7 @@ def _adjust(x: torch.Tensor, get, scale: float, active: set[str]) -> torch.Tenso
         gains = torch.stack([torch.exp(0.30 * t + 0.10 * u), torch.exp(-0.20 * u), torch.exp(-0.30 * t + 0.10 * u)])
         gains = gains / (gains * _LUMA.to(x)).sum()
         lin = srgb_to_linear(x) * (gains.view(1, 3, 1, 1) * torch.pow(2.0, ev))
-        x = linear_to_srgb(lin)
+        x = linear_to_srgb(_shoulder(lin, ev))
     if active & {"contrast", "highlights", "shadows", "whites", "blacks", "dehaze", "curve_shadows", "curve_darks", "curve_lights", "curve_highlights"}:
         L = _luma(x).clamp(0, 1.2)
         Lc = L.clamp(0, 1)
@@ -265,8 +273,11 @@ def render(
     active_global: set[str] | None = None,
     active_local: dict[int, set[str]] | None = None,
     seed: int = 0,
+    gamut_map: bool = True,
 ) -> torch.Tensor:
-    """Render ``img`` (1x3xHxW sRGB) with ``params``; ``masks`` is 1xRxHxW in REGIONS order."""
+    """Render ``img`` (1x3xHxW sRGB) with ``params``; ``masks`` is 1xRxHxW in REGIONS order.
+
+    ``gamut_map=False`` returns the unclipped result (no gamut mapping, no grain) so callers can see overshoot."""
     scale = float(scale or max(img.shape[-2:]))
     x = img
     ag = set(GLOBAL_KEYS) if active_global is None else active_global
@@ -296,6 +307,8 @@ def render(
     if "sharpen" in ag:
         L = _luma(x)
         x = x + params.G("sharpen") * 0.8 * (L - blur(L, max(0.7, 0.0004 * scale)))
+    if not gamut_map:
+        return x
     x = _soft_clip(x)
     if "grain" in ag and float(params.G("grain").detach()) > 1e-3:
         x = apply_grain(x, params.G("grain"), seed, scale)

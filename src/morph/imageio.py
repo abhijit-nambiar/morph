@@ -331,7 +331,8 @@ def jpeg_bytes(img: np.ndarray, quality: int = 85) -> bytes:
 RAW_CURVE_X = (0.0, 0.0025, 0.01, 0.03, 0.09, 0.2, 0.4, 0.7, 1.0)
 RAW_CURVE_Y = (0.0, 0.0035, 0.017, 0.074, 0.272, 0.57, 0.835, 0.962, 1.0)
 RAW_SATURATION = 1.1  # camera-matrix colour is accurate but looks a touch flat next to camera JPEGs
-RAW_RENDER_VERSION = "raw-v1"
+RAW_RENDER_VERSION = "raw-v2"
+RAW_MATCH_EV = 2.0  # most a RAW is brightened or darkened to meet its camera JPEG
 _RAW_LUT: np.ndarray | None = None
 _LUM = np.array([0.2126, 0.7152, 0.0722], np.float32)
 
@@ -368,6 +369,82 @@ def _orient(img: np.ndarray, flip: int) -> np.ndarray:
     return img
 
 
+def _thumb_luma(raw) -> float | None:
+    """Mean sRGB luma of the camera's embedded JPEG: how bright the camera rendered this frame."""
+    import rawpy
+
+    try:
+        th = raw.extract_thumb()
+    except (rawpy.LibRawNoThumbnailError, rawpy.LibRawUnsupportedThumbnailError):
+        return None
+    if th.format != rawpy.ThumbFormat.JPEG:
+        return None
+    try:
+        with Image.open(io.BytesIO(th.data)) as im:
+            if max(im.size) < 320:
+                return None
+            im.draft("RGB", (512, 512))
+            a = np.asarray(im.convert("RGB"), dtype=np.float32) / 255.0
+    except OSError:
+        return None
+    return float((a @ _LUM).mean())
+
+
+def _shoulder16(v: np.ndarray, knee: float = 0.6 * 65535) -> np.ndarray:
+    over = np.maximum(v - knee, 0)
+    return np.where(v > knee, knee + (65535 - knee) * np.tanh(over / (65535 - knee)), v)
+
+
+def _match_exposure(lin: np.ndarray, target: float) -> np.ndarray:
+    """Scale linear sensor data so the rendered mean luma meets the camera JPEG's (within +-RAW_MATCH_EV).
+
+    Camera makers render RAW very differently (Canon/Sony/Nikon Z JPEGs sit ~1 EV above a neutral
+    decode); the camera JPEG is what the photographer saw and exposed for. Pushes roll off into white.
+    """
+    step = max(1, int(np.sqrt(lin.shape[0] * lin.shape[1] / 120_000)))
+    sm = lin[::step, ::step].astype(np.float32)
+    lut = _raw_lut()
+
+    def med(ev):
+        v = _shoulder16(sm * 2.0**ev) if ev > 0 else sm * 2.0**ev
+        return float((lut[np.clip(v, 0, 65535).astype(np.uint16)] @ _LUM).mean())
+
+    lo, hi = -RAW_MATCH_EV, RAW_MATCH_EV
+    if not med(lo) < target < med(hi):
+        ev = lo if target <= med(lo) else hi
+    else:
+        for _ in range(14):
+            mid = (lo + hi) / 2
+            lo, hi = (mid, hi) if med(mid) < target else (lo, mid)
+        ev = (lo + hi) / 2
+    if abs(ev) < 0.05:
+        return lin
+    v = lin.astype(np.float32) * np.float32(2.0**ev)
+    if ev > 0:
+        v = _shoulder16(v)
+    return np.clip(v, 0, 65535).astype(np.uint16)
+
+
+def _embedded_full_jpeg(path: str | Path) -> np.ndarray | None:
+    import rawpy
+
+    try:
+        with rawpy.imread(str(path)) as raw:
+            (_, _, h, w), flip = _raw_geometry(raw)
+            th = raw.extract_thumb()
+    except rawpy.LibRawError:
+        return None
+    if th.format != rawpy.ThumbFormat.JPEG:
+        return None
+    with Image.open(io.BytesIO(th.data)) as im:
+        if max(im.size) < 0.9 * max(h, w):
+            return None
+        img = np.asarray(im.convert("RGB"), dtype=np.float32) / 255.0
+    if (img.shape[1] > img.shape[0]) == (w > h):
+        img = np.ascontiguousarray(_orient(img, flip))
+    return img
+
+
 def render_raw(path: str | Path, max_side: int | None = None) -> np.ndarray:
     """Decode a RAW file to oriented sRGB float32 [0, 1].
 
@@ -378,15 +455,27 @@ def render_raw(path: str | Path, max_side: int | None = None) -> np.ndarray:
     """
     import rawpy
 
-    with rawpy.imread(str(path)) as raw:
-        (top, left, h, w), flip = _raw_geometry(raw)
-        half = bool(max_side) and max_side <= max(h, w) // 2
-        lin = raw.postprocess(
-            half_size=half, use_camera_wb=True, no_auto_bright=True, gamma=(1, 1), output_bps=16,
-            output_color=rawpy.ColorSpace.sRGB, highlight_mode=rawpy.HighlightMode.Blend, user_flip=0,
-        )
+    try:
+        with rawpy.imread(str(path)) as raw:
+            (top, left, h, w), flip = _raw_geometry(raw)
+            half = bool(max_side) and max_side <= max(h, w) // 2
+            lin = raw.postprocess(
+                half_size=half, use_camera_wb=True, no_auto_bright=True, gamma=(1, 1), output_bps=16,
+                output_color=rawpy.ColorSpace.sRGB, highlight_mode=rawpy.HighlightMode.Blend, user_flip=0,
+            )
+            preview = _thumb_luma(raw)
+    except (rawpy.LibRawFileUnsupportedError, rawpy.LibRawDataError) as e:
+        # e.g. Nikon High Efficiency NEF, which LibRaw cannot demosaic: use the camera's full-size JPEG instead.
+        img = _embedded_full_jpeg(path)
+        if img is None:
+            raise
+        if max_side and max(img.shape[:2]) > max_side:
+            img = resize(img, fit_size(img.shape[1], img.shape[0], max_side))
+        return img
     k = 2 if half else 1
     lin = lin[top // k : (top + h) // k, left // k : (left + w) // k]
+    if preview is not None:
+        lin = _match_exposure(lin, preview)
     if RAW_SATURATION != 1.0:
         f = lin.astype(np.float32)
         y = f @ _LUM

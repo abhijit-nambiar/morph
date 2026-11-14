@@ -14,14 +14,14 @@ import cv2
 import numpy as np
 
 from .colorspace import srgb_to_lab
-from .imageio import PhotoInfo, list_images, load_rgb, read_info, save_png_u8
+from .imageio import RAW_RENDER_VERSION, PhotoInfo, list_images, load_rgb, read_info, save_png_u8
 from .segment import REGIONS, SEGMENTER_VERSION, RegionMasks, Segmenter
 
 log = logging.getLogger(__name__)
 
 WORK_SIDE = 1024
 EMBED_MODEL = "facebook/dinov2-small"
-ANALYSIS_VERSION = f"a1-{SEGMENTER_VERSION}"
+ANALYSIS_VERSION = f"a1-{SEGMENTER_VERSION}-{RAW_RENDER_VERSION}"
 STAT_REGIONS = ("subject", "background", "sky", "hair", "face_skin", "body_skin", "clothes", "eyes")
 
 

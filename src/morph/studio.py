@@ -204,7 +204,8 @@ class State:
         return {
             **base,
             "scenes": [s.to_json() for s in p.scenes],
-            "photos": {ph.name: {"faces": len(ph.faces), "scene": p.scene_of(ph.name), "size": [ph.width, ph.height]} for ph in p.album.photos},
+            "photos": {ph.name: {"faces": len(ph.faces), "scene": p.scene_of(ph.name), "size": [ph.width, ph.height],
+                                 "regions": [r for r, c in ph.coverage.items() if c >= 5e-5]} for ph in p.album.photos},
             "suggestions": [s.__dict__ for s in self.suggestions()],
             "references": {n: {"source": r.source, "prompt": r.prompt, "guard": r.guard, "fit": r.fit, "final": r.final.to_json(), "recipe": r.recipe.to_json(), "adjust": r.adjust.to_json()} for n, r in refs.items()},
             "regions": ["global"] + list(REGIONS),
