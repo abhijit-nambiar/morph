@@ -134,7 +134,7 @@ kbd{font:11px var(--font);background:var(--bg);border:1px solid var(--line2);bor
     <div class="cullbar">
       <div class="seg" id="cullfilter"><button data-f="all" class="on">All</button><button data-f="keep">Kept</button><button data-f="reject">Rejected</button></div>
       <span class="muted" id="cullcount"></span><span class="grow"></span>
-      <span class="faint" style="font-size:12px"><kbd>P</kbd> keep <kbd>X</kbd> reject <kbd>U</kbd> auto <kbd>←</kbd><kbd>→</kbd> move</span>
+      <span class="faint" style="font-size:12px"><kbd>P</kbd> keep <kbd>X</kbd> reject <kbd>U</kbd> auto <kbd>←</kbd><kbd>→</kbd> move <kbd>↵</kbd> preview</span>
     </div>
     <div class="cullgrid" id="cullgrid"><div class="empty">Scoring frames…</div></div>
   </div>
@@ -309,7 +309,6 @@ function job(j){if(!j)return;const pct=j.n?Math.round(100*j.i/j.n):0,pill=$("job
  $("applyprog").innerHTML=j.kind=="apply"||j.review||j.stage=="propagate"||j.stage=="export"?(run?`<div class="progress"><i style="width:${pct}%"></i></div><div class="faint" style="font-size:12px">${label} · ${j.i}/${j.n} ${esc(j.photo||"")}</div>`:
   j.state=="error"?`<div class="note" style="color:var(--bad)">${esc(j.error)}</div>`:j.state=="done"?`<div class="note" style="color:var(--ok)">Done — ${j.n} photos exported to ${esc(j.out||"")}</div>`:""):"";
  if(j.state=="done"&&j.review&&view=="apply"&&!$("reviewwrap").innerHTML)$("reviewwrap").innerHTML=`<div class="row sp" style="margin-top:22px"><h2 style="margin:0;font-size:16px">Review</h2><a class="btn sm" href="${esc(j.review)}" target="_blank">Open in new tab ↗</a></div><iframe class="review" src="${esc(j.review)}"></iframe>`;
- if(j.state=="done"&&j.kind=="analyse"&&polling===false){load().then(()=>show("refs"))}
  $("applybtn").disabled=run||!S||!Object.keys(S.references||{}).length;
  if(run&&!polling){polling=true;setTimeout(poll,1200)}}
 async function poll(){const s=await api("/api/job");polling=false;const was=S.job&&S.job.state;S.job=s;job(s);
@@ -317,14 +316,14 @@ async function poll(){const s=await api("/api/job");polling=false;const was=S.jo
 
 /* ---------- cull ---------- */
 let C=null,cfilter="all",csel=0,ctimer=null;
-async function loadCull(){C=await api("/api/cull");renderCull();return C}
+async function loadCull(){C=await api("/api/cull");renderCull();if(C.state=="scoring"&&C.job){if(S)S.job=C.job;job(C.job)}return C}
 function bar(x,lbl){x=Math.max(0,Math.min(1,+x||0));const c=x<.35?"lo":x<.6?"mid":"hi";return `<div>${lbl}<div class="meter"><i class="${c}" style="width:${(x*100).toFixed(0)}%"></i></div></div>`}
 function shown(){return C&&C.frames?C.frames.filter(f=>cfilter=="all"||(cfilter=="keep")==f.keep):[]}
 function renderCull(){if(!C)return;if(C.state=="scoring"||!C.frames){$("cullgrid").innerHTML='<div class="empty">Scoring frames…</div>';return}
  const fr=shown(),k=C.frames.filter(f=>f.keep).length;csel=Math.min(csel,Math.max(0,fr.length-1));
  $("cullcount").textContent=`${k} kept · ${C.frames.length-k} rejected · ${C.frames.length} frames`;
  $("cullgrid").innerHTML=fr.length?fr.map((f,i)=>`<div class="frame${f.keep?"":" rej"}${i==csel?" sel":""}" data-i="${i}"><img loading="lazy" src="/img/cull/${enc(f.name)}">
-  <span class="flag ${f.keep?"k":"x"}">${f.keep?"✓":"✕"}</span>${f.override?'<span class="ov tag acc">manual</span>':f.burst_size>1?`<span class="ov tag">burst ${f.burst_rank}/${f.burst_size}</span>`:""}
+  <span class="flag ${f.keep?"k":"x"}">${f.keep?"✓":"✕"}</span>${f.override!=null?'<span class="ov tag acc">manual</span>':f.burst_size>1?`<span class="ov tag">burst ${f.burst_rank}/${f.burst_size}</span>`:""}
   <div class="fb"><div class="fn"><span>${esc(f.name)}</span><span class="faint">${(+f.quality).toFixed(2)}</span></div>
   <div class="bars">${bar(f.focus,"Focus")}${bar(f.exposure,"Exposure")}${bar(f.stability,"Steadiness")}</div>
   <div class="reasons">${esc((f.reasons||[]).join(" · "))}</div></div></div>`).join(""):'<div class="empty">Nothing here.</div>';
@@ -339,12 +338,13 @@ $("cullsettings").oninput=e=>{const i=e.target;if(i.type=="range")i.parentNode.q
 $("cullreset").onclick=async()=>{$("cullsettings").dataset.built="";C=await api("/api/cull/decide",{settings:null});renderCull()};
 $("cullfilter").onclick=e=>{const b=e.target.closest("button");if(!b)return;cfilter=b.dataset.f;$("cullfilter").querySelectorAll("button").forEach(x=>x.classList.toggle("on",x==b));csel=0;renderCull()};
 async function override(i,v){const f=shown()[i];if(!f)return;C=await api("/api/cull/override",{name:f.name,keep:v});renderCull()}
-$("cullgrid").onclick=e=>{const t=e.target.closest(".frame");if(!t)return;const i=+t.dataset.i;if(e.target.closest(".flag")){override(i,!shown()[i].keep);return}csel=i;renderCull()};
-$("cullgrid").ondblclick=e=>{const t=e.target.closest(".frame");if(t){$("modal").querySelector("img").src=`/img/cullfull/${enc(shown()[+t.dataset.i].name)}`;$("modal").style.display="flex"}};
+$("cullgrid").onclick=e=>{const t=e.target.closest(".frame");if(!t)return;const i=+t.dataset.i;if(e.target.closest(".flag")){override(i,!shown()[i].keep);return}csel=i;$("cullgrid").querySelectorAll(".frame").forEach(x=>x.classList.toggle("sel",x==t))};
+function openFull(i){const f=shown()[i];if(!f)return;$("modal").querySelector("img").src=`/img/cullfull/${enc(f.name)}`;$("modal").style.display="flex"}
+$("cullgrid").ondblclick=e=>{const t=e.target.closest(".frame");if(t&&!e.target.closest(".flag"))openFull(+t.dataset.i)};
 $("buildbtn").onclick=async()=>{const d=$("albumdir").value.trim();if(!d)return toast("Choose an album folder");const r=await api("/api/cull/build",{out:d,mode:$("cullmode").value});if(r.error)return toast(r.error,"bad",6000);toast(`Album created with ${r.kept} photos. Analysing…`,"ok");S.job=r.job;job(r.job)};
 document.addEventListener("keydown",e=>{if(view!="cull"||/INPUT|TEXTAREA|SELECT/.test(document.activeElement.tagName))return;const n=shown().length;
  if(e.key=="ArrowRight"){csel=Math.min(n-1,csel+1);renderCull()}else if(e.key=="ArrowLeft"){csel=Math.max(0,csel-1);renderCull()}
- else if(e.key=="p"||e.key=="P")override(csel,true);else if(e.key=="x"||e.key=="X")override(csel,false);else if(e.key=="u"||e.key=="U")override(csel,null);else return;
+ else if(e.key=="p"||e.key=="P")override(csel,true);else if(e.key=="x"||e.key=="X")override(csel,false);else if(e.key=="u"||e.key=="U")override(csel,null);else if(e.key=="Enter"||e.key==" "){e.preventDefault();openFull(csel)}else return;
  const el=document.querySelector(".frame.sel");if(el)el.scrollIntoView({block:"nearest"})});
 
 /* ---------- start ---------- */
