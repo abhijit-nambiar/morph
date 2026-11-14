@@ -123,3 +123,21 @@ def test_cull_judges_raw_exposure_on_the_raw(tmp_path):
     (j,) = score_folder(jpg_dir, people=False)
     assert r.scored_from.endswith("P.JPG")
     assert r.key_ev < j.key_ev - 1.0 and r.clip_hi < j.clip_hi
+
+
+@pytest.mark.parametrize("src_name,dst_name", [("s.tif", "o.tif"), ("s.tif", "o.jpg"), ("s.tif", "o.png"), ("s.jpg", "o.tif")])
+def test_save_keeps_metadata_without_copying_tiff_layout(tmp_path, src_name, dst_name):
+    from morph.imageio import save_image
+
+    src = tmp_path / src_name
+    if src.suffix == ".tif":
+        cv2.imwrite(str(src), (gradient(80, 120)[..., ::-1] * 65535).astype(np.uint16), [cv2.IMWRITE_TIFF_COMPRESSION, 5])
+    else:
+        exif = Image.Exif()
+        exif[0x010F] = "NIKON CORPORATION"
+        u8(gradient(80, 120)).save(src, quality=95, exif=exif.tobytes())
+    img = gradient(80, 120)
+    out = save_image(img, tmp_path / dst_name, source=src)
+    back = load_rgb(out)
+    assert back.shape == img.shape
+    assert np.abs(back - img).max() < 0.03
