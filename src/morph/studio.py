@@ -94,13 +94,27 @@ class Handler(BaseHTTPRequestHandler):
     def _json(self, obj, code=200):
         self._send(json.dumps(obj).encode(), code=code)
 
+    def _trusted(self, post: bool) -> bool:
+        """Block DNS-rebinding (Host) and cross-site requests (Origin / non-JSON POSTs)."""
+        host = urlparse("//" + self.headers.get("Host", "")).hostname or ""
+        if host not in ("127.0.0.1", "localhost", "::1", self.server.server_address[0]):
+            return False
+        origin = self.headers.get("Origin")
+        if origin and urlparse(origin).netloc != self.headers.get("Host", ""):
+            return False
+        return not post or self.headers.get("Content-Type", "").split(";")[0].strip() == "application/json"
+
     def do_GET(self):
+        if not self._trusted(False):
+            return self._json({"error": "forbidden"}, 403)
         try:
             self._get()
         except Exception as e:  # noqa: BLE001
             self._json({"error": str(e), "trace": traceback.format_exc()}, 500)
 
     def do_POST(self):
+        if not self._trusted(True):
+            return self._json({"error": "forbidden"}, 403)
         try:
             n = int(self.headers.get("Content-Length", 0))
             self._post(json.loads(self.rfile.read(n) or b"{}"))
@@ -136,8 +150,9 @@ class Handler(BaseHTTPRequestHandler):
                 f = S.project.root / "candidates" / stem / f"{int(parts[3]):02d}.png"
                 return self._send(_jpeg(np.asarray(Image.open(f).convert("RGB"), np.float32) / 255), "image/jpeg")
         if parts[0] == "out" and S.job.get("out"):
-            f = (Path(S.job["out"]) / "/".join(parts[1:])).resolve()
-            if f.is_file() and str(f).startswith(str(Path(S.job["out"]).resolve())):
+            root = Path(S.job["out"]).resolve()
+            f = (root / "/".join(parts[1:])).resolve()
+            if f.is_file() and f.is_relative_to(root):
                 ctype = {".html": "text/html", ".jpg": "image/jpeg", ".json": "application/json"}.get(f.suffix, "application/octet-stream")
                 return self._send(f.read_bytes(), ctype)
         self._json({"error": "not found"}, 404)

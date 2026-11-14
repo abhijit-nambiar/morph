@@ -32,34 +32,35 @@ button.primary{background:#2f6fe0;border-color:#2f6fe0;color:#fff}input,select,t
 <script>
 const SL={global:["exposure","contrast","highlights","shadows","whites","blacks","temperature","tint","vibrance","saturation","texture","clarity","dehaze","noise_reduction","sharpen","grain","vignette","curve_shadows","curve_highlights","grade_shadows_x","grade_shadows_y","grade_highlights_x","grade_highlights_y"],
 local:["exposure","contrast","highlights","shadows","whites","blacks","temperature","tint","saturation","hue","texture","clarity","noise_reduction"]};
-let S=null,cur=null,adj={global_:{},local:{}},masks=false,timer=null;
-const $=id=>document.getElementById(id), api=(p,b)=>fetch(p,b?{method:'POST',body:JSON.stringify(b)}:{}).then(r=>r.json());
+let S=null,cur=null,adj={global:{},local:{}},masks=false,timer=null;
+const $=id=>document.getElementById(id), J={'Content-Type':'application/json'},api=(p,b)=>fetch(p,b?{method:'POST',headers:J,body:JSON.stringify(b)}:{}).then(r=>r.json()),
+esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 async function load(){S=await api('/api/state');$('region').innerHTML=S.regions.map(r=>`<option>${r}</option>`).join('');renderLists();if(!cur&&S.suggestions.length)select(S.suggestions[0].name);}
-function thumb(n){const ref=S.references[n],sg=S.suggestions.findIndex(s=>s.name==n);return `<div class=t><img src="/img/thumb/${encodeURIComponent(n)}" class="${n==cur?'sel':''}" title="${n}" onclick="select('${n}')">${ref?'<span class=badge>REF</span>':sg>=0?`<span class="badge s">#${sg+1}</span>`:''}</div>`}
-function renderLists(){$('sugg').innerHTML=S.suggestions.map((s,i)=>`<div style="margin:4px 0;cursor:pointer" onclick="select('${s.name}')"><b>#${i+1}</b> ${s.name}<br><span class=muted>${s.reasons.join('; ')}</span></div>`).join('');
-$('scenes').innerHTML=S.scenes.map(s=>`<div class=muted>${s.id} · ${s.photos.length}</div><div class=thumbs>${s.photos.map(thumb).join('')}</div>`).join('');}
-function select(n){cur=n;const r=S.references[n];adj=r?JSON.parse(JSON.stringify(r.adjust)):{global_:{},local:{}};adj.global_=adj.global_||{};adj.local=adj.local||{};
+function thumb(n){const ref=S.references[n],sg=S.suggestions.findIndex(s=>s.name==n);return `<div class=t><img src="/img/thumb/${encodeURIComponent(n)}" class="${n==cur?'sel':''}" title="${esc(n)}" data-n="${esc(n)}" onclick="select(this.dataset.n)">${ref?'<span class=badge>REF</span>':sg>=0?`<span class="badge s">#${sg+1}</span>`:''}</div>`}
+function renderLists(){$('sugg').innerHTML=S.suggestions.map((s,i)=>`<div style="margin:4px 0;cursor:pointer" data-n="${esc(s.name)}" onclick="select(this.dataset.n)"><b>#${i+1}</b> ${esc(s.name)} <span class=muted>score ${(+s.score).toFixed(2)}</span><br><span class=muted>${esc(s.reasons.join('; '))}</span></div>`).join('');
+$('scenes').innerHTML=S.scenes.map(s=>`<div class=muted>${esc(s.id)} · ${s.photos.length}</div><div class=thumbs>${s.photos.map(thumb).join('')}</div>`).join('');}
+function select(n){cur=n;const r=S.references[n];adj=r?JSON.parse(JSON.stringify(r.adjust)):{global:{},local:{}};adj.global=adj.global||{};adj.local=adj.local||{};
 $('title').textContent=n+' · '+S.photos[n].scene+' · '+S.photos[n].faces+' face(s)';$('orig').src=`/img/${masks?'masks':'orig'}/${encodeURIComponent(n)}`;$('cands').innerHTML='';refresh();renderLists();drawSliders();info();}
-function info(){const r=S.references[cur];$('refinfo').innerHTML=r?`Source: ${r.source}<br>${r.fit&&r.fit.de_after!==undefined?`fit ΔE ${r.fit.de_before} → ${r.fit.de_after}<br>`:''}${r.guard?`guard: <span class="v-${r.guard.verdict}">${r.guard.verdict}</span> ${r.guard.reasons.join('; ')}`:''}`:'No reference yet for this photo.';}
+function info(){const r=S.references[cur];$('refinfo').innerHTML=r?`Source: ${esc(r.source)}<br>${r.fit&&r.fit.de_after!==undefined?`fit ΔE ${r.fit.de_before} → ${r.fit.de_after}<br>`:''}${r.guard?`guard: <span class="v-${esc(r.guard.verdict)}">${esc(r.guard.verdict)}</span> ${esc(r.guard.reasons.join('; '))}`:''}`:'No reference yet for this photo.';}
 function toggleMasks(){masks=!masks;if(cur)$('orig').src=`/img/${masks?'masks':'orig'}/${encodeURIComponent(cur)}`;}
-function drawSliders(){const reg=$('region').value,keys=reg=='global'?SL.global:SL.local,vals=reg=='global'?adj.global_:(adj.local[reg]||{});
+function drawSliders(){const reg=$('region').value,keys=reg=='global'?SL.global:SL.local,vals=reg=='global'?adj.global:(adj.local[reg]||{});
 $('sliders').innerHTML=keys.map(k=>`<div class=row><label>${k}</label><input type=range min=-1 max=1 step=0.01 value="${vals[k]||0}" oninput="setv('${reg}','${k}',this.value,this)"><span>${(+(vals[k]||0)).toFixed(2)}</span></div>`).join('');}
-function setv(reg,k,v,el){v=+v;el.nextElementSibling.textContent=v.toFixed(2);if(reg=='global')adj.global_[k]=v;else{(adj.local[reg]=adj.local[reg]||{})[k]=v;}clearTimeout(timer);timer=setTimeout(refresh,120);}
-async function refresh(){if(!cur)return;const r=await fetch('/api/preview',{method:'POST',body:JSON.stringify({photo:cur,adjust:adj})});$('edit').src=URL.createObjectURL(await r.blob());}
-function resetAdjust(){const reg=$('region').value;if(reg=='global')adj.global_={};else delete adj.local[reg];drawSliders();refresh();}
+function setv(reg,k,v,el){v=+v;el.nextElementSibling.textContent=v.toFixed(2);if(reg=='global')adj.global[k]=v;else{(adj.local[reg]=adj.local[reg]||{})[k]=v;}clearTimeout(timer);timer=setTimeout(refresh,120);}
+async function refresh(){if(!cur)return;const r=await fetch('/api/preview',{method:'POST',headers:J,body:JSON.stringify({photo:cur,adjust:adj})});$('edit').src=URL.createObjectURL(await r.blob());}
+function resetAdjust(){const reg=$('region').value;if(reg=='global')adj.global={};else delete adj.local[reg];drawSliders();refresh();}
 async function saveAdjust(){await api('/api/adjust',{photo:cur,adjust:adj});await load();info();msg('Saved tweaks as part of the reference.');}
 async function removeRef(){await api('/api/remove',{photo:cur});await load();select(cur);}
 function msg(t){$('msg').innerHTML=t}
 async function generate(){const p=$('prompt').value.trim();if(!p)return msg('Type a look first.');const g=$('genurl').value.trim()||$('gen').value;msg('Generating…');
-const r=await api('/api/generate',{photo:cur,prompt:p,generator:g,n:4});if(r.error)return msg('<span class=v-reject>'+r.error+'</span>');msg('');
-$('cands').innerHTML=r.candidates.map((c,i)=>`<div class=cand><img src="/img/cand/${encodeURIComponent(cur)}/${i}?t=${Date.now()}"><div><b>${c.label}</b> <span class="v-${c.guard.verdict}">${c.guard.verdict}</span></div>
-<div class=muted>edges ${c.guard.edge_f1.toFixed(2)} · structure ${c.guard.structure_ok.toFixed(2)}</div><div class=muted>${c.guard.reasons.join('; ')}</div>
-${c.info.matched?`<div class=chips>${c.info.matched.map(m=>`<span>${m}</span>`).join('')}${(c.info.unknown||[]).map(m=>`<span style="opacity:.5;text-decoration:line-through">${m}</span>`).join('')}</div>`:''}
+const r=await api('/api/generate',{photo:cur,prompt:p,generator:g,n:4});if(r.error)return msg('<span class=v-reject>'+esc(r.error)+'</span>');msg('');
+$('cands').innerHTML=r.candidates.map((c,i)=>`<div class=cand><img src="/img/cand/${encodeURIComponent(cur)}/${i}?t=${Date.now()}"><div><b>${esc(c.label)}</b> <span class="v-${esc(c.guard.verdict)}">${esc(c.guard.verdict)}</span></div>
+<div class=muted>edges ${c.guard.edge_f1.toFixed(2)} · structure ${c.guard.structure_ok.toFixed(2)}</div><div class=muted>${esc(c.guard.reasons.join('; '))}</div>
+${c.info.matched?`<div class=chips>${c.info.matched.map(m=>`<span>${esc(m)}</span>`).join('')}${(c.info.unknown||[]).map(m=>`<span style="opacity:.5;text-decoration:line-through">${esc(m)}</span>`).join('')}</div>`:''}
 <button ${c.guard.verdict=='reject'?'disabled':''} onclick="pick(${i})">Use as reference</button></div>`).join('');}
-async function pick(i){msg('Fitting…');const r=await api('/api/pick',{photo:cur,index:i});if(r.error)return msg('<span class=v-reject>'+r.error+'</span>');await load();select(cur);msg('Reference set from '+r.source);}
+async function pick(i){msg('Fitting…');const r=await api('/api/pick',{photo:cur,index:i});if(r.error)return msg('<span class=v-reject>'+esc(r.error)+'</span>');await load();select(cur);msg('Reference set from '+esc(r.source));}
 function upload(el){const f=el.files[0];if(!f)return;const rd=new FileReader();rd.onload=async()=>{msg('Checking & fitting your edit…');const r=await api('/api/upload',{photo:cur,data:rd.result,filename:f.name});
-if(r.error)return msg('<span class=v-reject>'+r.error+'</span>');await load();select(cur);msg(`Reference fitted: ΔE ${r.fit.de_before} → ${r.fit.de_after}`);};rd.readAsDataURL(f);}
+if(r.error)return msg('<span class=v-reject>'+esc(r.error)+'</span>');await load();select(cur);msg(`Reference fitted: ΔE ${r.fit.de_before} → ${r.fit.de_after}`);};rd.readAsDataURL(f);}
 async function applyAlbum(){const r=await api('/api/apply',{max_side:$('maxside').value||null});if(r.error)return $('job').textContent=r.error;poll();}
-async function poll(){const s=await api('/api/state');const j=s.job;$('job').innerHTML=j.state=='running'?`${j.stage} ${j.i}/${j.n} ${j.photo||''}`:j.state=='done'?`Done. <a href="${j.review}" target=_blank>Open review</a>`:j.state=='error'?`<span class=v-reject>${j.error}</span>`:'';if(j.state=='running')setTimeout(poll,1500);}
+async function poll(){const s=await api('/api/state');const j=s.job;$('job').innerHTML=j.state=='running'?`${esc(j.stage)} ${j.i}/${j.n} ${esc(j.photo||'')}`:j.state=='done'?`Done. <a href="${j.review}" target=_blank>Open review</a>`:j.state=='error'?`<span class=v-reject>${esc(j.error)}</span>`:'';if(j.state=='running')setTimeout(poll,1500);}
 load();
 </script></body></html>
