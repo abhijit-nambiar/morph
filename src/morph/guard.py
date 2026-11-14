@@ -45,21 +45,35 @@ class GuardReport:
         return asdict(self)
 
 
-def edge_f1(a: np.ndarray, b: np.ndarray, tol: int | None = None, tone_tolerant: bool = False) -> float:
-    """Edge-map F1 within ``tol`` px. ``tone_tolerant`` matches each image's edges against the other's
-    weak edges too, so an edge pushed just under/over the Canny threshold by a tone change still counts."""
+def edge_f1(a: np.ndarray, b: np.ndarray, tol: int | None = None) -> float:
     h, w = a.shape[:2]
     tol = tol or max(1, round(max(h, w) / 400))
-    ga, gb = (cv2.GaussianBlur(_gray_u8(x), (0, 0), 1.0) for x in (a, b))
-    ea, eb = (cv2.Canny(g, 60, 140) > 0 for g in (ga, gb))
-    wa, wb = (cv2.Canny(g, 40, 100) > 0 for g in (ga, gb)) if tone_tolerant else (ea, eb)
+    ea, eb = (cv2.Canny(cv2.GaussianBlur(_gray_u8(x), (0, 0), 1.0), 60, 140) > 0 for x in (a, b))
     k = np.ones((2 * tol + 1, 2 * tol + 1), np.uint8)
-    da, db = cv2.dilate(wa.astype(np.uint8), k) > 0, cv2.dilate(wb.astype(np.uint8), k) > 0
+    da, db = cv2.dilate(ea.astype(np.uint8), k) > 0, cv2.dilate(eb.astype(np.uint8), k) > 0
     if ea.sum() < 50 and eb.sum() < 50:
         return 1.0
     prec = (eb & da).sum() / max(1, eb.sum())
     rec = (ea & db).sum() / max(1, ea.sum())
     return float(2 * prec * rec / max(prec + rec, 1e-6))
+
+
+def structure_ncc(a: np.ndarray, b: np.ndarray) -> float:
+    """Median local NCC of luminance detail over the textured half of ``a``.
+
+    Invariant to per-pixel tone and colour changes (~0.98 for heavy grades) but collapses for any
+    geometric change (< 0.5 for a 0.5 degree rotation, 1% shift or 1% scale)."""
+    win = max(5, round(max(a.shape[:2]) / 48) | 1)
+
+    def hp(img):
+        g = cv2.cvtColor(np.clip(img, 0, 1).astype(np.float32), cv2.COLOR_RGB2GRAY)
+        return g - cv2.GaussianBlur(g, (0, 0), 2.0)
+
+    da, db = hp(a), hp(b)
+    va, vb = cv2.blur(da * da, (win, win)), cv2.blur(db * db, (win, win))
+    ncc = cv2.blur(da * db, (win, win)) / np.sqrt(va * vb + 1e-10)
+    tex = va > max(float(np.quantile(va, 0.5)), 1e-5)  # ignore near-flat areas (std of detail < ~0.003)
+    return float(np.median(ncc[tex])) if tex.sum() >= 100 else 1.0
 
 
 def _iou(a: np.ndarray, b: np.ndarray) -> float:
