@@ -9,6 +9,7 @@ from __future__ import annotations
 
 import base64
 import io
+import ipaddress
 import json
 import threading
 import traceback
@@ -97,9 +98,11 @@ class Handler(BaseHTTPRequestHandler):
     def _trusted(self, post: bool) -> bool:
         """Block DNS-rebinding (Host) and cross-site requests (Origin / non-JSON POSTs)."""
         host = urlparse("//" + self.headers.get("Host", "")).hostname or ""
-        bound = self.server.server_address[0]
-        if bound not in ("0.0.0.0", "::") and host not in ("127.0.0.1", "localhost", "::1", bound):
-            return False
+        if host != "localhost":  # DNS rebinding needs a domain name; plain IP Hosts (e.g. LAN access) are fine
+            try:
+                ipaddress.ip_address(host)
+            except ValueError:
+                return False
         origin = self.headers.get("Origin")
         if origin and urlparse(origin).netloc != self.headers.get("Host", ""):
             return False
