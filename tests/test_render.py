@@ -52,3 +52,12 @@ def test_recipe_json_roundtrip(tmp_path):
     r.save(tmp_path / "r.json")
     q = Recipe.load(tmp_path / "r.json")
     assert q.global_ == r.global_ and q.local == r.local
+
+
+def test_adjustment_delta_beyond_slider_range_survives_save():
+    from morph.project import ReferenceEdit
+    from morph.recipe import Recipe
+
+    ref = ReferenceEdit("a.jpg", Recipe({"contrast": 0.8}), Recipe({"contrast": -1.8}))
+    back = ReferenceEdit.from_json(ref.to_json())
+    assert back.adjust.g("contrast") == -1.8 and back.final.g("contrast") == -1.0

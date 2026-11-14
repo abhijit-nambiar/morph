@@ -25,7 +25,7 @@ from PIL import Image
 
 from .imageio import load_rgb_bytes
 from .project import Project
-from .recipe import GLOBAL_KEYS, LOCAL_KEYS, Recipe
+from .recipe import BOUNDS, GLOBAL_KEYS, LOCAL_BOUNDS, LOCAL_KEYS, Recipe
 from .render import render_recipe
 from .segment import REGIONS, overlay
 
@@ -210,6 +210,7 @@ class State:
             "references": {n: {"source": r.source, "prompt": r.prompt, "guard": r.guard, "fit": r.fit, "final": r.final.to_json(), "recipe": r.recipe.to_json(), "adjust": r.adjust.to_json()} for n, r in refs.items()},
             "regions": ["global"] + list(REGIONS),
             "global_keys": list(GLOBAL_KEYS),
+            "bounds": {"global": BOUNDS, "local": LOCAL_BOUNDS},
             "local_keys": list(LOCAL_KEYS),
         }
 
@@ -344,7 +345,7 @@ class Handler(BaseHTTPRequestHandler):
         if path == "/api/preview":
             ref = P.reference(b["photo"])
             base = ref.recipe if ref else Recipe()
-            adj = Recipe.from_json(b.get("adjust", {}))
+            adj = Recipe.from_json(b.get("adjust", {}), clamp=False)
             img, m = S.inputs(b["photo"])
             out = render_recipe(img, m, base.plus(adj).clamped())
             return self._send(_jpeg(out), "image/jpeg")
@@ -355,7 +356,7 @@ class Handler(BaseHTTPRequestHandler):
                     ref.adjust = Recipe()
                     P.save_reference(ref)
                 changes = {}
-                adj = Recipe.from_json(b.get("adjust", {}))
+                adj = Recipe.from_json(b.get("adjust", {}), clamp=False)
                 changes.update(adj.global_)
                 for reg, d in adj.local.items():
                     changes.update({f"{reg}.{k}": v for k, v in d.items()})
