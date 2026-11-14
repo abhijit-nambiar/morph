@@ -214,3 +214,27 @@ def test_overrides_schema_and_scores(dump):
         if r["type"] != "bool":
             assert r["min"] <= r["default"] <= r["max"]
     json.dumps(sch)
+
+
+def test_decode_ahead_is_bounded(tmp_path, monkeypatch):
+    import threading
+    for i in range(24):
+        save(texture(i, 120, 160), tmp_path / f"{i:03d}.jpg", i * 10)
+    live, peak, lock = [0], [0], threading.Lock()
+    real_load, real_score = cull.load_preview, cull._score_pixels
+
+    def load(*a, **k):
+        with lock:
+            live[0] += 1
+            peak[0] = max(peak[0], live[0])
+        return real_load(*a, **k)
+
+    def score(*a, **k):
+        with lock:
+            live[0] -= 1
+        return real_score(*a, **k)
+
+    monkeypatch.setattr(cull, "load_preview", load)
+    monkeypatch.setattr(cull, "_score_pixels", score)
+    assert len(score_folder(tmp_path, people=False, workers=2)) == 24
+    assert peak[0] <= 2 * 2 + 1

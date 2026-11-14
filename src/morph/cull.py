@@ -22,9 +22,11 @@ import json
 import math
 import os
 import shutil
+from collections import deque
 from concurrent.futures import ThreadPoolExecutor
 from dataclasses import asdict, dataclass, field, fields, replace
 from datetime import datetime
+from itertools import islice
 from pathlib import Path
 
 import cv2
@@ -448,9 +450,17 @@ def score_folder(folder: str | Path, cache: str | Path | None = None, progress=N
             if progress:
                 progress(done, n, f.name)
     workers = workers or min(4, os.cpu_count() or 2)
-    with ThreadPoolExecutor(workers) as pool:  # decode ahead while the models run
-        for f, src, info, img in pool.map(load, todo):
+    with ThreadPoolExecutor(workers) as pool:  # decode ahead while the models run, at most 2*workers frames in memory
+        pending, window = iter(todo), deque()
+        for f in islice(pending, 2 * workers):
+            window.append(pool.submit(load, f))
+        while window:
+            f, src, info, img = window.popleft().result()
+            nxt = next(pending, None)
+            if nxt is not None:
+                window.append(pool.submit(load, nxt))
             r = _score_pixels(img, detector)
+            del img
             small = r.pop("_small")
             sig = _signature(f)
             prev = cache / "previews" / (hashlib.sha1(sig.encode()).hexdigest()[:16] + ".jpg")
