@@ -6,7 +6,7 @@ from PIL import Image
 
 from dngwriter import write_dng
 from morph import imageio
-from morph.export import output_name
+from morph.export import output_name, output_names
 from morph.imageio import is_raw, list_images, load_preview, load_rgb, raw_pairs, read_info, save_image
 
 
@@ -76,6 +76,10 @@ def test_output_name():
     assert output_name("DSC_1.NEF") == "DSC_1.jpg"
     assert output_name("a.jpg") == "a.jpg"
     assert output_name("a.png", "tif") == "a.tif"
+    assert output_names(["portrait.jpg", "portrait.png"], "jpg") == {"portrait.jpg": "portrait.jpg", "portrait.png": "portrait-png.jpg"}
+    assert output_names(["DSC_1.NEF", "DSC_1.JPG"]) == {"DSC_1.NEF": "DSC_1-nef.jpg", "DSC_1.JPG": "DSC_1.JPG"}
+    assert output_names(["a.png", "a.tiff"], "jpg") == {"a.png": "a-png.jpg", "a.tiff": "a-tiff.jpg"}
+    assert output_names(["a.jpg", "b.png"]) == {"a.jpg": "a.jpg", "b.png": "b.png"}
 
 
 def test_album_and_export_accept_raw(fake_models, tmp_path):
