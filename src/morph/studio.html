@@ -253,7 +253,7 @@ function renderLists(){const mx=Math.max(...S.suggestions.map(s=>s.score),1e-6);
 $("sugg").onclick=$("scenes").onclick=e=>{const t=e.target.closest("[data-n]");if(t)select(t.dataset.n)};
 
 /* ---------- references: viewer ---------- */
-function select(n){if(dirty&&n!==cur&&!confirm("Discard unsaved adjustments?"))return;cur=n;dirty=false;
+function select(n){if(dirty&&n!==cur&&!confirm("Discard unsaved adjustments?"))return;cur=n;dirty=false;if(!present(region))region="global";
  const r=S.references[n];adj=r?JSON.parse(JSON.stringify(r.adjust)):{global:{},local:{}};adj.global=adj.global||{};adj.local=adj.local||{};
  base=r&&r.recipe?r.recipe:{global:{},local:{}};base.global=base.global||{};base.local=base.local||{};
  const p=S.photos[n];$("title").textContent=n;$("meta").textContent=`${p.scene} · ${p.size[0]}×${p.size[1]} · ${p.faces} face${p.faces==1?"":"s"}`;
