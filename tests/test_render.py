@@ -105,3 +105,11 @@ def test_desaturating_reference_without_face_keeps_target_faces_neutral():
     t = _targets(album, [ref], np.ones((1, 1)), [SimpleNamespace(id="s0", photos=["ref"]), SimpleNamespace(id="s1", photos=["p"])],
                  PropagationConfig())[0]
     assert np.hypot(*t["face_skin"][1:]) < 1.0 and np.hypot(*t["global"][1:]) < 1.0
+
+
+def test_grey_reference_does_not_desaturate_targets():
+    from morph.propagate import Reference, _chroma_gain
+    from morph.recipe import Recipe
+
+    grey = {"global": {"mean": [50, 0, 0], "std": [20, 0.05, 0.05], "pct": [0, 50, 100], "coverage": 1.0}}
+    assert np.allclose(_chroma_gain(Reference("g", Recipe(), "", grey, grey), "global"), 1.0)

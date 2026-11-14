@@ -109,7 +109,8 @@ def _chroma_gain(ref: Reference, r: str) -> np.ndarray:
     so, se = ref.orig_stats.get(r), ref.edit_stats.get(r)
     if not so or not se:
         return np.ones(3)
-    k = np.array(se["std"][1:], np.float64) / np.maximum(np.array(so["std"][1:], np.float64), 1e-3)
+    o_sd, e_sd = np.array(so["std"][1:], np.float64), np.array(se["std"][1:], np.float64)
+    k = np.where(o_sd < 1.0, 1.0, e_sd / np.maximum(o_sd, 1.0))  # an already-grey reference says nothing about chroma
     return np.concatenate([[1.0], np.clip(k, 0.0, 1.5)])
 
 
