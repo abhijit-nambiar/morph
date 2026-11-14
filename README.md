@@ -64,7 +64,14 @@ build_album(decisions, "album", mode="link")                         # symlinks 
 CullSettings.schema()   # [{key, label, type, min, max, step, default, help}] to build a settings UI
 ```
 
-`scripts/make_cull_benchmark.py` builds a labelled dump from a folder of good photos (adds defocused, background-focused, shaken, badly exposed and near-duplicate frames) and reports precision/recall; see the culling results below.
+`scripts/make_cull_benchmark.py` builds a labelled dump from a folder of good photos (adds defocused, background-focused, shaken, badly exposed and near-duplicate frames, with capture times) and reports precision/recall. On the 88 originals here (182 frames, `python scripts/make_cull_benchmark.py Morph/originals runs/cull-bench`), default settings:
+
+| | precision | recall |
+|---|---|---|
+| reject (should go) | 0.90 | 0.97 |
+| keep (should stay) | 0.96 | 0.89 |
+
+Every defocused, background-focused, shaken, under- and over-exposed frame is rejected (50/50) and every mildly imperfect one (dark, bright, noisy, slightly soft) except one is kept. Nearly all remaining misses are real consecutive frames of the album (1–4 s apart, same pose) that the photographer kept but the culler treats as one burst and keeps the best of; raise `--burst-keep` or `--burst-similarity` for albums like that. Scoring takes about 2 s per frame on an 8-core CPU with the people models. `--no-people` scores about 0.25 s per frame but cannot tell a background-focused frame from a sharp one as well (reject 0.85 / 0.93, keep 0.91 / 0.83).
 
 `--generator` accepts `local`, `openai` (uses `OPENAI_API_KEY`, sends the original + prompt), any `https://…` endpoint that takes `{"image": b64png, "prompt", "n"}` and returns `{"images": [b64png…]}`, or `files:DIR` for candidates you made elsewhere.
 
