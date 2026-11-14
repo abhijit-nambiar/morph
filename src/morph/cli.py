@@ -150,7 +150,7 @@ def _add_cull_flags(s):
     g.add_argument("--focus-strictness", dest="focus_strictness", type=float, help="0 lenient .. 1 strict (default 0.5)")
     g.add_argument("--max-motion", dest="max_motion", type=float, help="directional-blur limit 0..1 (default 0.2)")
     g.add_argument("--exposure-tolerance", dest="exposure_tolerance_ev", type=float, help="EV the subject may be off (default 1.5)")
-    g.add_argument("--max-clip", dest="max_clip_hi", type=float, help="max blown-out fraction of the subject (default 0.08)")
+    g.add_argument("--max-clip", dest="max_clip_hi", type=float, help="max blown-out fraction of the subject (default 0.4)")
     g.add_argument("--burst-keep", dest="burst_keep", type=int, help="best N frames kept per burst (default 1)")
     g.add_argument("--burst-margin", dest="burst_margin", type=float, help="also keep burst frames within this quality of the best")
     g.add_argument("--burst-similarity", dest="burst_similarity", type=float, help="0..1, how alike frames must be to count as a burst (default 0.82)")

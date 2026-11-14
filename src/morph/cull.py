@@ -32,11 +32,15 @@ import numpy as np
 
 from .imageio import is_raw, list_images, load_preview, raw_pairs, read_info
 
-SCORE_VERSION = "cull-v1"
+SCORE_VERSION = "cull-v3"
 MEASURE_SIDE = 2560  # focus is judged as if viewing the photo at this long side (a large screen / A4 print)
 DETECT_SIDE = 512
 MAX_FACES = 6
 MAX_PARSED_FACES = 4  # faces run through the face parser (eyes), largest first
+FACE_PARSE_SIDE = 384  # face parser input size
+EYE_MIN_FACE_PX = 80  # face width (at MEASURE_SIDE) needed to judge eye state
+SHUT_MIN_FACE_PX = 300  # ...and to infer shut eyes from brows without visible eyes
+FACE_OUT_SIDE = 320  # face parser output size (eye geometry is measured at this resolution)
 REPORT_NAME = "cull.json"
 KEY_TARGET = 0.08  # log-mean linear luminance of a well-exposed, display-ready photo (median of the 88 real originals)
 _MANIFEST = ".morph-cull-album.json"
@@ -224,7 +228,8 @@ class PeopleDetector:
             bx0, by0 = int(max(0, cx - side / 2)), int(max(0, cy - side / 2))
             bx1, by1 = int(min(W, cx + side / 2)), int(min(H, cy + side / 2))
             crop = full_u8[by0:by1, bx0:bx1]
-            fp, flab = self.seg._probs(FACE_MODEL, crop, resize_to=512)
+            k = min(1.0, FACE_OUT_SIDE / max(crop.shape[:2]))
+            fp, flab = self.seg._probs(FACE_MODEL, crop, out_hw=(max(1, round(crop.shape[0] * k)), max(1, round(crop.shape[1] * k))), resize_to=FACE_PARSE_SIDE)
             lab = {str(v).lower(): int(k) for k, v in flab.items()}
             face = {"box": [round(x0), round(y0), round(x1), round(y1)], "area_frac": round(fw * fh / (W * H), 5), "eyes": []}
             skin = fp[[lab["skin"], lab["nose"]]].sum(0) if "skin" in lab else None
@@ -256,10 +261,12 @@ class PeopleDetector:
 def eye_openness(face: dict) -> float | None:
     """0 (closed) .. 1 (clearly open) for a face, None when no eyes are visible (profile, sunglasses, back of head)."""
     eyes = face.get("eyes") or []
+    width = face["box"][2] - face["box"][0]
+    if width < EYE_MIN_FACE_PX:
+        return None  # too small to tell a blink from a squint
     if not eyes:
-        # A frontal face (brows visible, no glasses) whose eyes the parser cannot find: lids are shut.
-        wide = face["box"][2] - face["box"][0] >= 60
-        return 0.05 if wide and face.get("brows", 0) >= 1 and not face.get("glasses") else None
+        # A large frontal face (brows visible, no glasses) whose eyes the parser cannot find: lids are shut.
+        return 0.05 if width >= SHUT_MIN_FACE_PX and face.get("brows", 0) >= 1 and not face.get("glasses") else None
     best = max(e["aspect"] for e in eyes)
     return float(np.clip((best - 0.10) / (0.25 - 0.10), 0, 1))
 
@@ -483,7 +490,7 @@ class CullSettings:
     max_motion: float = 0.2  # reject when blur is this directional (camera shake / subject motion)
     exposure_tolerance_ev: float = 1.5  # how far subject brightness may sit from a good mid-tone
     raw_latitude_ev: float = 1.0  # extra under-exposure tolerance for RAW files (shadows recover)
-    max_clip_hi: float = 0.08  # max fraction of the subject blown out
+    max_clip_hi: float = 0.4  # max fraction of the subject blown out
     reject_closed_eyes: bool = True
     closed_eyes_min_faces: int = 1  # reject if at least this many judged faces have closed eyes...
     closed_eyes_max_frac: float = 0.34  # ...and they are more than this fraction of the judged faces
@@ -551,17 +558,21 @@ def _t(captured: str | None) -> float | None:
 
 
 def group_bursts(scores: list[FrameScore], settings: CullSettings) -> None:
-    """Assign ``burst`` ids in place: consecutive (capture order) frames that are close in time and look alike."""
-    gid, prev = -1, None
+    """Assign ``burst_id`` in place: consecutive (capture order) frames that are close in time and look alike."""
+    gid, prev, members = -1, None, []
     for s in scores:
         same = False
-        if prev is not None and s.descriptor and prev.descriptor:
+        if prev is not None and s.descriptor:
             t0, t1 = _t(prev.captured), _t(s.captured)
             close = t0 is None or t1 is None or abs(t1 - t0) <= settings.burst_gap_s
-            same = close and similarity(np.asarray(prev.descriptor), np.asarray(s.descriptor)) >= settings.burst_similarity
+            # compare with the recent burst members, so one failed frame (dark, shaken) does not split a burst
+            d = np.asarray(s.descriptor)
+            same = close and any(similarity(np.asarray(m.descriptor), d) >= settings.burst_similarity for m in members[-8:] if m.descriptor)
         if not same:
             gid += 1
+            members = []
         s.burst_id = gid
+        members.append(s)
         prev = s
     sizes: dict[int, int] = {}
     for s in scores:

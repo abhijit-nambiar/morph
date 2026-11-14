@@ -131,7 +131,9 @@ def test_strictness_is_monotone(dump):
 def test_eye_openness():
     assert cull.eye_openness({"box": [0, 0, 100, 100], "eyes": [{"aspect": 0.4}]}) == 1
     assert cull.eye_openness({"box": [0, 0, 100, 100], "eyes": [{"aspect": 0.08}, {"aspect": 0.09}]}) == 0
-    assert cull.eye_openness({"box": [0, 0, 100, 100], "eyes": [], "brows": 2}) < 0.25  # lids shut
+    assert cull.eye_openness({"box": [0, 0, 400, 400], "eyes": [], "brows": 2}) < 0.25  # lids shut
+    assert cull.eye_openness({"box": [0, 0, 200, 200], "eyes": [], "brows": 2}) is None  # too small to infer a blink
+    assert cull.eye_openness({"box": [0, 0, 50, 50], "eyes": [{"aspect": 0.08}]}) is None  # tiny background face
     assert cull.eye_openness({"box": [0, 0, 100, 100], "eyes": [], "brows": 0}) is None  # back of head / profile
 
 

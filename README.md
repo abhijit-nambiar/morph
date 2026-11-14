@@ -58,8 +58,10 @@ From Python (this is what Studio uses):
 ```python
 from morph.cull import score_folder, decide, build_album, CullSettings
 scores = score_folder("card_dump", progress=lambda i, n, name: ...)   # list[FrameScore], cached
-decisions = decide(scores, CullSettings(focus_strictness=0.7))       # list[Decision]: keep, reasons, flags, burst
-build_album(decisions, "album", overrides={"DSC_0042.NEF": "keep"}, mode="link")
+decisions = decide(scores, CullSettings(focus_strictness=0.7),       # list[Decision]: keep, override, reasons, flags,
+                   overrides={"DSC_0042.NEF": True})                 #   burst_id/rank/size, focus/exposure/stability/quality 0..1
+build_album(decisions, "album", mode="link")                         # symlinks (or "copy") the kept frames
+CullSettings.schema()   # [{key, label, type, min, max, step, default, help}] to build a settings UI
 ```
 
 `scripts/make_cull_benchmark.py` builds a labelled dump from a folder of good photos (adds defocused, background-focused, shaken, badly exposed and near-duplicate frames) and reports precision/recall; see the culling results below.
