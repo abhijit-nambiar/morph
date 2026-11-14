@@ -107,20 +107,23 @@ def cmd_edit(a):
     from .project import Project
 
     p = Project.create(a.out / "project", a.album, a.cache, progress=_progress("analyse"))
-    sugg = p.suggest(a.references or None)
-    for s in sugg[: a.references or len(sugg)]:
-        if a.edit_dir:
-            ed = next((f for f in Path(a.edit_dir).glob(Path(s.name).stem + ".*")), None)
-            if ed is None:
-                continue
-            p.reference_from_edit(s.name, ed)
-        else:
+    if a.edit_dir:  # every photo you edited becomes a reference
+        from .imageio import list_images
+
+        edits = {f.stem: f for f in list_images(a.edit_dir)}
+        for ph in p.album.photos:
+            if ph.stem in edits:
+                p.reference_from_edit(ph.name, edits[ph.stem])
+                print(f"reference: {ph.name}")
+    else:
+        sugg = p.suggest(a.references or None)
+        for s in sugg[: a.references or len(sugg)]:
             cands = p.generate(s.name, a.look, a.generator, 1)
             if cands[0][1].verdict == "reject":
                 print(f"skipping {s.name}: candidate rejected ({'; '.join(cands[0][1].reasons)})")
                 continue
             p.pick(s.name, 0)
-        print(f"reference: {s.name}")
+            print(f"reference: {s.name}")
     ns = argparse.Namespace(project=p.root, out=a.out, max_side=a.max_side, quality=a.quality, harmonize_within=0.5, harmonize_across=0.35)
     cmd_apply(ns)
 
