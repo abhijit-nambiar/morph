@@ -202,6 +202,7 @@ input[type=text]:focus-visible,select:focus-visible,textarea:focus-visible{outli
   <aside class="side r">
     <div class="sec"><h3>Export</h3>
       <div class="field"><label>Size</label><select id="maxside"><option value="">Full resolution</option><option value="2048">2048 px long edge</option><option value="1600">1600 px (quick proof)</option></select></div>
+      <div class="field"><label for="maxmb">Max file size</label><input id="maxmb" type="number" min="0.2" step="0.5" placeholder="No limit (quality 95)" title="JPEG/WebP: Morph uses the highest quality that fits. Resolution is never reduced."><span class="faint">MB per photo. Never reduces resolution.</span></div>
       <div class="field"><label>Output folder</label><input type="text" id="outdir" placeholder="project/export"></div>
       <button class="btn pri" style="width:100%" id="applybtn">Apply look to album</button>
       <div id="applyprog"></div></div>
@@ -328,7 +329,7 @@ function renderApply(){if(!S||!S.scenes)return;const refs=Object.entries(S.refer
  $("applyhint").textContent=refs.length?`${refs.length} reference${refs.length>1?"s":""} → ${Object.keys(S.photos).length} photos in ${S.scenes.length} scenes`:"";
  $("refcards").innerHTML=refs.length?refs.map(([n,r])=>`<div class="refcard"><img src="/img/ref/${enc(n)}?t=${Date.now()}"><div class="body"><div class="row sp"><b>${esc(n)}</b><span class="faint">${esc(S.photos[n].scene)}</span></div><div class="faint">${esc(r.source)}</div></div></div>`).join(""):'<div class="empty">No references yet. Create at least one in step 2.</div>';
  $("applybtn").disabled=!refs.length||S.job.state=="running";if(!$("outdir").value&&S.export_default)$("outdir").value=S.export_default;if(S.job)job(S.job)}
-$("applybtn").onclick=async()=>{const r=await api("/api/apply",{max_side:$("maxside").value||null,out:$("outdir").value.trim()||null});if(r.error)return toast(r.error,"bad");$("reviewwrap").innerHTML="";job(r)};
+$("applybtn").onclick=async()=>{const r=await api("/api/apply",{max_side:$("maxside").value||null,max_mb:+$("maxmb").value||null,out:$("outdir").value.trim()||null});if(r.error)return toast(r.error,"bad");$("reviewwrap").innerHTML="";job(r)};
 function job(j){if(!j)return;const pct=j.n?Math.round(100*j.i/j.n):0,pill=$("jobpill"),run=j.state=="running";
  const label={propagate:"Matching looks",export:"Exporting",analyse:"Analysing",score:"Scoring frames",starting:"Starting"}[j.stage]||esc(j.stage||"");
  pill.innerHTML=run?`<span>${label} ${j.i}/${j.n}</span><span class="bar"><i style="width:${pct}%"></i></span>`:j.state=="done"&&j.review?`<a class="btn sm" href="${esc(j.review)}" target="_blank">Open review ↗</a>`:"";

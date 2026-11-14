@@ -265,8 +265,41 @@ def fit_size(width: int, height: int, max_side: int) -> tuple[int, int]:
     return max(1, round(width * scale)), max(1, round(height * scale))
 
 
-def save_image(img: np.ndarray, out: str | Path, source: str | Path | None = None, quality: int = 95) -> Path:
-    """Save float RGB [0,1] keeping the source's EXIF (orientation reset) and ICC profile."""
+def _quality_for_size(pil: Image.Image, fmt: str, kwargs: dict, quality: int, max_bytes: int) -> dict:
+    """Highest quality (<= ``quality``) whose file fits ``max_bytes``; if none does, the smallest file we can make.
+
+    Resolution is never reduced. Below quality 85, JPEG chroma is 4:2:0 as Lightroom does.
+    """
+    def size(q: int) -> tuple[int, dict]:
+        kw = {**kwargs, "quality": q}
+        if fmt == "JPEG":
+            kw["subsampling"] = 0 if q >= 85 else 2
+            kw.pop("optimize", None)
+        buf = io.BytesIO()
+        pil.save(buf, fmt, **{k: v for k, v in kw.items() if k not in ("exif", "icc_profile", "xmp")})
+        return buf.tell() + len(kwargs.get("exif", b"")) + len(kwargs.get("icc_profile", b"") or b"") + len(kwargs.get("xmp", b"") or b""), kw
+
+    lo, hi = 10, quality
+    n, best = size(hi)
+    if n <= max_bytes:
+        return best
+    n, kw = size(lo)
+    if n > max_bytes:
+        return kw
+    best = kw
+    while hi - lo > 1:
+        mid = (lo + hi) // 2
+        n, kw = size(mid)
+        lo, hi, best = (mid, hi, kw) if n <= max_bytes else (lo, mid, best)
+    return best
+
+
+def save_image(img: np.ndarray, out: str | Path, source: str | Path | None = None, quality: int = 95,
+               max_bytes: int | None = None) -> Path:
+    """Save float RGB [0,1] keeping the source's EXIF (orientation reset) and ICC profile.
+
+    ``max_bytes`` (JPEG/WebP): pick the highest quality that keeps the file under that size.
+    """
     out = Path(out)
     out.parent.mkdir(parents=True, exist_ok=True)
     arr = np.clip(np.rint(np.clip(img, 0.0, 1.0) * 255.0), 0, 255).astype(np.uint8)
@@ -297,6 +330,8 @@ def save_image(img: np.ndarray, out: str | Path, source: str | Path | None = Non
         kwargs.update(compression="tiff_deflate")
     elif suffix == ".webp":
         kwargs.update(quality=quality, method=4)
+    if max_bytes and suffix in (".jpg", ".jpeg", ".webp"):
+        kwargs = _quality_for_size(pil, "WEBP" if suffix == ".webp" else "JPEG", kwargs, quality, max_bytes)
     try:
         try:
             pil.save(out, **kwargs)

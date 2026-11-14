@@ -96,7 +96,8 @@ def cmd_apply(a):
     cfg = PropagationConfig(harmonize_within=a.harmonize_within, harmonize_across=a.harmonize_across)
     R = [make_reference(p.album, r.name, r.final, p.scene_of(r.name)) for r in refs]
     recipes = propagate(p.album, R, p.scenes, cfg, progress=_progress("propagate"))
-    report = export_album(p.album, recipes, a.out, a.max_side, a.quality, progress=_progress("export"), fmt=getattr(a, "format", None))
+    report = export_album(p.album, recipes, a.out, a.max_side, a.quality, progress=_progress("export"), fmt=getattr(a, "format", None),
+                          max_bytes=int(a.max_mb * 1e6) if getattr(a, "max_mb", None) else None)
     page = review_page(p.album, p.scenes, recipes, [r.name for r in refs], a.out)
     bad = [k for k, v in report.items() if not v["ok"]]
     print(f"exported {len(report)} photos to {a.out}/photos (structure check failures: {len(bad)}); review: {page}")
@@ -194,7 +195,7 @@ def cmd_edit(a):
                 continue
             p.pick(s.name, 0)
             print(f"reference: {s.name}")
-    ns = argparse.Namespace(project=p.root, out=a.out, max_side=a.max_side, quality=a.quality, harmonize_within=0.5, harmonize_across=0.35, format=a.format)
+    ns = argparse.Namespace(project=p.root, out=a.out, max_side=a.max_side, quality=a.quality, max_mb=a.max_mb, harmonize_within=0.5, harmonize_across=0.35, format=a.format)
     cmd_apply(ns)
 
 
@@ -248,6 +249,7 @@ def main(argv=None):
     s = sub.add_parser("apply", help="propagate the references to the whole album and export")
     s.add_argument("project", type=Path); s.add_argument("--out", type=Path, required=True)
     s.add_argument("--max-side", type=int); s.add_argument("--quality", type=int, default=95)
+    s.add_argument("--max-mb", type=float, help="JPEG/WebP: highest quality that keeps each file under this many MB (never downscales)")
     s.add_argument("--harmonize-within", type=float, default=0.5); s.add_argument("--harmonize-across", type=float, default=0.35)
     s.add_argument("--format", choices=["jpg", "tif"], help="output format (default: same as source; RAW -> jpg)")
     s.set_defaults(fn=cmd_apply)
@@ -259,6 +261,7 @@ def main(argv=None):
     s.add_argument("--references", type=int, default=0, help="how many reference photos (default: one per scene, max 6)")
     s.add_argument("--generator", default="local"); s.add_argument("--cache", type=Path)
     s.add_argument("--max-side", type=int); s.add_argument("--quality", type=int, default=95)
+    s.add_argument("--max-mb", type=float, help="JPEG/WebP: highest quality that keeps each file under this many MB (never downscales)")
     s.add_argument("--format", choices=["jpg", "tif"], help="output format (default: same as source; RAW -> jpg)")
     s.add_argument("--cull", action="store_true", help="ALBUM is a raw camera dump: auto-cull it into OUT/album first")
     _add_cull_flags(s)

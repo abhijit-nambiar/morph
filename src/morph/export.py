@@ -91,7 +91,7 @@ def output_names(names: list[str], fmt: str | None = None) -> dict[str, str]:
 
 
 def export_album(album: Album, recipes: dict[str, Recipe], out_dir: str | Path, max_side: int | None = None,
-                 quality: int = 95, progress=None, fmt: str | None = None) -> dict:
+                 quality: int = 95, progress=None, fmt: str | None = None, max_bytes: int | None = None) -> dict:
     out_dir = Path(out_dir)
     (out_dir / "photos").mkdir(parents=True, exist_ok=True)
     (out_dir / "recipes").mkdir(parents=True, exist_ok=True)
@@ -105,7 +105,7 @@ def export_album(album: Album, recipes: dict[str, Recipe], out_dir: str | Path, 
         if not v["ok"]:
             raise RuntimeError(f"{p.name}: export failed the structure check {v}")
         out = add_grain(out, r.g("grain"), int(album.get(p.name).sha256[:8], 16) % (2**31))
-        save_image(out, out_dir / "photos" / files[p.name], source=p.path, quality=quality)
+        save_image(out, out_dir / "photos" / files[p.name], source=p.path, quality=quality, max_bytes=max_bytes)
         r.save(out_dir / "recipes" / f"{Path(p.name).stem}.json")
         for tag, a in (("before", img), ("after", out)):
             s = 640 / max(a.shape[:2])

@@ -370,7 +370,7 @@ class Handler(BaseHTTPRequestHandler):
                 if S.job.get("state") == "running":
                     return self._json({"error": "already running"}, 409)
                 S.job = {"state": "running", "kind": "apply", "out": out, "stage": "starting", "i": 0, "n": len(P.album.photos)}
-            threading.Thread(target=_apply_job, args=(S, out, b.get("max_side")), daemon=True).start()
+            threading.Thread(target=_apply_job, args=(S, out, b.get("max_side"), b.get("max_mb")), daemon=True).start()
             return self._json(S.job)
         self._json({"error": "not found"}, 404)
 
@@ -411,7 +411,7 @@ class Handler(BaseHTTPRequestHandler):
         return None
 
 
-def _apply_job(S: State, out: str, max_side):
+def _apply_job(S: State, out: str, max_side, max_mb=None):
     from .export import export_album, review_page
     from .propagate import make_reference, propagate
 
@@ -430,7 +430,8 @@ def _apply_job(S: State, out: str, max_side):
 
         S.job = {**S.job, "stage": "propagate"}
         recipes = propagate(P.album, R, P.scenes, progress=prog("propagate"))
-        export_album(P.album, recipes, out, int(max_side) if max_side else None, progress=prog("export"))
+        export_album(P.album, recipes, out, int(max_side) if max_side else None, progress=prog("export"),
+                     max_bytes=int(float(max_mb) * 1e6) if max_mb else None)
         review_page(P.album, P.scenes, recipes, [r.name for r in refs], out)
         S.job = {**S.job, "state": "done", "review": "/out/index.html"}
     except Exception as e:  # noqa: BLE001

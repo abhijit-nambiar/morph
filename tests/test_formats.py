@@ -147,3 +147,13 @@ def test_jpeg_save_survives_high_entropy(tmp_path):
     noise = np.random.default_rng(0).random((3000, 4000, 3)).astype(np.float32)
     out = save_image(noise, tmp_path / "noise.jpg")
     assert Image.open(out).size == (4000, 3000)
+
+
+def test_jpeg_max_bytes_keeps_resolution(tmp_path):
+    rng = np.random.default_rng(1)
+    img = cv2.GaussianBlur(rng.random((1200, 1800, 3)).astype(np.float32), (0, 0), 2)
+    full = save_image(img, tmp_path / "full.jpg").stat().st_size
+    capped = save_image(img, tmp_path / "cap.jpg", max_bytes=full // 3)
+    assert capped.stat().st_size <= full // 3 and Image.open(capped).size == (1800, 1200)
+    tiny = save_image(img, tmp_path / "tiny.jpg", max_bytes=1000)  # unreachable: smallest file, same size
+    assert Image.open(tiny).size == (1800, 1200) and tiny.stat().st_size < capped.stat().st_size
