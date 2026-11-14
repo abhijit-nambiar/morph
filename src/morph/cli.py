@@ -96,7 +96,7 @@ def cmd_apply(a):
     cfg = PropagationConfig(harmonize_within=a.harmonize_within, harmonize_across=a.harmonize_across)
     R = [make_reference(p.album, r.name, r.final, p.scene_of(r.name)) for r in refs]
     recipes = propagate(p.album, R, p.scenes, cfg, progress=_progress("propagate"))
-    report = export_album(p.album, recipes, a.out, a.max_side, a.quality, progress=_progress("export"), fmt=getattr(a, "format", None),
+    report = export_album(p.album, recipes, a.out, a.max_side, a.quality, progress=_progress("export"), fmt=getattr(a, "format", None) or "jpg",
                           max_bytes=int(a.max_mb * 1e6) if getattr(a, "max_mb", None) else None)
     page = review_page(p.album, p.scenes, recipes, [r.name for r in refs], a.out)
     bad = [k for k, v in report.items() if not v["ok"]]
@@ -251,7 +251,8 @@ def main(argv=None):
     s.add_argument("--max-side", type=int); s.add_argument("--quality", type=int, default=95)
     s.add_argument("--max-mb", type=float, help="JPEG/WebP: highest quality that keeps each file under this many MB (never downscales)")
     s.add_argument("--harmonize-within", type=float, default=0.5); s.add_argument("--harmonize-across", type=float, default=0.35)
-    s.add_argument("--format", choices=["jpg", "tif"], help="output format (default: same as source; RAW -> jpg)")
+    s.add_argument("--format", choices=["jpg", "tif", "same"], default="jpg",
+                   help="jpg: 8-bit JPEG for screens (default); tif: 16-bit TIFF for print; same: keep each source's format")
     s.set_defaults(fn=cmd_apply)
 
     s = sub.add_parser("edit", help="one shot: album + look (or a folder of your edits) -> edited album")
@@ -262,7 +263,8 @@ def main(argv=None):
     s.add_argument("--generator", default="local"); s.add_argument("--cache", type=Path)
     s.add_argument("--max-side", type=int); s.add_argument("--quality", type=int, default=95)
     s.add_argument("--max-mb", type=float, help="JPEG/WebP: highest quality that keeps each file under this many MB (never downscales)")
-    s.add_argument("--format", choices=["jpg", "tif"], help="output format (default: same as source; RAW -> jpg)")
+    s.add_argument("--format", choices=["jpg", "tif", "same"], default="jpg",
+                   help="jpg: 8-bit JPEG for screens (default); tif: 16-bit TIFF for print; same: keep each source's format")
     s.add_argument("--cull", action="store_true", help="ALBUM is a raw camera dump: auto-cull it into OUT/album first")
     _add_cull_flags(s)
     s.set_defaults(fn=cmd_edit)

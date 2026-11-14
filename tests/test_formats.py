@@ -93,10 +93,12 @@ def test_16_bit_rgb_orientation(tmp_path, monkeypatch):
 
 
 def test_output_formats():
-    assert output_name("a.webp") == "a.webp"
-    assert output_name("a.png") == "a.png"
-    assert output_name("a.bmp") == "a.jpg"
-    assert output_name("a.avif") == "a.jpg"
+    assert output_name("a.webp") == output_name("a.png") == output_name("a.tif") == "a.jpg"
+    assert output_name("a.webp", "same") == "a.webp"
+    assert output_name("a.png", "same") == "a.png"
+    assert output_name("a.bmp", "same") == "a.jpg"
+    assert output_name("a.avif", "same") == "a.jpg"
+    assert output_name("a.jpg", "tif") == "a.tif"
 
 
 def test_upload_bytes(tmp_path):
@@ -186,3 +188,5 @@ def test_raw_to_tiff_is_16_bit_with_profile(tmp_path):
     with Image.open(png) as im:
         assert im.getexif().get_ifd(0x8769).get(0x9003) == "2024:05:01 10:00:00"
     assert Image.open(save_image(img, tmp_path / "P.jpg", source=raw)).mode == "RGB"
+    src8 = save_image(img, tmp_path / "s.jpg")
+    assert cv2.imread(str(save_image(img, tmp_path / "from8.tif", source=src8)), cv2.IMREAD_UNCHANGED).dtype == np.uint16

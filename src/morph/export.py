@@ -52,17 +52,18 @@ def verify(orig: np.ndarray, out: np.ndarray) -> dict:
     return {"same_geometry": bool(ok_shape), "structure": round(st, 4), "edge_f1": round(ef, 4), "ok": bool(ok_shape and st > 0.6)}
 
 
-def output_name(name: str, fmt: str | None = None) -> str:
-    """Export file name: ``fmt`` ("jpg"/"tif") if given, else the source's own format; RAW sources become JPEG."""
+def output_name(name: str, fmt: str | None = "jpg") -> str:
+    """Export file name: ``fmt`` "jpg" (default, for screens) or "tif" (16-bit, for print); "same"/None keeps the
+    source's own format where it is writable (RAW and the rest become JPEG)."""
     p = Path(name)
-    if fmt:
+    if fmt and fmt != "same":
         return f"{p.stem}.{fmt.lower().lstrip('.')}"
     if is_raw(p) or p.suffix.lower() not in WRITABLE_SUFFIXES:
         return f"{p.stem}.jpg"
     return p.name
 
 
-def output_names(names: list[str], fmt: str | None = None) -> dict[str, str]:
+def output_names(names: list[str], fmt: str | None = "jpg") -> dict[str, str]:
     """``output_name`` for a whole album, disambiguating sources that would land on the same file
     (``a.jpg`` + ``a.png`` with ``fmt="jpg"``, or a RAW+JPEG pair): the one already named like its
     output keeps it, the others get their source format in the name (``a-png.jpg``); names that still
@@ -91,7 +92,7 @@ def output_names(names: list[str], fmt: str | None = None) -> dict[str, str]:
 
 
 def export_album(album: Album, recipes: dict[str, Recipe], out_dir: str | Path, max_side: int | None = None,
-                 quality: int = 95, progress=None, fmt: str | None = None, max_bytes: int | None = None) -> dict:
+                 quality: int = 95, progress=None, fmt: str | None = "jpg", max_bytes: int | None = None) -> dict:
     out_dir = Path(out_dir)
     (out_dir / "photos").mkdir(parents=True, exist_ok=True)
     (out_dir / "recipes").mkdir(parents=True, exist_ok=True)

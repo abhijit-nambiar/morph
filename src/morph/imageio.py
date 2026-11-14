@@ -341,15 +341,49 @@ def _save_16bit(img: np.ndarray, out: Path, icc: bytes | None, exif: Image.Exif 
     for t, v in base.items():
         if isinstance(v, str) and v.strip("\0 ") and t != 305:
             tags.append((t, "s", 0, v.strip("\0 "), True))
-    tifffile.imwrite(out, arr, photometric="rgb", compression="zlib", extratags=tags, metadata=None, software="Morph")
+    subs = {t: dict(exif.get_ifd(t)) for t in (_EXIF_IFD, _GPS_IFD)} if exif else {}
+    subs = {t: d for t, d in subs.items() if d}
+    # tifffile refuses the EXIF/GPS pointer tags: write placeholders one tag number lower (keeps the IFD
+    # sorted), then retag them and fill in the offsets once the sub-IFDs are appended
+    tags += [(t - 1, "I", 1, 0, True) for t in subs]
+    tifffile.imwrite(out, arr, photometric="rgb", compression="zlib", extratags=tags, metadata=None, software="Morph",
+                     byteorder="<")
+    if subs:
+        _append_sub_ifds(out, subs)
     return out
+
+
+def _append_sub_ifds(path: Path, subs: dict[int, dict]) -> None:
+    """Write EXIF/GPS sub-IFDs (which tifffile cannot) at the end of a TIFF and point IFD0's tags at them."""
+    import struct
+
+    import tifffile
+    from PIL.TiffImagePlugin import ImageFileDirectory_v2
+
+    with tifffile.TiffFile(path) as t:
+        slots = {k: t.pages[0].tags[k - 1].valueoffset for k in subs}
+    data = bytearray(path.read_bytes())
+    for k, at in slots.items():
+        data[at - 8 : at - 6] = struct.pack("<H", k)
+    for k, d in subs.items():
+        data += b"\0" * (-len(data) % 4)
+        ifd = ImageFileDirectory_v2(prefix=b"II")
+        for tag, v in d.items():
+            try:
+                ifd[tag] = v
+            except (TypeError, ValueError):
+                continue
+        off = len(data)
+        data += ifd.tobytes(off)
+        data[slots[k] : slots[k] + 4] = struct.pack("<I", off)
+    path.write_bytes(bytes(data))
 
 
 def save_image(img: np.ndarray, out: str | Path, source: str | Path | None = None, quality: int = 95,
                max_bytes: int | None = None) -> Path:
     """Save float RGB [0,1] keeping the source's EXIF (orientation reset) and ICC profile.
 
-    PNG/TIFF from a RAW or 16-bit source are written 16-bit; everything else (and JPEG always) is 8-bit.
+    TIFF is always 16-bit, PNG is 16-bit from a RAW or 16-bit source; JPEG/WebP are 8-bit.
 
     ``max_bytes`` (JPEG/WebP): pick the highest quality that keeps the file under that size.
     """
@@ -380,7 +414,7 @@ def save_image(img: np.ndarray, out: str | Path, source: str | Path | None = Non
                 kwargs["icc_profile"] = icc
             xmp = src.info.get("xmp")
     suffix = out.suffix.lower()
-    if deep and suffix in (".tif", ".tiff", ".png"):
+    if suffix in (".tif", ".tiff") or (deep and suffix == ".png"):  # TIFF is the print format: always 16-bit
         return _save_16bit(img, out, kwargs.get("icc_profile"), exif_obj if kwargs.get("exif") else None, xmp)
     if suffix in (".jpg", ".jpeg"):
         kwargs.update(quality=quality, subsampling=0, optimize=True)  # dropped below if libjpeg overflows
