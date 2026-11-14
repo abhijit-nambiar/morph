@@ -214,7 +214,7 @@ let S=null,view=null,cur=null,region="global",adj={global:{},local:{}},dirty=fal
 /* ---------- navigation ---------- */
 function show(v){view=v;document.querySelectorAll(".view").forEach(e=>e.classList.toggle("on",e.id=="v-"+v));
  document.querySelectorAll("#steps button").forEach(b=>b.classList.toggle("on",b.dataset.v==v));
- if(v=="apply")renderApply();if(v=="cull")renderCull()}
+ if(v=="apply")renderApply();if(v=="cull"){if(C)renderCull();else loadCull()}}
 $("steps").onclick=e=>{const b=e.target.closest("button");if(b&&!b.disabled)show(b.dataset.v)};
 async function load(){S=await api("/api/state");$("projname").textContent=S.project?"· "+S.project:"";
  $("st-cull").disabled=!S.cull;$("st-refs").disabled=$("st-apply").disabled=!S.scenes;
