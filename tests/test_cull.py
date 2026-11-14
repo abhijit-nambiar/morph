@@ -1,4 +1,5 @@
 import json
+from pathlib import Path
 
 import cv2
 import numpy as np
@@ -246,3 +247,14 @@ def test_zero_thresholds_do_not_crash(dump):
     lo = {r["key"]: r["min"] for r in CullSettings.schema() if r["type"] != "bool"}
     for d in decide(scores, CullSettings(**lo)):
         assert 0 <= d.quality <= 1 and 0 <= d.exposure <= 1
+
+
+def test_cache_follows_a_moved_dump(dump, tmp_path, monkeypatch):
+    import shutil
+    first = {s.name: s for s in score_folder(dump, people=False)}
+    moved = shutil.move(str(dump), str(tmp_path / "moved"))
+    monkeypatch.setattr(cull, "_score_pixels", lambda *a, **k: pytest.fail("cache miss after move"))
+    for s in score_folder(moved, people=False):
+        assert s.path == str((Path(moved) / s.name).resolve()) and Path(s.path).exists()
+        assert Path(s.scored_from).exists() and Path(s.preview).exists()
+        assert s.preview.startswith(str(Path(moved).resolve())) and s.focus_blur_px == first[s.name].focus_blur_px

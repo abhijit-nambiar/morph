@@ -410,6 +410,18 @@ def _round(d):
     return d
 
 
+def _relocate(rec: dict, f: Path, folder: Path, cache: Path) -> dict:
+    """A cached record with its paths pointed at the current files (the dump or cache may have moved)."""
+    rec = dict(rec)
+    rec["path"] = str(f.resolve())
+    src = folder / Path(rec.get("scored_from") or f).name
+    rec["scored_from"] = str(src.resolve()) if src.exists() else rec["path"]
+    if rec.get("preview"):
+        prev = cache / "previews" / Path(rec["preview"]).name
+        rec["preview"] = str(prev.resolve()) if prev.exists() else None
+    return rec
+
+
 def score_folder(folder: str | Path, cache: str | Path | None = None, progress=None, people: bool = True,
                  detector=None, pairs: str = "raw", workers: int | None = None) -> list[FrameScore]:
     """Score every frame in ``folder`` (RAW and/or JPEG). Results are cached in ``cache``
@@ -445,7 +457,7 @@ def score_folder(folder: str | Path, cache: str | Path | None = None, progress=N
     for f in files:
         sig = _signature(f)
         if sig in prior:
-            out[sig] = prior[sig]
+            out[sig] = _relocate(prior[sig], f, folder, cache)
             done += 1
             if progress:
                 progress(done, n, f.name)
