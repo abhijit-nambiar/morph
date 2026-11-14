@@ -534,17 +534,17 @@ def _match_exposure(lin: np.ndarray, target: float) -> np.ndarray:
     sm = lin[::step, ::step].astype(np.float32)
     lut = _raw_lut()
 
-    def med(ev):
+    def mean_luma(ev):
         v = _shoulder16(sm * 2.0**ev) if ev > 0 else sm * 2.0**ev
         return float((lut[np.clip(v, 0, 65535).astype(np.uint16)] @ _LUM).mean())
 
     lo, hi = -RAW_MATCH_EV, RAW_MATCH_EV
-    if not med(lo) < target < med(hi):
-        ev = lo if target <= med(lo) else hi
+    if not mean_luma(lo) < target < mean_luma(hi):
+        ev = lo if target <= mean_luma(lo) else hi
     else:
         for _ in range(14):
             mid = (lo + hi) / 2
-            lo, hi = (mid, hi) if med(mid) < target else (lo, mid)
+            lo, hi = (mid, hi) if mean_luma(mid) < target else (lo, mid)
         ev = (lo + hi) / 2
     if abs(ev) < 0.05:
         return lin
