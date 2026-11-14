@@ -12,6 +12,7 @@ Also reports within-scene consistency (spread of face-skin / global Lab across a
 
 from __future__ import annotations
 
+import hashlib
 import json
 from pathlib import Path
 
@@ -35,7 +36,9 @@ def _aligned_edits(album: Album, edits_dir: Path, cache: Path) -> dict[str, tupl
         e = edits.get(p.stem)
         if e is None:
             continue
-        ft, fw = cache / f"{p.stem}.png", cache / f"{p.stem}.w.npy"
+        st = e.stat()
+        sig = hashlib.sha1(f"{e.resolve()}:{st.st_size}:{st.st_mtime_ns}".encode()).hexdigest()[:10]
+        ft, fw = cache / f"{p.stem}.{sig}.png", cache / f"{p.stem}.{sig}.w.npy"
         if ft.exists() and fw.exists():
             out[p.name] = (load_rgb(ft), np.load(fw).astype(np.float32))
             continue
