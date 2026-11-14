@@ -19,8 +19,12 @@ from .colorspace import delta_e76, srgb_to_lab
 from .recipe import BOUNDS, GLOBAL_KEYS, LOCAL_BOUNDS, LOCAL_KEYS, LOCAL_REGIONS, Recipe
 from .render import Params, blur, render, to_tensor
 
-FIT_GLOBAL = tuple(k for k in GLOBAL_KEYS if k not in ("grain", "vignette", "sharpen"))
-FIT_LOCAL = tuple(k for k in LOCAL_KEYS if k not in ("dehaze",))
+# Fine-detail sliders are invisible at fitting resolution, so fitting them only fits noise.
+FIT_GLOBAL = tuple(k for k in GLOBAL_KEYS if k not in ("grain", "vignette", "sharpen", "texture", "noise_reduction"))
+FIT_LOCAL = tuple(k for k in LOCAL_KEYS if k not in ("texture", "noise_reduction"))
+DEHAZE_REGIONS = ("background", "sky")  # haze is a property of distance; skin/clothes "dehaze" is just contrast
+SPARSE = lambda k: k.startswith(("hsl_", "grade_", "curve_"))  # secondary controls: use only when they clearly pay
+MIN_REGION_PX = 30
 DETAIL = {"clarity", "texture", "dehaze", "noise_reduction", "sharpen"}
 
 
@@ -133,6 +137,7 @@ def fit_recipe(
     steps: int = 260,
     regions: tuple[str, ...] | None = None,
     reg: float = 2e-3,
+    l1: float = 0.08,
     max_side: int = 384,
     fit_detail: bool = True,
 ) -> FitResult:
@@ -152,18 +157,19 @@ def fit_recipe(
         ri = LOCAL_REGIONS.index(r)
         m[0, ri] = torch.from_numpy(rs(masks[r].astype(np.float32)))
         cover[r] = float((m[0, ri] * w[0, 0]).mean())
-    regions = tuple(r for r in regions if cover[r] > 1.5e-3)
+    regions = tuple(r for r in regions if cover[r] > 1.5e-3 and int((masks[r] > 0.5).sum()) >= MIN_REGION_PX)
     gkeys = set(FIT_GLOBAL) - (set() if fit_detail else DETAIL)
     lkeys = set(FIT_LOCAL) - (set() if fit_detail else DETAIL)
-    al = {LOCAL_REGIONS.index(r): lkeys for r in regions}
+    al = {LOCAL_REGIONS.index(r): lkeys - (set() if r in DEHAZE_REGIONS else {"dehaze"}) for r in regions}
     scale = None  # spatial filters scale with the rendered grid (resolution independent)
 
     p = Params.from_recipe(init or Recipe(), requires_grad=True)
     gmask = torch.tensor([k in gkeys for k in GLOBAL_KEYS], dtype=torch.float32)
     lmask = torch.zeros_like(p.lv)
-    for ri in al:
-        lmask[ri] = torch.tensor([k in lkeys for k in LOCAL_KEYS], dtype=torch.float32)
+    for ri, keys in al.items():
+        lmask[ri] = torch.tensor([k in keys for k in LOCAL_KEYS], dtype=torch.float32)
     greg = torch.tensor([reg * (4 if k in DETAIL else 1) for k in GLOBAL_KEYS])
+    gl1 = torch.tensor([l1 if SPARSE(k) else 0.0 for k in GLOBAL_KEYS])
     lreg = torch.tensor([reg * (3 if k in DETAIL else 1.5) for k in LOCAL_KEYS])
     glo = torch.tensor([BOUNDS[k][0] for k in GLOBAL_KEYS]); ghi = torch.tensor([BOUNDS[k][1] for k in GLOBAL_KEYS])
     llo = torch.tensor([LOCAL_BOUNDS[k][0] for k in LOCAL_KEYS]); lhi = torch.tensor([LOCAL_BOUNDS[k][1] for k in LOCAL_KEYS])
@@ -182,7 +188,7 @@ def fit_recipe(
         loss = (e * w).sum() / wsum
         for rm in rw:  # balance small regions (eyes, lips) against large ones
             loss = loss + 0.25 * (e * rm).sum() / rm.sum().clamp(min=1)
-        loss = loss + (greg * p.gv**2).sum() + (lreg * p.lv**2 * lmask).sum()
+        loss = loss + (greg * p.gv**2).sum() + (lreg * p.lv**2 * lmask).sum() + (gl1 * p.gv.abs()).sum()
         return loss
 
     for stage_local, n, lr in ((False, steps // 2, 0.05), (bool(regions), steps - steps // 2, 0.03)):
