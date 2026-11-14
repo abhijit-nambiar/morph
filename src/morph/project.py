@@ -96,8 +96,8 @@ class Project:
     def references(self) -> list[ReferenceEdit]:
         if not self.ref_dir.exists():
             return []
+        names = {ph.name for ph in self.album.photos}  # a re-created project may have dropped photos (e.g. re-culled)
         refs = [ReferenceEdit.from_json(json.loads(p.read_text())) for p in sorted(self.ref_dir.glob("*.json"))]
-        names = set(self.album.names)
         return [r for r in refs if r.name in names]
 
     def reference(self, name: str) -> ReferenceEdit | None:

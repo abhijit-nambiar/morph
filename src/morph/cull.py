@@ -445,7 +445,11 @@ def score_folder(folder: str | Path, cache: str | Path | None = None, progress=N
     sidecars = raw_pairs(folder) if pairs != "jpeg" else {}
     if detector is None and people:
         detector = PeopleDetector()
-    todo = [f for f in files if _signature(f) not in prior]
+    def key(f: Path) -> str:  # a RAW scored from its camera JPEG is stale when either file changes
+        side = sidecars.get(f.stem) if is_raw(f) else None
+        return _signature(f) + (f"|{_signature(side)}" if side else "")
+
+    todo = [f for f in files if key(f) not in prior]
 
     def load(f: Path):
         src = sidecars.get(f.stem, f) if is_raw(f) else f
@@ -455,7 +459,7 @@ def score_folder(folder: str | Path, cache: str | Path | None = None, progress=N
     out: dict[str, dict] = {}
     n, done = len(files), 0
     for f in files:
-        sig = _signature(f)
+        sig = key(f)
         if sig in prior:
             out[sig] = _relocate(prior[sig], f, folder, cache)
             done += 1
@@ -474,7 +478,7 @@ def score_folder(folder: str | Path, cache: str | Path | None = None, progress=N
             r = _score_pixels(img, detector)
             del img
             small = r.pop("_small")
-            sig = _signature(f)
+            sig = key(f)
             prev = cache / "previews" / (hashlib.sha1(sig.encode()).hexdigest()[:16] + ".jpg")
             cv2.imwrite(str(prev), cv2.cvtColor((np.clip(small, 0, 1) * 255).astype(np.uint8), cv2.COLOR_RGB2BGR), [cv2.IMWRITE_JPEG_QUALITY, 82])
             out[sig] = _round({
@@ -489,7 +493,7 @@ def score_folder(folder: str | Path, cache: str | Path | None = None, progress=N
             if done % 25 == 0:
                 idx_path.write_text(json.dumps({"version": SCORE_VERSION, "people": people, "frames": {**prior, **out}}))
     idx_path.write_text(json.dumps({"version": SCORE_VERSION, "people": people, "frames": {**prior, **out}}))
-    scores = [FrameScore.from_json(out[_signature(f)]) for f in files]
+    scores = [FrameScore.from_json(out[key(f)]) for f in files]
     scores.sort(key=lambda s: (s.captured or "", s.name))
     settings = CullSettings()
     group_bursts(scores, settings)
@@ -782,6 +786,8 @@ def build_album(decisions: list[Decision], out_dir: str | Path, overrides: dict[
         if not keep:
             continue
         src, dst = Path(d.path), out_dir / d.name
+        if dst.exists() and not dst.is_symlink() and dst.resolve() == src.resolve():
+            raise ValueError(f"the album folder {out_dir} must differ from the folder being culled")
         if dst.is_symlink() or dst.exists():
             ours = d.name in previous
             linked = dst.is_symlink() and Path(os.readlink(dst)) == src.resolve()
@@ -794,7 +800,7 @@ def build_album(decisions: list[Decision], out_dir: str | Path, overrides: dict[
             if not (ours or linked):
                 raise FileExistsError(f"{dst} exists and was not created by morph cull")
             dst.unlink()  # switch link <-> copy, or the source changed
-        if mode == "link":
+        if mode == "link" and src.resolve().parent != out_dir.resolve():  # never link to files we may remove
             try:
                 dst.symlink_to(src.resolve())
             except OSError:

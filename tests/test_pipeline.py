@@ -65,3 +65,12 @@ def test_cli_flow(fake_models, tiny_album, tmp_path, capsys):
     v = json.loads((tmp_path / "out" / "verification.json").read_text())
     assert len(v) == 7 and all(x["ok"] for x in v.values())
     assert (tmp_path / "out" / "index.html").exists()
+
+
+def test_references_skip_photos_no_longer_in_album(fake_models, tiny_album, tmp_path):
+    proj = Project.create(tmp_path / "proj", tiny_album)
+    name = proj.album.photos[0].name
+    proj.adjust(name, {"exposure": 0.2})
+    (tiny_album / name).unlink()  # e.g. a re-cull dropped it
+    proj = Project.create(tmp_path / "proj", tiny_album)
+    assert name not in proj.album.names and proj.references() == []
