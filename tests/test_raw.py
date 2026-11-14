@@ -96,3 +96,27 @@ def test_album_and_export_accept_raw(fake_models, tmp_path):
     rep = export_album(album, {p.name: Recipe() for p in album.photos}, tmp_path / "out")
     assert sorted(p.name for p in (tmp_path / "out" / "photos").iterdir()) == ["R0.jpg", "R1.jpg"]
     assert all(v["file"].endswith(".jpg") for v in rep.values())
+
+
+def test_cull_cache_tracks_the_paired_jpeg(tmp_path, monkeypatch):
+    import os
+
+    import cv2
+
+    from morph import cull
+    from morph.cull import score_folder
+
+    write_dng(tmp_path / "P.NEF", scene())
+    sharp = (np.clip(scene(), 0, 1) ** (1 / 2.2) * 255).astype(np.uint8)
+    Image.fromarray(sharp).save(tmp_path / "P.JPG", quality=95)
+    (first,) = score_folder(tmp_path, people=False)
+    assert first.scored_from.endswith("P.JPG")
+    Image.fromarray(cv2.GaussianBlur(sharp, (0, 0), 6)).save(tmp_path / "P.JPG", quality=95)
+    st = (tmp_path / "P.JPG").stat()
+    os.utime(tmp_path / "P.JPG", ns=(st.st_atime_ns, st.st_mtime_ns + 10**9))
+    calls, real = [], cull._score_pixels
+    monkeypatch.setattr(cull, "_score_pixels", lambda *a, **k: calls.append(1) or real(*a, **k))
+    (second,) = score_folder(tmp_path, people=False)
+    assert calls and second.frame_blur_px != first.frame_blur_px
+    score_folder(tmp_path, people=False)
+    assert len(calls) == 1  # unchanged pair: cached
