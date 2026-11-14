@@ -38,8 +38,8 @@ def verify(orig: np.ndarray, out: np.ndarray) -> dict:
     s = 768 / max(orig.shape[:2])
     small = lambda a: cv2.resize(a, None, fx=s, fy=s, interpolation=cv2.INTER_AREA) if s < 1 else a
     ok_shape = orig.shape == out.shape
-    ef = edge_f1(small(orig), small(out)) if ok_shape else 0.0
-    return {"same_geometry": bool(ok_shape), "edge_f1": round(ef, 4), "ok": bool(ok_shape and ef > 0.8)}
+    ef = edge_f1(small(orig), small(out), tone_tolerant=True) if ok_shape else 0.0
+    return {"same_geometry": bool(ok_shape), "edge_f1": round(ef, 4), "ok": bool(ok_shape and ef > 0.9)}
 
 
 def output_name(name: str, fmt: str | None = None) -> str:

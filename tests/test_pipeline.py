@@ -74,3 +74,22 @@ def test_references_skip_photos_no_longer_in_album(fake_models, tiny_album, tmp_
     (tiny_album / name).unlink()  # e.g. a re-cull dropped it
     proj = Project.create(tmp_path / "proj", tiny_album)
     assert name not in proj.album.names and proj.references() == []
+
+
+def test_export_verify_tolerates_tone_but_not_geometry():
+    import cv2
+    from morph.export import verify
+    from morph.recipe import Recipe
+    from morph.render import render_recipe
+
+    rng = np.random.default_rng(0)
+    img = np.zeros((480, 720, 3), np.float32) + np.linspace(0.15, 0.6, 720, dtype=np.float32)[None, :, None]
+    for _ in range(40):
+        x, y, r = rng.integers(20, 700), rng.integers(20, 460), int(rng.integers(5, 40))
+        cv2.circle(img, (int(x), int(y)), r, rng.uniform(0.05, 0.95, 3).tolist(), -1)
+    graded = render_recipe(img, None, Recipe({"exposure": -0.5, "highlights": -0.6, "shadows": 0.4, "contrast": 0.3,
+                                              "temperature": 0.3, "dehaze": 0.2, "noise_reduction": 0.4, "grain": 0.15}))
+    assert verify(img, graded)["ok"]
+    rot = cv2.warpAffine(graded, cv2.getRotationMatrix2D((360, 240), 1.5, 1.0), (720, 480), borderMode=cv2.BORDER_REFLECT)
+    assert not verify(img, rot)["ok"]
+    assert not verify(img, graded[:, ::-1].copy())["ok"]

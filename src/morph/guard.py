@@ -45,12 +45,16 @@ class GuardReport:
         return asdict(self)
 
 
-def edge_f1(a: np.ndarray, b: np.ndarray, tol: int | None = None) -> float:
+def edge_f1(a: np.ndarray, b: np.ndarray, tol: int | None = None, tone_tolerant: bool = False) -> float:
+    """Edge-map F1 within ``tol`` px. ``tone_tolerant`` matches each image's edges against the other's
+    weak edges too, so an edge pushed just under/over the Canny threshold by a tone change still counts."""
     h, w = a.shape[:2]
     tol = tol or max(1, round(max(h, w) / 400))
-    ea, eb = (cv2.Canny(cv2.GaussianBlur(_gray_u8(x), (0, 0), 1.0), 60, 140) > 0 for x in (a, b))
+    ga, gb = (cv2.GaussianBlur(_gray_u8(x), (0, 0), 1.0) for x in (a, b))
+    ea, eb = (cv2.Canny(g, 60, 140) > 0 for g in (ga, gb))
+    wa, wb = (cv2.Canny(g, 40, 100) > 0 for g in (ga, gb)) if tone_tolerant else (ea, eb)
     k = np.ones((2 * tol + 1, 2 * tol + 1), np.uint8)
-    da, db = cv2.dilate(ea.astype(np.uint8), k) > 0, cv2.dilate(eb.astype(np.uint8), k) > 0
+    da, db = cv2.dilate(wa.astype(np.uint8), k) > 0, cv2.dilate(wb.astype(np.uint8), k) > 0
     if ea.sum() < 50 and eb.sum() < 50:
         return 1.0
     prec = (eb & da).sum() / max(1, eb.sum())
