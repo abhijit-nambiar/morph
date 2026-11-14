@@ -211,6 +211,8 @@ def _load_high_bit_depth(path: str | Path, im: Image.Image, max_side: int | None
     orient = im.getexif().get(_TAG_ORIENTATION, 1)  # read before decoding: Pillow drops TIFF tags on load
     if im.mode.startswith(("I", "F")):  # greyscale: Pillow hands over the raw values
         arr = np.asarray(im)
+        if im.format == "TIFF":
+            orient = 1  # Pillow's TIFF reader applies the orientation tag itself
         scale = 65535.0 if im.mode.startswith("I;16") else None
     else:  # 16-bit RGB: Pillow truncates to 8 bits, so decode with OpenCV and orient from Pillow's tag below
         arr = cv2.imread(str(path), cv2.IMREAD_ANYDEPTH | cv2.IMREAD_ANYCOLOR | cv2.IMREAD_IGNORE_ORIENTATION)
