@@ -233,7 +233,7 @@ def _correct(img: np.ndarray, masks: dict[str, np.ndarray], base: Recipe, target
     for step in range(cfg.steps + cfg.refine_steps):
         opt.zero_grad()
         if step < cfg.steps:
-            out = render(xb, mt, params(pz), active_global=set(CORR_GLOBAL), active_local=corr_local, gamut_map=False)
+            out = render(xb_raw, mt, params(pz), active_global=set(CORR_GLOBAL), active_local=corr_local, gamut_map=False)
         else:
             out = render(x, mt, params(p0), active_global=ag, active_local=al, gamut_map=False)
         loss_of(out).backward()
