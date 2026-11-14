@@ -581,21 +581,22 @@ def _t(captured: str | None) -> float | None:
 
 def group_bursts(scores: list[FrameScore], settings: CullSettings) -> None:
     """Assign ``burst_id`` in place: consecutive (capture order) frames that are close in time and look alike."""
-    gid, prev, members = -1, None, []
-    for s in scores:
-        same = False
-        if prev is not None and s.descriptor:
-            t0, t1 = _t(prev.captured), _t(s.captured)
-            close = t0 is None or t1 is None or abs(t1 - t0) <= settings.burst_gap_s
-            # compare with the recent burst members, so one failed frame (dark, shaken) does not split a burst
-            d = np.asarray(s.descriptor)
-            same = close and any(similarity(np.asarray(m.descriptor), d) >= settings.burst_similarity for m in members[-8:] if m.descriptor)
-        if not same:
+    gid = -1
+    for i, s in enumerate(scores):
+        match = None
+        if s.descriptor:
+            d, t1 = np.asarray(s.descriptor), _t(s.captured)
+            # look back over the last few frames, so one failed frame (dark, shaken) does not split a burst
+            for prev in reversed(scores[max(0, i - 8):i]):
+                t0 = _t(prev.captured)
+                if t0 is not None and t1 is not None and abs(t1 - t0) > settings.burst_gap_s:
+                    break
+                if prev.descriptor and similarity(np.asarray(prev.descriptor), d) >= settings.burst_similarity:
+                    match = prev
+                    break
+        if match is None:
             gid += 1
-            members = []
-        s.burst_id = gid
-        members.append(s)
-        prev = s
+        s.burst_id = match.burst_id if match is not None else gid
     sizes: dict[int, int] = {}
     for s in scores:
         sizes[s.burst_id] = sizes.get(s.burst_id, 0) + 1

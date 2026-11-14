@@ -272,3 +272,17 @@ def test_build_album_switches_link_and_copy(dump, tmp_path):
     again = build_album(decisions, album, mode="copy")  # unchanged copies are left alone
     assert {p.name: p.stat().st_mtime_ns for p in again} == mtimes
     assert all(p.is_symlink() for p in build_album(decisions, album, mode="link"))
+
+
+def test_failed_frame_does_not_split_a_burst():
+    rng = np.random.default_rng(0)
+    a = rng.normal(size=32 * 24)
+    a /= np.linalg.norm(a)
+    other = rng.normal(size=32 * 24)
+    other /= np.linalg.norm(other)
+    col = [0.4] * 36
+    frames = [_fake(f"{i}.jpg", 0, 0, descriptor=list(v) + c, captured=f"2026-01-01T10:00:0{i}")
+              for i, (v, c) in enumerate([(a, col), (a, [0.02] * 36), (a * 0.99 + other * 0.05, col), (other, col)])]
+    cull.group_bursts(frames, CullSettings())
+    ids = [f.burst_id for f in frames]
+    assert ids[0] == ids[2] != ids[1] and ids[3] not in (ids[0], ids[1])
