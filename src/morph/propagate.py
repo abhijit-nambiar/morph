@@ -94,6 +94,28 @@ def _mean(stats: dict, r: str) -> np.ndarray | None:
     return None if s is None or s["coverage"] < 0.004 else np.array(s["mean"], np.float64)
 
 
+def _global_transfer(o: np.ndarray, ref: Reference) -> np.ndarray | None:
+    """Map a Lab mean through the reference's whole-frame edit: L shifts, chroma scales with the edit's
+    a/b spread (so a desaturating edit pulls colour toward neutral instead of shifting it)."""
+    so, se = ref.orig_stats.get("global"), ref.edit_stats.get("global")
+    if not so or not se:
+        return None
+    ro, re_ = np.array(so["mean"], np.float64), np.array(se["mean"], np.float64)
+    return re_ + _chroma_gain(ref, "global") * (o - ro)
+
+
+def _chroma_gain(ref: Reference, r: str) -> np.ndarray:
+    """1 for L; for a/b, how much the reference's edit scaled colour spread in region ``r`` (0 for black & white)."""
+    so, se = ref.orig_stats.get(r), ref.edit_stats.get(r)
+    if not so or not se:
+        return np.ones(3)
+    o_sd, e_sd = np.array(so["std"][1:], np.float64), np.array(se["std"][1:], np.float64)
+    # flat references: fall back to overall chroma magnitude; an already-grey one says nothing about chroma
+    o_rms, e_rms = np.hypot(np.array(so["mean"][1:]), o_sd), np.hypot(np.array(se["mean"][1:]), e_sd)
+    k = np.where(o_sd >= 1.0, e_sd / np.maximum(o_sd, 1.0), np.where(o_rms < 1.0, 1.0, e_rms / np.maximum(o_rms, 1.0)))
+    return np.concatenate([[1.0], np.clip(k, 0.0, 1.5)])
+
+
 def reference_weights(album: Album, refs: list[Reference], scenes: list[Scene], temperature: float = 0.08) -> np.ndarray:
     names = album.names
     scene_of = {n: s.id for s in scenes for n in s.photos}
@@ -122,15 +144,17 @@ def _targets(album: Album, refs: list[Reference], W: np.ndarray, scenes: list[Sc
                 o, ro, re_ = _mean(p.stats, r), _mean(ref.orig_stats, r), _mean(ref.edit_stats, r)
                 if o is None:
                     continue
-                if ro is None or re_ is None:  # reference lacks this region: map through the global shift
-                    ro, re_ = _mean(ref.orig_stats, "global"), _mean(ref.edit_stats, "global")
-                    if ro is None:
+                skin, src = r in ("face_skin", "body_skin"), r
+                if (ro is None or re_ is None) and skin:  # e.g. no face in the reference: its body skin stands in
+                    src = "body_skin" if r == "face_skin" else "face_skin"
+                    ro, re_ = _mean(ref.orig_stats, src), _mean(ref.edit_stats, src)
+                if ro is None or re_ is None:  # reference lacks this region: map through the global transfer
+                    t = _global_transfer(o, ref)
+                    if t is None:
                         continue
-                    t = o + (re_ - ro)
                 else:
-                    skin = r in ("face_skin", "body_skin")
                     kL, kab = (keep["skin_L"], keep["skin_ab"]) if skin else (keep["L"], keep["ab"])
-                    t = re_ + np.array([kL, kab, kab]) * (o - ro)
+                    t = re_ + np.array([kL, kab, kab]) * _chroma_gain(ref, src) * (o - ro)
                 tgt[r] = tgt.get(r, 0) + W[i, j] * t
                 wsum[r] = wsum.get(r, 0) + W[i, j]
         out.append({r: tgt[r] / wsum[r] for r in tgt})
