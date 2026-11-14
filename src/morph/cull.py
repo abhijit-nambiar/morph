@@ -751,6 +751,11 @@ def summarize(decisions: list[Decision]) -> dict:
             "reject_reasons": flags}
 
 
+def _same_file(a: Path, b: Path) -> bool:
+    sa, sb = a.stat(), b.stat()
+    return sa.st_size == sb.st_size and int(sa.st_mtime) == int(sb.st_mtime)
+
+
 def build_album(decisions: list[Decision], out_dir: str | Path, overrides: dict[str, bool | str] | None = None,
                 mode: str = "link") -> list[Path]:
     """Create the base album folder from the keepers.
@@ -777,12 +782,17 @@ def build_album(decisions: list[Decision], out_dir: str | Path, overrides: dict[
             continue
         src, dst = Path(d.path), out_dir / d.name
         if dst.is_symlink() or dst.exists():
-            if dst.is_symlink() and Path(os.readlink(dst)) == src.resolve():
+            ours = d.name in previous
+            linked = dst.is_symlink() and Path(os.readlink(dst)) == src.resolve()
+            if linked and mode == "link":
                 placed.append(dst)
                 continue
-            if d.name not in previous:
+            if mode == "copy" and ours and not dst.is_symlink() and _same_file(dst, src):
+                placed.append(dst)
+                continue
+            if not (ours or linked):
                 raise FileExistsError(f"{dst} exists and was not created by morph cull")
-            dst.unlink()
+            dst.unlink()  # switch link <-> copy, or the source changed
         if mode == "link":
             try:
                 dst.symlink_to(src.resolve())

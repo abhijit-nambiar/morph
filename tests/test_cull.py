@@ -258,3 +258,17 @@ def test_cache_follows_a_moved_dump(dump, tmp_path, monkeypatch):
         assert s.path == str((Path(moved) / s.name).resolve()) and Path(s.path).exists()
         assert Path(s.scored_from).exists() and Path(s.preview).exists()
         assert s.preview.startswith(str(Path(moved).resolve())) and s.focus_blur_px == first[s.name].focus_blur_px
+
+
+def test_build_album_switches_link_and_copy(dump, tmp_path):
+    decisions = decide(score_folder(dump, people=False))
+    album = tmp_path / "album"
+    linked = build_album(decisions, album, mode="link")
+    assert linked and all(p.is_symlink() for p in linked)
+    copied = build_album(decisions, album, mode="copy")
+    assert [p.name for p in copied] == [p.name for p in linked]
+    assert all(p.is_file() and not p.is_symlink() for p in copied)
+    mtimes = {p.name: p.stat().st_mtime_ns for p in copied}
+    again = build_album(decisions, album, mode="copy")  # unchanged copies are left alone
+    assert {p.name: p.stat().st_mtime_ns for p in again} == mtimes
+    assert all(p.is_symlink() for p in build_album(decisions, album, mode="link"))
