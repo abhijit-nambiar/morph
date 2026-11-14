@@ -35,12 +35,12 @@ local:["exposure","contrast","highlights","shadows","whites","blacks","temperatu
 let S=null,cur=null,adj={global:{},local:{}},masks=false,timer=null;
 const $=id=>document.getElementById(id), J={'Content-Type':'application/json'},api=(p,b)=>fetch(p,b?{method:'POST',headers:J,body:JSON.stringify(b)}:{}).then(r=>r.json()),
 esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
-async function load(){S=await api('/api/state');$('region').innerHTML=S.regions.map(r=>`<option>${r}</option>`).join('');renderLists();if(!cur&&S.suggestions.length)select(S.suggestions[0].name);}
+async function load(){S=await api('/api/state');const reg=$('region').value||'global';$('region').innerHTML=S.regions.map(r=>`<option>${r}</option>`).join('');$('region').value=reg;renderLists();if(!cur&&S.suggestions.length)select(S.suggestions[0].name);}
 function thumb(n){const ref=S.references[n],sg=S.suggestions.findIndex(s=>s.name==n);return `<div class=t><img src="/img/thumb/${encodeURIComponent(n)}" class="${n==cur?'sel':''}" title="${esc(n)}" data-n="${esc(n)}" onclick="select(this.dataset.n)">${ref?'<span class=badge>REF</span>':sg>=0?`<span class="badge s">#${sg+1}</span>`:''}</div>`}
 function renderLists(){$('sugg').innerHTML=S.suggestions.map((s,i)=>`<div style="margin:4px 0;cursor:pointer" data-n="${esc(s.name)}" onclick="select(this.dataset.n)"><b>#${i+1}</b> ${esc(s.name)} <span class=muted>score ${(+s.score).toFixed(2)}</span><br><span class=muted>${esc(s.reasons.join('; '))}</span></div>`).join('');
 $('scenes').innerHTML=S.scenes.map(s=>`<div class=muted>${esc(s.id)} · ${s.photos.length}</div><div class=thumbs>${s.photos.map(thumb).join('')}</div>`).join('');}
 function select(n){cur=n;const r=S.references[n];adj=r?JSON.parse(JSON.stringify(r.adjust)):{global:{},local:{}};adj.global=adj.global||{};adj.local=adj.local||{};
-$('title').textContent=n+' · '+S.photos[n].scene+' · '+S.photos[n].faces+' face(s)';$('orig').src=`/img/${masks?'masks':'orig'}/${encodeURIComponent(n)}`;$('cands').innerHTML='';refresh();renderLists();drawSliders();info();}
+$('title').textContent=n+' · '+S.photos[n].scene+' · '+S.photos[n].faces+' face(s)';$('orig').src=`/img/${masks?'masks':'orig'}/${encodeURIComponent(n)}`;$('cands').innerHTML='';msg('');refresh();renderLists();drawSliders();info();}
 function info(){const r=S.references[cur];$('refinfo').innerHTML=r?`Source: ${esc(r.source)}<br>${r.fit&&r.fit.de_after!==undefined?`fit ΔE ${r.fit.de_before} → ${r.fit.de_after}<br>`:''}${r.guard?`guard: <span class="v-${esc(r.guard.verdict)}">${esc(r.guard.verdict)}</span> ${esc(r.guard.reasons.join('; '))}`:''}`:'No reference yet for this photo.';}
 function toggleMasks(){masks=!masks;if(cur)$('orig').src=`/img/${masks?'masks':'orig'}/${encodeURIComponent(cur)}`;}
 function drawSliders(){const reg=$('region').value,keys=reg=='global'?SL.global:SL.local,vals=reg=='global'?adj.global:(adj.local[reg]||{});
