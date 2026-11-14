@@ -151,3 +151,9 @@ def test_unsupported_raw_falls_back_to_embedded_jpeg(tmp_path, dng, monkeypatch)
     monkeypatch.setattr(imageio, "_embedded_full_jpeg", lambda p: None)
     with pytest.raises(rawpy.LibRawFileUnsupportedError):
         imageio.render_raw(dng)
+
+
+def test_cull_cache_tracks_raw_renderer():
+    from morph import cull
+
+    assert imageio.RAW_RENDER_VERSION in cull.SCORE_VERSION
