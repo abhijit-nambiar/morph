@@ -136,7 +136,7 @@ PHRASES = {
 MODIFIERS = {
     "slightly": 0.5, "slight": 0.5, "a bit": 0.5, "a little": 0.5, "subtle": 0.5, "subtly": 0.5, "touch": 0.5, "mildly": 0.6,
     "somewhat": 0.7, "more": 1.0, "very": 1.6, "really": 1.5, "much": 1.5, "super": 1.8, "extremely": 2.0, "strong": 1.5,
-    "strongly": 1.5, "heavy": 1.6, "heavily": 1.6, "less": -0.7, "reduce": -0.8, "reduced": -0.8, "lower": -0.8, "not": -1.0,
+    "strongly": 1.5, "heavy": 1.6, "heavily": 1.6, "no": 0.0, "without": 0.0, "less": -0.7, "reduce": -0.8, "reduced": -0.8, "lower": -0.8, "not": -1.0,
 }
 REGION_TERM_OVERRIDE = {("vegetation", "green"): "lush", ("vegetation", "greener"): "lush", ("sky", "blue"): "bluer", ("sky", "bluer"): "bluer"}
 # region-specific defaults when a clause names only a region plus a generic word
