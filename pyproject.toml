@@ -19,6 +19,7 @@ dependencies = [
   "transformers>=4.40",
   "safetensors>=0.4",
   "rawpy>=0.19",
+  "pillow-heif>=0.18",
 ]
 
 [project.optional-dependencies]

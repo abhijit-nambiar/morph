@@ -22,6 +22,7 @@ import cv2
 import numpy as np
 from PIL import Image
 
+from .imageio import load_rgb_bytes
 from .project import Project
 from .recipe import GLOBAL_KEYS, LOCAL_KEYS, Recipe
 from .render import render_recipe
@@ -319,7 +320,7 @@ class Handler(BaseHTTPRequestHandler):
             return self._json({"ok": True, "source": ref.source})
         if path == "/api/upload":
             raw = base64.b64decode(b["data"].split(",", 1)[-1])
-            img = np.asarray(Image.open(io.BytesIO(raw)).convert("RGB"), np.float32) / 255
+            img = load_rgb_bytes(raw, str(b.get("filename") or "upload.png"))
             with S.lock:
                 ref = P.reference_from_target(b["photo"], img, f"hand-edit:{b.get('filename', 'upload')}")
             return self._json({"ok": True, "guard": ref.guard, "fit": ref.fit})
