@@ -71,8 +71,10 @@ def structure_ncc(a: np.ndarray, b: np.ndarray) -> float:
 
     da, db = hp(a), hp(b)
     va, vb = cv2.blur(da * da, (win, win)), cv2.blur(db * db, (win, win))
-    ncc = cv2.blur(da * db, (win, win)) / np.sqrt(va * vb + 1e-10)
-    tex = va > max(float(np.quantile(va, 0.5)), 1e-5)  # ignore near-flat areas (std of detail < ~0.003)
+    eps = 1e-6 * float(va.mean() * vb.mean()) + 1e-24  # relative, so darkening/flattening the image doesn't bias it
+    ncc = cv2.blur(da * db, (win, win)) / np.sqrt(va * vb + eps)
+    # textured in the original, and not crushed flat by the edit (a crush is tonal, not geometric)
+    tex = (va > max(float(np.quantile(va, 0.5)), 1e-5)) & (vb > 1e-4 * va)
     return float(np.median(ncc[tex])) if tex.sum() >= 100 else 1.0
 
 

@@ -93,6 +93,8 @@ def test_export_verify_tolerates_tone_but_not_geometry():
     extreme = render_recipe(img, None, Recipe({"exposure": 1.0, "contrast": -0.8, "temperature": -1.0,
                                                "noise_reduction": 1.0, "texture": -1.0, "clarity": -1.0, "dehaze": 1.0}))
     assert verify(img, extreme)["ok"], verify(img, extreme)
+    flat = (0.45 + 0.04 * (img - 0.5)).astype(np.float32)
+    assert verify(flat, render_recipe(flat, None, Recipe({"exposure": -3.0})))["ok"]
     rot = cv2.warpAffine(graded, cv2.getRotationMatrix2D((360, 240), 1.5, 1.0), (720, 480), borderMode=cv2.BORDER_REFLECT)
     assert not verify(img, rot)["ok"]
     assert not verify(img, graded[:, ::-1].copy())["ok"]
