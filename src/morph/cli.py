@@ -195,7 +195,7 @@ def cmd_edit(a):
 def cmd_studio(a):
     from .studio import serve
 
-    serve(a.project, a.host, a.port)
+    serve(a.project, a.host, a.port, a.dump)
 
 
 def cmd_evaluate(a):
@@ -266,7 +266,9 @@ def main(argv=None):
     s.set_defaults(fn=cmd_cull)
 
     s = sub.add_parser("studio", help="local web UI for references, prompts and region tweaks")
-    s.add_argument("project", type=Path); s.add_argument("--host", default="127.0.0.1"); s.add_argument("--port", type=int, default=8642)
+    s.add_argument("project", type=Path, help="project folder (created if missing; an album can be chosen in the UI)")
+    s.add_argument("--dump", type=Path, help="camera dump folder to cull into a base album")
+    s.add_argument("--host", default="127.0.0.1"); s.add_argument("--port", type=int, default=8642)
     s.set_defaults(fn=cmd_studio)
 
     s = sub.add_parser("evaluate", help="benchmark against a hand-edited album")

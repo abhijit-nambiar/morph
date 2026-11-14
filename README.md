@@ -21,7 +21,7 @@ pip install -e '.[dev]'          # CPU-only is fine; models download from Huggin
 ```bash
 morph init  proj  path/to/album             # analyse photos (regions, faces, embeddings) + group into scenes
 morph suggest proj                          # which photos make the best references, and why
-morph studio  proj                          # web UI: prompt -> candidates -> pick -> region tweaks -> apply
+morph studio  proj [--dump CAMERA_DUMP]      # web UI: cull -> references (prompt/pick/region tweaks) -> apply & review
 ```
 
 Or entirely from the command line:
