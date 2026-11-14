@@ -238,3 +238,11 @@ def test_decode_ahead_is_bounded(tmp_path, monkeypatch):
     monkeypatch.setattr(cull, "_score_pixels", score)
     assert len(score_folder(tmp_path, people=False, workers=2)) == 24
     assert peak[0] <= 2 * 2 + 1
+
+
+def test_zero_thresholds_do_not_crash(dump):
+    assert cull._ramp(0.0, 0.0, 0.0) == 1 and cull._ramp(0.1, 0.0, 0.0) == 0
+    scores = score_folder(dump, people=False)
+    lo = {r["key"]: r["min"] for r in CullSettings.schema() if r["type"] != "bool"}
+    for d in decide(scores, CullSettings(**lo)):
+        assert 0 <= d.quality <= 1 and 0 <= d.exposure <= 1

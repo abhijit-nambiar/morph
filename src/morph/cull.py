@@ -592,7 +592,9 @@ def group_bursts(scores: list[FrameScore], settings: CullSettings) -> None:
 
 
 def _ramp(x: float, good: float, bad: float) -> float:
-    """1 at ``good``, 0 at ``bad``, smooth in between."""
+    """1 at ``good``, 0 at ``bad``, smooth in between (a step when they coincide)."""
+    if abs(bad - good) < 1e-9:
+        return 1.0 if (x <= good if bad >= good else x >= good) else 0.0
     t = float(np.clip((x - good) / (bad - good), 0, 1))
     return 1 - t * t * (3 - 2 * t)
 
