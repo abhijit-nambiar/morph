@@ -55,7 +55,8 @@ def output_name(name: str, fmt: str | None = None) -> str:
 def output_names(names: list[str], fmt: str | None = None) -> dict[str, str]:
     """``output_name`` for a whole album, disambiguating sources that would land on the same file
     (``a.jpg`` + ``a.png`` with ``fmt="jpg"``, or a RAW+JPEG pair): the one already named like its
-    output keeps it, the others get their source format in the name (``a-png.jpg``)."""
+    output keeps it, the others get their source format in the name (``a-png.jpg``); names that still
+    collide case-insensitively are numbered (``a.JPG`` + ``a.jpg`` -> ``a.JPG`` + ``a-2.jpg``)."""
     out = {n: output_name(n, fmt) for n in names}
     groups: dict[str, list[str]] = {}
     for n, o in out.items():
@@ -67,8 +68,15 @@ def output_names(names: list[str], fmt: str | None = None) -> dict[str, str]:
             if out[n] != n:
                 o = Path(out[n])
                 out[n] = f"{o.stem}-{Path(n).suffix.lstrip('.').lower()}{o.suffix}"
-    if len({o.lower() for o in out.values()}) != len(out):
-        raise ValueError("export file names collide: " + ", ".join(sorted(names)))
+    taken: set[str] = set()
+    wanted = {o.lower() for o in out.values()}
+    for n in sorted(names, key=lambda n: out[n] != n):  # still colliding (a.JPG + a.jpg): number the later
+        o, k = Path(out[n]), 2
+        if out[n].lower() in taken:
+            while f"{o.stem}-{k}{o.suffix}".lower() in taken | wanted:
+                k += 1
+            out[n] = f"{o.stem}-{k}{o.suffix}"
+        taken.add(out[n].lower())
     return out
 
 

@@ -78,6 +78,8 @@ def test_output_name():
     assert output_name("a.png", "tif") == "a.tif"
     assert output_names(["portrait.jpg", "portrait.png"], "jpg") == {"portrait.jpg": "portrait.jpg", "portrait.png": "portrait-png.jpg"}
     assert output_names(["DSC_1.NEF", "DSC_1.JPG"]) == {"DSC_1.NEF": "DSC_1-nef.jpg", "DSC_1.JPG": "DSC_1.JPG"}
+    assert output_names(["portrait.JPG", "portrait.jpg"]) == {"portrait.JPG": "portrait.JPG", "portrait.jpg": "portrait-2.jpg"}
+    assert output_names(["a.JPG", "a.jpg", "a-2.jpg"]) == {"a.JPG": "a.JPG", "a.jpg": "a-3.jpg", "a-2.jpg": "a-2.jpg"}
     assert output_names(["a.png", "a.tiff"], "jpg") == {"a.png": "a-png.jpg", "a.tiff": "a-tiff.jpg"}
     assert output_names(["a.jpg", "b.png"]) == {"a.jpg": "a.jpg", "b.png": "b.png"}
 
