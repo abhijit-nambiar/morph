@@ -99,26 +99,36 @@ class State:
     def settings_obj(self):
         from .cull import CullSettings
 
-        if not self.cull_settings:
-            return CullSettings()
-        known = CullSettings.__dataclass_fields__
-        return CullSettings(**{k: v for k, v in self.cull_settings.items() if k in known})
+        return CullSettings.from_json(self.cull_settings or {})
 
     def decisions(self):
         from .cull import decide
 
         return decide(self.scores, self.settings_obj(), overrides=self.overrides)
 
-    def frame_path(self, name: str) -> Path:
+    def frame(self, name: str):
         for sc in self.scores or []:
             if sc.name == name:
-                return Path(sc.path)
+                return sc
         raise KeyError(name)
+
+    def frame_jpeg(self, name: str, full: bool) -> bytes:
+        from .imageio import load_preview
+
+        key = (name, int(full))
+        if key not in self._thumbs:
+            sc = self.frame(name)
+            if not full and sc.preview and Path(sc.preview).is_file():
+                self._thumbs[key] = Path(sc.preview).read_bytes()
+            else:
+                side = 1800 if full else 480
+                self._thumbs[key] = _jpeg(load_preview(sc.path, side), side, 85)
+        return self._thumbs[key]
 
     def cull_state(self) -> dict:
         if not self.dump:
             return {"state": "none"}
-        from .cull import CullSettings
+        from .cull import CullSettings, summarize
 
         if self.scores is None:
             if self.job.get("kind") != "score" or self.job.get("state") != "running":
@@ -128,12 +138,17 @@ class State:
         frames = []
         for sc in self.scores:
             d = decs[sc.name]
-            frames.append({**sc.to_json(), "keep": bool(d.keep), "override": d.override, "reasons": list(d.reasons)})
-        kept = sum(f["keep"] for f in frames)
-        bursts = len({f.get("burst_id") for f in frames if f.get("burst_size", 1) > 1})
-        auto_rej = sum(1 for f in frames if not f["keep"] and f["override"] is None)
-        summary = [["Frames", str(len(frames))], ["Kept", str(kept)], ["Rejected automatically", str(auto_rej)],
-                   ["Manual picks", str(sum(f["override"] is not None for f in frames))], ["Bursts", str(bursts)]]
+            j = sc.to_json()
+            for k in ("faces", "sub_scores", "preview"):
+                j.pop(k, None)
+            frames.append({**j, "keep": bool(d.keep), "override": d.override, "reasons": list(d.reasons), "flags": list(d.flags),
+                           "quality": d.quality, "burst_id": d.burst_id, "burst_rank": d.burst_rank, "burst_size": d.burst_size})
+        sm = summarize(list(decs.values()))
+        why = {"soft": "Out of focus", "motion": "Motion blur", "under": "Too dark", "over": "Too bright", "clipped": "Blown highlights",
+               "eyes_closed": "Closed eyes", "duplicate": "Weaker burst frame"}
+        summary = [["Frames", str(sm["frames"])], ["Kept", str(sm["keep"])], ["Rejected", str(sm["reject"])],
+                   ["Scenes / bursts", str(sm["bursts"])], ["Manual overrides", str(sm["overridden"])]]
+        summary += [[why.get(k, k.replace("_", " ").capitalize()), str(v)] for k, v in sorted(sm["reject_reasons"].items(), key=lambda kv: -kv[1])]
         return {"state": "ready", "dump": self.dump, "frames": frames, "settings": asdict(self.settings_obj()),
                 "schema": CullSettings.schema(), "summary": summary, "album_default": str(self.root / "album")}
 
@@ -142,7 +157,10 @@ class State:
 
         decs = self.decisions()
         out_dir = Path(out).expanduser().resolve()
-        build_album(decs, out_dir, mode=mode)
+        try:
+            build_album(decs, out_dir, mode=mode)
+        except (FileExistsError, OSError) as e:
+            raise RuntimeError(str(e)) from e
         kept = sum(bool(d.keep) for d in decs)
         return {"kept": kept, "job": self.start_analysis(out_dir)}
 
@@ -249,13 +267,7 @@ class Handler(BaseHTTPRequestHandler):
         if u.path == "/api/cull":
             return self._json(S.cull_state())
         if parts[0] == "img" and len(parts) >= 3 and parts[1] in ("cull", "cullfull"):
-            side = 480 if parts[1] == "cull" else 1800
-            key = (parts[2], side)
-            if key not in S._thumbs:
-                from .imageio import load_rgb
-
-                S._thumbs[key] = _jpeg(load_rgb(S.frame_path(parts[2]), max_side=side), side, 85)
-            return self._send(S._thumbs[key], "image/jpeg")
+            return self._send(S.frame_jpeg(parts[2], parts[1] == "cullfull"), "image/jpeg")
         if parts[0] in ("img", "api") and S.project is None:
             return self._json({"error": "no album yet"}, 409)
         if parts[0] == "img" and len(parts) >= 3:
