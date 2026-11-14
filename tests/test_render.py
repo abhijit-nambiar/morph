@@ -113,3 +113,12 @@ def test_grey_reference_does_not_desaturate_targets():
 
     grey = {"global": {"mean": [50, 0, 0], "std": [20, 0.05, 0.05], "pct": [0, 50, 100], "coverage": 1.0}}
     assert np.allclose(_chroma_gain(Reference("g", Recipe(), "", grey, grey), "global"), 1.0)
+
+
+def test_flat_coloured_reference_turned_bw_still_desaturates():
+    from morph.propagate import Reference, _chroma_gain
+    from morph.recipe import Recipe
+
+    st = lambda m, sd: {"global": {"mean": m, "std": sd, "pct": [0, 50, 100], "coverage": 1.0}}
+    ref = Reference("f", Recipe({"saturation": -1}), "", st([50, -16, -20], [20, 0.5, 0.5]), st([50, 0, 0], [20, 0.01, 0.01]))
+    assert np.all(_chroma_gain(ref, "global")[1:] < 0.05)
