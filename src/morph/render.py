@@ -168,7 +168,7 @@ def _adjust(x: torch.Tensor, get, scale: float, active: set[str]) -> torch.Tenso
     if active & {"contrast", "highlights", "shadows", "whites", "blacks", "dehaze", "curve_shadows", "curve_darks", "curve_lights", "curve_highlights"}:
         L = _luma(x).clamp(0, 1.2)
         Lc = L.clamp(0, 1)
-        edge = (4 * Lc * (1 - Lc)).clamp(min=0)
+        edge = (4 * Lc * (1 - Lc)).clamp(min=1e-6)  # floor keeps edge.sqrt() differentiable at pure black/white
         dh = get("dehaze")
         d = (get("contrast") + 0.35 * dh) * 0.55 * (Lc - 0.45) * edge
         d = d + get("highlights") * 0.30 * _bump(Lc, 0.78, 0.15) * edge.sqrt()
@@ -199,7 +199,8 @@ def _adjust(x: torch.Tensor, get, scale: float, active: set[str]) -> torch.Tenso
         o = torch.einsum("ij,bjhw->bihw", m, x)
         Y, o1, o2 = o[:, :1], o[:, 1:2], o[:, 2:3]
         rho = torch.sqrt(o1 * o1 + o2 * o2 + 1e-8)
-        theta = torch.atan2(o2, o1)
+        grey = (o1.abs() + o2.abs()) < 1e-6  # atan2(0, 0) has NaN gradients
+        theta = torch.atan2(torch.where(grey, torch.zeros_like(o2), o2), torch.where(grey, torch.ones_like(o1), o1))
         sat = 1 + get("saturation") + 0.25 * get("dehaze")
         if "vibrance" in active:
             sat = sat * (1 + get("vibrance") * (1 - (rho * 4).clamp(0, 1)))

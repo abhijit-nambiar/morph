@@ -41,6 +41,8 @@ LOCAL_REGIONS = tuple(r for r in REGIONS)
 
 
 def _clamp(v: float, lo: float, hi: float) -> float:
+    if v != v:  # NaN -> neutral
+        v = 0.0
     return float(min(hi, max(lo, v)))
 
 
