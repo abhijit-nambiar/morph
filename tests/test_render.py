@@ -87,3 +87,21 @@ def test_clip_budget_holds_target_to_reference_clipping():
     free = _correct(img, {}, hot, {"global": base_lab.tolist()}, cfg)
     held = _correct(img, {}, hot, {"global": base_lab.tolist()}, cfg, clip_budget=0.0)
     assert clipped(held) < clipped(free) - 0.05
+
+
+def test_desaturating_reference_without_face_keeps_target_faces_neutral():
+    from types import SimpleNamespace
+    from morph.propagate import PropagationConfig, Reference, _targets
+    from morph.recipe import Recipe
+
+    def st(**regions):
+        return {r: {"mean": m, "std": s, "pct": [0, 50, 100], "coverage": 0.2} for r, (m, s) in regions.items()}
+
+    ref = Reference("ref", Recipe({"saturation": -1.0}), "s0",
+                    st(**{"global": ([57, -16, 27], [20, 12, 15])}),
+                    st(**{"global": ([50, 0, 0], [22, 0.1, 0.1])}))
+    photo = SimpleNamespace(name="p", stats=st(**{"global": ([55, 5, 10], [20, 10, 10]), "face_skin": ([60, 14, 22], [8, 3, 3])}))
+    album = SimpleNamespace(photos=[photo])
+    t = _targets(album, [ref], np.ones((1, 1)), [SimpleNamespace(id="s0", photos=["ref"]), SimpleNamespace(id="s1", photos=["p"])],
+                 PropagationConfig())[0]
+    assert np.hypot(*t["face_skin"][1:]) < 1.0 and np.hypot(*t["global"][1:]) < 1.0
