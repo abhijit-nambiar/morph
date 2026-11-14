@@ -1,4 +1,9 @@
-"""Image loading and export that preserves geometry, EXIF and ICC metadata."""
+"""Image loading and export that preserves geometry, EXIF and ICC metadata.
+
+Camera RAW files (Nikon NEF/NRW and the other formats LibRaw reads) are decoded with ``rawpy``
+using the camera's white balance and a fixed, camera-like base rendering (see :func:`render_raw`),
+so frames shot at the same exposure render identically across an album.
+"""
 
 from __future__ import annotations
 
@@ -11,7 +16,14 @@ from pathlib import Path
 import numpy as np
 from PIL import Image, ImageOps
 
-IMAGE_SUFFIXES = {".jpg", ".jpeg", ".png", ".tif", ".tiff", ".webp"}
+RASTER_SUFFIXES = {".jpg", ".jpeg", ".png", ".tif", ".tiff", ".webp"}
+RAW_SUFFIXES = {
+    ".nef", ".nrw",  # Nikon
+    ".cr2", ".cr3", ".crw", ".arw", ".srf", ".sr2", ".raf", ".orf", ".rw2", ".pef", ".dng",
+    ".srw", ".3fr", ".fff", ".iiq", ".erf", ".kdc", ".dcr", ".mrw", ".mos", ".x3f", ".rwl", ".raw",
+}
+IMAGE_SUFFIXES = RASTER_SUFFIXES | RAW_SUFFIXES
+PAIR_POLICIES = ("raw", "jpeg", "both")
 
 _EXIF_IFD = 0x8769
 _TAG_DATETIME_ORIGINAL = 0x9003
@@ -57,14 +69,39 @@ class PhotoInfo:
         }
 
 
-def list_images(folder: str | Path) -> list[Path]:
+def is_raw(path: str | Path) -> bool:
+    return Path(path).suffix.lower() in RAW_SUFFIXES
+
+
+def list_images(folder: str | Path, pairs: str = "raw") -> list[Path]:
+    """Images in ``folder`` (RAW and raster mixed).
+
+    When a RAW and a JPEG/TIFF share a stem (camera RAW+JPEG mode), ``pairs`` picks one:
+    ``"raw"`` (default: more latitude, and every RAW renders with the same base look),
+    ``"jpeg"`` (the camera's own rendering), or ``"both"``.
+    """
+    if pairs not in PAIR_POLICIES:
+        raise ValueError(f"pairs must be one of {PAIR_POLICIES}")
     folder = Path(folder)
     if not folder.is_dir():
         raise FileNotFoundError(f"album folder not found: {folder}")
-    files = sorted(p for p in folder.iterdir() if p.suffix.lower() in IMAGE_SUFFIXES and not p.name.startswith("."))
+    files = sorted(p for p in folder.iterdir() if p.suffix.lower() in IMAGE_SUFFIXES and not p.name.startswith(".") and p.is_file())
+    if pairs != "both":
+        raw_stems = {p.stem for p in files if is_raw(p)}
+        raster_stems = {p.stem for p in files if not is_raw(p)}
+        paired = raw_stems & raster_stems
+        drop_raw = pairs == "jpeg"
+        files = [p for p in files if p.stem not in paired or is_raw(p) != drop_raw]
     if not files:
         raise ValueError(f"no images found in {folder}")
     return files
+
+
+def raw_pairs(folder: str | Path) -> dict[str, Path]:
+    """``{raw stem: raster sibling}`` for RAW+JPEG pairs, e.g. to score the camera JPEG instead of decoding the RAW."""
+    files = [p for p in Path(folder).iterdir() if p.suffix.lower() in IMAGE_SUFFIXES and not p.name.startswith(".")]
+    rasters = {p.stem: p for p in sorted(files) if p.suffix.lower() in (".jpg", ".jpeg")}
+    return {p.stem: rasters[p.stem] for p in files if is_raw(p) and p.stem in rasters}
 
 
 def sha256_file(path: str | Path) -> str:
@@ -86,6 +123,11 @@ def _rational(value) -> float | None:
 
 def read_info(path: str | Path, with_hash: bool = True) -> PhotoInfo:
     path = Path(path)
+    if is_raw(path):
+        info = _read_raw_info(path)
+        if with_hash:
+            info.sha256 = sha256_file(path)
+        return info
     with Image.open(path) as im:
         exif = im.getexif()
         size = im.size
@@ -119,7 +161,13 @@ def read_info(path: str | Path, with_hash: bool = True) -> PhotoInfo:
 
 
 def load_rgb(path: str | Path, max_side: int | None = None) -> np.ndarray:
-    """Load an oriented RGB image as float32 in [0, 1], optionally downscaled."""
+    """Load an oriented RGB image as float32 in [0, 1], optionally downscaled.
+
+    RAW files always go through :func:`render_raw`, at every size, so analysis copies and
+    full-resolution exports share exactly the same base rendering.
+    """
+    if is_raw(path):
+        return render_raw(path, max_side)
     with Image.open(path) as im:
         if max_side:
             im.draft("RGB", (max_side, max_side))
@@ -153,7 +201,11 @@ def save_image(img: np.ndarray, out: str | Path, source: str | Path | None = Non
     arr = np.clip(np.rint(np.clip(img, 0.0, 1.0) * 255.0), 0, 255).astype(np.uint8)
     pil = Image.fromarray(arr, "RGB")
     kwargs: dict = {}
-    if source is not None:
+    xmp = None
+    if source is not None and is_raw(source):
+        kwargs["exif"] = raw_exif(source).tobytes()
+        kwargs["icc_profile"] = srgb_icc()
+    elif source is not None:
         with Image.open(source) as src:
             icc = src.info.get("icc_profile")
             exif = src.getexif()
@@ -163,8 +215,6 @@ def save_image(img: np.ndarray, out: str | Path, source: str | Path | None = Non
             if icc:
                 kwargs["icc_profile"] = icc
             xmp = src.info.get("xmp")
-    else:
-        xmp = None
     suffix = out.suffix.lower()
     if suffix in (".jpg", ".jpeg"):
         kwargs.update(quality=quality, subsampling=0, optimize=True)
@@ -172,7 +222,11 @@ def save_image(img: np.ndarray, out: str | Path, source: str | Path | None = Non
             kwargs["xmp"] = xmp
     elif suffix in (".tif", ".tiff"):
         kwargs.update(compression="tiff_deflate")
-    pil.save(out, **kwargs)
+    try:
+        pil.save(out, **kwargs)
+    except RuntimeError:  # libtiff (used for compression) cannot write EXIF sub-IFDs: keep the metadata, drop compression
+        kwargs.pop("compression", None)
+        pil.save(out, **kwargs)
     return out
 
 
@@ -187,3 +241,198 @@ def jpeg_bytes(img: np.ndarray, quality: int = 85) -> bytes:
     buf = io.BytesIO()
     Image.fromarray(np.clip(np.rint(img * 255), 0, 255).astype(np.uint8)).save(buf, "JPEG", quality=quality)
     return buf.getvalue()
+
+
+# -- camera RAW ------------------------------------------------------------------------------------
+# Base tone curve, as (scene-linear fraction of sensor saturation -> display-linear) control points.
+# Calibrated against Nikon in-camera JPEGs (mid grey lands slightly darker than Picture Control
+# "Standard", shadows keep more detail) and joined with a monotone cubic so it has no kinks.
+# Raw clipping maps to 1.0, so highlights roll off smoothly instead of hard-clipping.
+RAW_CURVE_X = (0.0, 0.0025, 0.01, 0.03, 0.09, 0.2, 0.4, 0.7, 1.0)
+RAW_CURVE_Y = (0.0, 0.0035, 0.017, 0.074, 0.272, 0.57, 0.835, 0.962, 1.0)
+RAW_SATURATION = 1.1  # camera-matrix colour is accurate but looks a touch flat next to camera JPEGs
+RAW_RENDER_VERSION = "raw-v1"
+_RAW_LUT: np.ndarray | None = None
+_LUM = np.array([0.2126, 0.7152, 0.0722], np.float32)
+
+
+def _raw_lut() -> np.ndarray:
+    """65536-entry LUT: linear 16-bit -> tone-mapped, sRGB-encoded float."""
+    global _RAW_LUT
+    if _RAW_LUT is None:
+        from scipy.interpolate import PchipInterpolator
+
+        x = np.linspace(0.0, 1.0, 65536)
+        y = np.clip(PchipInterpolator(RAW_CURVE_X, RAW_CURVE_Y)(x), 0.0, 1.0)
+        _RAW_LUT = np.where(y <= 0.0031308, y * 12.92, 1.055 * np.power(y, 1 / 2.4) - 0.055).astype(np.float32)
+    return _RAW_LUT
+
+
+def _raw_geometry(raw) -> tuple[tuple[int, int, int, int], int]:
+    """(top, left, height, width) of the camera's default crop in the unrotated full-size frame, and the flip code."""
+    s = raw.sizes
+    if s.crop_width and s.crop_height:
+        box = (s.crop_top_margin, s.crop_left_margin, s.crop_height, s.crop_width)
+    else:
+        box = (0, 0, s.height, s.width)
+    return box, s.flip
+
+
+def _orient(img: np.ndarray, flip: int) -> np.ndarray:
+    if flip == 3:
+        return img[::-1, ::-1]
+    if flip == 5:  # 90 degrees counter-clockwise
+        return np.rot90(img, 1)
+    if flip == 6:  # 90 degrees clockwise
+        return np.rot90(img, -1)
+    return img
+
+
+def render_raw(path: str | Path, max_side: int | None = None) -> np.ndarray:
+    """Decode a RAW file to oriented sRGB float32 [0, 1].
+
+    Camera white balance, camera colour matrix to sRGB, highlight blending (no magenta clipped
+    skies), no auto-brightening (so a burst or a whole album renders consistently), then a
+    fixed camera-like tone curve and a gentle saturation lift. Sizes up to half the sensor
+    resolution use LibRaw's fast half-size decode, which goes through the same colour pipeline.
+    """
+    import rawpy
+
+    with rawpy.imread(str(path)) as raw:
+        (top, left, h, w), flip = _raw_geometry(raw)
+        half = bool(max_side) and max_side <= max(h, w) // 2
+        lin = raw.postprocess(
+            half_size=half, use_camera_wb=True, no_auto_bright=True, gamma=(1, 1), output_bps=16,
+            output_color=rawpy.ColorSpace.sRGB, highlight_mode=rawpy.HighlightMode.Blend, user_flip=0,
+        )
+    k = 2 if half else 1
+    lin = lin[top // k : (top + h) // k, left // k : (left + w) // k]
+    if RAW_SATURATION != 1.0:
+        f = lin.astype(np.float32)
+        y = f @ _LUM
+        f = y[..., None] + (f - y[..., None]) * RAW_SATURATION
+        lin = np.clip(f, 0, 65535).astype(np.uint16)
+    img = np.ascontiguousarray(_orient(_raw_lut()[lin], flip))
+    if max_side and max(img.shape[:2]) > max_side:
+        img = resize(img, fit_size(img.shape[1], img.shape[0], max_side))
+    return img
+
+
+def load_preview(path: str | Path, max_side: int = 2048) -> np.ndarray:
+    """Fast oriented RGB float32 [0, 1] for culling and thumbnails.
+
+    For RAW files this is the camera's embedded JPEG preview when it is large enough (Nikon
+    bodies embed a full-size one), so no demosaicing is needed; otherwise a half-size decode.
+    Not used for analysis or export, whose colours must match the RAW rendering exactly.
+    """
+    if not is_raw(path):
+        return load_rgb(path, max_side)
+    import rawpy
+
+    with rawpy.imread(str(path)) as raw:
+        (_, _, h, w), flip = _raw_geometry(raw)
+        try:
+            th = raw.extract_thumb()
+        except (rawpy.LibRawNoThumbnailError, rawpy.LibRawUnsupportedThumbnailError):
+            th = None
+    img = None
+    if th is not None and th.format == rawpy.ThumbFormat.JPEG:
+        with Image.open(io.BytesIO(th.data)) as im:
+            if max(im.size) >= min(max_side, max(h, w) // 2):
+                im.draft("RGB", (max_side, max_side))
+                img = np.asarray(im.convert("RGB"), dtype=np.float32) / 255.0
+    elif th is not None and th.format == rawpy.ThumbFormat.BITMAP and max(th.data.shape[:2]) >= min(max_side, max(h, w) // 2):
+        img = th.data.astype(np.float32) / 255.0
+    if img is None:
+        return render_raw(path, max_side)
+    # Embedded previews are stored in sensor orientation; follow the RAW's orientation, not the preview's.
+    if (img.shape[1] > img.shape[0]) == (w > h):
+        img = np.ascontiguousarray(_orient(img, flip))
+    if max(img.shape[:2]) > max_side:
+        img = resize(img, fit_size(img.shape[1], img.shape[0], max_side))
+    return img
+
+
+def _clean(v):
+    return v.strip("\x00 ") if isinstance(v, str) else v
+
+
+def _read_raw_info(path: Path) -> PhotoInfo:
+    import rawpy
+
+    with rawpy.imread(str(path)) as raw:
+        (_, _, h, w), flip = _raw_geometry(raw)
+        other = raw.other
+    if flip in (5, 6):
+        w, h = h, w
+    sub = raw_exif(path).get_ifd(_EXIF_IFD)
+    captured = None
+    stamp = _clean(sub.get(_TAG_DATETIME_ORIGINAL))
+    if stamp:
+        try:
+            captured = datetime.strptime(stamp, "%Y:%m:%d %H:%M:%S")
+        except ValueError:
+            captured = None
+    if captured is None and other.timestamp:
+        captured = other.timestamp
+    pos = lambda v: float(v) if v and v > 0 else None
+    return PhotoInfo(path=path, name=path.name, width=w, height=h, captured=captured,
+                     exposure_time=pos(other.shutter_speed), f_number=pos(other.aperture), iso=pos(other.iso_speed),
+                     extra={"raw": True})
+
+
+# EXIF carried from a RAW into exports: identity, capture settings, lens, GPS. Nikon's MakerNote
+# holds offsets into the RAW file and the TIFF structure tags describe the RAW's thumbnail, so
+# both are dropped.
+_RAW_IFD0_TAGS = (0x010F, 0x0110, 0x0131, 0x0132, 0x013B, 0x8298)
+_RAW_SKIP_EXIF = {0x927C, 0xA005}
+_GPS_IFD = 0x8825
+
+
+def raw_exif(path: str | Path) -> Image.Exif:
+    """EXIF for files rendered from a RAW (orientation normalised to 1)."""
+    import rawpy
+
+    out = Image.Exif()
+    src_exif = None
+    try:  # TIFF-based RAWs (NEF, DNG, ARW, ...) expose their EXIF to Pillow directly
+        with Image.open(path) as im:
+            src_exif = im.getexif()
+            sub, gps = dict(src_exif.get_ifd(_EXIF_IFD)), dict(src_exif.get_ifd(_GPS_IFD))
+    except Exception:  # noqa: BLE001 - NRW/CR3/RAF/...: fall back to what LibRaw parsed
+        src_exif = None
+    if src_exif:
+        for t in _RAW_IFD0_TAGS:
+            if t in src_exif:
+                out[t] = _clean(src_exif[t])
+        out[_TAG_ORIENTATION] = 1
+        if sub:
+            out.get_ifd(_EXIF_IFD).update({k: _clean(v) for k, v in sub.items() if k not in _RAW_SKIP_EXIF})
+        if len(gps) > 1:
+            out.get_ifd(_GPS_IFD).update(gps)
+        return out
+    with rawpy.imread(str(path)) as raw:
+        other, lens = raw.other, raw.lens
+    out[_TAG_ORIENTATION] = 1
+    if other.artist:
+        out[0x013B] = other.artist
+    e = out.get_ifd(_EXIF_IFD)
+    if other.timestamp:
+        e[_TAG_DATETIME_ORIGINAL] = other.timestamp.strftime("%Y:%m:%d %H:%M:%S")
+    if other.shutter_speed > 0:
+        e[_TAG_EXPOSURE_TIME] = float(other.shutter_speed)
+    if other.aperture > 0:
+        e[_TAG_FNUMBER] = float(other.aperture)
+    if other.iso_speed > 0:
+        e[_TAG_ISO] = int(other.iso_speed)
+    if other.focal_length > 0:
+        e[0x920A] = float(other.focal_length)
+    if lens.model:
+        e[0xA434] = lens.model
+    return out
+
+
+def srgb_icc() -> bytes:
+    from PIL import ImageCms
+
+    return ImageCms.ImageCmsProfile(ImageCms.createProfile("sRGB")).tobytes()

@@ -96,16 +96,80 @@ def cmd_apply(a):
     cfg = PropagationConfig(harmonize_within=a.harmonize_within, harmonize_across=a.harmonize_across)
     R = [make_reference(p.album, r.name, r.final, p.scene_of(r.name)) for r in refs]
     recipes = propagate(p.album, R, p.scenes, cfg, progress=_progress("propagate"))
-    report = export_album(p.album, recipes, a.out, a.max_side, a.quality, progress=_progress("export"))
+    report = export_album(p.album, recipes, a.out, a.max_side, a.quality, progress=_progress("export"), fmt=getattr(a, "format", None))
     page = review_page(p.album, p.scenes, recipes, [r.name for r in refs], a.out)
     bad = [k for k, v in report.items() if not v["ok"]]
     print(f"exported {len(report)} photos to {a.out}/photos (structure check failures: {len(bad)}); review: {page}")
+
+
+def _cull_settings(a):
+    from .cull import CullSettings
+
+    st = CullSettings()
+    for k in ("focus_strictness", "max_motion", "exposure_tolerance_ev", "max_clip_hi", "burst_keep", "burst_similarity", "burst_gap_s", "burst_margin"):
+        v = getattr(a, k, None)
+        if v is not None:
+            setattr(st, k, v)
+    if getattr(a, "keep_closed_eyes", False):
+        st.reject_closed_eyes = False
+    return st
+
+
+def _print_cull(decisions, verbose=False):
+    from .cull import summarize
+
+    sm = summarize(decisions)
+    for d in decisions:
+        if verbose or not d.keep:
+            print(f"{'keep  ' if d.keep else 'reject'} {d.name:32s} q={d.quality:.2f} burst {d.burst_id}  {'; '.join(d.reasons)}")
+    why = ", ".join(f"{k} {v}" for k, v in sorted(sm["reject_reasons"].items(), key=lambda kv: -kv[1]))
+    print(f"{sm['frames']} frames in {sm['bursts']} bursts/scenes: keep {sm['keep']}, reject {sm['reject']}" + (f" ({why})" if why else ""))
+
+
+def _run_cull(a, dump: Path, out: Path | None):
+    from .cull import cull
+
+    overrides = {}
+    for n in getattr(a, "keep", None) or []:
+        overrides[n] = True
+    for n in getattr(a, "reject", None) or []:
+        overrides[n] = False
+    scores, decisions, report = cull(dump, out, _cull_settings(a), cache=getattr(a, "cull_cache", None), progress=_progress("cull"),
+                                     people=not a.no_people, mode=a.mode, overrides=overrides)
+    return decisions, report
+
+
+def cmd_cull(a):
+    decisions, report = _run_cull(a, a.dump, None if a.dry_run else a.out)
+    _print_cull(decisions, a.verbose)
+    print(f"report: {report}" + ("" if a.dry_run else f"; album: {a.out}"))
+
+
+def _add_cull_flags(s):
+    g = s.add_argument_group("culling")
+    g.add_argument("--focus-strictness", dest="focus_strictness", type=float, help="0 lenient .. 1 strict (default 0.5)")
+    g.add_argument("--max-motion", dest="max_motion", type=float, help="directional-blur limit 0..1 (default 0.2)")
+    g.add_argument("--exposure-tolerance", dest="exposure_tolerance_ev", type=float, help="EV the subject may be off (default 1.5)")
+    g.add_argument("--max-clip", dest="max_clip_hi", type=float, help="max blown-out fraction of the subject (default 0.4)")
+    g.add_argument("--burst-keep", dest="burst_keep", type=int, help="best N frames kept per burst (default 1)")
+    g.add_argument("--burst-margin", dest="burst_margin", type=float, help="also keep burst frames within this quality of the best")
+    g.add_argument("--burst-similarity", dest="burst_similarity", type=float, help="0..1, how alike frames must be to count as a burst (default 0.82)")
+    g.add_argument("--burst-gap", dest="burst_gap_s", type=float, help="max seconds between frames of a burst (default 4)")
+    g.add_argument("--keep-closed-eyes", action="store_true", help="don't reject frames for closed eyes")
+    g.add_argument("--no-people", action="store_true", help="skip the face/person models (faster; focus on the sharpest region)")
+    g.add_argument("--mode", choices=["link", "copy"], default="link", help="symlink (default) or copy keepers into the album")
+    g.add_argument("--keep", nargs="*", metavar="FILE", help="force-keep these files"); g.add_argument("--reject", nargs="*", metavar="FILE", help="force-reject these files")
+    g.add_argument("--cull-cache", type=Path, help="score cache (default DUMP/.morph-cull)")
 
 
 def cmd_edit(a):
     """One shot: analyse, pick references automatically, generate the look, export."""
     from .project import Project
 
+    if a.cull:  # the album is a camera dump: cull it into OUT/album first
+        decisions, report = _run_cull(a, a.album, a.out / "album")
+        _print_cull(decisions)
+        a.album = a.out / "album"
     p = Project.create(a.out / "project", a.album, a.cache, progress=_progress("analyse"))
     if a.edit_dir:  # every photo you edited becomes a reference
         from .imageio import list_images
@@ -124,7 +188,7 @@ def cmd_edit(a):
                 continue
             p.pick(s.name, 0)
             print(f"reference: {s.name}")
-    ns = argparse.Namespace(project=p.root, out=a.out, max_side=a.max_side, quality=a.quality, harmonize_within=0.5, harmonize_across=0.35)
+    ns = argparse.Namespace(project=p.root, out=a.out, max_side=a.max_side, quality=a.quality, harmonize_within=0.5, harmonize_across=0.35, format=a.format)
     cmd_apply(ns)
 
 
@@ -179,6 +243,7 @@ def main(argv=None):
     s.add_argument("project", type=Path); s.add_argument("--out", type=Path, required=True)
     s.add_argument("--max-side", type=int); s.add_argument("--quality", type=int, default=95)
     s.add_argument("--harmonize-within", type=float, default=0.5); s.add_argument("--harmonize-across", type=float, default=0.35)
+    s.add_argument("--format", choices=["jpg", "tif"], help="output format (default: same as source; RAW -> jpg)")
     s.set_defaults(fn=cmd_apply)
 
     s = sub.add_parser("edit", help="one shot: album + look (or a folder of your edits) -> edited album")
@@ -188,7 +253,17 @@ def main(argv=None):
     s.add_argument("--references", type=int, default=0, help="how many reference photos (default: one per scene, max 6)")
     s.add_argument("--generator", default="local"); s.add_argument("--cache", type=Path)
     s.add_argument("--max-side", type=int); s.add_argument("--quality", type=int, default=95)
+    s.add_argument("--format", choices=["jpg", "tif"], help="output format (default: same as source; RAW -> jpg)")
+    s.add_argument("--cull", action="store_true", help="ALBUM is a raw camera dump: auto-cull it into OUT/album first")
+    _add_cull_flags(s)
     s.set_defaults(fn=cmd_edit)
+
+    s = sub.add_parser("cull", help="auto-cull a camera dump (RAW/JPEG) into a base album")
+    s.add_argument("dump", type=Path); s.add_argument("--out", type=Path, help="album folder to create")
+    s.add_argument("--dry-run", action="store_true", help="score and report only; don't build the album")
+    s.add_argument("-v", "--verbose", action="store_true", help="list keepers too")
+    _add_cull_flags(s)
+    s.set_defaults(fn=cmd_cull)
 
     s = sub.add_parser("studio", help="local web UI for references, prompts and region tweaks")
     s.add_argument("project", type=Path); s.add_argument("--host", default="127.0.0.1"); s.add_argument("--port", type=int, default=8642)
@@ -200,6 +275,8 @@ def main(argv=None):
     s.set_defaults(fn=cmd_evaluate)
 
     a = ap.parse_args(argv)
+    if a.cmd == "cull" and not a.dry_run and a.out is None:
+        ap.error("cull: --out is required unless --dry-run")
     if os.environ.get("MORPH_THREADS"):  # avoid CPU oversubscription when several morph jobs share a machine
         import torch
 
