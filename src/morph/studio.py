@@ -12,6 +12,7 @@ import io
 import ipaddress
 import json
 import threading
+import sys
 import traceback
 from dataclasses import asdict
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
@@ -198,7 +199,7 @@ class State:
             "scenes": [s.to_json() for s in p.scenes],
             "photos": {ph.name: {"faces": len(ph.faces), "scene": p.scene_of(ph.name), "size": [ph.width, ph.height]} for ph in p.album.photos},
             "suggestions": [s.__dict__ for s in self.suggestions()],
-            "references": {n: {"source": r.source, "prompt": r.prompt, "guard": r.guard, "fit": r.fit, "final": r.final.to_json(), "adjust": r.adjust.to_json()} for n, r in refs.items()},
+            "references": {n: {"source": r.source, "prompt": r.prompt, "guard": r.guard, "fit": r.fit, "final": r.final.to_json(), "recipe": r.recipe.to_json(), "adjust": r.adjust.to_json()} for n, r in refs.items()},
             "regions": ["global"] + list(REGIONS),
             "global_keys": list(GLOBAL_KEYS),
             "local_keys": list(LOCAL_KEYS),
@@ -244,7 +245,7 @@ class Handler(BaseHTTPRequestHandler):
         try:
             self._get()
         except Exception as e:  # noqa: BLE001
-            self._json({"error": str(e), "trace": traceback.format_exc()}, 500)
+            self._fail(e)
 
     def do_POST(self):
         if not self._trusted(True):
@@ -253,7 +254,15 @@ class Handler(BaseHTTPRequestHandler):
             n = int(self.headers.get("Content-Length", 0))
             self._post(json.loads(self.rfile.read(n) or b"{}"))
         except Exception as e:  # noqa: BLE001
-            self._json({"error": str(e), "trace": traceback.format_exc()}, 500)
+            self._fail(e)
+
+    def _fail(self, e: Exception):
+        """User errors (bad input, rejected edits) are 4xx with a plain message; tracebacks stay in the server log."""
+        if isinstance(e, (RuntimeError, ValueError, KeyError, FileNotFoundError, json.JSONDecodeError)):
+            msg = str(e.args[0]) if isinstance(e, KeyError) and e.args else str(e)
+            return self._json({"error": msg[:1].upper() + msg[1:]}, 404 if isinstance(e, (KeyError, FileNotFoundError)) else 422)
+        sys.stderr.write(traceback.format_exc())
+        self._json({"error": "Internal error: " + str(e)}, 500)
 
     def _get(self):
         S, u = self.S, urlparse(self.path)
@@ -362,7 +371,7 @@ class Handler(BaseHTTPRequestHandler):
         if path == "/api/start":
             folder = Path(str(b.get("folder", ""))).expanduser().resolve()
             if not folder.is_dir():
-                raise RuntimeError(f"not a folder: {folder}")
+                raise ValueError(f"not a folder: {folder}")
             if b.get("cull"):
                 S.dump, S.scores, S.overrides = str(folder), None, {}
                 S.save_session()

@@ -2,7 +2,7 @@
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Morph Studio</title>
 <style>
-:root{--bg:#0e0f11;--panel:#15171a;--panel2:#1b1e22;--line:#262a30;--line2:#30353c;--text:#e6e8eb;--dim:#9aa1ab;--faint:#6b727c;
+:root{--bg:#0e0f11;--panel:#15171a;--panel2:#1b1e22;--line:#262a30;--line2:#30353c;--text:#e6e8eb;--dim:#9aa1ab;--faint:#878f9a;
 --accent:#7c9cff;--accent2:#5b7cf0;--ok:#4cc38a;--warn:#e5b454;--bad:#ef6b6b;--r:8px;--font:-apple-system,BlinkMacSystemFont,"Inter","Segoe UI",Roboto,sans-serif}
 *{box-sizing:border-box}html,body{height:100%}body{margin:0;background:var(--bg);color:var(--text);font:13px/1.45 var(--font);-webkit-font-smoothing:antialiased;display:flex;flex-direction:column;overflow:hidden}
 button,input,select,textarea{font:inherit;color:inherit}
@@ -60,13 +60,13 @@ input[type=range]::-moz-range-track{height:3px;background:var(--line2);border-ra
 .th img{width:100%;height:100%;object-fit:cover;display:block;transition:opacity .15s}.th:hover img{opacity:.85}.th.on{outline-color:var(--accent)}
 .th .b{position:absolute;left:3px;top:3px;font-size:9.5px;font-weight:700;padding:1px 4px;border-radius:4px;background:var(--warn);color:#1b1404;letter-spacing:.02em}.th .b.s{background:var(--accent);color:#0b1020}
 /* viewer */
-.viewer{flex:1;min-height:340px;display:flex;flex-direction:column;padding:14px 18px 0}
+.viewer{flex:1 1 0;min-height:340px;display:flex;flex-direction:column;padding:14px 18px 0}
 .vbar{display:flex;align-items:center;gap:10px;margin-bottom:10px}.vbar .title{font-weight:600;font-size:14px}.vbar .meta{color:var(--faint);font-size:12px}
 .stage{flex:1;position:relative;background:#08090a;border:1px solid var(--line);border-radius:10px;overflow:hidden;min-height:300px;display:flex;align-items:center;justify-content:center}
 .stage .pair{display:grid;grid-template-columns:1fr 1fr;gap:2px;width:100%;height:100%}.stage .pair>div{position:relative;display:flex;align-items:center;justify-content:center;min-width:0}
 .stage img{max-width:100%;max-height:100%;object-fit:contain;display:block;user-select:none;-webkit-user-drag:none}
 .stage .lbl{position:absolute;left:10px;top:10px;font-size:11px;padding:3px 8px;border-radius:20px;background:rgba(10,11,13,.72);color:var(--dim);backdrop-filter:blur(6px);pointer-events:none}
-.split{position:relative;max-width:100%;max-height:100%;display:inline-block}.split img{max-height:calc(100vh - 360px)}
+.split{position:relative;max-width:100%;max-height:100%;display:inline-block}.split img{max-height:var(--stage-h,60vh)}
 .split .after{position:absolute;inset:0;overflow:hidden}.split .after img{position:absolute;left:0;top:0;width:100%;height:100%;max-height:none}
 .split .handle{position:absolute;top:0;bottom:0;width:2px;background:#fff;box-shadow:0 0 0 1px rgba(0,0,0,.3);cursor:ew-resize}.split .handle::after{content:"";position:absolute;top:50%;left:-11px;width:24px;height:24px;margin-top:-12px;border-radius:50%;background:#fff;box-shadow:0 2px 8px rgba(0,0,0,.4)}
 .spinner{position:absolute;right:12px;top:12px;width:16px;height:16px;border:2px solid rgba(255,255,255,.2);border-top-color:#fff;border-radius:50%;animation:spin .8s linear infinite;display:none}.busy .spinner{display:block}
@@ -74,7 +74,7 @@ input[type=range]::-moz-range-track{height:3px;background:var(--line2);border-ra
 .empty{color:var(--faint);text-align:center;padding:30px}
 /* composer */
 .composer{padding:14px 18px 18px}.card{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:14px}
-.cands{display:grid;grid-template-columns:repeat(auto-fill,minmax(190px,1fr));gap:10px;margin-top:12px}
+.cands{display:grid;grid-auto-flow:column;grid-auto-columns:200px;gap:10px;margin-top:12px;overflow-x:auto;padding-bottom:4px}.cands:empty{display:none}
 .cand{background:var(--panel2);border:1px solid var(--line);border-radius:10px;overflow:hidden;display:flex;flex-direction:column}.cand img{width:100%;aspect-ratio:3/2;object-fit:cover;display:block;background:#000;cursor:zoom-in}
 .cand .body{padding:9px 10px;display:flex;flex-direction:column;gap:6px;flex:1}.cand .stats{display:flex;gap:10px;font-size:11.5px;color:var(--faint);font-variant-numeric:tabular-nums}.cand .why{font-size:11.5px;color:var(--faint)}
 .cand.rej{opacity:.6}.chips{display:flex;flex-wrap:wrap;gap:4px}
@@ -84,7 +84,7 @@ input[type=range]::-moz-range-track{height:3px;background:var(--line2);border-ra
 .note{font-size:12px;color:var(--faint);margin-top:8px}
 /* cull */
 .cullbar{display:flex;align-items:center;gap:12px;padding:12px 18px;border-bottom:1px solid var(--line);background:var(--panel)}
-.cullgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:12px;padding:16px 18px;overflow:auto;align-content:start}
+.cullgrid{flex:none;display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:12px;padding:16px 18px;overflow:auto;align-content:start}
 .frame{background:var(--panel);border:1px solid var(--line);border-radius:10px;overflow:hidden;cursor:pointer;position:relative;transition:border-color .12s,opacity .12s}
 .frame img{width:100%;aspect-ratio:3/2;object-fit:cover;display:block;background:#000}.frame .fb{padding:8px 10px}.frame .fn{font-size:12px;display:flex;justify-content:space-between;gap:6px}
 .frame .fn span:first-child{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.frame .reasons{font-size:11px;color:var(--faint);margin-top:4px;min-height:16px}
@@ -108,6 +108,18 @@ iframe.review{width:100%;height:calc(100vh - 230px);border:1px solid var(--line)
 @keyframes in{from{opacity:0;transform:translateY(6px)}}
 #modal{position:fixed;inset:0;background:rgba(0,0,0,.82);display:none;align-items:center;justify-content:center;z-index:40;cursor:zoom-out}#modal img{max-width:94vw;max-height:92vh;border-radius:6px}
 kbd{font:11px var(--font);background:var(--bg);border:1px solid var(--line2);border-bottom-width:2px;border-radius:4px;padding:0 5px;color:var(--dim)}
+
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+input[type=text]:focus-visible,select:focus-visible,textarea:focus-visible{outline:none;border-color:var(--accent)}
+.actions{position:sticky;bottom:0;background:var(--panel);border-top:1px solid var(--line);padding:12px 16px;margin:12px -16px -14px;z-index:2}
+.sl input[type=range]{background-image:linear-gradient(var(--dim),var(--dim));background-size:2px 10px;background-repeat:no-repeat;background-position:var(--fit,50%) center}
+.sl.fit label::after{content:"";display:inline-block;width:5px;height:5px;border-radius:50%;background:var(--dim);margin-left:6px;vertical-align:middle}
+.regions button.fit:not(.mod)::after{background:var(--dim)}
+.grp>summary{cursor:pointer;list-style:none;margin:0 0 4px;font-size:11.5px;color:var(--faint);font-weight:500}.grp>summary::-webkit-details-marker{display:none}
+.grp>summary::before{content:"▸";display:inline-block;width:12px;transition:transform .12s}.grp[open]>summary::before{transform:rotate(90deg)}
+.vbar .title,.vbar .seg{white-space:nowrap}.vbar .title{overflow:hidden;text-overflow:ellipsis;min-width:0}
+@media (max-width:1366px){#v-refs{grid-template-columns:232px 1fr 300px}}
+@media (max-width:1180px){#v-refs{grid-template-columns:200px 1fr 280px}.sugg .why,.vbar .meta{display:none}#v-apply{grid-template-columns:1fr 300px}#v-cull{grid-template-columns:1fr 260px}}
 </style></head>
 <body>
 <header>
@@ -175,8 +187,8 @@ kbd{font:11px var(--font);background:var(--bg);border:1px solid var(--line2);bor
   <aside class="side r">
     <div class="sec" id="refstatus"></div>
     <div class="sec"><h3>Adjust <span class="faint" id="regionname"></span></h3><div class="regions" id="regions"></div><div id="sliders"></div>
-      <div class="row" style="margin-top:12px"><button class="btn sm ghost" id="resetreg">Reset region</button><span class="grow"></span><button class="btn sm pri" id="savebtn" disabled>Save</button></div>
-      <div class="note">Double-click a slider to reset it. Changes preview live and are saved into this reference.</div></div>
+      <div class="note">Sliders start at the fitted value (grey tick). Double-click a slider to return it to the fit.</div>
+      <div class="row actions"><button class="btn sm ghost" id="resetreg">Reset region</button><span class="grow"></span><button class="btn sm pri" id="savebtn" disabled>Save</button></div></div>
   </aside>
 </div>
 
@@ -205,11 +217,16 @@ const esc=s=>String(s??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&
 const api=(p,b)=>fetch(p,b?{method:"POST",headers:J,body:JSON.stringify(b)}:{}).then(async r=>{const j=await r.json().catch(()=>({error:r.statusText}));if(!r.ok&&!j.error)j.error=r.statusText;return j});
 const enc=encodeURIComponent,pretty=k=>k.replace(/_/g," ").replace(/^\w/,c=>c.toUpperCase());
 function toast(t,kind="",ms=3200){const d=document.createElement("div");d.className="toast "+kind;d.textContent=t;$("toasts").append(d);setTimeout(()=>d.remove(),ms)}
+const HUES=["red","orange","yellow","green","aqua","blue","purple","magenta"];
 const GROUPS={Light:["exposure","contrast","highlights","shadows","whites","blacks"],Color:["temperature","tint","vibrance","saturation","hue"],
- Detail:["texture","clarity","dehaze","sharpen","noise_reduction","grain"],"Tone curve":["curve_shadows","curve_highlights"],
- "Color grading":["grade_shadows_x","grade_shadows_y","grade_highlights_x","grade_highlights_y"],Effects:["vignette"]};
+ Detail:["texture","clarity","dehaze","sharpen","noise_reduction","grain"],"Tone curve":["curve_shadows","curve_darks","curve_lights","curve_highlights"],
+ "Color mixer · Hue":HUES.map(h=>`hsl_${h}_hue`),"Color mixer · Saturation":HUES.map(h=>`hsl_${h}_sat`),"Color mixer · Luminance":HUES.map(h=>`hsl_${h}_lum`),
+ "Color grading":["grade_shadows_x","grade_shadows_y","grade_midtones_x","grade_midtones_y","grade_highlights_x","grade_highlights_y"],Effects:["vignette"]};
+const OPEN=new Set(["Light","Color","Detail"]);
+const KLABEL=k=>{let m=k.match(/^hsl_(\w+)_(hue|sat|lum)$/);if(m)return pretty(m[1]);m=k.match(/^grade_(\w+)_([xy])$/);if(m)return pretty(m[1])+(m[2]=="x"?" · hue shift":" · warmth");
+ return pretty(k.replace(/^curve_/,""))};
 const RLABEL={global:"Global",subject:"Subject",background:"Background",sky:"Sky",vegetation:"Vegetation",hair:"Hair",face_skin:"Face skin",body_skin:"Body skin",eyes:"Eyes",lips:"Lips",clothes:"Clothes"};
-let S=null,view=null,cur=null,region="global",adj={global:{},local:{}},dirty=false,vmode="split",timer=null,previewURL=null,polling=false;
+let S=null,view=null,cur=null,region="global",adj={global:{},local:{}},base={global:{},local:{}},dirty=false,vmode="split",timer=null,previewURL=null,polling=false;
 
 /* ---------- navigation ---------- */
 function show(v){view=v;document.querySelectorAll(".view").forEach(e=>e.classList.toggle("on",e.id=="v-"+v));
@@ -236,6 +253,7 @@ $("sugg").onclick=$("scenes").onclick=e=>{const t=e.target.closest("[data-n]");i
 /* ---------- references: viewer ---------- */
 function select(n){if(dirty&&n!==cur&&!confirm("Discard unsaved adjustments?"))return;cur=n;dirty=false;
  const r=S.references[n];adj=r?JSON.parse(JSON.stringify(r.adjust)):{global:{},local:{}};adj.global=adj.global||{};adj.local=adj.local||{};
+ base=r&&r.recipe?r.recipe:{global:{},local:{}};base.global=base.global||{};base.local=base.local||{};
  const p=S.photos[n];$("title").textContent=n;$("meta").textContent=`${p.scene} · ${p.size[0]}×${p.size[1]} · ${p.faces} face${p.faces==1?"":"s"}`;
  $("cands").innerHTML="";renderLists();renderStage();renderRegions();renderSliders();renderStatus();refresh()}
 function renderStage(){const st=$("stage");if(!cur)return;const o=`/img/orig/${enc(cur)}`;
@@ -245,6 +263,7 @@ function renderStage(){const st=$("stage");if(!cur)return;const o=`/img/orig/${e
   const sp=$("split");let drag=false;const mv=e=>{if(!drag)return;const r=sp.getBoundingClientRect();splitAt(Math.min(1,Math.max(0,(e.clientX-r.left)/r.width)))};
   sp.onpointerdown=e=>{drag=true;sp.setPointerCapture(e.pointerId);mv(e)};sp.onpointermove=mv;sp.onpointerup=()=>drag=false}
  st.insertAdjacentHTML("beforeend",'<div class="spinner"></div>')}
+new ResizeObserver(()=>{const st=$("stage");st.style.setProperty("--stage-h",Math.max(120,st.clientHeight-4)+"px")}).observe($("stage"));
 function splitAt(f){const aw=$("aw"),h=$("hdl");if(!aw)return;aw.style.clipPath=`inset(0 0 0 ${f*100}%)`;h.style.left=`calc(${f*100}% - 1px)`}
 $("vmode").onclick=e=>{const b=e.target.closest("button");if(!b)return;vmode=b.dataset.m;$("vmode").querySelectorAll("button").forEach(x=>x.classList.toggle("on",x==b));renderStage()};
 async function refresh(){if(!cur)return;const n=cur;$("stage").classList.add("busy");
@@ -262,15 +281,20 @@ function renderStatus(){const r=S.references[cur],el=$("refstatus");
  ${g&&g.reasons&&g.reasons.length?`<div class="note">${esc(g.reasons.join("; "))}</div>`:""}`;
  $("rmref").onclick=removeRef;$("savebtn").disabled=!dirty}
 const vals=reg=>reg=="global"?adj.global:(adj.local[reg]||{});
+const bvals=reg=>reg=="global"?base.global:(base.local[reg]||{});
 const modified=reg=>Object.values(vals(reg)).some(v=>Math.abs(v)>1e-3);
-function renderRegions(){$("regions").innerHTML=S.regions.map(r=>`<button data-r="${esc(r)}" class="${r==region?"on":""} ${modified(r)?"mod":""}">${esc(RLABEL[r]||pretty(r))}</button>`).join("");$("regionname").textContent=RLABEL[region]||region}
+const fitted=reg=>Object.values(bvals(reg)).some(v=>Math.abs(v)>1e-3);
+function renderRegions(){$("regions").innerHTML=S.regions.map(r=>`<button data-r="${esc(r)}" class="${r==region?"on":""} ${modified(r)?"mod":""} ${fitted(r)?"fit":""}">${esc(RLABEL[r]||pretty(r))}</button>`).join("");$("regionname").textContent=RLABEL[region]||region}
 $("regions").onclick=e=>{const b=e.target.closest("button");if(!b)return;region=b.dataset.r;renderRegions();renderSliders()};
-function renderSliders(){const keys=new Set(region=="global"?S.global_keys:S.local_keys),v=vals(region);
- $("sliders").innerHTML=Object.entries(GROUPS).map(([g,ks])=>{ks=ks.filter(k=>keys.has(k));if(!ks.length)return"";
-  return `<div class="grp"><h4>${g}</h4>${ks.map(k=>{const x=+(v[k]||0);return `<div class="sl${Math.abs(x)>1e-3?" set":""}"><label title="${k}">${pretty(k).replace(/^Grade /,"").replace(/^Curve /,"")}</label><input type="range" min="-1" max="1" step="0.01" value="${x}" data-k="${k}"><output>${x.toFixed(2)}</output></div>`}).join("")}</div>`}).join("")}
-function setv(k,x){if(region=="global")adj.global[k]=x;else(adj.local[region]=adj.local[region]||{})[k]=x;dirty=true;$("savebtn").disabled=false;renderRegions();clearTimeout(timer);timer=setTimeout(refresh,120)}
-$("sliders").oninput=e=>{const i=e.target;if(i.type!="range")return;const x=+i.value;i.nextElementSibling.textContent=x.toFixed(2);i.parentNode.classList.toggle("set",Math.abs(x)>1e-3);setv(i.dataset.k,x)};
-$("sliders").ondblclick=e=>{const i=e.target;if(i.type!="range")return;i.value=0;i.dispatchEvent(new Event("input",{bubbles:true}))};
+function renderSliders(){const all=region=="global"?S.global_keys:S.local_keys,keys=new Set(all),v=vals(region),b=bvals(region);
+ const known=new Set(Object.values(GROUPS).flat()),groups={...GROUPS,Other:all.filter(k=>!known.has(k))};
+ $("sliders").innerHTML=Object.entries(groups).map(([g,ks])=>{ks=ks.filter(k=>keys.has(k));if(!ks.length)return"";
+  const open=OPEN.has(g)||ks.some(k=>Math.abs(+(v[k]||0))>1e-3||Math.abs(+(b[k]||0))>1e-3);
+  return `<details class="grp"${open?" open":""}><summary>${g}</summary>${ks.map(k=>{const f=+(b[k]||0),x=f+ +(v[k]||0),id="sl-"+k;
+   return `<div class="sl${Math.abs(x-f)>1e-3?" set":""}${Math.abs(f)>1e-3?" fit":""}"><label for="${id}" title="${k}${Math.abs(f)>1e-3?" · fitted "+f.toFixed(2):""}">${KLABEL(k)}</label><input id="${id}" type="range" min="-1" max="1" step="0.01" value="${x}" data-k="${k}" data-f="${f}" style="--fit:calc(${(f+1)*50}% - 1px)"><output>${x.toFixed(2)}</output></div>`}).join("")}</details>`}).join("")}
+function setv(k,x){if(region=="global")adj.global[k]=x;else(adj.local[region]=adj.local[region]||{})[k]=x;dirty=true;$("savebtn").disabled=false;renderRegions();clearTimeout(timer);timer=setTimeout(refresh,60)}
+$("sliders").oninput=e=>{const i=e.target;if(i.type!="range")return;const x=+i.value,f=+i.dataset.f;i.nextElementSibling.textContent=x.toFixed(2);i.parentNode.classList.toggle("set",Math.abs(x-f)>1e-3);setv(i.dataset.k,+(x-f).toFixed(4))};
+$("sliders").ondblclick=e=>{const i=e.target;if(i.type!="range")return;i.value=e.altKey?0:i.dataset.f;i.dispatchEvent(new Event("input",{bubbles:true}))};
 $("resetreg").onclick=()=>{if(region=="global")adj.global={};else delete adj.local[region];dirty=true;$("savebtn").disabled=false;renderRegions();renderSliders();refresh()};
 $("savebtn").onclick=async()=>{const r=await api("/api/adjust",{photo:cur,adjust:adj});if(r.error)return toast(r.error,"bad");dirty=false;await load();renderRegions();renderSliders();toast("Adjustments saved to the reference","ok")};
 async function removeRef(){if(!confirm("Remove this reference?"))return;await api("/api/remove",{photo:cur});dirty=false;await load();select(cur);toast("Reference removed")}
@@ -293,6 +317,7 @@ $("cands").onclick=async e=>{const z=e.target.closest("[data-zoom]");if(z){$("mo
  const b=e.target.closest("[data-pick]");if(!b)return;b.disabled=true;const r=await api("/api/pick",{photo:cur,index:+b.dataset.pick});if(r.error){b.disabled=false;return toast(r.error,"bad")}
  dirty=false;await load();select(cur);toast("Reference set","ok")};
 $("modal").onclick=()=>$("modal").style.display="none";
+document.addEventListener("keydown",e=>{if(e.key=="Escape"&&$("modal").style.display=="flex")$("modal").style.display="none"});
 $("upload").onchange=e=>{const f=e.target.files[0];if(!f||!cur)return;const rd=new FileReader(),n=cur;toast("Aligning and checking your edit…");
  rd.onload=async()=>{const r=await api("/api/upload",{photo:n,data:rd.result,filename:f.name});e.target.value="";if(r.error)return toast(r.error,"bad",6000);
   dirty=false;await load();if(n==cur)select(n);const v=r.guard&&r.guard.verdict;toast(v=="reject"?"Edit rejected: "+r.guard.reasons.join("; "):"Reference set from your edit",v=="reject"?"bad":"ok",5000)};rd.readAsDataURL(f)};
