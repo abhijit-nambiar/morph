@@ -174,7 +174,9 @@ def load_rgb(path: str | Path, max_side: int | None = None) -> np.ndarray:
     _register_heif(path)
     with Image.open(path) as im:
         if _high_bit_depth(im):
-            return _load_high_bit_depth(path, im, max_side)
+            img = _load_high_bit_depth(path, im, max_side)
+            if img is not None:
+                return img
         if max_side:
             im.draft("RGB", (max_side, max_side))
         im = ImageOps.exif_transpose(im).convert("RGB")
@@ -197,28 +199,30 @@ def _high_bit_depth(im: Image.Image) -> bool:
     """16-bit PNG/TIFF: Pillow would truncate RGB to 8 bits and clip greyscale ``I;16`` to white."""
     if im.mode in ("I", "I;16", "I;16B", "I;16L", "I;16N", "F"):
         return True
-    raw = im.tile[0].args if im.tile else None
+    raw = im.tile[0][3] if im.tile else None  # decoder args; a plain tuple before Pillow 11
     raw = raw[0] if isinstance(raw, tuple) else raw
     return isinstance(raw, str) and ";16" in raw
 
 
-def _load_high_bit_depth(path: str | Path, im: Image.Image, max_side: int | None) -> np.ndarray:
+def _load_high_bit_depth(path: str | Path, im: Image.Image, max_side: int | None) -> np.ndarray | None:
+    """Full-precision decode of 16-bit PNG/TIFF; ``None`` when only an 8-bit decode is possible."""
     import cv2
 
-    arr = cv2.imread(str(path), cv2.IMREAD_UNCHANGED)
-    if arr is None:
-        raise ValueError(f"cannot decode {Path(path).name}")
-    scale = {np.dtype(np.uint16): 65535.0, np.dtype(np.uint8): 255.0}.get(arr.dtype)
+    orient = im.getexif().get(_TAG_ORIENTATION, 1)  # read before decoding: Pillow drops TIFF tags on load
+    if im.mode.startswith(("I", "F")):  # greyscale: Pillow hands over the raw values
+        arr = np.asarray(im)
+        scale = 65535.0 if im.mode.startswith("I;16") else None
+    else:  # 16-bit RGB: Pillow truncates to 8 bits, so decode with OpenCV and orient from Pillow's tag below
+        arr = cv2.imread(str(path), cv2.IMREAD_ANYDEPTH | cv2.IMREAD_ANYCOLOR | cv2.IMREAD_IGNORE_ORIENTATION)
+        if arr is None:
+            return None
+        arr = arr[..., ::-1] if arr.ndim == 3 else arr  # BGR -> RGB
+        scale = {np.dtype(np.uint16): 65535.0, np.dtype(np.uint8): 255.0}.get(arr.dtype)
     img = arr.astype(np.float32) / scale if scale else np.clip(arr.astype(np.float32), 0, None)
     if img.ndim == 2:
         img = np.repeat(img[..., None], 3, -1)
-    elif img.shape[2] == 1:
-        img = np.repeat(img, 3, -1)
-    else:
-        img = img[..., 2::-1]  # BGR(A) -> RGB, alpha dropped
     if scale is None and img.max() > 1.0:  # float / 32-bit integer data: normalise to the image's own range
         img = img / img.max()
-    orient = im.getexif().get(_TAG_ORIENTATION, 1)
     img = {2: lambda a: a[:, ::-1], 3: lambda a: a[::-1, ::-1], 4: lambda a: a[::-1], 5: lambda a: np.rot90(a, 1)[::-1],
            6: lambda a: np.rot90(a, -1), 7: lambda a: np.rot90(a, -1)[::-1], 8: lambda a: np.rot90(a, 1)}.get(orient, lambda a: a)(img)
     img = np.ascontiguousarray(np.clip(img, 0.0, 1.0), dtype=np.float32)

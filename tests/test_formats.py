@@ -72,6 +72,13 @@ def test_16_bit_orientation(tmp_path):
     assert np.abs(img[..., 0] - np.rot90(g, -1) / 65535).max() < 1e-4
 
 
+def test_16_bit_tiff_orientation(tmp_path):
+    g = (gradient()[..., 0] * 65535).astype(np.uint16)
+    Image.fromarray(g).save(tmp_path / "x.tif", tiffinfo={0x0112: 6})
+    img = load_rgb(tmp_path / "x.tif")
+    assert np.abs(img[..., 0] - np.rot90(g, -1) / 65535).max() < 1e-4
+
+
 def test_output_formats():
     assert output_name("a.webp") == "a.webp"
     assert output_name("a.png") == "a.png"
