@@ -72,11 +72,24 @@ def test_16_bit_orientation(tmp_path):
     assert np.abs(img[..., 0] - np.rot90(g, -1) / 65535).max() < 1e-4
 
 
-def test_16_bit_tiff_orientation(tmp_path):
-    g = (gradient()[..., 0] * 65535).astype(np.uint16)
-    Image.fromarray(g).save(tmp_path / "x.tif", tiffinfo={0x0112: 6})
-    img = load_rgb(tmp_path / "x.tif")
-    assert np.abs(img[..., 0] - np.rot90(g, -1) / 65535).max() < 1e-4
+def test_16_bit_rgb_orientation(tmp_path, monkeypatch):
+    """OpenCV must not rotate on its own: orientation comes from Pillow's tag, applied once."""
+    import cv2
+
+    from morph import imageio
+
+    g = gradient()
+    cv2.imwrite(str(tmp_path / "x.png"), (g[..., ::-1] * 65535).astype(np.uint16))
+    real = Image.Image.getexif
+
+    def oriented(self):
+        e = real(self)
+        e[0x0112] = 6
+        return e
+
+    monkeypatch.setattr(Image.Image, "getexif", oriented)
+    img = imageio.load_rgb(tmp_path / "x.png")
+    assert np.abs(img - np.rot90(g, -1)).max() < 1e-4
 
 
 def test_output_formats():
