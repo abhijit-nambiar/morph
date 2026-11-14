@@ -38,6 +38,32 @@ morph edit path/to/album --look "airy, lifted shadows, clean skin" --out edited/
 morph edit path/to/album --edit-dir my_edits/ --out edited/               # use whichever photos you edited
 ```
 
+### From the camera: RAW files and auto-culling
+
+Every command accepts camera RAW files next to (or instead of) JPEGs: Nikon `.NEF`/`.NRW` and every other format LibRaw reads (`.CR2/.CR3`, `.ARW`, `.RAF`, `.ORF`, `.RW2`, `.DNG`, …). RAWs are rendered with the camera's white balance, no auto-brightening (so a burst stays consistent), highlight blending and a gentle fixed film-like tone curve, matched against Nikon's own JPEG previews, so they start from a neutral, pleasing base instead of flat linear data. When a RAW and a JPEG share a stem (RAW+JPEG mode) the RAW is used. Exports from RAW sources are written as JPEG (or `--format tif`) with EXIF (camera, lens, exposure, capture time, GPS) and an sRGB profile.
+
+Dump a card into a folder and let Morph pick the keepers:
+
+```bash
+morph cull  card_dump/ --out album/                     # writes album/ (symlinks) + album/cull.json
+morph cull  card_dump/ --dry-run -v                     # just report; nothing is written except the score cache
+morph cull  card_dump/ --out album/ --focus-strictness 0.8 --burst-keep 2 --keep-closed-eyes --reject DSC_0042.NEF
+morph edit  card_dump/ --cull --look "airy, clean skin" --out edited/   # cull -> analyse -> edit in one go
+```
+
+Per frame it measures **focus where it matters** (the eyes of the main faces, else the people, else the sharpest part of the frame, so shallow depth of field isn't punished) as an estimated blur radius in pixels at a 2560-px view, **motion blur** (blur that is much stronger in one direction), **exposure** of the subject in EV plus highlight clipping, **closed eyes**, and **bursts / near-duplicates** (capture time + appearance). Then it rejects clear failures and keeps the best frame(s) of each burst, with a human-readable reason for every decision. Scores are cached in `card_dump/.morph-cull/`, so changing thresholds re-decides instantly. Thresholds (`--focus-strictness 0..1`, `--max-motion`, `--exposure-tolerance`, `--max-clip`, `--burst-keep`, `--burst-similarity`, `--burst-gap`, …) map to `morph.cull.CullSettings`. `--no-people` skips the face/person models for a much faster, frame-only pass.
+
+From Python (this is what Studio uses):
+
+```python
+from morph.cull import score_folder, decide, build_album, CullSettings
+scores = score_folder("card_dump", progress=lambda i, n, name: ...)   # list[FrameScore], cached
+decisions = decide(scores, CullSettings(focus_strictness=0.7))       # list[Decision]: keep, reasons, flags, burst
+build_album(decisions, "album", overrides={"DSC_0042.NEF": "keep"}, mode="link")
+```
+
+`scripts/make_cull_benchmark.py` builds a labelled dump from a folder of good photos (adds defocused, background-focused, shaken, badly exposed and near-duplicate frames) and reports precision/recall; see the culling results below.
+
 `--generator` accepts `local`, `openai` (uses `OPENAI_API_KEY`, sends the original + prompt), any `https://…` endpoint that takes `{"image": b64png, "prompt", "n"}` and returns `{"images": [b64png…]}`, or `files:DIR` for candidates you made elsewhere.
 
 Candidates from external generators (and uploaded hand edits) are re-segmented so the distortion guard can compare regions and face counts against the original; the built-in `local` generator only renders slider recipes, so it skips that step. Set `MORPH_THREADS=N` to cap CPU threads when several morph jobs share a machine.

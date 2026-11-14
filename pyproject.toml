@@ -18,6 +18,7 @@ dependencies = [
   "torchvision>=0.16",
   "transformers>=4.40",
   "safetensors>=0.4",
+  "rawpy>=0.19",
 ]
 
 [project.optional-dependencies]
@@ -35,3 +36,4 @@ where = ["src"]
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]
+pythonpath = ["tests"]
