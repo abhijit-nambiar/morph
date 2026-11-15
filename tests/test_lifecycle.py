@@ -1,4 +1,6 @@
 import json
+import os
+import stat
 
 import numpy as np
 import pytest
@@ -222,3 +224,30 @@ def test_old_index_without_stat_loads(small_album, tmp_path):
     index.write_text(json.dumps(data))
     assert Album.load(small_album, project.album.cache).names == project.album.names
     assert Project(root).album.names == project.album.names
+
+
+@pytest.mark.skipif(os.name != 'posix', reason='POSIX permission metadata')
+def test_restored_read_permission_retries_skipped_photo(small_album, tmp_path, monkeypatch):
+    blocked = small_album / 'a2.jpg'
+    mode = blocked.stat().st_mode
+    blocked.chmod(mode & ~stat.S_IRUSR)
+    denied = True
+    original = album_mod.read_info
+
+    def read(path):
+        if path == blocked and denied:
+            raise PermissionError('read access denied')
+        return original(path)
+
+    monkeypatch.setattr(album_mod, 'read_info', read)
+    root = tmp_path / 'project'
+    project = Project.create(root, small_album)
+    assert 'a2.jpg' not in project.album.names
+    before = blocked.stat()
+    blocked.chmod(mode)
+    denied = False
+    after = blocked.stat()
+    assert (before.st_size, before.st_mtime_ns) == (after.st_size, after.st_mtime_ns)
+    reopened = Project(root)
+    assert 'a2.jpg' in reopened.album.names
+    assert reopened.album.skipped == []

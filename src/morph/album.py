@@ -160,7 +160,7 @@ class Album:
     @staticmethod
     def source_stat(path: str | Path) -> list[int]:
         stat = Path(path).stat()
-        return [stat.st_size, stat.st_mtime_ns]
+        return [stat.st_size, stat.st_mtime_ns, stat.st_ctime_ns]
 
     def analyze(self, segmenter: Segmenter | None = None, embedder: Embedder | None = None, progress=None) -> "Album":
         self.cache.mkdir(parents=True, exist_ok=True)
