@@ -21,6 +21,7 @@ dependencies = [
   "rawpy>=0.19",
   "pillow-heif>=0.18",
   "tifffile>=2023.1",
+  "imagecodecs>=2025.3.30",
 ]
 
 [project.optional-dependencies]

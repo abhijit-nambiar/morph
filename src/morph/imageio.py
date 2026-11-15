@@ -9,12 +9,15 @@ from __future__ import annotations
 
 import hashlib
 import io
+from contextlib import contextmanager
 from dataclasses import dataclass, field
 from datetime import datetime
 from pathlib import Path
 
 import numpy as np
-from PIL import Image, ImageOps
+from PIL import Image, ImageOps, UnidentifiedImageError
+
+from .colormanage import convert, source_profile
 
 # Formats exports can keep (with EXIF/ICC); other readable rasters export as JPEG.
 WRITABLE_SUFFIXES = {".jpg", ".jpeg", ".png", ".tif", ".tiff", ".webp"}
@@ -172,15 +175,25 @@ def load_rgb(path: str | Path, max_side: int | None = None) -> np.ndarray:
 
     RAW files always go through :func:`render_raw`, at every size, so analysis copies and
     full-resolution exports share exactly the same base rendering.
+    Out-of-sRGB-gamut values are clipped in the working space; exporting with the
+    source profile does not restore wide-gamut colours lost through editing.
     """
     if is_raw(path):
         return render_raw(path, max_side)
     _register_heif(path)
-    with Image.open(path) as im:
-        if _high_bit_depth(im):
+    with _open_raster(path) as im:
+        deep = _high_bit_depth(im)
+        profile = source_profile(im)
+        if deep:
             img = _load_high_bit_depth(path, im, max_side)
             if img is not None:
                 return img
+        if profile:
+            im = ImageOps.exif_transpose(im).convert("RGB")
+            img = convert(np.asarray(im), profile)
+            if max_side and max(img.shape[:2]) > max_side:
+                img = resize(img, fit_size(img.shape[1], img.shape[0], max_side))
+            return img
         if max_side:
             im.draft("RGB", (max_side, max_side))
         im = ImageOps.exif_transpose(im).convert("RGB")
@@ -188,6 +201,34 @@ def load_rgb(path: str | Path, max_side: int | None = None) -> np.ndarray:
             scale = max_side / max(im.size)
             im = im.resize((max(1, round(im.width * scale)), max(1, round(im.height * scale))), Image.LANCZOS)
         return np.asarray(im, dtype=np.float32) / 255.0
+
+
+@contextmanager
+def _open_raster(path):
+    try:
+        im = Image.open(path)
+    except UnidentifiedImageError:
+        if Path(path).suffix.lower() not in ('.tif', '.tiff'):
+            raise
+        import tifffile
+
+        with tifffile.TiffFile(path) as tif:
+            page = tif.pages[0]
+            if page.dtype.kind != 'f' or page.photometric != 2:
+                raise
+            im = Image.new('RGB', (page.imagewidth, page.imagelength))
+            im.info['float_tiff'] = True
+            icc = page.tags.get(34675)
+            if icc:
+                im.info['icc_profile'] = icc.value
+            exif = im.getexif()
+            for tag in page.tags.values():
+                if tag.code not in _TIFF_LAYOUT_TAGS and tag.code != 34675:
+                    exif[tag.code] = tag.value
+    try:
+        yield im
+    finally:
+        im.close()
 
 
 def _register_heif(path: str | Path) -> None:
@@ -201,7 +242,9 @@ def _register_heif(path: str | Path) -> None:
 
 def _high_bit_depth(im: Image.Image) -> bool:
     """16-bit PNG/TIFF: Pillow would truncate RGB to 8 bits and clip greyscale ``I;16`` to white."""
-    if im.mode in ("I", "I;16", "I;16B", "I;16L", "I;16N", "F"):
+    if im.info.get('float_tiff') or im.mode in ("I", "I;16", "I;16B", "I;16L", "I;16N", "F"):
+        return True
+    if im.format == "TIFF" and max(im.tag_v2.get(258, (8,))) > 8:
         return True
     raw = im.tile[0][3] if im.tile else None  # decoder args; a plain tuple before Pillow 11
     raw = raw[0] if isinstance(raw, tuple) else raw
@@ -212,6 +255,7 @@ def _load_high_bit_depth(path: str | Path, im: Image.Image, max_side: int | None
     """Full-precision decode of 16-bit PNG/TIFF; ``None`` when only an 8-bit decode is possible."""
     import cv2
 
+    profile = source_profile(im)
     orient = im.getexif().get(_TAG_ORIENTATION, 1)  # read before decoding: Pillow drops TIFF tags on load
     if im.mode.startswith(("I", "F")):  # greyscale: Pillow hands over the raw values
         arr = np.asarray(im)
@@ -227,11 +271,13 @@ def _load_high_bit_depth(path: str | Path, im: Image.Image, max_side: int | None
     img = arr.astype(np.float32) / scale if scale else np.clip(arr.astype(np.float32), 0, None)
     if img.ndim == 2:
         img = np.repeat(img[..., None], 3, -1)
-    if scale is None and img.max() > 1.0:  # float / 32-bit integer data: normalise to the image's own range
+    if not profile and scale is None and img.max() > 1.0:  # unmanaged float / integer: normalise to its own range
         img = img / img.max()
     img = {2: lambda a: a[:, ::-1], 3: lambda a: a[::-1, ::-1], 4: lambda a: a[::-1], 5: lambda a: np.rot90(a, 1)[::-1],
            6: lambda a: np.rot90(a, -1), 7: lambda a: np.rot90(a, -1)[::-1], 8: lambda a: np.rot90(a, 1)}.get(orient, lambda a: a)(img)
-    img = np.ascontiguousarray(np.clip(img, 0.0, 1.0), dtype=np.float32)
+    img = np.ascontiguousarray(img if profile else np.clip(img, 0.0, 1.0), dtype=np.float32)
+    if profile:
+        img = convert(img, profile)
     if max_side and max(img.shape[:2]) > max_side:
         img = resize(img, fit_size(img.shape[1], img.shape[0], max_side))
     return img
@@ -392,9 +438,7 @@ def save_image(img: np.ndarray, out: str | Path, source: str | Path | None = Non
     """
     out = Path(out)
     out.parent.mkdir(parents=True, exist_ok=True)
-    arr = np.clip(np.rint(np.clip(img, 0.0, 1.0) * 255.0), 0, 255).astype(np.uint8)
-    pil = Image.fromarray(arr, "RGB")
-    kwargs: dict = {}
+    kwargs: dict = {"icc_profile": srgb_icc()}
     xmp = None
     exif_obj = None
     deep = False  # source carries more than 8 bits per channel
@@ -404,18 +448,30 @@ def save_image(img: np.ndarray, out: str | Path, source: str | Path | None = Non
         kwargs["icc_profile"] = srgb_icc()
         deep = True
     elif source is not None:
-        with Image.open(source) as src:
+        with _open_raster(source) as src:
             deep = _high_bit_depth(src)
-            icc = src.info.get("icc_profile")
+            icc = source_profile(src)
+            if icc:
+                img = convert(np.asarray(img, dtype=np.float32), icc, exporting=True)
             exif = exif_obj = src.getexif()
             for tag in _TIFF_LAYOUT_TAGS & set(exif):
                 del exif[tag]
-            if exif:
-                exif[_TAG_ORIENTATION] = 1
-                kwargs["exif"] = exif.tobytes()
+            exif[_TAG_ORIENTATION] = 1
+            sub = exif.get_ifd(_EXIF_IFD)
+            sub[0xA001] = 0xFFFF if icc else 1
+            exif[_EXIF_IFD] = sub
+            interop = exif.get_ifd(0xA005)
+            if interop:
+                if icc:
+                    interop.pop(1, None)
+                else:
+                    interop[1] = "R98"
+            kwargs["exif"] = exif.tobytes()
             if icc:
                 kwargs["icc_profile"] = icc
             xmp = src.info.get("xmp")
+    arr = np.clip(np.rint(np.clip(img, 0.0, 1.0) * 255.0), 0, 255).astype(np.uint8)
+    pil = Image.fromarray(arr, "RGB")
     suffix = out.suffix.lower()
     if suffix in (".tif", ".tiff") or (deep and suffix == ".png"):  # TIFF is the print format: always 16-bit
         return _save_16bit(img, out, kwargs.get("icc_profile"), exif_obj if kwargs.get("exif") else None, xmp)
