@@ -21,7 +21,7 @@ log = logging.getLogger(__name__)
 
 WORK_SIDE = 1024
 EMBED_MODEL = "facebook/dinov2-small"
-ANALYSIS_VERSION = f"a1-{SEGMENTER_VERSION}-{RAW_RENDER_VERSION}"
+ANALYSIS_VERSION = f"a2-icc-{SEGMENTER_VERSION}-{RAW_RENDER_VERSION}"
 STAT_REGIONS = ("subject", "background", "sky", "hair", "face_skin", "body_skin", "clothes", "eyes")
 
 
