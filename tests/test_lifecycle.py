@@ -1,5 +1,6 @@
 import json
 import os
+import shutil
 import stat
 
 import numpy as np
@@ -159,6 +160,29 @@ def test_repaired_skipped_file_joins_album(small_album, tmp_path):
     assert "broken.jpg" in reopened.album.names
     assert reopened.album.skipped == []
     assert_scenes_cover_album(reopened)
+
+
+def test_interrupted_analysis_retains_duplicate_names(small_album, tmp_path, monkeypatch):
+    shutil.copy2(small_album / 'a0.jpg', small_album / 'b-copy.jpg')
+    project = Project.create(tmp_path / 'project', small_album)
+
+    def interrupt(i, total, name):
+        if name == 'a1.jpg':
+            raise KeyboardInterrupt
+
+    with pytest.raises(KeyboardInterrupt):
+        Album(small_album, project.album.cache).analyze(progress=interrupt)
+    assert Album.load(small_album, project.album.cache).names == project.album.names
+    calls = []
+
+    def unexpected(*args, **kwargs):
+        calls.append(args)
+        raise AssertionError('cached duplicate must not be read')
+
+    monkeypatch.setattr(album_mod, 'read_info', unexpected)
+    resumed = Album(small_album, project.album.cache).analyze()
+    assert resumed.names == project.album.names
+    assert calls == []
 
 
 def test_interrupted_early_addition_retains_unvisited_cache(small_album, tmp_path, monkeypatch):

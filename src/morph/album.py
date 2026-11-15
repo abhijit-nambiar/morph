@@ -205,9 +205,8 @@ class Album:
             complete = True
         finally:
             if not complete:
-                saved = {rec.sha256 for rec in recs}
                 for rec, g, b in prior_items:
-                    if rec.name in visited or rec.sha256 in saved:
+                    if rec.name in visited:
                         continue
                     try:
                         valid = (self.source_stat(self.folder / rec.name) == prior_stat.get(rec.name)
@@ -218,7 +217,6 @@ class Album:
                         recs.append(rec)
                         eg.append(g)
                         eb.append(b)
-                        saved.add(rec.sha256)
                         self.stat[rec.name] = prior_stat[rec.name]
                 for name, reason in prior_skipped:
                     if name not in visited:
