@@ -31,7 +31,7 @@ def source_profile(im) -> bytes | None:
     if profile:
         return rgb_profile(profile)
     sub = im.getexif().get_ifd(0x8769)
-    interop = im.getexif().get_ifd(0xA005)
+    interop = im.getexif().get_ifd(0xA005) if 0xA005 in sub else {}
     if sub.get(0xA001) == 0xFFFF and interop.get(1) in ('R03', b'R03', b'R03\0'):
         return imagecodecs.cms_profile('adobergb')
     return None

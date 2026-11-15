@@ -460,7 +460,7 @@ def save_image(img: np.ndarray, out: str | Path, source: str | Path | None = Non
             sub = exif.get_ifd(_EXIF_IFD)
             sub[0xA001] = 0xFFFF if icc else 1
             exif[_EXIF_IFD] = sub
-            interop = exif.get_ifd(0xA005)
+            interop = exif.get_ifd(0xA005) if 0xA005 in sub else {}
             if interop:
                 if icc:
                     interop.pop(1, None)
