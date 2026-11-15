@@ -9,7 +9,7 @@ from PIL import Image, ImageCms, ImageOps
 
 from morph.colorspace import delta_e2000, srgb_to_lab
 from morph.imageio import load_rgb, save_image, srgb_icc
-from morph import imageio
+from morph import colormanage, imageio
 
 
 def profile(name):
@@ -212,3 +212,17 @@ def test_float_tiff_album_import(tmp_path, fake_models):
     assert album.names == ['float.tif']
     assert not album.skipped
     assert album.work_image('float.tif').shape == (48, 72, 3)
+
+
+def test_linear_srgb_profile_is_converted_while_srgb_variants_pass_through():
+    linear = cms.cms_profile('rgb', whitepoint=(.3127, .3290), primaries=(.64, .33, .30, .60, .15, .06), gamma=1)
+    linear = linear.replace('RGB built-in'.encode('utf-16-be'), 'sRGB linear '.encode('utf-16-be'))
+    assert 'sRGB' in description(linear)
+    x = np.random.default_rng(3).random((16, 16, 3)).astype(np.float32)
+    expected = np.where(x <= 0.0031308, 12.92 * x, 1.055 * x ** (1 / 2.4) - 0.055)
+    assert colormanage.rgb_profile(linear) == linear
+    assert np.abs(colormanage.convert(x, linear) - expected).max() < 1e-4
+
+    hp_srgb = ImageCms.ImageCmsProfile(ImageCms.createProfile('sRGB')).tobytes()
+    assert colormanage.rgb_profile(hp_srgb) is None
+    assert colormanage.rgb_profile(cms.cms_profile('srgb')) is None
