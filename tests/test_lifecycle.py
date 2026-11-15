@@ -109,3 +109,23 @@ def test_studio_reopen_refreshes_photos(small_album, tmp_path):
     (small_album / "a0.jpg").unlink()
     make_photo(small_album / "new.jpg", 50, size=(96, 64))
     assert set(State(root).state()["photos"]) == {"a1.jpg", "a2.jpg", "new.jpg"}
+
+
+def test_corrupt_file_does_not_repeat_analysis_on_reopen(small_album, tmp_path, monkeypatch):
+    (small_album / "broken.jpg").write_bytes(b"not a jpeg")
+    root = tmp_path / "project"
+    project = Project.create(root, small_album)
+    assert [name for name, _ in project.album.skipped] == ["broken.jpg"]
+    calls = []
+
+    def unexpected(self, *args, **kwargs):
+        calls.append(self)
+        raise AssertionError("reopening an unchanged album must not analyze")
+
+    monkeypatch.setattr(Album, "analyze", unexpected)
+    monkeypatch.setattr(Album, "_analyze_one", unexpected)
+    for _ in range(2):
+        reopened = Project(root)
+        assert reopened.album.names == project.album.names
+        assert reopened.album.skipped == project.album.skipped
+    assert calls == []

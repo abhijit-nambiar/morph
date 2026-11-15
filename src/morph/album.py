@@ -126,6 +126,7 @@ class Album:
         self.folder = Path(folder)
         self.cache = Path(cache) if cache else self.folder / ".morph-cache"
         self.photos: list[PhotoRecord] = []
+        self.skipped: list[tuple[str, str]] = []
         self.emb_global: np.ndarray | None = None
         self.emb_background: np.ndarray | None = None
 
@@ -230,7 +231,8 @@ class Album:
         return self.cache / "analysis.json"
 
     def _save_index(self) -> None:
-        data = {"version": ANALYSIS_VERSION, "folder": str(self.folder), "photos": [asdict(p) for p in self.photos]}
+        data = {"version": ANALYSIS_VERSION, "folder": str(self.folder), "photos": [asdict(p) for p in self.photos],
+                "skipped": self.skipped}
         self._index_path().write_text(json.dumps(data, indent=1))
         np.savez(self.cache / "embeddings.npz", glob=self.emb_global, bg=self.emb_background, sha=np.array([p.sha256 for p in self.photos]))
 
@@ -246,6 +248,7 @@ class Album:
             for i, p in enumerate(data["photos"]):
                 p["work_size"] = tuple(p["work_size"])
                 out.append((PhotoRecord(**p), emb["glob"][i], emb["bg"][i]))
+            self.skipped = [tuple(item) for item in data.get("skipped", [])]
             return out
         except Exception:  # noqa: BLE001 - any broken cache just means re-analysis
             return []
