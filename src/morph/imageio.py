@@ -663,7 +663,10 @@ def _read_raw_info(path: Path) -> PhotoInfo:
 
     with rawpy.imread(str(path)) as raw:
         (_, _, h, w), flip = _raw_geometry(raw)
-        other = raw.other
+        try:
+            other = raw.other
+        except rawpy.LibRawError:  # Nikon High Efficiency / 8-bit NEF: LibRaw reads the geometry but not the rest
+            other = None
     if flip in (5, 6):
         w, h = h, w
     sub = raw_exif(path).get_ifd(_EXIF_IFD)
@@ -674,11 +677,16 @@ def _read_raw_info(path: Path) -> PhotoInfo:
             captured = datetime.strptime(stamp, "%Y:%m:%d %H:%M:%S")
         except ValueError:
             captured = None
-    if captured is None and other.timestamp:
+    if captured is None and other is not None and other.timestamp:
         captured = other.timestamp
     pos = lambda v: float(v) if v and v > 0 else None
+    if other is None:
+        iso = sub.get(_TAG_ISO)
+        exposure, fnum, iso = sub.get(_TAG_EXPOSURE_TIME), sub.get(_TAG_FNUMBER), iso[0] if isinstance(iso, tuple) else iso
+    else:
+        exposure, fnum, iso = other.shutter_speed, other.aperture, other.iso_speed
     return PhotoInfo(path=path, name=path.name, width=w, height=h, captured=captured,
-                     exposure_time=pos(other.shutter_speed), f_number=pos(other.aperture), iso=pos(other.iso_speed),
+                     exposure_time=pos(_rational(exposure)), f_number=pos(_rational(fnum)), iso=pos(_rational(iso)),
                      extra={"raw": True})
 
 
@@ -712,8 +720,11 @@ def raw_exif(path: str | Path) -> Image.Exif:
         if len(gps) > 1:
             out.get_ifd(_GPS_IFD).update(gps)
         return out
-    with rawpy.imread(str(path)) as raw:
-        other, lens = raw.other, raw.lens
+    try:
+        with rawpy.imread(str(path)) as raw:
+            other, lens = raw.other, raw.lens
+    except rawpy.LibRawError:
+        return _embedded_jpeg_exif(path)
     out[_TAG_ORIENTATION] = 1
     if other.artist:
         out[0x013B] = other.artist
@@ -730,6 +741,31 @@ def raw_exif(path: str | Path) -> Image.Exif:
         e[0x920A] = float(other.focal_length)
     if lens.model:
         e[0xA434] = lens.model
+    return out
+
+
+def _embedded_jpeg_exif(path: str | Path) -> Image.Exif:
+    """EXIF of the camera's embedded JPEG, for RAWs whose own metadata LibRaw cannot parse."""
+    import rawpy
+
+    out = Image.Exif()
+    try:
+        with rawpy.imread(str(path)) as raw:
+            th = raw.extract_thumb()
+        if th.format == rawpy.ThumbFormat.JPEG:
+            with Image.open(io.BytesIO(th.data)) as im:
+                src = im.getexif()
+                for t in _RAW_IFD0_TAGS:
+                    if t in src:
+                        out[t] = _clean(src[t])
+                sub = {k: _clean(v) for k, v in src.get_ifd(_EXIF_IFD).items() if k not in _RAW_SKIP_EXIF}
+                gps = dict(src.get_ifd(_GPS_IFD))
+            out.get_ifd(_EXIF_IFD).update(sub)
+            if len(gps) > 1:
+                out.get_ifd(_GPS_IFD).update(gps)
+    except (rawpy.LibRawError, OSError):
+        pass
+    out[_TAG_ORIENTATION] = 1
     return out
 
 
