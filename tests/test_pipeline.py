@@ -116,3 +116,41 @@ def test_corrupt_file_is_skipped_not_fatal(fake_models, tiny_album, tmp_path):
     (tiny_album / "broken.jpg").write_bytes(b"\xff\xd8\xff not really a jpeg")
     a = Album(tiny_album, tmp_path / "cache").analyze()
     assert len(a.photos) == 7 and [n for n, _ in a.skipped] == ["broken.jpg"]
+
+
+def test_project_upgrade_rebuilds_analysis_and_preserves_user_edits(fake_models, tiny_album, tmp_path, monkeypatch):
+    from morph.album import ANALYSIS_VERSION, Album
+
+    root = tmp_path / "project"
+    project = Project.create(root, tiny_album)
+    name = project.album.names[0]
+    ref = project.adjust(name, {"exposure": 0.25, "face_skin.texture": -0.3})
+    project.save_reference(ref, project.album.work_image(name))
+    project.scenes[0].label = "My scene label"
+    project.save()
+    metadata = (root / "project.json").read_bytes()
+    references = {p.name: p.read_bytes() for p in project.ref_dir.iterdir()}
+
+    index = project.album.cache / "analysis.json"
+    old = json.loads(index.read_text())
+    old["version"] = "previous-analysis-version"
+    index.write_text(json.dumps(old))
+    analyze_one = Album._analyze_one
+    rebuilt = []
+
+    def track(self, info, *args):
+        rebuilt.append(info.name)
+        return analyze_one(self, info, *args)
+
+    monkeypatch.setattr(Album, "_analyze_one", track)
+    reopened = Project(root)
+    assert sorted(rebuilt) == sorted(reopened.album.names) == sorted(project.album.names)
+    assert json.loads(index.read_text())["version"] == ANALYSIS_VERSION
+    assert (root / "project.json").read_bytes() == metadata
+    assert {p.name: p.read_bytes() for p in reopened.ref_dir.iterdir()} == references
+    assert reopened.reference(name).final.g("exposure") == 0.25
+    assert reopened.scenes[0].label == "My scene label"
+
+    rebuilt.clear()
+    assert Project(root).album.names == reopened.album.names
+    assert rebuilt == []  # opening a current cache stays cheap

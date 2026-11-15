@@ -58,7 +58,11 @@ class Project:
         self.root = Path(root)
         meta = json.loads((self.root / "project.json").read_text())
         self.meta = meta
-        self.album = Album.load(meta["album"], meta.get("cache"))
+        try:
+            self.album = Album.load(meta["album"], meta.get("cache"))
+        except FileNotFoundError:
+            # Model/decoder upgrades invalidate analysis, not the user's project or references.
+            self.album = Album(meta["album"], meta.get("cache")).analyze()
         self.scenes = [Scene(**s) for s in meta.get("scenes", [])]
 
     # -- creation ------------------------------------------------------------------------------
