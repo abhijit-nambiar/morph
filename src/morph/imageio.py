@@ -354,6 +354,14 @@ def _png_chunk(kind: bytes, data: bytes) -> bytes:
     return struct.pack(">I", len(data)) + kind + data + struct.pack(">I", zlib.crc32(kind + data) & 0xFFFFFFFF)
 
 
+def _text_bytes(value: str) -> bytes:
+    # Pillow decodes TIFF text as latin-1, including UTF-8 camera/retoucher text.
+    try:
+        return value.encode('latin-1')
+    except UnicodeEncodeError:
+        return value.encode('utf-8')
+
+
 def _save_16bit(img: np.ndarray, out: Path, icc: bytes | None, exif: Image.Exif | None, xmp) -> Path:
     """16-bit RGB PNG/TIFF (Pillow can only write 8-bit RGB), keeping ICC, XMP and EXIF (TIFF: the baseline tags)."""
     arr = np.rint(np.clip(img, 0.0, 1.0) * 65535.0).astype(np.uint16)
@@ -390,7 +398,7 @@ def _save_16bit(img: np.ndarray, out: Path, icc: bytes | None, exif: Image.Exif 
         base[306] = exif.get_ifd(_EXIF_IFD).get(_TAG_DATETIME_ORIGINAL)
     for t, v in base.items():
         if isinstance(v, str) and v.strip("\0 ") and t != 305:
-            tags.append((t, "s", 0, v.strip("\0 "), True))
+            tags.append((t, "s", 0, _text_bytes(v.strip("\0 ")), True))
     subs = {t: dict(exif.get_ifd(t)) for t in (_EXIF_IFD, _GPS_IFD)} if exif else {}
     subs = {t: d for t, d in subs.items() if d}
     # tifffile refuses the EXIF/GPS pointer tags: write placeholders one tag number lower (keeps the IFD
@@ -422,6 +430,9 @@ def _append_sub_ifds(path: Path, subs: dict[int, dict]) -> None:
             if tag in _IFD_POINTERS and not (tag == 0xA005 and isinstance(v, dict)):
                 continue
             try:
+                if isinstance(v, str):
+                    v = _text_bytes(v)
+                    ifd.tagtype[tag] = 2
                 ifd[tag] = v
             except (TypeError, ValueError):
                 continue
