@@ -56,6 +56,11 @@ class PropagationConfig:
     across_L_slack: float = 4.0
     across_L_follow: float = 2.0
     across_L_white: float = 90.0  # brightening is free up to the room left below this 95th-percentile lightness
+    # Background similarity below/above which a new, well-exposed high-key scene receives
+    # none/all of the statistical correction. The reference recipe itself always carries over.
+    across_similarity_low: float = 0.5
+    across_similarity_high: float = 0.8
+    across_L_transition: float = 5.0  # fade the exposure/key exemptions over this many L units
 
 
 @dataclass
@@ -315,11 +320,43 @@ def propagate(album: Album, refs: list[Reference], scenes: list[Scene], cfg: Pro
         else:
             base = average([r.recipe for r in refs], W[i].tolist())
             base.meta = {"weights": {r.name: round(float(W[i, j]), 4) for j, r in enumerate(refs) if W[i, j] > 1e-3}}
-            same = np.array([scene_of.get(p.name) == r.scene for r in refs], float)
+            sc = scene_of.get(p.name)
+            same = np.array([sc is not None and sc == scene_of.get(r.name) for r in refs], float)
             gain = float(W[i] @ (same * cfg.pursue_within + (1 - same) * cfg.pursue_across))
+            confidence = _adaptation_confidence(album, i, refs, W[i], same, cfg)
+            gain *= confidence
             budget = float(W[i] @ np.array([r.clip_added for r in refs]))
             rec = _correct(album.work_image(p.name), album.masks(p.name).masks, base, targets[i], cfg, gain, budget)
+            rec.meta["adaptation_confidence"] = round(confidence, 4)
         out[p.name] = rec
         if progress:
             progress(i + 1, len(album.photos), p.name)
     return out
+
+
+def _adaptation_confidence(album: Album, i: int, refs: list[Reference], weights: np.ndarray,
+                           same: np.ndarray, cfg: PropagationConfig) -> float:
+    """A different backdrop is weak evidence of an exposure/colour error.
+
+    Preserve the reference look but ease off normalization when an uncovered scene is well exposed
+    and its mean lightness exceeds the reference's distribution by more than one standard deviation.
+    Bright highlights alone do not establish a high-key scene (e.g. a backlit portrait). Dark photos
+    still need exposure recovery; a same-scene reference supplies direct evidence regardless of key.
+    """
+    if np.any(same):
+        return 1.0
+    stats = album.photos[i].stats.get("global")
+    ref_stats = [r.orig_stats.get("global") for r in refs]
+    if stats is None or any(s is None for s in ref_stats):
+        return 1.0
+    idx = [album.names.index(r.name) for r in refs]
+    sims = album.emb_background[idx] @ album.emb_background[i]
+    span = max(cfg.across_similarity_high - cfg.across_similarity_low, 1e-6)
+    confidence = np.clip((sims - cfg.across_similarity_low) / span, 0.0, 1.0)
+    # A smooth transition avoids adjacent burst frames receiving very different corrections
+    # just because their highlights fall on opposite sides of the underexposure threshold.
+    well_exposed = np.clip((stats["pct"][2] - cfg.across_L_white) / max(cfg.across_L_transition, 1e-6), 0.0, 1.0)
+    reference_key = float(weights @ np.array([s["mean"][0] for s in ref_stats]))
+    reference_spread = float(weights @ np.array([s["std"][0] for s in ref_stats]))
+    distinct_key = np.clip((stats["mean"][0] - reference_key - reference_spread) / max(cfg.across_L_transition, 1e-6), 0.0, 1.0)
+    return float(1.0 - well_exposed * distinct_key * (1.0 - weights @ confidence))
