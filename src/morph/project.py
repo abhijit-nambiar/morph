@@ -12,6 +12,7 @@ Layout (``<project>/``)::
 from __future__ import annotations
 
 import json
+from copy import copy
 from dataclasses import dataclass, field
 from pathlib import Path
 
@@ -64,6 +65,36 @@ class Project:
             # Model/decoder upgrades invalidate analysis, not the user's project or references.
             self.album = Album(meta["album"], meta.get("cache")).analyze()
         self.scenes = [Scene(**s) for s in meta.get("scenes", [])]
+        self._sync_scenes()
+
+    def _sync_scenes(self) -> None:
+        """Reconcile refreshed analysis while retaining existing scene choices and labels."""
+        names = set(self.album.names)
+        scenes = []
+        used = {s.id for s in self.scenes}
+        for scene in self.scenes:
+            photos = [n for n in scene.photos if n in names]
+            if photos:
+                representative = scene.representative if scene.representative in photos else photos[0]
+                scenes.append(Scene(scene.id, photos, representative, scene.label))
+        covered = {n for s in scenes for n in s.photos}
+        added = [i for i, p in enumerate(self.album.photos) if p.name not in covered]
+        if added:
+            # Cluster only newly discovered photos so established scene boundaries stay intact.
+            subset = copy(self.album)
+            subset.photos = [self.album.photos[i] for i in added]
+            subset.emb_global = self.album.emb_global[added]
+            subset.emb_background = self.album.emb_background[added]
+            number = 1
+            for scene in cluster(subset):
+                while f"scene-{number:02d}" in used:
+                    number += 1
+                scene.id = f"scene-{number:02d}"
+                used.add(scene.id)
+                scenes.append(scene)
+        if [s.to_json() for s in scenes] != [s.to_json() for s in self.scenes]:
+            self.scenes = scenes
+            self.save()
 
     # -- creation ------------------------------------------------------------------------------
     @classmethod
