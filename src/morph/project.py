@@ -22,7 +22,7 @@ from .album import Album
 from .fit import fit_recipe
 from .generate import Candidate, get_generator
 from .guard import GuardReport, check
-from .imageio import load_rgb, save_png_u8
+from .imageio import list_images, load_rgb, save_png_u8
 from .recipe import Recipe
 from .render import render_recipe
 from .scenes import Scene, cluster, suggest
@@ -61,6 +61,10 @@ class Project:
         self.meta = meta
         try:
             self.album = Album.load(meta["album"], meta.get("cache"))
+            indexed = {(p.name, p.path) for p in self.album.photos}
+            current = {(p.name, str(p.resolve())) for p in list_images(meta["album"])}
+            if indexed != current or any(not Path(p.path).exists() for p in self.album.photos):
+                self.album = Album(meta["album"], meta.get("cache")).analyze()
         except FileNotFoundError:
             # Model/decoder upgrades invalidate analysis, not the user's project or references.
             self.album = Album(meta["album"], meta.get("cache")).analyze()
