@@ -419,7 +419,7 @@ def _append_sub_ifds(path: Path, subs: dict[int, dict]) -> None:
         data += b"\0" * (-len(data) % 4)
         ifd = ImageFileDirectory_v2(prefix=b"II")
         for tag, v in d.items():
-            if tag in _IFD_POINTERS:  # offsets into the source file: meaningless here
+            if tag in _IFD_POINTERS and not (tag == 0xA005 and isinstance(v, dict)):
                 continue
             try:
                 ifd[tag] = v
@@ -462,13 +462,17 @@ def save_image(img: np.ndarray, out: str | Path, source: str | Path | None = Non
             exif[_TAG_ORIENTATION] = 1
             sub = exif.get_ifd(_EXIF_IFD)
             sub[0xA001] = 0xFFFF if icc else 1
-            exif[_EXIF_IFD] = sub
             interop = exif.get_ifd(0xA005) if 0xA005 in sub else {}
             if interop:
                 if icc:
                     interop.pop(1, None)
                 else:
                     interop[1] = "R98"
+            if interop:
+                sub[0xA005] = interop
+            else:
+                sub.pop(0xA005, None)
+            exif[_EXIF_IFD] = sub
             kwargs["exif"] = exif.tobytes()
             if icc:
                 kwargs["icc_profile"] = icc
