@@ -126,6 +126,8 @@ class Album:
         self.folder = Path(folder)
         self.cache = Path(cache) if cache else self.folder / ".morph-cache"
         self.photos: list[PhotoRecord] = []
+        self.skipped: list[tuple[str, str]] = []
+        self.stat: dict[str, list[int]] = {}
         self.emb_global: np.ndarray | None = None
         self.emb_background: np.ndarray | None = None
 
@@ -155,9 +157,17 @@ class Album:
         return [p.name for p in self.photos]
 
     # -- analysis ------------------------------------------------------------------------------
+    @staticmethod
+    def source_stat(path: str | Path) -> list[int]:
+        stat = Path(path).stat()
+        return [stat.st_size, stat.st_mtime_ns, stat.st_ctime_ns]
+
     def analyze(self, segmenter: Segmenter | None = None, embedder: Embedder | None = None, progress=None) -> "Album":
         self.cache.mkdir(parents=True, exist_ok=True)
-        prior = {t[0].sha256: t for t in self._load_index()}
+        prior_items = self._load_index()
+        prior = {t[0].sha256: t for t in prior_items}
+        prior_names = {t[0].name: t for t in prior_items}
+        prior_stat, prior_skipped = self.stat, self.skipped
         segmenter = segmenter or Segmenter()
         embedder = embedder or Embedder()
         files = list_images(self.folder)
@@ -165,31 +175,67 @@ class Album:
             raise FileNotFoundError(f"no images found in {self.folder}")
         recs, eg, eb = [], [], []
         self.skipped = []
-        for i, f in enumerate(files):
-            try:
-                info = read_info(f)
-                old = prior.get(info.sha256)
-                if old is not None and self.mask_path(old[0]).exists() and self.work_path(old[0]).exists():
-                    rec, g, b = replace(old[0], name=f.name, path=str(f.resolve())), old[1], old[2]
-                else:
-                    rec, g, b = self._analyze_one(info, segmenter, embedder)
-            except Exception as e:  # noqa: BLE001 - a corrupt card file must not sink the album
-                self.skipped.append((f.name, f"{type(e).__name__}: {e}"))
+        self.stat = {}
+        visited = set()
+        complete = False
+        try:
+            for i, f in enumerate(files):
+                try:
+                    self.stat[f.name] = self.source_stat(f)
+                    old = prior_names.get(f.name) if self.stat[f.name] == prior_stat.get(f.name) else None
+                    if old is None or not self.mask_path(old[0]).exists() or not self.work_path(old[0]).exists():
+                        info = read_info(f)
+                        old = prior.get(info.sha256)
+                    if old is not None and self.mask_path(old[0]).exists() and self.work_path(old[0]).exists():
+                        rec, g, b = replace(old[0], name=f.name, path=str(f.resolve())), old[1], old[2]
+                    else:
+                        rec, g, b = self._analyze_one(info, segmenter, embedder)
+                except Exception as e:  # noqa: BLE001 - a corrupt card file must not sink the album
+                    self.skipped.append((f.name, f"{type(e).__name__}: {e}"))
+                    visited.add(f.name)
+                    if progress:
+                        progress(i + 1, len(files), f.name)
+                    continue
+                recs.append(rec)
+                eg.append(g)
+                eb.append(b)
+                visited.add(f.name)
                 if progress:
                     progress(i + 1, len(files), f.name)
-                continue
-            recs.append(rec)
-            eg.append(g)
-            eb.append(b)
-            if progress:
-                progress(i + 1, len(files), f.name)
+            complete = True
+        finally:
+            if not complete:
+                for rec, g, b in prior_items:
+                    if rec.name in visited:
+                        continue
+                    try:
+                        valid = (self.source_stat(self.folder / rec.name) == prior_stat.get(rec.name)
+                                 and self.mask_path(rec).exists() and self.work_path(rec).exists())
+                    except OSError:
+                        valid = False
+                    if valid:
+                        recs.append(rec)
+                        eg.append(g)
+                        eb.append(b)
+                        self.stat[rec.name] = prior_stat[rec.name]
+                for name, reason in prior_skipped:
+                    if name not in visited:
+                        try:
+                            if self.source_stat(self.folder / name) == prior_stat.get(name):
+                                self.skipped.append((name, reason))
+                                self.stat[name] = prior_stat[name]
+                        except OSError:
+                            pass
+            known = {rec.name for rec in recs} | {name for name, _ in self.skipped}
+            self.stat = {name: value for name, value in self.stat.items() if name in known}
+            if recs:
+                recs_order = sorted(range(len(recs)), key=lambda i: (recs[i].captured or "", recs[i].name))
+                self.photos = [recs[i] for i in recs_order]
+                self.emb_global = np.stack([eg[i] for i in recs_order])
+                self.emb_background = np.stack([eb[i] for i in recs_order])
+                self._save_index()
         if not recs:
             raise FileNotFoundError(f"no readable images in {self.folder}: " + "; ".join(f"{n} ({r})" for n, r in self.skipped))
-        recs_order = sorted(range(len(recs)), key=lambda i: (recs[i].captured or "", recs[i].name))
-        self.photos = [recs[i] for i in recs_order]
-        self.emb_global = np.stack([eg[i] for i in recs_order])
-        self.emb_background = np.stack([eb[i] for i in recs_order])
-        self._save_index()
         return self
 
     def _analyze_one(self, info: PhotoInfo, segmenter: Segmenter, embedder: Embedder):
@@ -227,7 +273,8 @@ class Album:
         return self.cache / "analysis.json"
 
     def _save_index(self) -> None:
-        data = {"version": ANALYSIS_VERSION, "folder": str(self.folder), "photos": [asdict(p) for p in self.photos]}
+        data = {"version": ANALYSIS_VERSION, "folder": str(self.folder), "photos": [asdict(p) for p in self.photos],
+                "skipped": self.skipped, "stat": self.stat}
         self._index_path().write_text(json.dumps(data, indent=1))
         np.savez(self.cache / "embeddings.npz", glob=self.emb_global, bg=self.emb_background, sha=np.array([p.sha256 for p in self.photos]))
 
@@ -243,6 +290,8 @@ class Album:
             for i, p in enumerate(data["photos"]):
                 p["work_size"] = tuple(p["work_size"])
                 out.append((PhotoRecord(**p), emb["glob"][i], emb["bg"][i]))
+            self.skipped = [tuple(item) for item in data.get("skipped", [])]
+            self.stat = data.get("stat", {})
             return out
         except Exception:  # noqa: BLE001 - any broken cache just means re-analysis
             return []
