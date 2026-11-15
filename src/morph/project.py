@@ -61,10 +61,11 @@ class Project:
         self.meta = meta
         try:
             self.album = Album.load(meta["album"], meta.get("cache"))
-            indexed = {(p.name, p.path) for p in self.album.photos}
-            indexed.update((name, str((self.album.folder / name).resolve())) for name, _ in self.album.skipped)
-            current = {(p.name, str(p.resolve())) for p in list_images(meta["album"])}
-            if indexed != current or any(not Path(p.path).exists() for p in self.album.photos):
+            indexed = set(self.album.names) | {name for name, _ in self.album.skipped}
+            files = list_images(meta["album"])
+            if (indexed != {p.name for p in files}
+                    or any(not Path(p.path).exists() for p in self.album.photos)
+                    or any(self.album.source_stat(p) != self.album.stat.get(p.name) for p in files)):
                 self.album = Album(meta["album"], meta.get("cache")).analyze()
         except FileNotFoundError:
             # Model/decoder upgrades invalidate analysis, not the user's project or references.
