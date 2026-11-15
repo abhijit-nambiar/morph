@@ -138,7 +138,7 @@ def read_info(path: str | Path, with_hash: bool = True) -> PhotoInfo:
             info.sha256 = sha256_file(path)
         return info
     _register_heif(path)
-    with Image.open(path) as im:
+    with _open_raster(path) as im:
         exif = im.getexif()
         size = im.size
         orientation = exif.get(_TAG_ORIENTATION, 1)
@@ -519,7 +519,7 @@ def jpeg_bytes(img: np.ndarray, quality: int = 85) -> bytes:
 RAW_CURVE_X = (0.0, 0.0025, 0.01, 0.03, 0.09, 0.2, 0.4, 0.7, 1.0)
 RAW_CURVE_Y = (0.0, 0.0035, 0.017, 0.074, 0.272, 0.57, 0.835, 0.962, 1.0)
 RAW_SATURATION = 1.1  # camera-matrix colour is accurate but looks a touch flat next to camera JPEGs
-RAW_RENDER_VERSION = "raw-v2"
+RAW_RENDER_VERSION = "raw-v3"
 RAW_MATCH_EV = 2.0  # most a RAW is brightened or darkened to meet its camera JPEG
 _RAW_LUT: np.ndarray | None = None
 _LUM = np.array([0.2126, 0.7152, 0.0722], np.float32)
@@ -557,6 +557,15 @@ def _orient(img: np.ndarray, flip: int) -> np.ndarray:
     return img
 
 
+def _preview_rgb(im: Image.Image, draft_side: int | None = None) -> np.ndarray:
+    profile = source_profile(im)
+    if profile:
+        return convert(np.asarray(im.convert("RGB")), profile)
+    if draft_side:
+        im.draft("RGB", (draft_side, draft_side))
+    return np.asarray(im.convert("RGB"), dtype=np.float32) / 255.0
+
+
 def _thumb_luma(raw) -> float | None:
     """Mean sRGB luma of the camera's embedded JPEG: how bright the camera rendered this frame."""
     import rawpy
@@ -571,8 +580,7 @@ def _thumb_luma(raw) -> float | None:
         with Image.open(io.BytesIO(th.data)) as im:
             if max(im.size) < 320:
                 return None
-            im.draft("RGB", (512, 512))
-            a = np.asarray(im.convert("RGB"), dtype=np.float32) / 255.0
+            a = _preview_rgb(im, 512)
     except OSError:
         return None
     return float((a @ _LUM).mean())
@@ -627,7 +635,7 @@ def _embedded_full_jpeg(path: str | Path) -> np.ndarray | None:
     with Image.open(io.BytesIO(th.data)) as im:
         if max(im.size) < 0.9 * max(h, w):
             return None
-        img = np.asarray(im.convert("RGB"), dtype=np.float32) / 255.0
+        img = _preview_rgb(im)
     if (img.shape[1] > img.shape[0]) == (w > h):
         img = np.ascontiguousarray(_orient(img, flip))
     return img
@@ -696,8 +704,7 @@ def load_preview(path: str | Path, max_side: int = 2048) -> np.ndarray:
     if th is not None and th.format == rawpy.ThumbFormat.JPEG:
         with Image.open(io.BytesIO(th.data)) as im:
             if max(im.size) >= min(max_side, max(h, w) // 2):
-                im.draft("RGB", (max_side, max_side))
-                img = np.asarray(im.convert("RGB"), dtype=np.float32) / 255.0
+                img = _preview_rgb(im, max_side)
     elif th is not None and th.format == rawpy.ThumbFormat.BITMAP and max(th.data.shape[:2]) >= min(max_side, max(h, w) // 2):
         img = th.data.astype(np.float32) / 255.0
     if img is None:
