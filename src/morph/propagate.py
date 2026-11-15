@@ -51,6 +51,11 @@ class PropagationConfig:
     side: int = 256
     clip_weight: float = 60.0  # penalty on highlights pushed past white beyond what the reference edit itself clips
     clip_margin: float = 0.01
+    # a photo in a scene with no reference keeps its own key: its lightness target may move at most this far
+    # (L units) beyond ``across_L_follow`` times the largest lightness change any reference edit made, either way
+    across_L_slack: float = 4.0
+    across_L_follow: float = 2.0
+    across_L_white: float = 90.0  # brightening is free up to the room left below this 95th-percentile lightness
 
 
 @dataclass
@@ -183,7 +188,35 @@ def _targets(album: Album, refs: list[Reference], W: np.ndarray, scenes: list[Sc
         for o in out:
             if r in o:
                 o[r] = (1 - wvec) * o[r] + wvec * med
+    _hold_key_across(album, refs, W, scene_of, out, cfg)
     return out
+
+
+def _hold_key_across(album: Album, refs: list[Reference], W: np.ndarray, scene_of: dict, out: list[dict], cfg: PropagationConfig) -> None:
+    """Scenes without a reference may be high- or low-key on purpose (a white studio vs. a forest): bound how far their
+    lightness targets drift from the photo's own to the largest brightening / darkening any reference edit made, plus slack.
+    Highlights sitting well below white mean underexposure rather than key, so that headroom may still be lifted."""
+    for i, p in enumerate(album.photos):
+        sc = scene_of.get(p.name)
+        same = np.array([sc is not None and sc == scene_of.get(r.name) for r in refs], float)
+        if float(W[i] @ same) > 0.5:
+            continue
+        g = p.stats.get("global")
+        headroom = max(0.0, cfg.across_L_white - g["pct"][2]) if g else 0.0
+        for r, t in out[i].items():
+            o = _mean(p.stats, r)
+            if o is None:
+                continue
+            moves = []
+            for ref in refs:
+                ro, re_ = _mean(ref.orig_stats, r), _mean(ref.edit_stats, r)
+                if ro is None or re_ is None:
+                    ro, re_ = _mean(ref.orig_stats, "global"), _mean(ref.edit_stats, "global")
+                moves.append(0.0 if ro is None or re_ is None else re_[0] - ro[0])
+            down, up = cfg.across_L_follow * min(0.0, *moves), cfg.across_L_follow * max(0.0, *moves)
+            t = np.array(t, np.float64)
+            t[0] = np.clip(t[0], o[0] + down - cfg.across_L_slack, o[0] + up + cfg.across_L_slack + headroom)
+            out[i][r] = t
 
 
 def _overshoot(raw: torch.Tensor) -> torch.Tensor:

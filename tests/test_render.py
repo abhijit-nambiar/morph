@@ -133,3 +133,35 @@ def test_people_gate_drops_parts_the_scene_model_does_not_call_people():
     g = _gate_people(human, scene_person)
     assert g["clothes"][25, 25] > 0.9 and g["clothes"][75, 75] < 0.05 and g["background"][75, 75] > 0.95
     assert _gate_people(human, z)["clothes"][75, 75] == 1  # scene model sees nobody: leave the parser alone
+
+
+def test_scene_without_reference_keeps_its_key():
+    from types import SimpleNamespace
+    from morph.propagate import PropagationConfig, Reference, _targets
+    from morph.recipe import Recipe
+
+    st = lambda m: {"global": {"mean": m, "std": [20, 8, 8], "pct": [0, 50, 100], "coverage": 1.0}}
+    ref = Reference("ref", Recipe({"exposure": 0.2}), "s0", st([42, -4, 17]), st([44, -4, 21]))
+    photos = [SimpleNamespace(name="ref", stats=st([42, -4, 17])), SimpleNamespace(name="white", stats=st([78, -3, 10]))]
+    scenes = [SimpleNamespace(id="s0", photos=["ref"]), SimpleNamespace(id="s1", photos=["white"])]
+    W = np.ones((2, 1))
+    t = _targets(SimpleNamespace(photos=photos), [ref], W, scenes, PropagationConfig())[1]["global"]
+    assert 78 - 4.0 - 1e-6 <= t[0] <= 78 + 2 * 2 + 4.0 + 1e-6
+    loose = _targets(SimpleNamespace(photos=photos), [ref], W, scenes, PropagationConfig(across_L_slack=1e9))[1]["global"]
+    assert loose[0] < 70
+
+
+def test_scene_without_reference_may_follow_any_reference_that_darkens():
+    from types import SimpleNamespace
+    from morph.propagate import PropagationConfig, Reference, _hold_key_across
+    from morph.recipe import Recipe
+
+    st = lambda m, hi=100: {"global": {"mean": m, "std": [20, 8, 8], "pct": [0, 50, hi], "coverage": 1.0}}
+    refs = [
+        Reference("up", Recipe({}), "s0", st([40, 0, 0]), st([48, 0, 0])),
+        Reference("down", Recipe({}), "s1", st([60, 0, 0]), st([52, 0, 0])),
+    ]
+    album = SimpleNamespace(photos=[SimpleNamespace(name="p", stats=st([62, 0, 0]))])
+    out = [{"global": np.array([30.0, 0, 0])}]
+    _hold_key_across(album, refs, np.array([[0.9, 0.1]]), {"p": "s2", "up": "s0", "down": "s1"}, out, PropagationConfig())
+    assert abs(out[0]["global"][0] - (62 - 2 * 8 - 4.0)) < 1e-6
