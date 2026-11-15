@@ -222,9 +222,12 @@ def _open_raster(path):
             if icc:
                 im.info['icc_profile'] = icc.value
             exif = im.getexif()
-            for tag in page.tags.values():
-                if tag.code not in _TIFF_LAYOUT_TAGS and tag.code != 34675:
-                    exif[tag.code] = tag.value
+            with open(path, 'rb') as fh:
+                exif.load_from_fp(fh)
+                for tag in (_TIFF_LAYOUT_TAGS | {34675}) & set(exif):
+                    del exif[tag]
+                metadata = exif.tobytes()
+            exif.load(metadata)
     try:
         yield im
     finally:
