@@ -179,14 +179,26 @@ def _adjust(x: torch.Tensor, get, scale: float, active: set[str]) -> torch.Tenso
         edge = (4 * Lc * (1 - Lc)).clamp(min=1e-6)  # floor keeps edge.sqrt() differentiable at pure black/white
         dh = get("dehaze")
         d = (get("contrast") + 0.35 * dh) * 0.55 * (Lc - 0.45) * edge
-        d = d + get("highlights") * 0.30 * _bump(Lc, 0.78, 0.15) * edge.sqrt()
-        d = d + get("shadows") * 0.30 * _bump(Lc, 0.22, 0.15) * edge.sqrt()
-        d = d + get("whites") * 0.20 * _bump(Lc, 0.94, 0.08)
-        d = d + (get("blacks") - 0.25 * dh) * 0.15 * _bump(Lc, 0.04, 0.07)
-        d = d + get("curve_shadows") * 0.15 * _bump(Lc, 0.12, 0.08) * edge.sqrt()
-        d = d + get("curve_darks") * 0.15 * _bump(Lc, 0.36, 0.11) * edge.sqrt()
-        d = d + get("curve_lights") * 0.15 * _bump(Lc, 0.62, 0.11) * edge.sqrt()
-        d = d + get("curve_highlights") * 0.15 * _bump(Lc, 0.86, 0.08) * edge.sqrt()
+        edge_sqrt = edge.sqrt()
+        tone_active = set(active)
+        for key in ("highlights", "shadows", "whites", "blacks", "dehaze", "curve_shadows",
+                    "curve_darks", "curve_lights", "curve_highlights"):
+            if key not in tone_active:
+                value = get(key)
+                if value.requires_grad or bool(value != 0):
+                    tone_active.add(key)
+        if "highlights" in tone_active:
+            d = d + get("highlights") * 0.30 * _bump(Lc, 0.78, 0.15) * edge_sqrt
+        if "shadows" in tone_active:
+            d = d + get("shadows") * 0.30 * _bump(Lc, 0.22, 0.15) * edge_sqrt
+        if "whites" in tone_active:
+            d = d + get("whites") * 0.20 * _bump(Lc, 0.94, 0.08)
+        if tone_active & {"blacks", "dehaze"}:
+            d = d + (get("blacks") - 0.25 * dh) * 0.15 * _bump(Lc, 0.04, 0.07)
+        for key, center, width in (("curve_shadows", 0.12, 0.08), ("curve_darks", 0.36, 0.11),
+                                   ("curve_lights", 0.62, 0.11), ("curve_highlights", 0.86, 0.08)):
+            if key in tone_active:
+                d = d + get(key) * 0.15 * _bump(Lc, center, width) * edge_sqrt
         x = x + d
     if active & {"clarity", "texture", "noise_reduction", "dehaze"}:
         L = _luma(x)
