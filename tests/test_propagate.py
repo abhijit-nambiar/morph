@@ -80,3 +80,16 @@ def test_dissimilar_scene_still_receives_reference_look_and_clip_budget(monkeypa
     scenes.pop()
     p.propagate(album, [ref], scenes, p.PropagationConfig(pursue_within=0.8))
     assert seen[-1][1] == pytest.approx(0.8)
+
+
+def test_reference_output_records_full_confidence_without_mutating_saved_recipe(monkeypatch):
+    import morph.propagate as p
+
+    album = SimpleNamespace(photos=[SimpleNamespace(name="ref")])
+    monkeypatch.setattr(p, "reference_weights", lambda *args: np.ones((1, 1)))
+    monkeypatch.setattr(p, "_targets", lambda *args: [{}])
+    recipe = Recipe({"exposure": 0.25}, meta={"source": "hand edit"})
+    output = p.propagate(album, [_ref("ref", recipe)], [])
+    assert output["ref"].g("exposure") == 0.25
+    assert output["ref"].meta == {"source": "hand edit", "role": "reference", "adaptation_confidence": 1.0}
+    assert recipe.meta == {"source": "hand edit"}

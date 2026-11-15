@@ -316,7 +316,7 @@ def propagate(album: Album, refs: list[Reference], scenes: list[Scene], cfg: Pro
     for i, p in enumerate(album.photos):
         if p.name in ref_names:
             rec = ref_names[p.name].recipe.copy()
-            rec.meta = {**rec.meta, "role": "reference"}
+            rec.meta = {**rec.meta, "role": "reference", "adaptation_confidence": 1.0}
         else:
             base = average([r.recipe for r in refs], W[i].tolist())
             base.meta = {"weights": {r.name: round(float(W[i, j]), 4) for j, r in enumerate(refs) if W[i, j] > 1e-3}}
