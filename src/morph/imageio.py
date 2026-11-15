@@ -9,13 +9,12 @@ from __future__ import annotations
 
 import hashlib
 import io
-from contextlib import contextmanager
 from dataclasses import dataclass, field
 from datetime import datetime
 from pathlib import Path
 
 import numpy as np
-from PIL import Image, ImageOps, UnidentifiedImageError
+from PIL import Image, ImageOps
 
 from .colormanage import convert, source_profile
 
@@ -138,7 +137,7 @@ def read_info(path: str | Path, with_hash: bool = True) -> PhotoInfo:
             info.sha256 = sha256_file(path)
         return info
     _register_heif(path)
-    with _open_raster(path) as im:
+    with Image.open(path) as im:
         exif = im.getexif()
         size = im.size
         orientation = exif.get(_TAG_ORIENTATION, 1)
@@ -181,7 +180,7 @@ def load_rgb(path: str | Path, max_side: int | None = None) -> np.ndarray:
     if is_raw(path):
         return render_raw(path, max_side)
     _register_heif(path)
-    with _open_raster(path) as im:
+    with Image.open(path) as im:
         deep = _high_bit_depth(im)
         profile = source_profile(im)
         if deep:
@@ -203,37 +202,6 @@ def load_rgb(path: str | Path, max_side: int | None = None) -> np.ndarray:
         return np.asarray(im, dtype=np.float32) / 255.0
 
 
-@contextmanager
-def _open_raster(path):
-    try:
-        im = Image.open(path)
-    except UnidentifiedImageError:
-        if Path(path).suffix.lower() not in ('.tif', '.tiff'):
-            raise
-        import tifffile
-
-        with tifffile.TiffFile(path) as tif:
-            page = tif.pages[0]
-            if page.dtype.kind != 'f' or page.photometric != 2:
-                raise
-            im = Image.new('RGB', (page.imagewidth, page.imagelength))
-            im.info['float_tiff'] = True
-            icc = page.tags.get(34675)
-            if icc:
-                im.info['icc_profile'] = icc.value
-            exif = im.getexif()
-            with open(path, 'rb') as fh:
-                exif.load_from_fp(fh)
-                for tag in (_TIFF_LAYOUT_TAGS | {34675}) & set(exif):
-                    del exif[tag]
-                metadata = exif.tobytes()
-            exif.load(metadata)
-    try:
-        yield im
-    finally:
-        im.close()
-
-
 def _register_heif(path: str | Path) -> None:
     if Path(path).suffix.lower() in (".heic", ".heif"):
         try:
@@ -245,7 +213,7 @@ def _register_heif(path: str | Path) -> None:
 
 def _high_bit_depth(im: Image.Image) -> bool:
     """16-bit PNG/TIFF: Pillow would truncate RGB to 8 bits and clip greyscale ``I;16`` to white."""
-    if im.info.get('float_tiff') or im.mode in ("I", "I;16", "I;16B", "I;16L", "I;16N", "F"):
+    if im.mode in ("I", "I;16", "I;16B", "I;16L", "I;16N", "F"):
         return True
     if im.format == "TIFF" and max(im.tag_v2.get(258, (8,))) > 8:
         return True
@@ -462,7 +430,7 @@ def save_image(img: np.ndarray, out: str | Path, source: str | Path | None = Non
         kwargs["icc_profile"] = srgb_icc()
         deep = True
     elif source is not None:
-        with _open_raster(source) as src:
+        with Image.open(source) as src:
             deep = _high_bit_depth(src)
             icc = source_profile(src)
             if icc:

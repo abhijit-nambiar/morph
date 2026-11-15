@@ -12,8 +12,8 @@ from morph import imageio
 from morph.album import Album
 
 
-def float_tiff_with_exif(path):
-    pixels = np.linspace(.1, .8, 48*72*3, dtype=np.float32).reshape(48, 72, 3)
+def integer_tiff_with_exif(path):
+    pixels = np.linspace(6554, 52428, 48*72*3).astype(np.uint16).reshape(48, 72, 3)
     tifffile.imwrite(path, pixels, photometric='rgb', metadata=None,
                      extratags=[(0x8768, 'I', 1, 0, True)])
     with tifffile.TiffFile(path) as tif:
@@ -28,14 +28,14 @@ def float_tiff_with_exif(path):
     data += exif.tobytes(offset)
     data[slot:slot+4] = struct.pack('<I', offset)
     path.write_bytes(data)
-    return pixels
+    return pixels.astype(np.float32)/65535
 
 
-def test_float_tiff_exif_import_and_export(tmp_path, fake_models):
+def test_integer_tiff_exif_import_and_export(tmp_path, fake_models):
     folder = tmp_path/'album'
     folder.mkdir()
-    source = folder/'float.tif'
-    pixels = float_tiff_with_exif(source)
+    source = folder/'16bit.tif'
+    pixels = integer_tiff_with_exif(source)
     with tifffile.TiffFile(source) as tif:
         assert tif.pages[0].tags[0x8769].value['DateTimeOriginal'] == '2024:05:01 10:00:00'
     info = imageio.read_info(source)
@@ -44,11 +44,29 @@ def test_float_tiff_exif_import_and_export(tmp_path, fake_models):
     assert info.exposure_time == 1/125
     np.testing.assert_allclose(imageio.load_rgb(source), pixels)
     album = Album(folder).analyze()
-    assert album.names == ['float.tif']
+    assert album.names == ['16bit.tif']
     assert not album.skipped
     out = imageio.save_image(pixels, tmp_path/'export.jpg', source=source)
     with Image.open(out) as im:
         assert im.getexif().get_ifd(0x8769)[0x9003] == '2024:05:01 10:00:00'
+
+
+@pytest.mark.parametrize('bigtiff', [False, True])
+def test_unsupported_float_rgb_tiff_is_skipped(tmp_path, fake_models, bigtiff):
+    from PIL import UnidentifiedImageError
+
+    folder = tmp_path/'album'
+    folder.mkdir()
+    source = folder/'float.tif'
+    tifffile.imwrite(source, np.full((48, 72, 3), .3, np.float32), photometric='rgb',
+                     bigtiff=bigtiff, metadata=None, description=None,
+                     extratags=[(270, 's', 0, 'Café — 東京'.encode('utf-8'), True)])
+    Image.new('RGB', (72, 48), (110, 120, 130)).save(folder/'normal.jpg')
+    with pytest.raises(UnidentifiedImageError):
+        imageio.load_rgb(source)
+    album = Album(folder).analyze()
+    assert album.names == ['normal.jpg']
+    assert [name for name, reason in album.skipped] == ['float.tif']
 
 
 @pytest.mark.parametrize('suffix', ['.jpg', '.tif'])

@@ -54,11 +54,10 @@ def test_real_photo(tmp_path, photo, name):
     assert delta_e2000(srgb_to_lab(a), srgb_to_lab(b)).mean() < 1
 
 
-@pytest.mark.parametrize('dtype', ['uint16', 'float32'])
-def test_deep_precision(tmp_path, dtype):
+def test_deep_precision(tmp_path):
     profile = cms.cms_profile('adobergb')
     a = np.broadcast_to(np.linspace(.1, .9, 2048, dtype=np.float32)[None, :, None], (3, 2048, 3)).copy()
-    a = np.rint(a*65535).astype(dtype) if dtype == 'uint16' else a
+    a = np.rint(a*65535).astype('uint16')
     tifffile.imwrite(tmp_path/'wide.tif', a, photometric='rgb', iccprofile=profile)
     expected = transform(a, profile, cms.cms_profile('srgb'))
     actual = load_rgb(tmp_path/'wide.tif')
@@ -196,22 +195,22 @@ def test_raw_previews(tmp_path, monkeypatch, tag):
     assert imageio._thumb_luma(RawPreview()) == luma_ref
 
 
-def test_float_tiff_album_import(tmp_path, fake_models):
+def test_16bit_tiff_album_import(tmp_path, fake_models):
     from morph.album import Album
 
     folder = tmp_path/'album'
     folder.mkdir()
-    source = folder/'float.tif'
-    a = np.linspace(.1, .8, 48*72*3, dtype=np.float32).reshape(48, 72, 3)
+    source = folder/'wide.tif'
+    a = np.linspace(6554, 52428, 48*72*3).astype(np.uint16).reshape(48, 72, 3)
     icc = cms.cms_profile('adobergb')
     tifffile.imwrite(source, a, photometric='rgb', iccprofile=icc)
     info = imageio.read_info(source)
     assert (info.width, info.height) == (72, 48)
     np.testing.assert_allclose(load_rgb(source), transform(a, icc, cms.cms_profile('srgb')), atol=2e-6)
     album = Album(folder).analyze()
-    assert album.names == ['float.tif']
+    assert album.names == ['wide.tif']
     assert not album.skipped
-    assert album.work_image('float.tif').shape == (48, 72, 3)
+    assert album.work_image('wide.tif').shape == (48, 72, 3)
 
 
 def test_linear_srgb_profile_is_converted_while_srgb_variants_pass_through():
