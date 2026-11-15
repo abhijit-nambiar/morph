@@ -1,7 +1,9 @@
 import struct
 from datetime import datetime
 
+import imagecodecs
 import numpy as np
+import pytest
 import tifffile
 from PIL import Image
 from PIL.TiffImagePlugin import IFDRational, ImageFileDirectory_v2
@@ -47,3 +49,36 @@ def test_float_tiff_exif_import_and_export(tmp_path, fake_models):
     out = imageio.save_image(pixels, tmp_path/'export.jpg', source=source)
     with Image.open(out) as im:
         assert im.getexif().get_ifd(0x8769)[0x9003] == '2024:05:01 10:00:00'
+
+
+@pytest.mark.parametrize('suffix', ['.jpg', '.tif'])
+@pytest.mark.parametrize('wide', [False, True])
+@pytest.mark.parametrize('interop', [{1: 'R98', 2: b'0100'}, {}, None])
+def test_export_nested_interop(tmp_path, suffix, wide, interop):
+    source = tmp_path/'camera.jpg'
+    exif = Image.Exif()
+    sub = {0x9003: '2024:05:01 10:00:00', 0xA001: 1}
+    if interop is not None:
+        sub[0xA005] = interop
+    exif[0x8769] = sub
+    icc = imagecodecs.cms_profile('adobergb' if wide else 'srgb')
+    Image.new('RGB', (72, 48), (110, 120, 130)).save(source, exif=exif, icc_profile=icc)
+    out = imageio.save_image(imageio.load_rgb(source), tmp_path/('export'+suffix), source=source)
+    with Image.open(out) as im:
+        saved = im.getexif()
+        sub = saved.get_ifd(0x8769)
+        assert sub[0x9003] == '2024:05:01 10:00:00'
+        assert sub[0xA001] == (0xFFFF if wide else 1)
+        if interop:
+            assert 0xA005 in sub
+            nested = saved.get_ifd(0xA005)
+            assert nested[2] == b'0100'
+            if wide:
+                assert 1 not in nested
+            else:
+                assert nested[1] == 'R98'
+        else:
+            assert 0xA005 not in sub
+    if suffix == '.tif':
+        with tifffile.TiffFile(out) as tif:
+            assert tif.pages[0].dtype == np.uint16
