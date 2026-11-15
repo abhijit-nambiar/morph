@@ -25,10 +25,16 @@ def guided_filter(guide: np.ndarray, src: np.ndarray, r: int, eps: float) -> np.
     return box(a, r) * guide + box(b, r)
 
 
-def upsample_mask(mask_lo: np.ndarray, guide_hi: np.ndarray, eps: float = 1e-4) -> np.ndarray:
-    """Upsample a soft mask to the guide's resolution and snap it to the guide's edges."""
+def upsample_mask(mask_lo: np.ndarray, guide_hi: np.ndarray, eps: float = 1e-4, *, refine: bool = True) -> np.ndarray:
+    """Upsample a soft mask; optionally snap broad regions to the guide's edges.
+
+    Tiny face features already follow the parser's boundaries. Guided filtering can erase
+    them, so eyes/lips use only bilinear interpolation, retaining their soft probabilities.
+    """
     h, w = guide_hi.shape[:2]
     up = cv2.resize(mask_lo.astype(np.float32), (w, h), interpolation=cv2.INTER_LINEAR)
+    if not refine:
+        return np.clip(up, 0.0, 1.0)
     scale = max(1, round(max(h, w) / max(mask_lo.shape)))
     r = max(2, 2 * scale)
     g = guide_hi if guide_hi.ndim == 2 else cv2.cvtColor(guide_hi.astype(np.float32), cv2.COLOR_RGB2GRAY)

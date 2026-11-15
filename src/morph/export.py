@@ -23,7 +23,7 @@ def full_res_masks(album: Album, name: str, img: np.ndarray, recipe: Recipe) -> 
         return None
     rm = album.masks(name)
     guide = cv2.cvtColor(img.astype(np.float32), cv2.COLOR_RGB2GRAY)
-    return {r: upsample_mask(rm.masks[r], guide) for r in regions if r in rm.masks}
+    return {r: upsample_mask(rm.masks[r], guide, refine=r not in ("eyes", "lips")) for r in regions if r in rm.masks}
 
 
 def render_photo(album: Album, name: str, recipe: Recipe, max_side: int | None = None,

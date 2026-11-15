@@ -116,3 +116,81 @@ def test_corrupt_file_is_skipped_not_fatal(fake_models, tiny_album, tmp_path):
     (tiny_album / "broken.jpg").write_bytes(b"\xff\xd8\xff not really a jpeg")
     a = Album(tiny_album, tmp_path / "cache").analyze()
     assert len(a.photos) == 7 and [n for n, _ in a.skipped] == ["broken.jpg"]
+
+
+def test_project_upgrade_rebuilds_analysis_and_preserves_user_edits(fake_models, tiny_album, tmp_path, monkeypatch):
+    from morph.album import ANALYSIS_VERSION, Album
+
+    root = tmp_path / "project"
+    project = Project.create(root, tiny_album)
+    name = project.album.names[0]
+    ref = project.adjust(name, {"exposure": 0.25, "face_skin.texture": -0.3})
+    project.save_reference(ref, project.album.work_image(name))
+    project.scenes[0].label = "My scene label"
+    project.save()
+    metadata = (root / "project.json").read_bytes()
+    references = {p.name: p.read_bytes() for p in project.ref_dir.iterdir()}
+
+    index = project.album.cache / "analysis.json"
+    old = json.loads(index.read_text())
+    old["version"] = "previous-analysis-version"
+    index.write_text(json.dumps(old))
+    analyze_one = Album._analyze_one
+    rebuilt = []
+
+    def track(self, info, *args):
+        rebuilt.append(info.name)
+        return analyze_one(self, info, *args)
+
+    monkeypatch.setattr(Album, "_analyze_one", track)
+    reopened = Project(root)
+    assert sorted(rebuilt) == sorted(reopened.album.names) == sorted(project.album.names)
+    assert json.loads(index.read_text())["version"] == ANALYSIS_VERSION
+    assert (root / "project.json").read_bytes() == metadata
+    assert {p.name: p.read_bytes() for p in reopened.ref_dir.iterdir()} == references
+    assert reopened.reference(name).final.g("exposure") == 0.25
+    assert reopened.scenes[0].label == "My scene label"
+
+    rebuilt.clear()
+    assert Project(root).album.names == reopened.album.names
+    assert rebuilt == []  # opening a current cache stays cheap
+
+
+def test_project_upgrade_reconciles_added_and_removed_photos(fake_models, tiny_album, tmp_path):
+    from shutil import copyfile
+
+    from morph.export import review_page
+    from morph.scenes import Scene
+
+    root = tmp_path / "project"
+    project = Project.create(root, tiny_album)
+    names = project.album.names
+    project.scenes = [Scene("custom-first", names[:3], names[0], "Keep first"),
+                      Scene("scene-01", names[3:4], names[3], "Removed scene"),
+                      Scene("custom-last", names[4:], names[4], "Keep last")]
+    project.save()
+    project.adjust(names[1], {"exposure": 0.3})
+    saved_ref = (project.ref_dir / f"{names[1][:-4]}.json").read_bytes()
+    copyfile(tiny_album / names[1], tiny_album / "new-a.jpg")
+    copyfile(tiny_album / names[4], tiny_album / "new-b.jpg")
+    (tiny_album / names[0]).unlink()  # representative of a retained scene
+    (tiny_album / names[3]).unlink()  # sole member of a removed scene
+    index = project.album.cache / "analysis.json"
+    data = json.loads(index.read_text())
+    data["version"] = "previous-analysis-version"
+    index.write_text(json.dumps(data))
+
+    reopened = Project(root)
+    all_members = [n for s in reopened.scenes for n in s.photos]
+    assert len(all_members) == len(set(all_members)) == len(reopened.album.names)
+    assert set(all_members) == set(reopened.album.names)
+    first, last = reopened.scenes[:2]
+    assert (first.id, first.label, first.photos, first.representative) == ("custom-first", "Keep first", names[1:3], names[1])
+    assert (last.id, last.label, last.photos) == ("custom-last", "Keep last", names[4:])
+    assert "scene-01" not in {s.id for s in reopened.scenes}
+    assert len({s.id for s in reopened.scenes}) == len(reopened.scenes)
+    assert (reopened.ref_dir / f"{names[1][:-4]}.json").read_bytes() == saved_ref
+    html = review_page(reopened.album, reopened.scenes, {}, [], root).read_text()
+    assert all(f"<b>{n}</b>" in html for n in reopened.album.names)
+    assert "<b>" + names[0] + "</b>" not in html
+    assert [s.to_json() for s in Project(root).scenes] == [s.to_json() for s in reopened.scenes]

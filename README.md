@@ -90,6 +90,14 @@ Candidates from external generators (and uploaded hand edits) are re-segmented s
 | Propagate | `propagate.py` | Blends reference recipes by similarity; predicts where each region should land (reference result + damped share of this photo's difference); harmonizes those targets within a scene and across scenes; solves a small per-photo correction so rendered region statistics hit them. |
 | Export | `export.py` | Full-res render with guided-upsampled masks, EXIF/ICC/XMP kept, geometry + edge check on every file, per-photo recipe JSON, before/after review page. |
 
+With sparse references, a substantially brighter scene with a different backdrop keeps more of its
+own brightness instead of being normalized toward a darker setting. This protection requires both
+bright highlights and a mean lightness beyond the reference's original distribution; backlit
+portraits still receive lighting correction. The reference recipe always carries over, and each
+output recipe records `adaptation_confidence` for the extra statistical correction. A reference in
+the same scene retains full adaptation. Eyes and lips retain the face parser's soft detail through
+analysis and full-resolution export; broader regions continue to use edge-aware mask refinement.
+
 Benchmark against a hand-edited album (use K of your edits as references, predict the rest):
 
 ```bash

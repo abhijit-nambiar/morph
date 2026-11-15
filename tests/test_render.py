@@ -1,4 +1,5 @@
 import numpy as np
+import pytest
 import torch
 
 from morph.recipe import Recipe
@@ -63,7 +64,8 @@ def test_adjustment_delta_beyond_slider_range_survives_save():
     assert back.adjust.g("contrast") == -1.8 and back.final.g("contrast") == -1.0
 
 
-def test_clip_budget_holds_target_to_reference_clipping():
+@pytest.mark.parametrize("gain", [0.0, 1.0])
+def test_clip_budget_holds_target_to_reference_clipping(gain):
     import torch
     from morph.propagate import PropagationConfig, _correct, _overshoot, _prep, clip_added
     from morph.recipe import Recipe
@@ -84,8 +86,8 @@ def test_clip_budget_holds_target_to_reference_clipping():
         with torch.no_grad():
             return float(_overshoot(render(x, mt, Params.from_recipe(rec), gamut_map=False)))
 
-    free = _correct(img, {}, hot, {"global": base_lab.tolist()}, cfg)
-    held = _correct(img, {}, hot, {"global": base_lab.tolist()}, cfg, clip_budget=0.0)
+    free = _correct(img, {}, hot, {"global": base_lab.tolist()}, cfg, gain=gain)
+    held = _correct(img, {}, hot, {"global": base_lab.tolist()}, cfg, gain=gain, clip_budget=0.0)
     assert clipped(held) < clipped(free) - 0.05
 
 
