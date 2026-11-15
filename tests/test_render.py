@@ -163,5 +163,5 @@ def test_scene_without_reference_may_follow_any_reference_that_darkens():
     ]
     album = SimpleNamespace(photos=[SimpleNamespace(name="p", stats=st([62, 0, 0]))])
     out = [{"global": np.array([30.0, 0, 0])}]
-    _hold_key_across(album, refs, np.array([[0.9, 0.1]]), {"p": "s2"}, out, PropagationConfig())
+    _hold_key_across(album, refs, np.array([[0.9, 0.1]]), {"p": "s2", "up": "s0", "down": "s1"}, out, PropagationConfig())
     assert abs(out[0]["global"][0] - (62 - 2 * 8 - 4.0)) < 1e-6

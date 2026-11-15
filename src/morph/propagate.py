@@ -197,7 +197,7 @@ def _hold_key_across(album: Album, refs: list[Reference], W: np.ndarray, scene_o
     lightness targets drift from the photo's own to the largest brightening / darkening any reference edit made, plus slack.
     Highlights sitting well below white mean underexposure rather than key, so that headroom may still be lifted."""
     for i, p in enumerate(album.photos):
-        same = np.array([scene_of.get(p.name) == r.scene for r in refs], float)
+        same = np.array([scene_of.get(p.name) == scene_of.get(r.name) for r in refs], float)
         if float(W[i] @ same) > 0.5:
             continue
         g = p.stats.get("global")
