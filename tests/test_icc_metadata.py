@@ -82,3 +82,44 @@ def test_export_nested_interop(tmp_path, suffix, wide, interop):
     if suffix == '.tif':
         with tifffile.TiffFile(out) as tif:
             assert tif.pages[0].dtype == np.uint16
+
+
+@pytest.mark.parametrize('suffix', ['.jpg', '.tif'])
+@pytest.mark.parametrize('texts', [
+    {270: 'Café — 東京', 315: 'José Núñez', 33432: '© 2024'},
+    {270: 'Caption', 315: 'Artist', 33432: 'Copyright 2024'},
+    {270: '', 315: '', 33432: ''},
+])
+def test_export_utf8_ascii_tags(tmp_path, suffix, texts):
+    root = ImageFileDirectory_v2(prefix=b'II')
+    for tag, text in texts.items():
+        root[tag] = text.encode('utf-8')
+    root[0x8769] = 0
+    sub = ImageFileDirectory_v2(prefix=b'II')
+    sub[0x9003] = '2024:05:01 10:00:00'
+    sub[0xA001] = 1
+    sub[0xA430] = texts[315].encode('utf-8')
+    sub.tagtype[0xA430] = 2
+    offset = 8 + len(root.tobytes(8))
+    root[0x8769] = offset
+    metadata = b'Exif\0\0II*\0\x08\0\0\0' + root.tobytes(8) + sub.tobytes(offset)
+    source = tmp_path/'camera.jpg'
+    Image.new('RGB', (72, 48), (110, 120, 130)).save(source, exif=metadata)
+    out = imageio.save_image(imageio.load_rgb(source), tmp_path/('export'+suffix), source=source)
+    with Image.open(out) as im:
+        saved = im.getexif()
+        for tag, text in texts.items():
+            actual = saved.get(tag, '')
+            assert isinstance(actual, str)
+            assert actual.encode('latin-1') == text.encode('utf-8')
+        sub = saved.get_ifd(0x8769)
+        assert sub[0xA430].encode('latin-1').decode('utf-8') == texts[315]
+        assert sub[0x9003] == '2024:05:01 10:00:00'
+        assert sub[0xA001] == 1
+    if suffix == '.tif':
+        with tifffile.TiffFile(out) as tif:
+            assert tif.pages[0].dtype == np.uint16
+            for tag, text in texts.items():
+                if text:
+                    assert tif.pages[0].tags[tag].dtype == 2
+                    assert tif.pages[0].tags[tag].value == text

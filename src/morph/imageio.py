@@ -226,7 +226,7 @@ def _open_raster(path):
                 exif.load_from_fp(fh)
                 for tag in (_TIFF_LAYOUT_TAGS | {34675}) & set(exif):
                     del exif[tag]
-                metadata = exif.tobytes()
+                metadata = _exif_bytes(exif)
             exif.load(metadata)
     try:
         yield im
@@ -354,6 +354,51 @@ def _png_chunk(kind: bytes, data: bytes) -> bytes:
     return struct.pack(">I", len(data)) + kind + data + struct.pack(">I", zlib.crc32(kind + data) & 0xFFFFFFFF)
 
 
+def _text_bytes(value: str) -> bytes:
+    # Pillow decodes TIFF ASCII bytes as latin-1, including UTF-8 camera text.
+    try:
+        return value.encode('latin-1')
+    except UnicodeEncodeError:
+        return value.encode('utf-8')
+
+
+def _ifd_bytes(values: dict, offset: int, group: int | None = None) -> bytes:
+    from PIL.TiffImagePlugin import ImageFileDirectory_v2
+
+    ifd = ImageFileDirectory_v2(prefix=b"II", group=group)
+    children = {}
+    for tag, value in values.items():
+        if isinstance(value, dict):
+            children[tag] = value
+            ifd[tag] = 0
+            ifd.tagtype[tag] = 4
+        else:
+            if isinstance(value, str):
+                value = _text_bytes(value)
+                ifd.tagtype[tag] = 2
+            ifd[tag] = value
+    tail = b""
+    size = len(ifd.tobytes(offset))
+    for tag, child in children.items():
+        child_offset = offset + size + len(tail)
+        ifd[tag] = child_offset
+        tail += _ifd_bytes(child, child_offset, tag)
+    return ifd.tobytes(offset) + tail
+
+
+def _exif_bytes(exif: Image.Exif) -> bytes:
+    values = dict(exif)
+    for tag in (_EXIF_IFD, _GPS_IFD):
+        sub = dict(exif.get_ifd(tag))
+        if tag == _EXIF_IFD and 0xA005 in sub and not isinstance(sub[0xA005], dict):
+            sub[0xA005] = exif.get_ifd(0xA005)
+        if sub:
+            values[tag] = sub
+        else:
+            values.pop(tag, None)
+    return b"Exif\0\0II*\0\x08\0\0\0" + _ifd_bytes(values, 8)
+
+
 def _save_16bit(img: np.ndarray, out: Path, icc: bytes | None, exif: Image.Exif | None, xmp) -> Path:
     """16-bit RGB PNG/TIFF (Pillow can only write 8-bit RGB), keeping ICC, XMP and EXIF (TIFF: the baseline tags)."""
     arr = np.rint(np.clip(img, 0.0, 1.0) * 65535.0).astype(np.uint16)
@@ -371,7 +416,7 @@ def _save_16bit(img: np.ndarray, out: Path, icc: bytes | None, exif: Image.Exif 
         if icc:
             extra += _png_chunk(b"iCCP", b"ICC Profile\0\0" + zlib.compress(icc))
         if exif:
-            raw = exif.tobytes()
+            raw = _exif_bytes(exif)
             extra += _png_chunk(b"eXIf", raw[6:] if raw.startswith(b"Exif\0\0") else raw)
         if xmp:
             extra += _png_chunk(b"iTXt", b"XML:com.adobe.xmp\0\0\0\0\0" + xmp)
@@ -390,7 +435,7 @@ def _save_16bit(img: np.ndarray, out: Path, icc: bytes | None, exif: Image.Exif 
         base[306] = exif.get_ifd(_EXIF_IFD).get(_TAG_DATETIME_ORIGINAL)
     for t, v in base.items():
         if isinstance(v, str) and v.strip("\0 ") and t != 305:
-            tags.append((t, "s", 0, v.strip("\0 "), True))
+            tags.append((t, "s", 0, _text_bytes(v.strip("\0 ")), True))
     subs = {t: dict(exif.get_ifd(t)) for t in (_EXIF_IFD, _GPS_IFD)} if exif else {}
     subs = {t: d for t, d in subs.items() if d}
     # tifffile refuses the EXIF/GPS pointer tags: write placeholders one tag number lower (keeps the IFD
@@ -408,7 +453,6 @@ def _append_sub_ifds(path: Path, subs: dict[int, dict]) -> None:
     import struct
 
     import tifffile
-    from PIL.TiffImagePlugin import ImageFileDirectory_v2
 
     with tifffile.TiffFile(path) as t:
         slots = {k: t.pages[0].tags[k - 1].valueoffset for k in subs}
@@ -417,16 +461,13 @@ def _append_sub_ifds(path: Path, subs: dict[int, dict]) -> None:
         data[at - 8 : at - 6] = struct.pack("<H", k)
     for k, d in subs.items():
         data += b"\0" * (-len(data) % 4)
-        ifd = ImageFileDirectory_v2(prefix=b"II")
+        values = {}
         for tag, v in d.items():
             if tag in _IFD_POINTERS and not (tag == 0xA005 and isinstance(v, dict)):
                 continue
-            try:
-                ifd[tag] = v
-            except (TypeError, ValueError):
-                continue
+            values[tag] = v
         off = len(data)
-        data += ifd.tobytes(off)
+        data += _ifd_bytes(values, off, k)
         data[slots[k] : slots[k] + 4] = struct.pack("<I", off)
     path.write_bytes(bytes(data))
 
@@ -447,7 +488,7 @@ def save_image(img: np.ndarray, out: str | Path, source: str | Path | None = Non
     deep = False  # source carries more than 8 bits per channel
     if source is not None and is_raw(source):
         exif_obj = raw_exif(source)
-        kwargs["exif"] = exif_obj.tobytes()
+        kwargs["exif"] = _exif_bytes(exif_obj)
         kwargs["icc_profile"] = srgb_icc()
         deep = True
     elif source is not None:
@@ -473,7 +514,7 @@ def save_image(img: np.ndarray, out: str | Path, source: str | Path | None = Non
             else:
                 sub.pop(0xA005, None)
             exif[_EXIF_IFD] = sub
-            kwargs["exif"] = exif.tobytes()
+            kwargs["exif"] = _exif_bytes(exif)
             if icc:
                 kwargs["icc_profile"] = icc
             xmp = src.info.get("xmp")
