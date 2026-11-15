@@ -160,3 +160,32 @@ def test_cull_cache_tracks_raw_renderer():
     from morph import cull
 
     assert imageio.RAW_RENDER_VERSION in cull.SCORE_VERSION
+
+
+def test_he_nef_metadata_falls_back_to_the_embedded_jpeg(tmp_path, monkeypatch):
+    import io
+    from types import SimpleNamespace
+
+    import rawpy
+
+    exif = Image.Exif()
+    exif[0x0110] = "Z f"
+    exif.get_ifd(0x8769).update({0x829A: 1 / 60, 0x829D: 6.3, 0x8827: 220})
+    buf = io.BytesIO()
+    Image.new("RGB", (60, 40)).save(buf, "JPEG", exif=exif)
+
+    class HighEfficiencyNef:  # LibRaw parses the geometry but refuses the rest
+        sizes = SimpleNamespace(crop_width=0, crop_height=0, height=40, width=60, flip=0)
+        other = property(lambda self: (_ for _ in ()).throw(rawpy.LibRawFileUnsupportedError("HE")))
+        lens = other
+        __enter__ = lambda self: self
+        __exit__ = lambda self, *a: None
+        extract_thumb = lambda self: SimpleNamespace(format=rawpy.ThumbFormat.JPEG, data=buf.getvalue())
+
+    monkeypatch.setattr(rawpy, "imread", lambda p: HighEfficiencyNef())
+    nef = tmp_path / "DSC_0001.NEF"
+    nef.write_bytes(b"not a tiff pillow can open")
+    info = read_info(nef, with_hash=False)
+    assert (info.width, info.height) == (60, 40)
+    assert info.iso == 220 and info.f_number == pytest.approx(6.3) and info.exposure_time == pytest.approx(1 / 60, rel=1e-3)
+    assert imageio.raw_exif(nef)[0x0110] == "Z f"
