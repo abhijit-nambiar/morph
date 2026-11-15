@@ -46,3 +46,17 @@ def test_fit_recovers_look(tmp_path):
     res = fit_recipe(img, target, m, steps=160, max_side=200)
     assert res.de_before > 4 and res.de_after < 1.5
     assert res.recipe.g("temperature") > 0.1
+
+
+def test_fit_keeps_global_match_when_local_optimization_overshoots(tmp_path):
+    img = load_rgb(make_photo(tmp_path / "p.jpg", 0, size=(320, 220)))
+    masks = FakeSegmenter().segment((img * 255).astype(np.uint8)).masks
+    target = render_recipe(img, masks, Recipe({
+        "exposure": 0.25, "temperature": 0.12, "contrast": 0.08,
+        "saturation": 0.06, "highlights": -0.12, "shadows": 0.08,
+    }))
+
+    result = fit_recipe(img, target, masks, steps=80, max_side=200)
+
+    assert result.de_after < 0.35
+    assert not result.recipe.local
