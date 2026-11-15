@@ -193,9 +193,15 @@ def fit_recipe(
 
     for stage_local, n, lr in ((False, steps // 2, 0.05), (bool(regions), steps - steps // 2, 0.03)):
         opt = torch.optim.Adam([p.gv, p.lv], lr=lr)
+        best_loss = float("inf")
+        best = None
         for i in range(n):
             opt.zero_grad()
             loss = loss_fn(stage_local)
+            value = float(loss.detach())
+            if value < best_loss:
+                best_loss = value
+                best = (p.gv.detach().clone(), p.lv.detach().clone())
             loss.backward()
             p.gv.grad *= gmask
             p.lv.grad *= lmask if stage_local else 0
@@ -203,6 +209,12 @@ def fit_recipe(
             with torch.no_grad():
                 p.gv.copy_(torch.maximum(torch.minimum(p.gv, ghi), glo))
                 p.lv.copy_(torch.maximum(torch.minimum(p.lv, lhi), llo))
+        # Adam can overshoot a good match, especially when introducing local controls.
+        # Compare the final update too, then carry the best state into the next stage.
+        with torch.no_grad():
+            if best is not None and best_loss < float(loss_fn(stage_local)):
+                p.gv.copy_(best[0])
+                p.lv.copy_(best[1])
 
     recipe = p.to_recipe({"fit": {"steps": steps, "regions": list(regions)}}).pruned()
     with torch.no_grad():
