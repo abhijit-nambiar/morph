@@ -1,4 +1,9 @@
+import json
+
+import numpy as np
 import pytest
+
+from morph import album as album_mod
 
 from morph.album import Album
 from morph.cli import main
@@ -129,3 +134,91 @@ def test_corrupt_file_does_not_repeat_analysis_on_reopen(small_album, tmp_path, 
         assert reopened.album.names == project.album.names
         assert reopened.album.skipped == project.album.skipped
     assert calls == []
+
+
+def test_same_name_overwrite_refreshes_analysis(small_album, tmp_path):
+    root = tmp_path / "project"
+    project = Project.create(root, small_album)
+    old_sha = project.album.get("a2.jpg").sha256
+    old_work = project.album.work_image("a2.jpg").copy()
+    make_photo(small_album / "a2.jpg", 99, gain=0.5, size=(96, 64))
+    reopened = Project(root)
+    assert reopened.album.get("a2.jpg").sha256 != old_sha
+    assert not np.array_equal(reopened.album.work_image("a2.jpg"), old_work)
+
+
+def test_repaired_skipped_file_joins_album(small_album, tmp_path):
+    root = tmp_path / "project"
+    broken = small_album / "broken.jpg"
+    broken.write_bytes(b"truncated jpeg")
+    Project.create(root, small_album)
+    make_photo(broken, 99, size=(96, 64))
+    reopened = Project(root)
+    assert "broken.jpg" in reopened.album.names
+    assert reopened.album.skipped == []
+    assert_scenes_cover_album(reopened)
+
+
+def test_interrupted_early_addition_retains_unvisited_cache(small_album, tmp_path, monkeypatch):
+    for path in small_album.glob("a*.jpg"):
+        path.rename(path.with_name("b" + path.name[1:]))
+    root = tmp_path / "project"
+    project = Project.create(root, small_album)
+    for i in range(2):
+        make_photo(small_album / f"a{i}.jpg", 50 + i, size=(96, 64))
+    original = Album._analyze_one
+
+    def interrupt(self, info, *args):
+        if info.name == "a1.jpg":
+            raise KeyboardInterrupt
+        return original(self, info, *args)
+
+    monkeypatch.setattr(Album, "_analyze_one", interrupt)
+    with pytest.raises(KeyboardInterrupt):
+        Project(root)
+    analyzed = []
+
+    def track(self, info, *args):
+        analyzed.append(info.name)
+        return original(self, info, *args)
+
+    monkeypatch.setattr(Album, "_analyze_one", track)
+    reads = []
+    read_info = album_mod.read_info
+
+    def track_read(path):
+        reads.append(path.name)
+        return read_info(path)
+
+    monkeypatch.setattr(album_mod, "read_info", track_read)
+    reopened = Project(root)
+    assert analyzed == ["a1.jpg"]
+    assert reads == ["a1.jpg"]
+    assert set(reopened.album.names) == set(project.album.names) | {"a0.jpg", "a1.jpg"}
+
+
+def test_unchanged_reopen_does_not_read_info(small_album, tmp_path, monkeypatch):
+    root = tmp_path / "project"
+    project = Project.create(root, small_album)
+    calls = []
+
+    def unexpected(*args, **kwargs):
+        calls.append(args)
+        raise AssertionError("unchanged sources must not be read")
+
+    monkeypatch.setattr(album_mod, "read_info", unexpected)
+    monkeypatch.setattr(Album, "_analyze_one", unexpected)
+    assert Project(root).album.names == project.album.names
+    assert Album(small_album, project.album.cache).analyze().names == project.album.names
+    assert calls == []
+
+
+def test_old_index_without_stat_loads(small_album, tmp_path):
+    root = tmp_path / "project"
+    project = Project.create(root, small_album)
+    index = project.album.cache / "analysis.json"
+    data = json.loads(index.read_text())
+    data.pop("stat", None)
+    index.write_text(json.dumps(data))
+    assert Album.load(small_album, project.album.cache).names == project.album.names
+    assert Project(root).album.names == project.album.names
