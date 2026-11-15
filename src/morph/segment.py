@@ -37,7 +37,7 @@ REGIONS = (
 HUMAN_MODEL = "mattmdjaga/segformer_b2_clothes"
 FACE_MODEL = "jonathandinu/face-parsing"
 SCENE_MODEL = "nvidia/segformer-b0-finetuned-ade-512-512"
-SEGMENTER_VERSION = "seg-v2"
+SEGMENTER_VERSION = "seg-v3"
 
 _HUMAN_GROUPS = {
     "background": ["background"],
@@ -71,6 +71,10 @@ def _gate_people(human: dict[str, np.ndarray], scene_person: np.ndarray) -> dict
     out = {n: (v if n == "background" else v * gate) for n, v in human.items()}
     out["background"] = 1.0 - person * gate
     return out
+
+
+def _feature_mask(mask: np.ndarray, person: np.ndarray) -> np.ndarray:
+    return np.clip(mask, 0, 1).astype(np.float32) * np.clip(person * 1.15, 0, 1)
 
 
 @dataclass
@@ -202,7 +206,8 @@ class Segmenter:
             "vegetation": snap(scene["vegetation"]) * bg,
         }
         for k in ("hair", "face_skin", "body_skin", "eyes", "lips", "clothes"):
-            masks[k] = snap(maps[k]) * np.clip(person * 1.15, 0, 1)
+            masks[k] = (_feature_mask(maps[k], person) if k in ("eyes", "lips")
+                        else snap(maps[k]) * np.clip(person * 1.15, 0, 1))
         people = _components(person, 0.5, min_frac=0.0015, scale=1 / s)
         return RegionMasks({k: masks[k].astype(np.float32) for k in REGIONS}, faces, people)
 
