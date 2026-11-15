@@ -34,7 +34,7 @@ import numpy as np
 
 from .imageio import RAW_RENDER_VERSION, is_raw, list_images, load_preview, raw_pairs, read_info, render_raw
 
-SCORE_VERSION = f"cull-v4-{RAW_RENDER_VERSION}"  # RAW exposure scores depend on the RAW renderer
+SCORE_VERSION = f"cull-v5-icc-{RAW_RENDER_VERSION}"  # RAW exposure scores depend on the RAW renderer
 MEASURE_SIDE = 2560  # focus is judged as if viewing the photo at this long side (a large screen / A4 print)
 DETECT_SIDE = 512
 EXPOSURE_SIDE = 1024  # RAW exposure is measured on a fast half-size decode

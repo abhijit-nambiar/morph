@@ -18,7 +18,7 @@ from pathlib import Path
 
 import numpy as np
 
-from .album import Album
+from .album import ANALYSIS_VERSION, Album
 from .colorspace import delta_e2000, srgb_to_lab
 from .fit import align, fit_recipe, structure_confidence
 from .imageio import list_images, load_rgb, save_png_u8
@@ -37,7 +37,7 @@ def _aligned_edits(album: Album, edits_dir: Path, cache: Path) -> dict[str, tupl
         if e is None:
             continue
         st = e.stat()
-        sig = hashlib.sha1(f"{e.resolve()}:{st.st_size}:{st.st_mtime_ns}".encode()).hexdigest()[:10]
+        sig = hashlib.sha1(f"{ANALYSIS_VERSION}:{p.sha256}:{e.resolve()}:{st.st_size}:{st.st_mtime_ns}".encode()).hexdigest()[:10]
         ft, fw = cache / f"{p.stem}.{sig}.png", cache / f"{p.stem}.{sig}.w.npy"
         if ft.exists() and fw.exists():
             out[p.name] = (load_rgb(ft), np.load(fw).astype(np.float32))

@@ -9,6 +9,8 @@ You make the reference(s) one of two ways:
 
 Morph then reverse-engineers each reference into a deterministic recipe of Lightroom-style sliders, adapts it to every other photo's lighting, harmonizes within each scene and (more softly) across scenes, and exports full-resolution files with EXIF/ICC preserved.
 
+Editing uses 32-bit floating-point sRGB. Embedded RGB profiles (including AdobeRGB, Display P3 and ProPhoto) are converted into that working space without reducing high-bit inputs to 8 bits. Exports convert back into the source profile; RAW exports use sRGB. Colours outside the sRGB gamut are clipped on import, so a wide-gamut output profile does not restore those colours. TIFF exports retain 16-bit precision within this working gamut.
+
 ## Install
 
 ```bash
