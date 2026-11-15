@@ -164,8 +164,7 @@ def _shoulder(lin: torch.Tensor, ev: torch.Tensor, knee: float = 0.6) -> torch.T
     return lin + w * (torch.where(lin > knee, rolled, lin) - lin)
 
 
-def _adjust(x: torch.Tensor, get, scale: float, active: set[str]) -> torch.Tensor:
-    """Apply one block of sliders. ``get(key)`` returns a scalar tensor; ``scale`` = image long side."""
+def _adjust_tone(x: torch.Tensor, get, scale: float, active: set[str]) -> torch.Tensor:
     # White balance + exposure in linear light.
     if active & {"temperature", "tint", "exposure"}:
         t, u, ev = get("temperature"), get("tint"), get("exposure")
@@ -200,6 +199,10 @@ def _adjust(x: torch.Tensor, get, scale: float, active: set[str]) -> torch.Tenso
             if key in tone_active:
                 d = d + get(key) * 0.15 * _bump(Lc, center, width) * edge_sqrt
         x = x + d
+    return x
+
+
+def _adjust_detail(x: torch.Tensor, get, scale: float, active: set[str]) -> torch.Tensor:
     if active & {"clarity", "texture", "noise_reduction", "dehaze"}:
         L = _luma(x)
         cl = get("clarity") + 0.3 * get("dehaze")
@@ -214,6 +217,10 @@ def _adjust(x: torch.Tensor, get, scale: float, active: set[str]) -> torch.Tenso
         if "noise_reduction" in active:
             r = max(1, int(round(0.0008 * scale)))
             x = x + get("noise_reduction") * (_edge_preserving(x, r, 2e-3) - x)
+    return x
+
+
+def _adjust_color(x: torch.Tensor, get, scale: float, active: set[str]) -> torch.Tensor:
     if active & {"saturation", "vibrance", "hue", "dehaze"} or any(k.startswith(("hsl_", "grade_")) for k in active):
         m = _M.to(x)
         o = torch.einsum("ij,bjhw->bihw", m, x)
@@ -247,6 +254,24 @@ def _adjust(x: torch.Tensor, get, scale: float, active: set[str]) -> torch.Tenso
                 o1 = o1 + wz * get(f"grade_{z}_x") * 0.08
                 o2 = o2 + wz * get(f"grade_{z}_y") * 0.08
         x = torch.einsum("ij,bjhw->bihw", _MINV.to(x), torch.cat([Y, o1, o2], 1))
+    return x
+
+
+_POINTWISE_PIXELS = 256 * 1024
+
+
+def _adjust(x: torch.Tensor, get, scale: float, active: set[str]) -> torch.Tensor:
+    """Apply sliders, keeping pointwise CPU intermediates bounded independently of photo size."""
+    for stage in (_adjust_tone, _adjust_detail, _adjust_color):
+        if stage is _adjust_detail or x.device.type != "cpu" or x.shape[-2] * x.shape[-1] <= _POINTWISE_PIXELS:
+            x = stage(x, get, scale, active)
+        else:
+            rows = max(1, _POINTWISE_PIXELS // x.shape[-1])
+            parts = x.split(rows, dim=-2)
+            adjusted = [stage(part, get, scale, active) for part in parts]
+            # A sparse recipe may have no sliders in this stage; avoid copying the photo.
+            if any(result is not part for result, part in zip(adjusted, parts)):
+                x = torch.cat(adjusted, dim=-2)
     return x
 
 
