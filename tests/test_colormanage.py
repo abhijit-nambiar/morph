@@ -9,6 +9,7 @@ from PIL import Image, ImageCms, ImageOps
 
 from morph.colorspace import delta_e2000, srgb_to_lab
 from morph.imageio import load_rgb, save_image, srgb_icc
+from morph import imageio
 
 
 def profile(name):
@@ -98,7 +99,7 @@ def test_exif_adobe(tmp_path, photo):
             sub = im.getexif().get_ifd(0x8769)
             assert sub[0x9003] == '2024:05:01 10:00:00'
             assert sub[0xA001] == 0xFFFF
-            assert ImageCms.ImageCmsProfile(io.BytesIO(im.info['icc_profile'])).profile.xcolor_space.strip() == 'RGB'
+            assert 'adobe' in description(im.info['icc_profile']).lower()
 
 
 @pytest.mark.parametrize('profile', [None, srgb_icc(), b'broken ICC'])
@@ -140,3 +141,74 @@ def test_cache_version():
     from morph.album import ANALYSIS_VERSION
 
     assert ANALYSIS_VERSION.startswith('a2-icc-')
+
+
+@pytest.mark.parametrize('tag', ['exif', 'icc', 'untagged', 'srgb'])
+def test_raw_previews(tmp_path, monkeypatch, tag):
+    from types import SimpleNamespace
+
+    import rawpy
+
+    yy, xx = np.mgrid[:400, :640]
+    pixels = np.stack([xx/640, yy/400, np.full_like(xx, 128)/255], -1)
+    buf = io.BytesIO()
+    kwargs = {}
+    if tag == 'exif':
+        exif = Image.Exif()
+        exif[0x8769] = {0xA001: 0xFFFF, 0xA005: {1: 'R03'}}
+        kwargs['exif'] = exif
+    elif tag in ('icc', 'srgb'):
+        kwargs['icc_profile'] = cms.cms_profile('adobergb' if tag == 'icc' else 'srgb')
+    Image.fromarray(np.rint(pixels*255).astype('uint8')).save(buf, 'JPEG', quality=95, **kwargs)
+    data = buf.getvalue()
+
+    class RawPreview:
+        sizes = SimpleNamespace(crop_width=0, crop_height=0, height=400, width=640, flip=6)
+
+        def __enter__(self):
+            return self
+
+        def __exit__(self, *args):
+            pass
+
+        def extract_thumb(self):
+            return SimpleNamespace(format=rawpy.ThumbFormat.JPEG, data=data)
+
+        def postprocess(self, **kwargs):
+            raise rawpy.LibRawFileUnsupportedError('HE NEF')
+
+    monkeypatch.setattr(rawpy, 'imread', lambda p: RawPreview())
+    source = tmp_path/'camera.NEF'
+
+    def expected(draft_side=None):
+        with Image.open(io.BytesIO(data)) as im:
+            if tag in ('exif', 'icc'):
+                return transform(np.asarray(im.convert('RGB')), cms.cms_profile('adobergb'), cms.cms_profile('srgb'))
+            if draft_side:
+                im.draft('RGB', (draft_side, draft_side))
+            return np.asarray(im.convert('RGB'), dtype=np.float32)/255
+
+    for loader, draft_side in ((imageio.load_preview, 96), (imageio.load_rgb, None)):
+        ref = imageio._orient(expected(draft_side), 6)
+        ref = imageio.resize(ref, imageio.fit_size(ref.shape[1], ref.shape[0], 96))
+        np.testing.assert_array_equal(loader(source, 96), ref)
+    luma_ref = float((expected(512) @ imageio._LUM).mean())
+    assert imageio._thumb_luma(RawPreview()) == luma_ref
+
+
+def test_float_tiff_album_import(tmp_path, fake_models):
+    from morph.album import Album
+
+    folder = tmp_path/'album'
+    folder.mkdir()
+    source = folder/'float.tif'
+    a = np.linspace(.1, .8, 48*72*3, dtype=np.float32).reshape(48, 72, 3)
+    icc = cms.cms_profile('adobergb')
+    tifffile.imwrite(source, a, photometric='rgb', iccprofile=icc)
+    info = imageio.read_info(source)
+    assert (info.width, info.height) == (72, 48)
+    np.testing.assert_allclose(load_rgb(source), transform(a, icc, cms.cms_profile('srgb')), atol=2e-6)
+    album = Album(folder).analyze()
+    assert album.names == ['float.tif']
+    assert not album.skipped
+    assert album.work_image('float.tif').shape == (48, 72, 3)

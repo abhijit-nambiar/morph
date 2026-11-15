@@ -122,6 +122,29 @@ def test_score_decide_and_cache(dump, monkeypatch):
         assert json.dumps(x.to_json()) == json.dumps(y.to_json())
 
 
+def test_score_cache_invalidates_old_color_management(tmp_path, monkeypatch):
+    Image.fromarray((texture(17, h=120, w=180)*255).astype(np.uint8)).save(tmp_path/'camera.jpg')
+    score_folder(tmp_path, people=False)
+    index = tmp_path/'.morph-cull'/'scores.json'
+    calls, real = [], cull.load_preview
+    monkeypatch.setattr(cull, 'load_preview', lambda *a, **k: calls.append(a) or real(*a, **k))
+    score_folder(tmp_path, people=False)
+    assert not calls
+    assert cull.RAW_RENDER_VERSION == 'raw-v3'
+    assert cull.SCORE_VERSION.startswith('cull-v5-icc-')
+    for old_version in ('cull-v4-raw-v2', 'cull-v4-raw-v3'):
+        saved = json.loads(index.read_text())
+        saved['version'] = old_version
+        index.write_text(json.dumps(saved))
+        calls.clear()
+        score_folder(tmp_path, people=False)
+        assert len(calls) == 1
+        assert json.loads(index.read_text())['version'] == cull.SCORE_VERSION
+        calls.clear()
+        score_folder(tmp_path, people=False)
+        assert not calls
+
+
 def test_strictness_is_monotone(dump):
     scores = score_folder(dump, people=False)
     kept = [sum(d.keep for d in decide(scores, CullSettings(focus_strictness=s, burst_keep=9))) for s in (0, 0.5, 1)]
