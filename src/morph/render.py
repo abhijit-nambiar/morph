@@ -267,7 +267,11 @@ def _adjust(x: torch.Tensor, get, scale: float, active: set[str]) -> torch.Tenso
             x = stage(x, get, scale, active)
         else:
             rows = max(1, _POINTWISE_PIXELS // x.shape[-1])
-            x = torch.cat([stage(part, get, scale, active) for part in x.split(rows, dim=-2)], dim=-2)
+            parts = x.split(rows, dim=-2)
+            adjusted = [stage(part, get, scale, active) for part in parts]
+            # A sparse recipe may have no sliders in this stage; avoid copying the photo.
+            if any(result is not part for result, part in zip(adjusted, parts)):
+                x = torch.cat(adjusted, dim=-2)
     return x
 
 
