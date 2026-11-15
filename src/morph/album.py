@@ -165,31 +165,34 @@ class Album:
             raise FileNotFoundError(f"no images found in {self.folder}")
         recs, eg, eb = [], [], []
         self.skipped = []
-        for i, f in enumerate(files):
-            try:
-                info = read_info(f)
-                old = prior.get(info.sha256)
-                if old is not None and self.mask_path(old[0]).exists() and self.work_path(old[0]).exists():
-                    rec, g, b = replace(old[0], name=f.name, path=str(f.resolve())), old[1], old[2]
-                else:
-                    rec, g, b = self._analyze_one(info, segmenter, embedder)
-            except Exception as e:  # noqa: BLE001 - a corrupt card file must not sink the album
-                self.skipped.append((f.name, f"{type(e).__name__}: {e}"))
+        try:
+            for i, f in enumerate(files):
+                try:
+                    info = read_info(f)
+                    old = prior.get(info.sha256)
+                    if old is not None and self.mask_path(old[0]).exists() and self.work_path(old[0]).exists():
+                        rec, g, b = replace(old[0], name=f.name, path=str(f.resolve())), old[1], old[2]
+                    else:
+                        rec, g, b = self._analyze_one(info, segmenter, embedder)
+                except Exception as e:  # noqa: BLE001 - a corrupt card file must not sink the album
+                    self.skipped.append((f.name, f"{type(e).__name__}: {e}"))
+                    if progress:
+                        progress(i + 1, len(files), f.name)
+                    continue
+                recs.append(rec)
+                eg.append(g)
+                eb.append(b)
                 if progress:
                     progress(i + 1, len(files), f.name)
-                continue
-            recs.append(rec)
-            eg.append(g)
-            eb.append(b)
-            if progress:
-                progress(i + 1, len(files), f.name)
+        finally:
+            if recs:
+                recs_order = sorted(range(len(recs)), key=lambda i: (recs[i].captured or "", recs[i].name))
+                self.photos = [recs[i] for i in recs_order]
+                self.emb_global = np.stack([eg[i] for i in recs_order])
+                self.emb_background = np.stack([eb[i] for i in recs_order])
+                self._save_index()
         if not recs:
             raise FileNotFoundError(f"no readable images in {self.folder}: " + "; ".join(f"{n} ({r})" for n, r in self.skipped))
-        recs_order = sorted(range(len(recs)), key=lambda i: (recs[i].captured or "", recs[i].name))
-        self.photos = [recs[i] for i in recs_order]
-        self.emb_global = np.stack([eg[i] for i in recs_order])
-        self.emb_background = np.stack([eb[i] for i in recs_order])
-        self._save_index()
         return self
 
     def _analyze_one(self, info: PhotoInfo, segmenter: Segmenter, embedder: Embedder):
